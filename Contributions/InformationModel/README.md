@@ -37,6 +37,6 @@ tool developers, and metadata consumers based on whatever data formats are neede
     and XML examples
 * OpenC2 developers:
   * Used the Metadata Generation Tool to [design](Designed) an IM based on metadata content requirements
-  * Used the JSON Schema to mechanically [derive](FromJSON) an incomplete, or "template" IM
+  * Used the JSON Schema to mechanically [derive](Generated) an incomplete, or "template" IM
 
 ## Results

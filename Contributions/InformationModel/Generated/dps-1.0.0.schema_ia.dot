@@ -1,0 +1,269 @@
+# package: https://dataandtrustalliance.org/data-provenance-standard-1.0.0.schema/
+# jadn_version: http://oasis-open.org/openc2/jadn/v2.0/schema/
+# description: The Data Provenance Standard is made up of three groups of metadata elements: Source, Provenance, and Use.
+# roots: ['Root']
+# config: {'$MaxString': 1000, '$FieldName': '^[$a-z][-_$A-Za-z0-9]{0,63}$'}
+
+digraph G {
+  graph [fontname=Arial, fontsize=12];
+  node [fontname=Arial, fontsize=8, shape=plain, style=filled, fillcolor=lightskyblue1];
+  edge [fontname=Arial, fontsize=7, arrowsize=0.5, labelangle=45.0, labeldistance=0.9];
+  bgcolor="transparent";
+
+n0 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Root : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 source : Root.source  </td></tr>
+  <tr><td align="left">  2 provenance : Root.provenance  </td></tr>
+  <tr><td align="left">  3 use : Root.use  </td></tr>
+</table>>]
+
+n1 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Root.source : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 version : String  </td></tr>
+  <tr><td align="left">  2 title : String  </td></tr>
+  <tr><td align="left">  3 id : String  </td></tr>
+  <tr><td align="left">  4 location : String [0..1]  </td></tr>
+  <tr><td align="left">  5 issuer : Issuer  </td></tr>
+  <tr><td align="left">  6 description : String  </td></tr>
+</table>>]
+
+n2 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Issuer : ArrayOf(Issuer-item){1..*}  </b></td></tr>
+</table>>]
+
+n3 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Issuer-item : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 name : String  </td></tr>
+  <tr><td align="left">  2 address : Address [0..1]  </td></tr>
+</table>>]
+
+n4 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Address : ArrayOf(String)  </b></td></tr>
+</table>>]
+
+n5 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Root.provenance : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 source : String [0..1]  </td></tr>
+  <tr><td align="left">  2 origin : Origin [0..1]  </td></tr>
+  <tr><td align="left">  3 origin-geography : Origin-geography  </td></tr>
+  <tr><td align="left">  4 date : String  </td></tr>
+  <tr><td align="left">  5 previous-date : String [0..1]  </td></tr>
+  <tr><td align="left">  6 generation-period : Root.provenance.generation-period [0..1]  </td></tr>
+  <tr><td align="left">  7 generation-method : Generation-method  </td></tr>
+  <tr><td align="left">  8 format : Format [0..1]  </td></tr>
+  <tr><td align="left">  9 sub-provenance : Root.provenance [0..1]  </td></tr>
+</table>>]
+
+n6 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Origin : ArrayOf(Origin-item)  </b></td></tr>
+</table>>]
+
+n7 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Origin-item : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 name : String  </td></tr>
+  <tr><td align="left">  2 address : Address [0..1]  </td></tr>
+</table>>]
+
+n8 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Origin-geography : ArrayOf(Origin-geography-item){1..*}  </b></td></tr>
+</table>>]
+
+n9 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Origin-geography-item : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 country : String  </td></tr>
+  <tr><td align="left">  2 state : String [0..1]  </td></tr>
+</table>>]
+
+n10 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Root.provenance.generation-period : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 start : String [0..1]  </td></tr>
+  <tr><td align="left">  2 end : String [0..1]  </td></tr>
+</table>>]
+
+n11 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Generation-method : ArrayOf(Generation-method-item){1..*}  </b></td></tr>
+</table>>]
+
+n12 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Generation-method-item : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 code : String  </td></tr>
+  <tr><td align="left">  2 system : String [0..1]  </td></tr>
+  <tr><td align="left">  3 description : String [0..1]  </td></tr>
+</table>>]
+
+n13 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Format : ArrayOf(String)  </b></td></tr>
+</table>>]
+
+n14 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Root.use : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 classification : Classification [0..1]  </td></tr>
+  <tr><td align="left">  2 consents : Consents [0..1]  </td></tr>
+  <tr><td align="left">  3 privacy-enhancing : Privacy-enhancing [0..1]  </td></tr>
+  <tr><td align="left">  4 processing-included : Processing-included [0..1]  </td></tr>
+  <tr><td align="left">  5 processing-excluded : Processing-excluded [0..1]  </td></tr>
+  <tr><td align="left">  6 storage-allowed : Storage-allowed [0..1]  </td></tr>
+  <tr><td align="left">  7 storage-forbidden : Storage-forbidden [0..1]  </td></tr>
+  <tr><td align="left">  8 license : License [0..1]  </td></tr>
+  <tr><td align="left">  9 intended-purpose : Intended-purpose  </td></tr>
+  <tr><td align="left">  10 copyright : Copyright [0..1]  </td></tr>
+  <tr><td align="left">  11 patent : Patent [0..1]  </td></tr>
+  <tr><td align="left">  12 trademark : Trademark [0..1]  </td></tr>
+</table>>]
+
+n15 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Classification : ArrayOf(Classification-item)  </b></td></tr>
+</table>>]
+
+n16 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Classification-item : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 regulation : Classification-item.regulation  </td></tr>
+  <tr><td align="left">  2 evaluated : Boolean  </td></tr>
+  <tr><td align="left">  3 tool : String [0..1]  </td></tr>
+</table>>]
+
+n17 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Classification-item.regulation : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 code : String  </td></tr>
+  <tr><td align="left">  2 system : String [0..1]  </td></tr>
+  <tr><td align="left">  3 description : String [0..1]  </td></tr>
+</table>>]
+
+n18 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Consents : ArrayOf(String)  </b></td></tr>
+</table>>]
+
+n19 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Privacy-enhancing : ArrayOf(Privacy-enhancing-item)  </b></td></tr>
+</table>>]
+
+n20 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Privacy-enhancing-item : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 tool-category : Privacy-enhancing-item.tool-category [0..1]  </td></tr>
+  <tr><td align="left">  2 tool-used : String [0..1]  </td></tr>
+  <tr><td align="left">  3 parameters : Parameters [0..1]  </td></tr>
+  <tr><td align="left">  4 result : Result [0..1]  </td></tr>
+</table>>]
+
+n21 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Privacy-enhancing-item.tool-category : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 code : String  </td></tr>
+  <tr><td align="left">  2 system : String [0..1]  </td></tr>
+  <tr><td align="left">  3 description : String [0..1]  </td></tr>
+</table>>]
+
+n22 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Parameters : ArrayOf(String)  </b></td></tr>
+</table>>]
+
+n23 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Result : ArrayOf(String)  </b></td></tr>
+</table>>]
+
+n24 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Processing-included : ArrayOf(Processing-included-item)  </b></td></tr>
+</table>>]
+
+n25 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Processing-included-item : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 country : String  </td></tr>
+  <tr><td align="left">  2 state : String [0..1]  </td></tr>
+</table>>]
+
+n26 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Processing-excluded : ArrayOf(Processing-excluded-item)  </b></td></tr>
+</table>>]
+
+n27 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Processing-excluded-item : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 country : String  </td></tr>
+  <tr><td align="left">  2 state : String [0..1]  </td></tr>
+</table>>]
+
+n28 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Storage-allowed : ArrayOf(Storage-allowed-item)  </b></td></tr>
+</table>>]
+
+n29 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Storage-allowed-item : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 country : String  </td></tr>
+  <tr><td align="left">  2 state : String [0..1]  </td></tr>
+</table>>]
+
+n30 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Storage-forbidden : ArrayOf(Storage-forbidden-item)  </b></td></tr>
+</table>>]
+
+n31 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Storage-forbidden-item : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 country : String  </td></tr>
+  <tr><td align="left">  2 state : String [0..1]  </td></tr>
+</table>>]
+
+n32 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  License : ArrayOf(String)  </b></td></tr>
+</table>>]
+
+n33 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Intended-purpose : ArrayOf(Intended-purpose-item){1..*}  </b></td></tr>
+</table>>]
+
+n34 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Intended-purpose-item : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 code : String  </td></tr>
+  <tr><td align="left">  2 system : String [0..1]  </td></tr>
+  <tr><td align="left">  3 description : String  </td></tr>
+</table>>]
+
+n35 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Copyright : ArrayOf(String)  </b></td></tr>
+</table>>]
+
+n36 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Patent : ArrayOf(String)  </b></td></tr>
+</table>>]
+
+n37 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Trademark : ArrayOf(String)  </b></td></tr>
+</table>>]
+
+  n0 -> n1 [label=source, headlabel="1", taillabel="1"]
+  n0 -> n5 [label=provenance, headlabel="1", taillabel="1"]
+  n0 -> n14 [label=use, headlabel="1", taillabel="1"]
+  n1 -> n2 [label=issuer, headlabel="1", taillabel="1"]
+  n2 -> n3 [label=value, headlabel="1", taillabel="1"]
+  n3 -> n4 [label=address, headlabel="0..1", taillabel="1"]
+  n5 -> n6 [label=origin, headlabel="0..1", taillabel="1"]
+  n5 -> n8 [label=origin_geography, headlabel="1", taillabel="1"]
+  n5 -> n10 [label=generation_period, headlabel="0..1", taillabel="1"]
+  n5 -> n11 [label=generation_method, headlabel="1", taillabel="1"]
+  n5 -> n13 [label=format, headlabel="0..1", taillabel="1"]
+  n5 -> n5 [label=sub_provenance, headlabel="0..1", taillabel="1"]
+  n6 -> n7 [label=value, headlabel="1", taillabel="1"]
+  n7 -> n4 [label=address, headlabel="0..1", taillabel="1"]
+  n8 -> n9 [label=value, headlabel="1", taillabel="1"]
+  n11 -> n12 [label=value, headlabel="1", taillabel="1"]
+  n14 -> n15 [label=classification, headlabel="0..1", taillabel="1"]
+  n14 -> n18 [label=consents, headlabel="0..1", taillabel="1"]
+  n14 -> n19 [label=privacy_enhancing, headlabel="0..1", taillabel="1"]
+  n14 -> n24 [label=processing_included, headlabel="0..1", taillabel="1"]
+  n14 -> n26 [label=processing_excluded, headlabel="0..1", taillabel="1"]
+  n14 -> n28 [label=storage_allowed, headlabel="0..1", taillabel="1"]
+  n14 -> n30 [label=storage_forbidden, headlabel="0..1", taillabel="1"]
+  n14 -> n32 [label=license, headlabel="0..1", taillabel="1"]
+  n14 -> n33 [label=intended_purpose, headlabel="1", taillabel="1"]
+  n14 -> n35 [label=copyright, headlabel="0..1", taillabel="1"]
+  n14 -> n36 [label=patent, headlabel="0..1", taillabel="1"]
+  n14 -> n37 [label=trademark, headlabel="0..1", taillabel="1"]
+  n15 -> n16 [label=value, headlabel="1", taillabel="1"]
+  n16 -> n17 [label=regulation, headlabel="1", taillabel="1"]
+  n19 -> n20 [label=value, headlabel="1", taillabel="1"]
+  n20 -> n21 [label=tool_category, headlabel="0..1", taillabel="1"]
+  n20 -> n22 [label=parameters, headlabel="0..1", taillabel="1"]
+  n20 -> n23 [label=result, headlabel="0..1", taillabel="1"]
+  n24 -> n25 [label=value, headlabel="1", taillabel="1"]
+  n26 -> n27 [label=value, headlabel="1", taillabel="1"]
+  n28 -> n29 [label=value, headlabel="1", taillabel="1"]
+  n30 -> n31 [label=value, headlabel="1", taillabel="1"]
+  n33 -> n34 [label=value, headlabel="1", taillabel="1"]
+}

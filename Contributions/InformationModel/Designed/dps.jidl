@@ -1,0 +1,157 @@
+     package: "https://data-and-trust-alliance-data-provenance-standards/metadata/v1.0"
+  namespaces: [["geo", "https://iso3166/202403/"]]
+       roots: ["DPS-Metadata"]
+
+DPS-Metadata = Record
+   1 source           Source
+   2 provenance       Provenance
+   3 use              Use
+
+Source = Record
+   1 name             String                     // Dataset title/name
+   2 uid              UID                        // Unique metadata identifier
+   3 location         URL optional               // Metadata location
+   4 issuer           Org [1..*]                 // Data issuer
+   5 description      String                     // Description of the dataset
+
+Org = Record
+   1 name             String                     // organization name
+   2 address          String [0..*]              // address line
+
+Provenance = Record
+   1 source_metadata  URL [1..*]                 // Source metadata for dataset
+   2 source           Org optional               // Source
+   3 data_origin      geo:Country-Name [1..*]    // Data origin geography
+   4 issued           Timestamp                  // Dataset issue date
+   5 previous         Timestamp                  // Date of previously-issued version of the dataset
+   6 generation       Generation                 // Range of dates for data generation
+   7 method           Method [1..*]              // Method
+   8 format           MediaType [0..*]           // Data format
+
+Generation = Record
+   1 oldest           Timestamp                  // Oldest component of data contained in the dataset
+   2 youngest         Timestamp                  // Youngest component of data contained in the dataset
+
+Use = Record
+   1 conf             Confidentiality            // Confidentiality Classification
+   2 consent          URL [1..*]                 // Consent documentation location
+   3 pet              Privacy-Tool [1..*]        // Privacy enhancing technologies
+   4 processing       Processing-Geography optional // Data processing geography
+   5 storage          Storage-Geography optional // Data storage geography
+   6 license          ArrayOf(License) unique    // License to use
+   7 intended_use     Intended-Use               // Intended data use
+   8 proprietary_data ArrayOf(Proprietary-Data) unique // Proprietary data presence
+
+Intended-Use = Record
+   1 non_ai           Non-AI-Use unique [1..*]   // Non-AI
+   2 ai               AI-Use unique [1..*]       // AI
+
+Processing-Geography = Record
+   1 same_as_origin   Boolean                    // Data processing geography is the same as data origin geography
+   2 countries        Geography [0..*]
+
+Storage-Geography = Record
+   1 same_as_processing Boolean                  // Data storage geography is the same as data processing geography
+   2 countries        Geography [0..*]
+
+Geography = Record
+   1 inex             Include-Exclude
+   2 country          geo:Country-Name
+
+Include-Exclude = Enumerated
+   1 INCLUDE
+   2 EXCLUDE
+
+UID = Choice(anyOf)
+   1  Binary /uuid                               // uuid::
+
+Privacy-Tool = Record
+   1 tool_id          Tool-ID                    // tool name and version
+   2 technology       Privacy-Technology
+   3 params           MapOf(String, String)      // key-value pair
+
+Tool-ID = String
+
+Confidentiality = Record
+   1 classification   Confidentiality-Classification
+   2 tool_id          Tool-ID [0..*]
+
+Timestamp = Integer /d3                          // Milliseconds since the epoch
+
+URL = String /uri                                // URI designated as a resource locator
+
+Method = Enumerated
+   0 Other
+   1 Web scraping/Crawling
+   2 Feeds
+   3 Syndication
+   4 Data mining
+   5 Machine generated/MLOps
+   6 Social media
+   7 User generated content
+   8 Primary user source
+   9 Data augmentation
+  10 Transfer learning
+  11 Simulations
+
+MediaType = Enumerated
+   0 Other
+   1 application/json
+   2 application/jsonld
+   3 application/zip
+   4 application/msword
+   5 application/vnd.ms-excel
+   6 image/bmp
+   7 image/jpeg
+   8 image/x-png
+   9 image/png
+  10 image/gif
+  11 text/csv
+  12 text/plain
+
+Confidentiality-Classification = Enumerated
+   0 Other
+   1 Personal information (PI)/Demographic
+   2 Payment Card Industry (PCI)
+   3 Personal Financial Information (PFI)
+   4 Personal Health Information (PHI)
+   5 Sensitive Personal Information (SPI)
+
+Privacy-Technology = Enumerated
+   1 Data Anonymization
+   2 Data Encryption
+   3 Data Masking
+   4 Data Minimization
+   5 Data Redaction
+   6 Differential Privacy
+   7 Federated Learning
+   8 Homomorphic Encryption
+   9 K-anonymity
+  10 L-diversity
+  11 Pseudonymization
+  12 Secure Multi-party Computation (SMC)
+  13 T-closeness
+  14 Tokenization
+
+License = Enumerated
+   1 Non-commercial
+   2 Public license
+   3 Commercial/Negotiated License
+
+Non-AI-Use = Enumerated
+   0 Other
+   1 Staging/testing
+   2 Production
+   3 Quality assurance
+
+AI-Use = Enumerated
+   0 Other
+   1 Pre-Training
+   2 Alignment
+   3 Evaluation
+   4 Synthetic Data Generation
+
+Proprietary-Data = Enumerated
+   1 Copyright
+   2 Patent
+   3 Trademark
