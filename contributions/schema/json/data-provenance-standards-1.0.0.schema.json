@@ -423,11 +423,11 @@
       "required": [
         "intended-purpose"
       ]
-    },
-    "required": [
-      "source",
-      "provenance",
-      "use"
-    ]
-  }
+    }
+  },
+  "required": [
+    "source",
+    "provenance",
+    "use"
+  ]
 }
