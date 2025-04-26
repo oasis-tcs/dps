@@ -1,0 +1,18 @@
+- artifact:json-metadata-main.zip:
+
+  + blake2:45a37e7cc8b68d5dfe5be54f6c01f6d30e8609d4d11c20e13147f14ac6b2d1947523d35468a41942690fcc59c6e38ce7fab3587a856018b573d13bdf7d15d654
+  + blake3:7495b62a63e6fe128b5565386c36caa7df6da18b4f1a554bc7edd5bc217ca94e
+  + bytes:7319
+  + crc32:cda196a3
+  + entropy:7.905697
+  + file:(Zip archive data, at least v1.0 to extract, compression method=store)
+  + hex32:504b03040a0000000000bd342a59000000000000000000000000130009006a73
+  + md5:b14952f39cb0d5639df44dccd825b9ea
+  + mime-encoding:(binary)
+  + mime-type:(application/zip)
+  + sha:e1daaacc36a5f8aee5e156f50cc500086c91e4d3
+  + sha256:14a1e5d43061bffe917327cb82105983fb22067cafe0332ae9c1425820b458dc
+  + sha384:7b9029a2a744519322004cd13315b8cd4ab4334b1a06e552c1e3b7af15639c173288f0657efdfbd02ba9c4bc81723b11
+  + sha512:579fac5cbaa80ae939e7010be98b6ba8c58cc1a2710d42c425d5e6ce052ce9c58a882162f3c21e037295e1281d410cb7c216491a205275b8c5742f3c9fd2eed2
+  + ssdeep:192:mSWbwvPkFa6jnK2OWGgabZuz63FGcaMnWTal:ZWIkk6rqWGZIvcaMnWG
+  + tlsh:T1BEE17B5D71110E9AE8A61AFEFAC6964363C57E004A44BBFBB0CA0A9209CF380746951E

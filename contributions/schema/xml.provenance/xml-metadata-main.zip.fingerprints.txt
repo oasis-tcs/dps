@@ -1,0 +1,18 @@
+- artifact:xml-metadata-main.zip:
+
+  + blake2:bfc0d9377f6c786f1a7dd19a4767acb9f4bc33cec3ce4012ee40633c62a602751e39a3815693f173f2d488865686a24117a0061e2d79241f4639f0b4e225be59
+  + blake3:d47faf792f49b856be6d6061e0de53813b9095645b43543ae3f139ad2b6a2aa2
+  + bytes:4489
+  + crc32:de9bf8ba
+  + entropy:7.861072
+  + file:(Zip archive data, at least v1.0 to extract, compression method=store)
+  + hex32:504b03040a00000000007c4dbd5800000000000000000000000012000900786d
+  + md5:515d9f731d8f825e70b26fb122ba045a
+  + mime-encoding:(binary)
+  + mime-type:(application/zip)
+  + sha:b01b7a6bcaabcfedb00e792ac60c631468558ce3
+  + sha256:9b3587c272d348cb222e697b506169ae692ef9921d8ac907ff0b09f35a71c3c0
+  + sha384:c4d457235f7455ad26e0cf3b864e042126d763373779072a5b62878d5880cff86cd244cdd57444d539b8b9f81a01aa9d
+  + sha512:0e1e30bbb3eae6e0b4737d673d01289dca6c45fcae46c7c4960ce9c7a41b082afe656b0eb44b88163ab43578258302ffab9eb1ec26eea24a57a7c3dfb5d32f81
+  + ssdeep:96:F4PKW7H+VvPCIRLPyFa6jnKd6lvMKCZkfrxXMX:6SWbwvPkFa6jnK2OZ
+  + tlsh:T1CC917D8E70321D95D44314FD79E39B67674475040648BB8320CD0D930DCDB90B97AAAE
