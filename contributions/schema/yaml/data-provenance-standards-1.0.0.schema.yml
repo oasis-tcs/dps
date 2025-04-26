@@ -76,7 +76,6 @@ properties:
       sub-provenance: {$ref: /provenance}
     required: [origin-geography, date, generation-method]
     type: object
-  required: [source, provenance, use]
   source:
     description: This describes a dataset and the source of the dataset.
     properties:
@@ -268,5 +267,6 @@ properties:
         uniqueItems: true
     required: [intended-purpose]
     type: object
+required: [source, provenance, use]
 title: Data Provenance Standard 1.0.0
 type: object

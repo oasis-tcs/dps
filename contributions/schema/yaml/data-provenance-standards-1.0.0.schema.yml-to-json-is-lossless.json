@@ -120,11 +120,6 @@
       ],
       "type": "object"
     },
-    "required": [
-      "source",
-      "provenance",
-      "use"
-    ],
     "source": {
       "description": "This describes a dataset and the source of the dataset.",
       "properties": {
@@ -428,6 +423,11 @@
       "type": "object"
     }
   },
+  "required": [
+    "source",
+    "provenance",
+    "use"
+  ],
   "title": "Data Provenance Standard 1.0.0",
   "type": "object"
 }
