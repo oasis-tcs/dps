@@ -1,4 +1,4 @@
-     package: "https://data-and-trust-alliance-data-provenance-standards/metadata/v1.0"
+     package: "https://data-and-trust-alliance-data-provenance-standards/metadata/v1.0/"
   namespaces: [["geo", "https://iso3166/202403/"]]
        roots: ["DPS-Metadata"]
 

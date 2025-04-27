@@ -13,7 +13,7 @@ This promotes design based on content requirements and enables data interoperabi
 technologies and formats. 
 
 This DPS information model is written using the
-[JADN](https://docs.oasis-open.org/openc2/jadn/v2.0/jadn-v2.0.html) schema language developed by the OASIS
+[JADN](https://docs.oasis-open.org/openc2/jadn/v2.0/jadn-v2.0.html) IM language developed by the OASIS
 [OpenC2](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=a34c9baf-48b2-44c5-a567-018dc7d32296) TC.
 
 ## License
@@ -21,8 +21,11 @@ These specifications are released under Creative Commons
 [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
 ## Goal
-Produce a DPS metadata information model that provides the "single source of truth" for metadata designers,
-tool developers, and metadata consumers based on whatever data formats are needed for system compatibility.
+Produce a declarative specification sufficient to construct metadata generator tools, validate provenance
+metadata regardless of how it is created, translate metadata across supported data formats without loss, and
+document the specification in a form suitable for publication. A declarative specification describes
+what a system or program should do without specifying how it should be done. It is used by metadata sources,
+tool developers, and metadata consumers across whatever data formats are needed for system compatibility.
 
 ## Process
 * The Data&Trust Alliance contributed to the DPS TC:
@@ -36,7 +39,117 @@ tool developers, and metadata consumers based on whatever data formats are neede
   * placeholder for [XML Schema](https://groups.oasis-open.org/higherlogic/ws/groups/2c60b2cf-45d3-48cd-8594-0194f182b33d/download/72728)
     and XML examples
 * OpenC2 developers:
-  * Used the Metadata Generation Tool to [design](Designed) an IM based on metadata content requirements
-  * Used the JSON Schema to mechanically [derive](Generated) an incomplete, or "template" IM
+  * Examined the Metadata Generator to [design](Designed) an IM based on requirements inferred from its user interface,
+    focused on capturing intent and desired capabilities.
+  * Translated the JSON Schema to [derive](FromJSON) an initial IM, ensuring completeness with respect to
+    as-built implementation.
+  * Compared the designed and derived IMs to identify gaps/deficiencies of each and inconsistencies between them.
+  * Produced a candidate information model for use by the DPS TC
 
-## Results
+## Gap Analysis
+
+Modular building blocks designed for reuse.
+
+Metadata Generator:
+
+![](images/title.jpg)
+
+### Designed IM
+Design is a human process involving pattern recognition, judgement calls among multiple options
+and the likelihood of errors and omissions.
+
+```
+Source = Record
+   1 name             String                     // Dataset title/name
+   2 uid              UID                        // Unique metadata identifier
+   3 location         URL optional               // Metadata location
+   4 issuer           Org [1..*]                 // Data issuer
+   5 description      String                     // Description of the dataset
+
+UID = Choice(anyOf)
+   1  Binary /uuid                               // uuid::
+
+Org = Record
+   1 name             String                     // organization name
+   2 address          String [0..*]              // address line
+```
+
+* The Dataset field could be called "name" or "title"; we chose name while the
+JSON Schema used title; neither is evident from looking at the Generator.
+Either one works of course, but the TC will need to decide which is clearest.
+* The Unique metadata identifier uses UUID as an example, but the JSON Schema allows
+any string, including absurd examples such as the Gettysburg Address, in that field. The designed IM defines
+a UID type which could be an RFC 4122 UUID, and the TC can add other identifiers
+such as URLs as driven by use cases, while still not considering the Gettysburg Address
+to be a valid identifier.  For String fields like the Dataset name, JADN applies a
+default max length of 255 characters unless overridden by an explicit max length.
+* A UUID is a 128 bit value which in JSON data is the RFC 4122 hex-with-dashes text
+representation. An information model defines the native values of all types,
+and in binary data formats like CBOR or transmission formats like HTTP2 the native
+data is used rather than a text representation.
+* The Data issuer field is an "Organization" with a name and 0 or more address lines
+as seen in the Generator. JADN includes multiplicity syntactic sugar [1..*] to make
+information models more compact. Multiplicity yields extra array types when converting
+an IM to JSON Schema.
+* All JADN types have a name which makes them reusable and supports the "Don't Repeat
+Yourself" design principle. In the Generator both Source/Data-issuer and
+Provenance/Source use a single Org type, in contrast to the JSON Schema which
+defines a new type each time it is used.
+
+### Derived IM
+
+* Within JSON Schema the \$defs keyword provides a standardized way to define reusable
+subschemas within a single schema document, promoting modularity, reducing code duplication,
+and improving schema organization. An IM defines a name for each type and generating a
+JSON Schema from an IM preserves those names. The D&TA schema does not use $defs so all
+types are anonymous. For some types it is possible to guess a type name by capitalizing
+its property name, but for others, particularly the root type (e.g., DPS-Metadata) the
+JSON Schema provides nothing to support a guess.
+* The Generator tool does not have a "version" field in the Source section but the JSON Schema
+(and JSON metadata) does. The TC may choose to retain it, but the schema version applies
+to the entire schema and would typically be specified at an outer level or in a header
+rather than as a field of a subtype.
+* As mentioned above, without named types there is no "Organization" type that can be reused
+as properties of both Source and Provenance.
+
+```
+Root.source = Record                             // This describes a dataset and the source of the dataset.
+   1 version          String                     // Specifies the version of the schema or standards used to 
+   2 title            String                     // The official name of the dataset, which should be descri
+   3 id               String                     // A distinct identifier (such as a UUID) assigned to the d
+   4 location         String optional            // The web address where the dataset's metadata is publishe
+   5 issuer           Issuer                     // The legal entity responsible for creating the dataset, p
+   6 description      String                     // Contains a detailed narrative that explains the contents
+
+Issuer = ArrayOf(Issuer-item){1..*}              // The legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries.
+
+Issuer-item = Record
+   1 name             String
+   2 address          Address optional
+
+Address = ArrayOf(String)
+```
+
+![](images/title.jpg)
+
+* The Generator tool supports countries (ISO 3166-1) but not subdivisions within countries
+  (ISO 3166-2). The JSON Schema and its derived IM supports both country and state but
+  allows any string as values. The purpose of using an IM is to:
+  * design an IM that supports both country and state
+  * validate the allowed values of countries and their states using references to ISO 3166, and
+  * control the Generator user interface to ensure that it remains synced with schemas and data
+
+Derived IM:
+```
+Origin-geography = ArrayOf(Origin-geography-item){1..*} // The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.
+
+Origin-geography-item = Record
+   1 country          String
+   2 state            String optional
+```
+Desired IM:
+```
+Location = Record
+   1 country          geo:CountryName                         // Codelist IM derived from ISO-3166-1
+   2 state            geo:StateName(TagId[country]) optional  // Choice indexed by country - TBD
+```
