@@ -4,7 +4,7 @@ The OASIS Data Provenance Standards
 ([DPS](https://docs.google.com/document/d/1FswDKOteTbMfBU9bfQGO9xH2MIRwaAcx))
 Technical Committee will define a standardized format for provenance metadata that captures
 where data comes from, how it is created, and whether it can be used legally.
-The TC work product should be a declarative specification that describes what a system or program
+The Metadata work product should be a declarative specification that describes what a system or program
 should do without specifying how it should be done.
 
 An information model (IM) is a declarative specification that defines the essential content
@@ -36,16 +36,13 @@ These specifications are released under Creative Commons
   * placeholder for [XML Schema](https://groups.oasis-open.org/higherlogic/ws/groups/2c60b2cf-45d3-48cd-8594-0194f182b33d/download/72728)
     and XML examples
 * OpenC2 developers:
-  * Examined the Metadata Generator to [design](Designed) an IM based on requirements inferred from its user interface,
+  * Examined the Metadata Generator to **design** an IM based on requirements inferred from its user interface,
     focused on capturing intent and desired capabilities.
-  * Translated the JSON Schema to [derive](FromJSON) an initial IM, ensuring completeness with respect to
-    as-built implementation.
-  * Compared the designed and derived IMs to identify gaps/deficiencies of each and inconsistencies between them.
-  * Produced a candidate information model for use by the DPS TC
+  * Translated the JSON Schema to **generate** an IM, to put the initial schema in IM format.
+  * Compared the designed and generated IMs to identify gaps/deficiencies of each and inconsistencies between them.
+  * Produced a **draft** IM based on the gap analysis for use in the Metadata specification.
 
 ## Gap Analysis
-
-Modular building blocks designed for reuse.
 
 Metadata Generator:
 
@@ -53,7 +50,11 @@ Metadata Generator:
 
 ### Designed IM
 Design is a human process involving pattern recognition, judgement calls among multiple options
-and the likelihood of errors and omissions.
+and the likelihood of errors and omissions. The [designed IM](Designed/dps.jidl) was created by *analyzing*
+the user interface of the online Metadata Generator and modeling the information needed to replicate that
+UI. Alternatively an IM can be *synthesized* by white-boarding what a tool should look like,
+then using an application-specific declarative IM to instantiate the desired tool using a general purpose
+spec-driven toolkit written in any programming language and UI library.
 
 ```
 Source = Record
@@ -93,7 +94,7 @@ Yourself" design principle. In the Generator both Source/Data-issuer and
 Provenance/Source use a single Org type, in contrast to the JSON Schema which
 defines a new type each time it is used.
 
-### Derived IM
+### Generated IM
 
 * Within JSON Schema the \$defs keyword provides a standardized way to define reusable
 subschemas within a single schema document, promoting modularity, reducing code duplication,
@@ -134,7 +135,7 @@ Address = ArrayOf(String)
   * validate the allowed values of countries and their states using references to ISO 3166, and
   * control the Generator user interface to ensure that it remains synced with schemas and data
 
-Derived IM:
+Generated IM:
 ```
 Origin-geography = ArrayOf(Origin-geography-item){1..*} // The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.
 
