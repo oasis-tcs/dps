@@ -1,37 +1,34 @@
 # An Information Model for DPS
 
-The [Data&Trust Alliance](https://dataandtrustalliance.org/)
-initiated creation of the OASIS Data Provenance Standards
+The OASIS Data Provenance Standards
 ([DPS](https://docs.google.com/document/d/1FswDKOteTbMfBU9bfQGO9xH2MIRwaAcx))
-Technical Committee.
-Among the TC's work products is a standard for provenance metadata that captures
+Technical Committee will define a standardized format for provenance metadata that captures
 where data comes from, how it is created, and whether it can be used legally.
+The TC work product should be a declarative specification that describes what a system or program
+should do without specifying how it should be done.
 
-An information model (IM) defines the essential content of data items (messages, documents,
-structures, database values) stored or exchanged by applications independently of data format.
-This promotes design based on content requirements and enables data interoperability across
-technologies and formats. 
+An information model (IM) is a declarative specification that defines the essential content
+of data items (messages, documents, structures, database values) independently of data format.
+A DPS information model would be a single source of truth used to construct metadata generator
+tools, validate provenance metadata regardless of how it is created, translate metadata across
+multiple supported data formats without loss, and document the DPS specification in a form
+suitable for publication.
 
-This DPS information model is written using the
-[JADN](https://docs.oasis-open.org/openc2/jadn/v2.0/jadn-v2.0.html) IM language developed by the OASIS
-[OpenC2](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=a34c9baf-48b2-44c5-a567-018dc7d32296) TC.
+[JADN](https://docs.oasis-open.org/openc2/jadn/v2.0/jadn-v2.0.html)
+is an information modeling language created by the OASIS
+[OpenC2](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=a34c9baf-48b2-44c5-a567-018dc7d32296)
+TC to define the Open Command and Control cybersecurity protocol.
+This document describes how JADN could be used to define and document DPS metadata.
 
 ## License
 These specifications are released under Creative Commons
 [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
-## Goal
-Produce a declarative specification sufficient to construct metadata generator tools, validate provenance
-metadata regardless of how it is created, translate metadata across supported data formats without loss, and
-document the specification in a form suitable for publication. A declarative specification describes
-what a system or program should do without specifying how it should be done. It is used by metadata sources,
-tool developers, and metadata consumers across whatever data formats are needed for system compatibility.
-
 ## Process
 * The Data&Trust Alliance contributed to the DPS TC:
   * Metadata Generation
     [software](https://groups.oasis-open.org/higherlogic/ws/groups/2c60b2cf-45d3-48cd-8594-0194f182b33d/documents/dps3709/document?document_id=72724)
-    and online [metadata generator](https://data-and-trust-alliance-data-provenance-standards.northeurope.cloudapp.azure.com/)
+    and an online [metadata generator](https://data-and-trust-alliance-data-provenance-standards.northeurope.cloudapp.azure.com/)
     that produces JSON, YAML, XML and CSV metadata files.
   * preliminary
     [JSON Schema](https://groups.oasis-open.org/higherlogic/ws/groups/2c60b2cf-45d3-48cd-8594-0194f182b33d/download/72727)
@@ -130,8 +127,6 @@ Issuer-item = Record
 Address = ArrayOf(String)
 ```
 
-![](images/title.jpg)
-
 * The Generator tool supports countries (ISO 3166-1) but not subdivisions within countries
   (ISO 3166-2). The JSON Schema and its derived IM supports both country and state but
   allows any string as values. The purpose of using an IM is to:
@@ -153,3 +148,5 @@ Location = Record
    1 country          geo:CountryName                         // Codelist IM derived from ISO-3166-1
    2 state            geo:StateName(TagId[country]) optional  // Choice indexed by country - TBD
 ```
+
+![](images/geography.jpg)
