@@ -35,6 +35,9 @@ This document is released under the Creative Commons
     and placeholder for JSON examples
   * placeholder for [XML Schema](https://groups.oasis-open.org/higherlogic/ws/groups/2c60b2cf-45d3-48cd-8594-0194f182b33d/download/72728)
     and XML examples
+  
+*NOTE: This description will be updated to reference the newly-contributed JSON, XML and YAML schemas*
+
 * OpenC2 developers:
   * Examined the Metadata Generator to **design** an [IM](Schemas/Designed) based on requirements inferred from its user interface,
     focused on capturing intent and desired capabilities.
