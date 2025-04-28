@@ -74,19 +74,19 @@ Org = Record
 
 * The Dataset field could be called "name" or "title"; we chose name while the
 JSON Schema used title; neither is evident from looking at the Generator.
-Either one works of course, but the TC will need to decide which is clearest.
+Either one works of course, but the TC will decide which is clearest.
 * The Unique metadata identifier uses UUID as an example, but the JSON Schema allows
-any string, including absurd examples such as the Gettysburg Address, in that field. The designed IM defines
-a UID type which could be an RFC 4122 UUID, and the TC can add other identifiers
-such as URLs as driven by use cases, while still not considering the Gettysburg Address
-to be a valid identifier.  For String fields like the Dataset name, JADN applies a
+any string, including absurd examples such as the Gettysburg Address, in that field.
+The designed IM defines a UID type which could be an RFC 4122 UUID, and the TC can add other
+identifiers such as URLs as driven by use cases, while still not considering the Gettysburg
+Address to be a valid identifier. For String fields like the Dataset name, JADN applies a
 default max length of 255 characters unless overridden by an explicit max length.
 * A UUID is a 128 bit value which in JSON data is the RFC 4122 hex-with-dashes text
 representation. An information model defines the native values of all types,
 and in binary data formats like CBOR or transmission formats like HTTP2 the native
 data is used rather than a text representation.
 * The Data issuer field is an "Organization" with a name and 0 or more address lines
-as seen in the Generator. JADN includes multiplicity syntactic sugar [1..*] to make
+as seen in the Generator. JADN includes multiplicity syntactic sugar `[1..*]` to make
 information models more compact. Multiplicity yields extra array types when converting
 an IM to JSON Schema.
 * All JADN types have a name which makes them reusable and supports the "Don't Repeat
@@ -119,7 +119,7 @@ Root.source = Record                             // This describes a dataset and
    5 issuer           Issuer                     // The legal entity responsible for creating the dataset, p
    6 description      String                     // Contains a detailed narrative that explains the contents
 
-Issuer = ArrayOf(Issuer-item){1..*}              // The legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries.
+Issuer = ArrayOf(Issuer-item){1..*}              // The legal entity responsible for creating the dataset, p
 
 Issuer-item = Record
    1 name             String
@@ -137,7 +137,7 @@ Address = ArrayOf(String)
 
 Generated IM:
 ```
-Origin-geography = ArrayOf(Origin-geography-item){1..*} // The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.
+Origin-geography = ArrayOf(Origin-geography-item){1..*} // The geographical location where the data was orig
 
 Origin-geography-item = Record
    1 country          String
