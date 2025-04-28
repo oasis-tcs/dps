@@ -21,7 +21,7 @@ TC to define the Open Command and Control cybersecurity protocol.
 This document describes how JADN could be used to define and document DPS metadata.
 
 ## License
-These specifications are released under Creative Commons
+This document is released under the Creative Commons
 [CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
 ## Process
