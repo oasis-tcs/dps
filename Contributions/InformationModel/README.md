@@ -36,11 +36,11 @@ This document is released under the Creative Commons
   * placeholder for [XML Schema](https://groups.oasis-open.org/higherlogic/ws/groups/2c60b2cf-45d3-48cd-8594-0194f182b33d/download/72728)
     and XML examples
 * OpenC2 developers:
-  * Examined the Metadata Generator to **design** an IM based on requirements inferred from its user interface,
+  * Examined the Metadata Generator to **design** an [IM](Schemas/Designed) based on requirements inferred from its user interface,
     focused on capturing intent and desired capabilities.
-  * Translated the JSON Schema to **generate** an IM, to put the initial schema in IM format.
+  * Translated the JSON Schema to **generate** an [IM](Schemas/Generated), to put the initial schema in IM format.
   * Compared the designed and generated IMs to identify gaps/deficiencies of each and inconsistencies between them.
-  * Produced a **draft** IM based on the gap analysis for use in the Metadata specification.
+  * Produced a **draft** [IM](Schemas/DPS) based on the gap analysis for use in the Metadata specification.
 
 ## Gap Analysis
 
@@ -50,7 +50,7 @@ Metadata Generator:
 
 ### Designed IM
 Design is a human process involving pattern recognition, judgement calls among multiple options
-and the likelihood of errors and omissions. The [designed IM](Designed/dps.jidl) was created by *analyzing*
+and the likelihood of errors and omissions. The [designed IM](Schemas/Designed/dps.jidl) was created by *analyzing*
 the user interface of the online Metadata Generator and modeling the information needed to replicate that
 UI. Alternatively an IM can be *synthesized* by white-boarding what a tool should look like,
 then using an application-specific declarative IM to instantiate the desired tool using a general purpose
