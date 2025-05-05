@@ -53,7 +53,7 @@ Metadata Generator:
 
 ### Designed IM
 Design is a human process involving pattern recognition, judgement calls among multiple options
-and the likelihood of errors and omissions. The [designed IM](Schemas/Designed/dps.jidl) was created by *analyzing*
+and the likelihood of errors and omissions. The [designed IM](Schemas/Designed/dps-designed.jidl) was created by *analyzing*
 the user interface of the online Metadata Generator and modeling the information needed to replicate that
 UI. Alternatively an IM can be *synthesized* by white-boarding what a tool should look like,
 then using an application-specific declarative IM to instantiate the desired tool using a general purpose

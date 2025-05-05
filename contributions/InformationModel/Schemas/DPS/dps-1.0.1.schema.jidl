@@ -1,0 +1,165 @@
+     package: "https://docs.oasis-open.org/dps/v1.0/schema/"
+     version: "csd01"
+ jadn_version: "http://oasis-open.org/openc2/jadn/v2.0/schema/"
+  namespaces: [["geo", "https://iso3166/202403/"]]
+       roots: ["DPS-Metadata"]
+ description: "Information Schema for Data Provenance Standard Metadata"
+
+DPS-Metadata = Record
+   1 version          URL                       // Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time.
+   2 metadata         Metadata                  // The metadata about a dataset.
+
+Metadata = Record                               // The Data Provenance Standard Metadata
+   1 source           Source                    // Describes a dataset and the source of the dataset.
+   2 provenance       Provenance                // Provenance of the dataset.
+   3 use              Use                       // Legal use and restrictions.
+
+Source = Record
+   1 title            String                     // The official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose.
+   2 id               UID                        // Unique metadata identifier
+   3 location         URL optional               // Metadata location
+   4 issuer           Org [1..*]                 // Data issuer  (many?)
+   5 description      String                     // Description of the dataset
+
+Org = Record
+   1 name             String                     // organization name
+   2 address          Address                    // address
+
+Address = ArrayOf(String)                        // Just lines for now, enable structured definition
+
+Provenance = Record
+   1 source           URL [1..*]                 // Source metadata for dataset
+   2 origin           Org optional               // Source
+   3 origin-geography geo:Country-Name [1..*]    // Data origin geography
+   4 date             Timestamp                  // Dataset issue date
+   5 previous-date    Timestamp                  // Date of previously-issued version of the dataset
+   6 generation-period Generation                // Range of dates for data generation
+   7 generation-method Method [1..*]             // Method (code/system/description?)
+   8 format           MediaType [0..*]           // Data format
+   9 sub-provenance   Link(Provenance)
+
+Generation = Record
+   1 oldest           Timestamp                  // Oldest component of data contained in the dataset
+   2 youngest         Timestamp                  // Youngest component of data contained in the dataset
+
+Use = Record
+   1 classification   Confidentiality            // Confidentiality Classification
+   2 consent          URL [1..*]                 // Consent documentation location
+   3 privacy-enhancing Privacy-Tool [1..*]        // Privacy enhancing technologies
+   4 processing       Processing-Geography optional // Data processing geography
+   5 storage          Storage-Geography optional // Data storage geography
+   6 license          ArrayOf(License) unique    // License to use
+   7 intended_purpose Intended-Use               // Intended data use
+   8 copyright        String [0..*]              // Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright.
+   9 patent           String [0..*]              // Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.
+  10 trademark        String [0..*]              // Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark.
+
+Intended-Use = Record
+   1 non_ai           Non-AI-Use unique [1..*]   // Non-AI
+   2 ai               AI-Use unique [1..*]       // AI
+
+Processing-Geography = Record
+   1 same_as_origin   Boolean                    // Data processing geography is the same as data origin geography
+   2 countries        Geography [0..*]
+
+Storage-Geography = Record
+   1 same_as_processing Boolean                  // Data storage geography is the same as data processing geography
+   2 countries        Geography [0..*]
+
+Geography = Record
+   1 country          geo:Country-Name
+   2 state            geo:State-Name optional
+
+UID = Choice(anyOf)
+   1  Binary /uuid                               // uuid::
+
+Privacy-Tool = Record
+   1 tool_id          Tool-ID                    // tool name and version
+   2 technology       Privacy-Technology
+   3 params           MapOf(String, String)      // key-value pair
+
+Tool-ID = String
+
+Confidentiality = Record
+   1 classification   Confidentiality-Classification
+   2 tool_id          Tool-ID [0..*]
+
+Timestamp = Integer /d3                          // Milliseconds since the epoch
+
+URL = String /uri                                // URI designated as a resource locator
+
+Method = Enumerated
+   0 Other
+   1 Web scraping/Crawling
+   2 Feeds
+   3 Syndication
+   4 Data mining
+   5 Machine generated/MLOps
+   6 Social media
+   7 User generated content
+   8 Primary user source
+   9 Data augmentation
+  10 Transfer learning
+  11 Simulations
+
+MediaType = Enumerated
+   0 Other
+   1 application/json
+   2 application/jsonld
+   3 application/zip
+   4 application/msword
+   5 application/vnd.ms-excel
+   6 image/bmp
+   7 image/jpeg
+   8 image/x-png
+   9 image/png
+  10 image/gif
+  11 text/csv
+  12 text/plain
+
+Confidentiality-Classification = Enumerated
+   0 Other
+   1 Personal information (PI)/Demographic
+   2 Payment Card Industry (PCI)
+   3 Personal Financial Information (PFI)
+   4 Personal Health Information (PHI)
+   5 Sensitive Personal Information (SPI)
+
+Privacy-Technology = Enumerated
+   1 Data Anonymization
+   2 Data Encryption
+   3 Data Masking
+   4 Data Minimization
+   5 Data Redaction
+   6 Differential Privacy
+   7 Federated Learning
+   8 Homomorphic Encryption
+   9 K-anonymity
+  10 L-diversity
+  11 Pseudonymization
+  12 Secure Multi-party Computation (SMC)
+  13 T-closeness
+  14 Tokenization
+
+License = Enumerated
+   1 Non-commercial
+   2 Public license
+   3 Commercial/Negotiated License
+
+Non-AI-Use = Enumerated
+   0 Other
+   1 Staging/testing
+   2 Production
+   3 Quality assurance
+
+AI-Use = Enumerated
+   0 Other
+   1 Pre-Training
+   2 Alignment
+   3 Evaluation
+   4 Synthetic Data Generation
+
+Proprietary-Data = Enumerated
+   1 Copyright
+   2 Patent
+   3 Trademark
