@@ -1,0 +1,247 @@
+# package: https://docs.oasis-open.org/dps/v1.0/schema/
+# version: csd01
+# jadn_version: http://oasis-open.org/openc2/jadn/v2.0/schema/
+# namespaces: [['geo', 'https://iso3166/202403/']]
+# roots: ['DPS-Metadata']
+# description: Information Schema for Data Provenance Standard Metadata
+# config: {'$FieldName': '^[$a-z][-_$A-Za-z0-9]{0,63}$'}
+
+digraph G {
+  graph [fontname=Arial, fontsize=12];
+  node [fontname=Arial, fontsize=8, shape=plain, style=filled, fillcolor=lightskyblue1];
+  edge [fontname=Arial, fontsize=7, arrowsize=0.5, labelangle=45.0, labeldistance=0.9];
+  bgcolor="transparent";
+
+n0 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  DPS-Metadata : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 version : URL  </td></tr>
+  <tr><td align="left">  2 metadata : Metadata  </td></tr>
+</table>>]
+
+n1 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Metadata : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 source : Source  </td></tr>
+  <tr><td align="left">  2 provenance : Provenance  </td></tr>
+  <tr><td align="left">  3 use : Use  </td></tr>
+</table>>]
+
+n2 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Source : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 title : String  </td></tr>
+  <tr><td align="left">  2 id : UID  </td></tr>
+  <tr><td align="left">  3 location : URL [0..1]  </td></tr>
+  <tr><td align="left">  4 issuer : Org [1..*]  </td></tr>
+  <tr><td align="left">  5 description : String  </td></tr>
+</table>>]
+
+n3 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Org : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 name : String  </td></tr>
+  <tr><td align="left">  2 address : Address  </td></tr>
+</table>>]
+
+n4 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Address : ArrayOf(String)  </b></td></tr>
+</table>>]
+
+n5 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Provenance : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 source : URL [1..*]  </td></tr>
+  <tr><td align="left">  2 origin : Org [0..1]  </td></tr>
+  <tr><td align="left">  3 origin-geography : geo:Country-Name [1..*]  </td></tr>
+  <tr><td align="left">  4 date : Timestamp  </td></tr>
+  <tr><td align="left">  5 previous-date : Timestamp  </td></tr>
+  <tr><td align="left">  6 generation-period : Generation  </td></tr>
+  <tr><td align="left">  7 generation-method : Method [1..*]  </td></tr>
+  <tr><td align="left">  8 format : MediaType [0..*]  </td></tr>
+  <tr><td align="left">  9 sub-provenance : Provenance  </td></tr>
+</table>>]
+
+n6 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Generation : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 oldest : Timestamp  </td></tr>
+  <tr><td align="left">  2 youngest : Timestamp  </td></tr>
+</table>>]
+
+n7 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Use : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 classification : Confidentiality  </td></tr>
+  <tr><td align="left">  2 consent : URL [1..*]  </td></tr>
+  <tr><td align="left">  3 privacy-enhancing : Privacy-Tool [1..*]  </td></tr>
+  <tr><td align="left">  4 processing : Processing-Geography [0..1]  </td></tr>
+  <tr><td align="left">  5 storage : Storage-Geography [0..1]  </td></tr>
+  <tr><td align="left">  6 license : ArrayOf(License) unique  </td></tr>
+  <tr><td align="left">  7 intended_purpose : Intended-Use  </td></tr>
+  <tr><td align="left">  8 copyright : String [0..*]  </td></tr>
+  <tr><td align="left">  9 patent : String [0..*]  </td></tr>
+  <tr><td align="left">  10 trademark : String [0..*]  </td></tr>
+</table>>]
+
+n8 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Intended-Use : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 non_ai : Non-AI-Use unique [1..*]  </td></tr>
+  <tr><td align="left">  2 ai : AI-Use unique [1..*]  </td></tr>
+</table>>]
+
+n9 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Processing-Geography : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 same_as_origin : Boolean  </td></tr>
+  <tr><td align="left">  2 countries : Geography [0..*]  </td></tr>
+</table>>]
+
+n10 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Storage-Geography : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 same_as_processing : Boolean  </td></tr>
+  <tr><td align="left">  2 countries : Geography [0..*]  </td></tr>
+</table>>]
+
+n11 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Geography : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 country : geo:Country-Name  </td></tr>
+  <tr><td align="left">  2 state : geo:State-Name [0..1]  </td></tr>
+</table>>]
+
+n12 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  UID : Choice(anyOf)  </b></td></tr><hr/>
+  <tr><td align="left">  1  : Binary /uuid  </td></tr>
+</table>>]
+
+n13 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Privacy-Tool : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 tool_id : Tool-ID  </td></tr>
+  <tr><td align="left">  2 technology : Privacy-Technology  </td></tr>
+  <tr><td align="left">  3 params : MapOf(String, String)  </td></tr>
+</table>>]
+
+n14 [label=<<b>Tool-ID : String</b>>, shape=ellipse, style=filled, fillcolor=palegreen]
+
+n15 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Confidentiality : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 classification : Confidentiality-Classification  </td></tr>
+  <tr><td align="left">  2 tool_id : Tool-ID [0..*]  </td></tr>
+</table>>]
+
+n16 [label=<<b>Timestamp : Integer /d3</b>>, shape=ellipse, style=filled, fillcolor=palegreen]
+
+n17 [label=<<b>URL : String /uri</b>>, shape=ellipse, style=filled, fillcolor=palegreen]
+
+n18 [fillcolor=palegreen, label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Method : Enumerated  </b></td></tr><hr/>
+  <tr><td align="left">  0 Other  </td></tr>
+  <tr><td align="left">  1 Web scraping/Crawling  </td></tr>
+  <tr><td align="left">  2 Feeds  </td></tr>
+  <tr><td align="left">  3 Syndication  </td></tr>
+  <tr><td align="left">  4 Data mining  </td></tr>
+  <tr><td align="left">  5 Machine generated/MLOps  </td></tr>
+  <tr><td align="left">  6 Social media  </td></tr>
+  <tr><td align="left">  7 User generated content  </td></tr>
+  <tr><td align="left">  8 Primary user source  </td></tr>
+  <tr><td align="left">  9 Data augmentation  </td></tr>
+  <tr><td align="left">  10 Transfer learning  </td></tr>
+  <tr><td align="left">  11 Simulations  </td></tr>
+</table>>]
+
+n19 [fillcolor=palegreen, label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  MediaType : Enumerated  </b></td></tr><hr/>
+  <tr><td align="left">  0 Other  </td></tr>
+  <tr><td align="left">  1 application/json  </td></tr>
+  <tr><td align="left">  2 application/jsonld  </td></tr>
+  <tr><td align="left">  3 application/zip  </td></tr>
+  <tr><td align="left">  4 application/msword  </td></tr>
+  <tr><td align="left">  5 application/vnd.ms-excel  </td></tr>
+  <tr><td align="left">  6 image/bmp  </td></tr>
+  <tr><td align="left">  7 image/jpeg  </td></tr>
+  <tr><td align="left">  8 image/x-png  </td></tr>
+  <tr><td align="left">  9 image/png  </td></tr>
+  <tr><td align="left">  10 image/gif  </td></tr>
+  <tr><td align="left">  11 text/csv  </td></tr>
+  <tr><td align="left">  12 text/plain  </td></tr>
+</table>>]
+
+n20 [fillcolor=palegreen, label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Confidentiality-Classification : Enumerated  </b></td></tr><hr/>
+  <tr><td align="left">  0 Other  </td></tr>
+  <tr><td align="left">  1 Personal information (PI)/Demographic  </td></tr>
+  <tr><td align="left">  2 Payment Card Industry (PCI)  </td></tr>
+  <tr><td align="left">  3 Personal Financial Information (PFI)  </td></tr>
+  <tr><td align="left">  4 Personal Health Information (PHI)  </td></tr>
+  <tr><td align="left">  5 Sensitive Personal Information (SPI)  </td></tr>
+</table>>]
+
+n21 [fillcolor=palegreen, label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Privacy-Technology : Enumerated  </b></td></tr><hr/>
+  <tr><td align="left">  1 Data Anonymization  </td></tr>
+  <tr><td align="left">  2 Data Encryption  </td></tr>
+  <tr><td align="left">  3 Data Masking  </td></tr>
+  <tr><td align="left">  4 Data Minimization  </td></tr>
+  <tr><td align="left">  5 Data Redaction  </td></tr>
+  <tr><td align="left">  6 Differential Privacy  </td></tr>
+  <tr><td align="left">  7 Federated Learning  </td></tr>
+  <tr><td align="left">  8 Homomorphic Encryption  </td></tr>
+  <tr><td align="left">  9 K-anonymity  </td></tr>
+  <tr><td align="left">  10 L-diversity  </td></tr>
+  <tr><td align="left">  11 Pseudonymization  </td></tr>
+  <tr><td align="left">  12 Secure Multi-party Computation (SMC)  </td></tr>
+  <tr><td align="left">  13 T-closeness  </td></tr>
+  <tr><td align="left">  14 Tokenization  </td></tr>
+</table>>]
+
+n22 [fillcolor=palegreen, label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  License : Enumerated  </b></td></tr><hr/>
+  <tr><td align="left">  1 Non-commercial  </td></tr>
+  <tr><td align="left">  2 Public license  </td></tr>
+  <tr><td align="left">  3 Commercial/Negotiated License  </td></tr>
+</table>>]
+
+n23 [fillcolor=palegreen, label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Non-AI-Use : Enumerated  </b></td></tr><hr/>
+  <tr><td align="left">  0 Other  </td></tr>
+  <tr><td align="left">  1 Staging/testing  </td></tr>
+  <tr><td align="left">  2 Production  </td></tr>
+  <tr><td align="left">  3 Quality assurance  </td></tr>
+</table>>]
+
+n24 [fillcolor=palegreen, label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  AI-Use : Enumerated  </b></td></tr><hr/>
+  <tr><td align="left">  0 Other  </td></tr>
+  <tr><td align="left">  1 Pre-Training  </td></tr>
+  <tr><td align="left">  2 Alignment  </td></tr>
+  <tr><td align="left">  3 Evaluation  </td></tr>
+  <tr><td align="left">  4 Synthetic Data Generation  </td></tr>
+</table>>]
+
+  n0 -> n17 [label=version, headlabel="1", taillabel="1"]
+  n0 -> n1 [label=metadata, headlabel="1", taillabel="1"]
+  n1 -> n2 [label=source, headlabel="1", taillabel="1"]
+  n1 -> n5 [label=provenance, headlabel="1", taillabel="1"]
+  n1 -> n7 [label=use, headlabel="1", taillabel="1"]
+  n2 -> n12 [label=id, headlabel="1", taillabel="1"]
+  n2 -> n17 [label=location, headlabel="0..1", taillabel="1"]
+  n2 -> n3 [label=issuer, headlabel="1..*", taillabel="1"]
+  n3 -> n4 [label=address, headlabel="1", taillabel="1"]
+  n5 -> n17 [label=source, headlabel="1..*", taillabel="1"]
+  n5 -> n3 [label=origin, headlabel="0..1", taillabel="1"]
+  n5 -> n16 [label=date, headlabel="1", taillabel="1"]
+  n5 -> n16 [label=previous_date, headlabel="1", taillabel="1"]
+  n5 -> n6 [label=generation_period, headlabel="1", taillabel="1"]
+  n5 -> n18 [label=generation_method, headlabel="1..*", taillabel="1"]
+  n5 -> n19 [label=format, headlabel="0..*", taillabel="1"]
+  n5 -> n5 [label=sub_provenance, headlabel="1", taillabel="1"]
+  n6 -> n16 [label=oldest, headlabel="1", taillabel="1"]
+  n6 -> n16 [label=youngest, headlabel="1", taillabel="1"]
+  n7 -> n15 [label=classification, headlabel="1", taillabel="1"]
+  n7 -> n17 [label=consent, headlabel="1..*", taillabel="1"]
+  n7 -> n13 [label=privacy_enhancing, headlabel="1..*", taillabel="1"]
+  n7 -> n9 [label=processing, headlabel="0..1", taillabel="1"]
+  n7 -> n10 [label=storage, headlabel="0..1", taillabel="1"]
+  n7 -> n22 [label=license, headlabel="1", taillabel="1"]
+  n7 -> n8 [label=intended_purpose, headlabel="1", taillabel="1"]
+  n8 -> n23 [label=non_ai, headlabel="1..*", taillabel="1"]
+  n8 -> n24 [label=ai, headlabel="1..*", taillabel="1"]
+  n9 -> n11 [label=countries, headlabel="0..*", taillabel="1"]
+  n10 -> n11 [label=countries, headlabel="0..*", taillabel="1"]
+  n13 -> n14 [label=tool_id, headlabel="1", taillabel="1"]
+  n13 -> n21 [label=technology, headlabel="1", taillabel="1"]
+  n15 -> n20 [label=classification, headlabel="1", taillabel="1"]
+  n15 -> n14 [label=tool_id, headlabel="0..*", taillabel="1"]
+}

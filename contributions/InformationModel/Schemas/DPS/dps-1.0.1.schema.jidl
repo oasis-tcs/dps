@@ -1,18 +1,19 @@
      package: "https://docs.oasis-open.org/dps/v1.0/schema/"
      version: "csd01"
- jadn_version: "http://oasis-open.org/openc2/jadn/v2.0/schema/"
+ description: "Information Schema for Data Provenance Standard Metadata"
   namespaces: [["geo", "https://iso3166/202403/"]]
        roots: ["DPS-Metadata"]
- description: "Information Schema for Data Provenance Standard Metadata"
+      config: {"$FieldName": "^[$a-z][-_$A-Za-z0-9]{0,63}$"}
+jadn_version: "http://oasis-open.org/openc2/jadn/v2.0/schema/"
 
 DPS-Metadata = Record
-   1 version          URL                       // Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time.
-   2 metadata         Metadata                  // The metadata about a dataset.
+   1 version          URL                        // Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time.
+   2 metadata         Metadata                   // The metadata about a dataset.
 
-Metadata = Record                               // The Data Provenance Standard Metadata
-   1 source           Source                    // Describes a dataset and the source of the dataset.
-   2 provenance       Provenance                // Provenance of the dataset.
-   3 use              Use                       // Legal use and restrictions.
+Metadata = Record                                // The Data Provenance Standard Metadata
+   1 source           Source                     // Describes a dataset and the source of the dataset.
+   2 provenance       Provenance                 // Provenance of the dataset.
+   3 use              Use                        // Legal use and restrictions.
 
 Source = Record
    1 title            String                     // The official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose.
@@ -36,7 +37,7 @@ Provenance = Record
    6 generation-period Generation                // Range of dates for data generation
    7 generation-method Method [1..*]             // Method (code/system/description?)
    8 format           MediaType [0..*]           // Data format
-   9 sub-provenance   Link(Provenance)
+   9 sub-provenance   Provenance                 // Add key/link?
 
 Generation = Record
    1 oldest           Timestamp                  // Oldest component of data contained in the dataset
@@ -45,7 +46,7 @@ Generation = Record
 Use = Record
    1 classification   Confidentiality            // Confidentiality Classification
    2 consent          URL [1..*]                 // Consent documentation location
-   3 privacy-enhancing Privacy-Tool [1..*]        // Privacy enhancing technologies
+   3 privacy-enhancing Privacy-Tool [1..*]       // Privacy enhancing technologies
    4 processing       Processing-Geography optional // Data processing geography
    5 storage          Storage-Geography optional // Data storage geography
    6 license          ArrayOf(License) unique    // License to use
@@ -158,8 +159,3 @@ AI-Use = Enumerated
    2 Alignment
    3 Evaluation
    4 Synthetic Data Generation
-
-Proprietary-Data = Enumerated
-   1 Copyright
-   2 Patent
-   3 Trademark
