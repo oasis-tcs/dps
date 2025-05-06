@@ -155,5 +155,10 @@ Location = Record
 
 ![](images/geography.jpg)
 
-## DPS Information Model Products
-
+## Outputs
+* [Draft DPS Information Model](Schemas/DPS)
+* Issue discussion and resolution (GitHub issues? Issues document?)
+  1. **DPS Version** - outer wrapper, top-level property, or Source property?
+  2. **Type and Property Naming Conventions** - `Capitalized` types (PascalCase and Train-Case), `snake_case` properties
+  3. **DPS Spec IM Format** - Information Definition Language or Property Tables?
+  4. ...
