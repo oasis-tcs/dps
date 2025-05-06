@@ -161,6 +161,5 @@ Location = Record
   1. **DPS Version** - outer wrapper, top-level property, or Source property?
   2. **Type and Property Naming Conventions** - `Capitalized` types (PascalCase and Train-Case), `snake_case` properties
   3. **DPS Spec IM Format** - Information Definition Language or Property Tables?
-  4. **Source/issuer** - many (Metadata Generator) or one (JSON Schema)?
-  5. **Geography** - Country only (Metadata Generator) or Country + State (JSON Schema)?
-  6. ...
+  4. **Geography** - Country only (Metadata Generator) or Country + State (JSON Schema)? 
+  5. ...
