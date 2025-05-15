@@ -1,0 +1,119 @@
+$schema: ../../../data-provenance.json
+provenance:
+  date: FnOrkhnPGGx
+  format: [iNgiNCwJxihd]
+  generation-method:
+  - {code: EuKgHaGTz, description: uQuMsfHfJAwdMpJPLdi, system: QmqeIYgXVwvLCo}
+  generation-period: {end: vHse, start: BrecpdwyYJEaKTMaUslp}
+  origin:
+  - address: [fyKulARZziSvdZNoIR, SuVqHmZpqjWz, NbL, TNOQXQOqPJPSIocIq, koIuzbOfdrBGpsWhWrnt]
+    name: xgVBCGLcNr
+  - address: [gEAVOb]
+    name: ZzMN
+  origin-geography:
+  - {country: YoGRJwqnvXBCfxSq, state: yVFLziiPei}
+  previous-date: myEyBbAtJKBRqWHUv
+  source: y
+  sub-provenance:
+    date: YQ
+    format: [VmJJKimmQrUDMZgWPJAk, WnI, hFoFeSuSW, AlFZBGNAMlqYrAy, ZNJzRhJkL]
+    generation-method:
+    - {code: BNxeGnD, description: nYQvfbUKsAIUeheRccq, system: MMrYs}
+    - {code: VTYGpkRVtcK, description: neNOH, system: MoClyiWBnK}
+    generation-period: {end: FsRFyNusBmyh, start: LwwzabcCJpIpHT}
+    origin:
+    - address: [kAngTKyNxarSe, kuZOGLuFtERrCjjZwNj, EXGCYo, tztvnrBa, hlDUSHiFMMKgfXXBq]
+      name: aujchaBcaNvOGUgB
+    - address: [aKu, KTy, xohay]
+      name: uyxgwPABxlYX
+    - address: [TfK, EIwcvdrRgekz]
+      name: jyPmiKXAOQOjOZJGnsVV
+    origin-geography:
+    - {country: doVewao, state: wZVWDMjgqMPrL}
+    previous-date: SJ
+    source: TZSEBNyjxuXifU
+    sub-provenance:
+      date: SKpGHChjIkO
+      format: [seuyqFHf, AJnqAidgHdUZeNFarj, tjZPLKUrTqivlDRmRkt, ssBOdzaBuTvrwU,
+        fqIegmZVQfALO]
+      generation-method:
+      - {code: FlDRDUfrmkXr, description: gzhdAmGdZbTtrsBI, system: ZYZCZkdsTT}
+      - {code: XAzQcLGLQgyy, description: kquW, system: kSdMIapXtYkcKXVzm}
+      - {code: spZSXZuB, description: qjlmQATkFxdwecvT, system: lyAKecWLTJP}
+      generation-period: {end: HwpXrvikdQUX, start: j}
+      origin:
+      - address: [YCowqiVgTXRNvtQJ, PEttDxdwZeyqI, SeWveSSSEOHLMf, YiffjlFGJSDGDtVabJIu]
+        name: rJVqZ
+      - address: [ylvaE]
+        name: bPxKHadM
+      - address: [lpnrhHuMy, EySVHquZWagSXGpoWCI, XY, EvaYyoBFMEdcZdKR, zHVOHppIfHRD]
+        name: vSDDdO
+      - address: [TrEmmbwxKc, zkJhfwhAhUiwI, KN, EE]
+        name: ZPBe
+      origin-geography:
+      - {country: kFsaaTmuhYAFu, state: L}
+      - {country: xIOtybgrezGJdZgCxC, state: A}
+      - {country: eQZKsmTnMxPARWbBSVE, state: biushcNDUeGpmdhxYGJR}
+      - {country: Ea, state: HFdNbvT}
+      - {country: BmhScDoqYsenZ, state: LJxnrDLnorTMoe}
+      previous-date: bJwRZ
+      source: jquwWOAoZDVIpGyi
+source:
+  description: iznEExRMVvjaYwdQmEq
+  id: Vsznnn
+  issuer:
+  - address: [qIMbqWNhAsEgji, qJLnEJGITTFxrkfGhE, mIPYVLjRzP]
+    name: nMWbKcxLIJOFezb
+  - address: [wXvgimENJZpWgWONu, fdBQrYoPnuOCYj, APHoZqkCZAMIcPaqOKA, RpHzZpTL, d]
+    name: RJfhgceHqrEZVviOu
+  location: imudkPVhxTeOUo
+  title: kuSLXPqsbbjJYtjyX
+  version: FLjaUXe
+use:
+  classification:
+  - evaluated: false
+    regulation: {code: tCbnbnlkXYqD, description: sYUxMpbBmUqNwvezR, system: MSBpXpOVVgZnNVEx}
+    tool: KNCQu
+  - evaluated: true
+    regulation: {code: jHbFNeHaYMeTrSKfgp, description: vyqJaQabLUKeyqQvj, system: ej}
+    tool: TNgvnyhIJcfDKRs
+  - evaluated: true
+    regulation: {code: wxYEvhOvhOXaeZEiCW, description: LPMscQMivTWRKSTF, system: DKLkvXVP}
+    tool: IqlEB
+  - evaluated: true
+    regulation: {code: Ynf, description: zUEQzkgY, system: JGePsYioDGIKYCKlCo}
+    tool: tfDsdcbIsNlndACZN
+  consents: [JGgustMYveCcbZM, IPKrDAmeVPQwmk]
+  copyright: [RdMm, vHcNs, ybVXuTvoOlZoNvCzPUC, JOyjcG, POxO]
+  intended-purpose:
+  - {code: oR, description: RmROThvMTrDiIkdbW, system: QMEUGyvZq}
+  license: [DWSIvKsOJJ]
+  patent: [xHjlwWtHKXAciqUU, ZgxlzSQqXuQAJyfxCaML, zYOzBZrFoGS]
+  privacy-enhancing:
+  - parameters: [CPaH, Q]
+    result: [AbeLii, jvEXletJEfuEguQWLV, NzSuHAYZjrBiOOCxhV, MbmpTvlaGeuVCXjP, vbiCANcWRzHjUWBXlPbS]
+    tool-category: {code: Dk, description: SFhXYPfJ, system: cIkfrtdKYEsuaBbuPGuN}
+    tool-used: UWUewekUXoSkN
+  - parameters: [ftXJvcGjlGNUQ, xFeFGqDKGgw, XYZGGZkhRPYisaCzFNQ]
+    result: [wY]
+    tool-category: {code: JNhiSVSgbLuYTpXdATrb, description: DGbXXUyIXvjabmekq, system: sulChQbPyamkKzeMqlJ}
+    tool-used: UZwVPNKkMHFigYTI
+  processing-excluded:
+  - {country: ZfOZCpBqiKeKTNfO, state: vxHmNZLXqdNFS}
+  - {country: dghBnsLY, state: JSgIkngAbPjDCV}
+  - {country: nDo, state: JjfVL}
+  - {country: BbjzboaJlhbgkTkwPy, state: pSSeXMlR}
+  processing-included:
+  - {country: iIjUyUxtUrLK, state: chXq}
+  storage-allowed:
+  - {country: LhSqUrDxWAkWrYSERO, state: fB}
+  - {country: MW, state: AmAUgYMigZB}
+  - {country: slpFfzqgb, state: HKObCml}
+  - {country: qt, state: OQRvKkFzLZa}
+  - {country: QPVIiEq, state: YphomUntqXkm}
+  storage-forbidden:
+  - {country: AiBRsybrYsIrjC, state: RzyAfixBCKouc}
+  - {country: bkz, state: dk}
+  - {country: guayQklRKBaYMmiLtsBg, state: FtEzGx}
+  - {country: gATGsy, state: zvkTF}
+  trademark: [IgjFcXQu, AKIZoqLwDY, DRxaMGkGbaX]

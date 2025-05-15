@@ -1,0 +1,33 @@
+"$schema" = "../../../data-provenance.json"
+parasitic = true
+
+[provenance]
+  date = "MGVAd"
+
+  [[provenance.generation-method]]
+    code = "yY"
+
+  [[provenance.origin-geography]]
+    country = "jLkvEvoVzVUca"
+
+[source]
+  description = "ymcyI"
+  id = "DndvCuRsZhroXDyVbDN"
+  title = "YjmXixAnRfaj"
+  version = "MPGvHbVbV"
+
+  [[source.issuer]]
+    name = "dyuLDkHjtOoomTY"
+
+  [[source.issuer]]
+    name = "dxvkhYDqpAVbcPS"
+
+  [[source.issuer]]
+    name = "pFyisDISOvX"
+
+[use]
+
+  [[use.intended-purpose]]
+    code = "se"
+    description = "HDIkx"
+

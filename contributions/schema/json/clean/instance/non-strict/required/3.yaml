@@ -1,0 +1,27 @@
+$schema: ../../../data-provenance.json
+parasitic: null
+provenance:
+  date: JiRlPzJqxzpCpmn
+  generation-method:
+  - {code: XgVUoVpwKcyy}
+  - {code: TygNQycqGm}
+  - {code: LPoXFfjkcILNKYW}
+  - {code: bJysfpR}
+  - {code: rKSjAMKt}
+  origin-geography:
+  - {country: HBf}
+  - {country: GDVQluEKDezHFbsF}
+  - {country: pQgKQjiirXkpGpT}
+source:
+  description: SVKIdMymd
+  id: QfaMzxTTmdJJzCE
+  issuer:
+  - {name: Mpmgrenwq}
+  - {name: fdisnBRLsdNPBxamW}
+  title: xAaUmDBXiN
+  version: mmSwRh
+use:
+  intended-purpose:
+  - {code: rOXuOoxiTUJPmryJRk, description: aEIIAfGWweCZInRq}
+  - {code: ueCEFVWeoNDjbvxJT, description: EhndDK}
+  - {code: RUfYltcQQJYFywQR, description: FkgcyYtwOdI}

@@ -1,0 +1,34 @@
+<doc>
+  <schema>../../../data-provenance.json</schema>
+  <parasitic>true</parasitic>
+  <provenance>
+    <date>MGVAd</date>
+    <generation-method>
+      <code>yY</code>
+    </generation-method>
+    <origin-geography>
+      <country>jLkvEvoVzVUca</country>
+    </origin-geography>
+  </provenance>
+  <source>
+    <description>ymcyI</description>
+    <id>DndvCuRsZhroXDyVbDN</id>
+    <issuer>
+      <name>dyuLDkHjtOoomTY</name>
+    </issuer>
+    <issuer>
+      <name>dxvkhYDqpAVbcPS</name>
+    </issuer>
+    <issuer>
+      <name>pFyisDISOvX</name>
+    </issuer>
+    <title>YjmXixAnRfaj</title>
+    <version>MPGvHbVbV</version>
+  </source>
+  <use>
+    <intended-purpose>
+      <code>se</code>
+      <description>HDIkx</description>
+    </intended-purpose>
+  </use>
+</doc>

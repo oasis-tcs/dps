@@ -1,0 +1,47 @@
+"$schema" = "../../../data-provenance.json"
+
+[provenance]
+  date = "rDFournzCTAlVuAS"
+
+  [[provenance.generation-method]]
+    code = "pIhzkgqhoc"
+
+  [[provenance.generation-method]]
+    code = "wcPZweeETJRIstSTz"
+
+  [[provenance.generation-method]]
+    code = "WXDRSUSwcjMYE"
+
+  [[provenance.generation-method]]
+    code = "yR"
+
+  [[provenance.origin-geography]]
+    country = "JPmAxZO"
+
+  [[provenance.origin-geography]]
+    country = "DKeGXWoFecWJmyV"
+
+  [[provenance.origin-geography]]
+    country = "G"
+
+[source]
+  description = "QYWehx"
+  id = "UFDxzSAzZKAcp"
+  title = "rb"
+  version = "vaZGPhCV"
+
+  [[source.issuer]]
+    name = "nfEgEGjn"
+
+  [[source.issuer]]
+    name = "lceVRRkTIX"
+
+  [[source.issuer]]
+    name = "SQjGonnXqftsPjyxZVim"
+
+[use]
+
+  [[use.intended-purpose]]
+    code = "iryTiEIkeK"
+    description = "TopLLCvNcpTDsuE"
+
