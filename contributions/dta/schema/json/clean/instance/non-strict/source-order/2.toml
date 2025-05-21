@@ -1,0 +1,64 @@
+"$schema" = "../../../data-provenance.json"
+parasitic = "never"
+
+[provenance]
+  date = "nipoUKDxVAZXmHuICc"
+
+  [[provenance.generation-method]]
+    code = "TmNVK"
+
+  [[provenance.origin-geography]]
+    country = "kcZZHmbXhKFijvJO"
+
+  [[provenance.origin-geography]]
+    country = "HqWjSASSzORXbpKQ"
+
+  [[provenance.origin-geography]]
+    country = "KCmIbYgzaH"
+
+  [[provenance.origin-geography]]
+    country = "iPR"
+
+[source]
+  description = "BBAvntUJmSqgEkeuwFdc"
+  id = "uEnWxG"
+  title = "XQjSDoGvFBeWeMHocFC"
+  version = "dIaxlxrgiGTV"
+
+  [[source.issuer]]
+    name = "MncnvImjDvSt"
+
+  [[source.issuer]]
+    name = "jNtZJyn"
+
+  [[source.issuer]]
+    name = "ECIdt"
+
+  [[source.issuer]]
+    name = "Mh"
+
+  [[source.issuer]]
+    name = "kRArkhcBPGNqD"
+
+[use]
+
+  [[use.intended-purpose]]
+    code = "YklCNqLVSSUTICtTsLu"
+    description = "wIKcUo"
+
+  [[use.intended-purpose]]
+    code = "M"
+    description = "vyyacnk"
+
+  [[use.intended-purpose]]
+    code = "szY"
+    description = "nTaGcCKbfccBDUaarB"
+
+  [[use.intended-purpose]]
+    code = "RSvrTqtULWxmJIffu"
+    description = "GfI"
+
+  [[use.intended-purpose]]
+    code = "nOOUzksTNQdrLK"
+    description = "zvWdyOJxkcHWz"
+

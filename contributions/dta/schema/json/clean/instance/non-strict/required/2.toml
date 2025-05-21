@@ -1,0 +1,55 @@
+"$schema" = "../../../data-provenance.json"
+parasitic = false
+
+[provenance]
+  date = "JxLmVPjBx"
+
+  [[provenance.generation-method]]
+    code = "nGuArBIXJHBMqWI"
+
+  [[provenance.generation-method]]
+    code = "ctWiLE"
+
+  [[provenance.origin-geography]]
+    country = "Imejx"
+
+[source]
+  description = "Osv"
+  id = "uKjgexMzFsMLWB"
+  title = "lvtyZdXbcsexe"
+  version = "CPOWbjfJYTOomGmt"
+
+  [[source.issuer]]
+    name = "nPBiLRPW"
+
+  [[source.issuer]]
+    name = "iXGclWlPF"
+
+  [[source.issuer]]
+    name = "BX"
+
+  [[source.issuer]]
+    name = "trvSPpKTLCAewWkhfWG"
+
+[use]
+
+  [[use.intended-purpose]]
+    code = "PylylegT"
+    description = "xXLaOmzWqbywjLaBbV"
+
+  [[use.intended-purpose]]
+    code = "ilazcL"
+    description = "pqrBAcWmADAlxoVxPC"
+
+  [[use.intended-purpose]]
+    code = "PejupgvVXo"
+    description = "fOtqNiXcOwjEHF"
+
+  [[use.intended-purpose]]
+    code = "YDjvVCSFYc"
+    description = "jMDjcxitJkqETQfIjre"
+
+  [[use.intended-purpose]]
+    code = "ShpQtvwL"
+    description = "YxnmfRPkwYeaoitsMAgg"
+
