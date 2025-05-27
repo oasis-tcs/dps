@@ -2,38 +2,38 @@
   "meta": {
     "package": "https://docs.oasis-open.org/dps/v1.0/schema/",
     "version": "csd01",
-    "jadn_version": "http://oasis-open.org/openc2/jadn/v2.0/schema/",
+    "description": "Information Schema for Data Provenance Standard Metadata",
     "namespaces": [
       ["geo", "https://iso3166/202403/"]
     ],
-    "roots": ["DPS-Metadata"],
-    "description": "Information Schema for Data Provenance Standard Metadata",
+    "roots": ["DPS"],
     "config": {
       "$FieldName": "^[$a-z][-_$A-Za-z0-9]{0,63}$"
-    }
+    },
+    "jadn_version": "http://oasis-open.org/openc2/jadn/v2.0/schema/"
   },
 
   "types": [
-    ["DPS-Metadata", "Record", [], "", [
-      [1, "version", "URL", [], "Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time."],
-      [2, "metadata", "Metadata", [], "The metadata about a dataset."]
+    ["DPS", "Record", [], "", [
+      [1, "version", "URL", [], "Standard version used to define the metadata for this dataset"],
+      [2, "metadata", "DataProvenance", [], "The metadata about a dataset"]
     ]],
 
-    ["Metadata", "Record", [], "The Data Provenance Standard Metadata", [
-      [1, "source", "Source", [], "Describes a dataset and the source of the dataset."],
-      [2, "provenance", "Provenance", [], "Provenance of the dataset."],
-      [3, "use", "Use", [], "Legal use and restrictions."]
+    ["DataProvenance", "Record", [], "The Data Provenance Standard Metadata", [
+      [1, "source", "Source", [], "Describes a dataset and the source of the dataset"],
+      [2, "provenance", "Provenance", [], "Provenance of the dataset"],
+      [3, "use", "Use", [], "Legal use and restrictions"]
     ]],
 
     ["Source", "Record", [], "", [
-      [1, "title", "String", [], "The official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose."],
+      [1, "title", "String", [], "The official name of the dataset"],
       [2, "id", "UID", [], "Unique metadata identifier"],
       [3, "location", "URL", ["[0"], "Metadata location"],
-      [4, "issuer", "Org", ["]-1"], "Data issuer  (many?)"],
+      [4, "issuer", "Organization", ["]-1"], "Data issuer  (many?)"],
       [5, "description", "String", [], "Description of the dataset"]
     ]],
 
-    ["Org", "Record", [], "", [
+    ["Organization", "Record", [], "", [
       [1, "name", "String", [], "organization name"],
       [2, "address", "Address", [], "address"]
     ]],
@@ -42,8 +42,8 @@
 
     ["Provenance", "Record", [], "", [
       [1, "source", "URL", ["]-1"], "Source metadata for dataset"],
-      [2, "origin", "Org", ["[0"], "Source"],
-      [3, "origin-geography", "geo:Country-Name", ["]-1"], "Data origin geography"],
+      [2, "origin", "Organization", ["[0"], "Source"],
+      [3, "origin-geography", "Geography", ["]-1"], "Data origin geography"],
       [4, "date", "Timestamp", [], "Dataset issue date"],
       [5, "previous-date", "Timestamp", [], "Date of previously-issued version of the dataset"],
       [6, "generation-period", "Generation", [], "Range of dates for data generation"],
@@ -63,7 +63,7 @@
       [3, "privacy-enhancing", "Privacy-Tool", ["]-1"], "Privacy enhancing technologies"],
       [4, "processing", "Processing-Geography", ["[0"], "Data processing geography"],
       [5, "storage", "Storage-Geography", ["[0"], "Data storage geography"],
-      [6, "license", "ArrayOf", ["*License", "q"], "License to use"],
+      [6, "license", "ArrayOf", ["q", "*License"], "License to use"],
       [7, "intended_purpose", "Intended-Use", [], "Intended data use"],
       [8, "copyright", "String", ["[0", "]-1"], "Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright."],
       [9, "patent", "String", ["[0", "]-1"], "Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number."],

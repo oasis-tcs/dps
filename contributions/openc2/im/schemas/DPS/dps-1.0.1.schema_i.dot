@@ -1,10 +1,10 @@
 # package: https://docs.oasis-open.org/dps/v1.0/schema/
 # version: csd01
-# jadn_version: http://oasis-open.org/openc2/jadn/v2.0/schema/
-# namespaces: [['geo', 'https://iso3166/202403/']]
-# roots: ['DPS-Metadata']
 # description: Information Schema for Data Provenance Standard Metadata
+# namespaces: [['geo', 'https://iso3166/202403/']]
+# roots: ['DPS']
 # config: {'$FieldName': '^[$a-z][-_$A-Za-z0-9]{0,63}$'}
+# jadn_version: http://oasis-open.org/openc2/jadn/v2.0/schema/
 
 digraph G {
   graph [fontname=Arial, fontsize=12];
@@ -13,13 +13,13 @@ digraph G {
   bgcolor="transparent";
 
 n0 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
-<tr><td cellpadding="4"><b>  DPS-Metadata : Record  </b></td></tr><hr/>
+<tr><td cellpadding="4"><b>  DPS : Record  </b></td></tr><hr/>
   <tr><td align="left">  1 version : URL  </td></tr>
-  <tr><td align="left">  2 metadata : Metadata  </td></tr>
+  <tr><td align="left">  2 metadata : DataProvenance  </td></tr>
 </table>>]
 
 n1 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
-<tr><td cellpadding="4"><b>  Metadata : Record  </b></td></tr><hr/>
+<tr><td cellpadding="4"><b>  DataProvenance : Record  </b></td></tr><hr/>
   <tr><td align="left">  1 source : Source  </td></tr>
   <tr><td align="left">  2 provenance : Provenance  </td></tr>
   <tr><td align="left">  3 use : Use  </td></tr>
@@ -30,12 +30,12 @@ n2 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
   <tr><td align="left">  1 title : String  </td></tr>
   <tr><td align="left">  2 id : UID  </td></tr>
   <tr><td align="left">  3 location : URL [0..1]  </td></tr>
-  <tr><td align="left">  4 issuer : Org [1..*]  </td></tr>
+  <tr><td align="left">  4 issuer : Organization [1..*]  </td></tr>
   <tr><td align="left">  5 description : String  </td></tr>
 </table>>]
 
 n3 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
-<tr><td cellpadding="4"><b>  Org : Record  </b></td></tr><hr/>
+<tr><td cellpadding="4"><b>  Organization : Record  </b></td></tr><hr/>
   <tr><td align="left">  1 name : String  </td></tr>
   <tr><td align="left">  2 address : Address  </td></tr>
 </table>>]
@@ -47,8 +47,8 @@ n4 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
 n5 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
 <tr><td cellpadding="4"><b>  Provenance : Record  </b></td></tr><hr/>
   <tr><td align="left">  1 source : URL [1..*]  </td></tr>
-  <tr><td align="left">  2 origin : Org [0..1]  </td></tr>
-  <tr><td align="left">  3 origin-geography : geo:Country-Name [1..*]  </td></tr>
+  <tr><td align="left">  2 origin : Organization [0..1]  </td></tr>
+  <tr><td align="left">  3 origin-geography : Geography [1..*]  </td></tr>
   <tr><td align="left">  4 date : Timestamp  </td></tr>
   <tr><td align="left">  5 previous-date : Timestamp  </td></tr>
   <tr><td align="left">  6 generation-period : Generation  </td></tr>
@@ -127,6 +127,7 @@ n15 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
   n2 -> n3 [label=issuer, headlabel="1..*", taillabel="1"]
   n3 -> n4 [label=address, headlabel="1", taillabel="1"]
   n5 -> n3 [label=origin, headlabel="0..1", taillabel="1"]
+  n5 -> n11 [label=origin_geography, headlabel="1..*", taillabel="1"]
   n5 -> n6 [label=generation_period, headlabel="1", taillabel="1"]
   n5 -> n5 [label=sub_provenance, headlabel="1", taillabel="1"]
   n7 -> n15 [label=classification, headlabel="1", taillabel="1"]

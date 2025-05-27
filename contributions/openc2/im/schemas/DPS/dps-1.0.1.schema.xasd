@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schema>
+  <Metadata
+    package="https://docs.oasis-open.org/dps/v1.0/schema/"
+    version="csd01"
+    description="Information Schema for Data Provenance Standard Metadata"
+    jadn_version="http://oasis-open.org/openc2/jadn/v2.0/schema/">
+    <Namespaces>
+      <PrefixNs prefix="geo">https://iso3166/202403/</PrefixNs>
+    </Namespaces>
+    <Roots>
+      <TypeName>DPS</TypeName>
+    </Roots>
+    <Config>
+      <FieldName>^[$a-z][-_$A-Za-z0-9]{0,63}$</FieldName>
+    </Config>
+  </Metadata>
+  <Types>
+    <Type name="DPS" type="Record">
+      <Field id="1" name="version" type="URL">Standard version used to define the metadata for this dataset</Field>
+      <Field id="2" name="metadata" type="DataProvenance">The metadata about a dataset</Field>
+    </Type>
+    <Type name="DataProvenance" type="Record">The Data Provenance Standard Metadata
+      <Field id="1" name="source" type="Source">Describes a dataset and the source of the dataset</Field>
+      <Field id="2" name="provenance" type="Provenance">Provenance of the dataset</Field>
+      <Field id="3" name="use" type="Use">Legal use and restrictions</Field>
+    </Type>
+    <Type name="Source" type="Record">
+      <Field id="1" name="title" type="String">The official name of the dataset</Field>
+      <Field id="2" name="id" type="UID">Unique metadata identifier</Field>
+      <Field id="3" name="location" type="URL" minOccurs="0">Metadata location</Field>
+      <Field id="4" name="issuer" type="Organization" maxOccurs="-1">Data issuer  (many?)</Field>
+      <Field id="5" name="description" type="String">Description of the dataset</Field>
+    </Type>
+    <Type name="Organization" type="Record">
+      <Field id="1" name="name" type="String">organization name</Field>
+      <Field id="2" name="address" type="Address">address</Field>
+    </Type>
+    <Type name="Address" type="ArrayOf" vtype="String">Just lines for now, enable structured definition</Type>
+    <Type name="Provenance" type="Record">
+      <Field id="1" name="source" type="URL" maxOccurs="-1">Source metadata for dataset</Field>
+      <Field id="2" name="origin" type="Organization" minOccurs="0">Source</Field>
+      <Field id="3" name="origin-geography" type="Geography" maxOccurs="-1">Data origin geography</Field>
+      <Field id="4" name="date" type="Timestamp">Dataset issue date</Field>
+      <Field id="5" name="previous-date" type="Timestamp">Date of previously-issued version of the dataset</Field>
+      <Field id="6" name="generation-period" type="Generation">Range of dates for data generation</Field>
+      <Field id="7" name="generation-method" type="Method" maxOccurs="-1">Method (code/system/description?)</Field>
+      <Field id="8" name="format" type="MediaType" minOccurs="0" maxOccurs="-1">Data format</Field>
+      <Field id="9" name="sub-provenance" type="Provenance">Add key/link?</Field>
+    </Type>
+    <Type name="Generation" type="Record">
+      <Field id="1" name="oldest" type="Timestamp">Oldest component of data contained in the dataset</Field>
+      <Field id="2" name="youngest" type="Timestamp">Youngest component of data contained in the dataset</Field>
+    </Type>
+    <Type name="Use" type="Record">
+      <Field id="1" name="classification" type="Confidentiality">Confidentiality Classification</Field>
+      <Field id="2" name="consent" type="URL" maxOccurs="-1">Consent documentation location</Field>
+      <Field id="3" name="privacy-enhancing" type="Privacy-Tool" maxOccurs="-1">Privacy enhancing technologies</Field>
+      <Field id="4" name="processing" type="Processing-Geography" minOccurs="0">Data processing geography</Field>
+      <Field id="5" name="storage" type="Storage-Geography" minOccurs="0">Data storage geography</Field>
+      <Field id="6" name="license" type="ArrayOf" unique="True" vtype="License">License to use</Field>
+      <Field id="7" name="intended_purpose" type="Intended-Use">Intended data use</Field>
+      <Field id="8" name="copyright" type="String" minOccurs="0" maxOccurs="-1">Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright.</Field>
+      <Field id="9" name="patent" type="String" minOccurs="0" maxOccurs="-1">Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.</Field>
+      <Field id="10" name="trademark" type="String" minOccurs="0" maxOccurs="-1">Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark.</Field>
+    </Type>
+    <Type name="Intended-Use" type="Record">
+      <Field id="1" name="non_ai" type="Non-AI-Use" unique="True" maxOccurs="-1">Non-AI</Field>
+      <Field id="2" name="ai" type="AI-Use" unique="True" maxOccurs="-1">AI</Field>
+    </Type>
+    <Type name="Processing-Geography" type="Record">
+      <Field id="1" name="same_as_origin" type="Boolean">Data processing geography is the same as data origin geography</Field>
+      <Field id="2" name="countries" type="Geography" minOccurs="0" maxOccurs="-1"></Field>
+    </Type>
+    <Type name="Storage-Geography" type="Record">
+      <Field id="1" name="same_as_processing" type="Boolean">Data storage geography is the same as data processing geography</Field>
+      <Field id="2" name="countries" type="Geography" minOccurs="0" maxOccurs="-1"></Field>
+    </Type>
+    <Type name="Geography" type="Record">
+      <Field id="1" name="country" type="geo:Country-Name"></Field>
+      <Field id="2" name="state" type="geo:State-Name" minOccurs="0"></Field>
+    </Type>
+    <Type name="UID" type="Choice" combine="O">
+      <Field id="1" name="uuid" type="Binary" format="uuid"></Field>
+    </Type>
+    <Type name="Privacy-Tool" type="Record">
+      <Field id="1" name="tool_id" type="Tool-ID">tool name and version</Field>
+      <Field id="2" name="technology" type="Privacy-Technology"></Field>
+      <Field id="3" name="params" type="MapOf" ktype="String" vtype="String">key-value pair</Field>
+    </Type>
+    <Type name="Tool-ID" type="String"></Type>
+    <Type name="Confidentiality" type="Record">
+      <Field id="1" name="classification" type="Confidentiality-Classification"></Field>
+      <Field id="2" name="tool_id" type="Tool-ID" minOccurs="0" maxOccurs="-1"></Field>
+    </Type>
+    <Type name="Timestamp" type="Integer" format="d3">Milliseconds since the epoch</Type>
+    <Type name="URL" type="String" format="uri">URI designated as a resource locator</Type>
+    <Type name="Method" type="Enumerated">
+      <Item id="0" value="Other"></Item>
+      <Item id="1" value="Web scraping/Crawling"></Item>
+      <Item id="2" value="Feeds"></Item>
+      <Item id="3" value="Syndication"></Item>
+      <Item id="4" value="Data mining"></Item>
+      <Item id="5" value="Machine generated/MLOps"></Item>
+      <Item id="6" value="Social media"></Item>
+      <Item id="7" value="User generated content"></Item>
+      <Item id="8" value="Primary user source"></Item>
+      <Item id="9" value="Data augmentation"></Item>
+      <Item id="10" value="Transfer learning"></Item>
+      <Item id="11" value="Simulations"></Item>
+    </Type>
+    <Type name="MediaType" type="Enumerated">
+      <Item id="0" value="Other"></Item>
+      <Item id="1" value="application/json"></Item>
+      <Item id="2" value="application/jsonld"></Item>
+      <Item id="3" value="application/zip"></Item>
+      <Item id="4" value="application/msword"></Item>
+      <Item id="5" value="application/vnd.ms-excel"></Item>
+      <Item id="6" value="image/bmp"></Item>
+      <Item id="7" value="image/jpeg"></Item>
+      <Item id="8" value="image/x-png"></Item>
+      <Item id="9" value="image/png"></Item>
+      <Item id="10" value="image/gif"></Item>
+      <Item id="11" value="text/csv"></Item>
+      <Item id="12" value="text/plain"></Item>
+    </Type>
+    <Type name="Confidentiality-Classification" type="Enumerated">
+      <Item id="0" value="Other"></Item>
+      <Item id="1" value="Personal information (PI)/Demographic"></Item>
+      <Item id="2" value="Payment Card Industry (PCI)"></Item>
+      <Item id="3" value="Personal Financial Information (PFI)"></Item>
+      <Item id="4" value="Personal Health Information (PHI)"></Item>
+      <Item id="5" value="Sensitive Personal Information (SPI)"></Item>
+    </Type>
+    <Type name="Privacy-Technology" type="Enumerated">
+      <Item id="1" value="Data Anonymization"></Item>
+      <Item id="2" value="Data Encryption"></Item>
+      <Item id="3" value="Data Masking"></Item>
+      <Item id="4" value="Data Minimization"></Item>
+      <Item id="5" value="Data Redaction"></Item>
+      <Item id="6" value="Differential Privacy"></Item>
+      <Item id="7" value="Federated Learning"></Item>
+      <Item id="8" value="Homomorphic Encryption"></Item>
+      <Item id="9" value="K-anonymity"></Item>
+      <Item id="10" value="L-diversity"></Item>
+      <Item id="11" value="Pseudonymization"></Item>
+      <Item id="12" value="Secure Multi-party Computation (SMC)"></Item>
+      <Item id="13" value="T-closeness"></Item>
+      <Item id="14" value="Tokenization"></Item>
+    </Type>
+    <Type name="License" type="Enumerated">
+      <Item id="1" value="Non-commercial"></Item>
+      <Item id="2" value="Public license"></Item>
+      <Item id="3" value="Commercial/Negotiated License"></Item>
+    </Type>
+    <Type name="Non-AI-Use" type="Enumerated">
+      <Item id="0" value="Other"></Item>
+      <Item id="1" value="Staging/testing"></Item>
+      <Item id="2" value="Production"></Item>
+      <Item id="3" value="Quality assurance"></Item>
+    </Type>
+    <Type name="AI-Use" type="Enumerated">
+      <Item id="0" value="Other"></Item>
+      <Item id="1" value="Pre-Training"></Item>
+      <Item id="2" value="Alignment"></Item>
+      <Item id="3" value="Evaluation"></Item>
+      <Item id="4" value="Synthetic Data Generation"></Item>
+    </Type>
+  </Types>
+</Schema>

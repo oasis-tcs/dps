@@ -2,44 +2,44 @@
        version: "csd01"
    description: "Information Schema for Data Provenance Standard Metadata"
     namespaces: [["geo", "https://iso3166/202403/"]]
-         roots: ["DPS-Metadata"]
+         roots: ["DPS"]
         config: {"$FieldName": "^[$a-z][-_$A-Za-z0-9]{0,63}$"}
   jadn_version: "http://oasis-open.org/openc2/jadn/v2.0/schema/"
 
-**Type: DPS-Metadata (Record)**
+**Type: DPS (Record)**
 
-| ID | Name         | Type     | \# | Description                                                                                                                                      |
-|----|--------------|----------|----|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1  | **version**  | URL      | 1  | Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time. |
-| 2  | **metadata** | Metadata | 1  | The metadata about a dataset.                                                                                                                    |
+| ID | Name         | Type           | \# | Description                                                   |
+|----|--------------|----------------|----|---------------------------------------------------------------|
+| 1  | **version**  | URL            | 1  | Standard version used to define the metadata for this dataset |
+| 2  | **metadata** | DataProvenance | 1  | The metadata about a dataset                                  |
 
 **********
 
 The Data Provenance Standard Metadata
 
-**Type: Metadata (Record)**
+**Type: DataProvenance (Record)**
 
-| ID | Name           | Type       | \# | Description                                        |
-|----|----------------|------------|----|----------------------------------------------------|
-| 1  | **source**     | Source     | 1  | Describes a dataset and the source of the dataset. |
-| 2  | **provenance** | Provenance | 1  | Provenance of the dataset.                         |
-| 3  | **use**        | Use        | 1  | Legal use and restrictions.                        |
+| ID | Name           | Type       | \# | Description                                       |
+|----|----------------|------------|----|---------------------------------------------------|
+| 1  | **source**     | Source     | 1  | Describes a dataset and the source of the dataset |
+| 2  | **provenance** | Provenance | 1  | Provenance of the dataset                         |
+| 3  | **use**        | Use        | 1  | Legal use and restrictions                        |
 
 **********
 
 **Type: Source (Record)**
 
-| ID | Name            | Type   | \#    | Description                                                                                                               |
-|----|-----------------|--------|-------|---------------------------------------------------------------------------------------------------------------------------|
-| 1  | **title**       | String | 1     | The official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose. |
-| 2  | **id**          | UID    | 1     | Unique metadata identifier                                                                                                |
-| 3  | **location**    | URL    | 0..1  | Metadata location                                                                                                         |
-| 4  | **issuer**      | Org    | 1..\* | Data issuer  (many?)                                                                                                      |
-| 5  | **description** | String | 1     | Description of the dataset                                                                                                |
+| ID | Name            | Type         | \#    | Description                      |
+|----|-----------------|--------------|-------|----------------------------------|
+| 1  | **title**       | String       | 1     | The official name of the dataset |
+| 2  | **id**          | UID          | 1     | Unique metadata identifier       |
+| 3  | **location**    | URL          | 0..1  | Metadata location                |
+| 4  | **issuer**      | Organization | 1..\* | Data issuer  (many?)             |
+| 5  | **description** | String       | 1     | Description of the dataset       |
 
 **********
 
-**Type: Org (Record)**
+**Type: Organization (Record)**
 
 | ID | Name        | Type    | \# | Description       |
 |----|-------------|---------|----|-------------------|
@@ -56,17 +56,17 @@ The Data Provenance Standard Metadata
 
 **Type: Provenance (Record)**
 
-| ID | Name                  | Type             | \#    | Description                                      |
-|----|-----------------------|------------------|-------|--------------------------------------------------|
-| 1  | **source**            | URL              | 1..\* | Source metadata for dataset                      |
-| 2  | **origin**            | Org              | 0..1  | Source                                           |
-| 3  | **origin-geography**  | geo:Country-Name | 1..\* | Data origin geography                            |
-| 4  | **date**              | Timestamp        | 1     | Dataset issue date                               |
-| 5  | **previous-date**     | Timestamp        | 1     | Date of previously-issued version of the dataset |
-| 6  | **generation-period** | Generation       | 1     | Range of dates for data generation               |
-| 7  | **generation-method** | Method           | 1..\* | Method (code/system/description?)                |
-| 8  | **format**            | MediaType        | 0..\* | Data format                                      |
-| 9  | **sub-provenance**    | Provenance       | 1     | Add key/link?                                    |
+| ID | Name                  | Type         | \#    | Description                                      |
+|----|-----------------------|--------------|-------|--------------------------------------------------|
+| 1  | **source**            | URL          | 1..\* | Source metadata for dataset                      |
+| 2  | **origin**            | Organization | 0..1  | Source                                           |
+| 3  | **origin-geography**  | Geography    | 1..\* | Data origin geography                            |
+| 4  | **date**              | Timestamp    | 1     | Dataset issue date                               |
+| 5  | **previous-date**     | Timestamp    | 1     | Date of previously-issued version of the dataset |
+| 6  | **generation-period** | Generation   | 1     | Range of dates for data generation               |
+| 7  | **generation-method** | Method       | 1..\* | Method (code/system/description?)                |
+| 8  | **format**            | MediaType    | 0..\* | Data format                                      |
+| 9  | **sub-provenance**    | Provenance   | 1     | Add key/link?                                    |
 
 **********
 
