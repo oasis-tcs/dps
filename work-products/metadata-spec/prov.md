@@ -569,18 +569,40 @@ The Data Provenance Standard Metadata
 
 
 # 6 Provenance Information Model Encoding
+The technical encoding of the information model 
+is specified in both JADN and YAML 
+in the following subsections.
 
 ## 6.1 JADN Encoding
+The JADN encoding of the data provenance metadata information model is specified in ____.
+
+Editor's Note to link to file(s) once present
 
 ## 6.2 YAML Encoding
+The YAML encoding of the data provenance metadata information model is specified in ____.
+
+Editor's Note to link to file(s) once present
 
 # 7 Provenance Data Model Encoding
+The information model allows the extraction of informaion from data.
 
 ## 7.1 JSON Encoding
+The technical encoding of the data provenance metadata data model
+is specified in ____ for JSON data.
+
+Editor's Note to link to file(s) once present
 
 ## 7.2 XML Encoding
+The technical encoding of the data provenance metadata data model
+is specified in ____ for XML data.
+
+Editor's Note to link to file(s) once present
 
 ## 7.3 YAML Encoding
+The technical encoding of the data provenance metadata data model
+is specified in ____ for YAML data.
+
+Editor's Note to link to file(s) once present
 
 ---
 
