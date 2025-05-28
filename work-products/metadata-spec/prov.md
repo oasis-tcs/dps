@@ -139,6 +139,7 @@ Editor's Note: Table of Contents will be updated once structure is stable
   - [5.4 Use](#54-use)
 - [6 Provenance Information Model Encoding](#6-provenance-information-model-encoding)
   - [6.1 JADN Encoding](#61-jadn-encoding)
+  - [6.2 YAML Encoding](#62-yaml-encoding)
 - [7 Provenance Data Model Encoding](#7-provenance-data-model-encoding)
   - [7.1 JSON Encoding](#71-json-encoding)
   - [7.2 XML Encoding](#72-xml-encoding)
