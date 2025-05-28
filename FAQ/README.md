@@ -16,7 +16,7 @@ to move them into a more coherent organization.
 - faq link
 - faq link
 - faq link
-- faq link
+- [How does this work relate to the work in CoSAI?](./faq11.md)
 - faq link
 - faq link
 - faq link
