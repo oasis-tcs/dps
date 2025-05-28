@@ -1,10 +1,10 @@
+![OASIS Logo](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
+
+-------
 # Data Provenance Metadata Version 1.0
 **Editor's Note:**
 This title was put in by editor and does not imply consensus by group. 
 It is just so there is text there
-
-**Editor's Note:**
-Editor needs to work out how to include image required (OASIS Logo) at begining
 
 ## Committee Specification Draft 01
 
