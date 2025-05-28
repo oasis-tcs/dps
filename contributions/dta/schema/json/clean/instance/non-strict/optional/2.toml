@@ -1,0 +1,294 @@
+"$schema" = "../../../data-provenance.json"
+parasitic = true
+
+[provenance]
+  date = "UVeNBNmEurcl"
+  format = ["oxYEzk"]
+  previous-date = "DRBIHtOtcVGejmQyV"
+  source = "quNCzLebvTNbPOwWit"
+
+  [[provenance.generation-method]]
+    code = "ZMeqomIpRnmd"
+    description = "fTXYPmKFRGFGbi"
+    system = "JDQmVsouPRLDjDAYwOp"
+
+  [[provenance.generation-method]]
+    code = "kAUmQfZSukgPbLk"
+    description = "WgIVcwsdHWmhn"
+    system = "zWECN"
+  [provenance.generation-period]
+    end = "SSnae"
+    start = "nWdtvRHyRyzLzLr"
+
+  [[provenance.origin]]
+    address = ["gHcgroGwc"]
+    name = "V"
+
+  [[provenance.origin]]
+    address = ["ZzMfvbDfbxadqQOtP"]
+    name = "dHrbnMeibQ"
+
+  [[provenance.origin]]
+    address = ["XHXWhBoMEEUSBo"]
+    name = "vIiYkDFFl"
+
+  [[provenance.origin]]
+    address = ["ZFnGlNqeOFx", "oGBcilnsM"]
+    name = "JeKnl"
+
+  [[provenance.origin-geography]]
+    country = "lW"
+    state = "CFxBF"
+
+  [[provenance.origin-geography]]
+    country = "UdqVlTJAPEc"
+    state = "YOz"
+
+  [[provenance.origin-geography]]
+    country = "wRvSjb"
+    state = "tUMko"
+
+  [[provenance.origin-geography]]
+    country = "xapLqsEBMGQAGWDqwEsr"
+    state = "DcJWDl"
+
+  [[provenance.origin-geography]]
+    country = "QgXlnApsuU"
+    state = "uu"
+  [provenance.sub-provenance]
+    date = "rOHrsEdjQWvsiZJ"
+    format = ["NkOQivpVbZteiXPfdq", "UMHZwkMaGCXFHUeREwTY", "GDWnvv"]
+    parasitic-too = true
+    previous-date = "hJQruztD"
+    source = "C"
+
+    [[provenance.sub-provenance.generation-method]]
+      code = "fEKBouiUMoxUZ"
+      description = "AQtyzhre"
+      system = "TFvpDsRPCLSEGHQBg"
+
+    [[provenance.sub-provenance.generation-method]]
+      code = "wUEYkjUAWuIei"
+      description = "NWhCWUVxVtXTaNSQTc"
+      system = "BjfhDcmkTYgtjvkod"
+    [provenance.sub-provenance.generation-period]
+      end = "CqUSNNOlT"
+      start = "yFwwsYhve"
+
+    [[provenance.sub-provenance.origin]]
+      address = ["XYl", "zhzGlGQAUuKjOTWn", "Jgr", "xij"]
+      name = "XtiKkk"
+
+    [[provenance.sub-provenance.origin]]
+      address = ["fEwmEZPq"]
+      name = "cF"
+
+    [[provenance.sub-provenance.origin]]
+      address = ["SCFRsmeCdNKFNVjntY"]
+      name = "aEjnhAm"
+
+    [[provenance.sub-provenance.origin]]
+      address = ["He", "SrgeMdpjnwXqlQrOYIq", "gKKCpdt", "tCZl", "pTDqituceUKQvfzzB"]
+      name = "TCNpyZg"
+
+    [[provenance.sub-provenance.origin-geography]]
+      country = "WUtbNXjmfTuUgN"
+      state = "RxCVOmdLpiLExLCZH"
+
+    [[provenance.sub-provenance.origin-geography]]
+      country = "kLTloZMePMzAhrfFnZfs"
+      state = "qVmkz"
+
+    [[provenance.sub-provenance.origin-geography]]
+      country = "cpqXlGmuDnkHVKMuYUv"
+      state = "QDBlrECuNSaNDZD"
+
+    [[provenance.sub-provenance.origin-geography]]
+      country = "ymIETwQIxYrRzm"
+      state = "ZVnZXBHGRUcuJD"
+    [provenance.sub-provenance.sub-provenance]
+      date = "YSSSPIqWEY"
+      format = ["YoNRYIoJOkHOsWjZzb"]
+      previous-date = "eGapaaCXfqw"
+      source = "PkxAduWVg"
+
+      [[provenance.sub-provenance.sub-provenance.generation-method]]
+        code = "ilWXpZmIM"
+        description = "Hprk"
+        system = "GlsVGrfoEBRCpGJpZU"
+      [provenance.sub-provenance.sub-provenance.generation-period]
+        end = "WigZfKht"
+        start = "cSsZFOxsI"
+
+      [[provenance.sub-provenance.sub-provenance.origin]]
+        address = ["dbrMkQ", "hRVBUqTzoo", "FSXzj", "omN", "EkJesC"]
+        name = "BbnEgNlfZ"
+
+      [[provenance.sub-provenance.sub-provenance.origin]]
+        address = ["JZShpY", "qbOncwaGdCJEDEFJd", "XuHHzYmZGD", "dNIQg", "pvbHRfXFGBpY"]
+        name = "yZrbnVtPEcYK"
+
+      [[provenance.sub-provenance.sub-provenance.origin]]
+        address = ["mfdZBBvj", "EIjAzHciwYtL"]
+        name = "LYHovIFzvYaOV"
+
+      [[provenance.sub-provenance.sub-provenance.origin-geography]]
+        country = "ZKYM"
+        state = "HBicSLd"
+
+      [[provenance.sub-provenance.sub-provenance.origin-geography]]
+        country = "ACXbJJ"
+        state = "CVJ"
+
+      [[provenance.sub-provenance.sub-provenance.origin-geography]]
+        country = "bBLJaDS"
+        state = "aXQAWyrTAdPkBO"
+
+      [[provenance.sub-provenance.sub-provenance.origin-geography]]
+        country = "uWxV"
+        state = "MSEukphsmgSwI"
+
+[source]
+  description = "cHORrCpl"
+  id = "hvbMIhuWQ"
+  location = "UWCXLCaHE"
+  title = "pBKqaVfOUUqNu"
+  version = "fTvjDUNuAXHkMfYCO"
+
+  [[source.issuer]]
+    address = ["pVCPzE"]
+    name = "qV"
+
+  [[source.issuer]]
+    address = ["DfrFUBViqKTGFonK", "RqaMAzTidctGqe", "UyyITTlyxEQW", "exSFrrnUloMkVO", "xofct"]
+    name = "QXjkRlnvS"
+
+  [[source.issuer]]
+    address = ["XRxPoG", "WURLiIlDO", "Y"]
+    name = "iIlUDENJXJNdCizZy"
+
+  [[source.issuer]]
+    address = ["GXCFQalzCbxHQfT", "PyrrOeurNMCCfHoTX", "AWbOGkSsICUatFgBIO", "cOMsgCvA"]
+    name = "FZmmsbqlHYDxaX"
+
+  [[source.issuer]]
+    address = ["cewzXgNd", "pnVSNTpcKn", "gkGoyGPczvKKnytiN"]
+    name = "PpucJMHkoDdIDxbLB"
+
+[use]
+  consents = ["Led", "AxLadzWEySs", "TgCYPDMw"]
+  copyright = ["QuwKBwTctENBtBgVqm", "WXPpvpAsZkm", "lYQv"]
+  license = ["xzdvZ"]
+  patent = ["UKNXAaWtKUVJrVLlbx", "FPUUhhOTupHghlo", "RbJnDrAPDIfpRwiqivw", "eyAlPUTaXGxeWROZTg", "tKWvNZhEU"]
+  trademark = ["bhGscFtuYASaWnjXsE", "JkVWAu", "kQcQUnSrTANYfJOKtwl", "fwRPNudpa"]
+
+  [[use.classification]]
+    evaluated = true
+    tool = "QDUoxJTPCUs"
+    [use.classification.regulation]
+      code = "VmLbaSSC"
+      description = "eTjdagbB"
+      system = "VohRSjmRUHecBorEGnR"
+
+  [[use.classification]]
+    evaluated = false
+    tool = "EPpzwuoM"
+    [use.classification.regulation]
+      code = "vaqfFGHxCRiZhYr"
+      description = "hHRmMQTdIwTagaz"
+      system = "jLZWBFLXdtMRUhYt"
+
+  [[use.classification]]
+    evaluated = false
+    tool = "kcYv"
+    [use.classification.regulation]
+      code = "oSIvYZYIFjkOD"
+      description = "kgQ"
+      system = "kHZKHbeDmwIR"
+
+  [[use.intended-purpose]]
+    code = "Zlp"
+    description = "iVGmUPyeOQR"
+    system = "qAcKhbwJ"
+
+  [[use.intended-purpose]]
+    code = "PUENfbnZukiAYkH"
+    description = "ARktWCg"
+    system = "krvPSCfmGFZLzwI"
+
+  [[use.intended-purpose]]
+    code = "vePRDClGmcHUm"
+    description = "IN"
+    system = "ZZzrVaIxeXgEirTHQ"
+
+  [[use.privacy-enhancing]]
+    parameters = ["N", "V", "VEiOtEMuo"]
+    result = ["STwV", "EOZTfRQrkjmTJ", "bdvkkFcWYqsof", "ukCVHkmSxSwqtOGufCj", "HBJZCnAJEJklYUwe"]
+    tool-used = "tXVwnRQH"
+    [use.privacy-enhancing.tool-category]
+      code = "fnvmQH"
+      description = "LLuxxXYokgVLfDQJwSXq"
+      system = "jjXGxlDhtCRF"
+
+  [[use.privacy-enhancing]]
+    parameters = ["kuAkHZAwDACmKBSwNrdX", "Z", "Gevk", "KGnTm", "jloemLPGmnVESjrNX"]
+    result = ["gCJIAvoqMSPOpx", "BjiGNz", "RsAGIhWKUHfo", "ffHwpTuaStCRSzrOZUB", "wVfWt"]
+    tool-used = "QRRERDXIsSMP"
+    [use.privacy-enhancing.tool-category]
+      code = "hlcDNhPgGVhaOXV"
+      description = "UgEmUWViVWwZkep"
+      system = "aCS"
+
+  [[use.privacy-enhancing]]
+    parameters = ["XnEsxuKOsgKtVBRywm", "APGJqwgBvsCarn", "UnnMjqwx"]
+    result = ["lsPGCHFCjmzNKdd", "wALnE", "QttbOxf"]
+    tool-used = "bCWfEgDPsfd"
+    [use.privacy-enhancing.tool-category]
+      code = "TMDgptlzCzSxPJsEaB"
+      description = "jnLHuPZmmoLWlyBRE"
+      system = "WyeatmHjCQGwFox"
+
+  [[use.processing-excluded]]
+    country = "oanWJBSJxulZ"
+    state = "SMHRQIcg"
+
+  [[use.processing-excluded]]
+    country = "lgT"
+    state = "rTkeeCtGRwr"
+
+  [[use.processing-included]]
+    country = "vuSIm"
+    state = "AmIETNBjPMWTmdljFklr"
+
+  [[use.processing-included]]
+    country = "ITYOMk"
+    state = "iMTwr"
+
+  [[use.storage-allowed]]
+    country = "TJupvosrlKdFYmYOvXwu"
+    state = "IkRqs"
+
+  [[use.storage-allowed]]
+    country = "jDSWGltzzLnvakwIxn"
+    state = "goCPBrkTyxT"
+
+  [[use.storage-allowed]]
+    country = "NqvJdD"
+    state = "YJB"
+
+  [[use.storage-allowed]]
+    country = "fAEbJQctNmrRhg"
+    state = "x"
+
+  [[use.storage-forbidden]]
+    country = "fIQMdVds"
+    state = "HVDptpuLf"
+
+  [[use.storage-forbidden]]
+    country = "bkK"
+    state = "HCPTnQNULqWwuYb"
+
+  [[use.storage-forbidden]]
+    country = "ErvBPqLwNoTYbCSKO"
+    state = "QusDitSvIjpbyNU"
+

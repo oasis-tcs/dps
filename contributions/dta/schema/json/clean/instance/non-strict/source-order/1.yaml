@@ -1,0 +1,31 @@
+$schema: ../../../data-provenance.json
+parasitic: indeed
+provenance:
+  date: hpZul
+  generation-method:
+  - {code: KbsbIt}
+  - {code: YWFROcDjWnvechBY}
+  - {code: cfETs}
+  - {code: NbTpfcugnkipJCSRBYF}
+  - {code: AeADpj}
+  origin-geography:
+  - {country: dswahnpXz}
+  - {country: qTIc}
+  - {country: SmZQ}
+  - {country: UapnfiyOTzKsgDi}
+  - {country: vh}
+source:
+  description: DHyVT
+  id: jYgSyuBA
+  issuer:
+  - {name: aROAwXxS}
+  - {name: pXSXXWHV}
+  title: VbwvcUYetEm
+  version: ixvSCqlbBPrGCss
+use:
+  intended-purpose:
+  - {code: unbyka, description: VwprGKXFHIz}
+  - {code: I, description: ZmHY}
+  - {code: wEqy, description: ANKUpFGXCpeH}
+  - {code: innDUdUsnJ, description: skUROvtqzdTKveIWN}
+  - {code: St, description: QKkmT}

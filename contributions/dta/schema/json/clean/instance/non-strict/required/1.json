@@ -1,0 +1,42 @@
+{
+  "$schema": "../../../data-provenance.json",
+  "parasitic": true,
+  "source": {
+    "version": "MPGvHbVbV",
+    "title": "YjmXixAnRfaj",
+    "id": "DndvCuRsZhroXDyVbDN",
+    "issuer": [
+      {
+        "name": "dyuLDkHjtOoomTY"
+      },
+      {
+        "name": "dxvkhYDqpAVbcPS"
+      },
+      {
+        "name": "pFyisDISOvX"
+      }
+    ],
+    "description": "ymcyI"
+  },
+  "provenance": {
+    "origin-geography": [
+      {
+        "country": "jLkvEvoVzVUca"
+      }
+    ],
+    "date": "MGVAd",
+    "generation-method": [
+      {
+        "code": "yY"
+      }
+    ]
+  },
+  "use": {
+    "intended-purpose": [
+      {
+        "code": "se",
+        "description": "HDIkx"
+      }
+    ]
+  }
+}

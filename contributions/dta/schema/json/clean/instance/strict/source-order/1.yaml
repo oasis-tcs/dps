@@ -1,0 +1,24 @@
+$schema: ../../../data-provenance.json
+provenance:
+  date: rDFournzCTAlVuAS
+  generation-method:
+  - {code: pIhzkgqhoc}
+  - {code: wcPZweeETJRIstSTz}
+  - {code: WXDRSUSwcjMYE}
+  - {code: yR}
+  origin-geography:
+  - {country: JPmAxZO}
+  - {country: DKeGXWoFecWJmyV}
+  - {country: G}
+source:
+  description: QYWehx
+  id: UFDxzSAzZKAcp
+  issuer:
+  - {name: nfEgEGjn}
+  - {name: lceVRRkTIX}
+  - {name: SQjGonnXqftsPjyxZVim}
+  title: rb
+  version: vaZGPhCV
+use:
+  intended-purpose:
+  - {code: iryTiEIkeK, description: TopLLCvNcpTDsuE}

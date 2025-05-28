@@ -1,0 +1,46 @@
+"$schema" = "../../../data-provenance.json"
+
+[provenance]
+  date = "jEipNvSyPMoNeFtoGU"
+
+  [[provenance.generation-method]]
+    code = "GMeCydQbYVIcmjEq"
+
+  [[provenance.origin-geography]]
+    country = "aJVH"
+
+[source]
+  description = "XvFKzkk"
+  id = "ZbGbxDtjwdYLg"
+  title = "sJjJSKluXNyHdxZdq"
+  version = "D"
+
+  [[source.issuer]]
+    name = "lISenTQnsB"
+
+  [[source.issuer]]
+    name = "MwOp"
+
+  [[source.issuer]]
+    name = "kSDlyTjCxyqbNZFunC"
+
+  [[source.issuer]]
+    name = "NVR"
+
+  [[source.issuer]]
+    name = "bxVJbbcXwdiq"
+
+[use]
+
+  [[use.intended-purpose]]
+    code = "ENcteozIY"
+    description = "FgfylACPqBIkDX"
+
+  [[use.intended-purpose]]
+    code = "srlWwIVSlkjdoZLDYdSy"
+    description = "OeqobDPFtpUUqwkWo"
+
+  [[use.intended-purpose]]
+    code = "SHqmBXQMSec"
+    description = "coKTfIAHVCv"
+

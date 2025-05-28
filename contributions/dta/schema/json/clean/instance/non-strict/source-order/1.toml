@@ -1,0 +1,70 @@
+"$schema" = "../../../data-provenance.json"
+parasitic = "indeed"
+
+[provenance]
+  date = "hpZul"
+
+  [[provenance.generation-method]]
+    code = "KbsbIt"
+
+  [[provenance.generation-method]]
+    code = "YWFROcDjWnvechBY"
+
+  [[provenance.generation-method]]
+    code = "cfETs"
+
+  [[provenance.generation-method]]
+    code = "NbTpfcugnkipJCSRBYF"
+
+  [[provenance.generation-method]]
+    code = "AeADpj"
+
+  [[provenance.origin-geography]]
+    country = "dswahnpXz"
+
+  [[provenance.origin-geography]]
+    country = "qTIc"
+
+  [[provenance.origin-geography]]
+    country = "SmZQ"
+
+  [[provenance.origin-geography]]
+    country = "UapnfiyOTzKsgDi"
+
+  [[provenance.origin-geography]]
+    country = "vh"
+
+[source]
+  description = "DHyVT"
+  id = "jYgSyuBA"
+  title = "VbwvcUYetEm"
+  version = "ixvSCqlbBPrGCss"
+
+  [[source.issuer]]
+    name = "aROAwXxS"
+
+  [[source.issuer]]
+    name = "pXSXXWHV"
+
+[use]
+
+  [[use.intended-purpose]]
+    code = "unbyka"
+    description = "VwprGKXFHIz"
+
+  [[use.intended-purpose]]
+    code = "I"
+    description = "ZmHY"
+
+  [[use.intended-purpose]]
+    code = "wEqy"
+    description = "ANKUpFGXCpeH"
+
+  [[use.intended-purpose]]
+    code = "innDUdUsnJ"
+    description = "skUROvtqzdTKveIWN"
+
+  [[use.intended-purpose]]
+    code = "St"
+    description = "QKkmT"
+

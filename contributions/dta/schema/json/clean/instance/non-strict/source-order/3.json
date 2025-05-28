@@ -1,0 +1,64 @@
+{
+  "$schema": "../../../data-provenance.json",
+  "parasitic": "too",
+  "source": {
+    "version": "AqGgFaFXCcAwBGDvaN",
+    "title": "JytdJbicdOhFkYXB",
+    "id": "jfXeYujSPosBHlVC",
+    "issuer": [
+      {
+        "name": "QWHTL"
+      },
+      {
+        "name": "Ijjmr"
+      }
+    ],
+    "description": "z"
+  },
+  "provenance": {
+    "origin-geography": [
+      {
+        "country": "FvrXTMaVDn"
+      },
+      {
+        "country": "dq"
+      },
+      {
+        "country": "IT"
+      },
+      {
+        "country": "BudlWIkxtMqQrvPSH"
+      }
+    ],
+    "date": "anmCAnYdNJIl",
+    "generation-method": [
+      {
+        "code": "OomIsMrxHVsNfYMHZQWm"
+      }
+    ]
+  },
+  "use": {
+    "intended-purpose": [
+      {
+        "code": "hVAku",
+        "description": "OmTYZlhgCV"
+      },
+      {
+        "code": "VV",
+        "description": "VAnLCxjehf"
+      },
+      {
+        "code": "upcdvocuQgfc",
+        "description": "a"
+      },
+      {
+        "code": "oIqwGNtksPnnT",
+        "description": "RHaWPwZIUaNR"
+      },
+      {
+        "code": "ZVCSUJrCuQshGhKgdTm",
+        "description": "qWBmVWDlliCfwmaIyp"
+      }
+    ]
+  }
+}
