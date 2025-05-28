@@ -17,7 +17,7 @@ to move them into a more coherent organization.
 - faq link
 - faq link
 - faq link
-- faq link
+- [How does this work relate to the work in the Open Supplychain Information Modeling (OSIM) TC]
 - faq link
 - faq link
 - faq link
