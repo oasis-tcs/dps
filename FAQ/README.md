@@ -15,7 +15,7 @@ to move them into a more coherent organization.
 - faq link
 - faq link
 - faq link
-- faq link
+- [How does this work relate to the work in other organizations?](faq10.md)
 - faq link
 - faq link
 - faq link
