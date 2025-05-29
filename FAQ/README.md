@@ -18,11 +18,8 @@ to move them into a more coherent organization.
 - faq link
 - faq link
 - faq link
-- faq link
-- [How does this work relate to the work in Data Provenance Initiative by MIT?](./faq14.md)
+- [How does this work relate to the work in Open Trusted Data Initiative?](./faq13.md)
 - faq link
 - [How does this work relate to the work in The Coalition for Content Provenance and Authenticity (C2PA)?](./faq15.md)
 - faq link
 - faq link
-
-
