@@ -1,6 +1,6 @@
 # How does this work relate to the work in the Open Supplychain Information Modeling (OSIM) TC?
 
-The [Open Supplychain Information Modeling (OSIM)TC](https://www.oasis-open.org/tc-osim/) 
+The [Open Supplychain Information Modeling (OSIM) TC](https://www.oasis-open.org/tc-osim/) 
 is developing standards for structuring and exchanging of supply chain information, 
 enabling interoperability, transparency, and eﬃciency across industries.
 Provenance, especially because of it's correlation to trust, is especially important
