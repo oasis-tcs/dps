@@ -7,7 +7,7 @@ THis allows the FAQs to be developed independently until we have enough agreemen
 to move them into a more coherent organization.
 
 - faq link
-- faq link
+- [What are the benefits of implementing Data Provenance Standards?](faq02.md)
 - faq link
 - faq link
 - faq05 link
