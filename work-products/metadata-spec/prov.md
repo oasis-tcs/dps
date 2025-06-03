@@ -1,7 +1,7 @@
 ![OASIS Logo](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
 
 -------
-# Data Provenance Metadata Version 1.0
+# Data Provenance Version 1.0
 **Editor's Note:**
 This title was put in by editor and does not imply consensus by group. 
 It is just so there is text there
