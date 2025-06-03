@@ -272,15 +272,13 @@ The list of changes from the previous version and any revision history can be fo
 
 
 # 5 Provenance Information Model
-The information model of the provenance metadata is described in 
-human-readable property tables.
+The information model of the provenance metadata is described in human-readable property tables.
 The technical encoding may be found in section 6.
 
 The Data Provenance Standards are made up of three groups of metadata elements: 
 Source, Provenance, and Use.
-See Figure 1:
 
-![Fig 1 Metadata](./images//metadata.svg)
+![Metadata](./images//metadata.svg)
 
 The property tables first define metadata about the specification itself,
 then describe how a record is made of the 3 primary metadata elements
