@@ -1,0 +1,2 @@
+# Why Data Provenance Standards?
+Data provenance standards establish criteria for documenting the origin and lifecycle of data, which includes details on how data is collected and how it may be used. This transparency is crucial for driving accuracy, reliability and trustworthiness of data, across all industries.
