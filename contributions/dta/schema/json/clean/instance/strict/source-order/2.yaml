@@ -1,0 +1,26 @@
+$schema: ../../../data-provenance.json
+provenance:
+  date: iTKrO
+  generation-method:
+  - {code: aPqLV}
+  - {code: HkB}
+  - {code: AvUeBBNnVJhVi}
+  - {code: JSoVoRgG}
+  origin-geography:
+  - {country: pBilvb}
+  - {country: NUrHllPUWeGPPQBv}
+  - {country: ydjSGXwDbuWkiZa}
+  - {country: OVjhNdbMuzdCxEl}
+source:
+  description: QaeVZJ
+  id: uutRUsPVPZ
+  issuer:
+  - {name: vfF}
+  - {name: JUtpXLFxmtcAKxbS}
+  title: BYU
+  version: FLTWldQdnnoQGKpKpRv
+use:
+  intended-purpose:
+  - {code: SPyDOolsUJEZnjonU, description: WzOyxIcPxUjdFEjQprNr}
+  - {code: vJgadBRmXWsrDBi, description: mXUWey}
+  - {code: WeCxZFAZymeYfKViCfN, description: CKWyBpU}

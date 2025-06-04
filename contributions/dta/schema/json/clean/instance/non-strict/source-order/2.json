@@ -1,0 +1,73 @@
+{
+  "$schema": "../../../data-provenance.json",
+  "parasitic": "never",
+  "source": {
+    "version": "dIaxlxrgiGTV",
+    "title": "XQjSDoGvFBeWeMHocFC",
+    "id": "uEnWxG",
+    "issuer": [
+      {
+        "name": "MncnvImjDvSt"
+      },
+      {
+        "name": "jNtZJyn"
+      },
+      {
+        "name": "ECIdt"
+      },
+      {
+        "name": "Mh"
+      },
+      {
+        "name": "kRArkhcBPGNqD"
+      }
+    ],
+    "description": "BBAvntUJmSqgEkeuwFdc"
+  },
+  "provenance": {
+    "origin-geography": [
+      {
+        "country": "kcZZHmbXhKFijvJO"
+      },
+      {
+        "country": "HqWjSASSzORXbpKQ"
+      },
+      {
+        "country": "KCmIbYgzaH"
+      },
+      {
+        "country": "iPR"
+      }
+    ],
+    "date": "nipoUKDxVAZXmHuICc",
+    "generation-method": [
+      {
+        "code": "TmNVK"
+      }
+    ]
+  },
+  "use": {
+    "intended-purpose": [
+      {
+        "code": "YklCNqLVSSUTICtTsLu",
+        "description": "wIKcUo"
+      },
+      {
+        "code": "M",
+        "description": "vyyacnk"
+      },
+      {
+        "code": "szY",
+        "description": "nTaGcCKbfccBDUaarB"
+      },
+      {
+        "code": "RSvrTqtULWxmJIffu",
+        "description": "GfI"
+      },
+      {
+        "code": "nOOUzksTNQdrLK",
+        "description": "zvWdyOJxkcHWz"
+      }
+    ]
+  }
+}

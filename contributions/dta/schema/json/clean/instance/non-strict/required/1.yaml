@@ -1,0 +1,20 @@
+$schema: ../../../data-provenance.json
+parasitic: true
+provenance:
+  date: MGVAd
+  generation-method:
+  - {code: yY}
+  origin-geography:
+  - {country: jLkvEvoVzVUca}
+source:
+  description: ymcyI
+  id: DndvCuRsZhroXDyVbDN
+  issuer:
+  - {name: dyuLDkHjtOoomTY}
+  - {name: dxvkhYDqpAVbcPS}
+  - {name: pFyisDISOvX}
+  title: YjmXixAnRfaj
+  version: MPGvHbVbV
+use:
+  intended-purpose:
+  - {code: se, description: HDIkx}

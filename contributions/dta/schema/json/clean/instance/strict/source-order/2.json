@@ -1,0 +1,64 @@
+{
+  "$schema": "../../../data-provenance.json",
+  "source": {
+    "version": "FLTWldQdnnoQGKpKpRv",
+    "title": "BYU",
+    "id": "uutRUsPVPZ",
+    "issuer": [
+      {
+        "name": "vfF"
+      },
+      {
+        "name": "JUtpXLFxmtcAKxbS"
+      }
+    ],
+    "description": "QaeVZJ"
+  },
+  "provenance": {
+    "origin-geography": [
+      {
+        "country": "pBilvb"
+      },
+      {
+        "country": "NUrHllPUWeGPPQBv"
+      },
+      {
+        "country": "ydjSGXwDbuWkiZa"
+      },
+      {
+        "country": "OVjhNdbMuzdCxEl"
+      }
+    ],
+    "date": "iTKrO",
+    "generation-method": [
+      {
+        "code": "aPqLV"
+      },
+      {
+        "code": "HkB"
+      },
+      {
+        "code": "AvUeBBNnVJhVi"
+      },
+      {
+        "code": "JSoVoRgG"
+      }
+    ]
+  },
+  "use": {
+    "intended-purpose": [
+      {
+        "code": "SPyDOolsUJEZnjonU",
+        "description": "WzOyxIcPxUjdFEjQprNr"
+      },
+      {
+        "code": "vJgadBRmXWsrDBi",
+        "description": "mXUWey"
+      },
+      {
+        "code": "WeCxZFAZymeYfKViCfN",
+        "description": "CKWyBpU"
+      }
+    ]
+  }
+}

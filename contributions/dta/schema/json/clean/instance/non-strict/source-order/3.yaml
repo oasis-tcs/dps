@@ -1,0 +1,26 @@
+$schema: ../../../data-provenance.json
+parasitic: too
+provenance:
+  date: anmCAnYdNJIl
+  generation-method:
+  - {code: OomIsMrxHVsNfYMHZQWm}
+  origin-geography:
+  - {country: FvrXTMaVDn}
+  - {country: dq}
+  - {country: IT}
+  - {country: BudlWIkxtMqQrvPSH}
+source:
+  description: z
+  id: jfXeYujSPosBHlVC
+  issuer:
+  - {name: QWHTL}
+  - {name: Ijjmr}
+  title: JytdJbicdOhFkYXB
+  version: AqGgFaFXCcAwBGDvaN
+use:
+  intended-purpose:
+  - {code: hVAku, description: OmTYZlhgCV}
+  - {code: VV, description: VAnLCxjehf}
+  - {code: upcdvocuQgfc, description: a}
+  - {code: oIqwGNtksPnnT, description: RHaWPwZIUaNR}
+  - {code: ZVCSUJrCuQshGhKgdTm, description: qWBmVWDlliCfwmaIyp}

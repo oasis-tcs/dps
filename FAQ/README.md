@@ -7,22 +7,22 @@ THis allows the FAQs to be developed independently until we have enough agreemen
 to move them into a more coherent organization.
 
 - faq link
+- [What are the benefits of implementing Data Provenance Standards?](faq02.md)
+- faq link
+- [How do these standards improve data security and compliance?](faq03.md)
+- faq link
+- faq link
+- [Who developed these standards and with what purpose?](faq04.md)
 - faq link
 - faq link
 - faq link
 - faq link
-- faq link
-- faq link
-- faq link
-- faq link
+- [How does this work relate to the work in the Open Supplychain Information Modeling (OSIM) TC]
 - faq link
 - [How does this work relate to the work in CoSAI?](./faq11.md)
 - faq link
 - faq link
+- [How does this work relate to the work in Data Provenance Initiative by MIT?](./faq14.md)
+- [How does this work relate to the work in The Coalition for Content Provenance and Authenticity (C2PA)?](./faq15.md)
 - faq link
 - faq link
-- faq link
-- faq link
-- faq link
-
-
