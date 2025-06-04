@@ -1,0 +1,26 @@
+$schema: ../../../data-provenance.json
+parasitic: false
+provenance:
+  date: JxLmVPjBx
+  generation-method:
+  - {code: nGuArBIXJHBMqWI}
+  - {code: ctWiLE}
+  origin-geography:
+  - {country: Imejx}
+source:
+  description: Osv
+  id: uKjgexMzFsMLWB
+  issuer:
+  - {name: nPBiLRPW}
+  - {name: iXGclWlPF}
+  - {name: BX}
+  - {name: trvSPpKTLCAewWkhfWG}
+  title: lvtyZdXbcsexe
+  version: CPOWbjfJYTOomGmt
+use:
+  intended-purpose:
+  - {code: PylylegT, description: xXLaOmzWqbywjLaBbV}
+  - {code: ilazcL, description: pqrBAcWmADAlxoVxPC}
+  - {code: PejupgvVXo, description: fOtqNiXcOwjEHF}
+  - {code: YDjvVCSFYc, description: jMDjcxitJkqETQfIjre}
+  - {code: ShpQtvwL, description: YxnmfRPkwYeaoitsMAgg}

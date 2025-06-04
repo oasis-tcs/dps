@@ -1,0 +1,23 @@
+$schema: ../../../data-provenance.json
+provenance:
+  date: jEipNvSyPMoNeFtoGU
+  generation-method:
+  - {code: GMeCydQbYVIcmjEq}
+  origin-geography:
+  - {country: aJVH}
+source:
+  description: XvFKzkk
+  id: ZbGbxDtjwdYLg
+  issuer:
+  - {name: lISenTQnsB}
+  - {name: MwOp}
+  - {name: kSDlyTjCxyqbNZFunC}
+  - {name: NVR}
+  - {name: bxVJbbcXwdiq}
+  title: sJjJSKluXNyHdxZdq
+  version: D
+use:
+  intended-purpose:
+  - {code: ENcteozIY, description: FgfylACPqBIkDX}
+  - {code: srlWwIVSlkjdoZLDYdSy, description: OeqobDPFtpUUqwkWo}
+  - {code: SHqmBXQMSec, description: coKTfIAHVCv}

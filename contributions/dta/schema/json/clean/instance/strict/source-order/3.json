@@ -1,0 +1,55 @@
+{
+  "$schema": "../../../data-provenance.json",
+  "source": {
+    "version": "D",
+    "title": "sJjJSKluXNyHdxZdq",
+    "id": "ZbGbxDtjwdYLg",
+    "issuer": [
+      {
+        "name": "lISenTQnsB"
+      },
+      {
+        "name": "MwOp"
+      },
+      {
+        "name": "kSDlyTjCxyqbNZFunC"
+      },
+      {
+        "name": "NVR"
+      },
+      {
+        "name": "bxVJbbcXwdiq"
+      }
+    ],
+    "description": "XvFKzkk"
+  },
+  "provenance": {
+    "origin-geography": [
+      {
+        "country": "aJVH"
+      }
+    ],
+    "date": "jEipNvSyPMoNeFtoGU",
+    "generation-method": [
+      {
+        "code": "GMeCydQbYVIcmjEq"
+      }
+    ]
+  },
+  "use": {
+    "intended-purpose": [
+      {
+        "code": "ENcteozIY",
+        "description": "FgfylACPqBIkDX"
+      },
+      {
+        "code": "srlWwIVSlkjdoZLDYdSy",
+        "description": "OeqobDPFtpUUqwkWo"
+      },
+      {
+        "code": "SHqmBXQMSec",
+        "description": "coKTfIAHVCv"
+      }
+    ]
+  }
+}

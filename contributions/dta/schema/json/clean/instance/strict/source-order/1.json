@@ -1,0 +1,56 @@
+{
+  "$schema": "../../../data-provenance.json",
+  "source": {
+    "version": "vaZGPhCV",
+    "title": "rb",
+    "id": "UFDxzSAzZKAcp",
+    "issuer": [
+      {
+        "name": "nfEgEGjn"
+      },
+      {
+        "name": "lceVRRkTIX"
+      },
+      {
+        "name": "SQjGonnXqftsPjyxZVim"
+      }
+    ],
+    "description": "QYWehx"
+  },
+  "provenance": {
+    "origin-geography": [
+      {
+        "country": "JPmAxZO"
+      },
+      {
+        "country": "DKeGXWoFecWJmyV"
+      },
+      {
+        "country": "G"
+      }
+    ],
+    "date": "rDFournzCTAlVuAS",
+    "generation-method": [
+      {
+        "code": "pIhzkgqhoc"
+      },
+      {
+        "code": "wcPZweeETJRIstSTz"
+      },
+      {
+        "code": "WXDRSUSwcjMYE"
+      },
+      {
+        "code": "yR"
+      }
+    ]
+  },
+  "use": {
+    "intended-purpose": [
+      {
+        "code": "iryTiEIkeK",
+        "description": "TopLLCvNcpTDsuE"
+      }
+    ]
+  }
+}

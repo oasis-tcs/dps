@@ -1,0 +1,23 @@
+$schema: ../../../data-provenance.json
+provenance:
+  date: YQryw
+  generation-method:
+  - {code: xU}
+  origin-geography:
+  - {country: GcWYfOkiR}
+  - {country: EtokUcBzUkWUwp}
+  - {country: gTret}
+  - {country: MzjLLmdUXv}
+  - {country: IzfgWGMZEQThiUP}
+source:
+  description: NVTtIpdlTUBksmzRm
+  id: RJ
+  issuer:
+  - {name: ZHN}
+  - {name: GPYuKRhq}
+  title: MmVDFfPuKfLbgULk
+  version: nqpnVC
+use:
+  intended-purpose:
+  - {code: POK, description: daBkvxTDVTZjALb}
+  - {code: jYDBNwedolyEjwmT, description: JSbfGm}

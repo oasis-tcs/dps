@@ -1,0 +1,397 @@
+{
+  "$schema": "../../../data-provenance.json",
+  "source": {
+    "version": "FLjaUXe",
+    "title": "kuSLXPqsbbjJYtjyX",
+    "id": "Vsznnn",
+    "location": "imudkPVhxTeOUo",
+    "issuer": [
+      {
+        "name": "nMWbKcxLIJOFezb",
+        "address": [
+          "qIMbqWNhAsEgji",
+          "qJLnEJGITTFxrkfGhE",
+          "mIPYVLjRzP"
+        ]
+      },
+      {
+        "name": "RJfhgceHqrEZVviOu",
+        "address": [
+          "wXvgimENJZpWgWONu",
+          "fdBQrYoPnuOCYj",
+          "APHoZqkCZAMIcPaqOKA",
+          "RpHzZpTL",
+          "d"
+        ]
+      }
+    ],
+    "description": "iznEExRMVvjaYwdQmEq"
+  },
+  "provenance": {
+    "source": "y",
+    "origin": [
+      {
+        "name": "xgVBCGLcNr",
+        "address": [
+          "fyKulARZziSvdZNoIR",
+          "SuVqHmZpqjWz",
+          "NbL",
+          "TNOQXQOqPJPSIocIq",
+          "koIuzbOfdrBGpsWhWrnt"
+        ]
+      },
+      {
+        "name": "ZzMN",
+        "address": [
+          "gEAVOb"
+        ]
+      }
+    ],
+    "origin-geography": [
+      {
+        "country": "YoGRJwqnvXBCfxSq",
+        "state": "yVFLziiPei"
+      }
+    ],
+    "date": "FnOrkhnPGGx",
+    "previous-date": "myEyBbAtJKBRqWHUv",
+    "generation-period": {
+      "start": "BrecpdwyYJEaKTMaUslp",
+      "end": "vHse"
+    },
+    "generation-method": [
+      {
+        "code": "EuKgHaGTz",
+        "system": "QmqeIYgXVwvLCo",
+        "description": "uQuMsfHfJAwdMpJPLdi"
+      }
+    ],
+    "format": [
+      "iNgiNCwJxihd"
+    ],
+    "sub-provenance": {
+      "source": "TZSEBNyjxuXifU",
+      "origin": [
+        {
+          "name": "aujchaBcaNvOGUgB",
+          "address": [
+            "kAngTKyNxarSe",
+            "kuZOGLuFtERrCjjZwNj",
+            "EXGCYo",
+            "tztvnrBa",
+            "hlDUSHiFMMKgfXXBq"
+          ]
+        },
+        {
+          "name": "uyxgwPABxlYX",
+          "address": [
+            "aKu",
+            "KTy",
+            "xohay"
+          ]
+        },
+        {
+          "name": "jyPmiKXAOQOjOZJGnsVV",
+          "address": [
+            "TfK",
+            "EIwcvdrRgekz"
+          ]
+        }
+      ],
+      "origin-geography": [
+        {
+          "country": "doVewao",
+          "state": "wZVWDMjgqMPrL"
+        }
+      ],
+      "date": "YQ",
+      "previous-date": "SJ",
+      "generation-period": {
+        "start": "LwwzabcCJpIpHT",
+        "end": "FsRFyNusBmyh"
+      },
+      "generation-method": [
+        {
+          "code": "BNxeGnD",
+          "system": "MMrYs",
+          "description": "nYQvfbUKsAIUeheRccq"
+        },
+        {
+          "code": "VTYGpkRVtcK",
+          "system": "MoClyiWBnK",
+          "description": "neNOH"
+        }
+      ],
+      "format": [
+        "VmJJKimmQrUDMZgWPJAk",
+        "WnI",
+        "hFoFeSuSW",
+        "AlFZBGNAMlqYrAy",
+        "ZNJzRhJkL"
+      ],
+      "sub-provenance": {
+        "source": "jquwWOAoZDVIpGyi",
+        "origin": [
+          {
+            "name": "rJVqZ",
+            "address": [
+              "YCowqiVgTXRNvtQJ",
+              "PEttDxdwZeyqI",
+              "SeWveSSSEOHLMf",
+              "YiffjlFGJSDGDtVabJIu"
+            ]
+          },
+          {
+            "name": "bPxKHadM",
+            "address": [
+              "ylvaE"
+            ]
+          },
+          {
+            "name": "vSDDdO",
+            "address": [
+              "lpnrhHuMy",
+              "EySVHquZWagSXGpoWCI",
+              "XY",
+              "EvaYyoBFMEdcZdKR",
+              "zHVOHppIfHRD"
+            ]
+          },
+          {
+            "name": "ZPBe",
+            "address": [
+              "TrEmmbwxKc",
+              "zkJhfwhAhUiwI",
+              "KN",
+              "EE"
+            ]
+          }
+        ],
+        "origin-geography": [
+          {
+            "country": "kFsaaTmuhYAFu",
+            "state": "L"
+          },
+          {
+            "country": "xIOtybgrezGJdZgCxC",
+            "state": "A"
+          },
+          {
+            "country": "eQZKsmTnMxPARWbBSVE",
+            "state": "biushcNDUeGpmdhxYGJR"
+          },
+          {
+            "country": "Ea",
+            "state": "HFdNbvT"
+          },
+          {
+            "country": "BmhScDoqYsenZ",
+            "state": "LJxnrDLnorTMoe"
+          }
+        ],
+        "date": "SKpGHChjIkO",
+        "previous-date": "bJwRZ",
+        "generation-period": {
+          "start": "j",
+          "end": "HwpXrvikdQUX"
+        },
+        "generation-method": [
+          {
+            "code": "FlDRDUfrmkXr",
+            "system": "ZYZCZkdsTT",
+            "description": "gzhdAmGdZbTtrsBI"
+          },
+          {
+            "code": "XAzQcLGLQgyy",
+            "system": "kSdMIapXtYkcKXVzm",
+            "description": "kquW"
+          },
+          {
+            "code": "spZSXZuB",
+            "system": "lyAKecWLTJP",
+            "description": "qjlmQATkFxdwecvT"
+          }
+        ],
+        "format": [
+          "seuyqFHf",
+          "AJnqAidgHdUZeNFarj",
+          "tjZPLKUrTqivlDRmRkt",
+          "ssBOdzaBuTvrwU",
+          "fqIegmZVQfALO"
+        ]
+      }
+    }
+  },
+  "use": {
+    "classification": [
+      {
+        "regulation": {
+          "code": "tCbnbnlkXYqD",
+          "system": "MSBpXpOVVgZnNVEx",
+          "description": "sYUxMpbBmUqNwvezR"
+        },
+        "evaluated": false,
+        "tool": "KNCQu"
+      },
+      {
+        "regulation": {
+          "code": "jHbFNeHaYMeTrSKfgp",
+          "system": "ej",
+          "description": "vyqJaQabLUKeyqQvj"
+        },
+        "evaluated": true,
+        "tool": "TNgvnyhIJcfDKRs"
+      },
+      {
+        "regulation": {
+          "code": "wxYEvhOvhOXaeZEiCW",
+          "system": "DKLkvXVP",
+          "description": "LPMscQMivTWRKSTF"
+        },
+        "evaluated": true,
+        "tool": "IqlEB"
+      },
+      {
+        "regulation": {
+          "code": "Ynf",
+          "system": "JGePsYioDGIKYCKlCo",
+          "description": "zUEQzkgY"
+        },
+        "evaluated": true,
+        "tool": "tfDsdcbIsNlndACZN"
+      }
+    ],
+    "consents": [
+      "JGgustMYveCcbZM",
+      "IPKrDAmeVPQwmk"
+    ],
+    "privacy-enhancing": [
+      {
+        "tool-category": {
+          "code": "Dk",
+          "system": "cIkfrtdKYEsuaBbuPGuN",
+          "description": "SFhXYPfJ"
+        },
+        "tool-used": "UWUewekUXoSkN",
+        "parameters": [
+          "CPaH",
+          "Q"
+        ],
+        "result": [
+          "AbeLii",
+          "jvEXletJEfuEguQWLV",
+          "NzSuHAYZjrBiOOCxhV",
+          "MbmpTvlaGeuVCXjP",
+          "vbiCANcWRzHjUWBXlPbS"
+        ]
+      },
+      {
+        "tool-category": {
+          "code": "JNhiSVSgbLuYTpXdATrb",
+          "system": "sulChQbPyamkKzeMqlJ",
+          "description": "DGbXXUyIXvjabmekq"
+        },
+        "tool-used": "UZwVPNKkMHFigYTI",
+        "parameters": [
+          "ftXJvcGjlGNUQ",
+          "xFeFGqDKGgw",
+          "XYZGGZkhRPYisaCzFNQ"
+        ],
+        "result": [
+          "wY"
+        ]
+      }
+    ],
+    "processing-included": [
+      {
+        "country": "iIjUyUxtUrLK",
+        "state": "chXq"
+      }
+    ],
+    "processing-excluded": [
+      {
+        "country": "ZfOZCpBqiKeKTNfO",
+        "state": "vxHmNZLXqdNFS"
+      },
+      {
+        "country": "dghBnsLY",
+        "state": "JSgIkngAbPjDCV"
+      },
+      {
+        "country": "nDo",
+        "state": "JjfVL"
+      },
+      {
+        "country": "BbjzboaJlhbgkTkwPy",
+        "state": "pSSeXMlR"
+      }
+    ],
+    "storage-allowed": [
+      {
+        "country": "LhSqUrDxWAkWrYSERO",
+        "state": "fB"
+      },
+      {
+        "country": "MW",
+        "state": "AmAUgYMigZB"
+      },
+      {
+        "country": "slpFfzqgb",
+        "state": "HKObCml"
+      },
+      {
+        "country": "qt",
+        "state": "OQRvKkFzLZa"
+      },
+      {
+        "country": "QPVIiEq",
+        "state": "YphomUntqXkm"
+      }
+    ],
+    "storage-forbidden": [
+      {
+        "country": "AiBRsybrYsIrjC",
+        "state": "RzyAfixBCKouc"
+      },
+      {
+        "country": "bkz",
+        "state": "dk"
+      },
+      {
+        "country": "guayQklRKBaYMmiLtsBg",
+        "state": "FtEzGx"
+      },
+      {
+        "country": "gATGsy",
+        "state": "zvkTF"
+      }
+    ],
+    "license": [
+      "DWSIvKsOJJ"
+    ],
+    "intended-purpose": [
+      {
+        "code": "oR",
+        "system": "QMEUGyvZq",
+        "description": "RmROThvMTrDiIkdbW"
+      }
+    ],
+    "copyright": [
+      "RdMm",
+      "vHcNs",
+      "ybVXuTvoOlZoNvCzPUC",
+      "JOyjcG",
+      "POxO"
+    ],
+    "patent": [
+      "xHjlwWtHKXAciqUU",
+      "ZgxlzSQqXuQAJyfxCaML",
+      "zYOzBZrFoGS"
+    ],
+    "trademark": [
+      "IgjFcXQu",
+      "AKIZoqLwDY",
+      "DRxaMGkGbaX"
+    ]
+  }
+}
