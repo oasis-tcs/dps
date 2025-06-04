@@ -6,7 +6,7 @@ which are one question and answer per file.
 THis allows the FAQs to be developed independently until we have enough agreement 
 to move them into a more coherent organization.
 
-- faq link
+- [Why Data Provenance Standards?](faq01.md)
 - [What are the benefits of implementing Data Provenance Standards?](faq02.md)
 - [How do these standards improve data security and compliance?](faq03.md)
 - [Who developed these standards and with what purpose?](faq04.md)
@@ -16,6 +16,7 @@ to move them into a more coherent organization.
 - faq08 link
 - faq09 link
 - faq link
+- [How does this work relate to the work in CoSAI?](./faq11.md)
 - [How does this work relate to the work in the Open Supplychain Information Modeling (OSIM) TC](./faq12.md)
 - faq link
 - [How does this work relate to the work in Data Provenance Initiative by MIT?](./faq14.md)
