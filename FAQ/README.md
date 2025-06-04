@@ -8,14 +8,13 @@ to move them into a more coherent organization.
 
 - faq link
 - [What are the benefits of implementing Data Provenance Standards?](faq02.md)
-- faq link
-- faq link
+- [How do these standards improve data security and compliance?](faq03.md)
+- [Who developed these standards and with what purpose?](faq04.md)
 - faq05 link
 - faq06 link
 - faq07 link
 - faq08 link
 - faq09 link
-- faq link
 - faq link
 - [How does this work relate to the work in the Open Supplychain Information Modeling (OSIM) TC](./faq12.md)
 - faq link
@@ -25,5 +24,3 @@ to move them into a more coherent organization.
 - faq17 link
 - faq18 link
 - faq19 link
-
-
