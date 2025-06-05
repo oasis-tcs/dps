@@ -15,7 +15,7 @@ to move them into a more coherent organization.
 - faq07 link
 - faq08 link
 - faq09 link
-- faq link
+- [How does this work relate to the work in other organizations?](faq10.md)
 - [How does this work relate to the work in CoSAI?](./faq11.md)
 - [How does this work relate to the work in the Open Supplychain Information Modeling (OSIM) TC](./faq12.md)
 - [How does this work relate to the work in Open Trusted Data Initiative?](./faq13.md)
