@@ -10,16 +10,18 @@ to move them into a more coherent organization.
 - [What are the benefits of implementing Data Provenance Standards?](faq02.md)
 - [How do these standards improve data security and compliance?](faq03.md)
 - [Who developed these standards and with what purpose?](faq04.md)
-- faq link
-- faq link
-- faq link
-- faq link
-- faq link
+- faq05 link
+- faq06 link
+- faq07 link
+- faq08 link
+- faq09 link
 - [How does this work relate to the work in other organizations?](faq10.md)
 - [How does this work relate to the work in CoSAI?](./faq11.md)
-- [How does this work relate to the work in the Open Supplychain Information Modeling (OSIM) TC](faq12.md)
+- [How does this work relate to the work in the Open Supplychain Information Modeling (OSIM) TC](./faq12.md)
 - faq link
 - [How does this work relate to the work in Data Provenance Initiative by MIT?](./faq14.md)
 - [How does this work relate to the work in The Coalition for Content Provenance and Authenticity (C2PA)?](./faq15.md)
-- faq link
-- faq link
+- faq16 link
+- faq17 link
+- faq18 link
+- faq19 link
