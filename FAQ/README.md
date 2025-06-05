@@ -18,7 +18,7 @@ to move them into a more coherent organization.
 - faq link
 - [How does this work relate to the work in CoSAI?](./faq11.md)
 - [How does this work relate to the work in the Open Supplychain Information Modeling (OSIM) TC](./faq12.md)
-- faq link
+- [How does this work relate to the work in Open Trusted Data Initiative?](./faq13.md)
 - [How does this work relate to the work in Data Provenance Initiative by MIT?](./faq14.md)
 - [How does this work relate to the work in The Coalition for Content Provenance and Authenticity (C2PA)?](./faq15.md)
 - faq16 link
