@@ -1,0 +1,27 @@
+{
+  "name": "@data-and-trust-alliance/metadata-reference",
+  "version": "1.0.0",
+  "description": "Reference library for managing metadata associated with the Data and Trust Alliance Data Provenance Standards.",
+  "main": "dist/index.js",
+  "scripts": {
+    "ts:js": "tsc",
+    "ts:defs": "tsc --declaration --outDir . --emitDeclarationOnly",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Data and Trust Alliance",
+  "license": "Apache License, Version 2.0",
+  "dependencies": {
+    "@types/uuid": "^10.0.0",
+    "iso-3166": "^4.3.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "typescript": "^5.6.2"
+  },
+  "files": [
+    "**/*.d.ts",
+    "dist/**/*.js",
+    "src/**/*.ts"
+  ]
+}
