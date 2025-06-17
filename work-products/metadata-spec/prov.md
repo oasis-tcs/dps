@@ -11,7 +11,7 @@ It is just so there is text there
 ## 06 May 2025
 
 **Editor's Note:**
-THe following "version links" will be filled out nearer to completion. Note for 'first' version, 
+The following "version links" will be filled out nearer to completion. Note for 'first' version, 
 "This" and "latest" will be the same, and "previous" will be "none" 
 
 ### This version
@@ -291,7 +291,7 @@ Subsequent tables describe the underlying fields of the 3 elements.
 
 | ID | Name         | Type           | \# | Description                                                   |
 |----|--------------|----------------|----|---------------------------------------------------------------|
-| 1  | **version**  | URL            | 1  | Standard version used to define the metadata for this dataset |
+| 1  | **version**  | URL            | 1  | Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time. |
 | 2  | **metadata** | DataProvenance | 1  | The metadata about a dataset                                  |
 
 **********
@@ -314,11 +314,11 @@ The Data Provenance Standard Metadata
 
 | ID | Name            | Type         | \#    | Description                      |
 |----|-----------------|--------------|-------|----------------------------------|
-| 1  | **title**       | String       | 1     | The official name of the dataset |
-| 2  | **id**          | UID          | 1     | Unique metadata identifier       |
-| 3  | **location**    | URL          | 0..1  | Metadata location                |
-| 4  | **issuer**      | Organization | 1..\* | Data issuer  (many?)             |
-| 5  | **description** | String       | 1     | Description of the dataset       |
+| 1  | **title**       | String       | 1     | The official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose. |
+| 2  | **id**          | UID          | 1     | A distinct identifier (such as a UUID) assigned to the dataset's metadata to uniquely distinguish it from others, ensuring no confusion or overlap.       |
+| 3  | **location**    | URL          | 0..1  | The web address where the dataset's metadata is published and can be accessed, providing a direct link to detailed information about the dataset.               |
+| 4  | **issuer**      | Organization | 1..\* | The legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries. |
+| 5  | **description** | String       | 1     | Contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses.  |
 
 **********
 
@@ -343,14 +343,14 @@ The Data Provenance Standard Metadata
 
 | ID | Name                  | Type         | \#    | Description                                      |
 |----|-----------------------|--------------|-------|--------------------------------------------------|
-| 1  | **source**            | URL          | 1..\* | Source metadata for dataset                      |
-| 2  | **origin**            | Organization | 0..1  | Source                                           |
-| 3  | **origin-geography**  | Geography    | 1..\* | Data origin geography                            |
-| 4  | **date**              | Timestamp    | 1     | Dataset issue date                               |
-| 5  | **previous-date**     | Timestamp    | 1     | Date of previously-issued version of the dataset |
-| 6  | **generation-period** | Generation   | 1     | Range of dates for data generation               |
-| 7  | **generation-method** | Method       | 1..\* | Method (code/system/description?)                |
-| 8  | **format**            | MediaType    | 0..\* | Data format                                      |
+| 1  | **source**            | URL          | 1..\* | Identifies where the metadata for any source datasets that contribute to the current dataset can be found, establishing lineage and dependencies. This field establishes lineage. |
+| 2  | **origin**            | Organization | 0..1  | If the data originates from a different organization than the one who isued the dataset, this field identifies that original source's legal name.  |
+| 3  | **origin-geography**  | Geography    | 1..\* | The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.|
+| 4  | **date**              | Timestamp    | 1     | The date when the dataset was compiled or created, providing a temporal context for the data.  |
+| 5  | **previous-date**     | Timestamp    | 1     | The release date of the last version of the dataset, if it has been updated or revised, to track changes and updates over time. |
+| 6  | **generation-period** | Generation   | 1     | The span of time during which the data within the dataset was collected or generated, offering insight into the dataset's timeliness and relevance.            |
+| 7  | **generation-method** | Method       | 1..\* | The methodology or procedures used to collect, generate, or compile the data, giving insight into its reliability and validity.  |
+| 8  | **format**            | MediaType    | 0..\* | Describes the nature of the data within the dataset, such as numerical, textual, or multimedia, helping users understand what kind of information is contained within the file or dataset.                                      |
 | 9  | **sub-provenance**    | Provenance   | 1     | Add key/link?                                    |
 
 **********
@@ -370,13 +370,13 @@ The Data Provenance Standard Metadata
 
 | ID | Name                  | Type                    | \#    | Description                                                                                                                       |
 |----|-----------------------|-------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
-| 1  | **classification**    | Confidentiality         | 1     | Confidentiality Classification                                                                                                    |
-| 2  | **consent**           | URL                     | 1..\* | Consent documentation location                                                                                                    |
-| 3  | **privacy-enhancing** | Privacy-Tool            | 1..\* | Privacy enhancing technologies                                                                                                    |
-| 4  | **processing**        | Processing-Geography    | 0..1  | Data processing geography                                                                                                         |
-| 5  | **storage**           | Storage-Geography       | 0..1  | Data storage geography                                                                                                            |
-| 6  | **license**           | ArrayOf(License) unique | 1     | License to use                                                                                                                    |
-| 7  | **intended_purpose**  | Intended-Use            | 1     | Intended data use                                                                                                                 |
+| 1  | **classification**    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset, such as personally identifiable information, which dictates how the dataset must be secured and who can access it.                                                                                                  |
+| 2  | **consent**           | URL                     | 1..\* | Specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.                                                                                                 |
+| 3  | **privacy-enhancing** | Privacy-Tool            | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI), highlighting the dataset's privacy considerations.                                                                                                 |
+| 4  | **processing**        | Processing-Geography    | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                                                                        |
+| 5  | **storage**           | Storage-Geography       | 0..1  |  Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereignty laws.                                                                                                           |
+| 6  | **license**           | ArrayOf(License) unique | 1     | Details the location or point of contact for identifying the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights.                                                                                                                |
+| 7  | **intended_purpose**  | Intended-Use            | 1     | Describes the purpose for which the dataset was created, guiding users on its intended use and potential applications against identified use cases.                                                                                                            |
 | 8  | **copyright**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright.  |
 | 9  | **patent**            | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.              |
 | 10 | **trademark**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark. |
