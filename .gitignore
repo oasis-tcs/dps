@@ -1,0 +1,7 @@
+# Operating Systems
+.DS_Store
+
+# Editors
+*~
+.idea
+.vscode
