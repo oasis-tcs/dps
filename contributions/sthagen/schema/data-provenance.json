@@ -440,6 +440,8 @@
     "orga-type": {
       "$comment": "We may want to reuse existing types for the orga or at least foir address data",
       "description": "An organization responsible with point of contact for inquiries.",
+      "minItems": 1,
+      "type": "array",
       "items": {
         "properties": {
           "address": {
@@ -466,8 +468,6 @@
         ],
         "type": "object"
       },
-      "minItems": 1,
-      "type": "array",
       "uniqueItems": true
     },
     "provenance-type": {
@@ -480,48 +480,11 @@
         },
         "origin": {
           "description": "If the data originates from a different organization than the one who issued the dataset, this field identifies the original source's legal name.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              },
-              "address": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "minItems": 0,
-                "uniqueItems": true
-              }
-            },
-            "required": [
-              "name"
-            ]
-          },
-          "minItems": 0,
-          "uniqueItems": true
+          "type": "#/$defs/orga-type"
         },
         "origin-geography": {
           "description": "The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.",
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "country": {
-                "type": "string"
-              },
-              "state": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "country"
-            ]
-          },
-          "minItems": 1,
-          "uniqueItems": true
+          "type": "#/$defs/geographic-regions-type"
         },
         "date": {
           "description": "The date when the dataset was compiled or created, providing a temporal context for the data.",
@@ -574,7 +537,7 @@
           "items": {
             "type": "string"
           },
-          "minItems": 0,
+          "minItems": 1,
           "uniqueItems": true
         },
         "sub-provenance": {
@@ -718,7 +681,7 @@
               "evaluated"
             ]
           },
-          "minItems": 0,
+          "minItems": 1,
           "uniqueItems": true
         },
         "consents": {
@@ -727,7 +690,7 @@
           "items": {
             "type": "string"
           },
-          "minItems": 0,
+          "minItems": 1,
           "uniqueItems": true
         },
         "privacy-enhancing": {
@@ -761,21 +724,21 @@
                 "items": {
                   "type": "string"
                 },
-                "minItems": 0
+                "minItems": 1
               },
               "result": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 },
-                "minItems": 0
+                "minItems": 1
               }
             },
             "required": [
               "tool-used"
             ]
           },
-          "minItems": 0,
+          "minItems": 1,
           "uniqueItems": true
         },
         "processing-included": {
@@ -800,7 +763,7 @@
           "items": {
             "type": "string"
           },
-          "minItems": 0,
+          "minItems": 1,
           "uniqueItems": true
         },
         "intended-purpose": {
@@ -833,7 +796,7 @@
           "items": {
             "type": "string"
           },
-          "minItems": 0,
+          "minItems": 1,
           "uniqueItems": true
         },
         "patent": {
@@ -842,7 +805,7 @@
           "items": {
             "type": "string"
           },
-          "minItems": 0,
+          "minItems": 1,
           "uniqueItems": true
         },
         "trademark": {
@@ -851,7 +814,7 @@
           "items": {
             "type": "string"
           },
-          "minItems": 0,
+          "minItems": 1,
           "uniqueItems": true
         }
       },

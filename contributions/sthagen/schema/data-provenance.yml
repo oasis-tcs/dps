@@ -355,6 +355,8 @@ $defs:
   orga-type:
     $comment: We may want to reuse existing types for the orga or at least foir address data
     description: An organization responsible with point of contact for inquiries.
+    minItems: 1
+    type: array
     items:
       properties:
         address:
@@ -374,8 +376,6 @@ $defs:
       required:
       - legal-name
       type: object
-    minItems: 1
-    type: array
     uniqueItems: true
   provenance-type:
     description: This describes the provenance of the dataset.
@@ -388,37 +388,11 @@ $defs:
       origin:
         description: If the data originates from a different organization than the one who issued the dataset, this field identifies the original source's
           legal name.
-        type: array
-        items:
-          type: object
-          properties:
-            name:
-              type: string
-            address:
-              type: array
-              items:
-                type: string
-              minItems: 0
-              uniqueItems: true
-          required:
-          - name
-        minItems: 0
-        uniqueItems: true
+        type: '#/$defs/orga-type'
       origin-geography:
         description: The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding
           the data's context.
-        type: array
-        items:
-          type: object
-          properties:
-            country:
-              type: string
-            state:
-              type: string
-          required:
-          - country
-        minItems: 1
-        uniqueItems: true
+        type: '#/$defs/geographic-regions-type'
       date:
         description: The date when the dataset was compiled or created, providing a temporal context for the data.
         type: string
@@ -458,7 +432,7 @@ $defs:
         type: array
         items:
           type: string
-        minItems: 0
+        minItems: 1
         uniqueItems: true
       sub-provenance:
         $ref: '#/$defs/provenance-type'
@@ -568,7 +542,7 @@ $defs:
           required:
           - regulation
           - evaluated
-        minItems: 0
+        minItems: 1
         uniqueItems: true
       consents:
         description: Specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.
@@ -577,7 +551,7 @@ $defs:
         type: array
         items:
           type: string
-        minItems: 0
+        minItems: 1
         uniqueItems: true
       privacy-enhancing:
         description: Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI),
@@ -603,15 +577,15 @@ $defs:
               type: array
               items:
                 type: string
-              minItems: 0
+              minItems: 1
             result:
               type: array
               items:
                 type: string
-              minItems: 0
+              minItems: 1
           required:
           - tool-used
-        minItems: 0
+        minItems: 1
         uniqueItems: true
       processing-included:
         description: Defines the geographical boundaries within which the data can be processed, often for legal or regulatory reasons.
@@ -632,7 +606,7 @@ $defs:
         type: array
         items:
           type: string
-        minItems: 0
+        minItems: 1
         uniqueItems: true
       intended-purpose:
         description: Describes the purpose for which the dataset was created, guiding users on its intended use and potential applications against identified
@@ -657,21 +631,21 @@ $defs:
         type: array
         items:
           type: string
-        minItems: 0
+        minItems: 1
         uniqueItems: true
       patent:
         description: Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.
         type: array
         items:
           type: string
-        minItems: 0
+        minItems: 1
         uniqueItems: true
       trademark:
         description: Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark.
         type: array
         items:
           type: string
-        minItems: 0
+        minItems: 1
         uniqueItems: true
     required:
     - intended-purpose
