@@ -342,6 +342,16 @@
         }
       }
     },
+    "address-type": {
+      "description": "Single physical address as lines of text.",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
     "geographic-regions-type": {
       "$comment": "Refactored from four processing/storage (dis-)allowed occurences; enforecd at least one item if present and still has countrsy as string (WIP).",
       "description": "Defines the geographical boundaries within which some action given by the key is specified by the semantics of the key as name.",
@@ -362,6 +372,148 @@
       },
       "minItems": 1,
       "uniqueItems": true
+    },
+    "identity-type": {
+      "title": "Identify as precisely as possible offeing various methods",
+      "description": "Provides at least one method which aids in identifying some entity.",
+      "type": "object",
+      "minProperties": 1,
+      "properties": {
+        "hashes": {
+          "title": "List of hashes",
+          "description": "Contains a list of cryptographic hashes usable to identify files or filesets.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "Cryptographic hashes",
+            "description": "Contains all information to identify a file or fileset based on its cryptographic hash values.",
+            "type": "object",
+            "required": [
+              "tree-hashes",
+              "path"
+            ],
+            "properties": {
+              "tree-hashes": {
+                "title": "List of file or tree hashes",
+                "description": "Contains a list of cryptographic hashes for this file or tree.",
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "title": "Path hash",
+                  "description": "Contains one hash value and algorithm of the file to be identified.",
+                  "type": "object",
+                  "required": [
+                    "algorithm",
+                    "value"
+                  ],
+                  "properties": {
+                    "algorithm": {
+                      "title": "Algorithm of the cryptographic hash",
+                      "description": "Contains the name of the hash or tree/seal algorithm used to calculate the value.",
+                      "type": "string",
+                      "default": "sha256",
+                      "minLength": 1,
+                      "examples": [
+                        "blake2b512",
+                        "sha256",
+                        "sha3-512",
+                        "sha384",
+                        "sha512",
+                        "tree-blake3-seal-sha512"
+                      ]
+                    },
+                    "value": {
+                      "title": "Value of the cryptographic hash",
+                      "description": "Contains the cryptographic hash value in hexadecimal representation.",
+                      "type": "string",
+                      "pattern": "^[0-9a-fA-F]{32,}$",
+                      "minLength": 32,
+                      "examples": [
+                        "af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262",
+                        "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e",
+                        "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                      ]
+                    }
+                  }
+                }
+              },
+              "path": {
+                "title": "Path",
+                "description": "Contains the path (can be a single file or the root of a filesystem tree) which is identified by the hash values.",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "/data/set/42",
+                  "example-data.tar.xz",
+                  "household-data.dmg"
+                ]
+              }
+            }
+          }
+        },
+        "uris": {
+          "title": "List of generic URIs",
+          "description": "Contains a list of identifiers in URI format.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "URI",
+            "description": "Provides an identifier in URI format.",
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "uuids": {
+          "title": "List of UUIDs",
+          "description": "Contains a list of identifiers in UUID format.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "UUID",
+            "description": "Provides a unique ID.",
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "custom-ids": {
+          "title": "List of text form identifiers",
+          "description": "Contains a list of identifiers in any text format.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "custom-id",
+            "description": "Provides a unique ID in any text format.",
+            "type": "object",
+            "required": [
+              "method",
+              "value"
+            ],
+            "properties": {
+              "method": {
+                "title": "Method for construction of the ID",
+                "description": "Contains the name of the method used to derive the value.",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "part-number",
+                  "sampling-sequencer"
+                ]
+              },
+              "value": {
+                "title": "Value of the custom identifier",
+                "description": "Contains the custom identifier value.",
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "42",
+                  "942-1234",
+                  "afacade"
+                ]
+              }
+            }
+          }
+        }
+      }
     },
     "language-type": {
       "title": "Language type",
@@ -444,16 +596,7 @@
       "type": "array",
       "items": {
         "properties": {
-          "address": {
-            "description": "Single physical address as lines of text.",
-            "items": {
-              "type": "string",
-              "minLength": 1
-            },
-            "minItems": 1,
-            "type": "array",
-            "uniqueItems": true
-          },
+          "address": "#/$defs/address-type",
           "legal-name": {
             "type": "string",
             "minLength": 1
@@ -532,13 +675,14 @@
           "uniqueItems": true
         },
         "format": {
+          "$comment": "We should consider making this an enumeration to aid in automation",
           "description": "Describes the nature of the data within the dataset, such as numerical, textual, or multimedia, helping users understand what kind of information is contained within the file or dataset.",
           "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
           "items": {
             "type": "string"
-          },
-          "minItems": 1,
-          "uniqueItems": true
+          }
         },
         "sub-provenance": {
           "$ref": "#/$defs/provenance-type"
@@ -563,11 +707,26 @@
         },
         "id": {
           "description": "Unique identifier (such as a UUID) assigned to the dataset's metadata to uniquely distinguish it from others, ensuring no confusion or overlap.",
-          "type": "string",
+          "type": "#/$defs/identity-type",
           "examples": [
-            "/public/ds/42",
-            "e5471657-9ede-4335-843b-c1376ef29bfa",
-            "https://example.com/public/ds/42"
+            {
+              "custome-ids": [
+                {
+                  "method": "registered-path",
+                  "value": "/public/ds/42"
+                }
+              ]
+            },
+            {
+              "uuids": [
+                "e5471657-9ede-4335-843b-c1376ef29bfa"
+              ]
+            },
+            {
+              "uris": [
+                "https://example.com/public/ds/42"
+              ]
+            }
           ]
         },
         "issuer": {
@@ -590,7 +749,7 @@
         },
         "data-version": {
           "description": "Specifies the version of the dataset this DP-Core set describes, allowing the dataset to evolve over time and keeping consistent labeling.",
-          "type": "string"
+          "type": "#/$defs/version-type"
         }
       },
       "required": [
