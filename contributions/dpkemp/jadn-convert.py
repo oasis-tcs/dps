@@ -3,8 +3,8 @@ import sys
 import os
 from jadn.core import JADNCore
 from jadn.config import style_args, style_fname
-from jadn.convert import JADN, JIDL, XASD, MD, ERD
-from jadn.translate import ATREE, JSCHEMA, XSD, CDDL, PROTO, XETO
+from jadn.convert import JADN, JIDL, XASD, MD, ATREE, ERD
+from jadn.translate import JSCHEMA, XSD, CDDL, PROTO, XETO
 
 CONFIG = 'jadn_config.json'
 

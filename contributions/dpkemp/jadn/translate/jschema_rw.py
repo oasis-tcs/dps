@@ -162,7 +162,7 @@ def define_jadn_type(tn: str, tv: dict, jss: dict, jssx: dict) -> list:
             raise_error(f'Array type not yet supported: {tv}')
     elif jstype in ('string', 'integer', 'number', 'boolean'):
         if p := tv.get('pattern', ''):
-            topts.append(f'%{p}')
+            topts |= {'pattern': p}
         coretype = jstype.capitalize()
     else:
         return []
