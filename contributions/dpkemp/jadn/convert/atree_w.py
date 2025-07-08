@@ -49,13 +49,17 @@ class ATREE(JADNCore):
 # ========================================================
 
 def build_tree(dependencies: dict[str, list], root: str) -> dict:
-    def bt(deps, this):
+    def bt(deps: dict, this: str, seen: set):
         tree = {}
-        if this in deps:
-            for dep in deps[this]:
-                tree[dep] = bt(deps, dep)
+        if this not in seen:
+            seen |= {this, }
+            if this in deps:
+                for dep in deps[this]:
+                    tree[dep] = bt(deps, dep, seen)
         return tree
-    return {' ' + root: bt(dependencies, root)}
+
+    seen = set()
+    return {' ' + root: bt(dependencies, root, seen)}
 
 
 def tree_style(style: str) -> LeftAligned:

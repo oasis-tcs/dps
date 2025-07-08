@@ -1,5 +1,5 @@
 {
-  "$schema": "https://docs.oasis-open.org/dps/meta/v1.0/schema/data-provenance-configuration.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://docs.oasis-open.org/dps/meta/v1.0/schema/data-provenance.json",
   "title": "Data Provenance Metadata Schema v1.0",
   "description": "The Data Provenance metadata schema is made up of four groups of metadata elements: Set, Source, Provenance, and Use.",
@@ -573,7 +573,7 @@
             "type": "string",
             "minLength": 1
           },
-          "title": {
+          "note-title": {
             "title": "Title of note",
             "description": "Provides a concise description of what is contained in the text of the note.",
             "type": "string",

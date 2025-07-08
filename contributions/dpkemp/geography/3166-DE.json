@@ -1,0 +1,182 @@
+{
+  "summary": {
+    "Alpha-2 code": "DE",
+    "Short name": "GERMANY",
+    "Short name lower case": "Germany",
+    "Full name": "the Federal Republic of Germany",
+    "Alpha-3 code": "DEU",
+    "Numeric code": "276",
+    "Remarks": "",
+    "Independent": "Yes",
+    "Territory name": "",
+    "Status": "Officially assigned",
+    "Remark part 3": "Since reunification, the code elements for the former German Democratic Republic (DD,\n               DDR, 278) have been incorporated into the code elements for Germany. See also code\n               element DDDE.\n            "
+  },
+  "info": [
+    [
+      "Administrative language(s) alpha-2",
+      "Administrative language(s) alpha-3",
+      "Local short name"
+    ],
+    [
+      "de",
+      "deu",
+      "Deutschland"
+    ]
+  ],
+  "subs": [
+    [
+      "Subdivision category",
+      "3166-2 code",
+      "Subdivision name",
+      "Local variant",
+      "Language code",
+      "Romanization system",
+      "Parent subdivision"
+    ],
+    [
+      "Land",
+      "DE-BW",
+      "Baden-W\u00fcrttemberg",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-BY",
+      "Bayern",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-BE",
+      "Berlin",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-BB",
+      "Brandenburg",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-HB",
+      "Bremen",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-HH",
+      "Hamburg",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-HE",
+      "Hessen",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-MV",
+      "Mecklenburg-Vorpommern",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-NI",
+      "Niedersachsen",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-NW",
+      "Nordrhein-Westfalen",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-RP",
+      "Rheinland-Pfalz",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-SL",
+      "Saarland",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-SN",
+      "Sachsen",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-ST",
+      "Sachsen-Anhalt",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-SH",
+      "Schleswig-Holstein",
+      "",
+      "de",
+      "",
+      ""
+    ],
+    [
+      "Land",
+      "DE-TH",
+      "Th\u00fcringen",
+      "",
+      "de",
+      "",
+      ""
+    ]
+  ]
+}
