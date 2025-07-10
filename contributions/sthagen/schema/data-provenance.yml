@@ -91,8 +91,8 @@ properties:
             format: date-time
           generator:
             title: Set generator
-            description: Is a container to hold all elements related to the generation of the set. These items will reference when the document was actually
-              created, including the date it was generated and the entity that generated it.
+            description: Is a container to hold all elements related to the generation of the metadata set. These items will reference when the document
+              was actually created, including the date it was generated and the entity that generated it.
             type: object
             required:
             - engine
@@ -129,9 +129,9 @@ properties:
                     - 1.0.0-beta+exp.sha.a1c44f85
                     - '2'
           id:
-            title: Unique identifier for the set
+            title: Unique identifier for the metadata set
             description: The ID is a simple label that provides for a wide range of numbering values, types, and schemes. Its value SHOULD be assigned and
-              maintained by the original set issuing authority.
+              maintained by the original metadata set issuing authority.
             type: string
             pattern: ^[\S](.*[\S])?$
             minLength: 1
@@ -404,6 +404,36 @@ $defs:
               examples:
               - part-number
               - sampling-sequencer
+            tool:
+              title: Tool used for construction of the ID
+              description: Contains the name of the tool used to derive the value.
+              type: string
+              minLength: 1
+              examples:
+              - blowdown
+              - treehash
+            parameter-list:
+              title: List of parameters used for the tool
+              description: Contains a list of parameters to use when calling the tool.
+              type: array
+              minItems: 1
+              items:
+                title: paraemter
+                description: A parameter as part of the tool invocation.
+                type: string
+                minLength: 1
+                examples:
+                - --algo
+                - blake3
+                - --seal
+                - sha512
+              examples:
+              - - --algo
+                - blake3
+                - --seal
+                - sha512
+              - - --strict
+                - 'true'
             value:
               title: Value of the custom identifier
               description: Contains the custom identifier value.
