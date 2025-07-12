@@ -14,20 +14,22 @@ Work in progress ...
 
 ## Transforms Tool
 
-For now the python based transforms tool to map between JSON and YAML,
+We can use the `muuntuu` transforms tool to map between JSON and YAML,
 as well as ensure an opinionated file structure of these formats is given locally.
 
-Before merge, this functionality should be obtainable via pypi.org.
-
-For now, there is a ruamel.yaml dependency that requires a pip install ruamel.yaml.
-
-Usage:
+To install the `muuntuu` tool into your local python environment:
 
 ```bash
-❯ python -m transforms
-usage: transforms [-h] [--source FILE] [--target FILE] [--debug] [--quiet] [--version] [SOURCE_FILE] [TARGET_FILE]
+❯ python -m pip install --upgrade muuntuu
+```
 
-Transforms helper tool.
+### Usage
+
+```bash
+❯ muuntuu
+usage: muuntuu [-h] [--source FILE] [--target FILE] [--debug] [--quiet] [--version] [SOURCE_FILE] [TARGET_FILE]
+
+Transforms (Finnish: muuntuu) helper tool.
 
 positional arguments:
   SOURCE_FILE           JSON or YAML source as positional argument
