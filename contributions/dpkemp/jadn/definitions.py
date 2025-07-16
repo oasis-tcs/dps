@@ -11,8 +11,6 @@ For other structure types (array, choice, map, record) each field definition is 
 (tag, name, type, field options, field description).
 """
 
-import os
-
 # Datatype Definition columns
 TypeName = 0            # Name of the type being defined
 CoreType = 1            # Core type of the type being defined

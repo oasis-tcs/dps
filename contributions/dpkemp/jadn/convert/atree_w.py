@@ -81,13 +81,10 @@ if __name__ == '__main__':
     dependencies = {
         'asciitree': ['sometimes', 'just', 'trees', 'in'],
         'sometimes': ['you'],
-              'you': [],
              'just': ['want'],
              'want': ['to', 'draw'],
-            'trees': [],
                'in': ['your'],
              'your': ['terminal'],
-         'terminal': []
     }
 
     ts = tree_style('double')
