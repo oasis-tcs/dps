@@ -54,4 +54,4 @@ The originally provided file in format OfficeXML (DOCX) is provided as provenanc
 
 The content has been transcribed to markdown text format by Stefan Hagen <stefan@hagen.link>.
 
-Period of transcription: 2025-07-20 - current.
+Period of transcription: 2025-07-20 - 2025-07-20.
