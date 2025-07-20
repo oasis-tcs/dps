@@ -24,6 +24,28 @@ Every use case is presented using the following structure:
   - Goals
   - Challenges
 - How the Standards are Used
+  - Version Used for Metadata
+  - Dataset Title / Name
+  - Unique Metadata Identifier
+  - Metadata Unique URL
+  - Metadata Location for Datasets Feeding the Current Dataset
+  - Date of Previously Published Version of the Dataset
+  - Creator
+  - Source (if Different From Creator)
+  - Data Origin Geography
+  - Dataset Creation Date
+  - Range of Dates for Data Generation
+  - Method
+  - Content Type
+  - Privacy Enhancing Technologies (PETs)
+  - Organizational Content Classification
+  - Confidentiality Classification
+  - Consent Location
+  - Data Processing Geography
+  - Data Storage Geography
+  - License to Use
+  - Intent
+  - Proprietary Data Presence
 - Outcome
  
 ## Files
