@@ -57,7 +57,7 @@ class XASD(JADNCore):
                     xasd += f'{2*sp}</{k.capitalize()}>\n'
                 else:
                     xasd += f'{2*sp}<{k.capitalize()}>{meta[k]}</{k.capitalize()}>\n'
-        xasd += f'{sp}</Metadata>\n'
+            xasd += f'{sp}</Metadata>\n'
         xasd += f'{sp}<Types>\n'
         for td in self.SCHEMA['types']:
             (ln, end) = ('\n', 2*sp) if td[Fields] else ('', '')
