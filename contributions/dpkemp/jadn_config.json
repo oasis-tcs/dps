@@ -1,0 +1,11 @@
+{
+  "style": {
+    "jidl": {
+      "name": 20,
+      "desc": 55
+    },
+    "erd": {
+      "graph": "graphviz"
+    }
+  }
+}
