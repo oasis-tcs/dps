@@ -82,27 +82,45 @@ For complete copyright information please see the full Notices section in [Appen
 # Table of Contents
 
 - [1 Introduction](#1-introduction)
-  - [1.1 Background: Motivation](#11-background-motivation-for-jadn)
+  - [1.1 Background: Motivation](#11-background-motivation-for-Standardization-Now)
   - [1.2 Purpose](#12-purpose)
   - [1.3 Terminology](#13-terminology)
 - [2 Scenario 1 - Healthcare insurance data procurement](#2-information-modeling-overview)
-  - [2.1 whatever](#21-defining-information)
+  - [2.1 Use case](#21-defining-information)
+  - [2.2 Role](#22-defining-information)
+  - [2.3 Goals](#23-defining-information)
+  - [2.4 Challenges](#24-defining-information)
+  - [2.5 How the standards are used](#25-defining-information)
+  - [2.6 Outcome](#26-defining-information)
 - [3 Scenario 2 - Media consumption pattern dataset for consumer behavior insights](#3-creating-information-models-with-jadn)
-  - [3.1 whatever](#31-jadn-overview)
+  - [3.1 Use case](#31-defining-information)
+  - [3.2 Role](#32-defining-information)
+  - [3.3 Goals](#33-defining-information)
+  - [3.4 Challenges](#34-defining-information)
+  - [3.5 How the standards are used](#35-defining-information)
+  - [3.6 Outcome](#36-defining-information)
 - [4 Scenario 3 - Financial services customer product enablement](#4-advanced-techniques)
-  - [4.1 whatever](#41-packages-and-namespaces) 
+  - [4.1 Use case](#41-defining-information)
+  - [4.2 Role](#42-defining-information)
+  - [4.3 Goals](#43-defining-information)
+  - [4.4 Challenges](#44-defining-information)
+  - [4.5 How the standards are used](#45-defining-information)
+  - [4.6 Outcome](#46-defining-information)
 - [5 Scenario 4 - Enhancing global logistics efficiency through AI-driven tariff harmonization](#4-advanced-techniques)
-  - [5.1 whatever](#41-packages-and-namespaces) 
+  - [5.1 Use case](#51-defining-information)
+  - [5.2 Role](#52-defining-information)
+  - [5.3 Goals](#53-defining-information)
+  - [5.4 Challenges](#54-defining-information)
+  - [5.5 How the standards are used](#55-defining-information)
+  - [5.6 Outcome](#56-defining-information)
 - [Appendix A. Informative References](#appendix-a-informative-references)
 - [Appendix B. Acknowledgments](#appendix-b-acknowledgments)
 - [Appendix C. Revision History](#appendix-c-revision-history)
 - [Appendix D. Frequently Asked Questions (FAQ)](#appendix-d-frequently-asked-questions-faq)
-  - [D.1 ask a question here](#d1-jadn-vs-uml-primitive-data-types)
+  - [D.1 Where did these use cases come from?](#d1-Where-did-these-use-cases-come-from)
   - [D.2 some more here?](#d2-why-jadn-and-not-rdf)
   - [D.3 and keep going](#d3-why-jadn-and-not-owl)
-- [Appendix E. Example whatever](#appendix-e-example-information-model-source)
-  - [E.1 something](#e1-music-library)
-- [Appendix F. Notices](#appendix-f-notices)
+- [Appendix E. Notices](#appendix-f-notices)
 
 **List of Figures**
  - [Figure 1-1 -- fill in as needed](#figure-1-1----range-of-model-types)
@@ -170,30 +188,31 @@ Bella Ramirez, Procurement Team Lead (15 years of experience in the healthcare i
 ## 2.5 How the standards are used
 For Bella to ensure the dataset under evaluation meets the standards required for her healthcare insurance company's analytical models, she would assess the following values, all within the specified DPS metadata:
 
-Metadata Version	Version number of the metadata schema or standard used, ensuring it's the latest version. The version used for metadata is "1.0.0" which indicates the dataset uses the 1.0.0 version of the metadata standard, suggesting that it is up to date with current DPS standard.
-Dataset title/name	Confirms dataset and metadata version. Can be reflective of the dataset's content and intended use, facilitating easy identification and retrieval. The title of the dataset is "2024 Comprehensive Patient Care and Insurance Claims Dataset", indicating the dataset's contents and scope, including the year.
-Unique metadata identifier	Verifying the presence of a unique identifier, like a UUID, ensures it is correctly formatted and unique to prevent any confusion or overlap with other datasets. For example: "UUID-1234-5678-9012-3456".
-Metadata unique URL	The URL should lead directly to the data and detailed metadata. Here, the provided value of https://example.com/dataset/metadata/UUID-1234-5678-9012-3456  is a direct link to the dataset's detailed metadata page.
-Metadata location for datasets 
-for seed or underlying dataset	Using https://example.com/metadata/sources, a URL that points to metadata for source datasets, establishes the lineage and dependencies of the current dataset. This provides understanding the dataset's lineage and dependencies, validates metadata record, terms of use, and data classifications of one or multiple sources making up this dataset.  
-Date of previously published version 
-of the dataset	Date enables third parties to track the dataset's evolution and version history. "March 15, 2023" indicates when the last version of the dataset was released, helping track updates over time.
-Creator	Verifying the creator's identity ensures they are reputable and provides accountability and a reliable point of contact for inquiries. This further helps determine origin of the data. The creator is noted as the "National Health Data Systems,” adding a layer of trust and accountability.
-Source (if different from Creator)	Ensuring transparency and the integrity of the data collection process, lineage must link back to dataset creator. "Nationwide Hospitals Systems, Insurance Providers Ltd." Are specified in the source, which indicates the original data sources.
-Data origin geography	Origin is crucial for compliance with applicable laws, residency requirements, and other regulations. The data was collected in the "United States” for the country, “California” for the state, and “Arcata, Eureka, San Francisco” for the cities.
-Dataset creation date	Confirmation of the dataset's creation date to assess its freshness and relevance to current analytical needs. The metadata lists "January 10, 2024" as the creation date value and indicates when the dataset was compiled, providing context for its currency and relevance of business cases.
-Range of dates for data generation	Evaluation of the time frame during which the data was collected, ensuring it is relevant to the current analytical models and reflects recent trends or patterns. "January 1, 2023 - December 31, 2023" dates that are provided show the time during which the data was collected, highlighting the dataset's recency.
-Method	Understanding the data collection or generation methodology is critical for assessing the dataset's reliability and validity. “Database feed” is the value in the method metadata field, and in the specification field, "Electronic Health Records Extraction and Insurance Claim Processing Logs" is added. This information describes how the data was collected, providing insight into its reliability.
-Content type	Ability to assess whether the dataset's content type (numerical, textual, multimedia, etc.) is compatible with the company's analytical tools and is suitable for the intended analyses. "SQL” as the value and “Structured Data - Numerical and Categorical" specifies the nature of the dataset, which is crucial for understanding how it can be analyzed.
-Privacy-enhancing technologies (PETs)	Confirmation on whether PETs were applied to the dataset to protect personal data, ensuring the dataset's compliance with privacy regulations and ethical standards. She notes that the metadata indicates a "No”, which confirms that no measures have been taken to protect personal information within the dataset.
-Organizational content classification	Alignment of the dataset's classification t the company's data handling policies, assessing whether its classification is appropriate and clear. "Restricted" indicates the data handling requirements and access restrictions, which is a flag to Bella that the dataset has protected health information (PHI) under the Health Insurance Portability and Accountability Act (HIPAA) and that the medical information must be carefully managed under provincial, state, or other healthcare privacy laws.
-Confidentiality classification	Data type sensitivity assigned to the dataset, ensuring it is adequately secured and that access is appropriately controlled based on its classification. “Private Health Information” reflects the dataset's sensitivity level and dictates security measures.
-Consent location	Verification of consent given location and adequacy of consent documentation, ensuring compliance with legal standards. https://example.com/dataset/UUID-1234-5678-9012-3456/consent1.html points to where consent documentation is kept, which the legal department may determine whether the consent meets the organization’s legal obligations for processing.
-Data processing geography	Assessment of any geographical restrictions on where the data can be processed, ensuring compliance with legal and regulatory requirements regarding data processing locations. The metadata lists "United States” for the country and “California” for the state. 
-Data storage geography	Assessment of any geographical restrictions on where the data is stored, which is crucial for adherence to data sovereignty laws and protecting sensitive information. The metadata lists "United States” for the country and “California” for the state. For example, this may require special handling of personal healthcare data, so a check with the legal department is flagged for a final determination.
-License to use	This metadata is passed along to the legal team information about the terms under which the dataset can be used, including any restrictions or obligations, to ensure the company's use of the dataset is legally sound and in line with the licensing terms. "License details available upon request from the Data Governance Department, National Health Data Repository, contactme@example.com" is listed and provides information on how to access terms of use. 
-Intent	Alignment to the purpose of the dataset's creation to the company's intended use and supports identified use cases without misalignment or misuse. The intent in the metadata indicates “AI” use and specifies “Pre-Training,” which aligns with the use cases and requirements specified by the data team. Insights from this information, along with the method metadata and dates generated, and the data cost are inputs in the organization’s value assessment.
-Proprietary data presence	Knowing proprietary information ensures its use does not infringe on intellectual property rights and is consistent with contractual agreements. When all the values are empty, the data is free to be used without infringing on proprietary rights.
+
+| Metadata Fields |  Use Cases Applicability                                            |
+| --------------- |----------------------------------------                             |
+| Metadata Version	| Version number of the metadata schema or standard used, ensuring it's the latest version. The version used for metadata is "1.0.0" which indicates the dataset uses the 1.0.0 version of the metadata standard, suggesting that it is up to date with current DPS standard. |
+| Dataset title/name |	Confirms dataset and metadata version. Can be reflective of the dataset's content and intended use, facilitating easy identification and retrieval. The title of the dataset is "2024 Comprehensive Patient Care and Insurance Claims Dataset", indicating the dataset's contents and scope, including the year. |
+| Unique metadata identifier |	Verifying the presence of a unique identifier, like a UUID, ensures it is correctly formatted and unique to prevent any confusion or overlap with other datasets. For example: "UUID-1234-5678-9012-3456". |
+| Metadata unique URL |	The URL should lead directly to the data and detailed metadata. Here, the provided value of https://example.com/dataset/metadata/UUID-1234-5678-9012-3456  is a direct link to the dataset's detailed metadata page. |
+| Metadata location for datasets for seed or underlying dataset |	Using https://example.com/metadata/sources, a URL that points to metadata for source datasets, establishes the lineage and dependencies of the current dataset. This provides understanding the dataset's lineage and dependencies, validates metadata record, terms of use, and data classifications of one or multiple sources making up this dataset. |
+| Date of previously published version of the dataset |	Date enables third parties to track the dataset's evolution and version history. "March 15, 2023" indicates when the last version of the dataset was released, helping track updates over time. |
+| Creator |	Verifying the creator's identity ensures they are reputable and provides accountability and a reliable point of contact for inquiries. This further helps determine origin of the data. The creator is noted as the "National Health Data Systems,” adding a layer of trust and accountability. |
+|Source (if different from Creator)	| Ensuring transparency and the integrity of the data collection process, lineage must link back to dataset creator. "Nationwide Hospitals Systems, Insurance Providers Ltd." Are specified in the source, which indicates the original data sources. |
+| Data origin geography |	Origin is crucial for compliance with applicable laws, residency requirements, and other regulations. The data was collected in the "United States” for the country, “California” for the state, and “Arcata, Eureka, San Francisco” for the cities. |
+| Dataset creation date |	Confirmation of the dataset's creation date to assess its freshness and relevance to current analytical needs. The metadata lists "January 10, 2024" as the creation date value and indicates when the dataset was compiled, providing context for its currency and relevance of business cases. |
+| Range of dates for data generation |	Evaluation of the time frame during which the data was collected, ensuring it is relevant to the current analytical models and reflects recent trends or patterns. "January 1, 2023 - December 31, 2023" dates that are provided show the time during which the data was collected, highlighting the dataset's recency. |
+| Method |	Understanding the data collection or generation methodology is critical for assessing the dataset's reliability and validity. “Database feed” is the value in the method metadata field, and in the specification field, "Electronic Health Records Extraction and Insurance Claim Processing Logs" is added. This information describes how the data was collected, providing insight into its reliability. |
+|Content type	 | Ability to assess whether the dataset's content type (numerical, textual, multimedia, etc.) is compatible with the company's analytical tools and is suitable for the intended analyses. "SQL” as the value and “Structured Data - Numerical and Categorical" specifies the nature of the dataset, which is crucial for understanding how it can be analyzed. |
+| Privacy-enhancing technologies (PETs)	| Confirmation on whether PETs were applied to the dataset to protect personal data, ensuring the dataset's compliance with privacy regulations and ethical standards. She notes that the metadata indicates a "No”, which confirms that no measures have been taken to protect personal information within the dataset. |
+| Organizational content classification	| Alignment of the dataset's classification t the company's data handling policies, assessing whether its classification is appropriate and clear. "Restricted" indicates the data handling requirements and access restrictions, which is a flag to Bella that the dataset has protected health information (PHI) under the Health Insurance Portability and Accountability Act (HIPAA) and that the medical information must be carefully managed under provincial, state, or other healthcare privacy laws. |
+| Confidentiality classification |Data type sensitivity assigned to the dataset, ensuring it is adequately secured and that access is appropriately controlled based on its classification. “Private Health Information” reflects the dataset's sensitivity level and dictates security measures. |
+| Consent location |	Verification of consent given location and adequacy of consent documentation, ensuring compliance with legal standards. https://example.com/dataset/UUID-1234-5678-9012-3456/consent1.html points to where consent documentation is kept, which the legal department may determine whether the consent meets the organization’s legal obligations for processing. |
+| Data processing geography |	Assessment of any geographical restrictions on where the data can be processed, ensuring compliance with legal and regulatory requirements regarding data processing locations. The metadata lists "United States” for the country and “California” for the state.  |
+| Data storage geography | Assessment of any geographical restrictions on where the data is stored, which is crucial for adherence to data sovereignty laws and protecting sensitive information. The metadata lists "United States” for the country and “California” for the state. For example, this may require special handling of personal healthcare data, so a check with the legal department is flagged for a final determination. |
+| License to use |	This metadata is passed along to the legal team information about the terms under which the dataset can be used, including any restrictions or obligations, to ensure the company's use of the dataset is legally sound and in line with the licensing terms. "License details available upon request from the Data Governance Department, National Health Data Repository, contactme@example.com" is listed and provides information on how to access terms of use. |
+| Intent	| Alignment to the purpose of the dataset's creation to the company's intended use and supports identified use cases without misalignment or misuse. The intent in the metadata indicates “AI” use and specifies “Pre-Training,” which aligns with the use cases and requirements specified by the data team. Insights from this information, along with the method metadata and dates generated, and the data cost are inputs in the organization’s value assessment. |
+| Proprietary data presence |	Knowing proprietary information ensures its use does not infringe on intellectual property rights and is consistent with contractual agreements. When all the values are empty, the data is free to be used without infringing on proprietary rights. |
 
 ## 2.6 Outcome 
 Bella met with the legal department and the data team, to incorporate their assessment into the procurement analysis package. After investigating, the legal team determined that the data supplier mistakenly tagged the data processing and storage metadata incorrectly and had to correct the metadata associated with the dataset before the procurement process could proceed. This delayed the data procurement process by four business days.
@@ -227,37 +246,39 @@ Use Case Goals
 ## 3.4 How the standards are used
 To ensure the dataset the company is offering to buyers meets the standards required for AI analytical models, the following metadata associated with the dataset is curated:
 
-
-Version used for metadata	Ensure the dataset utilizes version 1.0.0 of the data provenance standards, thereby future proofing the metadata and making it backwards compatible, especially with systems that automate metadata ingestion.
-Dataset title/name	The title "March 2024 Global Media Consumption Trends," reflects the data contents and production time frame.
-Unique metadata identifier	This generated UUID “550e8400-e29b-41d4-a716-446655440000” as the unique identifier, ensures identification within the data ecosystem.
-Metadata unique URL	The URL “example.com/ 550e8400-e29b-41d4-a716-446655440000/metadata.html is used for direct access to this dataset’s data provenance metadata, ensuring transparency and easy reference by downstream consumers assessing the data for consumption.
-Metadata location for datasets 
-feeding the 
-current dataset	One or more datasets provenance metadata unique URLs whose source and lineage contributed to this dataset. This provides comprehensive understanding and traceability.  An example of a dataset contributing 3 sources are represented by entering three values, “example.com/ 550e8400-e29b-41d4-a716-44665543902, example.com/ 550e8400-e29b-41d4-a716-44665544732, and example.com/ 550e8400-e29b-41d4-a716-446655465722” as the values.
-Date of previously published version 
-of the dataset	This metadata field documents the date, if applicable, when the dataset was previously published and allows downstream consumers to track dataset evolution and updates. This field is left blank if this dataset is published for offer for the first time.
-Creator	The market analysis company name, “AnalytiQuest Ventures” is listed attributing dataset ownership and responsibility for its integrity.
-Source (if different from Creator)	Since AnalytiQuest Ventures is the generator of the data, the field is left blank; the creator of the dataset already accurately depicts the source of the data as AnalytiQuest Ventures.
-Data origin geography	This metadata field identifies the geographic data points that are included to contextualize the media consumption patterns, with values for the metadata in order of requirements – country, state, city: United States, Florida, Miami; United States, Florida, Ft. Lauderdale; United States, Florida, Orlando; United States, Florida, Clearwater; United States, Florida, St. Petersburg; United States, Florida, Tampa; United States, Florida, Pensacola; United States, Florida, Augusta; United States, Florida, Jacksonville; United States, Florida, Cape Coral.
-Dataset creation date	The dataset creation date indicates the dataset's compilation date, ensuring relevance. "January 10, 2024"  is specified as the creation date, indicating when the dataset was compiled. This date provides a context for the dataset's freshness.
-Range of dates for data generation	The range of  "January 1, 2023 - December 31, 2023" is set as the period during which the data was collected. This timeframe is crucial for ensuring the dataset reflects the latest media consumption patterns and is relevant for current analysis.
-Method	The data collection methodology, described as "User Generated Content: Digital Interaction Tracking and Survey Responses" in the method metadata field, outlines how consumer interactions with various media platforms were recorded alongside targeted survey data. This method provides a comprehensive view of media consumption behaviors, enhancing the dataset's transparency for in-depth consumer insights.
-Content type	The type(s) of  .xls (30%), .doc (40%) and .sql (30%) are set to depict the structured and unstructured data means used to gauge multimedia engagement metrics and the textual Responses that characterize the dataset's content. This mix is essential for analyzing both quantitative media engagement metrics and qualitative consumer feedback, offering a multifaceted approach to media consumption analysis but also points to a potential level of cleanup that may be required on the dataset.
-Privacy-enhancing technologies (PETs)	The field is  set  "Yes” to denote the use of PETs, and specified “Anonymization and Data Aggregation Techniques Applied" via “Adverity” tool, which confirms that steps have been taken to anonymize and aggregate personal data, ensuring the dataset's adherence to privacy standards and ethical considerations in media research.
-Organizational content classification	The dataset is classified as being for "Internal Use", and this classification signals the dataset's designed purpose for in-house analytics and strategic planning, aligning with corporate data governance policies and ensuring appropriate handling within the organization.
-Confidentiality classification	This is often set  when there is personally identifiable information on consumers present. 
-Consent location	Since PETs have been used to aggregate and anonymize consumer personal data in the dataset, no consent is required to process or share the consumers’ data and this  this field is left blank.
-Data processing geography	Since PETs have been used to aggregate and anonymize consumer personal data in the dataset, there are no limitations on where the dataset contents can be processed so this metadata field is left blank.
-Data storage geography	Since PETs have been used to aggregate and anonymize consumer personal data in the dataset, there are no limitations on where the dataset contents can be stored and so lthis metadata field is left blank.
-License to use	Given this is an internally generated dataset, the license terms are flexible for this dataset, so rather than specifying the terms, the AnalytiQuest Ventures’s Office of General Counsel should be contacted for usage details. He enters “AnalytiQuest Ventures’s Office of General Counsel, legalconsumptionlicense@example.com and (555) 123-4567” into the metadata field.
-Intent	The purpose of this dataset is "AI", “Evaluation”, and “Training”, which aligns with strategic objectives in media planning and content development, as well as research endeavors in the media industry.
-Proprietary data presence	The absence of proprietary restrictions, as indicated by the metadata, confirms the dataset's availability for broad analysis within the stipulated legal frameworks, facilitating unrestricted exploration of media consumption trends. This field is left blank.
+| Metadata Fields |  Use Cases Applicability                                            |
+| --------------- |----------------------------------------                             |
+| Version used for metadata |	Ensure the dataset utilizes version 1.0.0 of the data provenance standards, thereby future proofing the metadata and making it backwards compatible, especially with systems that automate metadata ingestion. |
+| Dataset title/name |	The title "March 2024 Global Media Consumption Trends," reflects the data contents and production time frame. |
+| Unique metadata identifier |	This generated UUID “550e8400-e29b-41d4-a716-446655440000” as the unique identifier, ensures identification within the data ecosystem. |
+| Metadata unique URL	| The URL “example.com/ 550e8400-e29b-41d4-a716-446655440000/metadata.html is used for direct access to this dataset’s data provenance metadata, ensuring transparency and easy reference by downstream consumers assessing the data for consumption. |
+| Metadata location for datasets feeding the current dataset| One or more datasets provenance metadata unique URLs whose source and lineage contributed to this dataset. This provides comprehensive understanding and traceability.  An example of a dataset contributing 3 sources are represented by entering three values, “example.com/ 550e8400-e29b-41d4-a716-44665543902, example.com/ 550e8400-e29b-41d4-a716-44665544732, and example.com/ 550e8400-e29b-41d4-a716-446655465722” as the values. |
+| Date of previously published version of the dataset |	This metadata field documents the date, if applicable, when the dataset was previously published and allows downstream consumers to track dataset evolution and updates. This field is left blank if this dataset is published for offer for the first time. |
+| Creator |	The market analysis company name, “AnalytiQuest Ventures” is listed attributing dataset ownership and responsibility for its integrity. |
+|Source (if different from Creator) |	Since AnalytiQuest Ventures is the generator of the data, the field is left blank; the creator of the dataset already accurately depicts the source of the data as AnalytiQuest Ventures. |
+| Data origin geography |	This metadata field identifies the geographic data points that are included to contextualize the media consumption patterns, with values for the metadata in order of requirements – country, state, city: United States, Florida, Miami; United States, Florida, Ft. Lauderdale; United States, Florida, Orlando; United States, Florida, Clearwater; United States, Florida, St. Petersburg; United States, Florida, Tampa; United States, Florida, Pensacola; United States, Florida, Augusta; United States, Florida, Jacksonville; United States, Florida, Cape Coral. |
+| Dataset creation date | The dataset creation date indicates the dataset's compilation date, ensuring relevance. "January 10, 2024"  is specified as the creation date, indicating when the dataset was compiled. This date provides a context for the dataset's freshness. |
+| Range of dates for data generation |	The range of  "January 1, 2023 - December 31, 2023" is set as the period during which the data was collected. This timeframe is crucial for ensuring the dataset reflects the latest media consumption patterns and is relevant for current analysis. |
+| Method |	The data collection methodology, described as "User Generated Content: Digital Interaction Tracking and Survey Responses" in the method metadata field, outlines how consumer interactions with various media platforms were recorded alongside targeted survey data. This method provides a comprehensive view of media consumption behaviors, enhancing the dataset's transparency for in-depth consumer insights. |
+| Content type |The type(s) of  .xls (30%), .doc (40%) and .sql (30%) are set to depict the structured and unstructured data means used to gauge multimedia engagement metrics and the textual Responses that characterize the dataset's content. This mix is essential for analyzing both quantitative media engagement metrics and qualitative consumer feedback, offering a multifaceted approach to media consumption analysis but also points to a potential level of cleanup that may be required on the dataset. |
+| Privacy-enhancing technologies (PETs) |	The field is  set  "Yes” to denote the use of PETs, and specified “Anonymization and Data Aggregation Techniques Applied" via “Adverity” tool, which confirms that steps have been taken to anonymize and aggregate personal data, ensuring the dataset's adherence to privacy standards and ethical considerations in media research. |
+| Organizational content classification | The dataset is classified as being for "Internal Use", and this classification signals the dataset's designed purpose for in-house analytics and strategic planning, aligning with corporate data governance policies and ensuring appropriate handling within the organization. |
+| Confidentiality classification	| This is often set  when there is personally identifiable information on consumers present. |
+| Consent location |	Since PETs have been used to aggregate and anonymize consumer personal data in the dataset, no consent is required to process or share the consumers’ data and this  this field is left blank. |
+| Data processing geography |	Since PETs have been used to aggregate and anonymize consumer personal data in the dataset, there are no limitations on where the dataset contents can be processed so this metadata field is left blank. |
+| Data storage geography |	Since PETs have been used to aggregate and anonymize consumer personal data in the dataset, there are no limitations on where the dataset contents can be stored and so lthis metadata field is left blank. |
+| License to use | Given this is an internally generated dataset, the license terms are flexible for this dataset, so rather than specifying the terms, the AnalytiQuest Ventures’s Office of General Counsel should be contacted for usage details. He enters “AnalytiQuest Ventures’s Office of General Counsel, legalconsumptionlicense@example.com and (555) 123-4567” into the metadata field. |
+| Intent |	The purpose of this dataset is "AI", “Evaluation”, and “Training”, which aligns with strategic objectives in media planning and content development, as well as research endeavors in the media industry. |
+| Proprietary data presence	| The absence of proprietary restrictions, as indicated by the metadata, confirms the dataset's availability for broad analysis within the stipulated legal frameworks, facilitating unrestricted exploration of media consumption trends. This field is left blank. |
 
 ## 3.4 Outcome 
-Under Jordan’s guidance, the "March 2024 Global Media Consumption Trends" dataset emerges as a good resource for understanding intricate media consumption behaviors across various platforms. By curating and documenting the dataset's metadata, including the adoption of version 1.0.0 for OASIS data provenance standards, assigning a unique identifier, and providing a transparent metadata URL, Jordan ensures the dataset's integrity and usability for AI analytics. This attention to detail, coupled with the clear documentation of data origin, collection methodologies, and privacy-enhancing measures, positions the dataset as a trustworthy and comprehensive tool for media buyers and sellers. The dataset's rich insights into consumer behaviors, derived from diverse geographical regions and articulated through a mix of structured and unstructured data types, empower stakeholders across multiple industries to tailor personalized content strategies effectively. Jordan's emphasis on data transparency and legal requirements fosters collaboration but also enhances operational efficiency and compliance for clients, setting a new benchmark for data-driven decision-making in media consumption.
+Under Jordan’s guidance, the "March 2024 Global Media Consumption Trends" dataset emerges as a good resource for understanding intricate media consumption behaviors across various platforms. By curating and documenting the dataset's metadata, including the adoption of version 1.0.0 for OASIS data provenance standards, assigning a unique identifier, and providing a transparent metadata URL, Jordan ensures the dataset's integrity and usability for AI analytics. 
 
+This attention to detail, coupled with the clear documentation of data origin, collection methodologies, and privacy-enhancing measures, positions the dataset as a trustworthy and comprehensive tool for media buyers and sellers. The dataset's rich insights into consumer behaviors, derived from diverse geographical regions and articulated through a mix of structured and unstructured data types, empower stakeholders across multiple industries to tailor personalized content strategies effectively. 
 
+Jordan's emphasis on data transparency and legal requirements fosters collaboration but also enhances operational efficiency and compliance for clients, setting a new benchmark for data-driven decision-making in media consumption.
+
+-------
 
 # 4 Scenario 3 - Financial Services Customer Product Enablement
 
@@ -290,32 +311,30 @@ Minh Quang Nguyen, Data Architecture and Policy Analyst with over a decade of ex
 To  assess a new dataset's compliance with data provenance standards and detailed metadata to refine AI algorithms focused on customer credit card offerings,  a review focuses on ensuring the dataset's integrity, transparency, and compliance with international regulatory requirements, especially considering the implications of GDPR, but also with an eye towards the new EU AI Act. The following aspects of the metadata are considered:
 
 
-Version used for metadata	Verification  the metadata described is aligned with the most current schema version, "v1.0.0”.
-Dataset title/name	Dataset title "Consumer Spending Patterns 2020-2024", which clearly reflects the dataset's focus.
-Unique metadata identifier	Verification of the dataset's unique identifier, "LFS-1234-5678", to avoid any confusion with other datasets.
-Metadata unique URL	Access to the metadata through its URL, "http://luminadataservices.com/metadata/1234-5678", providing a direct pathway to detailed dataset information.
-Metadata location for datasets 
-feeding the 
-current dataset	Review  the metadata for source datasets, such as "Retail Transaction Records 2023-2024", as they are found at "http://luminadataservices.com/metadata/sources/retail-transactions-2023" and "http://luminadataservices.com/metadata/sources/retail-transactions-2024" and check these sources via their metadata for any areas of risks.
-
-Date of previously published version 
-of the dataset	The last update was on "March 15, 2025", indicating recent revisions.
-Creator	The creator metadata field credits the dataset to the "Lumina Financial Services", establishing accountability.
-Source (if different from Creator)	Confirmation of  the original data sources, "Global Retail Partners Consortium" and “PreciTech Data Inc.”, differentiating the sources from the dataset creator.
-Data origin geography	The data originates from "Europe, France; Europe, Germany;Europe, Italy;; Europe, Poland" which is important for compliance considerations.
-Dataset creation date	The dataset creation date range reflexts  as "March 14, 2025". The data is recent, which is a great sign for the use case but he needs to understand the range of data generation to verify that it is not stale and that it has been collected recently reflective of legal and regulatory data privacy requirements.
-Range of dates for data generation	The dataset generation date range reflected in the metadata as "January 5, 2023 through March 14, 2025”, provides context for the data's recency and relevancy for establishing consumer trends.
-Method	The methodology, "Feeds, Interval timed database info, Aggregated Consumer Transaction Analysis, PoS", is reviewed for data collection integrity. 100 percent of the data was received in this structured format, which is what is expected and knows to be relatively clean data requiring minimal pre-processing for his data ingestion needs.
-Content type	The dataset contains "application/sql", which reflects the Oracle database source the company is accustomed to seeing and knows to be suitable data for AI modeling.
-Privacy-enhancing technologies (PETs)	The PETs metadata identifies a "Yes", indicating that privacy concerns have been addressed through data anonymization. “Google differential privacy library” is listed as the tool and “Differential privacy” is listed as the method used for applying PETs. This signals that confidential data is unlikely to be present and that consent for further consumer data processing is not required due to the PETs application.
-Organizational content classification	Labeled as "Internal Use", this metadata value for content classification will be guiding  the team on access limitations.
-Confidentiality classification	This metadata value was not presented to the data supplier for completion as PETs were identified as being applied in a previous metadata field.
-Consent location	This metadata value was not presented to the data supplier for completion as PETs were identified as being applied in a previous metadata field.
-Data processing geography	This metadata value was not presented to the data supplier for completion as PETs were identified as being applied in a previous metadata field. As a result, no data processing geographical limitations are in place for protection of personal data.
-Data storage geography	This metadata value was not presented to the data supplier for completion as PETs were identified as being applied in a previous metadata field. As a result, no data localization is needed for storage of personal data.
-License to use	The license terms at "http://luminadataservices.com/license/1234-5678", confirm usage rights. The license terms are available for legal review and analysis. There have been some issues with pricing of data coming from the EU recently, and a complete legal picture is needed before proceeding with a decision to acquire this dataset.
-Intent	The dataset metadata intent indicates the data is intended for "AI, Other, Enhancing AI-driven Credit Card Offerings", aligning with the project goals.
-Proprietary data presence	The proprietary metadata field set by the data supplier indicates "No" to the presence of copyright, trademark or patent presence, indicating possible exclusivity to the company of whatever AI modeling outcomes may be obtained, which could offer competitive advantages.
+| Metadata Fields |  Use Case Applicability                                                           |
+| --------------- |----------------------------------------                             |
+| Version used for metadata |	Verification  the metadata described is aligned with the most current schema version, "v1.0.0”. |
+| Dataset title/name |	Dataset title "Consumer Spending Patterns 2020-2024", which clearly reflects the dataset's focus. |
+| Unique metadata identifier	| Verification of the dataset's unique identifier, "LFS-1234-5678", to avoid any confusion with other datasets. |
+| Metadata unique URL |	Access to the metadata through its URL, "http://luminadataservices.com/metadata/1234-5678", providing a direct pathway to detailed dataset information. |
+| Metadata location for datasets feeding the current dataset |	Review  the metadata for source datasets, such as "Retail Transaction Records 2023-2024", as they are found at "http://luminadataservices.com/metadata/sources/retail-transactions-2023" and "http://luminadataservices.com/metadata/sources/retail-transactions-2024" and check these sources via their metadata for any areas of risks. |
+| Date of previously published version of the dataset	| The last update was on "March 15, 2025", indicating recent revisions. |
+| Creator |	The creator metadata field credits the dataset to the "Lumina Financial Services", establishing accountability. |
+| Source (if different from Creator)| Confirmation of  the original data sources, "Global Retail Partners Consortium" and “PreciTech Data Inc.”, differentiating the sources from the dataset creator. |
+| Data origin geography |	The data originates from "Europe, France; Europe, Germany;Europe, Italy;; Europe, Poland" which is important for compliance considerations. |
+| Dataset creation date |	The dataset creation date range reflexts  as "March 14, 2025". The data is recent, which is a great sign for the use case but he needs to understand the range of data generation to verify that it is not stale and that it has been collected recently reflective of legal and regulatory data privacy requirements. |
+| Range of dates for data generation |	The dataset generation date range reflected in the metadata as "January 5, 2023 through March 14, 2025”, provides context for the data's recency and relevancy for establishing consumer trends. |
+| Method |	The methodology, "Feeds, Interval timed database info, Aggregated Consumer Transaction Analysis, PoS", is reviewed for data collection integrity. 100 percent of the data was received in this structured format, which is what is expected and knows to be relatively clean data requiring minimal pre-processing for his data ingestion needs. |
+| Content type |	The dataset contains "application/sql", which reflects the Oracle database source the company is accustomed to seeing and knows to be suitable data for AI modeling. |
+| Privacy-enhancing technologies (PETs)	| The PETs metadata identifies a "Yes", indicating that privacy concerns have been addressed through data anonymization. “Google differential privacy library” is listed as the tool and “Differential privacy” is listed as the method used for applying PETs. This signals that confidential data is unlikely to be present and that consent for further consumer data processing is not required due to the PETs application. |
+| Organizational content classification | 	Labeled as "Internal Use", this metadata value for content classification will be guiding  the team on access limitations. |
+| Confidentiality classification |	This metadata value was not presented to the data supplier for completion as PETs were identified as being applied in a previous metadata field.|
+| Consent location | This metadata value was not presented to the data supplier for completion as PETs were identified as being applied in a previous metadata field. |
+| Data processing geography |	This metadata value was not presented to the data supplier for completion as PETs were identified as being applied in a previous metadata field. As a result, no data processing geographical limitations are in place for protection of personal data. |
+| Data storage geography |	This metadata value was not presented to the data supplier for completion as PETs were identified as being applied in a previous metadata field. As a result, no data localization is needed for storage of personal data. |
+| License to use |	The license terms at "http://luminadataservices.com/license/1234-5678", confirm usage rights. The license terms are available for legal review and analysis. There have been some issues with pricing of data coming from the EU recently, and a complete legal picture is needed before proceeding with a decision to acquire this dataset. |
+| Intent |	The dataset metadata intent indicates the data is intended for "AI, Other, Enhancing AI-driven Credit Card Offerings", aligning with the project goals. |
+| Proprietary data presence |	The proprietary metadata field set by the data supplier indicates "No" to the presence of copyright, trademark or patent presence, indicating possible exclusivity to the company of whatever AI modeling outcomes may be obtained, which could offer competitive advantages.|
 
 
 ## 4.5 Outcome 
@@ -324,9 +343,9 @@ Minh’s review of the metadata for the "Consumer Spending Patterns 2020-2024" d
 The detailed metadata, including data origin geography, creation dates, and collection methodologies, provided Minh with the assurance of the dataset's relevance and quality. The absence of proprietary data restrictions, coupled with clear licensing terms, positions ProForma to leverage this dataset for creating more personalized and effective customer credit card products. Minh's approach to dataset integration will enhance operational efficiencies going forward, ensuring seamless compatibility with the company's existing data architecture and AI systems.
 Overall, Minh's review of the metadata to ensure alignment with requirements mean that ProForma Financial Services can harness AI-driven insights responsibly and innovatively, paving the way for data-driven product enablement and a competitive edge in the financial services sector.
 
-
-
 -------
+
+
 # 5 Scenario 4 - Enhancing Global Logistics Efficiency through AI-driven Tariff Harmonization
 
 ## 5.1 Use case
@@ -362,37 +381,30 @@ Dr. Maya Hicks, Lead Data Scientist with a specialization in artificial intellig
 Dr. Hicks leverages the metadata associated with global tariff schedule datasets to ensure the accuracy and reliability of AI-driven tariff prediction models, essential for optimizing logistics operations. The metadata, including the data's origin, collection methodology, and privacy considerations, enables her to assess the trustworthiness and relevance of the data for her analyses. This approach to metadata evaluation forms the foundation of Maya's ability to build and maintain robust, transparent, and compliant AI systems within Navisphere Logistics, Ltd.
 
 
-Version used for metadata	This attribute ensures that the dataset conforms to the latest OASIS data provenance standards for metadata documentation, which is crucial for compatibility with Navisphere's AI systems. The metadata schema value  is “1.4.5" and is backwards compatible with the version Navisphere is using.
-Dataset title/name	This metadata describes the dataset's focus and relevance to her needs. The title she evaluates is "2023 Global Tariff Schedules - Electronics".
-Unique metadata identifier	Along with the dataset title, the unique metadata identifier to uniquely identifies and references datasets without confusion, especially when dealing with multiple sources. The use of  "123e4567-e89b-12d3-a456-426614174000" value which she confirms in the company’s data procurement system has not previously been considered nor procured by the company
-Metadata unique URL	This metadata component provides direct access to detailed dataset information for deeper evaluation. Its value for this use case is  "https://globaltradedatahub.com/metadata/123e4567-e89b-12d3-a456-426614174000".
-Metadata location for datasets 
-feeding the 
-current dataset	This metadata component traces data lineage and verifies the integrity of source data. Examples for this use case includes five values, denoting that five different datasets supplied the data contained in the set being evaluated. Examples of values for this use case include: 
-●	“https://internationalcustomsdataconsortium.com/metadata/234f5678-f01c-23d4-b567-537625175111
-●	https://internationalcustomsdataconsortium.com/metadata/345g6789-g02d-34e5-c678-648736286222
-●	https://internationalcustomsdataconsortium.comm/metadata/456h7890-h03e-45f6-d789-759847397333
-●	https://internationalcustomsdataconsortium.com/metadata/567i8901-i04f-56g7-e890-860958408444
-●	https://internationalcustomsdataconsortium.com/678j9012-j05g-67h8-f901-971069519555”
-
-Date of previously published version 
-of the dataset	This field tracks any dataset updates and revisions. The “N/A” value signifies that the dataset has not previously been published.
-Creator	Knowing the creator provides accountability and a point of reference  to check what other datasets the company has previously procured from the same data supplier and satisfaction reviews of the supplier’s historically provided data. “GlobalTradeDataHub” is reflected as the creator.
-Source (if different from Creator)	Reviewing the source metadata for the dataset to determine its difference from the creator. The value of "International Customs Data Consortium" which again, helps determine the reliability and historical satisfaction of supplied data. Together with the metadata location for datasets feeding the current set metadata, tells that all data in the current dataset originated with International Customs Data Consortium and that GlobalTradeDataHub was merely the curator or entity that put the datasets together to provide the current one on offer.
-Data origin geography	Review of  the data origin geography, noting “Europe, Switzerland; Europe, United Kingdom; Europe, Netherlands” as the values along with determining that if the dataset contains personal data, additional regulatory requirements will apply. If personal data is present, additional pre-processing of data to anonymize the data will be required and  require legal review and will extend the project delivery date.
-Dataset creation date	A "February 1, 2024” creation date  provides the ability to see on the data's recency and relevance and to determine t that tariff schedules that took place with the first of the year are likely to be included in the set. However, the range of dates for data generation will confirm for her this fact, so she reviews that metadata next.
-Range of dates for data generation	This helps assess the dataset's timeliness. The range is "January 1, 2020 to January 31, 2024". Based on this information, the date range covers new tariff schedules that were rolled out at the start of the current year. However, the company already has data in house for the time period of January 1, 2020 through December 31, 2022, which means she will be paying to acquire data that already exists in the enterprise. Confirmation with her procurement team determines that negotiations should exclude the initial two years of data and the price of the dataset should reflect that adjustment.
-Method	Understanding the collection method helps judge the potential need for cleanup of data prior to its use. The description of  “Feeds, Other, Automated Customs Entry Processing" implies a highly structured format and the automation further points to patterns that can use to detect anomalies in the cleanliness of the data.
-Content type	The content type metadata informs the kind of information the dataset contains, aiding in data parsing such as “application/vnd.oasis.opendocument.database”. This media type is used for database files created with software that adheres to the OpenDocument standards, such as LibreOffice Base or Apache OpenOffice Base. This supports the reliability of the data for the use case needs.
-Privacy-enhancing technologies (PETs)	With the clear “YES” affirmation of PETs application of on this dataset for data privacy compliance, it can easily be determined if anonymization of the data is needed prior to its use. A "Yes” in the metadata for anonymization confirms that personal data is not present in the dataset. “Clover DX” is listed as the toolset and “Anonymization” is listed as the method. The metadata notes in the outcome field “injected 3% random data into the mix” which signals to her an appropriate level of noise, as the company considers anything above 5% unacceptable.
-Organizational content classification	This metadata value guides how the dataset can be used within Navisphere. "Internal Use Only" denotes there is no sensitive information contained in the dataset, but there are reasons for restrictions, most likely legal in nature. Reviewing the license information with the legal team will determine what the limitations might be.
-Confidentiality classification	Because PETs were used and declared in the previous metadata, this metadata field is grayed out for the data supplier when assigning metadata , no values are presented.
-Consent location	Because PETs were used and declared in the previous metadata, this metadata field is grayed out for the data supplier when assigning metadata, no values are presented.
-Data processing geography	Because PETs were used and declared in the previous metadata, there are no restrictions on the data processing geography. Maya notes “Included” and “Worldwide” as location, which means that the data can be used without additional protections or limitations on geographical processing.
-Data storage geography	Because PETs were used and declared in the previous metadata, there are no restrictions on the data processing geography. With  “Included” and “Worldwide” as location, the data can be used without additional protections or limitations on geographical storage.
-License to use	Notes  that the license applicable to the dataset is available at “globaltradedatahub.com/license/123e4567-e89b-12d3-a456-426614174000”. The license information indicates  the need  for the legal department to sign off before proceeding with the purchase of the dataset. 
-Intent	Reviews the dataset intent, and notices that the data is intended for "AI, Training", which aligns with the project goals. The declaration also signals that the premium price placed on the dataset is appropriate because it is intended and expected to be of higher quality than data intended for other uses.
-Proprietary data presence	Reviews the metadata around proprietary data presence and notes that there is a contact listed for the copyright. Flags  “Jonathan Reeves, Esq., Email: jreeves@globaltradedatahublegal.com, Phone: +1-555-012-3456” for her legal colleagues to use in clarifying the copyright application and confirming whether the company should use the dataset, or whether the copyright will limit commercial applications once the AI is trained with the data input. 
+| Metadata Fields |  Use Cases Applicability                                            |
+| --------------- |----------------------------------------                             |
+| Version used for metadata	| This attribute ensures that the dataset conforms to the latest OASIS data provenance standards for metadata documentation, which is crucial for compatibility with Navisphere's AI systems. The metadata schema value  is “1.4.5" and is backwards compatible with the version Navisphere is using.|
+| Dataset title/name	 | This metadata describes the dataset's focus and relevance to her needs. The title she evaluates is "2023 Global Tariff Schedules - Electronics".
+| Unique metadata identifier |	Along with the dataset title, the unique metadata identifier to uniquely identifies and references datasets without confusion, especially when dealing with multiple sources. The use of  "123e4567-e89b-12d3-a456-426614174000" value which she confirms in the company’s data procurement system has not previously been considered nor procured by the company
+|Metadata unique URL	 | This metadata component provides direct access to detailed dataset information for deeper evaluation. Its value for this use case is  "https://globaltradedatahub.com/metadata/123e4567-e89b-12d3-a456-426614174000".
+| Metadata location for datasets | feeding the current dataset	This metadata component traces data lineage and verifies the integrity of source data. Examples for this use case includes five values, denoting that five different datasets supplied the data contained in the set being evaluated.  |
+| Date of previously published version of the dataset |	This field tracks any dataset updates and revisions. The “N/A” value signifies that the dataset has not previously been published. |
+| Creator |	Knowing the creator provides accountability and a point of reference  to check what other datasets the company has previously procured from the same data supplier and satisfaction reviews of the supplier’s historically provided data. “GlobalTradeDataHub” is reflected as the creator. |
+| Source (if different from Creator) | Reviewing the source metadata for the dataset to determine its difference from the creator. The value of "International Customs Data Consortium" which again, helps determine the reliability and historical satisfaction of supplied data. Together with the metadata location for datasets feeding the current set metadata, tells that all data in the current dataset originated with International Customs Data Consortium and that GlobalTradeDataHub was merely the curator or entity that put the datasets together to provide the current one on offer. |
+| Data origin geography	| Review of  the data origin geography, noting “Europe, Switzerland; Europe, United Kingdom; Europe, Netherlands” as the values along with determining that if the dataset contains personal data, additional regulatory requirements will apply. If personal data is present, additional pre-processing of data to anonymize the data will be required and  require legal review and will extend the project delivery date. |
+| Dataset creation date	| A "February 1, 2024” creation date  provides the ability to see on the data's recency and relevance and to determine t that tariff schedules that took place with the first of the year are likely to be included in the set. However, the range of dates for data generation will confirm for her this fact, so she reviews that metadata next. |
+| Range of dates for data generation |	This helps assess the dataset's timeliness. The range is "January 1, 2020 to January 31, 2024". Based on this information, the date range covers new tariff schedules that were rolled out at the start of the current year. However, the company already has data in house for the time period of January 1, 2020 through December 31, 2022, which means she will be paying to acquire data that already exists in the enterprise. Confirmation with her procurement team determines that negotiations should exclude the initial two years of data and the price of the dataset should reflect that adjustment. |
+| Method |	Understanding the collection method helps judge the potential need for cleanup of data prior to its use. The description of  “Feeds, Other, Automated Customs Entry Processing" implies a highly structured format and the automation further points to patterns that can use to detect anomalies in the cleanliness of the data. |
+| Content type | The content type metadata informs the kind of information the dataset contains, aiding in data parsing such as “application/vnd.oasis.opendocument.database”. This media type is used for database files created with software that adheres to the OpenDocument standards, such as LibreOffice Base or Apache OpenOffice Base. This supports the reliability of the data for the use case needs. |
+| Privacy-enhancing technologies (PETs) | With the clear “YES” affirmation of PETs application of on this dataset for data privacy compliance, it can easily be determined if anonymization of the data is needed prior to its use. A "Yes” in the metadata for anonymization confirms that personal data is not present in the dataset. “Clover DX” is listed as the toolset and “Anonymization” is listed as the method. The metadata notes in the outcome field “injected 3% random data into the mix” which signals to her an appropriate level of noise, as the company considers anything above 5% unacceptable. |
+| Organizational content classification	 | This metadata value guides how the dataset can be used within Navisphere. "Internal Use Only" denotes there is no sensitive information contained in the dataset, but there are reasons for restrictions, most likely legal in nature. Reviewing the license information with the legal team will determine what the limitations might be. |
+| Confidentiality classification |	Because PETs were used and declared in the previous metadata, this metadata field is grayed out for the data supplier when assigning metadata , no values are presented. |
+| Consent location |	Because PETs were used and declared in the previous metadata, this metadata field is grayed out for the data supplier when assigning metadata, no values are presented. |
+| Data processing geography |	Because PETs were used and declared in the previous metadata, there are no restrictions on the data processing geography. Maya notes “Included” and “Worldwide” as location, which means that the data can be used without additional protections or limitations on geographical processing. |
+| Data storage geography	| Because PETs were used and declared in the previous metadata, there are no restrictions on the data processing geography. With  “Included” and “Worldwide” as location, the data can be used without additional protections or limitations on geographical storage. |
+| License to use |	Notes  that the license applicable to the dataset is available at “globaltradedatahub.com/license/123e4567-e89b-12d3-a456-426614174000”. The license information indicates  the need  for the legal department to sign off before proceeding with the purchase of the dataset. |
+|Intent	 | Reviews the dataset intent, and notices that the data is intended for "AI, Training", which aligns with the project goals. The declaration also signals that the premium price placed on the dataset is appropriate because it is intended and expected to be of higher quality than data intended for other uses. |
+| Proprietary data presence	| Reviews the metadata around proprietary data presence and notes that there is a contact listed for the copyright. Flags  “Jonathan Reeves, Esq., Email: jreeves@globaltradedatahublegal.com, Phone: +1-555-012-3456” for her legal colleagues to use in clarifying the copyright application and confirming whether the company should use the dataset, or whether the copyright will limit commercial applications once the AI is trained with the data input. |
 
 ## 5.5 Outcome 
 Through application of the data provenance standards metadata for its global tariff schedule datasets, Navisphere Logistics, Ltd. has achieved a significant enhancement in the operational efficiency and accuracy of its AI-driven tariff prediction models. The outcome includes:
@@ -506,14 +518,7 @@ answer
 
 ------
 
-# Appendix E. Example whatever
-
-## E.1 whatever
-
-
-------
-
-# Appendix F. Notices
+# Appendix E. Notices
 
 Copyright &copy; OASIS Open 2023. All Rights Reserved.
 
