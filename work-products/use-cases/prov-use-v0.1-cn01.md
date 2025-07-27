@@ -46,7 +46,9 @@ Lisa Bobbitt, Cisco, lbobbitt@cisco.com
 
 #### Related work:
 This document is related to:
-* fill in metadata spec
+* [Metadata Specification](https://github.com/LisaBobbitt/dps/blob/main/work-products/metadata-spec/prov.md#:~:text=prov.-,md,-use%2Dcases)
+
+#### Abstract:
 
 #### Abstract:
 Identifying, managing, and governing your data as an independent asset today is critical for trustworthy transparency, regulatory and legal basis alignment, and use in AI. Trust in the insights and decisions coming from both traditional data and AI applications depends on understanding the origin, lineage, and rights associated with the data that drives them. Lack of transparency has real costs, including unnecessary risks and foregone opportunities. And yet, many organizations today cannot answer basic data questions without considerable difficulty and investment of people and disparate tools.
