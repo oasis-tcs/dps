@@ -1,32 +1,37 @@
 ![OASIS Logo](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
 
 # OASIS Committee Note
+
 -------
 
 # Provenance Use Cases Version 0.1
 
 ## Committee Note 01
 
-## 27 July 2025
+### 27 July 2025
 
 &nbsp;
 
 #### This stage:
+
 https://docs.oasis-open.org/dps/prov-use/v1.0/cn01/prov-use-v1.0-cn01.md (Authoritative) \
 https://docs.oasis-open.org/dps/prov-use/v1.0/cn01/prov-use-v1.0-cn01.html \
 https://docs.oasis-open.org/dps/prov-use/v1.0/cn01/prov-use-v1.0-cn01.pdf
 
 #### Previous stage of Version 1.0:
+
 https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.md (Authoritative) \
 https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html \
 https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.pdf
 
 #### Latest stage of Version 1.0:
+
 https://docs.oasis-open.org/dps/prov-use/v1.0/prov-use-v1.0.md (Authoritative) \
 https://docs.oasis-open.org/dps/prov-use/v1.0/prov-use-v1.0.html \
 https://docs.oasis-open.org/dps/prov-use/v1.0/prov-use-v1.0.pdf
 
 #### Technical Committee:
+
 [OASIS Data Provenance Standards (DPS) TC](https://www.oasis-open.org/tc-dps/)
 
 #### Chairs:
@@ -38,7 +43,6 @@ Bryan Bortnick, IBM, bortnick@us.ibm.com
 Fotis Psallidas, Microsoft, Fotis.Psallidas@microsoft.com
 
 #### Secretary:
-
 
 #### Editors:
 
@@ -96,33 +100,30 @@ For complete copyright information please see the full Notices section in [Appen
 # Table of Contents
 
 - [1 Introduction](#1-introduction)
-  - [1.1 Background: Motivation](#11-background-motivation-for-jadn)
-  - [1.1.1 whatever](#111-openc2-and-jadn)
+  - [1.1 Background: Motivation for Standardization now](#11-background-motivation-for-standardization-now)
   - [1.2 Purpose](#12-purpose)
   - [1.3 Terminology](#13-terminology)
 - [2 Use Case 1 - Healthcare Insurance Data Procurement](#uc1)
 - [3 Use Case 2 - Media Consumption Pattern Dataset for Consumer Behavior Insights](#uc2)
 - [4 Use Case 3 - Financial Services Customer Product Enablement](#uc3)
 - [5 Use Case 4 - Enhancing Global Logistics Efficiency Through AI-driven Tariff Harmonization](#uc4)
-- [Appendix A. Informative References](#appendix-a-informative-references)
+- [Appendix A. References](#appendix-a-references)
+  - [A.1 Normative References](#a1-normative-references)
+  - [A.2 Informative References](#a1-informative-references)
 - [Appendix B. Acknowledgments](#appendix-b-acknowledgments)
 - [Appendix C. Revision History](#appendix-c-revision-history)
 - [Appendix D. Frequently Asked Questions (FAQ)](#appendix-d-frequently-asked-questions-faq)
-  - [D.1 ask a question here](#d1-jadn-vs-uml-primitive-data-types)
-  - [D.2 some more here?](#d2-why-jadn-and-not-rdf)
-  - [D.3 and keep going](#d3-why-jadn-and-not-owl)
-- [Appendix E. Example whatever](#appendix-e-example-information-model-source)
-  - [E.1 something](#e1-music-library)
+  - [D.1 Where did these use cases come from?](#d1-where-did-these-use-cases-come-from)
+  - [D.2 How may I add new use cases?](#d2-how-may-i-add-new-use-cases)
 - [Appendix F. Notices](#appendix-f-notices)
 
 **List of Figures**
 
- - [Figure 1-1 -- fill in as needed](#figure-1-1----range-of-model-types)
-
+- [Figure 1-1 -- fill in as needed](#figure-1-1----range-of-model-types)
 
 **List of Tables**
 
- - [Table 3-1 -- fill in as needed](#table-3-1----compound-type-decision-tree)
+- [Table 3-1 -- fill in as needed](#table-3-1----compound-type-decision-tree)
 
 -------
 
@@ -175,7 +176,7 @@ personalize insurance plans, and optimize claim processing.
 ## 2.2 Role{#uc1--role}
 
 Bella Ramirez, Procurement Team Lead (15 years of experience in the healthcare industry, specializing in procurement)
-with the responsibilities of 
+with the responsibilities of
 
 - Evaluating and acquiring high-quality datasets to improve the company's analytical models.
 - Facilitating vendor reviews and ensuring all datasets comply with data provenance standards, including transparent AI data usage,
@@ -192,7 +193,7 @@ with the responsibilities of
   and usage restrictions, aligning with the company's data provenance standards.
 - Ensure regulatory compliance: By collaborating with the legal department,
   Bella reviews the dataset for its adherence to healthcare data regulations, focusing on confidentiality classification,
-  consent documentation, and data processing and storage geographies. 
+  consent documentation, and data processing and storage geographies.
 - Operational efficiency and integration: Bella meets with the team that assesses how well the dataset integrates with existing systems and
   whether it can provide the expected enhancements to the analytical models without significant overhaul or disruption.
 - Strategic use and innovation: Bella explores how the dataset can be used to develop innovative marketing strategies and improve customer trust.
@@ -205,7 +206,6 @@ with the responsibilities of
 - Ensuring the dataset's metadata is accurate, up-to-date, and compliant with the OASIS DPS.
 - Integrating new datasets with existing systems and models without compromising data integrity or system performance.
 - Ensuring all data usage is compliant in the complex landscape of healthcare regulations.
-
 
 ## 2.5 How the Standards are Used{#uc1--standards-use}
 
@@ -398,7 +398,7 @@ facilitating personalized content strategies for industries ranging from consume
 ## 3.2 Role{#uc2--role}
 
 Jordan Liu, Data Strategy Director, with a a decade of experience in media analytics and a deep understanding of the media consumption landscape.
-His responsibilities include 
+His responsibilities include
 
 - Overseeing the development and distribution of comprehensive media consumption datasets.
 - Ensuring datasets adhere to the latest data provenance standards for transparency and reliability.
@@ -417,7 +417,6 @@ His responsibilities include
 - Balancing data comprehensiveness with privacy and ethical considerations.
 - Keeping pace with rapid changes in media consumption behaviors and technology.
 - Ensuring data standards provide necessary transparency to data buyers and that the metadata is compatible with automated data procurement systems.
-
 
 ## 3.5 How the Standards are Used{#uc2--standards-use}
 
@@ -551,12 +550,12 @@ facilitating unrestricted exploration of media consumption trends.
 Under Jordan's guidance, the "March 2024 Global Media Consumption Trends" dataset emerges as a good resource for
 understanding intricate media consumption behaviors across various platforms.
 By curating and documenting the dataset's metadata, including the adoption of version 1.0.0 for OASIS data provenance standards,
-assigning a unique identifier, and providing a transparent metadata URL, Jordan ensures the dataset's integrity and usability for AI analytics. 
+assigning a unique identifier, and providing a transparent metadata URL, Jordan ensures the dataset's integrity and usability for AI analytics.
 
 This attention to detail, coupled with the clear documentation of data origin, collection methodologies, and privacy-enhancing measures,
 positions the dataset as a trustworthy and comprehensive tool for media buyers and sellers.
 The dataset's rich insights into consumer behaviors, derived from diverse geographical regions and articulated through a mix of structured and
-unstructured data types, empower stakeholders across multiple industries to tailor personalized content strategies effectively. 
+unstructured data types, empower stakeholders across multiple industries to tailor personalized content strategies effectively.
 
 Jordan's emphasis on data transparency and legal requirements fosters collaboration but also enhances operational efficiency and
 compliance for clients, setting a new benchmark for data-driven decision-making in media consumption.
@@ -990,7 +989,13 @@ its AI-driven tariff prediction models. The outcome includes:
 
 -------
 
-# Appendix A. Informative References
+# Appendix A. References
+
+## A.1 Normative References
+
+n/a
+
+## A.2 Informative References
 
 <!-- Required section -->
 
@@ -1001,47 +1006,45 @@ While any hyperlinks included in this appendix were valid at the time of publica
 EDITOR's NOTE: the following are cribbed from another CN and just included as examples.
 We will need to delete and replace with ones relative to this CN
 
-###### [ASN.1]
-Recommendation ITU-T X.680 (2021) *Information technology - Abstract Syntax Notation One (ASN.1): Specification of basic notation* 
+\[ASN.1]
+:    Recommendation ITU-T X.680 (2021) _Information technology - Abstract Syntax Notation One (ASN.1): Specification of basic notation_
 
-###### [JADN-v1.0]
-JSON Abstract Data Notation Version 1.0. Edited by David Kemp. 17
+\[JADN-v1.0]
+:    JSON Abstract Data Notation Version 1.0. Edited by David Kemp. 17
 August 2021. OASIS Committee Specification 01.
 https://docs.oasis-open.org/openc2/jadn/v1.0/cs01/jadn-v1.0-cs01.html.
 Latest stage:
 https://docs.oasis-open.org/openc2/jadn/v1.0/jadn-v1.0.html.
 
-###### [NTIA-SBOM]
-NTIA Multistakeholder Process on Software Component Transparency, "SBOM At A Glance", April 2021,   https://ntia.gov/sites/default/files/publications/sbom_at_a_glance_apr2021_0.pdf
+\[NTIA-SBOM]
+:    NTIA Multistakeholder Process on Software Component Transparency, "SBOM At A Glance", April 2021,   https://ntia.gov/sites/default/files/publications/sbom_at_a_glance_apr2021_0.pdf
 
-###### [RFC3444]
-Pras, A., Schoenwaelder, J., "On the Difference between
+\[RFC3444]
+:    Pras, A., Schoenwaelder, J., "On the Difference between
 Information Models and Data Models", RFC 3444, January 2003,
 https://tools.ietf.org/html/rfc3444.
 
-###### [RFC8610]
-Birkholz, H., Vigano, C. and Bormann, C., "Concise Data
+\[RFC8610]
+:    Birkholz, H., Vigano, C. and Bormann, C., "Concise Data
 Definition Language (CDDL): A Notational Convention to Express
 Concise Binary Object Representation (CBOR) and JSON Data
 Structures", RFC 8610, DOI 10.17487/RFC8610, June 2019,
 https://www.rfc-editor.org/info/rfc8610
 
-###### [UML]
-"Unified Modeling Language", Version 2.5.1, December 2017,
+\[UML]
+:    "Unified Modeling Language", Version 2.5.1, December 2017,
 https://www.omg.org/spec/UML/2.5.1/About-UML/
 
-###### [YTLee]
-Lee, Y. (1999), *Information Modeling: From Design to
-Implementation*, IEEE Transactions on Robotics and Automation,
+\[YTLee]
+:    Lee, Y. (1999), _Information Modeling: From Design to
+Implementation_, IEEE Transactions on Robotics and Automation,
 [online],
 https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=821265
 (Accessed October 5, 2022)
 
-
 -------
 
 # Appendix B. Acknowledgments
-
 
 ## B.1 Special Thanks
 
@@ -1061,6 +1064,7 @@ The following individuals have participated in the creation of this document and
 -------
 
 # Appendix C. Revision History
+
 | Revision                  | Date       | Editor(s)                    | Changes Made                  |
 |:--------------------------|:-----------|:-----------------------------|:------------------------------|
 | prov-uc-v1.0-cn01-wd01.md | 2025-07-27 | Lisa Bobbit and Stefan Hagen | Initial draft.                |
@@ -1078,18 +1082,16 @@ Data &amp; Trust Alliance <https://dataandtrustalliance.org/>.
 The Data &amp; Trust Alliance was established in September 2020 by a group of CEOs of major companies,
 based on a shared conviction that the future of business will be powered by the responsible use of data and AI.
 
-
 ## D.2 How may I add new use cases?
 
 Contribute a use case in the contributions folder.
 Join the Use Case Subcommittee.
 
-
 ## D.3 another question?
 
 answer
 
-------
+-------
 
 # Appendix F. Notices
 
