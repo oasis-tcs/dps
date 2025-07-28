@@ -38,34 +38,35 @@ Bryan Bortnick, IBM, bortnick@us.ibm.com
 Fotis Psallidas, Microsoft, Fotis.Psallidas@microsoft.com
 
 #### Secretary:
-Kristina Podnar, Data & Trust Alliance, kpodnar@dataandtrustalliance.org 
+
 
 #### Editors:
 
 Lisa Bobbitt, Cisco, lbobbitt@cisco.com
 
-Duncan Sparrell, sFractal Consulting, duncan@sfractal.comn
-
 #### Related work:
+
 This document is related to:
-* fill in metadata spec
+
+- [Metadata Specification](https://docs.oasis-open.org/dps/meta/v1.0/meta.html)
 
 #### Abstract:
-Data transparency is critical. 
-Trust in the insights and decisions coming from both traditional data and AI applications 
-depends on understanding the origin, lineage, and rights associated with the data that feeds them. 
-Lack of transparency has real costs, including unnecessary risks and foregone opportunities. 
-And yet, many organizations today cannot answer basic data questions 
-without considerable difficulty and investment.
 
-To realize the value of data requires a reliable cross-industry baseline of data transparency. 
-The Data Provenance standards propose a solution.
-These use case scenarios showcase
-how the Data Provenance standards
-support diverse needs across the 
-data ecosystem.
+Identifying, managing, and governing your data as an independent asset today is critical for trustworthy transparency,
+regulatory and legal basis alignment, and use in AI.
+Trust in the insights and decisions coming from both traditional data and AI applications depends on understanding the origin,
+lineage, and rights associated with the data that drives them.
+Lack of transparency has real costs, including unnecessary risks and foregone opportunities.
+And yet, many organizations today cannot answer basic data questions without considerable difficulty and investment of people and disparate tools.
+
+To realize the value of data requires a reliable cross-industry baseline of data provenance (source and legal processing basis) and
+lineage (data processing's what, where, who, and how) as data is valued, governed, and managed across industries from customer to
+data processor to sub-processor.
+The Data Provenance standards propose a solution to standardized throughout the data’s life cycle.
+These use case scenarios showcase how the Data Provenance standards support diverse needs across the data ecosystem.
 
 #### Status:
+
 This is a Non-Standards Track Work Product. The patent provisions of the OASIS IPR Policy do not apply.
 
 This document was last revised or approved by the OASIS Data Provenance Standards (DPS) TC on the above date. The level of approval is also listed above. Check the "Latest stage" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=tc-dps#technical.
@@ -73,13 +74,15 @@ This document was last revised or approved by the OASIS Data Provenance Standard
 TC members should send comments on this document to the TC's email list. Others should send comments to the TC's public comment list, after subscribing to it by following the instructions at the "Send A Comment" button on the TC's web page at https://www.oasis-open.org/committees/tc-dps/.
 
 #### Citation format:
+
 When referencing this document the following citation format should be used:
 
 **[prov-use-v1.0]**
 
-_Provenance Use Cases Version 1.0_. Edited by Lisa Bobbitt, Duncan Sparrell. 27 July 2025. OASIS Committee Note 01. https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html. Latest stage: https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html.
+_Provenance Use Cases Version 1.0_. Edited by Lisa Bobbitt. 27 July 2025. OASIS Committee Note 01. https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html. Latest stage: https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html.
 
 #### Notices
+
 Copyright &copy; OASIS Open 2025. All Rights Reserved.
 
 Distributed under the terms of the OASIS [IPR Policy](https://www.oasis-open.org/policies-guidelines/ipr/).
@@ -113,10 +116,12 @@ For complete copyright information please see the full Notices section in [Appen
 - [Appendix F. Notices](#appendix-f-notices)
 
 **List of Figures**
+
  - [Figure 1-1 -- fill in as needed](#figure-1-1----range-of-model-types)
 
 
 **List of Tables**
+
  - [Table 3-1 -- fill in as needed](#table-3-1----compound-type-decision-tree)
 
 -------
@@ -125,19 +130,26 @@ For complete copyright information please see the full Notices section in [Appen
 
 # 1 Introduction
 
-put intro here
+Standardizing metadata (the descriptors) for data provenance and lineage that you are processing allows the automation of data management
+(storage, deletion, localization, sharing &amp; backup requirements) governance
+(allowances, restrictions and required controls given legal basis of processing, regulations, and policies),
+data usage (type, age of data, source location, type of data, personal data, known bias, etc).
 
-## 1.1 Background: Motivation for ...
+## 1.1 Background: Motivation for Standardization now
 
-This section provides the background for ...
+Data has traditionally been siloed, managed, and governed by application (built-in controls and defined processes) and
+user of that application (contract or other legal basis).
 
-### 1.1.1 whatever
-
-add text
+In today's world where data is being sought for its value, its use in innovation, its processing alignment to regulations,
+and its trustworthiness via transparency and observability, data requires to be treated as an independent asset.
+To be independent, data must know itself by maintaining its provenance and tracking its lineage.
+Standardized provenance and lineage metadata provides consistent identifiers to allow data to be independent as
+it traverses its processing lifecycle from creation/collection, use, storage/retention, sharing, and deletion.
 
 ## 1.2 Purpose
 
-Add text.
+These uses cases are examples of how the provenance and lineage metadata provide the foundational information to
+maximize the data value while minimizing the processing risk.
 
 ## 1.3 Terminology
 
@@ -145,90 +157,60 @@ This CN uses the definitions contained in the [[Provenance Metadata
 Specification](#prov-md-v10)], section whatever. The following
 additional terms are defined for this document:
 
- - **whatever:** definition here with ref to where got if we didn't create
-
- - **next:** definition here with ref to where got if we didn't create
-
+- **next:** definition here with ref to where got if we didn't create
+- **Seed dataset:** definition here with ref to where got if we didn't creat
+- **Underlying dataset(s):** definition here with ref to where got if we didn't create
 
 -------
 
 # 2 Use Case 1 - Healthcare Insurance Data Procurement{#uc1}<a id="uc1"></a>
 
-## 2.1 Persona{#uc1--persona}
+## 2.1 Use case{#uc1--use-case}
 
-### 2.1.1 Name{#uc1--persona--name}
-
-Bella Ramirez
-
-### 2.1.2 Role{#uc1--persona--role}
-
-Procurement Team Lead
-
-### 2.1.3 Background{#uc1--persona--background}
-
-Bella holds a BS in Accounting and has over 15 years of experience in the healthcare industry, specializing in procurement.
-Before her current role, she worked in various capacities within healthcare organizations,
-including as a contracting specialist and an accounting auditor.
-This gave her a deep understanding of the technical and procurement of healthcare data.
-
-### 2.1.4 Responsibilities{#uc1--persona--responsibilities}
-
-- Leading the procurement team in evaluating and acquiring high-quality datasets to improve the company's analytical models.
-
-- Facilitating vendor reviews and ensuring all datasets comply with data provenance standards,
-  including transparent AI data usage, metadata coverage, and regulatory requirements.
-
-- Partnering with the data team charged with integrating new datasets into existing systems ensures that
-  procured data meets their operational needs.
-
-- Collaborating with the legal and compliance departments to ensure data usage aligns with healthcare regulations and company policies.
-
-- Contributing to the success of strategies to leverage data insights for innovative marketing and improved customer trust.
-
-## 2.2 Use Case{#uc1--use-case}
-
-Bella and her team are evaluating a new dataset that contains comprehensive patient and insurance payment information.
+Bella and her team at Healthcare Insurance are evaluating a new dataset that contains
+comprehensive patient and insurance payment information.
 This dataset is considered crucial for enhancing the company's predictive analytics models, which forecast healthcare trends,
 personalize insurance plans, and optimize claim processing.
 
-### 2.2.1 Goals{#uc1--use-case--goals}
+## 2.2 Role{#uc1--role}
 
-- **Assess metadata coverage**:
-  Bella prioritizes the evaluation of the dataset's metadata to ensure it includes essential information like the dataset title,
-  unique metadata identifier, metadata location, and details about data origin and collection methods.
-  This step is crucial for establishing the dataset's lineage, context, and usage restrictions,
-  aligning with the company's data provenance standards.
+Bella Ramirez, Procurement Team Lead (15 years of experience in the healthcare industry, specializing in procurement)
+with the responsibilities of 
 
-- **Ensure regulatory compliance**:
-  By collaborating with the legal department, Bella ensures the dataset for adherence to healthcare data regulations,
-  focusing on confidentiality classification, consent documentation, and data processing and storage geographies.
-  This provides the dataset's use will not breach any legal or ethical boundaries.
+- Evaluating and acquiring high-quality datasets to improve the company's analytical models.
+- Facilitating vendor reviews and ensuring all datasets comply with data provenance standards, including transparent AI data usage,
+  metadata coverage, and regulatory requirements.
+- Ensuring that procured data meets integration operational needs.
+- Ensuring data usage aligns with healthcare regulations and company policies.
+- Leveraging data insights for innovative marketing and improved customer trust.
 
-- **Operational efficiency and integration**:
-  Bella validates the dataset's potential impact on operational efficiency by working with the data team.
-  She meets with the team that assesses how well the dataset integrates with existing systems and
+## 2.3 Goals{#uc1--goals}
+
+- Assess metadata coverage: Bella prioritizes the evaluation of the dataset's metadata to ensure it includes essential information like
+  the dataset title, unique metadata identifier, metadata location, and details about data origin and collection methods.
+  This step is crucial for establishing the dataset's lineage, context,
+  and usage restrictions, aligning with the company's data provenance standards.
+- Ensure regulatory compliance: By collaborating with the legal department,
+  Bella reviews the dataset for its adherence to healthcare data regulations, focusing on confidentiality classification,
+  consent documentation, and data processing and storage geographies. 
+- Operational efficiency and integration: Bella meets with the team that assesses how well the dataset integrates with existing systems and
   whether it can provide the expected enhancements to the analytical models without significant overhaul or disruption.
+- Strategic use and innovation: Bella explores how the dataset can be used to develop innovative marketing strategies and improve customer trust.
+  This involves touching base with the marketing team, which is focused on analyzing the dataset's intent and proprietary data presence to
+  identify new opportunities for personalized customer engagement and service delivery.
 
-- **Strategic use and innovation**:
-  Beyond compliance and integration,
-  Bella explores how the dataset can be used to develop innovative marketing strategies and improve customer trust.
-  This involves touching base with the marketing team, which is focused on analyzing the dataset's intent and
-  proprietary data presence to identify new opportunities for personalized customer engagement and service delivery.
-
-### 2.2.2 Challenges{#uc1--use-case--challenges}
+## 2.4 Challenges{#uc1--challenges}
 
 - Balancing the need for detailed, comprehensive data with privacy and confidentiality requirements.
-
-- Ensuring the dataset's metadata is accurate, up-to-date, and compliant with evolving data provenance standards.
-
+- Ensuring the dataset's metadata is accurate, up-to-date, and compliant with the OASIS DPS.
 - Integrating new datasets with existing systems and models without compromising data integrity or system performance.
+- Ensuring all data usage is compliant in the complex landscape of healthcare regulations.
 
-- Navigating the complex landscape of healthcare regulations and ensuring all data usage is compliant.
 
 ## 2.3 How the Standards are Used{#uc1--standards-use}
 
 For Bella to ensure the dataset under evaluation meets the standards required for her healthcare insurance company's analytical models,
-she would assess the following values within the specified metadata:
+she would assess the following values, all within the specified DPS metadata:
 
 ### 2.3.1 Version Used for Metadata{#uc1--standards-use--version-used-for-metadata}
 
@@ -397,11 +379,11 @@ After investigating, the legal team determined that the data supplier mistakenly
 had to correct the metadata associated with the dataset before the procurement process could proceed.
 This delayed the data procurement process by four business days.
 
-However, by successfully evaluating and integrating the new dataset,
-Bella ensures that the organization is well-positioned to positively impact the company's business operations,
-including enhanced analytical capabilities, improved customer trust, and the development of responsible AI applications.
-This will align with the company's business considerations and
-set a benchmark for efficient and trustworthy data usage in the healthcare insurance industry.
+However, by successfully evaluating and integrating the new dataset, Bella ensures that the organization is well-positioned to
+positively impact the company's business operations, including enhanced analytical capabilities, improved customer trust,
+and the development of responsible AI applications.
+This will align with the company's business considerations and set a benchmark for efficient and
+trustworthy data usage in the healthcare insurance industry.
 
 -------
 
