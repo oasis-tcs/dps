@@ -62,7 +62,7 @@ And yet, many organizations today cannot answer basic data questions without con
 To realize the value of data requires a reliable cross-industry baseline of data provenance (source and legal processing basis) and
 lineage (data processing's what, where, who, and how) as data is valued, governed, and managed across industries from customer to
 data processor to sub-processor.
-The Data Provenance standards propose a solution to standardized throughout the data’s life cycle.
+The Data Provenance standards propose a solution to standardized throughout the data's life cycle.
 These use case scenarios showcase how the Data Provenance standards support diverse needs across the data ecosystem.
 
 #### Status:
@@ -389,104 +389,83 @@ trustworthy data usage in the healthcare insurance industry.
 
 # 3 Use Case 2 - Media Consumption Pattern Dataset for Consumer Behavior Insights{#uc2}<a name="uc2"></a>
 
-## 3.1 Persona{#uc2--persona}
+## 3.1 Use case{#uc2--use-case}
 
-### 3.1.1 Name{#uc2--persona--name}
-
-Jordan Liu
-
-### 3.1.2 Role{#uc2--persona--role}
-
-Data Strategy Director
-
-### 3.1.3 Background{#uc2--persona--background}
-
-Jordan holds an MA in Data Science with a focus on market analytics.
-With a decade of experience in media analytics, Jordan has developed a deep understanding of the media consumption landscape.
-His career began in data analysis, evolving into strategic roles that leverage data insights to drive industry innovation,
-particularly in media consumption patterns.
-
-### 3.1.4 Responsibilities{#uc2--persona--responsibilities}
-
-- Overseeing the development and distribution of comprehensive media consumption datasets.
-
-- Ensuring datasets adhere to the latest data provenance standards for transparency and reliability.
-
-- Collaborating with stakeholders across healthcare, consumer goods, and travel industries to tailor data offerings.
-
-- Guiding the integration of datasets into client systems to optimize targeted content delivery and marketing strategies.
-
-- Advocating for data-driven decision-making within the company and among clients to foster industry innovation.
-
-## 3.2 Use Case{#uc2--use-case}
-
-Jordan's current project involves curating a dataset that tracks media consumption habits across diverse platforms.
+Jordan Liu's current project involves curating a dataset that tracks media consumption habits across diverse platforms.
 This dataset aims to empower media buyers and sellers in accurately targeting their audience segments,
 facilitating personalized content strategies for industries ranging from consumer goods to tourism.
 
-### 3.2.1 Goals{#uc2--use-case--goals}
+## 3.2 Role{#uc2--role}
+
+Jordan Liu, Data Strategy Director, with a a decade of experience in media analytics and a deep understanding of the media consumption landscape.
+His responsibilities include 
+
+- Overseeing the development and distribution of comprehensive media consumption datasets.
+- Ensuring datasets adhere to the latest data provenance standards for transparency and reliability.
+- Collaborating with stakeholders across healthcare, consumer goods, and travel industries to tailor data offerings.
+- Guiding the integration of datasets into client systems to optimize targeted content delivery and marketing strategies.
+- Advocating for data-driven decision-making within the company and among clients to foster industry innovation.
+
+## 3.3 Goals{#uc2--goals}
 
 - Ensure comprehensive coverage of media consumption patterns to provide actionable insights for diverse industries.
-
 - Maintain high standards of data transparency to build trust and encourage collaboration.
-
 - Enhance clients' operational efficiency and compliance through strategic data integration.
 
-### 3.2.2 Challenges{#uc2--use-case--challenges}
+## 3.4 Challenges{#uc2--challenges}
 
 - Balancing data comprehensiveness with privacy and ethical considerations.
-
 - Keeping pace with rapid changes in media consumption behaviors and technology.
-
 - Ensuring data standards provide necessary transparency to data buyers and that the metadata is compatible with automated data procurement systems.
 
-## 3.3 How the Standards are Used{#uc2--standards-use}
 
-For Jordan to ensure the dataset his company is offering to buyers meets the standards required for AI analytical models,
-he fills out the following metadata associated with the dataset he has curated:
+## 3.5 How the Standards are Used{#uc2--standards-use}
 
-### 3.3.1 Version Used for Metadata{#uc2--standards-use--version-used-for-metadata}
+To ensure the dataset the company is offering to buyers meets the standards required for AI analytical models,
+the following metadata associated with the dataset is curated:
+
+### 3.5.1 Version Used for Metadata{#uc2--standards-use--version-used-for-metadata}
 
 Jordan ensures the dataset utilizes version 1.0.0 of the data provenance standards,
 thereby future proofing the metadata and making it backwards compatible, especially with systems that automate metadata ingestion.
 
-### 3.3.2 Dataset Title / Name{#uc2--standards-use--dataset-title-name}
+### 3.5.2 Dataset Title / Name{#uc2--standards-use--dataset-title-name}
 
 He titles the dataset "March 2024 Global Media Consumption Trends," which reflects the data contents and production time frame.
 
-### 3.3.3 Unique Metadata Identifier{#uc2--standards-use--unique-metadata-identifier}
+### 3.5.3 Unique Metadata Identifier{#uc2--standards-use--unique-metadata-identifier}
 
 Jordan generates a UUID and assigns "550e8400-e29b-41d4-a716-446655440000" as the unique identifier,
 to ensure identification within the data ecosystem.
 
-### 3.3.4 Metadata Unique URL{#uc2--standards-use--metadata-unique-url}
+### 3.5.4 Metadata Unique URL{#uc2--standards-use--metadata-unique-url}
 
 Jordan enters "example.com/550e8400-e29b-41d4-a716-446655440000/metadata.html" as the URL to be used for direct access to
 the data provenance standards metadata, ensuring transparency and easy reference by downstream consumers assessing the data for consumption.
 
-### 3.3.5 Metadata Location for Datasets Feeding the Current Dataset{#uc2--standards-use--metadata-location}
+### 3.5.5 Metadata Location for Datasets Feeding the Current Dataset{#uc2--standards-use--metadata-location}
 
 Jordan outlines the lineage and sources contributing to the dataset for comprehensive understanding and traceability by entering three values,
 "example.com/550e8400-e29b-41d4-a716-44665543902", "example.com/550e8400-e29b-41d4-a716-44665544732",
 and "example.com/550e8400-e29b-41d4-a716-446655465722" as the values.
 
-### 3.3.6 Date of Previously Published Version of the Dataset{#uc2--standards-use--date-of-previous-version}
+### 3.5.6 Date of Previously Published Version of the Dataset{#uc2--standards-use--date-of-previous-version}
 
 This metadata field documents the date,
 if applicable, when the dataset was previously published and allows downstream consumers to track dataset evolution and updates.
 Jordan leaves the field blank as this dataset is published for offer for the first time.
 
-### 3.3.7 Creator{#uc2--standards-use--creator}
+### 3.5.7 Creator{#uc2--standards-use--creator}
 
 The market analysis company name, "AnalytiQuest Ventures" is listed by Jordan,
 attributing dataset ownership and responsibility for its integrity.
 
-### 3.3.8 Source (if Different From Creator){#uc2--standards-use--source}
+### 3.5.8 Source (if Different From Creator){#uc2--standards-use--source}
 
 Since AnalytiQuest Ventures is the generator of the data, Jordan leaves the field blank;
 the creator of the dataset already accurately depicts the source of the data as AnalytiQuest Ventures.
 
-### 3.3.9 Data Origin Geography{#uc2--standards-use--data-origin-geography}
+### 3.5.9 Data Origin Geography{#uc2--standards-use--data-origin-geography}
 
 This metadata field identifies the geographic data points that are included to contextualize the media consumption  patterns,
 and so Jordan enters the following values for the metadata in order of requirements -- country, state,  city: United States, Florida, Miami;
@@ -494,92 +473,93 @@ United States, Florida, Ft. Lauderdale; United States, Florida, Orlando; United 
 United States, Florida, Tampa; United States, Florida, Pensacola; United States, Florida, Augusta; United States, Florida, Jacksonville;
 United States, Florida, Cape Coral.
 
-### 3.3.10 Dataset Creation Date{#uc2--standards-use--dataset-creation-date}
+### 3.5.10 Dataset Creation Date{#uc2--standards-use--dataset-creation-date}
 
 The dataset creation date indicates the dataset's compilation date, ensuring relevance. Jordan specifies "January 10, 2024" as the creation date, indicating when the dataset was compiled. This date provides a context for the dataset's freshness.
 
-### 3.3.11 Range of Dates for Data Generation{#uc2--standards-use--standards-use--range-of-dates-for-data-generation}
+### 3.5.11 Range of Dates for Data Generation{#uc2--standards-use--standards-use--range-of-dates-for-data-generation}
 
 Jordan enters "January 1, 2023 - December 31, 2023" as the period during which the data was collected.
 This timeframe is crucial for ensuring the dataset reflects the latest media consumption patterns and is relevant for current analysis.
 
-### 3.3.12 Method{#uc2--standards-use--method}
+### 3.5.12 Method{#uc2--standards-use--method}
 
 The data collection methodology, described as "User Generated Content: Digital Interaction Tracking and Survey Responses" in
 the method metadata field, outlines how consumer interactions with various media platforms were recorded alongside targeted survey data.
 This method provides a comprehensive view of media consumption behaviors, enhancing the dataset's transparency for in-depth consumer insights.
 
-### 3.3.13 Content Type{#uc2--standards-use--content-type}
+### 3.5.13 Content Type{#uc2--standards-use--content-type}
 
 Jordan enters .xls (30%), .doc (40%) and .sql (30%) to depict the structured and
 unstructured data means used to gauge multimedia engagement metrics and the textual Responses that characterize the dataset's content.
 This mix is essential for analyzing both quantitative media engagement metrics and qualitative consumer feedback,
 offering a multifaceted approach to media consumption analysis but also points to a potential level of cleanup that may be required on the dataset.
 
-### 3.3.14 Privacy Enhancing Technologies (PETs){#uc2--standards-use--privacy-enhancing-technologies-pets}
+### 3.5.14 Privacy Enhancing Technologies (PETs){#uc2--standards-use--privacy-enhancing-technologies-pets}
 
 Jordan selects the metadata's indication of "Yes" to denote the use of PETs,
 and specified "Anonymization and Data Aggregation Techniques Applied" via "Adverity" tool,
 which confirms that steps have been taken to anonymize and aggregate personal data,
 ensuring the dataset's adherence to privacy standards and ethical considerations in media research.
 
-### 3.3.15 Organizational Content Classification{#uc2--standards-use--organizational-content-classification}
+### 3.5.15 Organizational Content Classification{#uc2--standards-use--organizational-content-classification}
 
 Jordan identifies the dataset as being for "Internal Use",
 and this classification signals the dataset's designed purpose for in-house analytics and strategic planning,
 aligning with corporate data governance policies and ensuring appropriate handling within the organization.
 
-### 3.3.16 Confidentiality Classification{#uc2--standards-use--confidentiality-classification}
+### 3.5.16 Confidentiality Classification{#uc2--standards-use--confidentiality-classification}
 
 This is a common field that Jordan uses in his work, when there is personally identifiable information on consumers present.
 However, since PETs have been used to aggregate and anonymize the personal data in the dataset,
 this classification can be left blank and Jordan does so.
 
-### 3.3.17 Consent Location{#uc2--standards-use--consent-location}
+### 3.5.17 Consent Location{#uc2--standards-use--consent-location}
 
 Since PETs have been used to aggregate and anonymize consumer personal data in the dataset,
 no consent is required to process or share the consumers' data and Jordan leaves this field blank.
 
-### 3.3.18 Data Processing Geography{#uc2--standards-use--data-processing-geography}
+### 3.5.18 Data Processing Geography{#uc2--standards-use--data-processing-geography}
 
 Since PETs have been used to aggregate and anonymize consumer personal data in the dataset,
 there are no limitations on where the dataset contents can be processed and Jordan leaves this metadata field blank.
 
-### 3.3.19 Data Storage Geography{#uc2--standards-use--data-storage-geography}
+### 3.5.19 Data Storage Geography{#uc2--standards-use--data-storage-geography}
 
 Since PETs have been used to aggregate and anonymize consumer personal data in the dataset,
 there are no limitations on where the dataset contents can be stored and Jordan leaves this metadata field blank.
 
-### 3.3.20 License to Use{#uc2--standards-use--license-to-use}
+### 3.5.20 License to Use{#uc2--standards-use--license-to-use}
 
 Jordan knows that the license terms are flexible for this dataset, so rather than specifying the terms,
 the AnalytiQuest Ventures's Office of General Counsel should be contacted for usage details.
 He enters "AnalytiQuest Ventures's Office of General Counsel, legalconsumptionlicense@example.com and (555) 123-4567" into the metadata field.
 
-### 3.3.21 Intent{#uc2--standards-use--intent}
+### 3.5.21 Intent{#uc2--standards-use--intent}
 
 The purpose of this dataset, as Jordan labels it, is "AI", "Evaluation", and "Training",
 which aligns with strategic objectives in media planning and content development, as well as research endeavors in the media industry.
 
-### 3.3.22 Proprietary Data Presence{#uc2--standards-use--proprietary-data-presence}
+### 3.5.22 Proprietary Data Presence{#uc2--standards-use--proprietary-data-presence}
 
 Jordan leaves this metadata field blank. The absence of proprietary restrictions, as indicated by the metadata,
 confirms the dataset's availability for broad analysis within the stipulated legal frameworks,
 facilitating unrestricted exploration of media consumption trends.
 
-## 3.4 Outcome{#uc2--outcome}
+## 3.6 Outcome{#uc2--outcome}
 
-Under Jordan's guidance, the "March 2024 Global Media Consumption Trends" dataset emerges as
-a good resource for understanding intricate media consumption behaviors across various platforms.
-By curating and documenting the dataset's metadata, including the adoption of version "1.0.0" for data provenance standards,
-assigning a unique identifier, and providing a transparent metadata URL, Jordan ensures the dataset's integrity and usability for AI analytics.
+Under Jordan's guidance, the "March 2024 Global Media Consumption Trends" dataset emerges as a good resource for
+understanding intricate media consumption behaviors across various platforms.
+By curating and documenting the dataset's metadata, including the adoption of version 1.0.0 for OASIS data provenance standards,
+assigning a unique identifier, and providing a transparent metadata URL, Jordan ensures the dataset's integrity and usability for AI analytics. 
+
 This attention to detail, coupled with the clear documentation of data origin, collection methodologies, and privacy-enhancing measures,
 positions the dataset as a trustworthy and comprehensive tool for media buyers and sellers.
-The dataset's rich insights into consumer behaviors,
-derived from diverse geographical regions and articulated through a mix of structured and unstructured data types,
-empower stakeholders across multiple industries to tailor personalized content strategies effectively.
-Jordan's emphasis on data transparency and legal requirements fosters collaboration but also
-enhances operational efficiency and compliance for clients, setting a new benchmark for data-driven decision-making in media consumption.
+The dataset's rich insights into consumer behaviors, derived from diverse geographical regions and articulated through a mix of structured and
+unstructured data types, empower stakeholders across multiple industries to tailor personalized content strategies effectively. 
+
+Jordan's emphasis on data transparency and legal requirements fosters collaboration but also enhances operational efficiency and
+compliance for clients, setting a new benchmark for data-driven decision-making in media consumption.
 
 -------
 
