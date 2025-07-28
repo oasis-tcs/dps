@@ -207,32 +207,32 @@ with the responsibilities of
 - Ensuring all data usage is compliant in the complex landscape of healthcare regulations.
 
 
-## 2.3 How the Standards are Used{#uc1--standards-use}
+## 2.5 How the Standards are Used{#uc1--standards-use}
 
 For Bella to ensure the dataset under evaluation meets the standards required for her healthcare insurance company's analytical models,
 she would assess the following values, all within the specified DPS metadata:
 
-### 2.3.1 Version Used for Metadata{#uc1--standards-use--version-used-for-metadata}
+### 2.5.1 Version Used for Metadata{#uc1--standards-use--version-used-for-metadata}
 
 Bella checks for the specific version number of the metadata schema or standard used,
 ensuring it's the latest or a widely recognized version to maintain consistency and future-proof the dataset.
 The version used for metadata is "1.0.0" which indicates the dataset uses the third revision of the 1.0.0 version of the metadata standard,
 suggesting that it is up to date with current standards.
 
-### 2.3.2 Dataset Title / Name{#uc1--standards-use--dataset-title-name}
+### 2.5.2 Dataset Title / Name{#uc1--standards-use--dataset-title-name}
 
 She evaluates whether the dataset's title is descriptive and precise, clearly reflecting the dataset's content and intended use,
 facilitating easy identification and retrieval.
 The title of the dataset is "2024 Comprehensive Patient Care and Insurance Claims Dataset",
 a descriptive title indicating the dataset's content and scope, including the year for currency.
 
-### 2.3.3 Unique Metadata Identifier{#uc1--standards-use--unique-metadata-identifier}
+### 2.5.3 Unique Metadata Identifier{#uc1--standards-use--unique-metadata-identifier}
 
 Bella verifies the presence of a unique identifier, like a UUID,
 ensuring it is correctly formatted and unique to prevent any confusion or overlap with other datasets.
 A unique identifier, "UUID-1234-5678-9012-3456" ensures this dataset's metadata is distinguishable.
 
-### 2.3.4 Metadata Unique URL{#uc1--standards-use--metadata-unique-url}
+### 2.5.4 Metadata Unique URL{#uc1--standards-use--metadata-unique-url}
 
 She examines the URL's accessibility,
 ensuring it leads directly to a comprehensive metadata page that provides detailed information about the dataset,
@@ -240,54 +240,54 @@ and checks that the URL is secure and reliable.
 She uses the provided value of [https://example.com/dataset/metadata/UUID-1234-5678-9012-3456](https://healthdata.org/dataset/metadata/UUID-1234-5678-9012-3456),
 which is a direct link to the dataset's detailed metadata page, providing ease of access for further information.
 
-### 2.3.5 Metadata Location for Datasets Feeding the Current Dataset{#uc1--how-the-standards-are-used--metadata-location}
+### 2.5.5 Metadata Location for Datasets Feeding the Current Dataset{#uc1--how-the-standards-are-used--metadata-location}
 
 Bella assesses this to understand the dataset's lineage and dependencies,
 ensuring that the metadata for source datasets is easily accessible and well-documented.
 She uses [https://example.com/metadata/sources](https://healthdata.org/metadata/sources), a URL that points to metadata for source datasets,
 establishing the lineage and dependencies of the current dataset.
 
-### 2.3.6 Date of Previously Published Version of the Dataset{#uc1--standards-use--date-of-previous-version}
+### 2.5.6 Date of Previously Published Version of the Dataset{#uc1--standards-use--date-of-previous-version}
 
 She looks for the date to track the dataset's evolution, ensuring that any updates or revisions are noted and the
 dataset's version history is clear.
 "March 15, 2023" indicates when the last version of the dataset was released, helping track updates over time.
 
-### 2.3.7 Creator{#uc1--standards-use--creator}
+### 2.5.7 Creator{#uc1--standards-use--creator}
 
 Bella verifies the creator's identity, ensuring they are reputable and have the necessary expertise.
 This provides accountability and a reliable point of contact for inquiries.
 The creator is noted as the "National Health Data Systems," which Identifies the organization responsible for creating the dataset,
 adding a layer of trust and accountability.
 
-### 2.3.8 Source (if Different From Creator){#uc1--standards-use--source}
+### 2.5.8 Source (if Different From Creator){#uc1--standards-use--source}
 
 She checks the source(s) of the data, ensuring transparency and the integrity of the data collection process,
 significantly if the source differs from the dataset creator.
 "Nationwide Hospitals Systems, Insurance Providers Ltd." Are specified in the source, which indicates the original data sources,
 providing context for the data's origin.
 
-### 2.3.9 Data Origin Geography{#uc1--standards-use--data-origin-geography}
+### 2.5.9 Data Origin Geography{#uc1--standards-use--data-origin-geography}
 
 Understanding the geographical context of the data's origin is crucial for Bella,
 especially for compliance with regional laws and regulations and for the dataset's applicability to her company's customer base.
 The geographic location where the data was collected, relevant for regulatory and contextual reasons,
 is listed as "United States" for the country, "California" for the state, and "Arcata, Eureka, San Francisco" for the cities.
 
-### 2.3.10 Dataset Creation Date{#uc1--standards-use--dataset-creation-date}
+### 2.5.10 Dataset Creation Date{#uc1--standards-use--dataset-creation-date}
 
 She confirms the dataset's creation date to assess its freshness and relevance to current analytical needs.
 The metadata lists "January 10, 2024" as the creation date value and indicates when the dataset was compiled,
 providing context for its currency and relevance of business cases.
 
-### 2.3.11 Range of Dates for Data Generation{#uc1--standards-use--standards-use--range-of-dates-for-data-generation}
+### 2.5.11 Range of Dates for Data Generation{#uc1--standards-use--standards-use--range-of-dates-for-data-generation}
 
 Bella evaluates the time frame during which the data was collected,
 ensuring it is relevant to the current analytical models and reflects recent trends or patterns.
 "January 1, 2023 - December 31, 2023" dates that are provided show Bella the time during which the data was collected,
 highlighting the dataset's recency.
 
-### 2.3.12 Method{#uc1--standards-use--method}
+### 2.5.12 Method{#uc1--standards-use--method}
 
 Understanding the data collection or generation methodology is critical for assessing the dataset's reliability and validity.
 Bella scrutinizes this aspect thoroughly and passes the information on to the data team.
@@ -295,21 +295,21 @@ Bella scrutinizes this aspect thoroughly and passes the information on to the da
 "Electronic Health Records Extraction and Insurance Claim Processing Logs" is added.
 This information describes how the data was collected, providing Bella with insight into its reliability.
 
-### 2.3.13 Content Type{#uc1--standards-use--content-type}
+### 2.5.13 Content Type{#uc1--standards-use--content-type}
 
 She assesses whether the dataset's content type (numerical, textual, multimedia, etc.)
 is compatible with the company's analytical tools and is suitable for the intended analyses.
 "SQL" as the value and "Structured Data - Numerical and Categorical" specifies the nature of the dataset,
 which is crucial for understanding how it can be analyzed.
 
-### 2.3.14 Privacy Enhancing Technologies (PETs){#uc1--standards-use--privacy-enhancing-technologies-pets}
+### 2.5.14 Privacy Enhancing Technologies (PETs){#uc1--standards-use--privacy-enhancing-technologies-pets}
 
 Bella confirms whether PETs were applied to the dataset to protect personal data,
 ensuring the dataset's compliance with privacy regulations and ethical standards.
 She notes that the metadata indicates a "No",
 which confirms that no measures have been taken to protect personal information within the dataset.
 
-### 2.3.15 Organizational Content Classification{#uc1--standards-use--organizational-content-classification}
+### 2.5.15 Organizational Content Classification{#uc1--standards-use--organizational-content-classification}
 
 She ensures the dataset's classification aligns with the company's data handling policies,
 assessing whether its classification is appropriate and clear.
@@ -317,13 +317,13 @@ assessing whether its classification is appropriate and clear.
 which is a flag to Bella that the dataset has protected health information(PHI) under the Health Insurance Portability and Accountability Act (HIPAA)
 and that the medical information must be carefully managed under provincial, state, or other healthcare privacy laws.
 
-### 2.3.16 Confidentiality Classification{#uc1--standards-use--confidentiality-classification}
+### 2.5.16 Confidentiality Classification{#uc1--standards-use--confidentiality-classification}
 
 Bella examines the level of sensitivity assigned to the dataset,
 ensuring it is adequately secured and that access is appropriately controlled based on its classification.
 "Private Health Information" reflects the dataset's sensitivity level and dictates security measures.
 
-### 2.3.17 Consent Location{#uc1--standards-use--consent-location}
+### 2.5.17 Consent Location{#uc1--standards-use--consent-location}
 
 Because the dataset involves confidential information, she verifies the location and adequacy of consent documentation,
 ensuring compliance with legal standards.
@@ -331,7 +331,7 @@ ensuring compliance with legal standards.
 which Bella forwards to the legal department for review and
 determination of whether the consent meets the organization's legal obligations for processing.
 
-### 2.3.18 Data Processing Geography{#uc1--standards-use--data-processing-geography}
+### 2.5.18 Data Processing Geography{#uc1--standards-use--data-processing-geography}
 
 Bella assesses any geographical restrictions on where the data can be processed,
 ensuring compliance with legal and regulatory requirements regarding data processing locations.
@@ -340,7 +340,7 @@ Bella sees this as a flag since from experience,
 she knows that California's data privacy laws don't have geographic restrictions on data processing.
 She flags the information for legal department review.
 
-### 2.3.19 Data Storage Geography{#uc1--standards-use--data-storage-geography}
+### 2.5.19 Data Storage Geography{#uc1--standards-use--data-storage-geography}
 
 She checks for any geographical restrictions on where the data is stored,
 which is crucial for adherence to data sovereignty laws and protecting sensitive information.
@@ -349,7 +349,7 @@ Again, this is a flag for Bella as she knows that California's data privacy laws
 However, she knows that additional protections require special handling of personal healthcare data,
 so she checks in with the legal department for a final determination.
 
-### 2.3.20 License to Use{#uc1--standards-use--license-to-use}
+### 2.5.20 License to Use{#uc1--standards-use--license-to-use}
 
 Bella reviews the metadata in this category but passes along to the legal team information about the terms under which the dataset can be used,
 including any restrictions or obligations, to ensure the company's use of the dataset is legally sound and in line with the licensing terms.
@@ -358,7 +358,7 @@ is listed and provides information on how to access terms of use.
 Bella sent an email asking for clarification about the license to use
 the data under the name "2024 Comprehensive Patient Care and Insurance Claims Dataset".
 
-### 2.3.21 Intent{#uc1--standards-use--intent}
+### 2.5.21 Intent{#uc1--standards-use--intent}
 
 She evaluates the purpose of the dataset's creation,
 ensuring it aligns with her company's intended use and supports identified use cases without misalignment or misuse.
@@ -366,13 +366,13 @@ The intent in the metadata indicates "AI" use and specifies "Pre-Training,"
 which aligns with the use cases and requirements specified by the data team. Bella can gain insights from this information,
 along with the method metadata and dates generated, whether the data cost aligns with the organization's value assessment.
 
-### 2.3.22 Proprietary Data Presence{#uc1--standards-use--proprietary-data-presence}
+### 2.5.22 Proprietary Data Presence{#uc1--standards-use--proprietary-data-presence}
 
 Bella assesses whether the dataset contains proprietary information,
 ensuring its use does not infringe on intellectual property rights and is consistent with contractual agreements.
 All the values are empty, which indicates to Bella that the data is free to be used by her company without infringing on proprietary rights.
 
-## 2.4 Outcome{#uc1--outcome}
+## 2.6 Outcome{#uc1--outcome}
 
 Bella met with the legal department and the data team, to incorporate their assessment into the procurement analysis package.
 After investigating, the legal team determined that the data supplier mistakenly tagged the data processing and storage metadata incorrectly and
