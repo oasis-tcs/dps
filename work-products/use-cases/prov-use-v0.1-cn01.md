@@ -565,174 +565,147 @@ compliance for clients, setting a new benchmark for data-driven decision-making 
 
 # 4 Use Case 3 - Financial Services Customer Product Enablement{#uc3}<a id="uc3"></a>
 
-## 4.1 Persona{#uc3--persona}
-
-### 4.1.1 Name{#uc3--persona--name}
-
-Minh Quang Nguyen
-
-### 4.1.2 Role{#uc3--persona--role}
-
-Data Architecture and Policy Analyst
-
-### 4.1.3 Background{#uc3--persona--background}
-
-Minh is a seasoned Data Architect and Policy Analyst at ProForma Financial Services.
-With a Master's degree in Data Science and over a decade of experience in data management and policy development,
-Minh has become a pivotal figure in the company's strategic planning department.
-Minh's expertise extends to data governance, where he leads initiatives to improve data quality and accessibility across departments.
-He is a strong advocate for data-driven decision-making and
-often conducts workshops and training sessions for employees to enhance their data literacy.
-
-### 4.1.4 Responsibilities{#uc3--persona--responsibilities}
-
-- Designing and implementing efficient data architectures that support ProForma's business goals.
-
-- Work closely with IT teams to ensure that data structures are scalable, secure, and optimized for performance.
-
-- Play a crucial role in developing and enforcing data management policies,
-  ensuring compliance with regulatory standards and protecting customer information.
-
-## 4.2 Use Case{#uc3--use-case}
+## 4.1 Use Case{#uc3--use-case}
 
 Minh is tasked with evaluating a new dataset for refining AI algorithms for customer credit card offerings.
 The dataset under consideration has been documented in accordance with the latest data provenance standards,
 ensuring transparency and compliance, especially under GDPR and the new EU AI Act.
 Minh's evaluation process focuses on the detailed metadata provided for the dataset.
 
-### 4.2.1 Goals{#uc3--use-case--goals}
+## 4.2 Role{#uc3--role}
+
+Minh Quang Nguyen, Data Architecture and Policy Analyst with over a decade of experience in data management and policy development.
+This role’s responsibilities include
+
+- Designing and implementing efficient data architectures that support ProForma’s business goals.
+- Work closely with IT teams to ensure that data structures are scalable, secure, and optimized for performance.
+- Play a crucial role in developing and enforcing data management policies, ensuring compliance with regulatory standards and
+  protecting customer information.
+
+## 4.3 Goals{#uc3--goals}
 
 - Improve the precision of AI models used in tailoring customer credit card products, leading to more personalized and effective offerings.
-
 - Confirm that the dataset's use aligns with international regulations, including GDPR, safeguarding against legal and reputational risks.
-
 - Maintain the highest standards of data privacy and security, particularly for personally identifiable information (PII) and
   sensitive personal information (SPI), through the application of Privacy Enhancing Technologies (PETs).
-
 - Streamline data processing and storage practices to enhance efficiency while staying within the bounds of data processing and
   storage geography restrictions.
-
 - Provide clear documentation of the dataset's origins, methodologies, and purposes to uphold transparency and accountability standards.
-
 - Ensure the dataset's quality and integrity by verifying its collection methods, update history, and content type,
   thereby fostering trust in the AI-driven insights derived from it.
 
-### 4.2.2 Challenges{#uc3--use-case--challenges}
+## 4.4 Challenges{#uc3--challenges}
 
 - Understanding the dataset's lineage and metadata to ensure its origin, collection methods, and processing are well-documented and credible.
-
-- Navigating complex and varied international data regulations, particularly concerning data privacy, AI deployment, and data sovereignty.
-
-- Seamlessly integrating the new dataset with the company's existing data architecture and AI systems without disrupting ongoing operations.
-
+- Navigating complex and varied international data regulations, particularly concerning data privacy, AI deployment,
+  and data sovereignty.
+- Seamlessly integrating the new dataset with the company’s existing data architecture and AI systems without disrupting ongoing operations.
 - Balancing the use of proprietary data within the dataset with the need to protect sensitive information and maintain competitive advantages.
-
 - Verifying that the dataset's use is backed by proper consent and aligns with ethical standards,
   especially when dealing with sensitive customer data.
-
 - Staying ahead of rapid technological advancements and evolving data standards to ensure the dataset remains relevant and
   effective for AI applications.
 
-## 4.3 How the Standards are Used{#uc3--standards-use}
+## 4.5 How the Standards are Used{#uc3--standards-use}
 
-Minh is assessing a new dataset's compliance with data provenance standards and
-detailed metadata to refine AI algorithms focused on customer credit card offerings.
-His review focuses on ensuring the dataset's integrity, transparency, and compliance with international regulatory requirements,
-especially considering the implications of GDPR, but also with an eye towards the new EU AI Act.
-Minh considers the following aspects of the metadata:
+To assess a new dataset's compliance with data provenance standards and detailed metadata to refine AI algorithms focused on
+customer credit card offerings, a review focuses on ensuring the dataset's integrity, transparency,
+and compliance with international regulatory requirements, especially considering the implications of GDPR,
+but also with an eye towards the new EU AI Act.
+The following aspects of the metadata are considered:
 
-### 4.3.1 Version Used for Metadata{#uc3--standards-use--version-used-for-metadata}
+### 4.5.1 Version Used for Metadata{#uc3--standards-use--version-used-for-metadata}
 
 Minh checks that the metadata described is aligned with the most current schema version, "v1.0.0".
 
-### 4.3.2 Dataset Title / Name{#uc3--standards-use--dataset-title-name}
+### 4.5.2 Dataset Title / Name{#uc3--standards-use--dataset-title-name}
 
 He reviews the dataset title "Consumer Spending Patterns 2020-2024", which clearly reflects the dataset's focus.
 
-### 4.3.3 Unique Metadata Identifier{#uc3--standards-use--unique-metadata-identifier}
+### 4.5.3 Unique Metadata Identifier{#uc3--standards-use--unique-metadata-identifier}
 
 Minh verifies the dataset's unique identifier, "LFS-1234-5678", to avoid any confusion with other datasets.
 
-### 4.3.4 Metadata Unique URL{#uc3--standards-use--metadata-unique-url}
+### 4.5.4 Metadata Unique URL{#uc3--standards-use--metadata-unique-url}
 
 He accesses the metadata through its URL, "http://luminadataservices.com/metadata/1234-5678",
 providing a direct pathway to detailed dataset information.
 
-### 4.3.5 Metadata Location for Datasets Feeding the Current Dataset{#uc3--standards-use--metadata-location}
+### 4.5.5 Metadata Location for Datasets Feeding the Current Dataset{#uc3--standards-use--metadata-location}
 
 Minh is able to review the metadata for source datasets, such as "Retail Transaction Records 2023-2024", as they are found at
 "<http://luminadataservices.com/metadata/sources/retail-transactions-2023>" and
 "<http://luminadataservices.com/metadata/sources/retail-transactions-2024>".
 
-### 4.3.6 Date of Previously Published Version of the Dataset{#uc3--standards-use--date-of-previous-version}
+### 4.5.6 Date of Previously Published Version of the Dataset{#uc3--standards-use--date-of-previous-version}
 
 Minh notes the last update was on "March 15, 2023", indicating recent revisions.
 
-### 4.3.7 Creator{#uc3--standards-use--creator}
+### 4.5.7 Creator{#uc3--standards-use--creator}
 
 Minh reviews the creator metadata field. The dataset is credited to the "Lumina Financial Services", establishing accountability.
 
-### 4.3.8 Source (if Different From Creator){#uc3--standards-use--source}
+### 4.5.8 Source (if Different From Creator){#uc3--standards-use--source}
 
 He then confirms the original data sources, "Global Retail Partners Consortium" and "PreciTech Data Inc.",
 differentiating the sources from the dataset creator.
 
-### 4.3.9 Data Origin Geography{#uc3--standards-use--data-origin-geography}
+### 4.5.9 Data Origin Geography{#uc3--standards-use--data-origin-geography}
 
 The data originates from "Europe, France; Europe, Germany;Europe, Italy;; Europe, Poland" which is important for compliance considerations.
 
-### 4.3.10 Dataset Creation Date{#uc3--standards-use--dataset-creation-date}
+### 4.5.10 Dataset Creation Date{#uc3--standards-use--dataset-creation-date}
 
 Minh reviews the dataset creation date range, which is reflected in the metadata as "March 14, 2024". The data is recent,
 which is a great sign for Minh's use case but he needs to understand the range of data generation to verify that
 it is not stale and that it has been collected recently reflective of legal and regulatory data privacy requirements.
 
-### 4.3.11 Range of Dates for Data Generation{#uc3--standards-use--standards-use--range-of-dates-for-data-generation}
+### 4.5.11 Range of Dates for Data Generation{#uc3--standards-use--standards-use--range-of-dates-for-data-generation}
 
 Minh then reviews the dataset generation date range, which is reflected in the metadata as "January 5, 2023 through March 14, 2024",
 providing context for the data's recency and relevancy for establishing consumer trends.
 
-### 4.3.12 Method{#uc3--standards-use--method}
+### 4.5.12 Method{#uc3--standards-use--method}
 
 The methodology, "Feeds, Interval timed database info, Aggregated Consumer Transaction Analysis, PoS", is reviewed for data collection integrity.
 Minh notes that 100 percent of the data was received in this structured format,
 which is what he expected and knows to be relatively clean data requiring minimal pre-processing for his data ingestion needs.
 
-### 4.3.13 Content Type{#uc3--standards-use--content-type}
+### 4.5.13 Content Type{#uc3--standards-use--content-type}
 
 Minh notes that the dataset contains "application/sql",
 which reflects the Oracle database source he is accustomed to seeing and knows to be suitable data for AI modeling.
 
-### 4.3.14 Privacy Enhancing Technologies (PETs){#uc3--standards-use--privacy-enhancing-technologies-pets}
+### 4.5.14 Privacy Enhancing Technologies (PETs){#uc3--standards-use--privacy-enhancing-technologies-pets}
 
 Minh reviews the PETs metadata, noting the presence of a "Yes", indicating that privacy concerns have been addressed through data anonymization.
 "Google differential privacy library" is listed as the tool and "Differential privacy" is listed as the method used for applying PETs.
 This signals to Minh that confidential data is unlikely to be present and
 that consent for further consumer data processing is not required due to the PETs application.
 
-### 4.3.15 Organizational Content Classification{#uc3--standards-use--organizational-content-classification}
+### 4.5.15 Organizational Content Classification{#uc3--standards-use--organizational-content-classification}
 
 Labeled as "Internal Use", this metadata value for content classification will be guiding Minh on access limitations.
 
-### 4.3.16 Confidentiality Classification{#uc3--standards-use--confidentiality-classification}
+### 4.5.16 Confidentiality Classification{#uc3--standards-use--confidentiality-classification}
 
 This metadata value was not presented to the data supplier for completion as PETs were identified as being applied in a previous metadata field.
 
-### 4.3.17 Consent Location{#uc3--standards-use--consent-location}
+### 4.5.17 Consent Location{#uc3--standards-use--consent-location}
 
 This metadata value was not presented to the data supplier for completion as PETs were identified as being applied in a previous metadata field.
 
-### 4.3.18 Data Processing Geography{#uc3--standards-use--data-processing-geography}
+### 4.5.18 Data Processing Geography{#uc3--standards-use--data-processing-geography}
 
 This metadata value was not presented to the data supplier for completion as PETs were identified as being applied in a previous metadata field.
 As a result, Minh knows that no data processing limitations are in place for protection of personal data.
 
-### 4.3.19 Data Storage Geography{#uc3--standards-use--data-storage-geography}
+### 4.5.19 Data Storage Geography{#uc3--standards-use--data-storage-geography}
 
 This metadata value was not presented to the data supplier for completion as PETs were identified as being applied in a previous metadata field.
 As a result, Minh knows that no data localization is in place for storage of personal data.
 
-### 4.3.20 License to Use{#uc3--standards-use--license-to-use}
+### 4.5.20 License to Use{#uc3--standards-use--license-to-use}
 
 He checks the license terms at "http://luminadataservices.com/license/1234-5678", confirming usage rights.
 Since he is unfamiliar with some of the licensing clauses expressed in the documentation,
@@ -740,151 +713,126 @@ Minh forward the license terms to the General Counsel's Office for review and an
 There have been some issues with pricing of data coming from the EU recently,
 and he wants to ensure a complete legal picture is assessed before proceeding with a decision to acquire this dataset.
 
-### 4.3.21 Intent{#uc3--standards-use--intent}
+### 4.5.21 Intent{#uc3--standards-use--intent}
 
-Minh reviews the dataset metadata intent, and notices that the data is intended for "AI, Other, Enhancing AI-driven Credit Card Offerings",
-aligning with his project goals.
+Minh reviews the dataset metadata intent, and notices that the data is intended for
+"AI, Other, Enhancing AI-driven Credit Card Offerings", aligning with his project goals.
 
-### 4.3.22 Proprietary Data Presence{#uc3--standards-use--proprietary-data-presence}
+### 4.5.22 Proprietary Data Presence{#uc3--standards-use--proprietary-data-presence}
 
 Minh notes that in the proprietary metadata field, the data supplier has indicated "No" to the presence of copyright,
 trademark or patent presence, indicating possible exclusivity to his company of whatever AI modeling outcomes may be obtained,
 which could offer competitive advantages.
 
-## 4.4 Outcome{#uc3--outcome}
+## 4.6 Outcome{#uc3--outcome}
 
-Minh's review of the metadata for the "Consumer Spending Patterns 2020-2024" dataset results in
-advancements in ProForma Financial Services' AI algorithms for customer credit card offerings.
+Minh’s review of the metadata for the "Consumer Spending Patterns 2020-2024" dataset results in advancements in
+ProForma Financial Services' AI algorithms for customer credit card offerings.
 By not relying on high level descriptions of the dataset offered by the data supplier and instead reviewing the standards and metadata,
 Minh increased the chances for strategic success.
 He verified the dataset's compliance with the latest data provenance standards, including a review of its versioning, unique identifiers,
 and comprehensive metadata URLs.
 Minh thus ensured the dataset's integrity and alignment with international regulations.
-His attention to the dataset's lineage, original sources, and the application of Privacy Enhancing Technologies (PETs)
-helped meet the data privacy requirements set by his company and
-will mitigate potential legal and reputational risks associated with GDPR and the EU AI Act blunders.
+His attention to the dataset's lineage, original sources, and the application of Privacy Enhancing Technologies (PETs) helped meet
+the data privacy requirements set by his company and will mitigate potential legal and
+reputational risks associated with GDPR and the EU AI Act blunders.
 
-The detailed metadata, including data origin geography, creation dates, and collection methodologies,
-provided Minh with the assurance of the dataset's relevance and quality.
-The absence of proprietary data restrictions, coupled with clear licensing terms,
-positions ProForma to leverage this dataset for creating more personalized and effective customer credit card products.
-Minh's approach to dataset integration will enhance operational efficiencies going forward,
-ensuring seamless compatibility with the company's existing data architecture and AI systems.
+The detailed metadata, including data origin geography, creation dates, and collection methodologies, provided Minh with the assurance of
+the dataset's relevance and quality.
+The absence of proprietary data restrictions, coupled with clear licensing terms, positions ProForma to leverage this dataset for
+creating more personalized and effective customer credit card products.
+Minh's approach to dataset integration will enhance operational efficiencies going forward, ensuring seamless compatibility with
+the company's existing data architecture and AI systems.
 
 Overall, Minh's review of the metadata to ensure alignment with requirements mean that ProForma Financial Services can
-harness AI-driven insights responsibly and innovatively,
-paving the way for data-driven product enablement and a competitive edge in the financial services sector.
+harness AI-driven insights responsibly and innovatively, paving the way for data-driven product enablement and
+a competitive edge in the financial services sector.
 
 -------
 
-# 5 Use Case 4 - Enhancing Global Logistics Efficiency Through AI-driven Tariff Harmonization{#uc4}<a id="uc4"></a>
+# 5 Use Case 4 - Enhancing Global Logistics Efficiency through AI-driven Tariff Harmonization{#uc4}<a id="uc4"></a>
 
-## 5.1 Persona{#uc4--persona}
+## 5.1 Use case{#uc4--use-case}
 
-### 5.1.1 Name{#uc4--persona--name}
+The global nature of Navisphere Logistics, Ltd.'s operations means that the company must navigate a complex web of
+international tariffs and customs regulations.
+Efficiently managing these tariffs is critical to minimizing delivery times and costs.
+Dr. Hicks and her team are tasked with refining the company’s AI systems to accurately predict tariff costs across
+different countries and product categories.
 
-Dr. Maya Hicks
+## 5.2 Role{#uc4--role}
 
-### 5.1.2 Role{#uc4--persona--role}
-
-Lead Data Scientist
-
-### 5.1.3 Background{#uc4--persona--background}
-
-Dr. Hicks holds a Ph.D. in Data Science with a specialization in artificial intelligence and machine learning.
-With over a decade of experience in the logistics industry,
-she has a keen interest in optimizing supply chain efficiency through innovative technologies.
-Maya is known for her analytical mindset and her ability to translate complex data insights into actionable business strategies.
-
-### 5.1.4 Responsibilities{#uc4--persona--responsibilities}
+Dr. Maya Hicks, Lead Data Scientist with a specialization in artificial intelligence and machine learning and
+a keen interest in optimizing supply chain efficiency through innovative technologies. Her responsibilities are to
 
 - Lead the AI research and development team in refining and enhancing the company's AI-driven tariff prediction models.
-
 - Evaluate datasets for integrity and compliance with corporate policies and
   standards which reflect international regulations and privacy considerations.
+- Collaborate with procurement and legal colleagues to ensure that the data and
+  AI models are in line with global standards and regulations.
+- Train and optimize AI models to accurately predict tariffs, involving sophisticated algorithms and
+  machine learning techniques.
+- Integrate the refined AI models into Navisphere Logistics' operational systems and
+  conduct extensive testing to ensure accuracy and efficiency.
+- Establish and maintain a feedback loop for continuous monitoring and
+  improvement of the AI models based on real-world application insights.
+- Ensure the responsible use of AI in accordance with Navisphere Logistics’ standards and
+  privacy laws, particularly in the handling of sensitive data.
+- Communicate the progress and outcomes of the AI enhancements to stakeholders, including technical teams,
+  management, and commercial clients.
+- Stay updated with the latest developments in AI, machine learning, and international logistics practices to
+  continually drive innovation within the company.
 
-- Collaborate with procurement and legal colleagues to ensure that the data and AI models are in line with global standards and regulations.
-
-- Train and optimize AI models to accurately predict tariffs, involving sophisticated algorithms and machine learning techniques.
-
-- Integrate the refined AI models into Navisphere Logistics' operational systems and conduct extensive testing to ensure accuracy and efficiency.
-
-- Establish and maintain a feedback loop for continuous monitoring and improvement of the AI models based on real-world application insights.
-
-- Ensure the responsible use of AI in accordance with Navisphere Logistics' standards and privacy laws,
-  particularly in the handling of sensitive data.
-
-- Communicate the progress and outcomes of the AI enhancements to stakeholders, including technical teams, management, and commercial clients.
-
-- Stay updated with the latest developments in AI, machine learning,
-  and international logistics practices to continually drive innovation within the company.
-
-## 5.2 Use Case{#uc4--use-case}
-
-The global nature of Navisphere Logistics, Ltd.'s operations means that the company must navigate
-a complex web of international tariffs and customs regulations.
-Efficiently managing these tariffs is critical to minimizing delivery times and costs.
-Dr. Hicks and her team are tasked with refining the company's AI systems to
-accurately predict tariff costs across different countries and product categories.
-
-### 5.2.1 Goals{#uc4--use-case--goals}
+## 5.3 Goals{#uc4--goals}
 
 - Harmonize global tariff schedules into a unified, AI-friendly format to enhance prediction accuracy.
-
 - Refine and improve the AI-driven tariff prediction models to minimize cross-border delivery times and costs.
-
 - Ensure that all collected tariff data meets stringent data provenance standards for integrity and compliance with international regulations.
-
 - Achieve high accuracy in tariff predictions across different countries and product categories through sophisticated AI algorithms.
+- Streamline customs clearance processes through more precise tariff assessments, benefiting the company’s worldwide commercial clientele.
 
-- Streamline customs clearance processes through more precise tariff assessments, benefiting the company's worldwide commercial clientele.
-
-### 5.2.2 Challenges{#uc4--use-case--challenges}
+## 5.4 Challenges{#uc4--challenges}
 
 - Navigating the complex web of international tariffs and customs regulations, each with its own classification system and rules.
-
-- Meticulously evaluating the metadata for each dataset to ensure compliance with international standards,
-  including data origin, collection methodology, and privacy considerations.
-
+- Meticulously evaluating the metadata for each dataset to ensure compliance with international standards, including data origin,
+  collection methodology, and privacy considerations.
 - Adapting to constant changes in international tariff regulations, requiring continuous updates to the AI models.
-
 - Balancing the need for advanced AI capabilities with responsible use of AI, adhering to company standards and international privacy laws.
+( Ensuring that the AI models can be seamlessly integrated into Navisphere Logistics' operational systems without disrupting existing workflows.
 
-- Ensuring that the AI models can be seamlessly integrated into Navisphere Logistics' operational systems without disrupting existing workflows.
+## 5.5 How the standards are Used{#uc4--standards-use}
 
-## 5.3 How the Standards are Used{#uc4--standards-use}
-
-Dr. Hicks leverages the metadata associated with global tariff schedule datasets to ensure the accuracy and
-reliability of AI-driven tariff prediction models, essential for optimizing logistics operations.
+Dr. Hicks leverages the metadata associated with global tariff schedule datasets to ensure the accuracy and reliability of
+AI-driven tariff prediction models, essential for optimizing logistics operations.
 The metadata, including the data's origin, collection methodology, and privacy considerations,
 enables her to assess the trustworthiness and relevance of the data for her analyses.
 This approach to metadata evaluation forms the foundation of Maya's ability to build and maintain robust, transparent,
 and compliant AI systems within Navisphere Logistics, Ltd.
 
-### 5.3.1 Version Used for Metadata{#uc4--standards-use--version-used-for-metadata}
+### 5.5.1 Version Used for Metadata{#uc4--standards-use--version-used-for-metadata}
 
 Maya uses this attribute to ensure that the dataset conforms to the latest standards for metadata documentation,
 which is crucial for compatibility with Navisphere's AI systems.
 She evaluates the metadata schema value "1.4.5" and determines it is backwards compatible with the version Navisphere is using.
 
-### 5.3.2 Dataset Title / Name{#uc4--standards-use--dataset-title-name}
+### 5.5.2 Dataset Title / Name{#uc4--standards-use--dataset-title-name}
 
 This metadata helps Maya quickly understand the dataset's focus and relevance to her needs.
 The title she evaluates is "2023 Global Tariff Schedules - Electronics".
 
-### 5.3.3 Unique Metadata Identifier{#uc4--standards-use--unique-metadata-identifier}
+### 5.5.3 Unique Metadata Identifier{#uc4--standards-use--unique-metadata-identifier}
 
 Along with the dataset title, Maya uses the unique metadata identifier to uniquely identify and reference datasets without confusion,
 especially when dealing with multiple sources.
 She uses the "123e4567-e89b-12d3-a456-426614174000" value which she confirms in
 the company's data procurement system has not previously been considered nor procured by Navisphere.
 
-### 5.3.4 Metadata Unique URL{#uc4--standards-use--metadata-unique-url}
+### 5.5.4 Metadata Unique URL{#uc4--standards-use--metadata-unique-url}
 
 This metadata component provides Maya direct access to detailed dataset information for deeper evaluation.
 She uses "https://globaltradedatahub.com/metadata/123e4567-e89b-12d3-a456-426614174000".
 
-### 5.3.5 Metadata Location for Datasets Feeding the Current Dataset{#uc4--standards-use--metadata-location}
+### 5.5.5 Metadata Location for Datasets Feeding the Current Dataset{#uc4--standards-use--metadata-location}
 
 Maya relies on this metadata component to trace data lineage and verify the integrity of source data.
 She notes five values, denoting that five different datasets supplied the data contained in the set she is evaluating.
@@ -896,19 +844,19 @@ The values she is presented with are:
 - "[https://internationalcustomsdataconsortium.com/metadata/567i8901-i04f-56g7-e890-860958408444](https://internationalcustomsdataconsortium.com/metadata/567i8901-i04f-56g7-e890-860958408444)"
 - "[https://internationalcustomsdataconsortium.com/678j9012-j05g-67h8-f901-971069519555](https://internationalcustomsdataconsortium.com/678j9012-j05g-67h8-f901-971069519555)"
 
-### 5.3.6 Date of Previously Published Version of the Dataset{#uc4--standards-use--date-of-previous-version}
+### 5.5.6 Date of Previously Published Version of the Dataset{#uc4--standards-use--date-of-previous-version}
 
 Maya can track via this field any dataset updates and revisions.
 The "N/A" value signifies that the dataset has not previously been published.
 
-### 5.3.7 Creator{#uc4--standards-use--creator}
+### 5.5.7 Creator{#uc4--standards-use--creator}
 
 Knowing the creator provides accountability and a point of reference for Maya,
 since she can check what other datasets the company has previously procured from the same data supplier and
 satisfaction reviews of the supplier's historically provided data.
 "GlobalTradeDataHub" is reflected as the creator.
 
-### 5.3.8 Source (if Different From Creator){#uc4--standards-use--source}
+### 5.5.8 Source (if Different From Creator){#uc4--standards-use--source}
 
 Maya also reviews the source metadata for the dataset, noting that it is different from the creator.
 She notes the value of "International Customs Data Consortium" which again,
@@ -917,20 +865,20 @@ Together with the metadata location for datasets feeding the current set metadat
 Maya can tell that all data in the current dataset originated with International Customs Data Consortium and that GlobalTradeDataHub was merely
 the curator or entity that put the datasets together to provide the current one on offer.
 
-### 5.3.9 Data Origin Geography{#uc4--standards-use--data-origin-geography}
+### 5.5.9 Data Origin Geography{#uc4--standards-use--data-origin-geography}
 
 Maya reviews the data origin geography, noting "Europe, Switzerland; Europe, United Kingdom; Europe, Netherlands" as the values and
 notes that if the dataset contains personal data, additional regulatory requirements will apply.
 If personal data is present, she will also need to perform additional pre-processing of data to anonymize the data,
 which will require legal review and will extend her project delivery date.
 
-### 5.3.10 Dataset Creation Date{#uc4--standards-use--dataset-creation-date}
+### 5.5.10 Dataset Creation Date{#uc4--standards-use--dataset-creation-date}
 
 Maya seeks context on the data's recency and relevance and is satisfied to see the "February 1, 2024" creation date indicating that
 tariff schedules that took place with the first of the year are likely to be included in the set.
 However, the range of dates for data generation will confirm for her this fact, so she reviews that metadata next.
 
-### 5.3.11 Range of Dates for Data Generation{#uc4--standards-use--range-of-dates-for-data-generation}
+### 5.5.11 Range of Dates for Data Generation{#uc4--standards-use--range-of-dates-for-data-generation}
 
 This helps Maya assess the dataset's timeliness. The range is "January 1, 2020 to January 31, 2024".
 Based on this information, Maya is satisfied that the date range covers new tariff schedules that were rolled out at the start of the current year.
@@ -938,14 +886,14 @@ However, Maya already has data in house for the time period of January 1, 2020 t
 which means she will be paying to acquire data that already exists in the enterprise. Maya confirms with her procurement team and
 determines that negotiations should exclude the initial two years of data and the price of the dataset should reflect that adjustment.
 
-### 5.3.12 Method{#uc4--standards-use--method}
+### 5.5.12 Method{#uc4--standards-use--method}
 
 Understanding the collection method helps Maya judge the potential need for cleanup of data prior to its use.
 She notes "Feeds, Other, Automated Customs Entry Processing",
 which implies a highly structured format and the automation further points to
 patterns she can use to detect anomalies in the cleanliness of the data.
 
-### 5.3.13 Content Type{#uc4--standards-use--content-type}
+### 5.5.13 Content Type{#uc4--standards-use--content-type}
 
 The content type metadata informs Maya about the kind of information the dataset contains, aiding in data parsing.
 She notes the value of "application/vnd.oasis.opendocument.database".
@@ -953,7 +901,7 @@ This media type is used for database files created with software that adheres to
 such as LibreOffice Base or Apache OpenOffice Base.
 Maya is confident around the reliability of the data for her needs.
 
-### 5.3.14 Privacy Enhancing Technologies (PETs){#uc4--standards-use--privacy-enhancing-technologies-pets}
+### 5.5.14 Privacy Enhancing Technologies (PETs){#uc4--standards-use--privacy-enhancing-technologies-pets}
 
 Maya reviews the metadata reflecting the use of PETs to ensure data privacy compliance,
 and whether she will need to anonymize data prior to its use.
@@ -962,36 +910,36 @@ She notes the "Yes" metadata, which confirms that personal data is not present i
 Maya also notes in the outcome field "injected 3% random data into the mix" which signals to her an appropriate level of noise,
 as the company considers anything above 5% unacceptable.
 
-### 5.3.15 Organizational Content Classification{#uc4--standards-use--organizational-content-classification}
+### 5.5.15 Organizational Content Classification{#uc4--standards-use--organizational-content-classification}
 
 This metadata value guides Maya on how the dataset can be used within Navisphere.
 "Internal Use Only" denotes there is no sensitive information contained in the dataset, but there are reasons for restrictions,
 most likely legal in nature.
 Maya will look at the license information and work with the legal team to determine what the limitations might be.
 
-### 5.3.16 Confidentiality Classification{#uc4--standards-use--confidentiality-classification}
+### 5.5.16 Confidentiality Classification{#uc4--standards-use--confidentiality-classification}
 
 Because PETs were used and declared in the previous metadata,
 this metadata field is grayed out for the data supplier when assigning metadata and Maya doesn't see any values presented.
 
-### 5.3.17 Consent Location{#uc4--standards-use--consent-location}
+### 5.5.17 Consent Location{#uc4--standards-use--consent-location}
 
 Because PETs were used and declared in the previous metadata,
 this metadata field is grayed out for the data supplier when assigning metadata and Maya doesn't see any values presented.
 
-### 5.3.18 Data Processing Geography{#uc4--standards-use--data-processing-geography}
+### 5.5.18 Data Processing Geography{#uc4--standards-use--data-processing-geography}
 
 Because PETs were used and declared in the previous metadata, there are no restrictions on the data processing geography.
 Maya notes "Included" and "Worldwide" as location,
 which means that the data can be used without additional protections or limitations on geographical processing.
 
-### 5.3.19 Data Storage Geography{#uc4--standards-use--data-storage-geography}
+### 5.5.19 Data Storage Geography{#uc4--standards-use--data-storage-geography}
 
 Because PETs were used and declared in the previous metadata, there are no restrictions on the data processing geography.
 Maya notes "Included" and "Worldwide" as location,
 which means that the data can be used without additional protections or limitations on geographical storage.
 
-### 5.3.20 License to Use{#uc4--standards-use--license-to-use}
+### 5.5.20 License to Use{#uc4--standards-use--license-to-use}
 
 Maya notes that the license applicable to the dataset is available at
 "[[globaltradedatahub.com/license/123e4567-e89b-12d3-a456-426614174000](http://globaltradedatahub.com/license/123e4567-e89b-12d3-a456-426614174000)".
@@ -1000,51 +948,45 @@ she knows that she will need the legal department's eyes and sign off before pro
 She routes the license,
 along with her question around specific data content classification to her colleagues in the legal department for consideration and approval.
 
-### 5.3.21 Intent{#uc4--standards-use--intent}
+### 5.5.21 Intent{#uc4--standards-use--intent}
 
 Maya reviews the dataset intent, and notices that the data is intended for "AI, Training", which aligns with her project goals.
 The declaration also signals to Maya that the premium price placed on the dataset is appropriate because it is intended and
 expected to be of higher quality than data intended for other uses.
 
-### 5.3.22 Proprietary Data Presence{#uc4--standards-use--proprietary-data-presence}
+### 5.5.22 Proprietary Data Presence{#uc4--standards-use--proprietary-data-presence}
 
 Maya reviews the metadata around proprietary data presence and notes that there is a contact listed for the copyright.
 She flags the values "Jonathan Reeves, Esq., Email: jreeves@globaltradedatahublegal.com, Phone: +1-555-012-3456" for her legal colleagues to
 use in clarifying the copyright application and confirming whether the company should use the dataset,
 or whether the copyright will limit commercial applications once the AI is trained with the data input.
 
-## 5.4 Outcome{#uc4--outcome}
+## 5.6 Outcome{#uc4--outcome}
 
-Through application of the data provenance standards metadata for its global tariff schedule datasets, Navisphere Logistics, Ltd. has achieved
-a significant enhancement in the operational efficiency and accuracy of its AI-driven tariff prediction models.
-The outcome includes:
+Through application of the data provenance standards metadata for its global tariff schedule datasets
+Navisphere Logistics, Ltd. has achieved a significant enhancement in the operational efficiency and accuracy of
+its AI-driven tariff prediction models. The outcome includes:
 
-- **Improved data consistency and compatibility**:
+- Improved data consistency and compatibility:
   By specifying the version used for the metadata, Navisphere ensured that all datasets adhered to a uniform standard,
   facilitating seamless integration and interpretation by the AI models, regardless of the data's origin or when it was collected.
-
-- **Enhanced data identification and access**:
-  The establishment of a unique metadata identifier and a metadata unique URL for each dataset enabled easy identification, access,
-  and reference, streamlining the data ingestion process for the AI systems, and reducing the time spent on data preprocessing.
-
-- **Streamlined data lineage and dependency tracking**:
+- Enhanced data identification and access:
+  The establishment of a unique metadata identifier and a metadata unique URL for each dataset enabled easy identification,
+  access, and reference, streamlining the data ingestion process for the AI systems, and reducing the time spent on data preprocessing.
+- Streamlined data lineage and dependency tracking:
   The metadata location for datasets feeding the current dataset allowed Navisphere to efficiently manage data dependencies and lineage,
   ensuring that updates or corrections in source datasets could be rapidly propagated through the system,
   maintaining the accuracy and timeliness of tariff predictions.
-
-- **Increased accountability and data integrity**:
+- Increased accountability and data integrity:
   Detailed metadata entries for the creator, source, and data origin geography provided clear accountability and context for the data,
   enhancing trust in the data's reliability and compliance with regional laws and international regulations.
-
-- **Better data privacy and security measures**:
+- Better data privacy and security measures:
   The application of privacy enhancing technologies (PETs) and the careful classification of data confidentiality ensured that
   personally identifiable information (PII) and sensitive personal information (SPI) were adequately protected,
   aligning with global privacy standards and ethical considerations in AI application.
-
-- **Legal compliance**:
-  Detailed metadata on data processing and storage geographies, consent locations, and the license to use the data ensured that
-  all AI operations remained within legal boundaries, respecting data sovereignty laws and consent agreements.
-
+- Legal compliance:
+  Detailed metadata on data processing and storage geographies, consent locations,
+  and the license to use the data ensured that all AI operations remained within legal boundaries, respecting data sovereignty laws and consent.
 
 -------
 
@@ -1069,12 +1011,6 @@ https://docs.oasis-open.org/openc2/jadn/v1.0/cs01/jadn-v1.0-cs01.html.
 Latest stage:
 https://docs.oasis-open.org/openc2/jadn/v1.0/jadn-v1.0.html.
 
-###### [JSONSCHEMA]
-Wright, A., Andrews, H., Hutton, B., *"JSON Schema Validation"*,
-Internet-Draft, 16 September 2019,
-https://tools.ietf.org/html/draft-handrews-json-schema-validation-02,
-or for latest drafts: https://json-schema.org/work-in-progress.
-
 ###### [NTIA-SBOM]
 NTIA Multistakeholder Process on Software Component Transparency, "SBOM At A Glance", April 2021,   https://ntia.gov/sites/default/files/publications/sbom_at_a_glance_apr2021_0.pdf
 
@@ -1082,11 +1018,6 @@ NTIA Multistakeholder Process on Software Component Transparency, "SBOM At A Gla
 Pras, A., Schoenwaelder, J., "On the Difference between
 Information Models and Data Models", RFC 3444, January 2003,
 https://tools.ietf.org/html/rfc3444.
-
-###### [RFC7049]
-Bormann, C., Hoffman, P., *"Concise Binary Object Representation
-(CBOR)"*, RFC 7049, October 2013,
-https://tools.ietf.org/html/rfc7049.
 
 ###### [RFC8610]
 Birkholz, H., Vigano, C. and Bormann, C., "Concise Data
@@ -1114,10 +1045,8 @@ https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=821265
 
 ## B.1 Special Thanks
 
-The DPS TC thanks the following individuals for their
-assistance in the development of this Committee Note:
-
- - fill in
+The DPS TC thanks the following individuals for their assistance in the development of this Committee Note:
+Kristina Podnar and the Data &amp; Trust Alliance for their contributions of these initial use cases.
 
 ## B.2 Participants
 
@@ -1125,16 +1054,16 @@ The following individuals have participated in the creation of this document and
 
 | First Name | Last Name  | Company                                        |
 |------------|------------|------------------------------------------------|
-| fill       | in         | fill in                                        |
-| fill       | in         | fill in                                        |
-| fill       | in         | fill in                                        |
+| Kristina   | Podnar     | Data &amp; Trust Alliance                      |
+| Lisa       | Bobbitt    | Cisco                                          |
+| Bryan      | Bortnick   | IBM                                            |
 
 -------
 
 # Appendix C. Revision History
-| Revision                  | Date       | Editor(s)                                     | Changes Made                  |
-|:--------------------------|:-----------|:----------------------------------------------|:------------------------------|
-| prov-uc-v1.0-cn01-wd01.md | 2025-07-27 | Duncan Sparrel, Lisa Bobbit, and Stefan Hagen | Initial draft.                |
+| Revision                  | Date       | Editor(s)                    | Changes Made                  |
+|:--------------------------|:-----------|:-----------------------------|:------------------------------|
+| prov-uc-v1.0-cn01-wd01.md | 2025-07-27 | Lisa Bobbit and Stefan Hagen | Initial draft.                |
 
 -------
 
@@ -1143,27 +1072,22 @@ The following individuals have participated in the creation of this document and
 This appendix responds to a variety of Frequently Asked Questions
 regarding ....
 
-## D.1 ask a question herr
+## D.1 Where did these use cases come from?
 
-put answers here
+Data &amp; Trust Alliance <https://dataandtrustalliance.org/>.
+The Data &amp; Trust Alliance was established in September 2020 by a group of CEOs of major companies,
+based on a shared conviction that the future of business will be powered by the responsible use of data and AI.
 
 
-## D.2 another question?
+## D.2 How may I add new use cases?
 
-another answer
+Contribute a use case in the contributions folder.
+Join the Use Case Subcommittee.
 
 
 ## D.3 another question?
 
 answer
-
-
-------
-
-# Appendix E. Example whatever
-
-## E.1 whatever
-
 
 ------
 
