@@ -21,7 +21,7 @@ syntax is essential for robustness and interoperability.
 2. **Language Independent** - an information modeling language defines information in a way that
 is representation-independent both within a process and when stored or communicated among processes.
 Because an IM is requirements-focused, a single specification applies to many processing environments and
-data formats and ensures that they deliver equivalent results.
+data formats, ensuring that they can deliver equivalent results.
 
 <img src="images/im-concept.jpg" width="360">
 
