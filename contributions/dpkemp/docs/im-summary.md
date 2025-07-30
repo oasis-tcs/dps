@@ -1,6 +1,7 @@
 # Information Modeling for Data Interoperability
 
-NIST describes an Information Model [[IM](#im)] as:
+# 1 Introduction
+NIST describes [[Information Modeling](#information-modeling)] as:
 
 > An information model is a representation of concepts, relationships, constraints, rules,
 > and operations to specify data semantics for a chosen domain of discourse.
@@ -10,17 +11,17 @@ NIST describes an Information Model [[IM](#im)] as:
 > An information modeling language is a formal syntax that allows users to capture data
 > semantics and constraints.
 
-This hints at the primary reasons for using an information model:
+This hints at the primary reasons for using information models:
 
-1. **High Level** - for an IM to be broadly sharable, stable and structured, it should be a
-high level specification that separates information requirements from implementation details.
+1. **High Level** - for an IM to be broadly sharable and stable, it should be a high level
+specification that separates information requirements from implementation details.
 This makes an IM desirable for initial conceptual design where details are unknown or distracting,
 as well as for implementation and deployment where unambiguous specification of details using a formal
 syntax is essential for robustness and interoperability.
 2. **Language Independent** - an information modeling language defines information in a way that
 is representation-independent both within a process and when stored or communicated among processes.
-Because an IM is requirements focused, a single specification applies to many data formats, and a single
-information value (described below) ensures lossless conversion between literal values in any data format.
+Because an IM is requirements-focused, a single specification applies to many processing environments and
+data formats and ensures that they deliver equivalent results.
 
 <img src="images/im-concept.jpg" width="360">
 
@@ -40,8 +41,9 @@ exchange, and message A is equivalent to (carries the same information as) messa
 The information model defines how to translate a message from any format to another and back without loss.
 Describing how this is accomplished requires some common terminology:
 
-1. **Class:** a blueprint or template for creating objects. It defines the characteristics
-   (variable datatype) and behaviors (functions or methods) that objects of that class will possess.
+1. **Class:** a blueprint or template for creating objects within a process.
+It defines the characteristics (data type) and behaviors (functions or methods)
+that objects of that class will possess.
 2. **Object:** an instance of a class.
 3. **Datatype:** a classification that specifies the set of values a variable of that type can hold and
    the comparison relationships between those values.
