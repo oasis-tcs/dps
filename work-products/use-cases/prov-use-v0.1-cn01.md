@@ -231,12 +231,12 @@ indicating the dataset's contents and scope, including the year.
 
 Verifying the presence of a unique identifier,
 like a UUID, ensures it is correctly formatted and unique to prevent any confusion or overlap with other datasets.
-For example: "UUID-1234-5678-9012-3456".
+For example: "25f263af-fbf9-481f-b73c-fdc520581af1".
 
 ### 2.5.4 Metadata Unique URL{#uc1--standards-use--metadata-unique-url}
 
 The URL should lead directly to the data and detailed metadata.
-Here, the provided value of https://example.com/dataset/metadata/UUID-1234-5678-9012-3456 is a
+Here, the provided value of https://example.com/dataset/metadata/25f263af-fbf9-481f-b73c-fdc520581af1 is a
 direct link to the dataset's detailed metadata page.
 
 ### 2.5.5 Metadata Location for Datasets Feeding the Current Dataset{#uc1--how-the-standards-are-used--metadata-location}
@@ -320,7 +320,7 @@ ensuring it is adequately secured and that access is appropriately controlled ba
 
 Verification of consent given location and adequacy of consent documentation,
 ensuring compliance with legal standards.
-https://example.com/dataset/UUID-1234-5678-9012-3456/consent1.html points to where consent documentation is kept,
+https://example.com/dataset/25f263af-fbf9-481f-b73c-fdc520581af1/consent1.html points to where consent documentation is kept,
 which the legal department may determine whether the consent meets the organization’s legal obligations for processing.
 
 ### 2.5.18 Data Processing Geography{#uc1--standards-use--data-processing-geography}
@@ -426,7 +426,7 @@ This generated UUID "550e8400-e29b-41d4-a716-446655440000" as the unique identif
 
 ### 3.5.4 Metadata Unique URL{#uc2--standards-use--metadata-unique-url}
 
-The URL "example.com/ 550e8400-e29b-41d4-a716-446655440000/metadata.html is used for direct access to this dataset’s data provenance metadata,
+The URL "https://example.com/550e8400-e29b-41d4-a716-446655440000/metadata.html is used for direct access to this dataset’s data provenance metadata,
 ensuring transparency and easy reference by downstream consumers assessing the data for consumption.
 
 ### 3.5.5 Metadata Location for Datasets Feeding the Current Dataset{#uc2--standards-use--metadata-location}
@@ -434,8 +434,8 @@ ensuring transparency and easy reference by downstream consumers assessing the d
 One or more datasets provenance metadata unique URLs whose source and lineage contributed to this dataset.
 This provides comprehensive understanding and traceability.
 An example of a dataset contributing 3 sources are represented by entering three values,
-"example.com/ 550e8400-e29b-41d4-a716-44665543902", "example.com/ 550e8400-e29b-41d4-a716-44665544732",
-and "example.com/ 550e8400-e29b-41d4-a716-446655465722" as the values.
+"https://example.com/550e8400-e29b-41d4-a716-44665543902", "https://example.com/550e8400-e29b-41d4-a716-44665544732",
+and "https://example.com/550e8400-e29b-41d4-a716-446655465722" as the values.
 
 ### 3.5.6 Date of Previously Published Version of the Dataset{#uc2--standards-use--date-of-previous-version}
 
