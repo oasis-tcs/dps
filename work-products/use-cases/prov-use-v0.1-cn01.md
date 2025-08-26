@@ -993,7 +993,7 @@ based on a shared conviction that the future of business will be powered by the 
 Contribute a use case in the contributions folder.
 Join the Use Case Subcommittee.
 
-## D.3 Data Provenance only for Privacy?
+## D.3 Is Data Provenance only for Privacy?
 
 No. Data provenance is a part of data protection and covers other concerns too.
 Additional examples are organizational data and full life cycle documentation.
