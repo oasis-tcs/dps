@@ -98,7 +98,7 @@ The Data Provenance Standards are made up of three content groups of metadata el
   The property tables first define metadata about the specification itself, then describe how a record is made of the three primary metadata elements (Source, Provenance, and Use), then describe each of the three elements in isolation. 
 
 ![][image1]  
-**Fig. 2\.** DPS Information Model
+**Fig. 1\.** DPS Information Model
 
 The DPS can be adopted widely without requiring extensive system overhauls.
 
