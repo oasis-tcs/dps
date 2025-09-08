@@ -8,7 +8,7 @@
 
 ## Committee Note 01
 
-### 26 August 2025
+### 09 September 2025
 
 &nbsp;
 
@@ -85,7 +85,7 @@ When referencing this document the following citation format should be used:
 
 **[prov-use-v1.0]**
 
-_Provenance Use Cases Version 1.0_. Edited by Lisa Bobbitt and Stefan Hagen. 26 August 2025. OASIS Committee Note 01. https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html. Latest stage: https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html.
+_Provenance Use Cases Version 1.0_. Edited by Lisa Bobbitt and Stefan Hagen. 09 September 2025. OASIS Committee Note 01. https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html. Latest stage: https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html.
 
 #### Notices
 
@@ -117,7 +117,8 @@ For complete copyright information please see the full Notices section in [Appen
 - [Appendix D. Frequently Asked Questions (FAQ)](#appendix-d-frequently-asked-questions-faq)
   - [D.1 Where did these use cases come from?](#d1-where-did-these-use-cases-come-from)
   - [D.2 How may I add new use cases?](#d2-how-may-i-add-new-use-cases)
-- [Appendix F. Notices](#appendix-f-notices)
+  - [D.3 Is Data Provenance only for Privacy?](#d3-is-data-provenance-only-for-privacy)
+- [Appendix E. Notices](#appendix-e-notices)
 
 **List of Figures**
 
@@ -961,9 +962,10 @@ The following individuals have participated in the creation of this document and
 
 | First Name | Last Name | Company                   |
 |:-----------|:----------|:--------------------------|
+| Bryan      | Bortnick  | IBM                       |
+| David      | Kemp      | NSA                       |
 | Kristina   | Podnar    | Data &amp; Trust Alliance |
 | Lisa       | Bobbitt   | Cisco                     |
-| Bryan      | Bortnick  | IBM                       |
 
 -------
 
@@ -974,6 +976,7 @@ The following individuals have participated in the creation of this document and
 | prov-uc-v1.0-cn01-wd01.md | 2025-07-27 | Lisa Bobbit and Stefan Hagen | Initial draft.                          |
 | prov-uc-v1.0-cn01-wd02.md | 2025-08-12 | Lisa Bobbit and Stefan Hagen | Implemented member feedback.            |
 | prov-uc-v1.0-cn01-wd03.md | 2025-08-26 | Lisa Bobbit and Stefan Hagen | Editor revision for meeting 2025-08-26. |
+| prov-uc-v1.0-cn01-wd04.md | 2025-09-09 | Lisa Bobbit and Stefan Hagen | Editor revision for meeting 2025-09-09. |
 
 -------
 
@@ -1000,7 +1003,7 @@ Additional examples are organizational data and full life cycle documentation.
 
 -------
 
-# Appendix F. Notices
+# Appendix E. Notices
 
 Copyright &copy; OASIS Open 2025. All Rights Reserved.
 
