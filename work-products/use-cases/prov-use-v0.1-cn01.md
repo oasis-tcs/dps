@@ -8,7 +8,7 @@
 
 ## Committee Note 01
 
-### 12 August 2025
+### 26 August 2025
 
 &nbsp;
 
@@ -85,7 +85,7 @@ When referencing this document the following citation format should be used:
 
 **[prov-use-v1.0]**
 
-_Provenance Use Cases Version 1.0_. Edited by Lisa Bobbitt. 27 July 2025. OASIS Committee Note 01. https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html. Latest stage: https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html.
+_Provenance Use Cases Version 1.0_. Edited by Lisa Bobbitt and Stefan Hagen. 26 August 2025. OASIS Committee Note 01. https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html. Latest stage: https://docs.oasis-open.org/dps/prov-use/v1.0/cnd01/prov-use-v1.0-cnd01.html.
 
 #### Notices
 
@@ -181,7 +181,8 @@ Bella Ramirez, Procurement Team Lead (15 years of experience in the healthcare i
 with the responsibilities of
 
 - Evaluating and acquiring high-quality datasets to improve the company's analytical models.
-- Facilitating vendor reviews and ensuring all datasets comply with transparent AI data usage and regulatory requirements.
+- Facilitating vendor reviews and ensuring all datasets comply with applicable provenance requirements,
+  including metadata coverage, regulatory requirements, and transparent AI data usage.
 - Ensuring that procured data meets integration operational needs.
 - Ensuring data usage aligns with healthcare regulations and company policies.
 - Leveraging data insights for innovative marketing and improved customer trust.
@@ -939,50 +940,11 @@ n/a
 
 ## A.2 Informative References
 
-<!-- Required section -->
-
 This appendix contains the informative references that are used in this document.
 
 While any hyperlinks included in this appendix were valid at the time of publication, OASIS cannot guarantee their long-term validity.
 
-EDITOR's NOTE: the following are cribbed from another CN and just included as examples.
-We will need to delete and replace with ones relative to this CN
-
-\[ASN.1]
-:    Recommendation ITU-T X.680 (2021) _Information technology - Abstract Syntax Notation One (ASN.1): Specification of basic notation_
-
-\[JADN-v1.0]
-:    JSON Abstract Data Notation Version 1.0. Edited by David Kemp. 17
-August 2021. OASIS Committee Specification 01.
-https://docs.oasis-open.org/openc2/jadn/v1.0/cs01/jadn-v1.0-cs01.html.
-Latest stage:
-https://docs.oasis-open.org/openc2/jadn/v1.0/jadn-v1.0.html.
-
-\[NTIA-SBOM]
-:    NTIA Multistakeholder Process on Software Component Transparency, "SBOM At A Glance", April 2021,   https://ntia.gov/sites/default/files/publications/sbom_at_a_glance_apr2021_0.pdf
-
-\[RFC3444]
-:    Pras, A., Schoenwaelder, J., "On the Difference between
-Information Models and Data Models", RFC 3444, January 2003,
-https://tools.ietf.org/html/rfc3444.
-
-\[RFC8610]
-:    Birkholz, H., Vigano, C. and Bormann, C., "Concise Data
-Definition Language (CDDL): A Notational Convention to Express
-Concise Binary Object Representation (CBOR) and JSON Data
-Structures", RFC 8610, DOI 10.17487/RFC8610, June 2019,
-https://www.rfc-editor.org/info/rfc8610
-
-\[UML]
-:    "Unified Modeling Language", Version 2.5.1, December 2017,
-https://www.omg.org/spec/UML/2.5.1/About-UML/
-
-\[YTLee]
-:    Lee, Y. (1999), _Information Modeling: From Design to
-Implementation_, IEEE Transactions on Robotics and Automation,
-[online],
-https://tsapps.nist.gov/publication/get_pdf.cfm?pub_id=821265
-(Accessed October 5, 2022)
+n/a
 
 -------
 
@@ -997,20 +959,21 @@ Kristina Podnar and the Data &amp; Trust Alliance for their contributions of the
 
 The following individuals have participated in the creation of this document and are gratefully acknowledged:
 
-| First Name | Last Name  | Company                                        |
-|------------|------------|------------------------------------------------|
-| Kristina   | Podnar     | Data &amp; Trust Alliance                      |
-| Lisa       | Bobbitt    | Cisco                                          |
-| Bryan      | Bortnick   | IBM                                            |
+| First Name | Last Name | Company                   |
+|:-----------|:----------|:--------------------------|
+| Kristina   | Podnar    | Data &amp; Trust Alliance |
+| Lisa       | Bobbitt   | Cisco                     |
+| Bryan      | Bortnick  | IBM                       |
 
 -------
 
 # Appendix C. Revision History
 
-| Revision                  | Date       | Editor(s)                    | Changes Made                  |
-|:--------------------------|:-----------|:-----------------------------|:------------------------------|
-| prov-uc-v1.0-cn01-wd01.md | 2025-07-27 | Lisa Bobbit and Stefan Hagen | Initial draft.                |
-| prov-uc-v1.0-cn01-wd02.md | 2025-08-12 | Lisa Bobbit and Stefan Hagen | Implemented member feedback.  |
+| Revision                  | Date       | Editor(s)                    | Changes Made                            |
+|:--------------------------|:-----------|:-----------------------------|:----------------------------------------|
+| prov-uc-v1.0-cn01-wd01.md | 2025-07-27 | Lisa Bobbit and Stefan Hagen | Initial draft.                          |
+| prov-uc-v1.0-cn01-wd02.md | 2025-08-12 | Lisa Bobbit and Stefan Hagen | Implemented member feedback.            |
+| prov-uc-v1.0-cn01-wd03.md | 2025-08-26 | Lisa Bobbit and Stefan Hagen | Editor revision for meeting 2025-08-26. |
 
 -------
 
@@ -1030,9 +993,10 @@ based on a shared conviction that the future of business will be powered by the 
 Contribute a use case in the contributions folder.
 Join the Use Case Subcommittee.
 
-## D.3 another question?
+## D.3 Is Data Provenance only for Privacy?
 
-answer
+No. Data provenance is a part of data protection and covers other concerns too.
+Additional examples are organizational data and full life cycle documentation.
 
 -------
 
