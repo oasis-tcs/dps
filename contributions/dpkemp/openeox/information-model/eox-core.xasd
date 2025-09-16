@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schema>
+  <Metadata>
+    <Package>https://docs.oasis-open.org/openeox/v1.0/schema/core/</Package>
+    <Jadn_version>http://oasis-open.org/openc2/jadn/v2.0/schema/</Jadn_version>
+    <Title>EoX Information - Core</Title>
+    <Description>The schema for representing End-of-Life (EoL), End-of-Security-Support (EoSSec) and other End-of information in OpenEoX.</Description>
+    <Roots>
+      <TypeName>Root</TypeName>
+    </Roots>
+  </Metadata>
+  <Types>
+    <Type name="Root" type="Record">The schema for representing End-of-Life (EoL), End-of-Security-Support (EoSSec) and other End-of information in OpenEoX.
+      <Field fid="1" name="$schema" type="String">Specifies the schema the JSON object must be valid against.</Field>
+      <Field fid="2" name="end_of_life" type="eox_timestamp_t">Indicates the last day when the particular product is officially supported in any way by the vendor.</Field>
+      <Field fid="3" name="end_of_sales" type="eox_timestamp_t" minOccurs="0">Indicates the last day when a particular product may be ordered by customers from vendor sales channels.</Field>
+      <Field fid="4" name="end_of_security_support" type="eox_timestamp_t">Indicates the last day when the vendor has committed to providing security remediations for the particular product.</Field>
+      <Field fid="5" name="last_updated" type="String">Contains the RFC 3339 timestamp when the record was last updated.</Field>
+    </Type>
+    <Type name="eox_timestamp_t" type="String">Contains the timestamp at which the product reaches the specified stage or the indicator that this is still 'to be announced'.</Type>
+  </Types>
+</Schema>

@@ -1,0 +1,99 @@
+/* Example theme for JADN Schema in HTML format */
+
+body{
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: .9rem;
+    line-height: 1.2;
+    color: #202020;
+}
+
+/* Classes needed to render div tables (display: property is required) */
+
+.tTable{
+	display: table;
+	margin-left: 1em;
+}
+.tCaption{
+    display: table-caption;
+    margin-top: 1em;
+    width: 60em;
+    padding-top: .4em;
+    border-top: 1px solid darkred;
+}
+.tHead{
+    /* display: table-header-group; */
+    display: none;
+}
+.tHCell{
+    display: table-cell;
+}
+.tBody{
+    display: table-row-group;
+}
+.tRow{
+	display: table-row;
+}
+.tCell {
+	display: table-cell;
+    padding: 0px 5px;
+}
+
+/* JADN-specific styling classes (optional): */
+
+.jKey{
+    font-weight: bold;
+    text-align: right;
+    min-width: 8em;
+    padding-top: 3px;
+}
+.jVal{
+    width: 80em;
+}
+.jType{
+}
+.jTdef{
+    display: inline-block;
+    min-width: 20em;
+}
+.jTname{
+    display: inline-block;
+}
+.jTstr{
+    display: inline-block;
+}
+.jTdesc{
+    display: inline-block;
+    font-style: italic;
+    color: gray;
+    padding-left: 1em;
+}
+.jHid{
+}
+.jHname{
+}
+.jHstr{
+}
+.jHmult{
+}
+.jHdesc{
+}
+.jFid{
+    min-width: 2em;
+    text-align: right;
+}
+.jFname{
+    min-width: 6em;
+}
+.jFstr{
+    min-width: 8em;
+}
+.jFmult{
+    min-width: 2em;
+    text-align: right;
+}
+.jFdesc{
+    width: 80em;
+    font-style: italic;
+    color: gray;
+    padding-left: 1em;
+}

@@ -1,0 +1,27 @@
+# package: https://docs.oasis-open.org/openeox/v1.0/schema/core/
+# jadn_version: http://oasis-open.org/openc2/jadn/v2.0/schema/
+# title: EoX Information - Core
+# description: The schema for representing End-of-Life (EoL), End-of-Security-Support (EoSSec) and other End-of information in OpenEoX.
+# roots: ['Root']
+
+digraph G {
+  graph [fontname=Arial, fontsize=12];
+  node [fontname=Arial, fontsize=8, shape=plain, style=filled, fillcolor=lightskyblue1];
+  edge [fontname=Arial, fontsize=7, arrowsize=0.5, labelangle=45.0, labeldistance=0.9];
+  bgcolor="transparent";
+
+n0 [label=<<table cellborder="0" cellpadding="1" cellspacing="0">
+<tr><td cellpadding="4"><b>  Root : Record  </b></td></tr><hr/>
+  <tr><td align="left">  1 $schema : String  </td></tr>
+  <tr><td align="left">  2 end_of_life : eox_timestamp_t  </td></tr>
+  <tr><td align="left">  3 end_of_sales : eox_timestamp_t [0..1]  </td></tr>
+  <tr><td align="left">  4 end_of_security_support : eox_timestamp_t  </td></tr>
+  <tr><td align="left">  5 last_updated : String  </td></tr>
+</table>>]
+
+n1 [label=<<b>eox_timestamp_t : String</b>>, shape=ellipse, style=filled, fillcolor=palegreen]
+
+  n0 -> n1 [label=end_of_life, headlabel="1", taillabel="1"]
+  n0 -> n1 [label=end_of_sales, headlabel="0..1", taillabel="1"]
+  n0 -> n1 [label=end_of_security_support, headlabel="1", taillabel="1"]
+}

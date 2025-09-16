@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EoX Information - Core</title>
+<link rel="stylesheet" href="css/dtheme.css" type="text/css">
+</head>
+<body>
+<h2>Schema</h2>
+<div class="tBody">
+<div class="tRow">
+<div class="tCell jKey">title:</div>
+<div class="tCell jVal">"EoX Information - Core"</div>
+</div>
+<div class="tRow">
+<div class="tCell jKey">package:</div>
+<div class="tCell jVal">"https://docs.oasis-open.org/openeox/v1.0/schema/core/"</div>
+</div>
+<div class="tRow">
+<div class="tCell jKey">description:</div>
+<div class="tCell jVal">"The schema for representing End-of-Life (EoL), End-of-Security-Support (EoSSec) and other End-of information in OpenEoX."</div>
+</div>
+<div class="tRow">
+<div class="tCell jKey">roots:</div>
+<div class="tCell jVal">["Root"]</div>
+</div>
+<div class="tRow">
+<div class="tCell jKey">config:</div>
+<div class="tCell jVal">{"$MaxString": 1000, "$TypeName": "^[a-zA-Z][-._A-Za-z0-9]{0,63}$", "$FieldName": "^[$a-z][-_$A-Za-z0-9]{0,63}$"}</div>
+</div>
+<div class="tRow">
+<div class="tCell jKey">jadn_version:</div>
+<div class="tCell jVal">"http://oasis-open.org/openc2/jadn/v2.0/schema/"</div>
+</div>
+<div class="tTable jmeta"></div>
+</div>
+<div class="tTable jType">
+<div class="tCaption">
+<div class="jTdef">
+<div class="jTname">Root</div>
+<div> = </div>
+<div class="jTstr">Record</div>
+</div>
+<div class="jTdesc">The schema for representing End-of-Life (EoL), End-of-Security-Support (EoSSec) and other End-of information in OpenEoX.</div>
+</div>
+<div class="tHead">
+<div class="tHCell jHid">ID</div>
+<div class="tHCell jHname">Name</div>
+<div class="tHCell jHstr">Type</div>
+<div class="tHCell jHmult">#</div>
+<div class="tHCell jHdesc">Description</div>
+</div>
+<div class="tBody">
+<div class="tRow">
+<div class="tCell jFid">1</div>
+<div class="tCell jFname">$schema</div>
+<div class="tCell jFstr">String</div>
+<div class="tCell jFmult">1</div>
+<div class="tCell jFdesc">Specifies the schema the JSON object must be valid against.</div>
+</div>
+<div class="tRow">
+<div class="tCell jFid">2</div>
+<div class="tCell jFname">end_of_life</div>
+<div class="tCell jFstr">eox_timestamp_t</div>
+<div class="tCell jFmult">1</div>
+<div class="tCell jFdesc">Indicates the last day when the particular product is officially supported in any way by the vendor.</div>
+</div>
+<div class="tRow">
+<div class="tCell jFid">3</div>
+<div class="tCell jFname">end_of_sales</div>
+<div class="tCell jFstr">eox_timestamp_t</div>
+<div class="tCell jFmult">0..1</div>
+<div class="tCell jFdesc">Indicates the last day when a particular product may be ordered by customers from vendor sales channels.</div>
+</div>
+<div class="tRow">
+<div class="tCell jFid">4</div>
+<div class="tCell jFname">end_of_security_support</div>
+<div class="tCell jFstr">eox_timestamp_t</div>
+<div class="tCell jFmult">1</div>
+<div class="tCell jFdesc">Indicates the last day when the vendor has committed to providing security remediations for the particular product.</div>
+</div>
+<div class="tRow">
+<div class="tCell jFid">5</div>
+<div class="tCell jFname">last_updated</div>
+<div class="tCell jFstr">String</div>
+<div class="tCell jFmult">1</div>
+<div class="tCell jFdesc">Contains the RFC 3339 timestamp when the record was last updated.</div>
+</div>
+</div>
+</div>
+<div class="tTable jType">
+<div class="tCaption">
+<div class="jTdef">
+<div class="jTname">eox_timestamp_t</div>
+<div> = </div>
+<div class="jTstr">String</div>
+</div>
+<div class="jTdesc">Contains the timestamp at which the product reaches the specified stage or the indicator that this is still 'to be announced'.</div>
+</div>
+<div class="tHead">
+<div class="tHCell jHid">ID</div>
+<div class="tHCell jHname">Name</div>
+<div class="tHCell jHdesc">Description</div>
+</div>
+<div class="tBody"></div>
+</div>
+</body>
+</html>
