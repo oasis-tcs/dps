@@ -50,6 +50,11 @@ not a URL of a file, because the identical IM can be defined in multiple file fo
 * The JSON Schema eox_timestamp_t type is `oneOf` /date-time format or the fixed string "tba".  The IM translator did
 not process the `oneOf` directive and the examples will be edited to include it in the IM. 
 
+* The use of "_t" or "_type" suffixes to denote types awkward and hard to read. A naming convention that uses lower-case
+for properties and upper-case names for types is more standard and more readable.  In this example, `eox_timestamp_t`
+would be named something like `EoxTimestamp` or `EoX_Timestamp`, and if there were a separate `end_of_life` type
+it could be named `End_Of_Life` or `EndOfLife`.
+
 ## EoX Core Schema Alternate Formats:
 
 ### IDL
