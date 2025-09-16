@@ -47,8 +47,8 @@ because it refers to the [JSON Schema](https://json-schema.org/draft/2020-12/dra
 * The information model uses a `package` namespace (URI): "https://docs.oasis-open.org/openeox/v1.0/schema/core/",
 not a URL of a file, because the identical IM can be defined in multiple file formats.
 
-* The timestamp type is an arbitrary string.  An information model would define it as a `/timestamp` format or a string
-with an RFC 3339 regular expression pattern.
+* The JSON Schema eox_timestamp_t type is `oneOf` /date-time format or the fixed string "tba".  The IM translator did
+not process the `oneOf` directive and the examples will be edited to include it in the IM. 
 
 ## EoX Core Schema Alternate Formats:
 
