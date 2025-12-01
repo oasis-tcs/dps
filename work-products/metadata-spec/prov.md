@@ -42,8 +42,8 @@
 
 ### Abstract
 
-This OASIS Data Provenance Metadata specification provides an information model and several specialized data schemata for describing and managing data provenance.
-The intended use addresses transparency in AI, cybersecurity, supply chains, and other areas where data quality and accountability are foundational to performance
+This OASIS Data Provenance Metadata specification provides an information model and several specialized data schemata for describing and managing data provenance and data lineage.
+The intended use addresses transparency in legal use of the data, AI, cybersecurity, supply chains, privacy, and other areas where data quality and accountability are foundational to performance
 and compliance \- especially in regulated and high-risk environments.
 
 ### Citation Format
