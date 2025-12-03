@@ -126,7 +126,7 @@ Editor's Note: Table of Contents will be updated once structure is stable
 
 # 1 Scope
 
-TBD
+##  
 
 -------
 
@@ -174,7 +174,10 @@ None
 
 # 4 Introduction
 
-\< Any introductory text that is needed to explain this document \>
+\< 1.1 Data is a core enterprise asset. It underpins strategic decision-making, drives operational priorities, and
+supports risk governance. Dependence on data creates a need for validation by understanding data’s origin,
+quality, and intended use. Understanding data is a requirement for organizations operating at scale.
+The OASIS Data Provenance Standards (DPS) are created to solve for this need.  \>
 
 ## 4.1 Any Additional Introduction Subsections That are Needed
 
@@ -260,7 +263,7 @@ The Data Provenance Standard Metadata
 | ID | Name                  | Type         | \#    | Description                                      |
 |----|-----------------------|--------------|-------|--------------------------------------------------|
 | 1  | **source**            | URL          | 1..\* | Identifies where the metadata for any source datasets that contribute to the current dataset can be found, establishing lineage and dependencies. This field establishes lineage. |
-| 2  | **origin**            | Organization | 0..1  | If the data originates from a different organization than the one who isued the dataset, this field identifies that original source's legal name.  |
+| 2  | **origin**            | Organization | 0..1  | If the data originates from a different organization than the one who issued the dataset, this field identifies that original source's legal name.  |
 | 3  | **origin-geography**  | Geography    | 1..\* | The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.|
 | 4  | **date**              | Timestamp    | 1     | The date when the dataset was compiled or created, providing a temporal context for the data.  |
 | 5  | **previous-date**     | Timestamp    | 1     | The release date of the last version of the dataset, if it has been updated or revised, to track changes and updates over time. |
@@ -286,9 +289,9 @@ The Data Provenance Standard Metadata
 
 | ID | Name                  | Type                    | \#    | Description                                                                                                                       |
 |----|-----------------------|-------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
-| 1  | **classification**    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset, such as personally identifiable information, which dictates how the dataset must be secured and who can access it.                                                                                                  |
+| 1  | **classification**    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset which dictates how the dataset must be secured and who can access it.                                                                                                  |
 | 2  | **consent**           | URL                     | 1..\* | Specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.                                                                                                 |
-| 3  | **data_privacy-enhancing** | Privacy-Tool            | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI), highlighting the dataset's privacy considerations.                                                                                                 |
+| 3  | **data-enhancing** | Data-enhancingTool            | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive information that indentifiers highlighting the dataset's privacy or orgnaization identifying considerations.                                                                                                 |
 | 4  | **processing**        | Processing-Geography    | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                                                                        |
 | 5  | **storage**           | Storage-Geography       | 0..1  |  Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereignty laws.                                                                                                           |
 | 6  | **license**           | ArrayOf(License) unique | 1     | Details the location or point of contact for identifying the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights.                                                                                                                |
@@ -343,7 +346,7 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: Privacy-Tool (Record)**
+**Type: Data-Tool (Record)**
 
 | ID | Name           | Type                  | \# | Description           |
 |----|----------------|-----------------------|----|-----------------------|
@@ -429,10 +432,10 @@ The Data Provenance Standard Metadata
 | 3  | **Personal Financial Information (PFI)**  |             |
 | 4  | **Personal Health Information (PHI)**     |             |
 | 5  | **Sensitive Personal Information (SPI)**  |             |
-
+| 6  | **Sensitive Customer Information (SCI)**  |             |
 -------
 
-**Type: Privacy-Technology (Enumerated)**
+**Type: Data-Technology (Enumerated)**
 
 | ID | Item                                     | Description |
 |----|------------------------------------------|-------------|
@@ -471,7 +474,7 @@ The Data Provenance Standard Metadata
 | 1  | **Staging/testing**   |             |
 | 2  | **Production**        |             |
 | 3  | **Quality assurance** |             |
-
+| 4  | **Research**          |             |
 -------
 
 **Type: AI-Use (Enumerated)**
@@ -483,7 +486,7 @@ The Data Provenance Standard Metadata
 | 2  | **Alignment**                 |             |
 | 3  | **Evaluation**                |             |
 | 4  | **Synthetic Data Generation** |             |
-
+| 5  | **Research**                  |             |
 -------
 
 # 6 Provenance Information Model Encoding
