@@ -6,7 +6,7 @@
 
 ## Committee Specification Draft 01
 
-## 01 December 2025
+## 09 December 2025
 
 ### This version
 
@@ -139,7 +139,7 @@ Editor's Note: Table of Contents will be updated once structure is stable
 This document uses the following terms defined elsewhere:
 
 - Data Provenance: \[NIST - CNSSI 4009-2015 from ISA SSA - Adapted\]: On the context of computers and law enforcement use, it (provenance) is an equivalent term to chain of custody. It involves the method of generation, transmission and storage of information that may be used to trace the origin of a piece of information processed by community resources.  
-- Data Lineage: \[[IBM](https://www.ibm.com/think/topics/data-lineage#)\]: Data lineage is the process of tracking the flow of data over time, providing a clear understanding of where the data originated, how it has changed, and its ultimate destination within the data pipeline.
+- Data Lineage: \[[IBM](https://www.ibm.com/think/topics/data-lineage#)\]: Data lineage is the process of tracking the (use and) flow of data over time, providing a clear understanding of where the data originated, how it has changed, and its ultimate destination within the data pipeline.
 - Data Transparency: \[[BigID](https://bigid.com/blog/what-is-data-transparency/] : Data transparency refers to the clear, open, and honest handling of data within an organization. It means that businesses, governments, and institutions disclose how they collect, store, use, and share data, ensuring users, customers, and stakeholders understand their practices.
 
 ### 2.1.2 Terms Defined in this Document
@@ -174,10 +174,10 @@ None
 
 # 4 Introduction
 
-\< 1.1 Data is a core enterprise asset. It underpins strategic decision-making, drives operational priorities, and
+1.1 Data is a core enterprise asset. It underpins strategic decision-making, drives operational priorities, and
 supports risk governance. Dependence on data creates a need for validation by understanding data’s origin,
 quality, and intended use. Understanding data is a requirement for organizations operating at scale.
-The OASIS Data Provenance Standards (DPS) are created to solve for this need.  \>
+The OASIS Data Provenance Standards (DPS) are created to solve for this need. 
 
 ## 4.1 Any Additional Introduction Subsections That are Needed
 
@@ -291,7 +291,7 @@ The Data Provenance Standard Metadata
 |----|-----------------------|-------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
 | 1  | **classification**    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset which dictates how the dataset must be secured and who can access it.                                                                                                  |
 | 2  | **consent**           | URL                     | 1..\* | Specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.                                                                                                 |
-| 3  | **data-enhancing** | Data-enhancingTool            | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive information that indentifiers highlighting the dataset's privacy or orgnaization identifying considerations.                                                                                                 |
+| 3  | **data-enhancing** | Data-enhancingTool            | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive information that identifiers highlighting the dataset's privacy or organizational identifying considerations.                                                                                                 |
 | 4  | **processing**        | Processing-Geography    | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                                                                        |
 | 5  | **storage**           | Storage-Geography       | 0..1  |  Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereignty laws.                                                                                                           |
 | 6  | **license**           | ArrayOf(License) unique | 1     | Details the location or point of contact for identifying the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights.                                                                                                                |
@@ -351,7 +351,7 @@ The Data Provenance Standard Metadata
 | ID | Name           | Type                  | \# | Description           |
 |----|----------------|-----------------------|----|-----------------------|
 | 1  | **tool_id**    | Tool-ID               | 1  | tool name and version |
-| 2  | **technology** | Privacy-Technology    | 1  |                       |
+| 2  | **technology** | Data-Privacy-Technology| 1  |                       |
 | 3  | **params**     | MapOf(String, String) | 1  | key-value pair        |
 
 -------
