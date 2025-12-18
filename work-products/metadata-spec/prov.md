@@ -6,7 +6,7 @@
 
 ## Committee Specification Draft 01
 
-## 09 December 2025
+## 18 December 2025
 
 ### This version
 
