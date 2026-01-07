@@ -121,7 +121,13 @@ Editor's Note: Table of Contents will be updated once structure is stable
 
 # 1 Scope
 
-Data is a core enterprise asset that underpins strategic decision-making, drives operational priorities, and supports risk governance. Dependence on data creates a need for validation by understanding data’s origin, quality, and intended use. Understanding data is a requirement for organizations operating at scale. The OASIS Data Provenance Standards (DPS) are created to solve for this need. Developed through cross-industry collaboration, the DPS provide a consistent framework to track the origin, movement, integrity, and quality of data. The DPS address the growing demand for transparency in artificial intelligence (AI), cybersecurity, supply chains, and areas where data quality and accountability are foundational to performance and compliance - especially in regulated and high-risk environments. 
+Data is a core enterprise asset that underpins strategic decision-making, drives operational priorities, and supports risk governance.
+Dependence on data creates a need for validation by understanding data’s origin, quality, and intended use.
+Understanding data is a requirement for organizations operating at scale.
+The OASIS Data Provenance Standards (DPS) are created to solve for this need.
+Developed through cross-industry collaboration, the DPS provide a consistent framework to track the origin, movement, integrity, and quality of data.
+The DPS address the growing demand for transparency in artificial intelligence (AI), cybersecurity, supply chains,
+and areas where data quality and accountability are foundational to performance and compliance - especially in regulated and high-risk environments.
 
 -------
 
@@ -133,14 +139,21 @@ Data is a core enterprise asset that underpins strategic decision-making, drives
 
 This document uses the following terms defined elsewhere:
 
-- Data Provenance: \[NIST - CNSSI 4009-2015 from ISA SSA - Adapted\]: On the context of computers and law enforcement use, it (provenance) is an equivalent term to chain of custody. It involves the method of generation, transmission and storage of information that may be used to trace the origin of a piece of information processed by community resources.  
-- Data Lineage: \[[IBM](https://www.ibm.com/think/topics/data-lineage#)\]: Data lineage is the process of tracking the (use and) flow of data over time, providing a clear understanding of where the data originated, how it has changed, and its ultimate destination within the data pipeline.
-- Data Transparency: \[[BigID](https://bigid.com/blog/what-is-data-transparency/)\] : Data transparency refers to the clear, open, and honest handling of data within an organization. It means that businesses, governments, and institutions disclose how they collect, store, use, and share data, ensuring users, customers, and stakeholders understand their practices.
+- Data Provenance: \[NIST - CNSSI 4009-2015 from ISA SSA - Adapted\]:
+  On the context of computers and law enforcement use, it (provenance) is an equivalent term to chain of custody.
+  It involves the method of generation, transmission and storage of information that
+  may be used to trace the origin of a piece of information processed by community resources.  
+- Data Lineage: \[[IBM](https://www.ibm.com/think/topics/data-lineage#)\]:
+  Data lineage is the process of tracking the (use and) flow of data over time, providing a clear understanding of where the data originated,
+  how it has changed, and its ultimate destination within the data pipeline.
+- Data Transparency: \[[BigID](https://bigid.com/blog/what-is-data-transparency/)\]:
+  Data transparency refers to the clear, open, and honest handling of data within an organization.
+  It means that businesses, governments, and institutions disclose how they collect, store, use, and share data, ensuring users, customers,
+  and stakeholders understand their practices.
 
 ### 2.1.2 Terms Defined in this Document
 
 None
-
 
 ## 2.2 Abbreviations and Acronyms
 
