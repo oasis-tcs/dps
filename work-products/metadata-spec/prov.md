@@ -6,7 +6,7 @@
 
 ## Committee Specification Draft 01
 
-## 18 December 2025
+## 7 January 2026
 
 ### This version
 
@@ -14,11 +14,6 @@
 - \[ links to one or more other versions of the published document (e.g., MD, PDF, Word, HTML, etc.) \]
 
 ### Previous version
-
-- \[ link to authoritative version of the published document \] (Authoritative)
-- \[ links to one or more other versions of the published document (e.g., MD, PDF, Word, HTML, etc.) \]
-
-### Latest version
 
 - \[ link to authoritative version of the published document \] (Authoritative)
 - \[ links to one or more other versions of the published document (e.g., MD, PDF, Word, HTML, etc.) \]
@@ -43,8 +38,7 @@
 ### Abstract
 
 This OASIS Data Provenance Metadata specification provides an information model and several specialized data schemata for describing and managing data provenance and data lineage.
-The intended use addresses transparency in legal use of the data, AI, cybersecurity, supply chains, privacy, and other areas where data quality and accountability are foundational to performance
-and compliance \- especially in regulated and high-risk environments.
+Trust in Artificial Intelligence starts with transparency into data provenance; assessing where data comes from, how it’s created, and in what scenarios it can be used, legally. This is why we developed the first cross-industry data provenance metadata specification, a common language to provide transparency.
 
 ### Citation Format
 
@@ -69,7 +63,8 @@ This document is related to:
 Copyright © OASIS Open 2025.
 All Rights Reserved.  
 For license and copyright information, and complete status,
-please see Annex A which contains the License, Document Status and Notices.
+please see [Annex A License, Document Status and Notices](#annex-a-license,-document-status-and-notices) 
+which contains the License, Document Status and Notices.
 
 -------
 
@@ -126,7 +121,7 @@ Editor's Note: Table of Contents will be updated once structure is stable
 
 # 1 Scope
 
-##  
+Data is a core enterprise asset that underpins strategic decision-making, drives operational priorities, and supports risk governance. Dependence on data creates a need for validation by understanding data’s origin, quality, and intended use. Understanding data is a requirement for organizations operating at scale. The OASIS Data Provenance Standards (DPS) are created to solve for this need. Developed through cross-industry collaboration, the DPS provide a consistent framework to track the origin, movement, integrity, and quality of data. The DPS address the growing demand for transparency in artificial intelligence (AI), cybersecurity, supply chains, and areas where data quality and accountability are foundational to performance and compliance - especially in regulated and high-risk environments. 
 
 -------
 
@@ -140,23 +135,16 @@ This document uses the following terms defined elsewhere:
 
 - Data Provenance: \[NIST - CNSSI 4009-2015 from ISA SSA - Adapted\]: On the context of computers and law enforcement use, it (provenance) is an equivalent term to chain of custody. It involves the method of generation, transmission and storage of information that may be used to trace the origin of a piece of information processed by community resources.  
 - Data Lineage: \[[IBM](https://www.ibm.com/think/topics/data-lineage#)\]: Data lineage is the process of tracking the (use and) flow of data over time, providing a clear understanding of where the data originated, how it has changed, and its ultimate destination within the data pipeline.
-- Data Transparency: \[[BigID](https://bigid.com/blog/what-is-data-transparency/] : Data transparency refers to the clear, open, and honest handling of data within an organization. It means that businesses, governments, and institutions disclose how they collect, store, use, and share data, ensuring users, customers, and stakeholders understand their practices.
+- Data Transparency: \[[BigID](https://bigid.com/blog/what-is-data-transparency/)\] : Data transparency refers to the clear, open, and honest handling of data within an organization. It means that businesses, governments, and institutions disclose how they collect, store, use, and share data, ensuring users, customers, and stakeholders understand their practices.
 
 ### 2.1.2 Terms Defined in this Document
 
-This document defines the following terms:
+None
 
-- Term 1: some definition.  
-- Term 2: some definition.  
-- etc
 
 ## 2.2 Abbreviations and Acronyms
 
-This document uses the following abbreviations and acronyms:
-
-- Term 1: expanded form.  
-- Term 2: expanded form.  
-- etc
+None
 
 -------
 
@@ -181,28 +169,27 @@ The OASIS Data Provenance Standards (DPS) are created to solve for this need.
 
 ## 4.1 Any Additional Introduction Subsections That are Needed
 
-\< Any needed text \>
+None
 
 ## 4.2 Changes From the Previous Version
 
-The list of changes from the previous version and any revision history can be found in Appendix 2\.
+N/A
 
 -------
 
-# 5 Provenance Information Model
+# 5 Provenance Schema
 
-The information model of the provenance metadata is described in human-readable property tables.
-The technical encoding may be found in section 6.
+The schema of the provenance metadata is described in human-readable property tables.
+The technical encoding may be found in section [6 Provenance Information Model Encoding](#6-provenance-information-model-encoding).
 
-The Data Provenance Standards are made up of three groups of metadata elements:
-Source, Provenance, and Use.
+The Data Provenance Standards record metadata elements in three segmented categories: Source, Provenance, and Use.
 
 ![Metadata](./images//metadata.svg)
 
 The property tables first define metadata about the specification itself,
-then describe how a record is made of the 3 primary metadata elements
-(Source, Provenance, and Use), then describe each of the 3 elements.
-Subsequent tables describe the underlying fields of the 3 elements.
+then describe how a record is made of the 3 primary metadata elements.
+The three segmented categories (Source, Provenance, and Use) are comprised of various 
+metadata element input fields. Each field is described in more detail below.
 
 ## 5.1 Primary Metadata Elements
 
@@ -211,7 +198,7 @@ Subsequent tables describe the underlying fields of the 3 elements.
 | ID | Name         | Type           | \# | Description                                                   |
 |----|--------------|----------------|----|---------------------------------------------------------------|
 | 1  | **version**  | URL            | 1  | Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time. |
-| 2  | **metadata** | DataProvenance | 1  | The metadata about a dataset                                  |
+| 2  | **metadata** | Data Provenance | 1  | The metadata about a dataset                                  |
 
 -------
 
@@ -236,7 +223,7 @@ The Data Provenance Standard Metadata
 | 1  | **title**       | String       | 1     | The official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose. |
 | 2  | **id**          | UID          | 1     | A distinct identifier (such as a UUID) assigned to the dataset's metadata to uniquely distinguish it from others, ensuring no confusion or overlap.       |
 | 3  | **location**    | URL          | 0..1  | The web address where the dataset's metadata is published and can be accessed, providing a direct link to detailed information about the dataset.               |
-| 4  | **issuer**      | Organization | 1..\* | The legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries. |
+| 4  | **issuer**      | Organization | 1..\* | The legal entity or entities responsible for creating the dataset, providing accountability and a point of contact for inquiries. |
 | 5  | **description** | String       | 1     | Contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses.  |
 
 -------
@@ -262,14 +249,14 @@ The Data Provenance Standard Metadata
 
 | ID | Name                  | Type         | \#    | Description                                      |
 |----|-----------------------|--------------|-------|--------------------------------------------------|
-| 1  | **source**            | URL          | 1..\* | Identifies where the metadata for any source datasets that contribute to the current dataset can be found, establishing lineage and dependencies. This field establishes lineage. |
+| 1  | **source**            | URL          | 1..\* | Identifies where this Data Provenance metadata for the source dataset is stored (i.e., URL), establishing lineage and dependencies. This field establishes lineage. |
 | 2  | **origin**            | Organization | 0..1  | If the data originates from a different organization than the one who issued the dataset, this field identifies that original source's legal name.  |
-| 3  | **origin-geography**  | Geography    | 1..\* | The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.|
-| 4  | **date**              | Timestamp    | 1     | The date when the dataset was compiled or created, providing a temporal context for the data.  |
-| 5  | **previous-date**     | Timestamp    | 1     | The release date of the last version of the dataset, if it has been updated or revised, to track changes and updates over time. |
+| 3  | **origin-geography**  | Geography    | 1..\* | The geographical location or locations where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.|
+| 4  | **Issue date**        | Timestamp    | 1     | The date when this version of the dataset was compiled, created, or first made available, providing a temporal context for the data.  |
+| 5  | **Previous-dates**     | Timestamps    | 1     | The release dates of the initial and all earlier version releases by date of the dataset, if it has been updated or revised, to track changes and updates over time. |
 | 6  | **generation-period** | Generation   | 1     | The span of time during which the data within the dataset was collected or generated, offering insight into the dataset's timeliness and relevance.            |
 | 7  | **generation-method** | Method       | 1..\* | The methodology or procedures used to collect, generate, or compile the data, giving insight into its reliability and validity.  |
-| 8  | **format**            | MediaType    | 0..\* | Describes the nature of the data within the dataset, such as numerical, textual, or multimedia, helping users understand what kind of information is contained within the file or dataset.                                      |
+| 8  | **Modality-format**            | MediaType    | 0..\* | Describes the modality (from text, audio, video, image, or other) and Specific Format (like for text: word, JSON, PDF)                                      |
 | 9  | **sub-provenance**    | Provenance   | 1     | Add key/link?                                    |
 
 -------
@@ -289,20 +276,20 @@ The Data Provenance Standard Metadata
 
 | ID | Name                  | Type                    | \#    | Description                                                                                                                       |
 |----|-----------------------|-------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
-| 1  | **classification**    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset which dictates how the dataset must be secured and who can access it.                                                                                                  |
-| 2  | **consent**           | URL                     | 1..\* | Specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.                                                                                                 |
-| 3  | **data-enhancing** | Data-enhancingTool            | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive information that identifiers highlighting the dataset's privacy or organizational identifying considerations.                                                                                                 |
+| 1  | **Confidentiality Classification**    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset which dictates how the dataset must be secured and who can access it. Proper classification ensures data is handled appropriately.    |
+| 2  | **Sensitive Data Consent Details**           | URL                     | 1..\* | Specifies where the consent documentation related to sensitive data can be found. Documenting consent ensures compliance with data protection regulations. Provide the location of consent documents. If the data contained within the dataset is not sensitive, this field may not be applicable.               |
+| 3  | **data-enhancing technologies** | Data-enhancing Tool            | 1..\* | State if Data Enhancing Technologies(DETS) or Privacy Enhancing Technologies (PETs) were used and describe them. Do not state data is "anonymized", rather describe processing and processing tools. If dataset is not sensitive, this field may not be applicable.                                                        |
 | 4  | **processing**        | Processing-Geography    | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                                                                        |
 | 5  | **storage**           | Storage-Geography       | 0..1  |  Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereignty laws.                                                                                                           |
-| 6  | **license**           | ArrayOf(License) unique | 1     | Details the location or point of contact for identifying the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights.                                                                                                                |
-| 7  | **intended_purpose**  | Intended-Use            | 1     | Describes the purpose for which the dataset was created, guiding users on its intended use and potential applications against identified use cases.                                                                                                            |
+| 6  | **license**           | ArrayOf(License) unique | 1     | Details the license type - i.e., the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights. Clear licensing terms ensure legal use and distribution of the dataset.      |
+| 7  | **Intended & Acceptable Usages**  | Intended-Use            | 1     | Describe the purpose for which the dataset was created, guiding users on its intended use and potential applications. Stating the intended use helps users understand the dataset's purpose.                                                   |
 | 8  | **copyright**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright.  |
 | 9  | **patent**            | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.              |
 | 10 | **trademark**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark. |
 
 -------
 
-**Type: Intended-Use (Record)**
+**Type: Intended & Acceptable Usages (Record)**
 
 | ID | Name       | Type              | \#    | Description |
 |----|------------|-------------------|-------|-------------|
@@ -460,15 +447,16 @@ The Data Provenance Standard Metadata
 
 | ID | Item                              | Description |
 |----|-----------------------------------|-------------|
-| 1  | **Non-commercial**                |             |
-| 2  | **Public license**                |             |
-| 3  | **Commercial/Negotiated License** |             |
+| 1  | **Non-commercial**                | Name and link, if private, provide details on how to obtain or contact for terms.            |
+| 2  | **Public license**                | License Name and add link            |
+| 3  | **Commercial/Negotiated License** | Provide details on how to obtain or contact            |
+| 4  | **None**                          | No License                           |
 
 -------
 
 **Type: Non-AI-Use (Enumerated)**
 
-| ID | Item                  | Description |
+| ID | Item                  | More Details|
 |----|-----------------------|-------------|
 | 0  | **Other**             |             |
 | 1  | **Staging/testing**   |             |
@@ -479,7 +467,7 @@ The Data Provenance Standard Metadata
 
 **Type: AI-Use (Enumerated)**
 
-| ID | Item                          | Description |
+| ID | Item                          | More Details|
 |----|-------------------------------|-------------|
 | 0  | **Other**                     |             |
 | 1  | **Pre-Training**              |             |
