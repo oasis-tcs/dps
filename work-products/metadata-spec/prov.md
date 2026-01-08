@@ -269,7 +269,7 @@ The Data Provenance Standard Metadata
 | 5  | **Previous-dates**     | Timestamps    | 1     | The release dates of the initial and all earlier version releases by date of the dataset, if it has been updated or revised, to track changes and updates over time. |
 | 6  | **generation-period** | Generation   | 1     | The span of time during which the data within the dataset was collected or generated, offering insight into the dataset's timeliness and relevance.            |
 | 7  | **generation-method** | Method       | 1..\* | The methodology or procedures used to collect, generate, or compile the data, giving insight into its reliability and validity.  |
-| 8  | **Modality-format**            | MediaType    | 0..\* | Describes the modality (from text, audio, video, image, or other) and Specific Format (like for text: word, JSON, PDF)                                      |
+| 8  | **Modality-format**   | MediaType    | 0..\* | Describes the modality (from text, audio, video, image, or other) and Specific Format (like for text: word, JSON, PDF)           |
 | 9  | **sub-provenance**    | Provenance   | 1     | Add key/link?                                    |
 
 -------
@@ -291,11 +291,11 @@ The Data Provenance Standard Metadata
 |----|-----------------------|-------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
 | 1  | **Confidentiality Classification**    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset which dictates how the dataset must be secured and who can access it. Proper classification ensures data is handled appropriately.    |
 | 2  | **Sensitive Data Consent Details**           | URL                     | 1..\* | Specifies where the consent documentation related to sensitive data can be found. Documenting consent ensures compliance with data protection regulations. Provide the location of consent documents. If the data contained within the dataset is not sensitive, this field may not be applicable.               |
-| 3  | **data-enhancing technologies** | Data-enhancing Tool            | 1..\* | State if Data Enhancing Technologies(DETS) or Privacy Enhancing Technologies (PETs) were used and describe them. Do not state data is "anonymized", rather describe processing and processing tools. If dataset is not sensitive, this field may not be applicable.                                                        |
-| 4  | **processing**        | Processing-Geography    | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                                                                        |
-| 5  | **storage**           | Storage-Geography       | 0..1  |  Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereignty laws.                                                                                                           |
+| 3  | **Data & Privacy-Enhancing Technologies** | Data Tool            | 1..\* | State if Data Enhancing Technologies(DETS) or Privacy Enhancing Technologies (PETs) were used and describe them. Do not state data is "anonymized", rather describe processing and processing tools. If dataset is not sensitive, this field may not be applicable.                                           |
+| 4  | **processing**        | Processing-Geography    | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                          |
+| 5  | **storage**           | Storage-Geography       | 0..1  |  Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereigny laws                         |
 | 6  | **license**           | ArrayOf(License) unique | 1     | Details the license type - i.e., the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights. Clear licensing terms ensure legal use and distribution of the dataset.      |
-| 7  | **Intended & Acceptable Usages**  | Intended-Use            | 1     | Describe the purpose for which the dataset was created, guiding users on its intended use and potential applications. Stating the intended use helps users understand the dataset's purpose.                                                   |
+| 7  | **Intended & Acceptable Usages**  | Intended-Use            | 1     | Describe the purpose for which the dataset was created, guiding users on its intended use and potential applications. Stating the intended use helps users understand the dataset's purpose.             |
 | 8  | **copyright**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright.  |
 | 9  | **patent**            | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.              |
 | 10 | **trademark**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark. |
@@ -402,7 +402,7 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: MediaType (Enumerated)**
+**Type: Modality-format (Enumerated)**
 
 | ID | Item                         | Description |
 |----|------------------------------|-------------|
