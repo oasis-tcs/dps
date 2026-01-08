@@ -60,7 +60,7 @@ This document is related to:
 
 ## License, Document Status, and Notices
 
-Copyright © OASIS Open 2025.
+Copyright © OASIS Open 2026.
 All Rights Reserved.  
 For license and copyright information, and complete status,
 please see [Annex A License, Document Status and Notices](#annex-a-license,-document-status-and-notices) 
@@ -504,7 +504,7 @@ The YAML encoding of the data provenance metadata information model is specified
 
 # 7 Provenance Data Model Encoding
 
-The information model allows the extraction of informaion from data.
+The information model allows the extraction of information from data.
 
 ## 7.1 JSON Encoding
 
