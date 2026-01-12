@@ -302,29 +302,29 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: Intended & Acceptable Usages (Record)**
+**Type: IntendedAndAcceptableUsages (Record)**
 
 | ID | Name       | Type              | \#    | Description |
 |----|------------|-------------------|-------|-------------|
-| 1  | **non_ai** | Non-AI-Use unique | 1..\* | Non-AI      |
+| 1  | **non-ai** | Non-AI-Use unique | 1..\* | Non-AI      |
 | 2  | **ai**     | AI-Use unique     | 1..\* | AI          |
 
 -------
 
-**Type: Processing-Geography (Record)**
+**Type: ProcessingGeography (Record)**
 
 | ID | Name               | Type      | \#    | Description                                                    |
 |----|--------------------|-----------|-------|----------------------------------------------------------------|
-| 1  | **same_as_origin** | Boolean   | 1     | Data processing geography is the same as data origin geography |
+| 1  | **same-as-origin** | Boolean   | 1     | Data processing geography is the same as data origin geography |
 | 2  | **countries**      | Geography | 0..\* |                                                                |
 
 -------
 
-**Type: Storage-Geography (Record)**
+**Type: StorageGeography (Record)**
 
 | ID | Name                   | Type      | \#    | Description                                                     |
 |----|------------------------|-----------|-------|-----------------------------------------------------------------|
-| 1  | **same_as_processing** | Boolean   | 1     | Data storage geography is the same as data processing geography |
+| 1  | **same-as-processing** | Boolean   | 1     | Data storage geography is the same as data processing geography |
 | 2  | **countries**          | Geography | 0..\* |                                                                 |
 
 -------
@@ -346,11 +346,11 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: Data-Tool (Record)**
+**Type: DataTool (Record)**
 
 | ID | Name           | Type                  | \# | Description           |
 |----|----------------|-----------------------|----|-----------------------|
-| 1  | **tool_id**    | Tool-ID               | 1  | tool name and version |
+| 1  | **tool-id**    | Tool-ID               | 1  | tool name and version |
 | 2  | **technology** | Data-Privacy-Technology| 1  |                       |
 | 3  | **params**     | MapOf(String, String) | 1  | key-value pair        |
 
@@ -358,7 +358,7 @@ The Data Provenance Standard Metadata
 
 | Type Name   | Type Definition | Description |
 |-------------|-----------------|-------------|
-| **Tool-ID** | String          |             |
+| **ToolID** | String          |             |
 
 -------
 
@@ -367,7 +367,7 @@ The Data Provenance Standard Metadata
 | ID | Name               | Type                           | \#    | Description |
 |----|--------------------|--------------------------------|-------|-------------|
 | 1  | **classification** | Confidentiality-Classification | 1     |             |
-| 2  | **tool_id**        | Tool-ID                        | 0..\* |             |
+| 2  | **tool-id**        | Tool-ID                        | 0..\* |             |
 
 -------
 
@@ -402,7 +402,7 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: Modality-format (Enumerated)**
+**Type: ModalityFormat (Enumerated)**
 
 | ID | Item                         | Description |
 |----|------------------------------|-------------|
@@ -422,7 +422,7 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: Confidentiality-Classification (Enumerated)**
+**Type: ConfidentialityClassification (Enumerated)**
 
 | ID | Item                                      | Description |
 |----|-------------------------------------------|-------------|
@@ -435,7 +435,7 @@ The Data Provenance Standard Metadata
 | 6  | **Sensitive Customer Information (SCI)**  |             |
 -------
 
-**Type: Data-Technology (Enumerated)**
+**Type: DataTechnology (Enumerated)**
 
 | ID | Item                                     | Description |
 |----|------------------------------------------|-------------|
@@ -467,7 +467,7 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: Non-AI-Use (Enumerated)**
+**Type: NonAIUse (Enumerated)**
 
 | ID | Item                  | More Details|
 |----|-----------------------|-------------|
@@ -478,7 +478,7 @@ The Data Provenance Standard Metadata
 | 4  | **Research**          |             |
 -------
 
-**Type: AI-Use (Enumerated)**
+**Type: AIUse (Enumerated)**
 
 | ID | Item                          | More Details|
 |----|-------------------------------|-------------|
@@ -532,6 +532,20 @@ This section is **REQUIRED** and **MUST** be the second to last numbered section
 Please note that any specification that will need to register something with IANA or has plans to go on to ITU/ISO/IEC **MUST** have this section filled out. For an example please see the following section in the CACAO specification here [https://docs.oasis-open.org/cacao/security-playbooks/v2.0/cs01/security-playbooks-v2.0-cs01.html\#\_Toc152256574](https://docs.oasis-open.org/cacao/security-playbooks/v2.0/cs01/security-playbooks-v2.0-cs01.html#_Toc152256574)
 
 \>
+
+All safety, security, and data protection requirements relevant to the context in which Data Provenance Metadata documents are used MUST be translated into, and consistently enforced through, Data Provenance Metadata implementations and processes.
+
+For Data Provenance Metadata documents based on JSON, the security considerations of [cite](#RFC8259) apply and are repeated here as service for the reader:
+
+> Generally, there are security issues with scripting languages.  JSON is a subset of JavaScript but excludes assignment and invocation.
+>
+> Since JSON's syntax is borrowed from JavaScript, it is possible to use that language's `eval()` function to parse most JSON texts
+> (but not all; certain characters such as `U+2028 LINE SEPARATOR` and `U+2029 PARAGRAPH SEPARATOR` are legal in JSON but not JavaScript).
+> This generally constitutes an unacceptable security risk, since the text could contain executable code along with data declarations.
+> The same consideration applies to the use of eval()-like functions in any other programming language in which JSON texts conform to
+> that language's syntax.
+
+<!-- More to fill in at least per other data format -->
 
 -------
 
