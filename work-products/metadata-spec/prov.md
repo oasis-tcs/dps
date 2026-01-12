@@ -157,7 +157,10 @@ None
 
 ## 2.2 Abbreviations and Acronyms
 
-None
+AI
+:    Artificial Intelligence
+
+<!-- We will surely find more acronyms or abbreviations we do use in the document. -->
 
 -------
 
@@ -169,7 +172,8 @@ The key words "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL 
 
 ## 3.2 Typographical Conventions
 
-None 
+Note: We do follow typographical conventions across types and instances.
+In addition, we should in here showcase normative vs. informational indicators and any form we use in addition like the tables in the information model.
 
 -------
 
