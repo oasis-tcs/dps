@@ -140,7 +140,7 @@ and areas where data quality and accountability are foundational to performance 
 This document uses the following terms defined elsewhere:
 
 - Data Provenance: \[NIST - CNSSI 4009-2015 from ISA SSA - Adapted\]:
-  On the context of computers and law enforcement use, it (provenance) is an equivalent term to chain of custody.
+  In the context of computers and law enforcement use, it \[provenance\] is an equivalent term to chain of custody.
   It involves the method of generation, transmission and storage of information that
   may be used to trace the origin of a piece of information processed by community resources.  
 - Data Lineage: \[[IBM](https://www.ibm.com/think/topics/data-lineage#)\]:
