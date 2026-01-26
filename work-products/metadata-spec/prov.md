@@ -38,7 +38,8 @@
 ### Abstract
 
 This OASIS Data Provenance Metadata specification provides an information model and several specialized data schemata for describing and managing data provenance and data lineage.
-Trust in Artificial Intelligence starts with transparency into data provenance; assessing where data comes from, how it’s created, and in what scenarios it can be used, legally. This is why we developed the first cross-industry data provenance metadata specification, a common language to provide transparency.
+The resulting common language provides transparency for data provenance and enables assessing where data comes from,
+how it has been created, and in what scenarios it can be used, legally.
 
 ### Citation Format
 
