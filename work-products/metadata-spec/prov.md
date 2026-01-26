@@ -140,7 +140,7 @@ and areas where data quality and accountability are foundational to performance 
 
 This document uses the following terms defined elsewhere:
 
-- Data Provenance: \[NIST - CNSSI 4009-2015 from ISA SSA - Adapted\]:
+- Data Provenance: \[[NIST - CNSSI 4009-2015 from ISA SSA - Adapted](https://nsarchive.gwu.edu/document/22385-document-08-committee-national-security)\]:
   In the context of computers and law enforcement use, it \[provenance\] is an equivalent term to chain of custody.
   It involves the method of generation, transmission and storage of information that
   may be used to trace the origin of a piece of information processed by community resources.  
@@ -182,10 +182,30 @@ The key words "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL 
 
 ## 3.2 Typographical Conventions
 
-Note: We do follow typographical conventions across types and instances.
-In addition, we should in here showcase normative vs. informational indicators and any form we use in addition like the tables in the information model.
+Keywords defined by this specification use this `monospaced` font.
+
+```
+    Normative source code uses this paragraph style.
+```
+
+Some sections of this specification are illustrated with non-normative examples introduced with "Example" or "Examples" like so:
+
+*Example 1:*
+
+```
+    Informative examples also use this paragraph style but preceded by the text "Example(s)".
+```
+
+All examples in this document are informative only.
+
+All other text is normative unless otherwise labeled e.g. like the following informative comment:
+
+> This is a pure informative comment that may be present, because the information conveyed is deemed useful advice or
+> common pitfalls learned from implementer or operator experience and often given including the rationale.
 
 -------
+
+This document adheres to the Modern Language Association (MLA) style guidelines for formatting titles and terms.
 
 # 4 Introduction
 
@@ -519,18 +539,18 @@ The YAML encoding of the data provenance metadata information model is specified
 
 # 7 Provenance Data Model Encoding
 
-The information model defines the complete set of metadata elements and associated attributes specified by the Data Provenance Standard.
-It establishes a common conceptual framework for representing provenance information, including the structures and relationships necessary to describe the origin, history, and handling of data.
-The information model is intended to provide a consistent semantic basis for provenance across implementations, independent of any particular serialization or storage mechanism.
-
-In order to support interoperability and exchange of provenance information between systems, the information model requires one or more concrete encodings.
-An encoding provides a standardized, machine-readable representation of the information model suitable for electronic transmission, persistence, and processing.
-While the information model defines what information is conveyed, the encoding defines how that information is represented for exchange between conforming implementations.
-
-This section describes a set of possible encodings for the Data Provenance Standard.
-Each encoding maps the constructs defined in the information model to a specific representation format intended for storage or system-to-system exchange.
-The encodings described herein are non-exclusive and are provided to support diverse implementation environments and usage scenarios.
-Implementations MAY support one or more of these encodings, subject to their interoperability, performance, and deployment requirements.
+> The information model defines the complete set of metadata elements and associated attributes specified by the Data Provenance Standard.
+> It establishes a common conceptual framework for representing provenance information, including the structures and relationships necessary to describe the origin, history, and handling of data.
+> The information model is intended to provide a consistent semantic basis for provenance across implementations, independent of any particular serialization or storage mechanism.
+>
+> In order to support interoperability and exchange of provenance information between systems, the information model requires one or more concrete encodings.
+> An encoding provides a standardized, machine-readable representation of the information model suitable for electronic transmission, persistence, and processing.
+> While the information model defines what information is conveyed, the encoding defines how that information is represented for exchange between conforming implementations.
+>
+> This section describes a set of possible encodings for the Data Provenance Standard.
+> Each encoding maps the constructs defined in the information model to a specific representation format intended for storage or system-to-system exchange.
+> The encodings described herein are non-exclusive and are provided to support diverse implementation environments and usage scenarios.
+> Implementations MAY support one or more of these encodings, subject to their interoperability, performance, and deployment requirements.
 
 ## 7.1 JSON Encoding
 
