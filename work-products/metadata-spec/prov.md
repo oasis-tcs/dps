@@ -226,7 +226,7 @@ metadata element input fields. Each field is described in more detail below.
 | ID | Name         | Type           | \# | Description                                                   |
 |----|--------------|----------------|----|---------------------------------------------------------------|
 | 1  | **version**  | URL            | 1  | Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time. |
-| 2  | **metadata** | Data Provenance | 1  | The metadata about a dataset                                  |
+| 2  | **metadata** | DataProvenance | 1  | The metadata about a dataset                                  |
 
 -------
 
@@ -280,11 +280,11 @@ The Data Provenance Standard Metadata
 | 1  | **source**            | URL          | 1..\* | Identifies where this Data Provenance metadata for the source dataset is stored (i.e., URL), establishing lineage and dependencies. This field establishes lineage. |
 | 2  | **origin**            | Organization | 0..1  | If the data originates from a different organization than the one who issued the dataset, this field identifies that original source's legal name.  |
 | 3  | **origin-geography**  | Geography    | 1..\* | The geographical location or locations where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.|
-| 4  | **Issue date**        | Timestamp    | 1     | The date when this version of the dataset was compiled, created, or first made available, providing a temporal context for the data.  |
-| 5  | **Previous-dates**     | Timestamps    | 1     | The release dates of the initial and all earlier version releases by date of the dataset, if it has been updated or revised, to track changes and updates over time. |
+| 4  | **issue-date**        | Timestamp    | 1     | The date when this version of the dataset was compiled, created, or first made available, providing a temporal context for the data.  |
+| 5  | **previous-dates**     | ArrayOf(Timestamp)    | 1..\*  | The release dates of the initial and all earlier version releases by date of the dataset, if it has been updated or revised, to track changes and updates over time. |
 | 6  | **generation-period** | Generation   | 1     | The span of time during which the data within the dataset was collected or generated, offering insight into the dataset's timeliness and relevance.            |
 | 7  | **generation-method** | Method       | 1..\* | The methodology or procedures used to collect, generate, or compile the data, giving insight into its reliability and validity.  |
-| 8  | **Modality-format**   | MediaType    | 0..\* | Describes the modality (from text, audio, video, image, or other) and Specific Format (like for text: word, JSON, PDF)           |
+| 8  | **modality-format**   | MediaType    | 0..\* | Describes the modality (from text, audio, video, image, or other) and Specific Format (like for text: word, JSON, PDF)           |
 | 9  | **sub-provenance**    | Provenance   | 1     | Add key/link?                                    |
 
 -------
@@ -304,13 +304,13 @@ The Data Provenance Standard Metadata
 
 | ID | Name                  | Type                    | \#    | Description                                                                                                                       |
 |----|-----------------------|-------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
-| 1  | **Confidentiality Classification**    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset which dictates how the dataset must be secured and who can access it. Proper classification ensures data is handled appropriately.    |
-| 2  | **Sensitive Data Consent Details**           | URL                     | 1..\* | Specifies where the consent documentation related to sensitive data can be found. Documenting consent ensures compliance with data protection regulations. Provide the location of consent documents. If the data contained within the dataset is not sensitive, this field may not be applicable.               |
-| 3  | **Data & Privacy-Enhancing Technologies** | Data Tool            | 1..\* | State if Data Enhancing Technologies(DETS) or Privacy Enhancing Technologies (PETs) were used and describe them. Do not state data is "anonymized", rather describe processing and processing tools. If dataset is not sensitive, this field may not be applicable.                                           |
-| 4  | **processing**        | Processing-Geography    | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                          |
-| 5  | **storage**           | Storage-Geography       | 0..1  |  Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereigny laws                         |
+| 1  | **confidentiality-classification**    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset which dictates how the dataset must be secured and who can access it. Proper classification ensures data is handled appropriately.    |
+| 2  | **sensitive-data-consent-details**           | URL                     | 1..\* | Specifies where the consent documentation related to sensitive data can be found. Documenting consent ensures compliance with data protection regulations. Provide the location of consent documents. If the data contained within the dataset is not sensitive, this field may not be applicable.               |
+| 3  | **data-and-privacy-enhancing-technologies** | DataTool            | 1..\* | State if Data Enhancing Technologies(DETS) or Privacy Enhancing Technologies (PETs) were used and describe them. Do not state data is "anonymized", rather describe processing and processing tools. If dataset is not sensitive, this field may not be applicable.                                           |
+| 4  | **processing**        | ProcessingGeography    | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                          |
+| 5  | **storage**           | StorageGeography       | 0..1  |  Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereigny laws                         |
 | 6  | **license**           | ArrayOf(License) unique | 1     | Details the license type - i.e., the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights. Clear licensing terms ensure legal use and distribution of the dataset.      |
-| 7  | **Intended & Acceptable Usages**  | Intended-Use            | 1     | Describe the purpose for which the dataset was created, guiding users on its intended use and potential applications. Stating the intended use helps users understand the dataset's purpose.             |
+| 7  | **intended-and-acceptable-usages**  | IntendedAndAcceptableUseages            | 1     | Describe the purpose for which the dataset was created, guiding users on its intended use and potential applications. Stating the intended use helps users understand the dataset's purpose.             |
 | 8  | **copyright**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright.  |
 | 9  | **patent**            | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.              |
 | 10 | **trademark**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark. |
@@ -321,8 +321,8 @@ The Data Provenance Standard Metadata
 
 | ID | Name       | Type              | \#    | Description |
 |----|------------|-------------------|-------|-------------|
-| 1  | **non-ai** | Non-AI-Use unique | 1..\* | Non-AI      |
-| 2  | **ai**     | AI-Use unique     | 1..\* | AI          |
+| 1  | **non-ai** | NonAIUse unique | 1..\* | Non-AI      |
+| 2  | **ai**     | AIUse unique     | 1..\* | AI          |
 
 -------
 
@@ -348,8 +348,8 @@ The Data Provenance Standard Metadata
 
 | ID | Name        | Type             | \#   | Description |
 |----|-------------|------------------|------|-------------|
-| 1  | **country** | geo:Country-Name | 1    |             |
-| 2  | **state**   | geo:State-Name   | 0..1 |             |
+| 1  | **country** | geo:CountryName | 1    |             |
+| 2  | **state**   | geo:StateName   | 0..1 |             |
 
 -------
 
@@ -365,7 +365,7 @@ The Data Provenance Standard Metadata
 
 | ID | Name           | Type                  | \# | Description           |
 |----|----------------|-----------------------|----|-----------------------|
-| 1  | **tool-id**    | Tool-ID               | 1  | tool name and version |
+| 1  | **tool-id**    | ToolID               | 1  | tool name and version |
 | 2  | **technology** | Data-Privacy-Technology| 1  |                       |
 | 3  | **params**     | MapOf(String, String) | 1  | key-value pair        |
 
@@ -519,7 +519,18 @@ The YAML encoding of the data provenance metadata information model is specified
 
 # 7 Provenance Data Model Encoding
 
-The information model allows the extraction of information from data.
+The information model defines the complete set of metadata elements and associated attributes specified by the Data Provenance Standard.
+It establishes a common conceptual framework for representing provenance information, including the structures and relationships necessary to describe the origin, history, and handling of data.
+The information model is intended to provide a consistent semantic basis for provenance across implementations, independent of any particular serialization or storage mechanism.
+
+In order to support interoperability and exchange of provenance information between systems, the information model requires one or more concrete encodings.
+An encoding provides a standardized, machine-readable representation of the information model suitable for electronic transmission, persistence, and processing.
+While the information model defines what information is conveyed, the encoding defines how that information is represented for exchange between conforming implementations.
+
+This section describes a set of possible encodings for the Data Provenance Standard.
+Each encoding maps the constructs defined in the information model to a specific representation format intended for storage or system-to-system exchange.
+The encodings described herein are non-exclusive and are provided to support diverse implementation environments and usage scenarios.
+Implementations MAY support one or more of these encodings, subject to their interoperability, performance, and deployment requirements.
 
 ## 7.1 JSON Encoding
 
