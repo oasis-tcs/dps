@@ -189,9 +189,10 @@ In addition, we should in here showcase normative vs. informational indicators a
 
 # 4 Introduction
 
-1.1 Data is a core enterprise asset. It underpins strategic decision-making, drives operational priorities, and
-supports risk governance. Dependence on data creates a need for validation by understanding data’s origin,
-quality, and intended use. Understanding data is a requirement for organizations operating at scale.
+Data is a core enterprise asset.
+It underpins strategic decision-making, drives operational priorities, and supports risk governance.
+Dependence on data creates a need for validation and an understanding of the data's origin, quality, and intended use.
+Understanding data is a requirement for organizations operating at scale.
 The OASIS Data Provenance Standards (DPS) are created to solve for this need. 
 
 ## 4.1 Any Additional Introduction Subsections That are Needed
