@@ -17,11 +17,6 @@
 
 N/A
 
-### Latest version
-
-- \[ link to authoritative version of the published document \] (Authoritative)
-- \[ links to one or more other versions of the published document (e.g., MD, PDF, Word, HTML, etc.) \]
-
 ### Technical Committee
 
 [Data Provenance Standard Technical Committee](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=2c60b2cf-45d3-48cd-8594-0194f182b33d)
@@ -55,9 +50,9 @@ Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provena
 
 ### Abstract
 
-This OASIS Data Provenance Metadata specification provides an information model and several specialized data schemata for describing and managing data provenance.
-The intended use addresses transparency in AI, cybersecurity, supply chains, and other areas where data quality and accountability are foundational to performance
-and compliance \- especially in regulated and high-risk environments.
+This OASIS Data Provenance Metadata specification provides an information model and several specialized data schemata for describing and managing data provenance and data lineage.
+The resulting common language provides transparency for data provenance and enables assessing where data comes from,
+how it has been created, and in what scenarios it can be used, legally.
 
 ### Citation Format
 
@@ -84,7 +79,8 @@ N/A
 Copyright © OASIS Open 2026.
 All Rights Reserved.  
 For license and copyright information, and complete status,
-please see Annex A which contains the License, Document Status and Notices.
+please see [Annex A License, Document Status and Notices](#annex-a-license,-document-status-and-notices) 
+which contains the License, Document Status and Notices.
 
 -------
 
@@ -138,7 +134,13 @@ Editor's Note: Table of Contents will be updated once structure is stable
 
 # 1 Scope
 
-TBD
+Data is a core enterprise asset that underpins strategic decision-making, drives operational priorities, and supports risk governance.
+Dependence on data creates a need for validation by understanding data’s origin, quality, and intended use.
+Understanding data is a requirement for organizations operating at scale.
+The OASIS Data Provenance Standards (DPS) are created to solve for this need.
+Developed through cross-industry collaboration, the DPS provide a consistent framework to track the origin, movement, integrity, and quality of data.
+The DPS address the growing demand for transparency in artificial intelligence (AI), cybersecurity, supply chains,
+and areas where data quality and accountability are foundational to performance and compliance - especially in regulated and high-risk environments.
 
 -------
 
@@ -150,25 +152,37 @@ TBD
 
 This document uses the following terms defined elsewhere:
 
-- Term 1: \[Reference\]: optional quoted definition.  
-- Term 2: \[Reference\]: optional quoted definition.
-- etc
+- Data Provenance: \[[NIST - CNSSI 4009-2015 from ISA SSA - Adapted](https://nsarchive.gwu.edu/document/22385-document-08-committee-national-security)\]:
+  In the context of computers and law enforcement use, it \[provenance\] is an equivalent term to chain of custody.
+  It involves the method of generation, transmission and storage of information that
+  may be used to trace the origin of a piece of information processed by community resources.  
+- Data Lineage: \[[IBM](https://www.ibm.com/think/topics/data-lineage#)\]:
+  Data lineage is the process of tracking the (use and) flow of data over time, providing a clear understanding of where the data originated,
+  how it has changed, and its ultimate destination within the data pipeline.
+- Data Transparency: \[[BigID](https://bigid.com/blog/what-is-data-transparency/)\]:
+  Data transparency refers to the clear, open, and honest handling of data within an organization.
+  It means that businesses, governments, and institutions disclose how they collect, store, use, and share data, ensuring users, customers,
+  and stakeholders understand their practices.
 
 ### 2.1.2 Terms Defined in this Document
 
-This document defines the following terms:
-
-- Term 1: some definition.  
-- Term 2: some definition.  
-- etc
+None
 
 ## 2.2 Abbreviations and Acronyms
 
-This document uses the following abbreviations and acronyms:
+AI
+:    Artificial Intelligence
 
-- Term 1: expanded form.  
-- Term 2: expanded form.  
-- etc
+DET
+:    Data Enhancing Technologies
+
+DPS
+:    Data Provenance Standard
+
+PET
+:    Privacy Enhancing Technologies
+
+<!-- We will surely find more acronyms or abbreviations we do use in the document. -->
 
 -------
 
@@ -180,38 +194,62 @@ The key words "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL 
 
 ## 3.2 Typographical Conventions
 
-\< Describe any standards or typographical conventions that were followed when writing this document, such as fonts or highlighting that have special significance. If there are no typographical conventions than one is to put "None". \>
+Keywords defined by this specification use this `monospaced` font.
+
+```
+    Normative source code uses this paragraph style.
+```
+
+Some sections of this specification are illustrated with non-normative examples introduced with "Example" or "Examples" like so:
+
+*Example 1:*
+
+```
+    Informative examples also use this paragraph style but preceded by the text "Example(s)".
+```
+
+All examples in this document are informative only.
+
+All other text is normative unless otherwise labeled e.g. like the following informative comment:
+
+> This is a pure informative comment that may be present, because the information conveyed is deemed useful advice or
+> common pitfalls learned from implementer or operator experience and often given including the rationale.
 
 -------
+
+This document adheres to the Modern Language Association (MLA) style guidelines for formatting titles and terms.
 
 # 4 Introduction
 
-\< Any introductory text that is needed to explain this document \>
+Data is a core enterprise asset.
+It underpins strategic decision-making, drives operational priorities, and supports risk governance.
+Dependence on data creates a need for validation and an understanding of the data's origin, quality, and intended use.
+Understanding data is a requirement for organizations operating at scale.
+The OASIS Data Provenance Standards (DPS) are created to solve for this need. 
 
 ## 4.1 Any Additional Introduction Subsections That are Needed
 
-\< Any needed text \>
+None
 
 ## 4.2 Changes From the Previous Version
 
-The list of changes from the previous version and any revision history can be found in Appendix 2\.
+N/A
 
 -------
 
-# 5 Provenance Information Model
+# 5 Provenance Schema
 
-The information model of the provenance metadata is described in human-readable property tables.
-The technical encoding may be found in section 6.
+The schema of the provenance metadata is described in human-readable property tables.
+The technical encoding may be found in section [6 Provenance Information Model Encoding](#6-provenance-information-model-encoding).
 
-The Data Provenance Standards are made up of three groups of metadata elements:
-Source, Provenance, and Use.
+The Data Provenance Standards record metadata elements in three segmented categories: Source, Provenance, and Use.
 
 ![Metadata](./images//metadata.svg)
 
 The property tables first define metadata about the specification itself,
-then describe how a record is made of the 3 primary metadata elements
-(Source, Provenance, and Use), then describe each of the 3 elements.
-Subsequent tables describe the underlying fields of the 3 elements.
+then describe how a record is made of the 3 primary metadata elements.
+The three segmented categories (Source, Provenance, and Use) are comprised of various 
+metadata element input fields. Each field is described in more detail below.
 
 ## 5.1 Primary Metadata Elements
 
@@ -311,7 +349,7 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: Intended-Use (Record)**
+**Type: IntendedAndAcceptableUsages (Record)**
 
 | ID | Name       | Type              | \#    | Description |
 |:---|:-----------|:------------------|:------|:------------|
@@ -320,7 +358,7 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: Processing-Geography (Record)**
+**Type: ProcessingGeography (Record)**
 
 | ID | Name               | Type      | \#    | Description                                                    |
 |:---|:-------------------|:----------|:------|:---------------------------------------------------------------|
@@ -329,7 +367,7 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: Storage-Geography (Record)**
+**Type: StorageGeography (Record)**
 
 | ID | Name                   | Type      | \#    | Description                                                     |
 |:---|:-----------------------|:----------|:------|:----------------------------------------------------------------|
@@ -355,7 +393,7 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: Privacy-Tool (Record)**
+**Type: DataTool (Record)**
 
 | ID | Name           | Type                  | \# | Description           |
 |:---|:---------------|:----------------------|:---|:----------------------|
@@ -411,7 +449,7 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: MediaType (Enumerated)**
+**Type: ModalityFormat (Enumerated)**
 
 | ID | Item                         | Description |
 |:---|:-----------------------------|:------------|
@@ -431,7 +469,7 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: Confidentiality-Classification (Enumerated)**
+**Type: ConfidentialityClassification (Enumerated)**
 
 | ID | Item                                      | Description |
 |:---|:------------------------------------------|:------------|
@@ -441,10 +479,10 @@ The Data Provenance Standard Metadata
 | 3  | **Personal Financial Information (PFI)**  |             |
 | 4  | **Personal Health Information (PHI)**     |             |
 | 5  | **Sensitive Personal Information (SPI)**  |             |
-
+| 6  | **Sensitive Customer Information (SCI)**  |             |
 -------
 
-**Type: Privacy-Technology (Enumerated)**
+**Type: DataTechnology (Enumerated)**
 
 | ID | Item                                     | Description |
 |:---|:-----------------------------------------|:------------|
@@ -475,7 +513,7 @@ The Data Provenance Standard Metadata
 
 -------
 
-**Type: Non-AI-Use (Enumerated)**
+**Type: NonAIUse (Enumerated)**
 
 | ID | Item                  | Description |
 |:---|:----------------------|:------------|
@@ -483,10 +521,10 @@ The Data Provenance Standard Metadata
 | 1  | **Staging/testing**   |             |
 | 2  | **Production**        |             |
 | 3  | **Quality assurance** |             |
-
+| 4  | **Research**          |             |
 -------
 
-**Type: AI-Use (Enumerated)**
+**Type: AIUse (Enumerated)**
 
 | ID | Item                          | Description |
 |:---|:------------------------------|:------------|
@@ -495,7 +533,7 @@ The Data Provenance Standard Metadata
 | 2  | **Alignment**                 |             |
 | 3  | **Evaluation**                |             |
 | 4  | **Synthetic Data Generation** |             |
-
+| 5  | **Research**                  |             |
 -------
 
 # 6 Provenance Information Model Encoding
@@ -512,7 +550,18 @@ The YAML encoding of the data provenance metadata information model is specified
 
 # 7 Provenance Data Model Encoding
 
-The information model allows the extraction of informaion from data.
+> The information model defines the complete set of metadata elements and associated attributes specified by the Data Provenance Standard.
+> It establishes a common conceptual framework for representing provenance information, including the structures and relationships necessary to describe the origin, history, and handling of data.
+> The information model is intended to provide a consistent semantic basis for provenance across implementations, independent of any particular serialization or storage mechanism.
+>
+> In order to support interoperability and exchange of provenance information between systems, the information model requires one or more concrete encodings.
+> An encoding provides a standardized, machine-readable representation of the information model suitable for electronic transmission, persistence, and processing.
+> While the information model defines what information is conveyed, the encoding defines how that information is represented for exchange between conforming implementations.
+>
+> This section describes a set of possible encodings for the Data Provenance Standard.
+> Each encoding maps the constructs defined in the information model to a specific representation format intended for storage or system-to-system exchange.
+> The encodings described herein are non-exclusive and are provided to support diverse implementation environments and usage scenarios.
+> Implementations MAY support one or more of these encodings, subject to their interoperability, performance, and deployment requirements.
 
 ## 7.1 JSON Encoding
 
@@ -691,6 +740,20 @@ This section is **REQUIRED** and **MUST** be the second to last numbered section
 Please note that any specification that will need to register something with IANA or has plans to go on to ITU/ISO/IEC **MUST** have this section filled out. For an example please see the following section in the CACAO specification here [https://docs.oasis-open.org/cacao/security-playbooks/v2.0/cs01/security-playbooks-v2.0-cs01.html\#\_Toc152256574](https://docs.oasis-open.org/cacao/security-playbooks/v2.0/cs01/security-playbooks-v2.0-cs01.html#_Toc152256574)
 
 \>
+
+All safety, security, and data protection requirements relevant to the context in which Data Provenance Metadata documents are used MUST be translated into, and consistently enforced through, Data Provenance Metadata implementations and processes.
+
+For Data Provenance Metadata documents based on JSON, the security considerations of [cite](#RFC8259) apply and are repeated here as service for the reader:
+
+> Generally, there are security issues with scripting languages.  JSON is a subset of JavaScript but excludes assignment and invocation.
+>
+> Since JSON's syntax is borrowed from JavaScript, it is possible to use that language's `eval()` function to parse most JSON texts
+> (but not all; certain characters such as `U+2028 LINE SEPARATOR` and `U+2029 PARAGRAPH SEPARATOR` are legal in JSON but not JavaScript).
+> This generally constitutes an unacceptable security risk, since the text could contain executable code along with data declarations.
+> The same consideration applies to the use of eval()-like functions in any other programming language in which JSON texts conform to
+> that language's syntax.
+
+<!-- More to fill in at least per other data format -->
 
 -------
 
