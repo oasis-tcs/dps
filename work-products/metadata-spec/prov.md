@@ -767,7 +767,7 @@ This section is **REQUIRED** and **MUST** be the last numbered section in the do
 
 -------
 
-# ANNEX A License, Document Status and Notices{#annex-a}
+# Annex A License, Document Status and Notices{#annex-a}
 
 (This annex forms an integral part of this Specification.)
 
