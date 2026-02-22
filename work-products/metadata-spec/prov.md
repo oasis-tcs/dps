@@ -771,7 +771,7 @@ This section is **REQUIRED** and **MUST** be the last numbered section in the do
 
 (This annex forms an integral part of this Specification.)
 
-## A.1. Document Status
+## A.1 Document Status
 
 This document was last revised or approved by the OASIS OpenEoX TC on the above date. The level of approval is also listed above. Check the "Latest version" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at <https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa>.
 
@@ -779,7 +779,7 @@ TC members should send comments on this document to the TC's email list. Others 
 
 NOTE: any machine-readable content (Computer Language Definitions) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product's prose narrative document(s), the content in the separate plain text file prevails.
 
-## License and Notices
+## A.2 License and Notices
 
 <!-- Required section. Do not modify. -->
 
