@@ -6,7 +6,7 @@
 
 ## Committee Specification Draft 01
 
-## 09 September 2025
+## 24 February 2026
 
 ### This version
 
@@ -15,8 +15,7 @@
 
 ### Previous version
 
-- \[ link to authoritative version of the published document \] (Authoritative)
-- \[ links to one or more other versions of the published document (e.g., MD, PDF, Word, HTML, etc.) \]
+N/A
 
 ### Latest version
 
@@ -40,6 +39,20 @@
 - David Kemp, NSA, d.kemp@cyber.nsa.gov
 - Stefan Hagen, individual, stefan@hagen.link
 
+### Additional Artifacts
+
+This prose specification is one component of a Work Product that also includes:
+
+- Data Provenance Metadata JSON schema: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/schema/data-provenance.json. \
+Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json.
+- Data Provenance Metadata Configuration JSON schema: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/schema/data-provenance-configuration.json. \
+Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json.
+
+### Declared JSON namespaces
+
+- [https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json](https://docs.oasis-open.org/dps/data-provenance/v1.0/schema/data-provenance.json)
+- [https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json](https://docs.oasis-open.org/dps/data-provenance/v1.0/schema/data-provenance-configuration.json)
+
 ### Abstract
 
 This OASIS Data Provenance Metadata specification provides an information model and several specialized data schemata for describing and managing data provenance.
@@ -52,21 +65,23 @@ When referencing this document, the following citation format should be used:
 
 **[prov-meta-v1.0]**
 
-_Data Provenance Metadata Version 1.0_. Edited by David Kemp and Stefan Hagen. 09 September 2025. OASIS Committee Speciofication Draft 01. https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.html. Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-neta-v1.0-csd01.html.
+_Data Provenance Metadata Version 1.0_. Edited by David Kemp and Stefan Hagen. 24 February 2026. OASIS Committee Speciofication Draft 01.
+https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.html. \
+Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-neta-v1.0-csd01.html.
 
 ### Related Work
 
 This document replaces or supersedes:
 
-- \[ The full reference to the related document in IEEE reference format \]
+N/A
 
 This document is related to:
 
-- \[ The full reference to the related document in IEEE reference format \]
+N/A
 
 ## License, Document Status, and Notices
 
-Copyright © OASIS Open 2025.
+Copyright © OASIS Open 2026.
 All Rights Reserved.  
 For license and copyright information, and complete status,
 please see Annex A which contains the License, Document Status and Notices.
@@ -101,7 +116,7 @@ Editor's Note: Table of Contents will be updated once structure is stable
   - [7.1 JSON Encoding](#71-json-encoding)
   - [7.2 XML Encoding](#72-xml-encoding)
   - [7.3 YAML Encoding](#73-yaml-encoding)
-- [8 Safety, Security, and Data Protection Considerations](#7-safety,-security,-and-data-protection-considerations)
+- [8 Safety, Security, and Data Protection](#7-safety,-security,-and-data-protection)
 - [9 Conformance](#8-conformance)
 - [Annex A License, Document Status and Notices](#annex-a-license,-document-status-and-notices)
   - [A.1 Document Status](#a.1-document-status)
@@ -118,9 +133,6 @@ Editor's Note: Table of Contents will be updated once structure is stable
   - [Participants](#participants)
 - [Appendix 2 Changes From Previous Version](#appendix-2-changes-from-previous-version)
   - [Revision History](#revision-history)
-- [Appendix 3 Additional Appendix as Needed](#appendix-3-additional-appendix-as-needed)
-  - [Subsection Title](#subsection-title)
-- [Sub-subsection](#sub-subsection)
 
 -------
 
@@ -205,10 +217,10 @@ Subsequent tables describe the underlying fields of the 3 elements.
 
 **Type: DPS (Record)**
 
-| ID | Name         | Type           | \# | Description                                                   |
-|----|--------------|----------------|----|---------------------------------------------------------------|
+| ID | Name         | Type           | \# | Description                                                                                                                                      |
+|:---|:-------------|:---------------|:---|:-------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1  | **version**  | URL            | 1  | Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time. |
-| 2  | **metadata** | DataProvenance | 1  | The metadata about a dataset                                  |
+| 2  | **metadata** | DataProvenance | 1  | The metadata about a dataset                                                                                                                     |
 
 -------
 
@@ -217,7 +229,7 @@ The Data Provenance Standard Metadata
 **Type: DataProvenance (Record)**
 
 | ID | Name           | Type       | \# | Description                                       |
-|----|----------------|------------|----|---------------------------------------------------|
+|:---|:---------------|:-----------|:---|:--------------------------------------------------|
 | 1  | **source**     | Source     | 1  | Describes a dataset and the source of the dataset |
 | 2  | **provenance** | Provenance | 1  | Provenance of the dataset                         |
 | 3  | **use**        | Use        | 1  | Legal use and restrictions                        |
@@ -228,27 +240,27 @@ The Data Provenance Standard Metadata
 
 **Type: Source (Record)**
 
-| ID | Name            | Type         | \#    | Description                      |
-|----|-----------------|--------------|-------|----------------------------------|
-| 1  | **title**       | String       | 1     | The official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose. |
-| 2  | **id**          | UID          | 1     | A distinct identifier (such as a UUID) assigned to the dataset's metadata to uniquely distinguish it from others, ensuring no confusion or overlap.       |
-| 3  | **location**    | URL          | 0..1  | The web address where the dataset's metadata is published and can be accessed, providing a direct link to detailed information about the dataset.               |
-| 4  | **issuer**      | Organization | 1..\* | The legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries. |
-| 5  | **description** | String       | 1     | Contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses.  |
+| ID | Name            | Type         | \#    | Description                                                                                                                                                                                                                                                    |
+|:---|:----------------|:-------------|:------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1  | **title**       | String       | 1     | The official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose.                                                                                                                                      |
+| 2  | **id**          | UID          | 1     | A distinct identifier (such as a UUID) assigned to the dataset's metadata to uniquely distinguish it from others, ensuring no confusion or overlap.                                                                                                            |
+| 3  | **location**    | URL          | 0..1  | The web address where the dataset's metadata is published and can be accessed, providing a direct link to detailed information about the dataset.                                                                                                              |
+| 4  | **issuer**      | Organization | 1..\* | The legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries.                                                                                                                                          |
+| 5  | **description** | String       | 1     | Contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses. |
 
 -------
 
 **Type: Organization (Record)**
 
 | ID | Name        | Type    | \# | Description       |
-|----|-------------|---------|----|-------------------|
+|:---|:------------|:--------|:---|:------------------|
 | 1  | **name**    | String  | 1  | organization name |
 | 2  | **address** | Address | 1  | address           |
 
 -------
 
 | Type Name   | Type Definition | Description                                      |
-|-------------|-----------------|--------------------------------------------------|
+|:------------|:----------------|:-------------------------------------------------|
 | **Address** | ArrayOf(String) | Just lines for now, enable structured definition |
 
 -------
@@ -257,24 +269,24 @@ The Data Provenance Standard Metadata
 
 **Type: Provenance (Record)**
 
-| ID | Name                  | Type         | \#    | Description                                      |
-|----|-----------------------|--------------|-------|--------------------------------------------------|
-| 1  | **source**            | URL          | 1..\* | Identifies where the metadata for any source datasets that contribute to the current dataset can be found, establishing lineage and dependencies. This field establishes lineage. |
-| 2  | **origin**            | Organization | 0..1  | If the data originates from a different organization than the one who isued the dataset, this field identifies that original source's legal name.  |
-| 3  | **origin-geography**  | Geography    | 1..\* | The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.|
-| 4  | **date**              | Timestamp    | 1     | The date when the dataset was compiled or created, providing a temporal context for the data.  |
-| 5  | **previous-date**     | Timestamp    | 1     | The release date of the last version of the dataset, if it has been updated or revised, to track changes and updates over time. |
-| 6  | **generation-period** | Generation   | 1     | The span of time during which the data within the dataset was collected or generated, offering insight into the dataset's timeliness and relevance.            |
-| 7  | **generation-method** | Method       | 1..\* | The methodology or procedures used to collect, generate, or compile the data, giving insight into its reliability and validity.  |
-| 8  | **format**            | MediaType    | 0..\* | Describes the nature of the data within the dataset, such as numerical, textual, or multimedia, helping users understand what kind of information is contained within the file or dataset.                                      |
-| 9  | **sub-provenance**    | Provenance   | 1     | Add key/link?                                    |
+| ID | Name                  | Type         | \#    | Description                                                                                                                                                                                |
+|:---|:----------------------|:-------------|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1  | **source**            | URL          | 1..\* | Identifies where the metadata for any source datasets that contribute to the current dataset can be found, establishing lineage and dependencies. This field establishes lineage.          |
+| 2  | **origin**            | Organization | 0..1  | If the data originates from a different organization than the one who isued the dataset, this field identifies that original source's legal name.                                          |
+| 3  | **origin-geography**  | Geography    | 1..\* | The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.                          |
+| 4  | **date**              | Timestamp    | 1     | The date when the dataset was compiled or created, providing a temporal context for the data.                                                                                              |
+| 5  | **previous-date**     | Timestamp    | 1     | The release date of the last version of the dataset, if it has been updated or revised, to track changes and updates over time.                                                            |
+| 6  | **generation-period** | Generation   | 1     | The span of time during which the data within the dataset was collected or generated, offering insight into the dataset's timeliness and relevance.                                        |
+| 7  | **generation-method** | Method       | 1..\* | The methodology or procedures used to collect, generate, or compile the data, giving insight into its reliability and validity.                                                            |
+| 8  | **format**            | MediaType    | 0..\* | Describes the nature of the data within the dataset, such as numerical, textual, or multimedia, helping users understand what kind of information is contained within the file or dataset. |
+| 9  | **sub-provenance**    | Provenance   | 1     | Add key/link?                                                                                                                                                                              |
 
 -------
 
 **Type: Generation (Record)**
 
 | ID | Name         | Type      | \# | Description                                         |
-|----|--------------|-----------|----|-----------------------------------------------------|
+|:---|:-------------|:----------|:---|:----------------------------------------------------|
 | 1  | **oldest**   | Timestamp | 1  | Oldest component of data contained in the dataset   |
 | 2  | **youngest** | Timestamp | 1  | Youngest component of data contained in the dataset |
 
@@ -284,25 +296,25 @@ The Data Provenance Standard Metadata
 
 **Type: Use (Record)**
 
-| ID | Name                  | Type                    | \#    | Description                                                                                                                       |
-|----|-----------------------|-------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
-| 1  | **classification**    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset, such as personally identifiable information, which dictates how the dataset must be secured and who can access it.                                                                                                  |
-| 2  | **consent**           | URL                     | 1..\* | Specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.                                                                                                 |
-| 3  | **privacy-enhancing** | Privacy-Tool            | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI), highlighting the dataset's privacy considerations.                                                                                                 |
-| 4  | **processing**        | Processing-Geography    | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                                                                        |
-| 5  | **storage**           | Storage-Geography       | 0..1  |  Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereignty laws.                                                                                                           |
-| 6  | **license**           | ArrayOf(License) unique | 1     | Details the location or point of contact for identifying the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights.                                                                                                                |
-| 7  | **intended_purpose**  | Intended-Use            | 1     | Describes the purpose for which the dataset was created, guiding users on its intended use and potential applications against identified use cases.                                                                                                            |
-| 8  | **copyright**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright.  |
-| 9  | **patent**            | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.              |
-| 10 | **trademark**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark. |
+| ID | Name                  | Type                    | \#    | Description                                                                                                                                                                                      |
+|:---|:----------------------|:------------------------|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1  | **classification**    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset, such as personally identifiable information, which dictates how the dataset must be secured and who can access it.                             |
+| 2  | **consent**           | URL                     | 1..\* | Specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.                                                              |
+| 3  | **privacy-enhancing** | Privacy-Tool            | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI), highlighting the dataset's privacy considerations.          |
+| 4  | **processing**        | Processing-Geography    | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                                     |
+| 5  | **storage**           | Storage-Geography       | 0..1  | Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereignty laws.                                                    |
+| 6  | **license**           | ArrayOf(License) unique | 1     | Details the location or point of contact for identifying the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights. |
+| 7  | **intended-purpose**  | Intended-Use            | 1     | Describes the purpose for which the dataset was created, guiding users on its intended use and potential applications against identified use cases.                                              |
+| 8  | **copyright**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright.                                                                 |
+| 9  | **patent**            | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.                                                                             |
+| 10 | **trademark**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark.                                                                |
 
 -------
 
 **Type: Intended-Use (Record)**
 
 | ID | Name       | Type              | \#    | Description |
-|----|------------|-------------------|-------|-------------|
+|:---|:-----------|:------------------|:------|:------------|
 | 1  | **non_ai** | Non-AI-Use unique | 1..\* | Non-AI      |
 | 2  | **ai**     | AI-Use unique     | 1..\* | AI          |
 
@@ -311,8 +323,8 @@ The Data Provenance Standard Metadata
 **Type: Processing-Geography (Record)**
 
 | ID | Name               | Type      | \#    | Description                                                    |
-|----|--------------------|-----------|-------|----------------------------------------------------------------|
-| 1  | **same_as_origin** | Boolean   | 1     | Data processing geography is the same as data origin geography |
+|:---|:-------------------|:----------|:------|:---------------------------------------------------------------|
+| 1  | **same-as-origin** | Boolean   | 1     | Data processing geography is the same as data origin geography |
 | 2  | **countries**      | Geography | 0..\* |                                                                |
 
 -------
@@ -320,8 +332,8 @@ The Data Provenance Standard Metadata
 **Type: Storage-Geography (Record)**
 
 | ID | Name                   | Type      | \#    | Description                                                     |
-|----|------------------------|-----------|-------|-----------------------------------------------------------------|
-| 1  | **same_as_processing** | Boolean   | 1     | Data storage geography is the same as data processing geography |
+|:---|:-----------------------|:----------|:------|:----------------------------------------------------------------|
+| 1  | **same-as-processing** | Boolean   | 1     | Data storage geography is the same as data processing geography |
 | 2  | **countries**          | Geography | 0..\* |                                                                 |
 
 -------
@@ -329,7 +341,7 @@ The Data Provenance Standard Metadata
 **Type: Geography (Record)**
 
 | ID | Name        | Type             | \#   | Description |
-|----|-------------|------------------|------|-------------|
+|:---|:------------|:-----------------|:-----|:------------|
 | 1  | **country** | geo:Country-Name | 1    |             |
 | 2  | **state**   | geo:State-Name   | 0..1 |             |
 
@@ -338,7 +350,7 @@ The Data Provenance Standard Metadata
 **Type: UID (Choice(anyOf))**
 
 | ID | Name | Type         | \# | Description |
-|----|------|--------------|----|-------------|
+|:---|:-----|:-------------|:---|:------------|
 | 1  | **** | Binary /uuid | 1  | **uuid** -  |
 
 -------
@@ -346,15 +358,15 @@ The Data Provenance Standard Metadata
 **Type: Privacy-Tool (Record)**
 
 | ID | Name           | Type                  | \# | Description           |
-|----|----------------|-----------------------|----|-----------------------|
-| 1  | **tool_id**    | Tool-ID               | 1  | tool name and version |
+|:---|:---------------|:----------------------|:---|:----------------------|
+| 1  | **tool-id**    | Tool-ID               | 1  | tool name and version |
 | 2  | **technology** | Privacy-Technology    | 1  |                       |
 | 3  | **params**     | MapOf(String, String) | 1  | key-value pair        |
 
 -------
 
 | Type Name   | Type Definition | Description |
-|-------------|-----------------|-------------|
+|:------------|:----------------|:------------|
 | **Tool-ID** | String          |             |
 
 -------
@@ -362,20 +374,20 @@ The Data Provenance Standard Metadata
 **Type: Confidentiality (Record)**
 
 | ID | Name               | Type                           | \#    | Description |
-|----|--------------------|--------------------------------|-------|-------------|
+|:---|:-------------------|:-------------------------------|:------|:------------|
 | 1  | **classification** | Confidentiality-Classification | 1     |             |
-| 2  | **tool_id**        | Tool-ID                        | 0..\* |             |
+| 2  | **tool-id**        | Tool-ID                        | 0..\* |             |
 
 -------
 
 | Type Name     | Type Definition | Description                  |
-|---------------|-----------------|------------------------------|
+|:--------------|:----------------|:-----------------------------|
 | **Timestamp** | Integer /d3     | Milliseconds since the epoch |
 
 -------
 
 | Type Name | Type Definition | Description                          |
-|-----------|-----------------|--------------------------------------|
+|:----------|:----------------|:-------------------------------------|
 | **URL**   | String /uri     | URI designated as a resource locator |
 
 -------
@@ -383,7 +395,7 @@ The Data Provenance Standard Metadata
 **Type: Method (Enumerated)**
 
 | ID | Item                        | Description |
-|----|-----------------------------|-------------|
+|:---|:----------------------------|:------------|
 | 0  | **Other**                   |             |
 | 1  | **Web scraping/Crawling**   |             |
 | 2  | **Feeds**                   |             |
@@ -402,7 +414,7 @@ The Data Provenance Standard Metadata
 **Type: MediaType (Enumerated)**
 
 | ID | Item                         | Description |
-|----|------------------------------|-------------|
+|:---|:-----------------------------|:------------|
 | 0  | **Other**                    |             |
 | 1  | **application/json**         |             |
 | 2  | **application/jsonld**       |             |
@@ -422,7 +434,7 @@ The Data Provenance Standard Metadata
 **Type: Confidentiality-Classification (Enumerated)**
 
 | ID | Item                                      | Description |
-|----|-------------------------------------------|-------------|
+|:---|:------------------------------------------|:------------|
 | 0  | **Other**                                 |             |
 | 1  | **Personal information (PI)/Demographic** |             |
 | 2  | **Payment Card Industry (PCI)**           |             |
@@ -435,7 +447,7 @@ The Data Provenance Standard Metadata
 **Type: Privacy-Technology (Enumerated)**
 
 | ID | Item                                     | Description |
-|----|------------------------------------------|-------------|
+|:---|:-----------------------------------------|:------------|
 | 1  | **Data Anonymization**                   |             |
 | 2  | **Data Encryption**                      |             |
 | 3  | **Data Masking**                         |             |
@@ -456,7 +468,7 @@ The Data Provenance Standard Metadata
 **Type: License (Enumerated)**
 
 | ID | Item                              | Description |
-|----|-----------------------------------|-------------|
+|:---|:----------------------------------|:------------|
 | 1  | **Non-commercial**                |             |
 | 2  | **Public license**                |             |
 | 3  | **Commercial/Negotiated License** |             |
@@ -466,7 +478,7 @@ The Data Provenance Standard Metadata
 **Type: Non-AI-Use (Enumerated)**
 
 | ID | Item                  | Description |
-|----|-----------------------|-------------|
+|:---|:----------------------|:------------|
 | 0  | **Other**             |             |
 | 1  | **Staging/testing**   |             |
 | 2  | **Production**        |             |
@@ -477,7 +489,7 @@ The Data Provenance Standard Metadata
 **Type: AI-Use (Enumerated)**
 
 | ID | Item                          | Description |
-|----|-------------------------------|-------------|
+|:---|:------------------------------|:------------|
 | 0  | **Other**                     |             |
 | 1  | **Pre-Training**              |             |
 | 2  | **Alignment**                 |             |
@@ -505,7 +517,158 @@ The information model allows the extraction of informaion from data.
 ## 7.1 JSON Encoding
 
 The technical encoding of the data provenance metadata data model
-is specified in ____ for JSON data.
+is specified in the following schema artifacts for JSON data:
+
+- Data Provenance Metadata JSON schema
+- Data Provenance Metadata Configuration JSON schema
+
+The Data Provenance Metadata Configuration JSON schema configures validators
+to enforce all type and subtype constraints.
+
+The Data Provenance Metadata JSON schema provides definitions and the structure
+for any data provenance metadata JSON instance.
+
+The required top-level members are:
+
+```yaml
+DataProvenance:
+- $schema: String.Constant
+- set: Mapping
+- source: Mapping
+- provenance: mapping
+- use: Mapping
+```
+
+
+### 7.1.1 Member `$schema`
+
+The value of the `$schema` member for this version of the specification is always:
+
+```
+https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json
+```
+
+### 7.1.2 Member `set`
+
+The `set` member specifies the set level meta-data.
+It captures the meta-data about the provenance metadata record describing a particular data-set
+
+The following members are required for the mapping:
+
+```yaml
+DataProvenance:
+# ...
+- set
+  - category: String 
+  - schema-version: String.Constant
+  - publisher: Mapping  # Missing in current schema
+  - title: String  # Missing in current schema
+  - tracking: Sequence  # Missing in current schema
+# ...
+```
+
+#### 7.1.2.1 Member `set.category`
+
+The `set.category` member defines a short canonical name, chosen by the set producer, which will inform the end user as to the category of the meta-data set.
+
+```yaml
+DataProvenance:
+# ...
+- set
+  - category: String 
+  # ...
+# ...
+```
+
+*Examples 1:*
+
+```
+dp_base
+dp_event_source
+dp_profile_xyz
+Example Data Protection Notice Exemption
+```
+
+#### 7.1.2.2 Member `set.schema-version`
+
+The `set.schema-version` member describes the Data Provenance Core version.
+
+It gives the version of the Data Provenance Core specification which the document was generated for.
+
+```yaml
+DataProvenance:
+# ...
+- set
+  # ...
+  - schema-version: String.Constant
+  # ...
+# ...
+```
+
+The value of the `set.schema-version` member for this version of the specification is always:
+
+```
+1.0
+```
+
+#### 7.1.2.3 Member `set.publisher`
+
+Simile ...
+
+```yaml
+DataProvenance:
+# ...
+- set
+  # ...
+  - publisher: Mapping  # Missing in current schema
+  # ...
+# ...
+```
+
+Simile ...
+
+#### 7.1.2.4 Member `set.title`
+
+Simile ...
+
+```yaml
+DataProvenance:
+# ...
+- set
+  # ...
+  - title: String  # Missing in current schema
+  # ...
+# ...
+```
+
+Simile ...
+
+#### 7.1.2.5 Member `set.tracking`
+
+Simile ...
+
+```yaml
+DataProvenance:
+# ...
+- set
+  # ...
+  - tracking: Sequence  # Missing in current schema
+# ...
+```
+
+Simile ...
+
+### 7.1.3 Member `source`
+
+Simile ...
+
+### 7.1.4 Member `provenance`
+
+Simile ...
+
+### 7.1.5 Member `use`
+
+Simile ...
 
 ## 7.2 XML Encoding
 
@@ -519,7 +682,7 @@ is specified in ____ for YAML data.
 
 -------
 
-# 8 Safety, Security, and Data Protection Considerations
+# 8 Safety, Security, and Data Protection
 
 \<
 
@@ -541,29 +704,31 @@ This section is **REQUIRED** and **MUST** be the last numbered section in the do
 
 -------
 
-# Annex A License, Document Status and Notices
+# ANNEX A License, Document Status and Notices{#annex-a}
 
 (This annex forms an integral part of this Specification.)
 
-## A.1 Document Status
+## A.1. Document Status
 
-This document was last revised or approved by the \[ full project name e.g., OASIS Collaborative Automated Course of Action Operations (CACAO) for Cyber Security TC \] on the above date. The level of approval is also listed above. Check the "Latest version" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at \[ project publication page e.g., https://www.oasis-open.org/committees/tc\_home.php?wg\_abbrev=cacao\#technical \].
+This document was last revised or approved by the OASIS OpenEoX TC on the above date. The level of approval is also listed above. Check the "Latest version" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at <https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=26350f39-9c7b-4bf2-a422-018dc7d3f5aa>.
 
-TC members should send comments on this document to the TC's email list. Others should send comments to the TC's public comment list, after subscribing to it by following the instructions at the "Send A Comment" button on the TC's web page at \[ project home page e.g., https://www.oasis-open.org/committees/cacao/ \].
+TC members should send comments on this document to the TC's email list. Others should send comments to the TC's public comment list, after subscribing to it by following the instructions at the "Send A Comment" button on the TC's web page at <https://www.oasis-open.org/committees/openeox/>.
 
 NOTE: any machine-readable content (Computer Language Definitions) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product's prose narrative document(s), the content in the separate plain text file prevails.
 
-## A.2 License and Notices
+## License and Notices
 
-Copyright © OASIS Open 202\[ 5 \]. All Rights Reserved.
+<!-- Required section. Do not modify. -->
 
-All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full Policy, which governs the licensure of this document, may be found at the OASIS website: \[[https://www.oasis-open.org/policies-guidelines/ipr/](https://www.oasis-open.org/policies-guidelines/ipr/)\]
+Copyright &copy; OASIS Open 2026. All Rights Reserved.
+
+All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full Policy, which governs the licensure of this document, may be found at the OASIS website: [[https://www.oasis-open.org/policies-guidelines/ipr/](https://www.oasis-open.org/policies-guidelines/ipr/)]
 
 This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this section are included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document or deliverable produced by an OASIS Technical Committee (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.
 
 The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns, as provided in the OASIS IPR Policy.
 
-This document is provided under the \[ add IPR Mode, e.g., “Non-Assertion” \] IPR mode that was chosen when the project was established, as defined in the IPR Policy. For information on whether any patents have been disclosed that may be essential to implementing this document, and any offers of patent licensing terms, please refer to the Intellectual Property Rights section of the project’s web page ( \[ e.g., [https://www.oasis-open.org/committees/cacao/ipr.php](https://www.oasis-open.org/committees/cacao/ipr.php) \] ).
+This document is provided under the “Non-Assertion” IPR mode that was chosen when the project was established, as defined in the IPR Policy. For information on whether any patents have been disclosed that may be essential to implementing this document, and any offers of patent licensing terms, please refer to the Intellectual Property Rights section of the project’s web page ([https://www.oasis-open.org/committees/openeox/ipr.php](https://www.oasis-open.org/committees/openeox/ipr.php)).
 
 This document and the information contained herein is provided on an "AS IS" basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. OASIS AND ITS MEMBERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THIS DOCUMENT OR ANY PART THEREOF.
 
@@ -619,11 +784,31 @@ The following referenced documents are not required for the application of this 
 
 -------
 
-# Appendix D Acknowledgments
+# Appendix 1 Acknowledgments
 
 (This appendix does not form an integral part of this Specification and is informational.)
 
+The following individuals were members of the OASIS OpenEoX Technical Committee during the creation of this specification and their contributions are gratefully acknowledged:
+
+## Leadership
+
+The following individuals have had significant leadership positions during the development of this document, not just this version of the document, and they are gratefully acknowledged:
+
+- Chairs
+  - Lisa Bobbitt, Cisco, lbobbitt@cisco.com
+  - Bryan Bortnick, IBM, bortnick@us.ibm.com
+  - Fotis Psallidas, Microsoft, Fotis.Psallidas@microsoft.com
+
+- Secretaries
+  - Jamie Yu, Cisco, jamyu2@cisco.com
+
+- Editors
+  - David Kemp, NSA, d.kemp@cyber.nsa.gov
+  - Stefan Hagen, Individual, stefan@hagen.link
+
 ## Special Thanks
+
+The following individuals have made substantial contributions to this document, not just this version of the document, and their contributions are gratefully acknowledged:
 
 The DPS TC thanks the following individuals for their assistance in the development of this document:
 Kristina Podnar and the Data &amp; Trust Alliance for their contributions of the initial schema and example applications.
@@ -643,7 +828,7 @@ The following individuals have participated in the creation of this document and
 
 -------
 
-# Appendix E Changes From Previous Version
+# Appendix 2 Changes From Previous Version
 
 (This appendix does not form an integral part of this Specification and is informational.)
 
@@ -651,22 +836,9 @@ This is the initial draft Committee Specification.
 
 ## Revision History
 
-| Revision                    | Date       | Editor(s)                   | Changes Made                            |
-|:----------------------------|:-----------|:----------------------------|:----------------------------------------|
-| prov-meta-v1.0-cn01-wd03.md | 2025-09-09 | David Kemp and Stefan Hagen | Editor revision for meeting 2025-09-09. |
+| Revision                      | Date       | Editor(s)                   | Changes Made                            |
+|:------------------------------|:-----------|:----------------------------|:----------------------------------------|
+| prov-meta-v1.0-wd20250909-dev | 2025-09-09 | David Kemp and Stefan Hagen | Editor revision for meeting 2025-09-09. |
+| prov-meta-v1.0-wd20260224-dev | 2025-09-09 | David Kemp and Stefan Hagen | Editor revision for meeting 2025-09-09. |
 
 -------
-
-# Appendix F. Notices
-
-Copyright &copy; OASIS Open 2025. All Rights Reserved.
-
-All capitalized terms in the following text have the meanings assigned to them in the OASIS Intellectual Property Rights Policy (the "OASIS IPR Policy"). The full [Policy](https://www.oasis-open.org/policies-guidelines/ipr/) may be found at the OASIS website.
-
-This document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published, and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this section are included on all such copies and derivative works. However, this document itself may not be modified in any way, including by removing the copyright notice or references to OASIS, except as needed for the purpose of developing any document or deliverable produced by an OASIS Technical Committee (in which case the rules applicable to copyrights, as set forth in the OASIS IPR Policy, must be followed) or as required to translate it into languages other than English.
-
-The limited permissions granted above are perpetual and will not be revoked by OASIS or its successors or assigns.
-
-This document and the information contained herein is provided on an "AS IS" basis and OASIS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY OWNERSHIP RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
-
-The name "OASIS" is a trademark of [OASIS](https://www.oasis-open.org/), the owner and developer of this specification, and should be used only to refer to the organization and its official outputs. OASIS welcomes reference to, and implementation and use of, specifications, while reserving the right to enforce its marks against misleading uses. Please see https://www.oasis-open.org/policies-guidelines/trademark/ for above guidance.
