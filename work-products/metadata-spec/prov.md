@@ -29,6 +29,8 @@ N/A
 
 ### Secretaries
 
+- Jamie Yu, Cisco, jamyu2@cisco.com
+
 ### Editors
 
 - David Kemp, NSA, d.kemp@cyber.nsa.gov
