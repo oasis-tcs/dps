@@ -636,7 +636,9 @@
       "type": "array",
       "items": {
         "properties": {
-          "address": "#/$defs/address-type",
+          "address": {
+            "$ref": "#/$defs/address-type"
+          },
           "legal-name": {
             "type": "string",
             "minLength": 1
@@ -663,11 +665,11 @@
         },
         "origin": {
           "description": "If the data originates from a different organization than the one who issued the dataset, this field identifies the original source's legal name.",
-          "type": "#/$defs/orga-type"
+          "$ref": "#/$defs/orga-type"
         },
         "origin-geography": {
           "description": "The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.",
-          "type": "#/$defs/geographic-regions-type"
+          "$ref": "#/$defs/geographic-regions-type"
         },
         "date": {
           "description": "The date when the dataset was compiled or created, providing a temporal context for the data.",
@@ -740,14 +742,16 @@
         "about": {
           "description": "Contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses.",
           "$ref": "#/$defs/about-type",
-          "examples": {
-            "content": "Estimates of table length from randomly selected participants",
-            "purpose": "Publicly available test dataset for learning linear regression modeling."
-          }
+          "examples": [
+            {
+              "content": "Estimates of table length from randomly selected participants",
+              "purpose": "Publicly available test dataset for learning linear regression modeling."
+            }
+          ]
         },
         "id": {
           "description": "Unique identifier (such as a UUID) assigned to the dataset's metadata to uniquely distinguish it from others, ensuring no confusion or overlap.",
-          "type": "#/$defs/identity-type",
+          "$ref": "#/$defs/identity-type",
           "examples": [
             {
               "custome-ids": [
@@ -789,7 +793,7 @@
         },
         "data-version": {
           "description": "Specifies the version of the dataset this DP-Core set describes, allowing the dataset to evolve over time and keeping consistent labeling.",
-          "type": "#/$defs/version-type"
+          "$ref": "#/$defs/version-type"
         }
       },
       "required": [
@@ -942,19 +946,19 @@
         },
         "processing-included": {
           "description": "Defines the geographical boundaries within which the data can be processed, often for legal or regulatory reasons.",
-          "type": "#/$defs/geographic-regions-type"
+          "$ref": "#/$defs/geographic-regions-type"
         },
         "processing-excluded": {
           "description": "Defines the geographical boundaries within which the data cannot be processed, often for legal or regulatory reasons.",
-          "type": "#/$defs/geographic-regions-type"
+          "$ref": "#/$defs/geographic-regions-type"
         },
         "storage-allowed": {
           "description": "Specifies where the data may be stored, crucial for compliance with data sovereignty laws.",
-          "type": "#/$defs/geographic-regions-type"
+          "$ref": "#/$defs/geographic-regions-type"
         },
         "storage-forbidden": {
           "description": "Specifies where the data may not be stored, crucial for compliance with data sovereignty laws.",
-          "type": "#/$defs/geographic-regions-type"
+          "$ref": "#/$defs/geographic-regions-type"
         },
         "license": {
           "description": "Details the location or point of contact for identifying the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights. License may be an End User License Agreement (EULA), subject to Data Use Agreement (DUA).",
