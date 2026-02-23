@@ -359,8 +359,8 @@ Table: Type `ProcessingGeography` (Record)
 
 Table: Type `StorageGeography` (Record)
 
-| ID | Name        | Type             | \#   | Description |
-|:---|:------------|:-----------------|:-----|:------------|
+| ID | Name        | Type            | \#   | Description |
+|:---|:------------|:----------------|:-----|:------------|
 | 1  | **country** | geo:CountryName | 1    |             |
 | 2  | **state**   | geo:StateName   | 0..1 |             |
 
@@ -376,7 +376,7 @@ Table: Type: `UID` (Choice(anyOf))
 | ID | Name           | Type                  | \# | Description           |
 |:---|:---------------|:----------------------|:---|:----------------------|
 | 1  | **tool-id**    | ToolID                | 1  | tool name and version |
-| 2  | **technology** | PrivacyTechnology    | 1  |                       |
+| 2  | **technology** | PrivacyTechnology     | 1  |                       |
 | 3  | **params**     | MapOf(String, String) | 1  | key-value pair        |
 
 Table: Type `DataTool` (Record)
@@ -472,11 +472,12 @@ Table: Type `ConfidentialityClassification` (Enumerated)
 
 Table: Type `DataTechnology` (Enumerated)
 
-| ID | Item                              | Description |
-|:---|:----------------------------------|:------------|
-| 1  | **Non-commercial**                |             |
-| 2  | **Public license**                |             |
-| 3  | **Commercial/Negotiated License** |             |
+| ID | Item                              | Description                                                                       |
+|:---|:----------------------------------|:----------------------------------------------------------------------------------|
+| 1  | **Non-commercial**                | Name and link, if private, provide details on how to obtain or contact for terms. |
+| 2  | **Public license**                | License Name and add link.                                                        |
+| 3  | **Commercial/Negotiated License** | Provide details on how to obtain or contact.                                      |
+| 4  | **None**                          | No License.                                                                       |
 
 Table: Type `License` (Enumerated)
 
