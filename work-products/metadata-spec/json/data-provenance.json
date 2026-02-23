@@ -675,11 +675,13 @@
         },
         "date": {
           "description": "The date when the dataset was compiled or created, providing a temporal context for the data.",
-          "type": "string"
+          "type": "string",
+          "format": "date"
         },
         "previous-date": {
           "description": "The release date of the last version of the dataset, if it has been updated or revised, to track changes and updates over time.",
-          "type": "string"
+          "type": "string",
+          "format": "date"
         },
         "generation-period": {
           "description": "The span of time during which the data within the dataset was collected or generated, offering insight into the dataset's timeliness and relevance.",

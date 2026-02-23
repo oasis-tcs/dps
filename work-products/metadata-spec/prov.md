@@ -255,18 +255,14 @@ metadata element input fields. Each field is described in more detail below.
 
 ## 5.1 Primary Metadata Elements
 
-**Type: DPS (Record)**
-
 | ID | Name         | Type           | \# | Description                                                                                                                                      |
 |:---|:-------------|:---------------|:---|:-------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1  | **version**  | URL            | 1  | Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time. |
 | 2  | **metadata** | DataProvenance | 1  | The metadata about a dataset                                                                                                                     |
 
--------
+Table: Type `DPS` (Record)
 
 The Data Provenance Standard Metadata
-
-**Type: DataProvenance (Record)**
 
 | ID | Name           | Type       | \# | Description                                       |
 |:---|:---------------|:-----------|:---|:--------------------------------------------------|
@@ -274,11 +270,9 @@ The Data Provenance Standard Metadata
 | 2  | **provenance** | Provenance | 1  | Provenance of the dataset                         |
 | 3  | **use**        | Use        | 1  | Legal use and restrictions                        |
 
--------
+Table: Type `DataProvenance` (Record)
 
 ## 5.2 Source
-
-**Type: Source (Record)**
 
 | ID | Name            | Type         | \#    | Description                                                                                                                                                                                                                                                    |
 |:---|:----------------|:-------------|:------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -288,26 +282,22 @@ The Data Provenance Standard Metadata
 | 4  | **issuer**      | Organization | 1..\* | The legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries.                                                                                                                                          |
 | 5  | **description** | String       | 1     | Contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses. |
 
--------
-
-**Type: Organization (Record)**
+Table: Type `Source` (Record)
 
 | ID | Name        | Type    | \# | Description       |
 |:---|:------------|:--------|:---|:------------------|
 | 1  | **name**    | String  | 1  | organization name |
 | 2  | **address** | Address | 1  | address           |
 
--------
+Table: Type `Organization` (Record)
 
 | Type Name   | Type Definition | Description                                      |
 |:------------|:----------------|:-------------------------------------------------|
 | **Address** | ArrayOf(String) | Just lines for now, enable structured definition |
 
--------
+Table: Type `Address` (ArrayOf(String))
 
 ## 5.3 Provenance
-
-**Type: Provenance (Record)**
 
 | ID | Name                  | Type         | \#    | Description                                                                                                                                                                                |
 |:---|:----------------------|:-------------|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -321,118 +311,100 @@ The Data Provenance Standard Metadata
 | 8  | **format**            | MediaType    | 0..\* | Describes the nature of the data within the dataset, such as numerical, textual, or multimedia, helping users understand what kind of information is contained within the file or dataset. |
 | 9  | **sub-provenance**    | Provenance   | 1     | Add key/link?                                                                                                                                                                              |
 
--------
+Table: Type `Provenance` (Record)**
 
-**Type: Generation (Record)**
 
 | ID | Name         | Type      | \# | Description                                         |
 |:---|:-------------|:----------|:---|:----------------------------------------------------|
 | 1  | **oldest**   | Timestamp | 1  | Oldest component of data contained in the dataset   |
 | 2  | **youngest** | Timestamp | 1  | Youngest component of data contained in the dataset |
 
--------
+Table: Type `Generation` (Record)
 
 ## 5.4 Use
-
-**Type: Use (Record)**
 
 | ID | Name                  | Type                    | \#    | Description                                                                                                                                                                                      |
 |:---|:----------------------|:------------------------|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1  | **classification**    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset, such as personally identifiable information, which dictates how the dataset must be secured and who can access it.                             |
 | 2  | **consent**           | URL                     | 1..\* | Specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.                                                              |
-| 3  | **privacy-enhancing** | Privacy-Tool            | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI), highlighting the dataset's privacy considerations.          |
-| 4  | **processing**        | Processing-Geography    | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                                     |
-| 5  | **storage**           | Storage-Geography       | 0..1  | Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereignty laws.                                                    |
+| 3  | **privacy-enhancing** | PrivacyTool             | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI), highlighting the dataset's privacy considerations.          |
+| 4  | **processing**        | ProcessingGeography     | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                                     |
+| 5  | **storage**           | StorageGeography        | 0..1  | Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereignty laws.                                                    |
 | 6  | **license**           | ArrayOf(License) unique | 1     | Details the location or point of contact for identifying the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights. |
-| 7  | **intended-purpose**  | Intended-Use            | 1     | Describes the purpose for which the dataset was created, guiding users on its intended use and potential applications against identified use cases.                                              |
+| 7  | **intended-purpose**  | IntendedUse             | 1     | Describes the purpose for which the dataset was created, guiding users on its intended use and potential applications against identified use cases.                                              |
 | 8  | **copyright**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright.                                                                 |
 | 9  | **patent**            | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.                                                                             |
 | 10 | **trademark**         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark.                                                                |
 
--------
+Table: Type `Use` (Record)
 
-**Type: IntendedAndAcceptableUsages (Record)**
+| ID | Name       | Type            | \#    | Description |
+|:---|:-----------|:----------------|:------|:------------|
+| 1  | **non-ai** | NonAIUse unique | 1..\* | Non-AI      |
+| 2  | **ai**     | AIUse unique    | 1..\* | AI          |
 
-| ID | Name       | Type              | \#    | Description |
-|:---|:-----------|:------------------|:------|:------------|
-| 1  | **non_ai** | Non-AI-Use unique | 1..\* | Non-AI      |
-| 2  | **ai**     | AI-Use unique     | 1..\* | AI          |
-
--------
-
-**Type: ProcessingGeography (Record)**
+Table: Type `IntendedAndAcceptableUsages` (Record)
 
 | ID | Name               | Type      | \#    | Description                                                    |
 |:---|:-------------------|:----------|:------|:---------------------------------------------------------------|
 | 1  | **same-as-origin** | Boolean   | 1     | Data processing geography is the same as data origin geography |
 | 2  | **countries**      | Geography | 0..\* |                                                                |
 
--------
-
-**Type: StorageGeography (Record)**
+Table: Type `ProcessingGeography` (Record)
 
 | ID | Name                   | Type      | \#    | Description                                                     |
 |:---|:-----------------------|:----------|:------|:----------------------------------------------------------------|
 | 1  | **same-as-processing** | Boolean   | 1     | Data storage geography is the same as data processing geography |
 | 2  | **countries**          | Geography | 0..\* |                                                                 |
 
--------
-
-**Type: Geography (Record)**
+Table: Type `StorageGeography` (Record)
 
 | ID | Name        | Type             | \#   | Description |
 |:---|:------------|:-----------------|:-----|:------------|
-| 1  | **country** | geo:Country-Name | 1    |             |
-| 2  | **state**   | geo:State-Name   | 0..1 |             |
+| 1  | **country** | geo:CountryName | 1    |             |
+| 2  | **state**   | geo:StateName   | 0..1 |             |
 
--------
+Table: Type `Geography` (Record)
 
-**Type: UID (Choice(anyOf))**
 
 | ID | Name | Type         | \# | Description |
 |:---|:-----|:-------------|:---|:------------|
 | 1  | **** | Binary /uuid | 1  | **uuid** -  |
 
--------
-
-**Type: DataTool (Record)**
+Table: Type: `UID` (Choice(anyOf))
 
 | ID | Name           | Type                  | \# | Description           |
 |:---|:---------------|:----------------------|:---|:----------------------|
-| 1  | **tool-id**    | Tool-ID               | 1  | tool name and version |
-| 2  | **technology** | Privacy-Technology    | 1  |                       |
+| 1  | **tool-id**    | ToolID                | 1  | tool name and version |
+| 2  | **technology** | PrivacyTechnology    | 1  |                       |
 | 3  | **params**     | MapOf(String, String) | 1  | key-value pair        |
 
--------
+Table: Type `DataTool` (Record)
 
-| Type Name   | Type Definition | Description |
-|:------------|:----------------|:------------|
-| **Tool-ID** | String          |             |
+| Type Name  | Type Definition | Description |
+|:-----------|:----------------|:------------|
+| **ToolID** | String          |             |
 
--------
+Table: Type `ToolID` (String)
 
-**Type: Confidentiality (Record)**
+| ID | Name               | Type                          | \#    | Description |
+|:---|:-------------------|:------------------------------|:------|:------------|
+| 1  | **classification** | ConfidentialityClassification | 1     |             |
+| 2  | **tool-id**        | ToolID                        | 0..\* |             |
 
-| ID | Name               | Type                           | \#    | Description |
-|:---|:-------------------|:-------------------------------|:------|:------------|
-| 1  | **classification** | Confidentiality-Classification | 1     |             |
-| 2  | **tool-id**        | Tool-ID                        | 0..\* |             |
-
--------
+Table: Type `Confidentiality` (Record)
 
 | Type Name     | Type Definition | Description                  |
 |:--------------|:----------------|:-----------------------------|
 | **Timestamp** | Integer /d3     | Milliseconds since the epoch |
 
--------
+Table: Type `Timestamp` (Integer)
 
 | Type Name | Type Definition | Description                          |
 |:----------|:----------------|:-------------------------------------|
 | **URL**   | String /uri     | URI designated as a resource locator |
 
--------
-
-**Type: Method (Enumerated)**
+Table: Type `URL` (String)
 
 | ID | Item                        | Description |
 |:---|:----------------------------|:------------|
@@ -449,9 +421,7 @@ The Data Provenance Standard Metadata
 | 10 | **Transfer learning**       |             |
 | 11 | **Simulations**             |             |
 
--------
-
-**Type: ModalityFormat (Enumerated)**
+Table: Type `Method` (Enumerated)
 
 | ID | Item                         | Description |
 |:---|:-----------------------------|:------------|
@@ -469,9 +439,7 @@ The Data Provenance Standard Metadata
 | 11 | **text/csv**                 |             |
 | 12 | **text/plain**               |             |
 
--------
-
-**Type: ConfidentialityClassification (Enumerated)**
+Table: Type `ModalityFormat` (Enumerated)
 
 | ID | Item                                      | Description |
 |:---|:------------------------------------------|:------------|
@@ -482,9 +450,8 @@ The Data Provenance Standard Metadata
 | 4  | **Personal Health Information (PHI)**     |             |
 | 5  | **Sensitive Personal Information (SPI)**  |             |
 | 6  | **Sensitive Customer Information (SCI)**  |             |
--------
 
-**Type: DataTechnology (Enumerated)**
+Table: Type `ConfidentialityClassification` (Enumerated)
 
 | ID | Item                                     | Description |
 |:---|:-----------------------------------------|:------------|
@@ -503,9 +470,7 @@ The Data Provenance Standard Metadata
 | 13 | **T-closeness**                          |             |
 | 14 | **Tokenization**                         |             |
 
--------
-
-**Type: License (Enumerated)**
+Table: Type `DataTechnology` (Enumerated)
 
 | ID | Item                              | Description |
 |:---|:----------------------------------|:------------|
@@ -513,9 +478,7 @@ The Data Provenance Standard Metadata
 | 2  | **Public license**                |             |
 | 3  | **Commercial/Negotiated License** |             |
 
--------
-
-**Type: NonAIUse (Enumerated)**
+Table: Type `License` (Enumerated)
 
 | ID | Item                  | Description |
 |:---|:----------------------|:------------|
@@ -524,9 +487,8 @@ The Data Provenance Standard Metadata
 | 2  | **Production**        |             |
 | 3  | **Quality assurance** |             |
 | 4  | **Research**          |             |
--------
 
-**Type: AIUse (Enumerated)**
+Table: Type `NonAIUse` (Enumerated)
 
 | ID | Item                          | Description |
 |:---|:------------------------------|:------------|
@@ -536,7 +498,8 @@ The Data Provenance Standard Metadata
 | 3  | **Evaluation**                |             |
 | 4  | **Synthetic Data Generation** |             |
 | 5  | **Research**                  |             |
--------
+
+Table: Type `AIUse` (Enumerated)
 
 # 6 Provenance Information Model Encoding
 
@@ -586,7 +549,7 @@ DataProvenance:
 - $schema: String.Constant
 - set: Mapping
 - source: Mapping
-- provenance: mapping
+- provenance: Mapping
 - use: Mapping
 ```
 
@@ -713,11 +676,47 @@ Simile ...
 
 Simile ...
 
+```yaml
+DataProvenance:
+# ...
+- source:
+    about: Mapping
+    id: Mapping
+    issuer: Mapping
+    location: String
+    name: String
+    data-version: String
+# ...
+```
+
+Simile ...
+
 ### 7.1.4 Member `provenance`
 
 Simile ...
 
+```yaml
+DataProvenance:
+# ...
+- provenance:
+    origin-geography: Sequence
+    date: String.Date
+    generation-method: Sequence
+# ...
+```
+
+Simile ...
+
 ### 7.1.5 Member `use`
+
+Simile ...
+
+```yaml
+DataProvenance:
+# ...
+- use:
+    intended-purpose: Sequence
+```
 
 Simile ...
 
