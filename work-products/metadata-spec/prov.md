@@ -311,7 +311,7 @@ Table: Type `Address` (ArrayOf(String))
 | 8  | **format**            | MediaType    | 0..\* | Describes the nature of the data within the dataset, such as numerical, textual, or multimedia, helping users understand what kind of information is contained within the file or dataset. |
 | 9  | **sub-provenance**    | Provenance   | 1     | Add key/link?                                                                                                                                                                              |
 
-Table: Type `Provenance` (Record)**
+Table: Type `Provenance` (Record)
 
 
 | ID | Name         | Type      | \# | Description                                         |
