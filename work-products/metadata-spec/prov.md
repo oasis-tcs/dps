@@ -192,7 +192,8 @@ PET
 
 ## 3.1 Key Words
 
-The key words "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**NOT RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in BCP 14 \[RFC2119\] \[RFC8174\] when, and only when, they appear in all capitals, as shown here.
+The key words "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**NOT RECOMMENDED**", "**MAY**",
+and "**OPTIONAL**" in this document are to be interpreted as described in BCP 14 \[RFC2119\] \[RFC8174\] when, and only when, they appear in all capitals, as shown here.
 
 ## 3.2 Typographical Conventions
 
@@ -545,13 +546,13 @@ for any data provenance metadata JSON instance.
 
 The required top-level members are:
 
-```yaml
+```yaml <!--json-path($.*[:])-->
 DataProvenance:
-- $schema: String.Constant
-- set: Mapping
-- source: Mapping
-- provenance: Mapping
-- use: Mapping
+  $schema: String.Constant
+  set: Mapping
+  source: Mapping
+  provenance: Mapping
+  use: Mapping
 ```
 
 
@@ -570,15 +571,15 @@ It captures the meta-data about the provenance metadata record describing a part
 
 The following members are required for the mapping:
 
-```yaml
+```yaml <!--json-path($..set.*[:])-->
 DataProvenance:
-# ...
-- set
-  - category: String 
-  - schema-version: String.Constant
-  - publisher: Mapping  # Missing in current schema
-  - title: String  # Missing in current schema
-  - tracking: Sequence  # Missing in current schema
+  # ...
+  set:
+    category: String.Pattern 
+    schema-version: String.Constant
+    publisher: Mapping
+    content: String
+    tracking: Mapping
 # ...
 ```
 
@@ -586,11 +587,12 @@ DataProvenance:
 
 The `set.category` member defines a short canonical name, chosen by the set producer, which will inform the end user as to the category of the meta-data set.
 
-```yaml
+```yaml <!--json-path($..set..category.pattern)-->
 DataProvenance:
-# ...
-- set
-  - category: String 
+  # ...
+  set:
+    category: String.Pattern 
+    # ...
   # ...
 # ...
 ```
@@ -610,12 +612,13 @@ The `set.schema-version` member describes the Data Provenance Core version.
 
 It gives the version of the Data Provenance Core specification which the document was generated for.
 
-```yaml
+```yaml <!--json-path($..set.properties['schema-version'].const)-->
 DataProvenance:
-# ...
-- set
   # ...
-  - schema-version: String.Constant
+  set:
+    # ...
+    schema-version: String.Constant
+    # ...
   # ...
 # ...
 ```
@@ -630,28 +633,69 @@ The value of the `set.schema-version` member for this version of the specificati
 
 Simile ...
 
-```yaml
+```yaml <!--json-path($..set.properties.publisher.type)-->
 DataProvenance:
-# ...
-- set
   # ...
-  - publisher: Mapping  # Missing in current schema
+  set:
+    # ...
+    publisher: Mapping
+    # ...
   # ...
 # ...
 ```
 
 Simile ...
 
-#### 7.1.2.4 Member `set.title`
+##### 7.1.2.3.1 Member `set.publisher.name`
 
 Simile ...
 
-```yaml
+```yaml <!--json-path($..set.properties.publisher..name.type)-->
 DataProvenance:
-# ...
-- set
   # ...
-  - title: String  # Missing in current schema
+  set:
+    # ...
+    publisher:
+      name: String
+      # ...
+    # ...
+  # ...
+# ...
+```
+
+Simile ...
+
+##### 7.1.2.3.2 Member `set.publisher.namespace`
+
+Simile ...
+
+```yaml <!--json-path($..set.properties.publisher..namespace.format)-->
+DataProvenance:
+  # ...
+  set:
+  # ...
+    publisher:
+      # ...
+      namespace: String.URI
+      # ...
+    # ...
+  # ...
+# ...
+```
+
+Simile ...
+
+#### 7.1.2.4 Member `set.label`
+
+Simile ...
+
+```yaml <!--json-path($..set.properties.label.type)-->
+DataProvenance:
+  # ...
+  set:
+    # ...
+    label: String
+    # ...
   # ...
 # ...
 ```
@@ -662,12 +706,13 @@ Simile ...
 
 Simile ...
 
-```yaml
+```yaml <!--json-path($..set.properties.tracking.properties.type)-->
 DataProvenance:
-# ...
-- set
   # ...
-  - tracking: Sequence  # Missing in current schema
+  set:
+    # ...
+    tracking: Mapping
+  # ...
 # ...
 ```
 
@@ -677,16 +722,17 @@ Simile ...
 
 Simile ...
 
-```yaml
+```yaml <!--json-path($['$defs']['source-type'].properties)-->
 DataProvenance:
-# ...
-- source:
-    about: Mapping
-    id: Mapping
-    issuer: Mapping
+  # ...
+  source:  # $defs.source-type
+    about: $defs.about-type
+    id: $defs.identity-type
+    issuer: $defs.orga-type
     location: String
     name: String
-    data-version: String
+    data-version: $defs.version-type
+  # ...
 # ...
 ```
 
@@ -696,13 +742,14 @@ Simile ...
 
 Simile ...
 
-```yaml
+```yaml <!--json-path($['$defs']['provenance-type'].properties)-->
 DataProvenance:
-# ...
-- provenance:
-    origin-geography: Sequence
+  # ...
+  provenance:  # $defs.provenance-type
+    origin-geography: $defs.geographic-regions-type
     date: String.Date
     generation-method: Sequence
+  # ...
 # ...
 ```
 
@@ -712,11 +759,13 @@ Simile ...
 
 Simile ...
 
-```yaml
+```yaml <!--json-path($['$defs']['use-type'].properties)-->
 DataProvenance:
-# ...
-- use:
+  # ...
+  use:  # $defs.use-type
     intended-purpose: Sequence
+  # ...
+# ...
 ```
 
 Simile ...

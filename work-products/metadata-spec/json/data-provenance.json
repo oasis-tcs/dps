@@ -26,7 +26,7 @@
         "category",
         "schema-version",
         "publisher",
-        "title",
+        "label",
         "tracking"
       ],
       "properties": {
@@ -58,8 +58,50 @@
           "description": "Gives the version of the Data Provenance Core specification which the document was generated for.",
           "const": "1.0"
         },
-        "set-title": {
-          "title": "Title of this meta-data set",
+        "publisher": {
+          "title": "Publisher",
+          "description": "Provides information about the publisher of the metadata set.",
+          "type": "object",
+          "required": [
+            "name",
+            "namespace"
+          ],
+          "properties": {
+            "contact-details": {
+              "title": "Contact details",
+              "description": "Information on how to contact the publisher, possibly including details such as web sites, email addresses, phone numbers, and postal mail addresses.",
+              "type": "string",
+              "minLength": 1,
+              "examples": [
+                "Example Company can be reached at contact_us@example.com, or via our website at https://www.example.com/contact."
+              ]
+            },
+            "name": {
+              "title": "Name of publisher",
+              "description": "Contains the name of the issuing party.",
+              "type": "string",
+              "minLength": 1,
+              "examples": [
+                "Cisco",
+                "Microsoft",
+                "IBM"
+              ]
+            },
+            "namespace": {
+              "title": "Namespace of publisher",
+              "description": "Contains a URL which is under control of the issuing party and can be used as a globally unique identifier for that issuing party.",
+              "type": "string",
+              "format": "uri",
+              "examples": [
+                "https://cisco.com",
+                "https://www.example.com"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "label": {
+          "title": "Label (per publisher unique title) of this metadata set",
           "description": "This SHOULD be a canonical name for the set, and sufficiently unique to distinguish it from similar sets.",
           "type": "string",
           "minLength": 1,
