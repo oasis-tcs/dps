@@ -397,7 +397,7 @@
       }
     },
     "geographic-regions-type": {
-      "$comment": "Refactored from four processing/storage (dis-)allowed occurences; enforecd at least one item if present and still has countrsy as string (WIP).",
+      "$comment": "Refactored from four processing/storage (dis-)allowed occurences; enforced at least one item if present and still has country as string (WIP).",
       "description": "Defines the geographical boundaries within which some action given by the key is specified by the semantics of the key as name.",
       "type": "array",
       "items": {
