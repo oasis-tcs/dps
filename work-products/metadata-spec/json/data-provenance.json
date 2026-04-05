@@ -674,7 +674,7 @@
       }
     },
     "orga-type": {
-      "$comment": "We may want to reuse existing types for the orga or at least foir address data",
+      "$comment": "We may want to reuse existing types for the orga or at least for address data",
       "description": "An organization responsible with point of contact for inquiries.",
       "minItems": 1,
       "type": "array",
@@ -731,11 +731,13 @@
           "properties": {
             "start": {
               "description": "Start date/time",
-              "type": "string"
+              "type": "string",
+              "format": "date-time"
             },
             "end": {
               "description": "End date/time",
-              "type": "string"
+              "type": "string",
+              "format": "date-time"
             }
           }
         },

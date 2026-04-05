@@ -257,38 +257,38 @@ metadata element input fields. Each field is described in more detail below.
 ## 5.1 Primary Metadata Elements
 
 | ID | Name     | Type           | \# | Description                                                                                                                                      |
-|:---|:---------|:---------------|:---|:-------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1  | version  | URL            | 1  | Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time. |
-| 2  | metadata | DataProvenance | 1  | The metadata about a dataset                                                                                                                     |
+|---:|:---------|:---------------|:---|:-------------------------------------------------------------------------------------------------------------------------------------------------|
+|  1 | version  | URL            | 1  | Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time. |
+|  2 | metadata | DataProvenance | 1  | The metadata about a dataset                                                                                                                     |
 
 Table: Type `DPS` (Record)
 
 The Data Provenance Standard Metadata
 
 | ID | Name       | Type       | \# | Description                                       |
-|:---|:-----------|:-----------|:---|:--------------------------------------------------|
-| 1  | source     | Source     | 1  | Describes a dataset and the source of the dataset |
-| 2  | provenance | Provenance | 1  | Provenance of the dataset                         |
-| 3  | use        | Use        | 1  | Legal use and restrictions                        |
+|---:|:-----------|:-----------|:---|:--------------------------------------------------|
+|  1 | source     | Source     | 1  | Describes a dataset and the source of the dataset |
+|  2 | provenance | Provenance | 1  | Provenance of the dataset                         |
+|  3 | use        | Use        | 1  | Legal use and restrictions                        |
 
 Table: Type `DataProvenance` (Record)
 
 ## 5.2 Source
 
 | ID | Name        | Type         | \#    | Description                                                                                                                                                                                                                                                    |
-|:---|:------------|:-------------|:------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1  | title       | String       | 1     | The official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose.                                                                                                                                      |
-| 2  | id          | UID          | 1     | A distinct identifier (such as a UUID) assigned to the dataset's metadata to uniquely distinguish it from others, ensuring no confusion or overlap.                                                                                                            |
-| 3  | location    | URL          | 0..1  | The web address where the dataset's metadata is published and can be accessed, providing a direct link to detailed information about the dataset.                                                                                                              |
-| 4  | issuer      | Organization | 1..\* | The legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries.                                                                                                                                          |
-| 5  | description | String       | 1     | Contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses. |
+|---:|:------------|:-------------|:------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  1 | title       | String       | 1     | The official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose.                                                                                                                                      |
+|  2 | id          | UID          | 1     | A distinct identifier (such as a UUID) assigned to the dataset's metadata to uniquely distinguish it from others, ensuring no confusion or overlap.                                                                                                            |
+|  3 | location    | URL          | 0..1  | The web address where the dataset's metadata is published and can be accessed, providing a direct link to detailed information about the dataset.                                                                                                              |
+|  4 | issuer      | Organization | 1..\* | The legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries.                                                                                                                                          |
+|  5 | description | String       | 1     | Contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses. |
 
 Table: Type `Source` (Record)
 
 | ID | Name    | Type    | \# | Description       |
-|:---|:--------|:--------|:---|:------------------|
-| 1  | name    | String  | 1  | organization name |
-| 2  | address | Address | 1  | address           |
+|---:|:--------|:--------|:---|:------------------|
+|  1 | name    | String  | 1  | organization name |
+|  2 | address | Address | 1  | address           |
 
 Table: Type `Organization` (Record)
 
@@ -301,84 +301,84 @@ Table: Type `Address` (ArrayOf(String))
 ## 5.3 Provenance
 
 | ID | Name              | Type         | \#    | Description                                                                                                                                                                                |
-|:---|:------------------|:-------------|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1  | source            | URL          | 1..\* | Identifies where the metadata for any source datasets that contribute to the current dataset can be found, establishing lineage and dependencies. This field establishes lineage.          |
-| 2  | origin            | Organization | 0..1  | If the data originates from a different organization than the one who isued the dataset, this field identifies that original source's legal name.                                          |
-| 3  | origin-geography  | Geography    | 1..\* | The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.                          |
-| 4  | date              | Timestamp    | 1     | The date when the dataset was compiled or created, providing a temporal context for the data.                                                                                              |
-| 5  | previous-date     | Timestamp    | 1     | The release date of the last version of the dataset, if it has been updated or revised, to track changes and updates over time.                                                            |
-| 6  | generation-period | Generation   | 1     | The span of time during which the data within the dataset was collected or generated, offering insight into the dataset's timeliness and relevance.                                        |
-| 7  | generation-method | Method       | 1..\* | The methodology or procedures used to collect, generate, or compile the data, giving insight into its reliability and validity.                                                            |
-| 8  | format            | MediaType    | 0..\* | Describes the nature of the data within the dataset, such as numerical, textual, or multimedia, helping users understand what kind of information is contained within the file or dataset. |
-| 9  | sub-provenance    | Provenance   | 1     | Add key/link?                                                                                                                                                                              |
+|---:|:------------------|:-------------|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  1 | source            | URL          | 1..\* | Identifies where the metadata for any source datasets that contribute to the current dataset can be found, establishing lineage and dependencies. This field establishes lineage.          |
+|  2 | origin            | Organization | 0..1  | If the data originates from a different organization than the one who isued the dataset, this field identifies that original source's legal name.                                          |
+|  3 | origin-geography  | Geography    | 1..\* | The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.                          |
+|  4 | date              | Timestamp    | 1     | The date when the dataset was compiled or created, providing a temporal context for the data.                                                                                              |
+|  5 | previous-date     | Timestamp    | 1     | The release date of the last version of the dataset, if it has been updated or revised, to track changes and updates over time.                                                            |
+|  6 | generation-period | Generation   | 1     | The span of time during which the data within the dataset was collected or generated, offering insight into the dataset's timeliness and relevance.                                        |
+|  7 | generation-method | Method       | 1..\* | The methodology or procedures used to collect, generate, or compile the data, giving insight into its reliability and validity.                                                            |
+|  8 | format            | MediaType    | 0..\* | Describes the nature of the data within the dataset, such as numerical, textual, or multimedia, helping users understand what kind of information is contained within the file or dataset. |
+|  9 | sub-provenance    | Provenance   | 1     | Add key/link?                                                                                                                                                                              |
 
 Table: Type `Provenance` (Record)
 
 
 | ID | Name     | Type      | \# | Description                                         |
-|:---|:---------|:----------|:---|:----------------------------------------------------|
-| 1  | oldest   | Timestamp | 1  | Oldest component of data contained in the dataset   |
-| 2  | youngest | Timestamp | 1  | Youngest component of data contained in the dataset |
+|---:|:---------|:----------|:---|:----------------------------------------------------|
+|  1 | oldest   | Timestamp | 1  | Oldest component of data contained in the dataset   |
+|  2 | youngest | Timestamp | 1  | Youngest component of data contained in the dataset |
 
 Table: Type `Generation` (Record)
 
 ## 5.4 Use
 
 | ID | Name              | Type                    | \#    | Description                                                                                                                                                                                      |
-|:---|:------------------|:------------------------|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1  | classification    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset, such as personally identifiable information, which dictates how the dataset must be secured and who can access it.                             |
-| 2  | consent           | URL                     | 1..\* | Specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.                                                              |
-| 3  | privacy-enhancing | PrivacyTool             | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI), highlighting the dataset's privacy considerations.          |
-| 4  | processing        | ProcessingGeography     | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                                     |
-| 5  | storage           | StorageGeography        | 0..1  | Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereignty laws.                                                    |
-| 6  | license           | ArrayOf(License) unique | 1     | Details the location or point of contact for identifying the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights. |
-| 7  | intended-purpose  | IntendedUse             | 1     | Describes the purpose for which the dataset was created, guiding users on its intended use and potential applications against identified use cases.                                              |
-| 8  | copyright         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright.                                                                 |
-| 9  | patent            | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.                                                                             |
+|---:|:------------------|:------------------------|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  1 | classification    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset, such as personally identifiable information, which dictates how the dataset must be secured and who can access it.                             |
+|  2 | consent           | URL                     | 1..\* | Specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.                                                              |
+|  3 | privacy-enhancing | PrivacyTool             | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI), highlighting the dataset's privacy considerations.          |
+|  4 | processing        | ProcessingGeography     | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                                     |
+|  5 | storage           | StorageGeography        | 0..1  | Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereignty laws.                                                    |
+|  6 | license           | ArrayOf(License) unique | 1     | Details the location or point of contact for identifying the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights. |
+|  7 | intended-purpose  | IntendedUse             | 1     | Describes the purpose for which the dataset was created, guiding users on its intended use and potential applications against identified use cases.                                              |
+|  8 | copyright         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright.                                                                 |
+|  9 | patent            | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.                                                                             |
 | 10 | trademark         | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark.                                                                |
 
 Table: Type `Use` (Record)
 
 | ID | Name   | Type            | \#    | Description |
-|:---|:-------|:----------------|:------|:------------|
-| 1  | non-ai | NonAIUse unique | 1..\* | Non-AI      |
-| 2  | ai     | AIUse unique    | 1..\* | AI          |
+|---:|:-------|:----------------|:------|:------------|
+|  1 | non-ai | NonAIUse unique | 1..\* | Non-AI      |
+|  2 | ai     | AIUse unique    | 1..\* | AI          |
 
 Table: Type `IntendedAndAcceptableUsages` (Record)
 
 | ID | Name           | Type      | \#    | Description                                                    |
-|:---|:---------------|:----------|:------|:---------------------------------------------------------------|
-| 1  | same-as-origin | Boolean   | 1     | Data processing geography is the same as data origin geography |
-| 2  | countries      | Geography | 0..\* |                                                                |
+|---:|:---------------|:----------|:------|:---------------------------------------------------------------|
+|  1 | same-as-origin | Boolean   | 1     | Data processing geography is the same as data origin geography |
+|  2 | countries      | Geography | 0..\* |                                                                |
 
 Table: Type `ProcessingGeography` (Record)
 
 | ID | Name               | Type      | \#    | Description                                                     |
-|:---|:-------------------|:----------|:------|:----------------------------------------------------------------|
-| 1  | same-as-processing | Boolean   | 1     | Data storage geography is the same as data processing geography |
-| 2  | countries          | Geography | 0..\* |                                                                 |
+|---:|:-------------------|:----------|:------|:----------------------------------------------------------------|
+|  1 | same-as-processing | Boolean   | 1     | Data storage geography is the same as data processing geography |
+|  2 | countries          | Geography | 0..\* |                                                                 |
 
 Table: Type `StorageGeography` (Record)
 
 | ID | Name    | Type            | \#   | Description |
-|:---|:--------|:----------------|:-----|:------------|
-| 1  | country | geo:CountryName | 1    |             |
-| 2  | state   | geo:StateName   | 0..1 |             |
+|---:|:--------|:----------------|:-----|:------------|
+|  1 | country | geo:CountryName | 1    |             |
+|  2 | state   | geo:StateName   | 0..1 |             |
 
 Table: Type `Geography` (Record)
 
 
 | ID | Name | Type         | \# | Description |
-|:---|:-----|:-------------|:---|:------------|
-| 1  | uid  | Binary /uuid | 1  | uuid -      |
+|---:|:-----|:-------------|:---|:------------|
+|  1 | uid  | Binary /uuid | 1  | uuid -      |
 
 Table: Type `UID` (Choice(anyOf))
 
 | ID | Name       | Type                  | \# | Description           |
-|:---|:-----------|:----------------------|:---|:----------------------|
-| 1  | tool-id    | ToolID                | 1  | tool name and version |
-| 2  | technology | PrivacyTechnology     | 1  |                       |
-| 3  | params     | MapOf(String, String) | 1  | key-value pair        |
+|---:|:-----------|:----------------------|:---|:----------------------|
+|  1 | tool-id    | ToolID                | 1  | tool name and version |
+|  2 | technology | PrivacyTechnology     | 1  |                       |
+|  3 | params     | MapOf(String, String) | 1  | key-value pair        |
 
 Table: Type `DataTool` (Record)
 
@@ -407,99 +407,99 @@ Table: Type `Timestamp` (Integer)
 
 Table: Type `URL` (String)
 
-| ID | Item                    | Description |
-|:---|:------------------------|:------------|
-| 0  | Other                   |             |
-| 1  | Web scraping/Crawling   |             |
-| 2  | Feeds                   |             |
-| 3  | Syndication             |             |
-| 4  | Data mining             |             |
-| 5  | Machine generated/MLOps |             |
-| 6  | Social media            |             |
-| 7  | User generated content  |             |
-| 8  | Primary user source     |             |
-| 9  | Data augmentation       |             |
-| 10 | Transfer learning       |             |
-| 11 | Simulations             |             |
+| ID | Item                     | Description |
+|---:|:-------------------------|:------------|
+|  0 | other                    |             |
+|  1 | web-scraping-crawling    |             |
+|  2 | feeds                    |             |
+|  3 | syndication              |             |
+|  4 | data-mining              |             |
+|  5 | machine-generated-ml-ops |             |
+|  6 | social-media             |             |
+|  7 | user-generated-content   |             |
+|  8 | primary-user-source      |             |
+|  9 | data-augmentation        |             |
+| 10 | transfer-learning        |             |
+| 11 | simulations              |             |
 
 Table: Type `Method` (Enumerated)
 
 | ID | Item                     | Description |
-|:---|:-------------------------|:------------|
-| 0  | Other                    |             |
-| 1  | application/json         |             |
-| 2  | application/jsonld       |             |
-| 3  | application/zip          |             |
-| 4  | application/msword       |             |
-| 5  | application/vnd.ms-excel |             |
-| 6  | image/bmp                |             |
-| 7  | image/jpeg               |             |
-| 8  | image/x-png              |             |
-| 9  | image/png                |             |
+|---:|:-------------------------|:------------|
+|  0 | other                    |             |
+|  1 | application/json         |             |
+|  2 | application/jsonld       |             |
+|  3 | application/zip          |             |
+|  4 | application/msword       |             |
+|  5 | application/vnd.ms-excel |             |
+|  6 | image/bmp                |             |
+|  7 | image/jpeg               |             |
+|  8 | image/x-png              |             |
+|  9 | image/png                |             |
 | 10 | image/gif                |             |
 | 11 | text/csv                 |             |
 | 12 | text/plain               |             |
 
 Table: Type `ModalityFormat` (Enumerated)
 
-| ID | Item                                  | Description |
-|:---|:--------------------------------------|:------------|
-| 0  | Other                                 |             |
-| 1  | Personal information (PI)/Demographic |             |
-| 2  | Payment Card Industry (PCI)           |             |
-| 3  | Personal Financial Information (PFI)  |             |
-| 4  | Personal Health Information (PHI)     |             |
-| 5  | Sensitive Personal Information (SPI)  |             |
-| 6  | Sensitive Customer Information (SCI)  |             |
+| ID | Item  | Description                           |
+|---:|:------|:--------------------------------------|
+|  0 | other |                                       |
+|  1 | pi    | Personal information (PI)/Demographic |
+|  2 | pci   | Payment Card Industry (PCI)           |
+|  3 | pfi   | Personal Financial Information (PFI)  |
+|  4 | phi   | Personal Health Information (PHI)     |
+|  5 | spi   | Sensitive Personal Information (SPI)  |
+|  6 | sci   | Sensitive Customer Information (SCI)  |
 
 Table: Type `ConfidentialityClassification` (Enumerated)
 
-| ID | Item                                 | Description |
-|:---|:-------------------------------------|:------------|
-| 1  | Data Anonymization                   |             |
-| 2  | Data Encryption                      |             |
-| 3  | Data Masking                         |             |
-| 4  | Data Minimization                    |             |
-| 5  | Data Redaction                       |             |
-| 6  | Differential Privacy                 |             |
-| 7  | Federated Learning                   |             |
-| 8  | Homomorphic Encryption               |             |
-| 9  | K-anonymity                          |             |
-| 10 | L-diversity                          |             |
-| 11 | Pseudonymization                     |             |
-| 12 | Secure Multi-party Computation (SMC) |             |
-| 13 | T-closeness                          |             |
-| 14 | Tokenization                         |             |
+| ID | Item                           | Description |
+|---:|:-------------------------------|:------------|
+|  1 | data-anonymization             |             |
+|  2 | data-encryption                |             |
+|  3 | data-masking                   |             |
+|  4 | data-minimization              |             |
+|  5 | data-redaction                 |             |
+|  6 | differential-privacy           |             |
+|  7 | federated-learning             |             |
+|  8 | homomorphic-encryption         |             |
+|  9 | k-anonymity                    |             |
+| 10 | l-diversity                    |             |
+| 11 | pseudonymization               |             |
+| 12 | secure-multi-party-computation | SMC         |
+| 13 | t-closeness                    |             |
+| 14 | tokenization                   |             |
 
 Table: Type `DataTechnology` (Enumerated)
 
-| ID | Item                          | Description                                                                       |
-|:---|:------------------------------|:----------------------------------------------------------------------------------|
-| 1  | Non-commercial                | Name and link, if private, provide details on how to obtain or contact for terms. |
-| 2  | Public license                | License Name and add link.                                                        |
-| 3  | Commercial/Negotiated License | Provide details on how to obtain or contact.                                      |
-| 4  | None                          | No License.                                                                       |
+| ID | Item                           | Description                                                                       |
+|---:|:-------------------------------|:----------------------------------------------------------------------------------|
+|  1 | non-commercial                 | Name and link, if private, provide details on how to obtain or contact for terms. |
+|  2 | public-license                 | License Name and add link.                                                        |
+|  3 | commercial/-negotiated-license | Provide details on how to obtain or contact.                                      |
+|  4 | none                           | No License.                                                                       |
 
 Table: Type `License` (Enumerated)
 
 | ID | Item              | Description |
-|:---|:------------------|:------------|
-| 0  | Other             |             |
-| 1  | Staging/testing   |             |
-| 2  | Production        |             |
-| 3  | Quality assurance |             |
-| 4  | Research          |             |
+|---:|:------------------|:------------|
+|  0 | other             |             |
+|  1 | staging-testing   |             |
+|  2 | production        |             |
+|  3 | quality-assurance |             |
+|  4 | research          |             |
 
 Table: Type `NonAIUse` (Enumerated)
 
 | ID | Item                      | Description |
-|:---|:--------------------------|:------------|
-| 0  | Other                     |             |
-| 1  | Pre-Training              |             |
-| 2  | Alignment                 |             |
-| 3  | Evaluation                |             |
-| 4  | Synthetic Data Generation |             |
-| 5  | Research                  |             |
+|---:|:--------------------------|:------------|
+|  0 | other                     |             |
+|  1 | pre-training              |             |
+|  2 | alignment                 |             |
+|  3 | evaluation                |             |
+|  4 | synthetic-data-generation |             |
+|  5 | research                  |             |
 
 Table: Type `AIUse` (Enumerated)
 
