@@ -705,7 +705,8 @@
       "properties": {
         "source": {
           "description": "Identifies where the metadata for any source datasets that contribute to the current dataset can be found, establishing lineage and dependencies. This field establishes lineage.",
-          "type": "string"
+          "type": "string",
+          "format": "uri"
         },
         "origin": {
           "description": "If the data originates from a different organization than the one who issued the dataset, this field identifies the original source's legal name.",
