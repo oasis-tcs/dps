@@ -1,0 +1,184 @@
+{
+    "$schema": "https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json",
+    "set": {
+        "acknowledgments": [
+            {
+                "names": ["A. Big Data"],
+                "organization": "Cisco",
+                "summary": "First analysis of the merged data-set",
+                "urls": ["http://example.com/resource?foo=bar#fragment"]
+            }
+        ],
+        "category": "dp_base",
+        "language": "de",
+        "schema-version": "1.0",
+        "publisher": {
+            "contact-details": "Example Company can be reached at contact_us@example.com, or via our website at https://www.example.com/contact.",
+            "name": "Cisco",
+            "namespace": "https://cisco.com"
+        },
+        "label": "Learning Set for Regression Modelling for Stats 101",
+        "source-language": "de",
+        "tracking": {
+            "aliases": ["0bacba95-ceb9-4fae-bf07-d5683a9481c1"],
+            "current-release-date": "2000-01-01T01:01:01Z",
+            "generator": {
+                "date": "2000-01-01T01:01:01Z",
+                "engine": {
+                    "name": "Cisco Data Protector",
+                    "version": "1"
+                }
+            },
+            "id": "7aedeb0a-22dd-428a-ab76-c950b43cbbc6",
+            "initial-release-date": "2000-01-01T01:01:01Z",
+            "revision-history": [
+                {
+                    "date": "2000-01-01T01:01:01Z",
+                    "legacy-version": "legacy-version",
+                    "number": "1",
+                    "summary": "Initial version."
+                }
+            ],
+            "status": "draft",
+            "version": "1"
+        }
+    },
+    "source": {
+        "about": {
+            "content": "We found these numbers on the parking lot.",
+            "purpose": "Use only for learning regression modeling. Not for production use.",
+            "scope": "We did not verify anything. Use at your own risk."
+        },
+        "id": {
+            "hashes": [
+                {
+                    "tree-hashes": [
+                        {
+                            "algorithm": "sha256",
+                            "value": "af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262"
+                        }
+                    ],
+                    "path": "/data/set/42"
+                }
+            ],
+            "uris": ["http://example.com/resource?foo=bar#fragment"],
+            "uuids": ["uuids0"],
+            "custom-ids": [
+                {
+                    "method": "part-number",
+                    "tool": "blowdown",
+                    "parameter-list": ["--algo"],
+                    "value": "42"
+                }
+            ]
+        },
+        "issuer": [
+            {
+                "address": ["address0"],
+                "legal-name": "legal-name",
+                "url": "http://example.com/resource?foo=bar#fragment"
+            }
+        ],
+        "location": "location",
+        "name": "name",
+        "data-version": "1"
+    },
+    "provenance": {
+        "source": "http://example.com/resource?foo=bar#fragment",
+        "origin": [
+            {
+                "address": ["address0"],
+                "legal-name": "legal-name",
+                "url": "http://example.com/resource?foo=bar#fragment"
+            }
+        ],
+        "origin-geography": [
+            {
+                "country": "country",
+                "state": "state"
+            }
+        ],
+        "date": "2000-01-01",
+        "previous-date": "2000-01-01",
+        "generation-period": {
+            "start": "2000-01-01T01:01:01Z",
+            "end": "2000-01-01T01:01:01Z"
+        },
+        "generation-method": [
+            {
+                "code": "code",
+                "system": "system",
+                "long-description": "long-description"
+            }
+        ],
+        "format": ["format0"],
+        "sub-provenance": {}
+    },
+    "use": {
+        "classification": [
+            {
+                "regulation": {
+                    "code": "code",
+                    "system": "system",
+                    "long-description": "long-description"
+                },
+                "evaluated": false,
+                "tool": "tool"
+            }
+        ],
+        "consents": ["consents0"],
+        "data-risk-reducing": [
+            {
+                "tool-category": {
+                    "code": "code",
+                    "system": "system",
+                    "long-description": "long-description"
+                },
+                "tool-used": "tool-used",
+                "technology": "data-anonymization",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "value": "value"
+                    }
+                ],
+                "results": ["results0"]
+            }
+        ],
+        "processing-included": [
+            {
+                "country": "country",
+                "state": "state"
+            }
+        ],
+        "processing-excluded": [
+            {
+                "country": "country",
+                "state": "state"
+            }
+        ],
+        "storage-allowed": [
+            {
+                "country": "country",
+                "state": "state"
+            }
+        ],
+        "storage-forbidden": [
+            {
+                "country": "country",
+                "state": "state"
+            }
+        ],
+        "license": ["license0"],
+        "intended-purpose": [
+            {
+                "code": "code",
+                "system": "system",
+                "long-description": "long-description"
+            }
+        ],
+        "copyright": ["copyright0"],
+        "patent": ["patent0"],
+        "trademark": ["trademark0"]
+    }
+}

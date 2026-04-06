@@ -1,0 +1,56 @@
+{
+    "$schema": "https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json",
+    "set": {
+        "category": "dp_base",
+        "schema-version": "1.0",
+        "publisher": {
+            "name": "Cisco",
+            "namespace": "https://cisco.com"
+        },
+        "label": "Learning Set for Regression Modelling for Stats 101",
+        "tracking": {
+            "current-release-date": "2000-01-01T01:01:01Z",
+            "id": "7aedeb0a-22dd-428a-ab76-c950b43cbbc6",
+            "initial-release-date": "2000-01-01T01:01:01Z",
+            "revision-history": [
+                {
+                    "date": "2000-01-01T01:01:01Z",
+                    "number": "1",
+                    "summary": "Initial version."
+                }
+            ],
+            "status": "draft",
+            "version": "1"
+        }
+    },
+    "source": {
+        "about": {
+            "content": "We found these numbers on the parking lot.",
+            "purpose": "Use only for learning regression modeling. Not for production use."
+        },
+        "id": {},
+        "issuer": [
+            {"legal-name": "legal-name"}
+        ],
+        "location": "location",
+        "name": "name",
+        "data-version": "1"
+    },
+    "provenance": {
+        "origin-geography": [
+            {"country": "country"}
+        ],
+        "date": "2000-01-01",
+        "generation-method": [
+            {"code": "code"}
+        ]
+    },
+    "use": {
+        "intended-purpose": [
+            {
+                "code": "code",
+                "long-description": "long-description"
+            }
+        ]
+    }
+}
