@@ -984,9 +984,9 @@
           "minItems": 1,
           "uniqueItems": true
         },
-        "privacy-enhancing": {
-          "title": "Privacy enhancing",
-          "description": "Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI), highlighting the dataset's privacy considerations.",
+        "data-risk-reducing": {
+          "title": "Data risk reducing",
+          "description": "Indicates whether techniques were used to reduce any known data risk.",
           "type": "array",
           "items": {
             "type": "object",
@@ -996,17 +996,56 @@
               },
               "tool-used": {
                 "title": "Tool used",
-                "description": "The name of the tool used for xxx.",
+                "description": "The name of the tool used for data risk reduction.",
                 "type": "string"
+              },
+              "technology": {
+                "title": "Data technology",
+                "description": "The name of the data technology used for data risk reduction.",
+                "type": "string",
+                "enum": [
+                  "data-anonymization",
+                  "data-encryption",
+                  "data-masking",
+                  "data-minimization",
+                  "data-redaction",
+                  "differential-privacy",
+                  "federated-learning",
+                  "homomorphic-encryption",
+                  "k-anonymity",
+                  "l-diversity",
+                  "other",
+                  "pseudonymization",
+                  "secure-multi-party-computation",
+                  "t-closeness",
+                  "tokenization"
+                ]
               },
               "parameters": {
                 "title": "Parameters",
                 "description": "The parameters used when invoking the tool.",
                 "type": "array",
                 "items": {
-                  "title": "parameter",
-                  "description": "A parameter used when invoking the tool.",
-                  "type": "string"
+                  "title": "Parameter value pair",
+                  "description": "A parameter and its value used when invoking the tool.",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "title": "Parameter name",
+                      "description": "A parameter name used when invoking the tool.",
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "value": {
+                      "title": "Parameter value",
+                      "description": "A parameter value as string used when invoking the tool (empty value indicated as a pair of single apostrophs).",
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
                 },
                 "minItems": 1
               },

@@ -376,11 +376,12 @@ Table: Type `UID` (Choice(anyOf))
 
 | ID | Name       | Type                  | \# | Description           |
 |---:|:-----------|:----------------------|:---|:----------------------|
-|  1 | tool-id    | ToolID                | 1  | tool name and version |
+|  1 | tool-used  | ToolID                | 1  | tool name and version |
 |  2 | technology | DataTechnology        | 1  |                       |
-|  3 | params     | MapOf(String, String) | 1  | key-value pair        |
+|  3 | parameters | MapOf(String, String) | 1  | key-value pair        |
+|  4 | results    | ArrayOf(String)       | 1  |                       |
 
-Table: Type `DataTool` (Record)
+Table: Type `DataRiskReducingTool` (Record)
 
 | Type Name | Type Definition | Description |
 |:----------|:----------------|:------------|
