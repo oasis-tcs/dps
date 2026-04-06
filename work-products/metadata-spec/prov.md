@@ -6,7 +6,7 @@
 
 ## Committee Specification Draft 01
 
-## 24 February 2026
+## 6 April 2026
 
 ### This version
 
@@ -328,7 +328,7 @@ Table: Type `Generation` (Record)
 |---:|:------------------|:------------------------|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  1 | classification    | Confidentiality         | 1     | The level of sensitivity assigned to the dataset, such as personally identifiable information, which dictates how the dataset must be secured and who can access it.                             |
 |  2 | consent           | URL                     | 1..\* | Specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.                                                              |
-|  3 | privacy-enhancing | PrivacyTool             | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI), highlighting the dataset's privacy considerations.          |
+|  3 | data-enhancing | DataTool             | 1..\* | Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI), or non-personal senstitive data highlighting the dataset's privacy and sensitivity considerations.          |
 |  4 | processing        | ProcessingGeography     | 0..1  | Defines the geographical boundaries within which the data can or cannot be processed, often for legal or regulatory reasons.                                                                     |
 |  5 | storage           | StorageGeography        | 0..1  | Specifies where the data is stored and any geographical restrictions on storage locations, crucial for compliance with data sovereignty laws.                                                    |
 |  6 | license           | ArrayOf(License) unique | 1     | Details the location or point of contact for identifying the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights. |
@@ -377,7 +377,7 @@ Table: Type `UID` (Choice(anyOf))
 | ID | Name       | Type                  | \# | Description           |
 |---:|:-----------|:----------------------|:---|:----------------------|
 |  1 | tool-id    | ToolID                | 1  | tool name and version |
-|  2 | technology | PrivacyTechnology     | 1  |                       |
+|  2 | technology | DataTechnology        | 1  |                       |
 |  3 | params     | MapOf(String, String) | 1  | key-value pair        |
 
 Table: Type `DataTool` (Record)
@@ -456,6 +456,7 @@ Table: Type `ConfidentialityClassification` (Enumerated)
 
 | ID | Item                           | Description |
 |---:|:-------------------------------|:------------|
+|  0 | other                          |             |
 |  1 | data-anonymization             |             |
 |  2 | data-encryption                |             |
 |  3 | data-masking                   |             |
