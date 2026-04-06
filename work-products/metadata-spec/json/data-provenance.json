@@ -288,10 +288,12 @@
   },
   "$defs": {
     "about-type": {
-      "$comment": "WIP, because producers may only provied opaue text for all three dimensions as per legal reasons.",
+      "$comment": "WIP, because producers may only provide opaue text for all three dimensions as per legal reasons.",
+      "title": "The About type",
       "description": "Contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses.",
       "properties": {
         "content": {
+          "title": "Content of the information",
           "description": "Provides essential contextual information that helps users understand what the data represents and how it was collected.",
           "type": "string",
           "minLength": 1,
@@ -300,6 +302,7 @@
           ]
         },
         "purpose": {
+          "title": "Purpose of the information",
           "description": "Explains the recommended uses.",
           "type": "string",
           "minLength": 1,
@@ -308,6 +311,7 @@
           ]
         },
         "scope": {
+          "title": "Scope of the information",
           "description": "Points out any limitations.",
           "type": "string",
           "minLength": 1,
@@ -387,6 +391,7 @@
       }
     },
     "address-type": {
+      "title": "Address type",
       "description": "Single physical address as lines of text.",
       "type": "array",
       "minItems": 1,
@@ -398,6 +403,7 @@
     },
     "geographic-regions-type": {
       "$comment": "Refactored from four processing/storage (dis-)allowed occurences; enforced at least one item if present and still has country as string (WIP).",
+      "title": "Geographic regions type",
       "description": "Defines the geographical boundaries within which some action given by the key is specified by the semantics of the key as name.",
       "type": "array",
       "items": {
@@ -418,8 +424,8 @@
       "uniqueItems": true
     },
     "identity-type": {
-      "title": "Identify as precisely as possible offeing various methods",
-      "description": "Provides at least one method which aids in identifying some entity.",
+      "title": "Identity type",
+      "description": "Provides at least one method which aids in identifying some entity to allow dentification as precisely as possible offering various methods.",
       "type": "object",
       "minProperties": 1,
       "properties": {
@@ -559,7 +565,7 @@
                 "type": "array",
                 "minItems": 1,
                 "items": {
-                  "title": "paraemter",
+                  "title": "parameter",
                   "description": "A parameter as part of the tool invocation.",
                   "type": "string",
                   "minLength": 1,
@@ -610,6 +616,23 @@
         "fr",
         "frc",
         "jp"
+      ]
+    },
+    "method-type": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "system": {
+          "type": "string"
+        },
+        "long-description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code"
       ]
     },
     "notes-type": {
@@ -675,6 +698,7 @@
     },
     "orga-type": {
       "$comment": "We may want to reuse existing types for the orga or at least for address data",
+      "title": "Organization type",
       "description": "An organization responsible with point of contact for inquiries.",
       "minItems": 1,
       "type": "array",
@@ -700,42 +724,51 @@
       "uniqueItems": true
     },
     "provenance-type": {
+      "title": "Provenance type",
       "description": "This describes the provenance of the dataset.",
       "type": "object",
       "properties": {
         "source": {
+          "title": "The source",
           "description": "Identifies where the metadata for any source datasets that contribute to the current dataset can be found, establishing lineage and dependencies. This field establishes lineage.",
           "type": "string",
           "format": "uri"
         },
         "origin": {
+          "title": "The origin",
           "description": "If the data originates from a different organization than the one who issued the dataset, this field identifies the original source's legal name.",
           "$ref": "#/$defs/orga-type"
         },
         "origin-geography": {
+          "title": "The origin geography",
           "description": "The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.",
           "$ref": "#/$defs/geographic-regions-type"
         },
         "date": {
+          "title": "The date",
           "description": "The date when the dataset was compiled or created, providing a temporal context for the data.",
           "type": "string",
           "format": "date"
         },
         "previous-date": {
+          "title": "The previous date",
           "description": "The release date of the last version of the dataset, if it has been updated or revised, to track changes and updates over time.",
           "type": "string",
           "format": "date"
         },
         "generation-period": {
+          "title": "The generation period",
           "description": "The span of time during which the data within the dataset was collected or generated, offering insight into the dataset's timeliness and relevance.",
           "type": "object",
           "properties": {
             "start": {
+              "title": "The start",
               "description": "Start date/time",
               "type": "string",
               "format": "date-time"
             },
             "end": {
+              "title": "The end",
               "description": "End date/time",
               "type": "string",
               "format": "date-time"
@@ -743,30 +776,18 @@
           }
         },
         "generation-method": {
+          "title": "The generation method",
           "description": "The methodology or procedures used to collect, generate, or compile the data, giving insight into its reliability and validity.",
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "code": {
-                "type": "string"
-              },
-              "system": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "code"
-            ]
+            "$ref": "#/$defs/method-type"
           },
           "minItems": 1,
           "uniqueItems": true
         },
         "format": {
           "$comment": "We should consider making this an enumeration to aid in automation",
+          "title": "The format",
           "description": "Describes the nature of the data within the dataset, such as numerical, textual, or multimedia, helping users understand what kind of information is contained within the file or dataset.",
           "type": "array",
           "minItems": 1,
@@ -776,6 +797,8 @@
           }
         },
         "sub-provenance": {
+          "title": "The sub-provenance",
+          "description": "Any next level provenance information towards the leaves ot the tree goes here.",
           "$ref": "#/$defs/provenance-type"
         }
       },
@@ -785,10 +808,32 @@
         "generation-method"
       ]
     },
+    "purpose-type": {
+      "title": "The purpose type",
+      "description": "This is a method type with the added requirement ot provide a long description too.",
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "system": {
+          "type": "string"
+        },
+        "long-description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "long-description"
+      ]
+    },
     "source-type": {
+      "title": "The source type",
       "description": "Characterizes the content and source of the dataset.",
       "properties": {
         "about": {
+          "title": "About",
           "description": "Contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses.",
           "$ref": "#/$defs/about-type",
           "examples": [
@@ -799,6 +844,7 @@
           ]
         },
         "id": {
+          "title": "Id",
           "description": "Unique identifier (such as a UUID) assigned to the dataset's metadata to uniquely distinguish it from others, ensuring no confusion or overlap.",
           "$ref": "#/$defs/identity-type",
           "examples": [
@@ -823,6 +869,7 @@
           ]
         },
         "issuer": {
+          "title": "The issuer",
           "description": "The legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries.",
           "$ref": "#/$defs/orga-type",
           "examples": [
@@ -833,14 +880,17 @@
           ]
         },
         "location": {
+          "title": "The location",
           "description": "The web address where the dataset's metadata is published and can be accessed, providing a direct link to detailed information about the dataset. Typically will be a unique URL of the current dataset.",
           "type": "string"
         },
         "name": {
+          "title": "The name",
           "description": "The official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose.",
           "type": "string"
         },
         "data-version": {
+          "title": "The data version",
           "description": "Specifies the version of the dataset this DP-Core set describes, allowing the dataset to evolve over time and keeping consistent labeling.",
           "$ref": "#/$defs/version-type"
         }
@@ -895,31 +945,19 @@
       }
     },
     "use-type": {
+      "title": "The use type",
       "description": "This group describes legal use and restrictions.",
       "type": "object",
       "properties": {
         "classification": {
+          "title": "Classification",
           "description": "Indicate if the dataset includes data falling into the confidentiality classification. Each classifier must be evaluated as true/false/unknown.",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "regulation": {
-                "type": "object",
-                "properties": {
-                  "code": {
-                    "type": "string"
-                  },
-                  "system": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "code"
-                ]
+                "$ref": "#/$defs/method-type"
               },
               "evaluated": {
                 "type": "boolean"
@@ -937,6 +975,7 @@
           "uniqueItems": true
         },
         "consents": {
+          "title": "Consents",
           "description": "Specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use. This element must be populated when Privacy Consent is appropriate. When populated it points to either one Privacy Consent Policy that all individuals in the dataset agreed to, or one Privacy Policy for each individual in the dataset with that individual's signature.",
           "type": "array",
           "items": {
@@ -946,41 +985,38 @@
           "uniqueItems": true
         },
         "privacy-enhancing": {
+          "title": "Privacy enhancing",
           "description": "Indicates whether techniques were used to protect personally identifiable information (PII) or sensitive personal information (SPI), highlighting the dataset's privacy considerations.",
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
               "tool-category": {
-                "type": "object",
-                "properties": {
-                  "code": {
-                    "type": "string"
-                  },
-                  "system": {
-                    "type": "string"
-                  },
-                  "description": {
-                    "type": "string"
-                  }
-                },
-                "required": [
-                  "code"
-                ]
+                "$ref": "#/$defs/method-type"
               },
               "tool-used": {
+                "title": "Tool used",
+                "description": "The name of the tool used for xxx.",
                 "type": "string"
               },
               "parameters": {
+                "title": "Parameters",
+                "description": "The parameters used when invoking the tool.",
                 "type": "array",
                 "items": {
+                  "title": "parameter",
+                  "description": "A parameter used when invoking the tool.",
                   "type": "string"
                 },
                 "minItems": 1
               },
-              "result": {
+              "results": {
+                "title": "Result",
+                "description": "The results of the tool application.",
                 "type": "array",
                 "items": {
+                  "title": "Result",
+                  "description": "The results of the tool application.",
                   "type": "string"
                 },
                 "minItems": 1
@@ -994,22 +1030,27 @@
           "uniqueItems": true
         },
         "processing-included": {
+          "title": "Processing included",
           "description": "Defines the geographical boundaries within which the data can be processed, often for legal or regulatory reasons.",
           "$ref": "#/$defs/geographic-regions-type"
         },
         "processing-excluded": {
+          "title": "Processing excluded",
           "description": "Defines the geographical boundaries within which the data cannot be processed, often for legal or regulatory reasons.",
           "$ref": "#/$defs/geographic-regions-type"
         },
         "storage-allowed": {
+          "title": "Storage allowed",
           "description": "Specifies where the data may be stored, crucial for compliance with data sovereignty laws.",
           "$ref": "#/$defs/geographic-regions-type"
         },
         "storage-forbidden": {
+          "title": "Storage forbidden",
           "description": "Specifies where the data may not be stored, crucial for compliance with data sovereignty laws.",
           "$ref": "#/$defs/geographic-regions-type"
         },
         "license": {
+          "title": "License",
           "description": "Details the location or point of contact for identifying the terms under which the dataset can be used, including any restrictions or obligations, clarifying legal use and distribution rights. License may be an End User License Agreement (EULA), subject to Data Use Agreement (DUA).",
           "type": "array",
           "items": {
@@ -1019,30 +1060,17 @@
           "uniqueItems": true
         },
         "intended-purpose": {
+          "title": "Intended purpose",
           "description": "Describes the purpose for which the dataset was created, guiding users on its intended use and potential applications against identified use cases. List all that apply from the Data Use codes that apply. Additional codes can be included with descriptions.",
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "code": {
-                "type": "string"
-              },
-              "system": {
-                "type": "string"
-              },
-              "description": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "code",
-              "description"
-            ]
+            "$ref": "#/$defs/purpose-type"
           },
           "minItems": 1,
           "uniqueItems": true
         },
         "copyright": {
+          "title": "Copyright",
           "description": "Indicates whether the dataset contains proprietary information that is covered with a Copyright and the terms of said Copyright.",
           "type": "array",
           "items": {
@@ -1052,6 +1080,7 @@
           "uniqueItems": true
         },
         "patent": {
+          "title": "Patent",
           "description": "Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.",
           "type": "array",
           "items": {
@@ -1061,6 +1090,7 @@
           "uniqueItems": true
         },
         "trademark": {
+          "title": "Trademark",
           "description": "Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark.",
           "type": "array",
           "items": {
