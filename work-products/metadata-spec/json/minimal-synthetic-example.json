@@ -28,7 +28,11 @@
             "content": "We found these numbers on the parking lot.",
             "purpose": "Use only for learning regression modeling. Not for production use."
         },
-        "id": {},
+        "id": {
+            "uuids": [
+                "c0b60d90-c80b-4e04-83f6-3fc7d2551335"
+            ]
+        },
         "issuer": [
             {"legal-name": "legal-name"}
         ],
