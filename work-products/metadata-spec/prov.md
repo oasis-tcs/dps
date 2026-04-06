@@ -396,11 +396,11 @@ Table: Type `ToolID` (String)
 
 Table: Type `Confidentiality` (Record)
 
-| Type Name | Type Definition | Description                  |
-|:----------|:----------------|:-----------------------------|
-| Timestamp | Integer /d3     | Milliseconds since the epoch |
+| Type Name | Type Definition | Description |
+|:----------|:----------------|:------------|
+| Timestamp | DateTime        |             |
 
-Table: Type `Timestamp` (Integer)
+Table: Type `Timestamp` (DateTime)
 
 | Type Name | Type Definition | Description                          |
 |:----------|:----------------|:-------------------------------------|
