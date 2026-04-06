@@ -633,7 +633,7 @@ The value of the `set.schema-version` member for this version of the specificati
 
 #### 7.1.2.3 Member `set.publisher`
 
-Simile ...
+The `set.publisher` member provides information about the publisher of the metadata set. The publisher is the party responsible for issuing the metadata set.
 
 ```yaml <!--json-path($..set.properties.publisher.type)-->
 DataProvenance:
@@ -646,11 +646,11 @@ DataProvenance:
 # ...
 ```
 
-Simile ...
+The required members of `set.publisher` are described in the following subsections.
 
 ##### 7.1.2.3.1 Member `set.publisher.name`
 
-Simile ...
+The `set.publisher.name` member contains the name of the issuing party.
 
 ```yaml <!--json-path($..set.properties.publisher..name.type)-->
 DataProvenance:
@@ -665,11 +665,15 @@ DataProvenance:
 # ...
 ```
 
-Simile ...
+*Example 1:*
+
+```
+Cisco
+```
 
 ##### 7.1.2.3.2 Member `set.publisher.namespace`
 
-Simile ...
+The `set.publisher.namespace` member contains a URL which is under control of the issuing party and can be used as a globally unique identifier for that issuing party.
 
 ```yaml <!--json-path($..set.properties.publisher..namespace.format)-->
 DataProvenance:
@@ -685,11 +689,17 @@ DataProvenance:
 # ...
 ```
 
-Simile ...
+The value of `set.publisher.namespace` MUST be a valid URI.
+
+*Example 1:*
+
+```
+https://cisco.com
+```
 
 #### 7.1.2.4 Member `set.label`
 
-Simile ...
+The `set.label` member provides the label (per publisher unique title) of the metadata set.
 
 ```yaml <!--json-path($..set.properties.label.type)-->
 DataProvenance:
@@ -702,11 +712,18 @@ DataProvenance:
 # ...
 ```
 
-Simile ...
+The value of `set.label` SHOULD be a canonical name for the set, and sufficiently unique to distinguish it from similar sets.
+
+*Examples 1:*
+
+```
+Learning Set for Regression Modelling for Stats 101
+Example Data Protection Dataset in Example Generator
+```
 
 #### 7.1.2.5 Member `set.tracking`
 
-Simile ...
+The `set.tracking` member is a container designated to hold all management attributes necessary to track a DP-Core set as a whole.
 
 ```yaml <!--json-path($..set.properties.tracking.properties.type)-->
 DataProvenance:
@@ -718,11 +735,182 @@ DataProvenance:
 # ...
 ```
 
-Simile ...
+The required members of `set.tracking` are described in the following subsections.
+
+##### 7.1.2.5.1 Member `set.tracking.current-release-date`
+
+The `set.tracking.current-release-date` member contains the date when the current revision of this document was released.
+
+```yaml <!--json-path($..set.properties.tracking.properties['current-release-date'].format)-->
+DataProvenance:
+  # ...
+  set:
+    # ...
+    tracking:
+      # ...
+      current-release-date: String.DateTime
+      # ...
+    # ...
+  # ...
+# ...
+```
+
+The value of `set.tracking.current-release-date` MUST be a valid date-time string conforming to \[RFC 3339\].
+
+*Example 1:*
+
+```
+2000-01-01T01:01:01Z
+```
+
+##### 7.1.2.5.2 Member `set.tracking.id`
+
+The `set.tracking.id` member provides the unique identifier for the metadata set. The ID is a simple label that provides for a wide range of numbering values, types, and schemes. Its value SHOULD be assigned and maintained by the original metadata set issuing authority.
+
+```yaml <!--json-path($..set.properties.tracking.properties.id.pattern)-->
+DataProvenance:
+  # ...
+  set:
+    # ...
+    tracking:
+      # ...
+      id: String.Pattern
+      # ...
+    # ...
+  # ...
+# ...
+```
+
+The value of `set.tracking.id` MUST NOT start or end with whitespace.
+
+*Examples 1:*
+
+```
+7aedeb0a-22dd-428a-ab76-c950b43cbbc6
+abcdef-orga-ds-0815
+cisco-sa-20190513-secureboot
+```
+
+##### 7.1.2.5.3 Member `set.tracking.initial-release-date`
+
+The `set.tracking.initial-release-date` member contains the date when this set was first published.
+
+```yaml <!--json-path($..set.properties.tracking.properties['initial-release-date'].format)-->
+DataProvenance:
+  # ...
+  set:
+    # ...
+    tracking:
+      # ...
+      initial-release-date: String.DateTime
+      # ...
+    # ...
+  # ...
+# ...
+```
+
+The value of `set.tracking.initial-release-date` MUST be a valid date-time string conforming to \[RFC 3339\].
+
+*Example 1:*
+
+```
+2000-01-01T01:01:01Z
+```
+
+##### 7.1.2.5.4 Member `set.tracking.revision-history`
+
+The `set.tracking.revision-history` member holds one revision item for each version of the DP-Core set, including the initial one. The sequence MUST contain at least one revision item.
+
+```yaml <!--json-path($..set.properties.tracking.properties['revision-history'].items.required)-->
+DataProvenance:
+  # ...
+  set:
+    # ...
+    tracking:
+      # ...
+      revision-history:
+        - date: String.DateTime
+          number: $defs.version-type
+          summary: String
+      # ...
+    # ...
+  # ...
+# ...
+```
+
+Each revision item MUST contain the following members:
+
+- `date`: The date of the revision entry. MUST be a valid date-time string conforming to \[RFC 3339\].
+- `number`: The version number of the revision. MUST conform to `$defs.version-type` (integer or semantic versioning string).
+- `summary`: A short description of the changes made in this revision.
+
+*Example 1:*
+
+```json
+[
+    {
+        "date": "2000-01-01T01:01:01Z",
+        "number": "1",
+        "summary": "Initial version."
+    }
+]
+```
+
+##### 7.1.2.5.5 Member `set.tracking.status`
+
+The `set.tracking.status` member defines the draft status of the metadata set. This allows processing DP-Core sets of various maturity per version.
+
+```yaml <!--json-path($..set.properties.tracking.properties.status.enum)-->
+DataProvenance:
+  # ...
+  set:
+    # ...
+    tracking:
+      # ...
+      status: String.Enum
+      # ...
+    # ...
+  # ...
+# ...
+```
+
+The value of `set.tracking.status` MUST be one of the following:
+
+- `draft`
+- `final`
+- `interim`
+
+##### 7.1.2.5.6 Member `set.tracking.version`
+
+The `set.tracking.version` member specifies the version of the current DP-Core set.
+
+```yaml <!--json-path($..set.properties.tracking.properties.version['$ref'])-->
+DataProvenance:
+  # ...
+  set:
+    # ...
+    tracking:
+      # ...
+      version: $defs.version-type
+      # ...
+    # ...
+  # ...
+# ...
+```
+
+The value of `set.tracking.version` MUST conform to `$defs.version-type`, which requires either an integer or a semantic versioning string.
+
+*Examples 1:*
+
+```
+1
+2.0.0
+1.0.0-beta+exp.sha.a1c44f85
+```
 
 ### 7.1.3 Member `source`
 
-Simile ...
+The `source` member characterizes the content and source of the dataset.
 
 ```yaml <!--json-path($['$defs']['source-type'].properties)-->
 DataProvenance:
@@ -738,11 +926,156 @@ DataProvenance:
 # ...
 ```
 
-Simile ...
+The required members of `source` are described in the following subsections.
+
+#### 7.1.3.1 Member `source.about`
+
+The `source.about` member contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses.
+
+```yaml <!--json-path($['$defs']['about-type'].required)-->
+DataProvenance:
+  # ...
+  source:
+    # ...
+    about:  # $defs.about-type
+      content: String
+      purpose: String
+    # ...
+  # ...
+# ...
+```
+
+The required members of `source.about` are:
+
+- `content`: Provides essential contextual information that helps users understand what the data represents and how it was collected.
+- `purpose`: Explains the recommended uses.
+
+*Example 1:*
+
+```json
+{
+    "content": "We found these numbers on the parking lot.",
+    "purpose": "Use only for learning regression modeling. Not for production use."
+}
+```
+
+#### 7.1.3.2 Member `source.id`
+
+The `source.id` member provides a unique identifier assigned to the dataset's metadata to uniquely distinguish it from others, ensuring no confusion or overlap. At least one identification method MUST be provided.
+
+```yaml <!--json-path($['$defs']['identity-type'].minProperties)-->
+DataProvenance:
+  # ...
+  source:
+    # ...
+    id:  # $defs.identity-type (at least one of the following)
+      hashes: Sequence
+      uris: Sequence
+      uuids: Sequence
+      custom-ids: Sequence
+    # ...
+  # ...
+# ...
+```
+
+The following identification methods are available:
+
+- `hashes`: A list of cryptographic hash entries, each containing `tree-hashes` (algorithm and hex value) and a `path`.
+- `uris`: A list of identifiers in URI format.
+- `uuids`: A list of identifiers in UUID format.
+- `custom-ids`: A list of identifiers in any text format, each with a `method` and `value`.
+
+*Example 1:*
+
+```json
+{
+    "uuids": ["e5471657-9ede-4335-843b-c1376ef29bfa"]
+}
+```
+
+#### 7.1.3.3 Member `source.issuer`
+
+The `source.issuer` member identifies the legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries.
+
+```yaml <!--json-path($['$defs']['orga-type'].items.required)-->
+DataProvenance:
+  # ...
+  source:
+    # ...
+    issuer:  # $defs.orga-type
+      - legal-name: String
+    # ...
+  # ...
+# ...
+```
+
+The value of `source.issuer` is a sequence of organization objects. Each organization MUST provide a `legal-name`. The sequence MUST contain at least one organization and all entries MUST be unique.
+
+*Example 1:*
+
+```json
+[
+    {"legal-name": "Sampling Ltd."}
+]
+```
+
+#### 7.1.3.4 Member `source.location`
+
+The `source.location` member provides the web address where the dataset's metadata is published and can be accessed. Typically this will be a unique URL of the current dataset.
+
+```yaml <!--json-path($['$defs']['source-type'].properties.location.type)-->
+DataProvenance:
+  # ...
+  source:
+    # ...
+    location: String
+    # ...
+  # ...
+# ...
+```
+
+#### 7.1.3.5 Member `source.name`
+
+The `source.name` member provides the official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose.
+
+```yaml <!--json-path($['$defs']['source-type'].properties.name.type)-->
+DataProvenance:
+  # ...
+  source:
+    # ...
+    name: String
+    # ...
+  # ...
+# ...
+```
+
+#### 7.1.3.6 Member `source.data-version`
+
+The `source.data-version` member specifies the version of the dataset this DP-Core set describes, allowing the dataset to evolve over time and keeping consistent labeling.
+
+```yaml <!--json-path($['$defs']['source-type'].properties['data-version']['$ref'])-->
+DataProvenance:
+  # ...
+  source:
+    # ...
+    data-version: $defs.version-type
+    # ...
+  # ...
+# ...
+```
+
+The value of `source.data-version` MUST conform to `$defs.version-type`, which requires either an integer or a semantic versioning string.
+
+*Examples 1:*
+
+```
+1
+2.0.0
+```
 
 ### 7.1.4 Member `provenance`
 
-Simile ...
+The `provenance` member describes the provenance of the dataset.
 
 ```yaml <!--json-path($['$defs']['provenance-type'].properties)-->
 DataProvenance:
@@ -755,11 +1088,86 @@ DataProvenance:
 # ...
 ```
 
-Simile ...
+The required members of `provenance` are described in the following subsections.
+
+#### 7.1.4.1 Member `provenance.origin-geography`
+
+The `provenance.origin-geography` member identifies the geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.
+
+```yaml <!--json-path($['$defs']['geographic-regions-type'].items.required)-->
+DataProvenance:
+  # ...
+  provenance:
+    # ...
+    origin-geography:  # $defs.geographic-regions-type
+      - country: String
+    # ...
+  # ...
+# ...
+```
+
+The value of `provenance.origin-geography` is a sequence of geographic region objects. Each entry MUST contain a `country`. The sequence MUST contain at least one entry and all entries MUST be unique.
+
+*Example 1:*
+
+```json
+[
+    {"country": "US"}
+]
+```
+
+#### 7.1.4.2 Member `provenance.date`
+
+The `provenance.date` member provides the date when the dataset was compiled or created, providing a temporal context for the data.
+
+```yaml <!--json-path($['$defs']['provenance-type'].properties.date.format)-->
+DataProvenance:
+  # ...
+  provenance:
+    # ...
+    date: String.Date
+    # ...
+  # ...
+# ...
+```
+
+The value of `provenance.date` MUST be a valid date string in full-date format (YYYY-MM-DD).
+
+*Example 1:*
+
+```
+2000-01-01
+```
+
+#### 7.1.4.3 Member `provenance.generation-method`
+
+The `provenance.generation-method` member describes the methodology or procedures used to collect, generate, or compile the data, giving insight into its reliability and validity.
+
+```yaml <!--json-path($['$defs']['provenance-type'].properties['generation-method'].items['$ref'])-->
+DataProvenance:
+  # ...
+  provenance:
+    # ...
+    generation-method:  # Sequence of $defs.method-type
+      - code: String
+    # ...
+  # ...
+# ...
+```
+
+The value of `provenance.generation-method` is a sequence of method objects. Each method MUST contain a `code`. The sequence MUST contain at least one method and all entries MUST be unique.
+
+*Example 1:*
+
+```json
+[
+    {"code": "web-scraping-crawling"}
+]
+```
 
 ### 7.1.5 Member `use`
 
-Simile ...
+The `use` member describes legal use and restrictions that apply to the dataset.
 
 ```yaml <!--json-path($['$defs']['use-type'].properties)-->
 DataProvenance:
@@ -770,7 +1178,37 @@ DataProvenance:
 # ...
 ```
 
-Simile ...
+The required members of `use` are described in the following subsection.
+
+#### 7.1.5.1 Member `use.intended-purpose`
+
+The `use.intended-purpose` member describes the purpose for which the dataset was created, guiding users on its intended use and potential applications against identified use cases.
+
+```yaml <!--json-path($['$defs']['use-type'].properties['intended-purpose'].items['$ref'])-->
+DataProvenance:
+  # ...
+  use:
+    # ...
+    intended-purpose:  # Sequence of $defs.purpose-type
+      - code: String
+        long-description: String
+    # ...
+  # ...
+# ...
+```
+
+The value of `use.intended-purpose` is a sequence of purpose objects. Each purpose MUST contain a `code` and a `long-description`. The sequence MUST contain at least one purpose and all entries MUST be unique.
+
+*Example 1:*
+
+```json
+[
+    {
+        "code": "research",
+        "long-description": "Use only for learning regression modeling. Not for production use."
+    }
+]
+```
 
 ## 7.2 XML Encoding
 
