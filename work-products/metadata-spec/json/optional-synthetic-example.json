@@ -111,8 +111,7 @@
                 "long-description": "long-description"
             }
         ],
-        "format": ["format0"],
-        "sub-provenance": {}
+        "format": ["format0"]
     },
     "use": {
         "classification": [
