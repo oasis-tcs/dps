@@ -1,17 +1,22 @@
 ![OASIS Logo](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
 
--------
-
 # Data Provenance Metadata Version 1.0
 
 ## Committee Specification Draft 01
 
-## 6 April 2026
+## 07 May 2026
 
 ### This version
 
-- \[ link to authoritative version of the published document \] (Authoritative)
-- \[ links to one or more other versions of the published document (e.g., MD, PDF, Word, HTML, etc.) \]
+- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.md](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.md) (Authoritative)
+- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.html](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.html)
+- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.pdf](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.pdf)
+
+### Latest version
+
+- [https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.md](https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.md) (Authoritative)
+- [https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html](https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html)
+- [https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.pdf](https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.pdf)
 
 ### Previous version
 
@@ -41,14 +46,14 @@ N/A
 This prose specification is one component of a Work Product that also includes:
 
 - Data Provenance Metadata JSON schema: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/schema/data-provenance.json. \
-Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json.
+  Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json.
 - Data Provenance Metadata Configuration JSON schema: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/schema/data-provenance-configuration.json. \
-Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json.
+  Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json.
 
 ### Declared JSON namespaces
 
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json](https://docs.oasis-open.org/dps/data-provenance/v1.0/schema/data-provenance.json)
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json](https://docs.oasis-open.org/dps/data-provenance/v1.0/schema/data-provenance-configuration.json)
+- <https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json>
+- <https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json>
 
 ### Abstract
 
@@ -62,9 +67,9 @@ When referencing this document, the following citation format should be used:
 
 **[prov-meta-v1.0]**
 
-_Data Provenance Metadata Version 1.0_. Edited by David Kemp and Stefan Hagen. 24 February 2026. OASIS Committee Speciofication Draft 01.
+_Data Provenance Metadata Version 1.0_. Edited by David Kemp and Stefan Hagen. 07 May 2026. OASIS Committee Specification Draft 01. \
 https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.html. \
-Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-neta-v1.0-csd01.html.
+Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html.
 
 ### Related Work
 
@@ -81,14 +86,12 @@ N/A
 Copyright © OASIS Open 2026.
 All Rights Reserved.  
 For license and copyright information, and complete status,
-please see [Annex A License, Document Status and Notices](#annex-a-license,-document-status-and-notices) 
+please see [Annex A License, Document Status and Notices](#annex-a-license,-document-status-and-notices)
 which contains the License, Document Status and Notices.
 
--------
+---
 
 ## Table of Contents
-
-Editor's Note: Table of Contents will be updated once structure is stable
 
 - [1 Scope](#1-scope)
 - [2 Definitions and Acronyms](#2-definitions-and-acronyms)
@@ -132,7 +135,7 @@ Editor's Note: Table of Contents will be updated once structure is stable
 - [Appendix 2 Changes From Previous Version](#appendix-2-changes-from-previous-version)
   - [Revision History](#revision-history)
 
--------
+---
 
 # 1 Scope
 
@@ -144,7 +147,7 @@ Developed through cross-industry collaboration, the DPS provide a consistent fra
 The DPS address the growing demand for transparency in artificial intelligence (AI), cybersecurity, supply chains,
 and areas where data quality and accountability are foundational to performance and compliance - especially in regulated and high-risk environments.
 
--------
+---
 
 # 2 Definitions and Acronyms
 
@@ -157,7 +160,7 @@ This document uses the following terms defined elsewhere:
 - Data Provenance: \[[NIST - CNSSI 4009-2015 from ISA SSA - Adapted](https://nsarchive.gwu.edu/document/22385-document-08-committee-national-security)\]:
   In the context of computers and law enforcement use, it \[provenance\] is an equivalent term to chain of custody.
   It involves the method of generation, transmission and storage of information that
-  may be used to trace the origin of a piece of information processed by community resources.  
+  may be used to trace the origin of a piece of information processed by community resources.
 - Data Lineage: \[[IBM](https://www.ibm.com/think/topics/data-lineage#)\]:
   Data lineage is the process of tracking the (use and) flow of data over time, providing a clear understanding of where the data originated,
   how it has changed, and its ultimate destination within the data pipeline.
@@ -186,7 +189,7 @@ PET
 
 <!-- We will surely find more acronyms or abbreviations we do use in the document. -->
 
--------
+---
 
 # 3 Document Conventions
 
@@ -218,7 +221,7 @@ All other text is normative unless otherwise labeled e.g. like the following inf
 > This is a pure informative comment that may be present, because the information conveyed is deemed useful advice or
 > common pitfalls learned from implementer or operator experience and often given including the rationale.
 
--------
+---
 
 This document adheres to the Modern Language Association (MLA) style guidelines for formatting titles and terms.
 
@@ -228,7 +231,7 @@ Data is a core enterprise asset.
 It underpins strategic decision-making, drives operational priorities, and supports risk governance.
 Dependence on data creates a need for validation and an understanding of the data's origin, quality, and intended use.
 Understanding data is a requirement for organizations operating at scale.
-The OASIS Data Provenance Standards (DPS) are created to solve for this need. 
+The OASIS Data Provenance Standards (DPS) are created to solve for this need.
 
 ## 4.1 Any Additional Introduction Subsections That are Needed
 
@@ -238,7 +241,7 @@ None
 
 N/A
 
--------
+---
 
 # 5 Provenance Schema
 
@@ -247,11 +250,11 @@ The technical encoding may be found in section [6 Provenance Information Model E
 
 The Data Provenance Standards record metadata elements in three segmented categories: Source, Provenance, and Use.
 
-![Metadata](./images//metadata.svg)
+![Metadata](./images/metadata.svg)
 
 The property tables first define metadata about the specification itself,
 then describe how a record is made of the 3 primary metadata elements.
-The three segmented categories (Source, Provenance, and Use) are comprised of various 
+The three segmented categories (Source, Provenance, and Use) are comprised of various
 metadata element input fields. Each field is described in more detail below.
 
 ## 5.1 Primary Metadata Elements
@@ -511,11 +514,11 @@ The technical encoding of the information model is specified in both JADN and YA
 
 ## 6.1 JADN Encoding
 
-The JADN encoding of the data provenance metadata information model is specified in ____.
+The JADN encoding of the data provenance metadata information model is specified in \_\_\_\_.
 
 ## 6.2 YAML Encoding
 
-The YAML encoding of the data provenance metadata information model is specified in ____.
+The YAML encoding of the data provenance metadata information model is specified in \_\_\_\_.
 
 # 7 Provenance Data Model Encoding
 
@@ -577,7 +580,7 @@ The following members are required for the mapping:
 DataProvenance:
   # ...
   set:
-    category: String.Pattern 
+    category: String.Pattern
     schema-version: String.Constant
     publisher: Mapping
     content: String
@@ -593,7 +596,7 @@ The `set.category` member defines a short canonical name, chosen by the set prod
 DataProvenance:
   # ...
   set:
-    category: String.Pattern 
+    category: String.Pattern
     # ...
   # ...
 # ...
@@ -679,7 +682,7 @@ The `set.publisher.namespace` member contains a URL which is under control of th
 DataProvenance:
   # ...
   set:
-  # ...
+    # ...
     publisher:
       # ...
       namespace: String.URI
@@ -848,11 +851,11 @@ Each revision item MUST contain the following members:
 
 ```json
 [
-    {
-        "date": "2000-01-01T01:01:01Z",
-        "number": "1",
-        "summary": "Initial version."
-    }
+  {
+    "date": "2000-01-01T01:01:01Z",
+    "number": "1",
+    "summary": "Initial version."
+  }
 ]
 ```
 
@@ -954,8 +957,8 @@ The required members of `source.about` are:
 
 ```json
 {
-    "content": "We found these numbers on the parking lot.",
-    "purpose": "Use only for learning regression modeling. Not for production use."
+  "content": "We found these numbers on the parking lot.",
+  "purpose": "Use only for learning regression modeling. Not for production use."
 }
 ```
 
@@ -989,7 +992,7 @@ The following identification methods are available:
 
 ```json
 {
-    "uuids": ["e5471657-9ede-4335-843b-c1376ef29bfa"]
+  "uuids": ["e5471657-9ede-4335-843b-c1376ef29bfa"]
 }
 ```
 
@@ -1015,7 +1018,7 @@ The value of `source.issuer` is a sequence of organization objects. Each organiz
 
 ```json
 [
-    {"legal-name": "Sampling Ltd."}
+  {"legal-name": "Sampling Ltd."}
 ]
 ```
 
@@ -1112,7 +1115,7 @@ The value of `provenance.origin-geography` is a sequence of geographic region ob
 
 ```json
 [
-    {"country": "US"}
+  {"country": "US"}
 ]
 ```
 
@@ -1161,7 +1164,7 @@ The value of `provenance.generation-method` is a sequence of method objects. Eac
 
 ```json
 [
-    {"code": "web-scraping-crawling"}
+  {"code": "web-scraping-crawling"}
 ]
 ```
 
@@ -1203,24 +1206,24 @@ The value of `use.intended-purpose` is a sequence of purpose objects. Each purpo
 
 ```json
 [
-    {
-        "code": "research",
-        "long-description": "Use only for learning regression modeling. Not for production use."
-    }
+  {
+    "code": "research",
+    "long-description": "Use only for learning regression modeling. Not for production use."
+  }
 ]
 ```
 
 ## 7.2 XML Encoding
 
 The technical encoding of the data provenance metadata data model
-is specified in ____ for XML data.
+is specified in \_\_\_\_ for XML data.
 
 ## 7.3 YAML Encoding
 
 The technical encoding of the data provenance metadata data model
-is specified in ____ for YAML data.
+is specified in \_\_\_\_ for YAML data.
 
--------
+---
 
 # 8 Safety, Security, and Data Protection
 
@@ -1238,7 +1241,7 @@ For Data Provenance Metadata documents based on JSON, the security consideration
 
 <!-- More to fill in at least per other data format -->
 
--------
+---
 
 # 9 Conformance
 
@@ -1248,7 +1251,7 @@ This section is **REQUIRED** and **MUST** be the last numbered section in the do
 
 \>
 
--------
+---
 
 # Annex A License, Document Status and Notices{#annex-a}
 
@@ -1288,7 +1291,7 @@ OASIS takes no position regarding the validity or scope of any intellectual prop
 
 The name "OASIS" is a trademark of OASIS, the owner and developer of this document, and should be used only to refer to the organization and its official outputs. OASIS welcomes reference to, and implementation and use of, its documents, while reserving the right to enforce its marks against misleading uses. Please see [https://www.oasis-open.org/policies-guidelines/trademark/](https://www.oasis-open.org/policies-guidelines/trademark/) for guidance.
 
--------
+---
 
 # Annex B References
 
@@ -1318,7 +1321,7 @@ The following referenced documents are not required for the application of this 
 
 **\[Reference 2\]** Reference Details
 
--------
+---
 
 # Annex C Additional Annex as Needed
 
@@ -1328,7 +1331,7 @@ The following referenced documents are not required for the application of this 
 
 ### C.1.1 Sub-subsection
 
--------
+---
 
 # Appendix 1 Acknowledgments
 
@@ -1372,7 +1375,7 @@ The following individuals have participated in the creation of this document and
 | Lisa       | Bobbitt   | Cisco                     |
 | Stefan     | Hagen     | Individual                |
 
--------
+---
 
 # Appendix 2 Changes From Previous Version
 
@@ -1387,4 +1390,4 @@ This is the initial draft Committee Specification.
 | prov-meta-v1.0-wd20250909-dev | 2025-09-09 | David Kemp and Stefan Hagen | Editor revision for meeting 2025-09-09. |
 | prov-meta-v1.0-wd20260224-dev | 2025-09-09 | David Kemp and Stefan Hagen | Editor revision for meeting 2025-09-09. |
 
--------
+---
