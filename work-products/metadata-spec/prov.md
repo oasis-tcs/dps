@@ -250,7 +250,9 @@ The technical encoding may be found in section [6 Provenance Information Model E
 
 The Data Provenance Standard records metadata elements in three segmented categories: Source, Provenance, and Use.
 
-![Metadata](./images/metadata.svg)
+![Metadata](./images/metadata.svg "metadata")
+
+Figure 1: Metadata
 
 The property tables first define metadata about the specification itself,
 then describe how a record is made of the 3 primary metadata elements.
