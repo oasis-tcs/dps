@@ -117,7 +117,7 @@ which contains the License, Document Status and Notices.
   - [7.1 JSON Encoding](#71-json-encoding)
   - [7.2 XML Encoding](#72-xml-encoding)
   - [7.3 YAML Encoding](#73-yaml-encoding)
-- [8 Safety, Security, and Data Protection](#7-safety,-security,-and-data-protection)
+- [8 Safety, Security, and Data Protection](#safety-security-and-data-protection)
 - [9 Conformance](#8-conformance)
 - [Annex A License, Document Status and Notices](#annex-a-license,-document-status-and-notices)
   - [A.1 Document Status](#a.1-document-status)
@@ -1225,7 +1225,7 @@ is specified in \_\_\_\_ for YAML data.
 
 ---
 
-# 8 Safety, Security, and Data Protection
+# 8 Safety, Security, and Data Protection{#safety-security-and-data-protection}
 
 All safety, security, and data protection requirements relevant to the context in which Data Provenance Metadata documents are used MUST be translated into, and consistently enforced through, Data Provenance Metadata implementations and processes.
 
