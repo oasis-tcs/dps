@@ -266,8 +266,6 @@ metadata element input fields. Each field is described in more detail below.
 
 Table: Type `DPS` (Record)
 
-The Data Provenance Standard Metadata
-
 | ID | Name       | Type       | \# | Description                                       |
 |---:|:-----------|:-----------|:---|:--------------------------------------------------|
 |  1 | source     | Source     | 1  | Describes a dataset and the source of the dataset |
