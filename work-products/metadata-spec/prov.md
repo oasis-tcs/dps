@@ -264,7 +264,7 @@ metadata element input fields. Each field is described in more detail below.
 |  1 | version  | URL            | 1  | Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time. |
 |  2 | metadata | DataProvenance | 1  | The metadata about a dataset                                                                                                                     |
 
-Table: Type `DPS` (Record)
+Table 1: Type `DPS` (Record)
 
 The Data Provenance Standard Metadata
 
@@ -274,7 +274,7 @@ The Data Provenance Standard Metadata
 |  2 | provenance | Provenance | 1  | Provenance of the dataset                         |
 |  3 | use        | Use        | 1  | Legal use and restrictions                        |
 
-Table: Type `DataProvenance` (Record)
+Table 2: Type `DataProvenance` (Record)
 
 ## 5.2 Source
 
@@ -286,7 +286,7 @@ Table: Type `DataProvenance` (Record)
 |  4 | issuer      | Organization | 1..\* | The legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries.                                                                                                                                          |
 |  5 | description | String       | 1     | Contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses. |
 
-Table: Type `Source` (Record)
+Table 3: Type `Source` (Record)
 
 | ID | Name    | Type    | \# | Description       |
 |---:|:--------|:--------|:---|:------------------|
@@ -299,7 +299,7 @@ Table: Type `Organization` (Record)
 |:----------|:----------------|:-------------------------------------------------|
 | Address   | ArrayOf(String) | Just lines for now, enable structured definition |
 
-Table: Type `Address` (ArrayOf(String))
+Table 4: Type `Address` (ArrayOf(String))
 
 ## 5.3 Provenance
 
@@ -315,7 +315,7 @@ Table: Type `Address` (ArrayOf(String))
 |  8 | format            | MediaType          | 0..\* | Describes the nature of the data within the dataset, such as numerical, textual, or multimedia, helping users understand what kind of information is contained within the file or dataset. |
 |  9 | sub-provenance    | Provenance         | 1     | Add key/link?                                                                                                                                                                              |
 
-Table: Type `Provenance` (Record)
+Table 5: Type `Provenance` (Record)
 
 
 | ID | Name     | Type      | \# | Description                                         |
@@ -323,7 +323,7 @@ Table: Type `Provenance` (Record)
 |  1 | oldest   | Timestamp | 1  | Oldest component of data contained in the dataset   |
 |  2 | youngest | Timestamp | 1  | Youngest component of data contained in the dataset |
 
-Table: Type `Generation` (Record)
+Table 6: Type `Generation` (Record)
 
 ## 5.4 Use
 
@@ -340,42 +340,42 @@ Table: Type `Generation` (Record)
 |  9 | patent             | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.                                                                             |
 | 10 | trademark          | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark.                                                                |
 
-Table: Type `Use` (Record)
+Table 7: Type `Use` (Record)
 
 | ID | Name   | Type            | \#    | Description |
 |---:|:-------|:----------------|:------|:------------|
 |  1 | non-ai | NonAIUse unique | 1..\* | Non-AI      |
 |  2 | ai     | AIUse unique    | 1..\* | AI          |
 
-Table: Type `IntendedAndAcceptableUsages` (Record)
+Table 8: Type `IntendedAndAcceptableUsages` (Record)
 
 | ID | Name           | Type      | \#    | Description                                                    |
 |---:|:---------------|:----------|:------|:---------------------------------------------------------------|
 |  1 | same-as-origin | Boolean   | 1     | Data processing geography is the same as data origin geography |
 |  2 | countries      | Geography | 0..\* |                                                                |
 
-Table: Type `ProcessingGeography` (Record)
+Table 9: Type `ProcessingGeography` (Record)
 
 | ID | Name               | Type      | \#    | Description                                                     |
 |---:|:-------------------|:----------|:------|:----------------------------------------------------------------|
 |  1 | same-as-processing | Boolean   | 1     | Data storage geography is the same as data processing geography |
 |  2 | countries          | Geography | 0..\* |                                                                 |
 
-Table: Type `StorageGeography` (Record)
+Table 10: Type `StorageGeography` (Record)
 
 | ID | Name    | Type            | \#   | Description |
 |---:|:--------|:----------------|:-----|:------------|
 |  1 | country | geo:CountryName | 1    |             |
 |  2 | state   | geo:StateName   | 0..1 |             |
 
-Table: Type `Geography` (Record)
+Table 11: Type `Geography` (Record)
 
 
 | ID | Name | Type         | \# | Description |
 |---:|:-----|:-------------|:---|:------------|
 |  1 | uid  | Binary /uuid | 1  | uuid -      |
 
-Table: Type `UID` (Choice(anyOf))
+Table 12: Type `UID` (Choice(anyOf))
 
 | ID | Name       | Type                  | \# | Description           |
 |---:|:-----------|:----------------------|:---|:----------------------|
@@ -384,32 +384,32 @@ Table: Type `UID` (Choice(anyOf))
 |  3 | parameters | MapOf(String, String) | 1  | key-value pair        |
 |  4 | results    | ArrayOf(String)       | 1  |                       |
 
-Table: Type `DataRiskReducingTool` (Record)
+Table 13: Type `DataRiskReducingTool` (Record)
 
 | Type Name | Type Definition | Description |
 |:----------|:----------------|:------------|
 | ToolID    | String          |             |
 
-Table: Type `ToolID` (String)
+Table 14: Type `ToolID` (String)
 
 | ID | Name           | Type                          | \#    | Description |
 |:---|:---------------|:------------------------------|:------|:------------|
 | 1  | classification | ConfidentialityClassification | 1     |             |
 | 2  | tool-id        | ToolID                        | 0..\* |             |
 
-Table: Type `Confidentiality` (Record)
+Table 15: Type `Confidentiality` (Record)
 
 | Type Name | Type Definition | Description |
 |:----------|:----------------|:------------|
 | Timestamp | DateTime        |             |
 
-Table: Type `Timestamp` (DateTime)
+Table 16: Type `Timestamp` (DateTime)
 
 | Type Name | Type Definition | Description                          |
 |:----------|:----------------|:-------------------------------------|
 | URL       | String /uri     | URI designated as a resource locator |
 
-Table: Type `URL` (String)
+Table 17: Type `URL` (String)
 
 | ID | Item                     | Description |
 |---:|:-------------------------|:------------|
@@ -426,7 +426,7 @@ Table: Type `URL` (String)
 | 10 | user-generated-content   |             |
 | 11 | web-scraping-crawling    |             |
 
-Table: Type `Method` (Enumerated)
+Table 18: Type `Method` (Enumerated)
 
 | ID | Item                     | Description |
 |---:|:-------------------------|:------------|
@@ -444,7 +444,7 @@ Table: Type `Method` (Enumerated)
 | 11 | text/csv                 |             |
 | 12 | text/plain               |             |
 
-Table: Type `ModalityFormat` (Enumerated)
+Table 19: Type `ModalityFormat` (Enumerated)
 
 | ID | Item  | Description                             |
 |---:|:------|:----------------------------------------|
@@ -456,7 +456,7 @@ Table: Type `ModalityFormat` (Enumerated)
 |  5 | sci   | Sensitive Customer Information (SCI)    |
 |  6 | spi   | Sensitive Personal Information (SPI)    |
 
-Table: Type `ConfidentialityClassification` (Enumerated)
+Table 20: Type `ConfidentialityClassification` (Enumerated)
 
 | ID | Item                           | Description |
 |---:|:-------------------------------|:------------|
@@ -476,7 +476,7 @@ Table: Type `ConfidentialityClassification` (Enumerated)
 | 13 | t-closeness                    |             |
 | 14 | tokenization                   |             |
 
-Table: Type `DataTechnology` (Enumerated)
+Table 21: Type `DataTechnology` (Enumerated)
 
 | ID | Item                           | Description                                                                       |
 |---:|:-------------------------------|:----------------------------------------------------------------------------------|
@@ -485,7 +485,7 @@ Table: Type `DataTechnology` (Enumerated)
 |  2 | none                           | No License.                                                                       |
 |  3 | public-license                 | License Name and add link.                                                        |
 
-Table: Type `License` (Enumerated)
+Table 22: Type `License` (Enumerated)
 
 | ID | Item              | Description |
 |---:|:------------------|:------------|
@@ -495,7 +495,7 @@ Table: Type `License` (Enumerated)
 |  3 | research          |             |
 |  4 | staging-testing   |             |
 
-Table: Type `NonAIUse` (Enumerated)
+Table 23: Type `NonAIUse` (Enumerated)
 
 | ID | Item                      | Description |
 |---:|:--------------------------|:------------|
@@ -506,7 +506,7 @@ Table: Type `NonAIUse` (Enumerated)
 |  4 | research                  |             |
 |  5 | synthetic-data-generation |             |
 
-Table: Type `AIUse` (Enumerated)
+Table 24: Type `AIUse` (Enumerated)
 
 # 6 Provenance Information Model Encoding
 
