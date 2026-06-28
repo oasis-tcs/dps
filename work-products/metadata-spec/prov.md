@@ -142,7 +142,7 @@ which contains the License, Document Status and Notices.
 Data is a core enterprise asset that underpins strategic decision-making, drives operational priorities, and supports risk governance.
 Dependence on data creates a need for validation by understanding data’s origin, quality, and intended use.
 Understanding data is a requirement for organizations operating at scale.
-The OASIS Data Provenance Standards (DPS) are created to solve for this need.
+The OASIS Data Provenance Standard (DPS) is created to solve for this need.
 Developed through cross-industry collaboration, the DPS provide a consistent framework to track the origin, movement, integrity, and quality of data.
 The DPS address the growing demand for transparency in artificial intelligence (AI), cybersecurity, supply chains,
 and areas where data quality and accountability are foundational to performance and compliance - especially in regulated and high-risk environments.
@@ -231,7 +231,7 @@ Data is a core enterprise asset.
 It underpins strategic decision-making, drives operational priorities, and supports risk governance.
 Dependence on data creates a need for validation and an understanding of the data's origin, quality, and intended use.
 Understanding data is a requirement for organizations operating at scale.
-The OASIS Data Provenance Standards (DPS) are created to solve for this need.
+The OASIS Data Provenance Standard (DPS) is created to solve for this need.
 
 ## 4.1 Any Additional Introduction Subsections That are Needed
 
@@ -248,7 +248,7 @@ N/A
 The schema of the provenance metadata is described in human-readable property tables.
 The technical encoding may be found in section [6 Provenance Information Model Encoding](#6-provenance-information-model-encoding).
 
-The Data Provenance Standards record metadata elements in three segmented categories: Source, Provenance, and Use.
+The Data Provenance Standard records metadata elements in three segmented categories: Source, Provenance, and Use.
 
 ![Metadata](./images/metadata.svg)
 
