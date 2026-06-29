@@ -1309,17 +1309,12 @@ The following documents are referenced in such a way that some or all of their c
 
 **\[RFC8174\]** _Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words_, BCP 14, RFC 8174, May 2017\. \[Online\]. Available: https://www.rfc-editor.org/info/rfc8174
 
-**\[Reference 1\]** Reference Details
-
-**\[Reference 2\]** Reference Details
 
 ## B.2 Informative References
 
 The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.
 
-**\[Reference 1\]** Reference Details
-
-**\[Reference 2\]** Reference Details
+N/A
 
 ---
 
