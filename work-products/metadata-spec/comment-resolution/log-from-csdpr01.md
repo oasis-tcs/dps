@@ -37,7 +37,7 @@ The following abbreviations are used:
 | [113](https://github.com/oasis-tcs/dps/issues/113) | 2026-05-23 | TS   |  2026-05-29  | Section 5.4 Type License (Enumerated)                                               |            |             |
 | [114](https://github.com/oasis-tcs/dps/issues/114) | 2026-05-23 | TS   |  2026-05-29  | Section 5.4 Type NonAIUse (Enumerated)                                              |            |             |
 | [115](https://github.com/oasis-tcs/dps/issues/115) | 2026-05-23 | TS   |  2026-05-29  | Section 5.4 Type AIUse (Enumerated)                                                 |            |             |
-| [122](https://github.com/oasis-tcs/dps/issues/122) | 2026-06-05 | TS   |  2026-06-05  | Feedback on missing examples                                                        |            |             |
+| [122](https://github.com/oasis-tcs/dps/issues/122) | 2026-06-05 | TS   |  2026-06-05  | Feedback on missing examples                                                        | [Added html comment acknowledging lack of real examples (prepares \# 122)](https://github.com/oasis-tcs/dps/pull/196) | Enqueued    |
 | [124](https://github.com/oasis-tcs/dps/issues/124) | 2026-05-23 | TS   |  2026-06-05  | Table (enumerations)                                                                |            |             |         
 | [125](https://github.com/oasis-tcs/dps/issues/125) | 2026-05-23 | TS   |  2026-06-05  | Section 6.1                                                                         |            |             |
 | [126](https://github.com/oasis-tcs/dps/issues/126) | 2026-05-23 | TS   |  2026-06-05  | Section 6.2                                                                         |            |             |
@@ -54,7 +54,7 @@ The following abbreviations are used:
 | [154](https://github.com/oasis-tcs/dps/issues/154) | 2026-06-05 | TS   |  2026-06-13  | Duplicated entry number in table of contents                                        |            |             |
 | [155](https://github.com/oasis-tcs/dps/issues/155) | 2026-06-05 | TS   |  2026-06-13  | Expansion of DPS acronym                                                            |            |             |
 | [156](https://github.com/oasis-tcs/dps/issues/156) | 2026-06-05 | TS   |  2026-06-13  | Links to RFC references                                                             |            |             |
-| [157](https://github.com/oasis-tcs/dps/issues/157) | 2026-06-05 | TS   |  2026-06-13  | Expectation on goal of section 4.1                                                  |            |             |
+| [157](https://github.com/oasis-tcs/dps/issues/157) | 2026-06-05 | TS   |  2026-06-13  | Expectation on goal of section 4.1                                                  | [Reworded section title and content and added html comment sketching goal and process (prepare \# 157)](https://github.com/oasis-tcs/dps/pull/199) | Enqueued    |
 | [158](https://github.com/oasis-tcs/dps/issues/158) | 2026-06-05 | TS   |  2026-06-13  | Identification and numbering of figures                                             |            |             |
 | [159](https://github.com/oasis-tcs/dps/issues/159) | 2026-06-05 | TS   |  2026-06-13  | Wrong domain type in figure 1                                                       |            |             |
 | [160](https://github.com/oasis-tcs/dps/issues/160) | 2026-06-05 | TS   |  2026-06-13  | Numbering of tables                                                                 |            |             |
@@ -68,10 +68,10 @@ The following abbreviations are used:
 | [169](https://github.com/oasis-tcs/dps/issues/169) | 2026-06-11 | YA   |  2026-06-13  | T2. Lineage references carry no integrity binding (section 5.3)                     |            |             |
 | [170](https://github.com/oasis-tcs/dps/issues/170) | 2026-06-11 | YA   |  2026-06-13  | T3. No extension point for external proof/envelope layers (section 7)               |            |             |
 | [171](https://github.com/oasis-tcs/dps/issues/171) | 2026-06-11 | YA   |  2026-06-13  | T4. Placeholder content in a normative table (section 5.3)                          |            |             |
-| [172](https://github.com/oasis-tcs/dps/issues/172) | 2026-06-11 | YA   |  2026-06-13  | E1. Sections 6.1 and 6.2 essentially empty                                          |            |             |
-| [173](https://github.com/oasis-tcs/dps/issues/173) | 2026-06-11 | YA   |  2026-06-13  | E2. Section 9 Conformance esentially empty                                          |            |             |
+| [172](https://github.com/oasis-tcs/dps/issues/172) | 2026-06-11 | YA   |  2026-06-13  | E1. Sections 6.1 and 6.2 essentially empty                                          | [Reworded content and added html comments sketching goal and process (prepare \# 172)](https://github.com/oasis-tcs/dps/pull/198) | Enqueued    |
+| [173](https://github.com/oasis-tcs/dps/issues/173) | 2026-06-11 | YA   |  2026-06-13  | E2. Section 9 Conformance esentially empty                                          | [Added first statement and html comment sketching goal and process (prepare \# 173)](https://github.com/oasis-tcs/dps/pull/197) | Enqueued    |
 | [174](https://github.com/oasis-tcs/dps/issues/174) | 2026-06-11 | YA   |  2026-06-13  | E3. Contradiction on field sets between Sections 5 and 7                            |            |             |
-| [175](https://github.com/oasis-tcs/dps/issues/175) | 2026-06-11 | YA   |  2026-06-13  | E4. Annex B contains placeholder entries                                            |            |             |
+| [175](https://github.com/oasis-tcs/dps/issues/175) | 2026-06-11 | YA   |  2026-06-13  | E4. Annex B contains placeholder entries                                            | [Removed placeholder entries in Annex B (implements \# 175)](https://github.com/oasis-tcs/dps/pull/195) | Completed   |
 | [176](https://github.com/oasis-tcs/dps/issues/176) | 2026-06-11 | YA   |  2026-06-13  | E5. Typo in section 5.3                                                             |            |             |
 
 https://github.com/oasis-tcs/dps/issues/
