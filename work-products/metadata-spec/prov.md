@@ -103,7 +103,7 @@ which contains the License, Document Status and Notices.
   - [3.1 Key Words](#3.1-key-words)
   - [3.2 Typographical Conventions](#3.2-typographical-conventions)
 - [4 Introduction](#4-introduction)
-  - [4.1 Any Additional Introduction Subsections That are Needed](#4.1-any-additional-introduction-subsections-that-are-needed)
+  - [4.1 Structure of the Specification](#4.1-structure-of-the-specification)
   - [4.2 Changes From the Previous Version](#4.2-changes-from-the-previous-version)
 - [5 Provenance Information Model](#5-provenance-information-model)
   - [5.1 Primary Metadata Elements](#51-primary-metadata-elements)
@@ -233,9 +233,15 @@ Dependence on data creates a need for validation and an understanding of the dat
 Understanding data is a requirement for organizations operating at scale.
 The OASIS Data Provenance Standards (DPS) are created to solve for this need.
 
-## 4.1 Any Additional Introduction Subsections That are Needed
+## 4.1 Structure of the Specification
 
-None
+<!--
+The editors should provide a rough overview how the standard is structured and how the following parts work together:
+- schema (5) 
+- Information Model Encoding (6)
+- Data Model Encoding (7)
+Empty for now, because we may want to add or remove complete parts for the next draft.
+-->
 
 ## 4.2 Changes From the Previous Version
 
