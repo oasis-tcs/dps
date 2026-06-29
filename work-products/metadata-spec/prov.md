@@ -514,11 +514,24 @@ The technical encoding of the information model is specified in both JADN and YA
 
 ## 6.1 JADN Encoding
 
-The JADN encoding of the data provenance metadata information model is specified in \_\_\_\_.
+The JADN encoding of the data provenance metadata information model is approximated by the table level representation in section "[Provenance Schema](#5-provenance-schema)".
+
+<!--
+The editors need go back to the generation process after fixing the inconsistencies and implementing suggested enhancements to create the section content.
+Note: The link to the "Provenance Schema" section in the (non-commented) statement above matches the assumed slugs in this ephemeral revision of the draft
+and will be adjusted when the real content is available and the link is still applicable.
+-->
 
 ## 6.2 YAML Encoding
 
-The YAML encoding of the data provenance metadata information model is specified in \_\_\_\_.
+The YAML encoding of the data provenance metadata information model is documented in section "[JSON Encoding](#7.1-json-encoding)" and displays only the required parts.
+
+<!--
+The editors need go back to the generation process after fixing the inconsistencies and implementing suggested enhancements to create the section content.
+Note: The link to the "JSON Encoding" section in the (non-commented) statement above matches the assumed slugs in this ephemeral revision of the draft
+and will be adjusted when the real content is available and the link is still applicable.
+-->
+
 
 # 7 Provenance Data Model Encoding
 
