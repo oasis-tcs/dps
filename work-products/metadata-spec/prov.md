@@ -1323,6 +1323,19 @@ The following referenced documents are not required for the application of this 
 
 ---
 
+<!--
+Examnples: When we have real-world examples, we will share them.
+
+History: 
+
+- The initial quest for real-world examples to ensure relevance of our to be specified information and
+  data models "[Contribution of Real-World Instance Examples of DTA Schema \# 70](https://github.com/oasis-tcs/dps/issues/70)
+  was closed with the resolution of the DPS TC to provide these examples inside the contributions folder
+  (cf. https://github.com/oasis-tcs/dps/issues/70#issuecomment-4315445801).
+- The editors added two synthetic examples in [revision fdae15f3](https://github.com/oasis-tcs/dps/commit/fdae15f3f17fa9e6d6e2f1020506c1422b4b57d3)
+  because our eco system failed to provide any example metadata files since July 2025.
+-->
+
 # Annex C Additional Annex as Needed
 
 (This annex forms an integral part of this Specification.)
