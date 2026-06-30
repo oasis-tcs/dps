@@ -1,0 +1,314 @@
+{
+  "info": {
+    "title": "Data Provenance Metadata",
+    "package": "https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/",
+    "version": "1.0",
+    "description": "JADN information model for OASIS Data Provenance Standard (DPS) prov-meta v1.0.",
+    "license": "https://www.oasis-open.org/policies-guidelines/ipr/",
+    "exports": ["DataProvenance"]
+  },
+  "types": [
+
+    ["DataProvenance", "Record", [], "Root object of a Data Provenance Metadata record.", [
+      [1, "$schema",   "URI",        [],         "URI identifying the schema this record must be valid against."],
+      [2, "set",       "Set",        [],         "Set-level metadata about this provenance metadata record."],
+      [3, "source",    "Source",     [],         "Characterizes the content and source of the dataset."],
+      [4, "provenance","Provenance", [],         "Describes the provenance of the dataset."],
+      [5, "use",       "Use",        [],         "Describes legal use and restrictions that apply to the dataset."]
+    ]],
+
+    ["Set", "Record", [], "Set-level metadata about the provenance metadata record.", [
+      [1,  "category",        "String",      [],              "A short canonical name informing the end user of the category of the metadata set."],
+      [2,  "schema-version",  "String",      [],              "The version of the Data Provenance Core specification this record was generated for."],
+      [3,  "publisher",       "Publisher",   [],              "Information about the publisher of the metadata set."],
+      [4,  "label",           "String",      [],              "The per-publisher unique title of this metadata set."],
+      [5,  "tracking",        "Tracking",    [],              "Management attributes used to track this metadata set as a whole."],
+      [6,  "language",        "Language",    ["[0"],          "The language used in this document, corresponding to IETF BCP 47."],
+      [7,  "source-language", "Language",    ["[0"],          "If this is a translation, the language this document was translated from."],
+      [8,  "acknowledgments", "Acknowledgment", ["[0", "]0"], "Acknowledgment elements associated with the whole set."],
+      [9,  "notes",           "Note",        ["[0", "]0"],    "Notes associated with this metadata set."],
+      [10, "references",      "Reference",   ["[0", "]0"],    "References associated with this metadata set."]
+    ]],
+
+    ["Publisher", "Record", [], "Information about the publisher of the metadata set.", [
+      [1, "name",            "String", [],    "The name of the issuing party."],
+      [2, "namespace",       "URI",    [],    "A URI under the control of the issuing party, used as a globally unique identifier."],
+      [3, "contact-details", "String", ["[0"], "Information on how to contact the publisher."]
+    ]],
+
+    ["Tracking", "Record", [], "Management attributes used to track the metadata set as a whole.", [
+      [1, "current-release-date", "DateTime",      [],              "The date when the current revision was released."],
+      [2, "id",                   "String",        [],              "A unique identifier for this metadata set, assigned and maintained by the original issuing authority."],
+      [3, "initial-release-date", "DateTime",      [],              "The date when this metadata set was first published."],
+      [4, "revision-history",     "Revision",      ["[1", "]0"],    "One revision item for each version of the metadata set, including the initial one."],
+      [5, "status",               "TrackingStatus",[],              "The draft status of the metadata set."],
+      [6, "version",              "Version",       [],              "The version of the current metadata set."],
+      [7, "aliases",              "String",        ["[0", "]0"],    "Alternate names for this metadata set."],
+      [8, "generator",            "Generator",     ["[0"],          "Information about the engine that generated this metadata set."]
+    ]],
+
+    ["TrackingStatus", "Enumerated", [], "The draft status of the metadata set.", [
+      [1, "draft",   "The metadata set is a draft."],
+      [2, "final",   "The metadata set is final."],
+      [3, "interim", "The metadata set has interim status."]
+    ]],
+
+    ["Revision", "Record", [], "A revision entry in the tracking history of the metadata set.", [
+      [1, "date",           "DateTime", [],    "The date of this revision entry."],
+      [2, "number",         "Version",  [],    "The version number of this revision."],
+      [3, "summary",        "String",   [],    "A short description of the changes in this revision."],
+      [4, "legacy-version", "String",   ["[0"], "A version string from an existing set with the same content, tracing from DP-Core compliant to historic items."]
+    ]],
+
+    ["Generator", "Record", [], "Information about the engine that generated the metadata set.", [
+      [1, "engine", "GeneratorEngine", [],    "Information about the engine used to generate this metadata set."],
+      [2, "date",   "DateTime",        ["[0"], "The date this metadata set was generated."]
+    ]],
+
+    ["GeneratorEngine", "Record", [], "The engine used to generate the metadata set.", [
+      [1, "name",    "String",  [],    "The name of the engine that generated this metadata set."],
+      [2, "version", "Version", ["[0"], "The version of the engine that generated this metadata set."]
+    ]],
+
+    ["Note", "Record", [], "A note associated with a metadata set.", [
+      [1, "category", "NoteCategory", [],    "The category of the note."],
+      [2, "text",     "String",        [],    "The content of the note, varying depending on type."],
+      [3, "audience", "String",        ["[0"], "The intended audience for the note."],
+      [4, "title",    "String",        ["[0"], "A concise description of what is contained in the text of the note."]
+    ]],
+
+    ["NoteCategory", "Enumerated", [], "The category of a note.", [
+      [1, "description",     "A descriptive note about the subject."],
+      [2, "details",         "A note with detailed supplemental information."],
+      [3, "faq",             "A note in frequently-asked-questions format."],
+      [4, "general",         "A general note."],
+      [5, "legal_disclaimer","A note containing a legal disclaimer."],
+      [6, "other",           "A note that does not fit other categories."],
+      [7, "summary",         "A summary note."]
+    ]],
+
+    ["Reference", "Record", [], "A reference associated with a metadata set.", [
+      [1, "summary",  "String",            [],    "A short description of what this reference refers to."],
+      [2, "url",      "URI",               [],    "The URL of the referenced resource."],
+      [3, "category", "ReferenceCategory", ["[0"], "Whether this reference is external or self-referential."]
+    ]],
+
+    ["ReferenceCategory", "Enumerated", [], "The category of a reference.", [
+      [1, "external", "The reference points to an external resource."],
+      [2, "self",     "The reference points back to the same information item in focus."]
+    ]],
+
+    ["Source", "Record", [], "Characterizes the content and source of the dataset.", [
+      [1, "about",        "About",        [],            "A detailed narrative explaining the contents, scope, and purpose of the dataset."],
+      [2, "id",           "Identity",     [],            "A unique identifier for this dataset, using at least one identification method."],
+      [3, "issuer",       "Organization", ["[1", "]0"],  "The legal entity or entities responsible for creating the dataset."],
+      [4, "location",     "URI",          [],            "The web address where this dataset's metadata is published and can be accessed."],
+      [5, "name",         "String",       [],            "The official name of the dataset."],
+      [6, "data-version", "Version",      [],            "The version of the dataset this metadata set describes."]
+    ]],
+
+    ["About", "Record", [], "A detailed narrative explaining the contents, scope, and purpose of the dataset.", [
+      [1, "content", "String", [],    "Contextual information helping users understand what the data represents and how it was collected."],
+      [2, "purpose", "String", [],    "The recommended uses for this dataset."],
+      [3, "scope",   "String", ["[0"], "Any limitations of the dataset."]
+    ]],
+
+    ["Identity", "Map", ["{1"], "Provides at least one identifier for the dataset. At least one field MUST be present.", [
+      [1, "hashes",     "HashEntry", ["[0", "]0"], "Cryptographic hash-based identifiers for the dataset."],
+      [2, "uris",       "URI",       ["[0", "]0"], "URI identifiers for the dataset."],
+      [3, "uuids",      "UUID",      ["[0", "]0"], "UUID identifiers for the dataset."],
+      [4, "custom-ids", "CustomId",  ["[0", "]0"], "Identifiers in any text format."]
+    ]],
+
+    ["HashEntry", "Record", [], "A hash-based identifier for a file or tree.", [
+      [1, "tree-hashes", "TreeHash", ["[1", "]0"], "The cryptographic hash values for this file or tree."],
+      [2, "path",        "String",   [],            "The path (file or filesystem tree root) identified by these hash values."]
+    ]],
+
+    ["TreeHash", "Record", [], "A single cryptographic hash value.", [
+      [1, "algorithm", "String", [], "The name of the hash or tree/seal algorithm used to calculate the value."],
+      [2, "value",     "String", [], "The cryptographic hash value in hexadecimal representation."]
+    ]],
+
+    ["CustomId", "Record", [], "An identifier in any text format.", [
+      [1, "method",         "String", [],            "The name of the method used to derive this identifier."],
+      [2, "value",          "String", [],            "The identifier value."],
+      [3, "tool",           "String", ["[0"],        "The name of the tool used to derive this identifier."],
+      [4, "parameter-list", "String", ["[0", "]0"],  "Parameters used when invoking the tool."]
+    ]],
+
+    ["Provenance", "Record", [], "Describes the provenance of the dataset.", [
+      [1, "origin-geography",  "GeographicRegion", ["[1", "]0"],  "The geographical locations where the data was originally collected."],
+      [2, "date",              "Date",             [],             "The date when the dataset was compiled or created (YYYY-MM-DD)."],
+      [3, "generation-method", "GenerationMethod", ["[1", "]0"],  "The methodology or procedures used to collect, generate, or compile the data."],
+      [4, "source",            "URI",              ["[0"],         "The URI of metadata for a source dataset contributing to this dataset, establishing lineage."],
+      [5, "origin",            "Organization",     ["[0", "]0"],  "The original source organization, if different from the dataset issuer."],
+      [6, "previous-date",     "Date",             ["[0"],         "The release date of the previous version of this dataset (YYYY-MM-DD)."],
+      [7, "generation-period", "GenerationPeriod", ["[0"],         "The span of time during which the data was collected or generated."],
+      [8, "format",            "ModalityFormat",   ["[0", "]0"],  "Describes the modality or media type of the data within the dataset."],
+      [9, "sub-provenance",    "Provenance",       ["[0"],         "Nested provenance information for a component of this dataset."]
+    ]],
+
+    ["GenerationPeriod", "Record", [], "The span of time during which the data was collected or generated.", [
+      [1, "start", "DateTime", ["[0"], "The start of the data collection or generation period."],
+      [2, "end",   "DateTime", ["[0"], "The end of the data collection or generation period."]
+    ]],
+
+    ["GenerationMethod", "Record", [], "A method or procedure used to collect, generate, or compile the data.", [
+      [1, "code",             "GenerationMethodCode", [],    "A short code identifying the generation method."],
+      [2, "system",           "String",               ["[0"], "The code system used to interpret the code value."],
+      [3, "long-description", "String",               ["[0"], "A detailed description of the method."]
+    ]],
+
+    ["GenerationMethodCode", "Enumerated", [], "The code identifying the data generation or collection method.", [
+      [1,  "data-augmentation",        "Data generation through augmentation of existing data."],
+      [2,  "data-mining",              "Data collected through automated data mining."],
+      [3,  "feeds",                    "Data received through data feeds."],
+      [4,  "machine-generated-ml-ops", "Data generated through machine learning operations."],
+      [5,  "other",                    "A generation method not listed here."],
+      [6,  "primary-user-source",      "Data collected directly from primary users."],
+      [7,  "simulations",              "Data generated through simulations."],
+      [8,  "social-media",             "Data collected from social media platforms."],
+      [9,  "syndication",              "Data received through syndication."],
+      [10, "transfer-learning",        "Data generated through transfer learning."],
+      [11, "user-generated-content",   "Data created by end users."],
+      [12, "web-scraping-crawling",    "Data collected by web scraping or crawling."]
+    ]],
+
+    ["ModalityFormat", "Enumerated", [], "The modality or media type of the data within the dataset.", [
+      [1,  "application/json",         "JSON data format."],
+      [2,  "application/jsonld",       "JSON-LD linked data format."],
+      [3,  "application/msword",       "Microsoft Word document format."],
+      [4,  "application/vnd.ms-excel", "Microsoft Excel spreadsheet format."],
+      [5,  "application/zip",          "ZIP archive format."],
+      [6,  "image/bmp",                "BMP image format."],
+      [7,  "image/gif",                "GIF image format."],
+      [8,  "image/jpeg",               "JPEG image format."],
+      [9,  "image/png",                "PNG image format."],
+      [10, "image/x-png",              "PNG image format (legacy media type)."],
+      [11, "other",                    "A format not listed here."],
+      [12, "text/csv",                 "CSV text format."],
+      [13, "text/plain",               "Plain text format."]
+    ]],
+
+    ["Use", "Record", [], "Describes legal use and restrictions applicable to the dataset.", [
+      [1,  "intended-purpose",    "Purpose",          ["[1", "]0"],  "The purpose or purposes for which the dataset was created."],
+      [2,  "classification",      "Classification",   ["[0", "]0"],  "Confidentiality classifications applicable to the dataset."],
+      [3,  "consents",            "String",           ["[0", "]0"],  "Locations of consent documentation or agreements related to the data."],
+      [4,  "data-risk-reducing",  "DataRiskReducing", ["[0", "]0"],  "Techniques used to reduce known data risk."],
+      [5,  "processing-included", "GeographicRegion", ["[0", "]0"],  "Geographical boundaries within which the data may be processed."],
+      [6,  "processing-excluded", "GeographicRegion", ["[0", "]0"],  "Geographical boundaries within which the data may not be processed."],
+      [7,  "storage-allowed",     "GeographicRegion", ["[0", "]0"],  "Geographical locations where the data may be stored."],
+      [8,  "storage-forbidden",   "GeographicRegion", ["[0", "]0"],  "Geographical locations where the data may not be stored."],
+      [9,  "license",             "String",           ["[0", "]0"],  "The terms under which the dataset can be used."],
+      [10, "copyright",           "String",           ["[0", "]0"],  "Copyright information covering proprietary information in the dataset."],
+      [11, "patent",              "String",           ["[0", "]0"],  "Patent information covering proprietary information in the dataset."],
+      [12, "trademark",           "String",           ["[0", "]0"],  "Trademark information covering proprietary information in the dataset."]
+    ]],
+
+    ["Purpose", "Record", [], "The intended purpose of the dataset.", [
+      [1, "code",             "PurposeCode", [],    "A short code identifying the intended purpose."],
+      [2, "long-description", "String",      [],    "A detailed description of the intended purpose."],
+      [3, "system",           "String",      ["[0"], "The code system used to interpret the code value."]
+    ]],
+
+    ["PurposeCode", "Enumerated", [], "The code identifying the intended purpose of the dataset.", [
+      [1, "alignment",               "Dataset intended for model alignment tasks."],
+      [2, "evaluation",              "Dataset intended for evaluation or benchmarking."],
+      [3, "other",                   "A purpose not listed here."],
+      [4, "pre-training",            "Dataset intended for model pre-training."],
+      [5, "production",              "Dataset intended for production use."],
+      [6, "quality-assurance",       "Dataset intended for quality assurance testing."],
+      [7, "research",                "Dataset intended for research use."],
+      [8, "staging-testing",         "Dataset intended for staging or testing environments."],
+      [9, "synthetic-data-generation","Dataset intended for generating synthetic data."]
+    ]],
+
+    ["Classification", "Record", [], "A confidentiality classification applicable to the dataset.", [
+      [1, "regulation", "Regulation", [],    "The regulation or classification standard being evaluated."],
+      [2, "evaluated",  "Boolean",    [],    "Whether the dataset has been evaluated against this classification."],
+      [3, "tool",       "String",     ["[0"], "The tool used to perform the evaluation."]
+    ]],
+
+    ["Regulation", "Record", [], "A confidentiality classification standard or regulation being evaluated.", [
+      [1, "code",             "ConfidentialityCode", [],    "A short code identifying the confidentiality classification."],
+      [2, "system",           "String",              ["[0"], "The code system used to interpret the code value."],
+      [3, "long-description", "String",              ["[0"], "A detailed description of the regulation or classification."]
+    ]],
+
+    ["ConfidentialityCode", "Enumerated", [], "The code identifying the confidentiality classification.", [
+      [1, "other", "A confidentiality classification not listed here."],
+      [2, "pci",   "Payment Card Industry (PCI) data."],
+      [3, "pfi",   "Personal Financial Information (PFI)."],
+      [4, "phi",   "Protected Health Information (PHI)."],
+      [5, "pi",    "Personal Information (PI)."],
+      [6, "sci",   "Sensitive Compartmented Information (SCI)."],
+      [7, "spi",   "Sensitive Personal Information (SPI)."]
+    ]],
+
+    ["DataRiskReducing", "Record", [], "A technique used to reduce known data risk.", [
+      [1, "tool-used",     "String",       [],           "The name of the tool used for data risk reduction."],
+      [2, "tool-category", "Method",       ["[0"],       "The category of the tool used for data risk reduction."],
+      [3, "technology",    "DataTechnology",["[0"],      "The privacy-enhancing or data-reducing technology applied."],
+      [4, "parameters",    "Parameter",    ["[0", "]0"], "The parameters passed to the tool."],
+      [5, "results",       "String",       ["[0", "]0"], "The results of applying the tool."]
+    ]],
+
+    ["DataTechnology", "Enumerated", [], "The privacy-enhancing or data-reducing technology applied.", [
+      [1,  "data-anonymization",          "Data anonymization."],
+      [2,  "data-encryption",             "Data encryption."],
+      [3,  "data-masking",                "Data masking."],
+      [4,  "data-minimization",           "Data minimization."],
+      [5,  "data-redaction",              "Data redaction."],
+      [6,  "differential-privacy",        "Differential privacy."],
+      [7,  "federated-learning",          "Federated learning."],
+      [8,  "homomorphic-encryption",      "Homomorphic encryption."],
+      [9,  "k-anonymity",                 "k-anonymity."],
+      [10, "l-diversity",                 "l-diversity."],
+      [11, "other",                       "A data technology not listed here."],
+      [12, "pseudonymization",            "Pseudonymization."],
+      [13, "secure-multi-party-computation", "Secure multi-party computation (SMC)."],
+      [14, "t-closeness",                 "t-closeness."],
+      [15, "tokenization",               "Tokenization."]
+    ]],
+
+    ["Parameter", "Record", [], "A parameter and its value used when invoking a tool.", [
+      [1, "name",  "String", [],    "The parameter name."],
+      [2, "value", "String", ["[0"], "The parameter value."]
+    ]],
+
+    ["Organization", "Record", [], "A legal entity or organization.", [
+      [1, "legal-name", "String",  [],    "The legal name of the organization."],
+      [2, "address",    "Address", ["[0"], "The postal address of the organization."],
+      [3, "url",        "URI",     ["[0"], "A URL for the organization."]
+    ]],
+
+    ["Address", "ArrayOf", ["*String", "[1"], "Lines of a postal address. At least one line required."],
+
+    ["GeographicRegion", "Record", [], "A geographical region identified by country and optionally state.", [
+      [1, "country", "String", [],    "The country name or code."],
+      [2, "state",   "String", ["[0"], "The state or province name or code."]
+    ]],
+
+    ["Method", "Record", [], "An open coding object for a method, regulation, or classification.", [
+      [1, "code",             "String", [],    "A short code identifying the method, regulation, or classification."],
+      [2, "system",           "String", ["[0"], "The code system used to interpret the code value."],
+      [3, "long-description", "String", ["[0"], "A detailed description of the method, regulation, or classification."]
+    ]],
+
+    ["Acknowledgment", "Map", ["{1"], "A contributor acknowledgment. At least one field MUST be present.", [
+      [1, "names",        "String", ["[0", "]0"], "Names of individual contributors being acknowledged."],
+      [2, "organization", "String", ["[0"],       "Name of a contributing organization being acknowledged."],
+      [3, "summary",      "String", ["[0"],       "Contextual details about the acknowledgment."],
+      [4, "urls",         "URI",    ["[0", "]0"], "URLs of references being acknowledged."]
+    ]],
+
+    ["Version",  "String",  [],        "An integer or semantic versioning string. Examples: '1', '2.0.0', '1.0.0-beta'."],
+    ["Language", "String",  [],        "A language tag conforming to IETF BCP 47 / RFC 5646."],
+    ["URI",      "String",  ["/uri"],   "A Uniform Resource Identifier (RFC 3986)."],
+    ["UUID",     "String",  ["/uuid"],  "A Universally Unique Identifier (RFC 4122)."],
+    ["DateTime", "String",  ["/date-time"], "An RFC 3339 date-time string."],
+    ["Date",     "String",  ["/date"],  "An RFC 3339 full-date string (YYYY-MM-DD)."]
+
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "$schema": "https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json",
+  "set": {
+    "category": "training-data",
+    "schema-version": "1.0",
+    "publisher": {
+      "name": "Acme Data Services",
+      "namespace": "https://data.acme.example/",
+      "contact-details": "provenance@acme.example"
+    },
+    "label": "Acme Multilingual News Corpus Provenance",
+    "tracking": {
+      "current-release-date": "2026-03-15T12:00:00Z",
+      "id": "acme-news-corpus-prov-2026",
+      "initial-release-date": "2025-09-01T00:00:00Z",
+      "revision-history": [
+        {
+          "date": "2025-09-01T00:00:00Z",
+          "number": "1",
+          "summary": "Initial release."
+        },
+        {
+          "date": "2026-03-15T12:00:00Z",
+          "number": "2",
+          "summary": "Updated publisher contact details and corrected source location URI."
+        }
+      ],
+      "status": "final",
+      "version": "2"
+    },
+    "language": "en",
+    "acknowledgments": [
+      {
+        "names": ["J. Smith", "A. Müller"],
+        "organization": "University of Example",
+        "summary": "Corpus curation and quality review."
+      }
+    ]
+  },
+  "source": {
+    "about": {
+      "content": "A multilingual corpus of news articles sourced from syndicated RSS feeds across five countries.",
+      "purpose": "Pre-training and fine-tuning of multilingual language models.",
+      "scope": "Articles published between January 2024 and December 2025. Excludes opinion and editorial content."
+    },
+    "id": {
+      "uuids": ["a1b2c3d4-e5f6-7890-abcd-ef1234567890"],
+      "uris": ["https://data.acme.example/datasets/news-corpus-2026"]
+    },
+    "issuer": [
+      {
+        "legal-name": "Acme Data Services LLC",
+        "address": ["100 Data Drive", "San Francisco, CA 94102", "USA"],
+        "url": "https://acme.example/"
+      }
+    ],
+    "location": "https://data.acme.example/datasets/news-corpus-2026/provenance.json",
+    "name": "Acme Multilingual News Corpus 2026",
+    "data-version": "2.0.0"
+  },
+  "provenance": {
+    "origin-geography": [
+      {"country": "United States"},
+      {"country": "Germany"},
+      {"country": "France"}
+    ],
+    "date": "2026-01-10",
+    "generation-method": [
+      {
+        "code": "feeds",
+        "long-description": "Articles collected via RSS/Atom syndication feeds from partner news organizations."
+      }
+    ],
+    "format": ["text/plain", "application/json"],
+    "generation-period": {
+      "start": "2024-01-01T00:00:00Z",
+      "end": "2025-12-31T23:59:59Z"
+    },
+    "source": "https://partner-news.example/dps/source-provenance.json"
+  },
+  "use": {
+    "intended-purpose": [
+      {
+        "code": "pre-training",
+        "long-description": "Intended for pre-training multilingual foundation language models."
+      },
+      {
+        "code": "research",
+        "long-description": "May be used for academic research on multilingual NLP tasks."
+      }
+    ],
+    "classification": [
+      {
+        "regulation": {"code": "pi"},
+        "evaluated": true,
+        "tool": "PrivacyScanner 3.1"
+      }
+    ],
+    "consents": ["https://data.acme.example/policies/data-use-agreement-v2.pdf"],
+    "license": ["Apache-2.0"]
+  }
+}
