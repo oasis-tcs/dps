@@ -1,0 +1,4 @@
+00-usage-hints: >
+  Text patches applied to generated GFM-Plus; see bin/patch.py.
+  Each entry maps a site file path to a list of [search, replace] pairs
+  applied in order with plain str.replace.

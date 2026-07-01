@@ -1,0 +1,113 @@
+%% first titlepage (book front matter)
+\pdfbookmark[startatroot,bold]{Data Provenance Metadata Version 1.0 CSD02}{doctitle}
+\pdfbookmark[section]{Frontmatter}{status}
+\mbox{}\vskip -2em
+\includegraphics{\theChosenTitlePageLogo}
+\vskip 1em
+\hrule
+\section*{Data Provenance Metadata Version 1.0}\label{data-provenance-metadata-version-1.0}
+
+\subsection*{Committee Specification Draft 02}\label{committee-specification-draft-02}
+
+\subsection*{30 June 2026}\label{pub-date}
+
+\paragraph*{This version}\label{this-version}
+
+\href{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.md}{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.md}
+(Authoritative)\\
+\href{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html}{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html}\\
+\href{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.pdf}{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.pdf}
+
+\paragraph*{Latest version}\label{latest-version}
+
+\href{https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.md}{https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.md}
+(Authoritative)\\
+\href{https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html}{https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html}\\
+\href{https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.pdf}{https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.pdf}
+
+\paragraph*{Previous version}\label{previous-version}
+
+\href{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.md}{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.md}
+(Authoritative)\\
+\href{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.html}{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.html}\\
+\href{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.pdf}{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.pdf}
+
+\paragraph*{Technical Committee}\label{technical-committee}
+
+\href{https://www.oasis-open.org/committees/dps/}{OASIS Data Provenance Standard (DPS) TC}
+
+\paragraph*{Chairs}\label{chairs}
+
+Lisa Bobbitt (lbobbitt@cisco.com),
+\href{https://cisco.com}{Cisco}\\
+Bryan Bortnick (bortnick@us.ibm.com),
+\href{https://ibm.com}{IBM}\\
+Fotis Psallidas (Fotis.Psallidas@microsoft.com),
+\href{https://microsoft.com}{Microsoft}\\
+
+\paragraph*{Secretaries}\label{secretaries}
+
+Jamie Yu (jamyu2@cisco.com),
+\href{https://cisco.com}{Cisco}\\
+
+\paragraph*{Editors}\label{editors}
+
+David Kemp (d.kemp@cyber.nsa.gov), \href{https://nsa.gov}{NSA}\\
+Stefan Hagen (stefan@hagen.link), \href{https://stefan-hagen.website/}{Individual}\\
+
+\paragraph*{Additional artifacts}\label{additional-artifacts}
+
+This prose specification is one component of a Work Product that also includes:
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Data Provenance Metadata JSON schema}: \href{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance.json}{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance.json}. \
+  Latest stage: \href{https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json}{https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json}.
+\item
+  \emph{Data Provenance Metadata Configuration JSON schema}: \href{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance-configuration.json}{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance-configuration.json}. \
+  Latest stage: \href{https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json}{https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json}.
+\end{itemize}
+
+\paragraph*{Declared JSON namespaces}\label{declared-json-namespaces}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json}{https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json}
+\item
+  \href{https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json}{https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json}
+\end{itemize}
+
+\paragraph*{Abstract}\label{abstract}
+
+This OASIS Data Provenance Metadata specification provides an information model and several specialized data schemata for describing and managing data provenance and data lineage.
+The resulting common language provides transparency for data provenance and enables assessing where data comes from,
+how it has been created, and in what scenarios it can be used, legally.
+
+\paragraph*{Citation Format}\label{citation-format}
+
+When referencing this document, the following citation format should be used:
+
+\textbf{{[}prov-meta-v1.0{]}}
+
+\emph{Data Provenance Metadata Version 1.0}. Edited by David Kemp and Stefan Hagen. 30 June 2026. OASIS Committee Specification Draft 02.
+\href{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html}{https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html}.
+Latest stage: \href{https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html}{https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html}.
+
+\paragraph*{Related Work}\label{related-work}
+
+This document replaces or supersedes:\\
+
+N/A\\
+
+This document is related to:\\
+
+N/A\\
+
+\paragraph*{License, Document Status, and Notices}\label{license-document-status-and-notices}
+
+Copyright © OASIS Open 2026. All Rights Reserved.
+
+For license and copyright information, and complete status, please see \hyperref[annex-a]{Annex A} which contains the License, Document Status and Notices.
+

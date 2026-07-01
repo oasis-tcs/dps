@@ -1,0 +1,40 @@
+annex-starts-with: 'Annex '
+appendix-starts-with: 'Appendix '
+binder: bind.txt  # binder text file (assumed in etc-path)
+binder-ignores:
+  gfm-plus: []
+  html: []
+  pdf:
+  - frontmatter.md
+build-path: build  # relative path from execution dir to build folder
+citation-skip-prefixes:
+- '#'
+citation-sources: [] # file names, not full paths
+delete-when:
+- contains: '<mark title="Ephemeral region marking">'
+  delete:
+  - '<mark title="Ephemeral region marking">'
+  - '</mark>'
+etc-path: etc  # relative path from execution dir to etc folder
+example-local-to-global-db: example-local-to-global.json  # (assumed in etc-path)
+example-global-to-local-db: example-global-to-local.json  # (assumed in etc-path)
+first-authored-section: '# Scope'  # section title of the first authored section
+glossary-sources: [] # file names, not full paths
+html-title: Data Provenance Metadata Version 1.0
+meta-example-global-number: 4321  # integer either > count of examples or == zero
+section-display-to-label-db: section-display-to-label.json  # (assumed in etc-path)
+section-display-to-text-db: section-display-to-text.json  # (assumed in etc-path)
+section-label-to-display-db: section-label-to-display.json  # (assumed in etc-path)
+section-reference-style: number-title  # enumeration: number, number-title, section-sign-number
+source-path: src  # relative path from execution dir to source dir
+track-examples: true  # bool: set to true if examples should be discovered
+
+# HTML post-processing (koota --inject)
+html-inject-css-base: ../share/style/base.css
+html-inject-css-skin: ../share/style/skin.css
+html-inject-logo-data-url: ../media/logo-data-url.txt
+html-inject-logo-remote-url: 'https://docs.oasis-open.org/templates/OASISLogo-v3.0.png'
+html-inject-toc-trigger: '<h1 id="table-of-contents'
+html-inject-intro-trigger: '<h1 id="1-scope'
+html-inject-images: true
+html-inject-images-path: build/data-url
