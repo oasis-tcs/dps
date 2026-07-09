@@ -93,67 +93,67 @@ which contains the License, Document Status and Notices.
 
 ## Table of Contents
 
-- [1 Scope](#1-scope)
-- [2 Definitions and Acronyms](#2-definitions-and-acronyms)
-  - [2.1 Definitions](#2.1-definitions)
-    - [2.1.1 Terms Defined Elsewhere](#2.1.1-terms-defined-elsewhere)
-    - [2.1.2 Terms Defined in this Document](#2.1.2-terms-defined-in-this-document)
-  - [2.2 Abbreviations and Acronyms](#2.2-abbreviations-and-acronyms)
-- [3 Document Conventions](#3-document-conventions)
-  - [3.1 Key Words](#3.1-key-words)
-  - [3.2 Typographical Conventions](#3.2-typographical-conventions)
-- [4 Introduction](#4-introduction)
-  - [4.1 Any Additional Introduction Subsections That are Needed](#4.1-any-additional-introduction-subsections-that-are-needed)
-  - [4.2 Changes From the Previous Version](#4.2-changes-from-the-previous-version)
-- [5 Provenance Information Model](#5-provenance-information-model)
-  - [5.1 Primary Metadata Elements](#51-primary-metadata-elements)
-  - [5.2 Source](#52-source)
-  - [5.3 Provenance](#53-provenance)
-  - [5.4 Use](#54-use)
-- [6 Provenance Information Model Encoding](#6-provenance-information-model-encoding)
-  - [6.1 JADN Encoding](#61-jadn-encoding)
-  - [6.2 YAML Encoding](#62-yaml-encoding)
-- [7 Provenance Data Model Encoding](#7-provenance-data-model-encoding)
-  - [7.1 JSON Encoding](#71-json-encoding)
-  - [7.2 XML Encoding](#72-xml-encoding)
-  - [7.3 YAML Encoding](#73-yaml-encoding)
+- [1 Scope](#scope)
+- [2 Definitions and Acronyms](#definitions-and-acronyms)
+  - [2.1 Definitions](#definitions)
+    - [2.1.1 Terms Defined Elsewhere](#terms-defined-elsewhere)
+    - [2.1.2 Terms Defined in this Document](#terms-defined-in-this-document)
+  - [2.2 Abbreviations and Acronyms](#abbreviations-and-acronyms)
+- [3 Document Conventions](#document-conventions)
+  - [3.1 Key Words](#key-words)
+  - [3.2 Typographical Conventions](#typographical-conventions)
+- [4 Introduction](#introduction)
+  - [4.1 Any Additional Introduction Subsections That are Needed](#any-additional-introduction-subsections-that-are-needed)
+  - [4.2 Changes From the Previous Version](#changes-from-the-previous-version)
+- [5 Provenance Information Model](#provenance-information-model)
+  - [5.1 Primary Metadata Elements](#primary-metadata-elements)
+  - [5.2 Source](#source)
+  - [5.3 Provenance](#provenance)
+  - [5.4 Use](#use)
+- [6 Provenance Information Model Encoding](#provenance-information-model-encoding)
+  - [6.1 JADN Encoding](#im-jadn-encoding)
+  - [6.2 YAML Encoding](#im-yaml-encoding)
+- [7 Provenance Data Model Encoding](#provenance-data-model-encoding)
+  - [7.1 JSON Encoding](#dm-json-encoding)
+  - [7.2 XML Encoding](#dm-xml-encoding)
+  - [7.3 YAML Encoding](#dm-yaml-encoding)
 - [8 Safety, Security, and Data Protection](#7-safety,-security,-and-data-protection)
-- [9 Conformance](#8-conformance)
-- [Annex A License, Document Status and Notices](#annex-a-license,-document-status-and-notices)
-  - [A.1 Document Status](#a.1-document-status)
-  - [A.2 License and Notices](#a.2-license-and-notices)
-- [Annex B References](#annex-b-references)
-  - [B.1 Normative References](#b.1-normative-references)
-  - [B.2 Informative References](#b.2-informative-references)
-- [Annex C Additional Annex as Needed](#annex-c-additional-annex-as-needed)
-  - [C.1 Subsection Title](#c.1-subsection-title)
-  - [C.1.1 Sub-subsection](#c.1.1-sub-subsection)
-- [Appendix 1 Acknowledgments](#appendix-1-acknowledgments)
+- [9 Conformance](#conformance)
+- [Annex A License, Document Status and Notices](#license-document-status-and-notices)
+  - [A.1 Document Status](#document-status)
+  - [A.2 License and Notices](#license-and-notices)
+- [Annex B References](#references)
+  - [B.1 Normative References](#normative-references)
+  - [B.2 Informative References](#informative-references)
+- [Annex C Additional Annex as Needed](#additional-annex-as-needed)
+  - [C.1 Subsection Title](#subsection-title)
+  - [C.1.1 Sub-subsection](#sub-subsection)
+- [Appendix 1 Acknowledgments](#acknowledgments)
   - [Leadership](#leadership)
   - [Special Thanks](#special-thanks)
   - [Participants](#participants)
-- [Appendix 2 Changes From Previous Version](#appendix-2-changes-from-previous-version)
+- [Appendix 2 Changes From Previous Version](#changes-from-previous-version)
   - [Revision History](#revision-history)
 
 ---
 
-# 1 Scope
+# 1 Scope{#scope}
 
 Data is a core enterprise asset that underpins strategic decision-making, drives operational priorities, and supports risk governance.
 Dependence on data creates a need for validation by understanding data’s origin, quality, and intended use.
 Understanding data is a requirement for organizations operating at scale.
-The OASIS Data Provenance Standards (DPS) are created to solve for this need.
+The OASIS Data Provenance Standard (DPS) is created to solve for this need.
 Developed through cross-industry collaboration, the DPS provide a consistent framework to track the origin, movement, integrity, and quality of data.
 The DPS address the growing demand for transparency in artificial intelligence (AI), cybersecurity, supply chains,
 and areas where data quality and accountability are foundational to performance and compliance - especially in regulated and high-risk environments.
 
 ---
 
-# 2 Definitions and Acronyms
+# 2 Definitions and Acronyms{#definitions-and-acronyms}
 
-## 2.1 Definitions
+## 2.1 Definitions{#definitions}
 
-### 2.1.1 Terms Defined Elsewhere
+### 2.1.1 Terms Defined Elsewhere{#terms-defined-elsewhere}
 
 This document uses the following terms defined elsewhere:
 
@@ -169,11 +169,11 @@ This document uses the following terms defined elsewhere:
   It means that businesses, governments, and institutions disclose how they collect, store, use, and share data, ensuring users, customers,
   and stakeholders understand their practices.
 
-### 2.1.2 Terms Defined in this Document
+### 2.1.2 Terms Defined in this Document{#terms-defined-in-this-document}
 
 None
 
-## 2.2 Abbreviations and Acronyms
+## 2.2 Abbreviations and Acronyms{#abbreviations-and-acronyms}
 
 AI
 :    Artificial Intelligence
@@ -191,14 +191,14 @@ PET
 
 ---
 
-# 3 Document Conventions
+# 3 Document Conventions{#document-conventions}
 
-## 3.1 Key Words
+## 3.1 Key Words{#key-words}
 
 The key words "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**NOT RECOMMENDED**", "**MAY**",
-and "**OPTIONAL**" in this document are to be interpreted as described in BCP 14 \[RFC2119\] \[RFC8174\] when, and only when, they appear in all capitals, as shown here.
+and "**OPTIONAL**" in this document are to be interpreted as described in BCP 14 \[[RFC2119](#normative-references)\] and \[[RFC8174](#normative-references)\] when, and only when, they appear in all capitals, as shown here.
 
-## 3.2 Typographical Conventions
+## 3.2 Typographical Conventions{#typographical-conventions}
 
 Keywords defined by this specification use this `monospaced` font.
 
@@ -225,53 +225,51 @@ All other text is normative unless otherwise labeled e.g. like the following inf
 
 This document adheres to the Modern Language Association (MLA) style guidelines for formatting titles and terms.
 
-# 4 Introduction
+# 4 Introduction{#introduction}
 
 Data is a core enterprise asset.
 It underpins strategic decision-making, drives operational priorities, and supports risk governance.
 Dependence on data creates a need for validation and an understanding of the data's origin, quality, and intended use.
 Understanding data is a requirement for organizations operating at scale.
-The OASIS Data Provenance Standards (DPS) are created to solve for this need.
+The OASIS Data Provenance Standard (DPS) is created to solve for this need.
 
-## 4.1 Any Additional Introduction Subsections That are Needed
+## 4.1 Any Additional Introduction Subsections That are Needed{#any-additional-introduction-subsections-that-are-needed}
 
 None
 
-## 4.2 Changes From the Previous Version
+## 4.2 Changes From the Previous Version{#changes-from-the-previous-version}
 
 N/A
 
 ---
 
-# 5 Provenance Schema
+# 5 Provenance Schema{#provenance-schema}
 
 The schema of the provenance metadata is described in human-readable property tables.
 The technical encoding may be found in section [6 Provenance Information Model Encoding](#6-provenance-information-model-encoding).
 
-The Data Provenance Standards record metadata elements in three segmented categories: Source, Provenance, and Use.
+The Data Provenance Standard records metadata elements in three segmented categories: Source, Provenance, and Use.
 
 <!--
 Note: The current visualization does not show the sibling `version` element of the `Metadata` element.
 TODO: The next draft of this document will ensure the tabulated elements are all included in any graphical visualizations as applicable. 
 -->
 
-![Metadata](./images/metadata.svg)
+![Metadata](./images/metadata.svg "metadata")
 
 The property tables first define metadata about the specification itself,
 then describe how a record is made of the 3 primary metadata elements.
 The three segmented categories (Source, Provenance, and Use) are comprised of various
 metadata element input fields. Each field is described in more detail below.
 
-## 5.1 Primary Metadata Elements
+## 5.1 Primary Metadata Elements{#primary-metadata-elements}
 
 | ID | Name     | Type           | \# | Description                                                                                                                                      |
 |---:|:---------|:---------------|:---|:-------------------------------------------------------------------------------------------------------------------------------------------------|
 |  1 | version  | URL            | 1  | Specifies the version of the schema or standards used to define the metadata for this dataset, ensuring consistency and compatibility over time. |
 |  2 | metadata | DataProvenance | 1  | The metadata about a dataset                                                                                                                     |
 
-Table: Type `DPS` (Record)
-
-The Data Provenance Standard Metadata
+Table 1: Type `DPS` (Record)
 
 | ID | Name       | Type       | \# | Description                                       |
 |---:|:-----------|:-----------|:---|:--------------------------------------------------|
@@ -279,7 +277,7 @@ The Data Provenance Standard Metadata
 |  2 | provenance | Provenance | 1  | Provenance of the dataset                         |
 |  3 | use        | Use        | 1  | Legal use and restrictions                        |
 
-Table: Type `DataProvenance` (Record)
+Table 2: Type `DataProvenance` (Record)
 
 ## 5.2 Source
 
@@ -291,7 +289,7 @@ Table: Type `DataProvenance` (Record)
 |  4 | issuer      | Organization | 1..\* | The legal entity responsible for creating the dataset, providing accountability and a point of contact for inquiries.                                                                                                                                          |
 |  5 | description | String       | 1     | Contains a detailed narrative that explains the contents, scope, and purpose of the dataset. It provides essential contextual information that helps users understand what the data represents, how it was collected, and any limitations or recommended uses. |
 
-Table: Type `Source` (Record)
+Table 3: Type `Source` (Record)
 
 | ID | Name    | Type    | \# | Description       |
 |---:|:--------|:--------|:---|:------------------|
@@ -304,14 +302,14 @@ Table: Type `Organization` (Record)
 |:----------|:----------------|:-------------------------------------------------|
 | Address   | ArrayOf(String) | Just lines for now, enable structured definition |
 
-Table: Type `Address` (ArrayOf(String))
+Table 4: Type `Address` (ArrayOf(String))
 
-## 5.3 Provenance
+## 5.3 Provenance{#provenance}
 
 | ID | Name              | Type               | \#    | Description                                                                                                                                                                                |
 |---:|:------------------|:-------------------|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  1 | source            | URL                | 1..\* | Identifies where the metadata for any source datasets that contribute to the current dataset can be found, establishing lineage and dependencies. This field establishes lineage.          |
-|  2 | origin            | Organization       | 0..1  | If the data originates from a different organization than the one who isued the dataset, this field identifies that original source's legal name.                                          |
+|  2 | origin            | Organization       | 0..1  | If the data originates from a different organization than the one who issued the dataset, this field identifies that original source's legal name.                                         |
 |  3 | origin-geography  | ArrayOf(Geography) | 1..\* | The geographical location where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.                          |
 |  4 | date              | Timestamp          | 1     | The date when the dataset was compiled or created, providing a temporal context for the data.                                                                                              |
 |  5 | previous-date     | Timestamp          | 1     | The release date of the last version of the dataset, if it has been updated or revised, to track changes and updates over time.                                                            |
@@ -320,7 +318,7 @@ Table: Type `Address` (ArrayOf(String))
 |  8 | format            | MediaType          | 0..\* | Describes the nature of the data within the dataset, such as numerical, textual, or multimedia, helping users understand what kind of information is contained within the file or dataset. |
 |  9 | sub-provenance    | Provenance         | 1     | Add key/link?                                                                                                                                                                              |
 
-Table: Type `Provenance` (Record)
+Table 5: Type `Provenance` (Record)
 
 
 | ID | Name     | Type      | \# | Description                                         |
@@ -328,9 +326,9 @@ Table: Type `Provenance` (Record)
 |  1 | oldest   | Timestamp | 1  | Oldest component of data contained in the dataset   |
 |  2 | youngest | Timestamp | 1  | Youngest component of data contained in the dataset |
 
-Table: Type `Generation` (Record)
+Table 6: Type `Generation` (Record)
 
-## 5.4 Use
+## 5.4 Use{#use}
 
 | ID | Name               | Type                    | \#    | Description                                                                                                                                                                                      |
 |---:|:-------------------|:------------------------|:------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -345,42 +343,42 @@ Table: Type `Generation` (Record)
 |  9 | patent             | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Patent and said Patent number.                                                                             |
 | 10 | trademark          | String                  | 0..\* | Indicates whether the dataset contains proprietary information that is covered with a Trademark, and the terms of said Trademark.                                                                |
 
-Table: Type `Use` (Record)
+Table 7: Type `Use` (Record)
 
 | ID | Name   | Type            | \#    | Description |
 |---:|:-------|:----------------|:------|:------------|
 |  1 | non-ai | NonAIUse unique | 1..\* | Non-AI      |
 |  2 | ai     | AIUse unique    | 1..\* | AI          |
 
-Table: Type `IntendedAndAcceptableUsages` (Record)
+Table 8: Type `IntendedAndAcceptableUsages` (Record)
 
 | ID | Name           | Type      | \#    | Description                                                    |
 |---:|:---------------|:----------|:------|:---------------------------------------------------------------|
 |  1 | same-as-origin | Boolean   | 1     | Data processing geography is the same as data origin geography |
 |  2 | countries      | Geography | 0..\* |                                                                |
 
-Table: Type `ProcessingGeography` (Record)
+Table 9: Type `ProcessingGeography` (Record)
 
 | ID | Name               | Type      | \#    | Description                                                     |
 |---:|:-------------------|:----------|:------|:----------------------------------------------------------------|
 |  1 | same-as-processing | Boolean   | 1     | Data storage geography is the same as data processing geography |
 |  2 | countries          | Geography | 0..\* |                                                                 |
 
-Table: Type `StorageGeography` (Record)
+Table 10: Type `StorageGeography` (Record)
 
 | ID | Name    | Type            | \#   | Description |
 |---:|:--------|:----------------|:-----|:------------|
 |  1 | country | geo:CountryName | 1    |             |
 |  2 | state   | geo:StateName   | 0..1 |             |
 
-Table: Type `Geography` (Record)
+Table 11: Type `Geography` (Record)
 
 
 | ID | Name | Type         | \# | Description |
 |---:|:-----|:-------------|:---|:------------|
 |  1 | uid  | Binary /uuid | 1  | uuid -      |
 
-Table: Type `UID` (Choice(anyOf))
+Table 12: Type `UID` (Choice(anyOf))
 
 | ID | Name       | Type                  | \# | Description           |
 |---:|:-----------|:----------------------|:---|:----------------------|
@@ -389,32 +387,32 @@ Table: Type `UID` (Choice(anyOf))
 |  3 | parameters | MapOf(String, String) | 1  | key-value pair        |
 |  4 | results    | ArrayOf(String)       | 1  |                       |
 
-Table: Type `DataRiskReducingTool` (Record)
+Table 13: Type `DataRiskReducingTool` (Record)
 
 | Type Name | Type Definition | Description |
 |:----------|:----------------|:------------|
 | ToolID    | String          |             |
 
-Table: Type `ToolID` (String)
+Table 14: Type `ToolID` (String)
 
 | ID | Name           | Type                          | \#    | Description |
 |:---|:---------------|:------------------------------|:------|:------------|
 | 1  | classification | ConfidentialityClassification | 1     |             |
 | 2  | tool-id        | ToolID                        | 0..\* |             |
 
-Table: Type `Confidentiality` (Record)
+Table 15: Type `Confidentiality` (Record)
 
 | Type Name | Type Definition | Description |
 |:----------|:----------------|:------------|
 | Timestamp | DateTime        |             |
 
-Table: Type `Timestamp` (DateTime)
+Table 16: Type `Timestamp` (DateTime)
 
 | Type Name | Type Definition | Description                          |
 |:----------|:----------------|:-------------------------------------|
 | URL       | String /uri     | URI designated as a resource locator |
 
-Table: Type `URL` (String)
+Table 17: Type `URL` (String)
 
 | ID | Item                     | Description |
 |---:|:-------------------------|:------------|
@@ -431,7 +429,7 @@ Table: Type `URL` (String)
 | 10 | user-generated-content   |             |
 | 11 | web-scraping-crawling    |             |
 
-Table: Type `Method` (Enumerated)
+Table 18: Type `Method` (Enumerated)
 
 | ID | Item                     | Description |
 |---:|:-------------------------|:------------|
@@ -449,7 +447,7 @@ Table: Type `Method` (Enumerated)
 | 11 | text/csv                 |             |
 | 12 | text/plain               |             |
 
-Table: Type `ModalityFormat` (Enumerated)
+Table 19: Type `ModalityFormat` (Enumerated)
 
 | ID | Item  | Description                             |
 |---:|:------|:----------------------------------------|
@@ -461,7 +459,7 @@ Table: Type `ModalityFormat` (Enumerated)
 |  5 | sci   | Sensitive Customer Information (SCI)    |
 |  6 | spi   | Sensitive Personal Information (SPI)    |
 
-Table: Type `ConfidentialityClassification` (Enumerated)
+Table 20: Type `ConfidentialityClassification` (Enumerated)
 
 | ID | Item                           | Description |
 |---:|:-------------------------------|:------------|
@@ -481,7 +479,7 @@ Table: Type `ConfidentialityClassification` (Enumerated)
 | 13 | t-closeness                    |             |
 | 14 | tokenization                   |             |
 
-Table: Type `DataTechnology` (Enumerated)
+Table 21: Type `DataTechnology` (Enumerated)
 
 | ID | Item                           | Description                                                                       |
 |---:|:-------------------------------|:----------------------------------------------------------------------------------|
@@ -490,7 +488,7 @@ Table: Type `DataTechnology` (Enumerated)
 |  2 | none                           | No License.                                                                       |
 |  3 | public-license                 | License Name and add link.                                                        |
 
-Table: Type `License` (Enumerated)
+Table 22: Type `License` (Enumerated)
 
 | ID | Item              | Description |
 |---:|:------------------|:------------|
@@ -500,7 +498,7 @@ Table: Type `License` (Enumerated)
 |  3 | research          |             |
 |  4 | staging-testing   |             |
 
-Table: Type `NonAIUse` (Enumerated)
+Table 23: Type `NonAIUse` (Enumerated)
 
 | ID | Item                      | Description |
 |---:|:--------------------------|:------------|
@@ -511,21 +509,21 @@ Table: Type `NonAIUse` (Enumerated)
 |  4 | research                  |             |
 |  5 | synthetic-data-generation |             |
 
-Table: Type `AIUse` (Enumerated)
+Table 24: Type `AIUse` (Enumerated)
 
-# 6 Provenance Information Model Encoding
+# 6 Provenance Information Model Encoding{#provenance-information-model-encoding}
 
 The technical encoding of the information model is specified in both JADN and YAML in the following subsections.
 
-## 6.1 JADN Encoding
+## 6.1 JADN Encoding{#im-jadn-encoding}
 
 The JADN encoding of the data provenance metadata information model is specified in \_\_\_\_.
 
-## 6.2 YAML Encoding
+## 6.2 YAML Encoding{#im-yaml-encoding}
 
 The YAML encoding of the data provenance metadata information model is specified in \_\_\_\_.
 
-# 7 Provenance Data Model Encoding
+# 7 Provenance Data Model Encoding{#provenance-data-model-encoding}
 
 > The information model defines the complete set of metadata elements and associated attributes specified by the Data Provenance Standard.
 > It establishes a common conceptual framework for representing provenance information, including the structures and relationships necessary to describe the origin, history, and handling of data.
@@ -540,7 +538,7 @@ The YAML encoding of the data provenance metadata information model is specified
 > The encodings described herein are non-exclusive and are provided to support diverse implementation environments and usage scenarios.
 > Implementations MAY support one or more of these encodings, subject to their interoperability, performance, and deployment requirements.
 
-## 7.1 JSON Encoding
+## 7.1 JSON Encoding{#dm-json-encoding}
 
 The technical encoding of the data provenance metadata data model
 is specified in the following schema artifacts for JSON data:
@@ -1218,19 +1216,19 @@ The value of `use.intended-purpose` is a sequence of purpose objects. Each purpo
 ]
 ```
 
-## 7.2 XML Encoding
+## 7.2 XML Encoding{#dm-xml-encoding}
 
 The technical encoding of the data provenance metadata data model
 is specified in \_\_\_\_ for XML data.
 
-## 7.3 YAML Encoding
+## 7.3 YAML Encoding{#dm-yaml-encoding}
 
 The technical encoding of the data provenance metadata data model
 is specified in \_\_\_\_ for YAML data.
 
 ---
 
-# 8 Safety, Security, and Data Protection
+# 8 Safety, Security, and Data Protection{#safety-security-and-data-protection}
 
 All safety, security, and data protection requirements relevant to the context in which Data Provenance Metadata documents are used MUST be translated into, and consistently enforced through, Data Provenance Metadata implementations and processes.
 
@@ -1248,7 +1246,7 @@ For Data Provenance Metadata documents based on JSON, the security consideration
 
 ---
 
-# 9 Conformance
+# 9 Conformance{#conformance}
 
 \<
 
@@ -1258,11 +1256,11 @@ This section is **REQUIRED** and **MUST** be the last numbered section in the do
 
 ---
 
-# Annex A License, Document Status and Notices{#annex-a}
+# Annex A License, Document Status and Notices{#license-document-status-and-notices}
 
 (This annex forms an integral part of this Specification.)
 
-## A.1 Document Status
+## A.1 Document Status{#document-status}
 
 This document was last revised or approved by the OASIS DPS TC on the above date. The level of approval is also listed above. Check the "Latest version" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at <https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=2c60b2cf-45d3-48cd-8594-0194f182b33d>.
 
@@ -1270,7 +1268,7 @@ TC members should send comments on this document to the TC's email list. Others 
 
 NOTE: any machine-readable content (Computer Language Definitions) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product's prose narrative document(s), the content in the separate plain text file prevails.
 
-## A.2 License and Notices
+## A.2 License and Notices{#license-and-notices}
 
 <!-- Required section. Do not modify. -->
 
@@ -1298,7 +1296,7 @@ The name "OASIS" is a trademark of OASIS, the owner and developer of this docume
 
 ---
 
-# Annex B References
+# Annex B References{#references}
 
 (This annex forms an integral part of this Specification.)
 
@@ -1306,7 +1304,7 @@ This section contains the normative and informative references that are used in 
 
 Normative references are specific (identified by date of publication and/or edition number or version number) and Informative references are either specific or non-specific. For specific references, only the cited version applies. For non-specific references, the latest version of the reference document (including any amendments) applies. While any hyperlinks included in this section were valid at the time of publication, OASIS cannot guarantee their long term validity.
 
-## B.1 Normative References
+## B.1 Normative References{#normative-references}
 
 The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.
 
@@ -1318,7 +1316,7 @@ The following documents are referenced in such a way that some or all of their c
 
 **\[Reference 2\]** Reference Details
 
-## B.2 Informative References
+## B.2 Informative References{#informative-references}
 
 The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.
 
@@ -1328,23 +1326,23 @@ The following referenced documents are not required for the application of this 
 
 ---
 
-# Annex C Additional Annex as Needed
+# Annex C Additional Annex as Needed{#additional-annex-as-needed}
 
 (This annex forms an integral part of this Specification.)
 
-## C.1 Subsection Title
+## C.1 Subsection Title{#subsection-title}
 
-### C.1.1 Sub-subsection
+### C.1.1 Sub-subsection{#sub-subsection}
 
 ---
 
-# Appendix 1 Acknowledgments
+# Appendix 1 Acknowledgments{#acknowledgments}
 
 (This appendix does not form an integral part of this Specification and is informational.)
 
 The following individuals were members of the OASIS DPS Technical Committee during the creation of this specification and their contributions are gratefully acknowledged:
 
-## Leadership
+## Leadership{#leadership}
 
 The following individuals have had significant leadership positions during the development of this document, not just this version of the document, and they are gratefully acknowledged:
 
@@ -1360,7 +1358,7 @@ The following individuals have had significant leadership positions during the d
   - David Kemp, NSA, d.kemp@cyber.nsa.gov
   - Stefan Hagen, Individual, stefan@hagen.link
 
-## Special Thanks
+## Special Thanks{#special-thanks}
 
 The following individuals have made substantial contributions to this document, not just this version of the document, and their contributions are gratefully acknowledged:
 
@@ -1368,7 +1366,7 @@ The DPS TC thanks the following individuals for their assistance in the developm
 Kristina Podnar and the Data &amp; Trust Alliance for their contributions of the initial schema and example applications.
 Duncan Sparrell for supporting the TC from the charter definition to the initial structuring of this document.
 
-## Participants
+## Participants{#participants}
 
 The following individuals have participated in the creation of this document and are gratefully acknowledged:
 
@@ -1382,13 +1380,13 @@ The following individuals have participated in the creation of this document and
 
 ---
 
-# Appendix 2 Changes From Previous Version
+# Appendix 2 Changes From Previous Version{#changes-from-previous-version}
 
 (This appendix does not form an integral part of this Specification and is informational.)
 
 This is the initial draft Committee Specification.
 
-## Revision History
+## Revision History{#revision-history}
 
 | Revision                      | Date       | Editor(s)                   | Changes Made                            |
 |:------------------------------|:-----------|:----------------------------|:----------------------------------------|
