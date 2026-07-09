@@ -1225,7 +1225,7 @@ is specified in \_\_\_\_ for YAML data.
 
 ---
 
-# 8 Safety, Security, and Data Protection
+# 8 Safety, Security, and Data Protection{#safety-security-and-data-protection}
 
 All safety, security, and data protection requirements relevant to the context in which Data Provenance Metadata documents are used MUST be translated into, and consistently enforced through, Data Provenance Metadata implementations and processes.
 
