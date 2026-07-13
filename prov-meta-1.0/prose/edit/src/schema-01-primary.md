@@ -2,6 +2,8 @@
 
 The root object of a Data Provenance Metadata record contains five required members.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name       | Type        | \# | Description                                                                                                                                             |
 |---:|:-----------|:------------|:---|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  1 | $schema    | String /uri | 1  | The URI identifying the schema this JSON object must be valid against. For this version the value is always the URI of the data-provenance JSON schema. |

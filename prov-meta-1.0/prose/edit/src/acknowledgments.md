@@ -1,4 +1,4 @@
-# Appendix 1 Acknowledgments {#appendix-acknowledgments}
+# Appendix A Acknowledgments {#appendix-acknowledgments}
 
 (This appendix does not form an integral part of this Specification and is informational.)
 

@@ -1,4 +1,4 @@
-# Appendix 2 Changes From Previous Version {#appendix-changes-from-previous-version}
+# Appendix B Changes From Previous Version {#appendix-changes-from-previous-version}
 
 (This appendix does not form an integral part of this Specification and is informational.)
 

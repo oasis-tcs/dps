@@ -2,6 +2,8 @@
 
 The following types are used in more than one of the sections above.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name       | Type        | \#   | Description                             |
 |---:|:-----------|:------------|:-----|:----------------------------------------|
 |  1 | legal-name | String      | 1    | The legal name of the organization.     |
@@ -10,11 +12,15 @@ The following types are used in more than one of the sections above.
 
 Table: Type `Organization` (Record)
 
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
 | Type Name | Type Definition | Description                                       |
 |:----------|:----------------|:--------------------------------------------------|
 | Address   | ArrayOf(String) | Lines of a postal address. At least one required. |
 
 Table: Type `Address` (ArrayOf(String))
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name    | Type   | \#   | Description                         |
 |---:|:--------|:-------|:-----|:------------------------------------|
@@ -22,6 +28,8 @@ Table: Type `Address` (ArrayOf(String))
 |  2 | state   | String | 0..1 | The state or province name or code. |
 
 Table: Type `GeographicRegion` (Record)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name             | Type   | \#   | Description                                                          |
 |---:|:-----------------|:-------|:-----|:---------------------------------------------------------------------|
@@ -33,6 +41,8 @@ Table: Type `Method` (Record)
 
 The `Acknowledgment` type describes a contributor. At least one of its fields MUST be present.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name         | Type        | \#    | Description                                             |
 |---:|:-------------|:------------|:------|:--------------------------------------------------------|
 |  1 | names        | String      | 0..\* | Names of individual contributors being acknowledged.    |
@@ -42,11 +52,15 @@ The `Acknowledgment` type describes a contributor. At least one of its fields MU
 
 Table: Type `Acknowledgment` (Map)
 
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
 | Type Name | Type Definition | Description                                                                           |
 |:----------|:----------------|:--------------------------------------------------------------------------------------|
 | Version   | String          | An integer or semantic versioning string. Examples: `"1"`, `"2.0.0"`, `"1.0.0-beta"`. |
 
 Table: Type `Version` (String)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | Type Name | Type Definition | Description                                          |
 |:----------|:----------------|:-----------------------------------------------------|

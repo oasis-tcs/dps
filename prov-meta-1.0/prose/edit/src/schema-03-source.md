@@ -2,6 +2,8 @@
 
 The `source` member characterizes the content and source of the dataset.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name         | Type         | \#    | Description                                                                      |
 |---:|:-------------|:-------------|:------|:---------------------------------------------------------------------------------|
 |  1 | about        | About        | 1     | A detailed narrative explaining the contents, scope, and purpose of the dataset. |
@@ -13,6 +15,8 @@ The `source` member characterizes the content and source of the dataset.
 
 Table: Type `Source` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name    | Type   | \#   | Description                                                                                        |
 |---:|:--------|:-------|:-----|:---------------------------------------------------------------------------------------------------|
 |  1 | content | String | 1    | Contextual information helping users understand what the data represents and how it was collected. |
@@ -23,6 +27,8 @@ Table: Type `About` (Record)
 
 The `Identity` type provides at least one identifier for the dataset. At least one of its fields MUST be present.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name       | Type         | \#    | Description                                           |
 |---:|:-----------|:-------------|:------|:------------------------------------------------------|
 |  1 | hashes     | HashEntry    | 0..\* | Cryptographic hash-based identifiers for the dataset. |
@@ -32,6 +38,8 @@ The `Identity` type provides at least one identifier for the dataset. At least o
 
 Table: Type `Identity` (Map)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name        | Type     | \#    | Description                                                              |
 |---:|:------------|:---------|:------|:-------------------------------------------------------------------------|
 |  1 | tree-hashes | TreeHash | 1..\* | The cryptographic hash values for this file or tree.                     |
@@ -39,12 +47,16 @@ Table: Type `Identity` (Map)
 
 Table: Type `HashEntry` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name      | Type   | \# | Description                                                              |
 |---:|:----------|:-------|:---|:-------------------------------------------------------------------------|
 |  1 | algorithm | String | 1  | The name of the hash or tree/seal algorithm used to calculate the value. |
 |  2 | value     | String | 1  | The cryptographic hash value in hexadecimal representation.              |
 
 Table: Type `TreeHash` (Record)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name           | Type   | \#    | Description                                            |
 |---:|:---------------|:-------|:------|:-------------------------------------------------------|

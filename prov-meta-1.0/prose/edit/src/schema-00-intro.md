@@ -1,7 +1,7 @@
 # Provenance Schema {#provenance-schema}
 
 The schema of the provenance metadata is described in human-readable property tables.
-The technical encoding may be found in section [6 Provenance Information Model Encoding](#6-provenance-information-model-encoding).
+The technical encoding may be found in section [sec](#provenance-information-model-encoding).
 
 The Data Provenance Standards record metadata elements in three segmented categories: Source, Provenance, and Use.
 
