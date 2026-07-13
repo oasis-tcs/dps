@@ -1269,11 +1269,14 @@ For Data Provenance Metadata documents based on JSON, the security consideration
 
 # 9 Conformance
 
-\<
+This document defines requirements for the data-provenance in the JSON file format and for certain software components that interact with it. 
 
-This section is **REQUIRED** and **MUST** be the last numbered section in the document.
-
-\>
+<!--
+The editors guided by the TC shall add conformance targets in this section.
+The above (non-commented) statement is a first attempt to start the process.
+Existing OASIS specifications like CSAF, MQTT-SN, OpenEoX-Core, and SARIF use roles to anchor such conformance targets.
+We may want to add a blanket statement that allows file formats in the wild to be valid as long as the information model matches the specification.
+-->
 
 ---
 
@@ -1333,19 +1336,27 @@ The following documents are referenced in such a way that some or all of their c
 
 **\[RFC8174\]** _Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words_, BCP 14, RFC 8174, May 2017\. \[Online\]. Available: https://www.rfc-editor.org/info/rfc8174
 
-**\[Reference 1\]** Reference Details
-
-**\[Reference 2\]** Reference Details
 
 ## B.2 Informative References
 
 The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.
 
-**\[Reference 1\]** Reference Details
-
-**\[Reference 2\]** Reference Details
+N/A
 
 ---
+
+<!--
+Examples: When we have real-world examples (expected soon), we will share them.
+
+History: 
+
+- The initial quest for real-world examples to ensure relevance of our to be specified information and
+  data models "[Contribution of Real-World Instance Examples of DTA Schema \# 70](https://github.com/oasis-tcs/dps/issues/70)
+  was closed with the resolution of the DPS TC to provide these examples inside the contributions folder
+  (cf. https://github.com/oasis-tcs/dps/issues/70#issuecomment-4315445801).
+- The editors added two synthetic examples in [revision fdae15f3](https://github.com/oasis-tcs/dps/commit/fdae15f3f17fa9e6d6e2f1020506c1422b4b57d3)
+  because our eco system failed to provide any example metadata files since July 2025.
+-->
 
 # Annex C Additional Annex as Needed
 
