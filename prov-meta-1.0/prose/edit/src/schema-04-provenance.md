@@ -2,6 +2,8 @@
 
 The `provenance` member describes the provenance of the dataset.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name              | Type             | \#    | Description                                                                                  |
 |---:|:------------------|:-----------------|:------|:---------------------------------------------------------------------------------------------|
 |  1 | origin-geography  | GeographicRegion | 1..\* | The geographical locations where the data was originally collected.                          |
@@ -16,12 +18,16 @@ The `provenance` member describes the provenance of the dataset.
 
 Table: Type `Provenance` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name  | Type              | \#   | Description                                            |
 |---:|:------|:------------------|:-----|:-------------------------------------------------------|
 |  1 | start | String /date-time | 0..1 | The start of the data collection or generation period. |
 |  2 | end   | String /date-time | 0..1 | The end of the data collection or generation period.   |
 
 Table: Type `GenerationPeriod` (Record)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name             | Type                 | \#   | Description                                       |
 |---:|:-----------------|:---------------------|:-----|:--------------------------------------------------|
@@ -30,6 +36,8 @@ Table: Type `GenerationPeriod` (Record)
 |  3 | long-description | String               | 0..1 | A detailed description of the method.             |
 
 Table: Type `GenerationMethod` (Record)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                     | Description                                            |
 |---:|:-------------------------|:-------------------------------------------------------|
@@ -47,6 +55,8 @@ Table: Type `GenerationMethod` (Record)
 | 11 | web-scraping-crawling    | Data collected by web scraping or crawling.            |
 
 Table: Type `GenerationMethodCode` (Enumerated)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                     | Description                           |
 |---:|:-------------------------|:--------------------------------------|

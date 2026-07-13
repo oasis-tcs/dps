@@ -1,4 +1,4 @@
-![OASIS Logo](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
+![](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
 
 # Data Provenance Metadata Version 1.0 <a id='data-provenance-metadata-version-1-0'></a>
 
@@ -180,21 +180,23 @@ For license and copyright information, and complete status, please see [Annex A]
 9. [Conformance](#conformance)  
 
 Annex A. [License, Document Status and Notices](#annex-a)  
-	A.1. [Document Status](#document-status)  
-	A.2. [License and Notices](#license-and-notices)  
+	A.1 [Document Status](#document-status)  
+	A.2 [License and Notices](#license-and-notices)  
 Annex B. [References](#annex-b)  
-	B.1. [Normative References](#normative-references)  
-	B.2. [Informative References](#informative-references)  
+	B.1 [Normative References](#normative-references)  
+	B.2 [Informative References](#informative-references)  
 Annex C. [Example Instances](#annex-c)  
-	C.1. [Minimal Example](#minimal-example)  
-	C.2. [Moderate Example](#moderate-example)  
-	C.3. [Complete Example](#complete-example)  
-Appendix 1. [Acknowledgments](#appendix-acknowledgments)  
+	C.1 [Minimal Example](#minimal-example)  
+	C.2 [Moderate Example](#moderate-example)  
+	C.3 [Complete Example](#complete-example)  
+Appendix A. [Acknowledgments](#appendix-acknowledgments)  
 	 [Leadership](#leadership)  
 	 [Special Thanks](#special-thanks)  
 	 [Participants](#participants)  
-Appendix 2. [Changes From Previous Version](#appendix-changes-from-previous-version)  
+Appendix B. [Changes From Previous Version](#appendix-changes-from-previous-version)  
 	 [Revision History](#revision-history)  
+
+
 -------
 
 # 1. Scope <a id='scope'></a>
@@ -217,17 +219,24 @@ and areas where data quality and accountability are foundational to performance 
 
 This document uses the following terms defined elsewhere:
 
-- Data Provenance: \[[NIST - CNSSI 4009-2015 from ISA SSA - Adapted](https://nsarchive.gwu.edu/document/22385-document-08-committee-national-security)\]:
-  In the context of computers and law enforcement use, it \[provenance\] is an equivalent term to chain of custody.
-  It involves the method of generation, transmission and storage of information that
-  may be used to trace the origin of a piece of information processed by community resources.
-- Data Lineage: \[[IBM](https://www.ibm.com/think/topics/data-lineage#)\]:
-  Data lineage is the process of tracking the (use and) flow of data over time, providing a clear understanding of where the data originated,
-  how it has changed, and its ultimate destination within the data pipeline.
-- Data Transparency: \[[BigID](https://bigid.com/blog/what-is-data-transparency/)\]:
-  Data transparency refers to the clear, open, and honest handling of data within an organization.
-  It means that businesses, governments, and institutions disclose how they collect, store, use, and share data, ensuring users, customers,
-  and stakeholders understand their practices.
+
+Data Provenance
+:    In the context of computers and law enforcement use, it is synonymous to chain of custody.
+     It involves the method of generation, transmission and storage of information that
+     may be used to trace the origin of a piece of information processed by community resources.
+     Cf. \[[CNSSI-4009](#CNSSI-4009)\] for more details.
+
+Data Lineage
+:    Data lineage is the process of tracking the (use and) flow of data over time, providing a clear understanding of where the data originated,
+     how it has changed, and its ultimate destination within the data pipeline.
+     Cf. "Data Lineage at IBM" https://www.ibm.com/think/topics/data-lineage for more details.
+
+Data Transparency
+:   Data transparency refers to the clear, open, and honest handling of data within an organization.
+    It means that businesses, governments, and institutions disclose how they collect, store, use, and share data, ensuring users, customers,
+    and stakeholders understand their practices.
+    Cf. "What is data transparency at BigID" https://bigid.com/blog/what-is-data-transparency for more details.
+
 
 ### 2.1.2 Terms Defined in this Document <a id='terms-defined-in-this-document'></a>
 
@@ -256,7 +265,7 @@ PET
 ## 3.1 Key Words <a id='key-words'></a>
 
 The key words "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**NOT RECOMMENDED**", "**MAY**",
-and "**OPTIONAL**" in this document are to be interpreted as described in BCP 14 [cite](RFC2119) and [cite](RFC8174) when, and only when, they appear in all capitals, as shown here.
+and "**OPTIONAL**" in this document are to be interpreted as described in BCP 14 \[[RFC2119](#RFC2119)\] and \[[RFC8174](#RFC8174)\] when, and only when, they appear in all capitals, as shown here.
 
 ## 3.2 Typographical Conventions <a id='typographical-conventions'></a>
 
@@ -306,7 +315,7 @@ N/A
 # 5. Provenance Schema <a id='provenance-schema'></a>
 
 The schema of the provenance metadata is described in human-readable property tables.
-The technical encoding may be found in section [6 Provenance Information Model Encoding](#6-provenance-information-model-encoding).
+The technical encoding may be found in section [6 "Provenance Information Model Encoding"](#provenance-information-model-encoding).
 
 The Data Provenance Standards record metadata elements in three segmented categories: Source, Provenance, and Use.
 
@@ -321,6 +330,8 @@ metadata element input fields. Each field is described in more detail below.
 
 The root object of a Data Provenance Metadata record contains five required members.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name       | Type        | \# | Description                                                                                                                                             |
 |---:|:-----------|:------------|:---|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  1 | $schema    | String /uri | 1  | The URI identifying the schema this JSON object must be valid against. For this version the value is always the URI of the data-provenance JSON schema. |
@@ -334,6 +345,8 @@ Table: Type `DataProvenance` (Record)
 ## 5.2 Set <a id='set'></a>
 
 The `set` member captures metadata about the provenance metadata record itself.
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name            | Type           | \#    | Description                                                                                                                        |
 |---:|:----------------|:---------------|:------|:-----------------------------------------------------------------------------------------------------------------------------------|
@@ -350,6 +363,8 @@ The `set` member captures metadata about the provenance metadata record itself.
 
 Table: Type `Set` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name            | Type        | \#   | Description                                                                                        |
 |---:|:----------------|:------------|:-----|:---------------------------------------------------------------------------------------------------|
 |  1 | name            | String      | 1    | The name of the issuing party.                                                                     |
@@ -357,6 +372,8 @@ Table: Type `Set` (Record)
 |  3 | contact-details | String      | 0..1 | Information on how to contact the publisher.                                                       |
 
 Table: Type `Publisher` (Record)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name                 | Type              | \#    | Description                                                                                                                                  |
 |---:|:---------------------|:------------------|:------|:---------------------------------------------------------------------------------------------------------------------------------------------|
@@ -371,6 +388,8 @@ Table: Type `Publisher` (Record)
 
 Table: Type `Tracking` (Record)
 
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
 | ID | Item    | Description                          |
 |---:|:--------|:-------------------------------------|
 |  0 | draft   | The metadata set is a draft.         |
@@ -378,6 +397,8 @@ Table: Type `Tracking` (Record)
 |  2 | interim | The metadata set has interim status. |
 
 Table: Type `TrackingStatus` (Enumerated)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name           | Type              | \#   | Description                                                                                                    |
 |---:|:---------------|:------------------|:-----|:---------------------------------------------------------------------------------------------------------------|
@@ -388,6 +409,8 @@ Table: Type `TrackingStatus` (Enumerated)
 
 Table: Type `Revision` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name   | Type              | \#   | Description                                                      |
 |---:|:-------|:------------------|:-----|:-----------------------------------------------------------------|
 |  1 | engine | GeneratorEngine   | 1    | Information about the engine used to generate this metadata set. |
@@ -395,12 +418,16 @@ Table: Type `Revision` (Record)
 
 Table: Type `Generator` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name    | Type    | \#   | Description                                                 |
 |---:|:--------|:--------|:-----|:------------------------------------------------------------|
 |  1 | name    | String  | 1    | The name of the engine that generated this metadata set.    |
 |  2 | version | Version | 0..1 | The version of the engine that generated this metadata set. |
 
 Table: Type `GeneratorEngine` (Record)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name     | Type         | \#   | Description                                                         |
 |---:|:---------|:-------------|:-----|:--------------------------------------------------------------------|
@@ -411,17 +438,21 @@ Table: Type `GeneratorEngine` (Record)
 
 Table: Type `Note` (Record)
 
+\columns=iiii,nnnnnnnnnnnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
 | ID | Item             | Description                                    |
 |---:|:-----------------|:-----------------------------------------------|
 |  0 | description      | A descriptive note about the subject.          |
 |  1 | details          | A note with detailed supplemental information. |
 |  2 | faq              | A note in frequently-asked-questions format.   |
 |  3 | general          | A general note.                                |
-|  4 | legal_disclaimer | A note containing a legal disclaimer.          |
+|  4 | legal-disclaimer | A note containing a legal disclaimer.          |
 |  5 | other            | A note that does not fit other categories.     |
 |  6 | summary          | A summary note.                                |
 
 Table: Type `NoteCategory` (Enumerated)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name     | Type              | \#   | Description                                             |
 |---:|:---------|:------------------|:-----|:--------------------------------------------------------|
@@ -430,6 +461,8 @@ Table: Type `NoteCategory` (Enumerated)
 |  3 | category | ReferenceCategory | 0..1 | Whether this reference is external or self-referential. |
 
 Table: Type `Reference` (Record)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item     | Description                                                      |
 |---:|:---------|:-----------------------------------------------------------------|
@@ -442,6 +475,8 @@ Table: Type `ReferenceCategory` (Enumerated)
 
 The `source` member characterizes the content and source of the dataset.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name         | Type         | \#    | Description                                                                      |
 |---:|:-------------|:-------------|:------|:---------------------------------------------------------------------------------|
 |  1 | about        | About        | 1     | A detailed narrative explaining the contents, scope, and purpose of the dataset. |
@@ -453,6 +488,8 @@ The `source` member characterizes the content and source of the dataset.
 
 Table: Type `Source` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name    | Type   | \#   | Description                                                                                        |
 |---:|:--------|:-------|:-----|:---------------------------------------------------------------------------------------------------|
 |  1 | content | String | 1    | Contextual information helping users understand what the data represents and how it was collected. |
@@ -463,6 +500,8 @@ Table: Type `About` (Record)
 
 The `Identity` type provides at least one identifier for the dataset. At least one of its fields MUST be present.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name       | Type         | \#    | Description                                           |
 |---:|:-----------|:-------------|:------|:------------------------------------------------------|
 |  1 | hashes     | HashEntry    | 0..\* | Cryptographic hash-based identifiers for the dataset. |
@@ -472,6 +511,8 @@ The `Identity` type provides at least one identifier for the dataset. At least o
 
 Table: Type `Identity` (Map)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name        | Type     | \#    | Description                                                              |
 |---:|:------------|:---------|:------|:-------------------------------------------------------------------------|
 |  1 | tree-hashes | TreeHash | 1..\* | The cryptographic hash values for this file or tree.                     |
@@ -479,12 +520,16 @@ Table: Type `Identity` (Map)
 
 Table: Type `HashEntry` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name      | Type   | \# | Description                                                              |
 |---:|:----------|:-------|:---|:-------------------------------------------------------------------------|
 |  1 | algorithm | String | 1  | The name of the hash or tree/seal algorithm used to calculate the value. |
 |  2 | value     | String | 1  | The cryptographic hash value in hexadecimal representation.              |
 
 Table: Type `TreeHash` (Record)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name           | Type   | \#    | Description                                            |
 |---:|:---------------|:-------|:------|:-------------------------------------------------------|
@@ -498,6 +543,8 @@ Table: Type `CustomId` (Record)
 ## 5.4 Provenance <a id='provenance'></a>
 
 The `provenance` member describes the provenance of the dataset.
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name              | Type             | \#    | Description                                                                                  |
 |---:|:------------------|:-----------------|:------|:---------------------------------------------------------------------------------------------|
@@ -513,12 +560,16 @@ The `provenance` member describes the provenance of the dataset.
 
 Table: Type `Provenance` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name  | Type              | \#   | Description                                            |
 |---:|:------|:------------------|:-----|:-------------------------------------------------------|
 |  1 | start | String /date-time | 0..1 | The start of the data collection or generation period. |
 |  2 | end   | String /date-time | 0..1 | The end of the data collection or generation period.   |
 
 Table: Type `GenerationPeriod` (Record)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name             | Type                 | \#   | Description                                       |
 |---:|:-----------------|:---------------------|:-----|:--------------------------------------------------|
@@ -527,6 +578,8 @@ Table: Type `GenerationPeriod` (Record)
 |  3 | long-description | String               | 0..1 | A detailed description of the method.             |
 
 Table: Type `GenerationMethod` (Record)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                     | Description                                            |
 |---:|:-------------------------|:-------------------------------------------------------|
@@ -544,6 +597,8 @@ Table: Type `GenerationMethod` (Record)
 | 11 | web-scraping-crawling    | Data collected by web scraping or crawling.            |
 
 Table: Type `GenerationMethodCode` (Enumerated)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                     | Description                           |
 |---:|:-------------------------|:--------------------------------------|
@@ -567,6 +622,8 @@ Table: Type `ModalityFormat` (Enumerated)
 
 The `use` member describes the legal use and restrictions applicable to the dataset.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name                | Type             | \#    | Description                                                                               |
 |---:|:--------------------|:-----------------|:------|:------------------------------------------------------------------------------------------|
 |  1 | intended-purpose    | Purpose          | 1..\* | The purpose or purposes for which the dataset was created.                                |
@@ -584,6 +641,8 @@ The `use` member describes the legal use and restrictions applicable to the data
 
 Table: Type `Use` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name             | Type        | \#   | Description                                       |
 |---:|:-----------------|:------------|:-----|:--------------------------------------------------|
 |  1 | code             | PurposeCode | 1    | A short code identifying the intended purpose.    |
@@ -591,6 +650,8 @@ Table: Type `Use` (Record)
 |  3 | system           | String      | 0..1 | The code system used to interpret the code value. |
 
 Table: Type `Purpose` (Record)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name       | Type       | \#   | Description                                                                                   |
 |---:|:-----------|:-----------|:-----|:----------------------------------------------------------------------------------------------|
@@ -600,6 +661,8 @@ Table: Type `Purpose` (Record)
 
 Table: Type `Classification` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name             | Type                | \#   | Description                                                  |
 |---:|:-----------------|:--------------------|:-----|:-------------------------------------------------------------|
 |  1 | code             | ConfidentialityCode | 1    | A short code identifying the confidentiality classification. |
@@ -607,6 +670,8 @@ Table: Type `Classification` (Record)
 |  3 | long-description | String              | 0..1 | A detailed description of the regulation or classification.  |
 
 Table: Type `Regulation` (Record)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item  | Description                                       |
 |---:|:------|:--------------------------------------------------|
@@ -619,6 +684,8 @@ Table: Type `Regulation` (Record)
 |  6 | spi   | Sensitive Personal Information (SPI).             |
 
 Table: Type `ConfidentialityCode` (Enumerated)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                      | Description                                           |
 |---:|:--------------------------|:------------------------------------------------------|
@@ -634,6 +701,8 @@ Table: Type `ConfidentialityCode` (Enumerated)
 
 Table: Type `PurposeCode` (Enumerated)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name          | Type           | \#    | Description                                                |
 |---:|:--------------|:---------------|:------|:-----------------------------------------------------------|
 |  1 | tool-used     | String         | 1     | The name of the tool used for data risk reduction.         |
@@ -644,12 +713,16 @@ Table: Type `PurposeCode` (Enumerated)
 
 Table: Type `DataRiskReducing` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name  | Type   | \#   | Description          |
 |---:|:------|:-------|:-----|:---------------------|
 |  1 | name  | String | 1    | The parameter name.  |
 |  2 | value | String | 0..1 | The parameter value. |
 
 Table: Type `Parameter` (Record)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                           | Description                                                                                                                                                         |
 |---:|:-------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -675,6 +748,8 @@ Table: Type `DataTechnology` (Enumerated)
 
 The following types are used in more than one of the sections above.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name       | Type        | \#   | Description                             |
 |---:|:-----------|:------------|:-----|:----------------------------------------|
 |  1 | legal-name | String      | 1    | The legal name of the organization.     |
@@ -683,11 +758,15 @@ The following types are used in more than one of the sections above.
 
 Table: Type `Organization` (Record)
 
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
 | Type Name | Type Definition | Description                                       |
 |:----------|:----------------|:--------------------------------------------------|
 | Address   | ArrayOf(String) | Lines of a postal address. At least one required. |
 
 Table: Type `Address` (ArrayOf(String))
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name    | Type   | \#   | Description                         |
 |---:|:--------|:-------|:-----|:------------------------------------|
@@ -695,6 +774,8 @@ Table: Type `Address` (ArrayOf(String))
 |  2 | state   | String | 0..1 | The state or province name or code. |
 
 Table: Type `GeographicRegion` (Record)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name             | Type   | \#   | Description                                                          |
 |---:|:-----------------|:-------|:-----|:---------------------------------------------------------------------|
@@ -706,6 +787,8 @@ Table: Type `Method` (Record)
 
 The `Acknowledgment` type describes a contributor. At least one of its fields MUST be present.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name         | Type        | \#    | Description                                             |
 |---:|:-------------|:------------|:------|:--------------------------------------------------------|
 |  1 | names        | String      | 0..\* | Names of individual contributors being acknowledged.    |
@@ -715,11 +798,15 @@ The `Acknowledgment` type describes a contributor. At least one of its fields MU
 
 Table: Type `Acknowledgment` (Map)
 
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
 | Type Name | Type Definition | Description                                                                           |
 |:----------|:----------------|:--------------------------------------------------------------------------------------|
 | Version   | String          | An integer or semantic versioning string. Examples: `"1"`, `"2.0.0"`, `"1.0.0-beta"`. |
 
 Table: Type `Version` (String)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | Type Name | Type Definition | Description                                          |
 |:----------|:----------------|:-----------------------------------------------------|
@@ -2171,7 +2258,7 @@ We may want to add a blanket statement that allows file formats in the wild to b
 
 (This annex forms an integral part of this Specification.)
 
-## A.1. Document Status <a id='document-status'></a>
+## A.1 Document Status <a id='document-status'></a>
 
 This document was last revised or approved by the OASIS DPS TC on the above date. The level of approval is also listed above. Check the "Latest version" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at <https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=2c60b2cf-45d3-48cd-8594-0194f182b33d>.
 
@@ -2179,7 +2266,7 @@ TC members should send comments on this document to the TC's email list. Others 
 
 NOTE: any machine-readable content (Computer Language Definitions) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product's prose narrative document(s), the content in the separate plain text file prevails.
 
-## A.2. License and Notices <a id='license-and-notices'></a>
+## A.2 License and Notices <a id='license-and-notices'></a>
 
 <!-- Required section. Do not modify. -->
 
@@ -2215,23 +2302,22 @@ This section contains the normative and informative references that are used in 
 
 Normative references are specific (identified by date of publication and/or edition number or version number) and Informative references are either specific or non-specific. For specific references, only the cited version applies. For non-specific references, the latest version of the reference document (including any amendments) applies. While any hyperlinks included in this section were valid at the time of publication, OASIS cannot guarantee their long term validity.
 
-## B.1. Normative References <a id='normative-references'></a>
+## B.1 Normative References <a id='normative-references'></a>
 
 The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.
 
-\[RFC2119\]
-:    _Key Words for Use in RFCs to Indicate Requirement Levels_, BCP 14, RFC 2119, March 1997\. \[Online\]. Available: https://www.rfc-editor.org/info/rfc2119
+**\[**<span id="RFC2119" class="anchor"></span>**RFC2119\]** _Key Words for Use in RFCs to Indicate Requirement Levels_, BCP 14, RFC 2119, March 1997\. \[Online\]. Available: https://www.rfc-editor.org/info/rfc2119
 
-\[RFC8174\]
-:    _Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words_, BCP 14, RFC 8174, May 2017\. \[Online\]. Available: https://www.rfc-editor.org/info/rfc8174
+**\[**<span id="RFC8174" class="anchor"></span>**RFC8174\]** _Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words_, BCP 14, RFC 8174, May 2017\. \[Online\]. Available: https://www.rfc-editor.org/info/rfc8174
 
-## B.2. Informative References <a id='informative-references'></a>
+**\[**<span id="RFC8259" class="anchor"></span>**RFC8259\]** Bray, T., "The JavaScript Object Notation (JSON) Data Interchange Format", RFC 8259, DOI 10.17487/RFC8259, December 2017, <http://www.rfc-editor.org/info/rfc8259>.
+
+## B.2 Informative References <a id='informative-references'></a>
 
 The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.
 
-N/A
 
----
+**\[**<span id="CNSSI-4009" class="anchor"></span>**CNSSI-4009\]** _Committee on National Security Systems (CNSS) Glossary_, Committee on National Security Systems, CNSSI No. 4009, April 6, 2015, Available: https://nsarchive.gwu.edu/document/22385-document-08-committee-national-security
 
 # Annex C. Example Instances <a id='annex-c'></a>
 
@@ -2260,7 +2346,7 @@ checking field semantics under realistic conditions.
 All three instances are available as JSON files in the `examples/` directory of the
 specification distribution.
 
-## C.1. Minimal Example <a id='minimal-example'></a>
+## C.1 Minimal Example <a id='minimal-example'></a>
 
 The following instance contains only the fields required by the schema.
 The scenario is a single-issuer survey dataset with one generation method and one intended purpose.
@@ -2334,7 +2420,7 @@ The scenario is a single-issuer survey dataset with one generation method and on
 
 The file `examples/dp-core-minimal.json` contains this instance.
 
-## C.2. Moderate Example <a id='moderate-example'></a>
+## C.2 Moderate Example <a id='moderate-example'></a>
 
 The moderate example extends the minimal case with a representative but non-exhaustive
 selection of optional fields.
@@ -2357,7 +2443,7 @@ Key features illustrated by this instance:
 
 The file `examples/dp-core-moderate.json` contains this instance.
 
-## C.3. Complete Example <a id='complete-example'></a>
+## C.3 Complete Example <a id='complete-example'></a>
 
 The complete example is a comprehensive instance designed to exercise every field in the schema.
 The scenario is a large merged biomedical text corpus assembled by a research consortium from
@@ -2390,7 +2476,7 @@ The file `examples/dp-core-complete.json` contains this instance.
 
 ---
 
-# Appendix 1. Acknowledgments <a id='appendix-acknowledgments'></a>
+# Appendix A. Acknowledgments <a id='appendix-acknowledgments'></a>
 
 (This appendix does not form an integral part of this Specification and is informational.)
 
@@ -2434,7 +2520,7 @@ The following individuals have participated in the creation of this document and
 
 ---
 
-# Appendix 2. Changes From Previous Version <a id='appendix-changes-from-previous-version'></a>
+# Appendix B. Changes From Previous Version <a id='appendix-changes-from-previous-version'></a>
 
 (This appendix does not form an integral part of this Specification and is informational.)
 

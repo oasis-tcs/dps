@@ -92,10 +92,10 @@
   "C.1": "minimal-example",
   "C.2": "moderate-example",
   "C.3": "complete-example",
-  "Appendix 1": "appendix-acknowledgments",
+  "Appendix A": "appendix-acknowledgments",
   "Leadership": "leadership",
   "Special Thanks": "special-thanks",
   "Participants": "participants",
-  "Appendix 2": "appendix-changes-from-previous-version",
+  "Appendix B": "appendix-changes-from-previous-version",
   "Revision History": "revision-history"
 }

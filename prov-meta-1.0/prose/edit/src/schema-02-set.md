@@ -2,6 +2,8 @@
 
 The `set` member captures metadata about the provenance metadata record itself.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name            | Type           | \#    | Description                                                                                                                        |
 |---:|:----------------|:---------------|:------|:-----------------------------------------------------------------------------------------------------------------------------------|
 |  1 | category        | String         | 1     | A short canonical name, chosen by the set producer, informing the end user of the category of the metadata set.                    |
@@ -17,6 +19,8 @@ The `set` member captures metadata about the provenance metadata record itself.
 
 Table: Type `Set` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name            | Type        | \#   | Description                                                                                        |
 |---:|:----------------|:------------|:-----|:---------------------------------------------------------------------------------------------------|
 |  1 | name            | String      | 1    | The name of the issuing party.                                                                     |
@@ -24,6 +28,8 @@ Table: Type `Set` (Record)
 |  3 | contact-details | String      | 0..1 | Information on how to contact the publisher.                                                       |
 
 Table: Type `Publisher` (Record)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name                 | Type              | \#    | Description                                                                                                                                  |
 |---:|:---------------------|:------------------|:------|:---------------------------------------------------------------------------------------------------------------------------------------------|
@@ -38,6 +44,8 @@ Table: Type `Publisher` (Record)
 
 Table: Type `Tracking` (Record)
 
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
 | ID | Item    | Description                          |
 |---:|:--------|:-------------------------------------|
 |  0 | draft   | The metadata set is a draft.         |
@@ -45,6 +53,8 @@ Table: Type `Tracking` (Record)
 |  2 | interim | The metadata set has interim status. |
 
 Table: Type `TrackingStatus` (Enumerated)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name           | Type              | \#   | Description                                                                                                    |
 |---:|:---------------|:------------------|:-----|:---------------------------------------------------------------------------------------------------------------|
@@ -55,6 +65,8 @@ Table: Type `TrackingStatus` (Enumerated)
 
 Table: Type `Revision` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name   | Type              | \#   | Description                                                      |
 |---:|:-------|:------------------|:-----|:-----------------------------------------------------------------|
 |  1 | engine | GeneratorEngine   | 1    | Information about the engine used to generate this metadata set. |
@@ -62,12 +74,16 @@ Table: Type `Revision` (Record)
 
 Table: Type `Generator` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name    | Type    | \#   | Description                                                 |
 |---:|:--------|:--------|:-----|:------------------------------------------------------------|
 |  1 | name    | String  | 1    | The name of the engine that generated this metadata set.    |
 |  2 | version | Version | 0..1 | The version of the engine that generated this metadata set. |
 
 Table: Type `GeneratorEngine` (Record)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name     | Type         | \#   | Description                                                         |
 |---:|:---------|:-------------|:-----|:--------------------------------------------------------------------|
@@ -78,17 +94,21 @@ Table: Type `GeneratorEngine` (Record)
 
 Table: Type `Note` (Record)
 
+\columns=iiii,nnnnnnnnnnnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+
 | ID | Item             | Description                                    |
 |---:|:-----------------|:-----------------------------------------------|
 |  0 | description      | A descriptive note about the subject.          |
 |  1 | details          | A note with detailed supplemental information. |
 |  2 | faq              | A note in frequently-asked-questions format.   |
 |  3 | general          | A general note.                                |
-|  4 | legal_disclaimer | A note containing a legal disclaimer.          |
+|  4 | legal-disclaimer | A note containing a legal disclaimer.          |
 |  5 | other            | A note that does not fit other categories.     |
 |  6 | summary          | A summary note.                                |
 
 Table: Type `NoteCategory` (Enumerated)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name     | Type              | \#   | Description                                             |
 |---:|:---------|:------------------|:-----|:--------------------------------------------------------|
@@ -97,6 +117,8 @@ Table: Type `NoteCategory` (Enumerated)
 |  3 | category | ReferenceCategory | 0..1 | Whether this reference is external or self-referential. |
 
 Table: Type `Reference` (Record)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item     | Description                                                      |
 |---:|:---------|:-----------------------------------------------------------------|

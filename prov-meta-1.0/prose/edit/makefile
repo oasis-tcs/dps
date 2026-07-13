@@ -44,38 +44,38 @@ types:
 
 .PHONY: sections
 sections:
-	koota harvest
+	nide harvest
 
 .PHONY: render
-render: render-html
+render: html
 
-.PHONY: render-markdown
-render-markdown: sections
-	koota assemble -t $(target_gfm_plus) && \
+.PHONY: gfm-plus
+gfm-plus: sections
+	nide assemble -t $(target_gfm_plus) && \
 	  cp -a build/tmp.md $(out_gfm_plus) && \
 	  printf "Rendered user facing delivery item in markdown format:\n" && \
 	  ls -l $(out_gfm_plus)
 
-.PHONY: render-html
-render-html: render-markdown
+.PHONY: html
+html: gfm-plus
 	mkdir -p build/data-url/ && cd src/images && for source in image*.png; do printf "%s" "data:image/png;base64,$$(cat "$${source}" | base64 | tr -d '\r\n')" > "../../build/data-url/$${source}.txt"; done && cd -
 	command -v pandoc >/dev/null 2>&1 || { echo >&2 "make render-html requires pandoc but it's not installed - you can get help on installing at https://pandoc.org.  Aborting."; exit 1; }
 	command -v tidy >/dev/null 2>&1 || { echo >&2 "make render-html requires tidy but it's not installed - you can get help on installing by searching for it on the wild internets.  Aborting."; exit 1; }
-	koota assemble -t $(target_html) && \
+	nide assemble -t $(target_html) && \
 	  pandoc -f gfm+definition_lists -t html build/tmp.md --columns=345 \
 	  --css style/base.css --css style/skin.css --standalone -o build/tmp.html && \
-	  koota inject && \
+	  nide inject && \
 	  timeout 2 tidy -config etc/tidy-config.txt build/injected.html -ashtml 2>/dev/null | \
 	  sed 's/<!\[CDATA\[//g; s/\]\]>//g;' > $(out_html) && \
 	  printf "Rendered user facing delivery item in html format:\n" && \
 	  ls -l $(out_html)
 
-.PHONY: render-pdf
-render-pdf: sections
+.PHONY: deprecated-pdf
+deprecated-pdf: sections
 	command -v liitos >/dev/null 2>&1 || { echo >&2 "make render-pdf requires liitos but it's not installed - you can install per pip install liitos.  Aborting."; exit 1; }
 	command -v etiketti >/dev/null 2>&1 || { echo >&2 "make render-pdf requires etiketti but it's not installed - you can install per pip install etiketti.  Aborting."; exit 1; }
 	command -v qpdf >/dev/null 2>&1 || { echo >&2 "make render-pdf requires qpdf but it's not installed - you can search the internets on how to install qpdf.  Aborting."; exit 1; }
-	koota assemble -t $(target_pdf) && \
+	nide assemble -t $(target_pdf) && \
 	  mkdir -p $(build_pdf)images/ $(build_root)images/ && \
 	  printf "pdf.md\n" > $(build_root)bind.txt && \
 	  cp -a ../media/OASISLogo-v3.0.png $(build_root)images/ && \
@@ -97,6 +97,27 @@ render-pdf: sections
 	  $(optimize_pdf) -- this.pdf && \
 	  cp -a this.pdf ../../../$(out_pdf) && \
 	  open ../../../$(out_pdf)
+
+.PHONY: typst
+typst:
+	# Pass 1+2: assemble IR and render typst channel
+	nide assemble
+	nide render -t typst
+	# Prepare logo (pandoc/typst resolves image paths relative to the .typ file)
+	mkdir -p build/images
+	cp ../media/OASISLogo-v3.0.png build/images/
+	cp -a src/images/*.png src/images/*.svg build/images/
+	# Convert to typst source
+	pandoc -f markdown+definition_lists -t typst --standalone --template etc/dps.typ --lua-filter build/nide-columns.lua build/typst.md -o build/typst.typ
+	# Compile to PDF
+	typst compile --root . build/typst.typ build/typst.pdf && \
+	  $(optimize_pdf) -- build/typst.pdf && cp -a build/typst.pdf $(out_pdf) && open $(out_pdf)
+
+.PHONY: pdf
+pdf: typst
+
+.PHONY: release
+release: distclean gfm-plus html pdf
 
 .PHONY: build
 build: render status
@@ -155,9 +176,17 @@ context:
 		"$$({ $(SHELL) --version > /dev/null 2>&1 && $(SHELL) --version | head -1 | grep -i version | tr -d "a-zA-Z ," | cut -f1-3 -d. | tr '(' '\n' | head -1; } || printf 'n/a')" \
 		"$$(make --version | grep -i make)"
 
-
-.PHONY: name
+.PHONY: name  # Deprecated - backwards compatibility target
 name: context
 
-.PHONY: whoami
+.PHONY: whoami # Deprecated - backwards compatibility target
 whoami: context
+
+.PHONY: render-html # Deprecated - backwards compatibility target
+render-html: html
+
+.PHONY: render-markdown # Deprecated - backwards compatibility target
+render-markdown: gfm-plus
+
+.PHONY: render-pdf # Deprecated - backwards compatibility target
+render-pdf: pdf

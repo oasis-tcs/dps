@@ -1,4 +1,4 @@
-![OASIS Logo](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
+![](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
 
 # Data Provenance Metadata Version 1.0
 

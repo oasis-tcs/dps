@@ -2,6 +2,8 @@
 
 The `use` member describes the legal use and restrictions applicable to the dataset.
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name                | Type             | \#    | Description                                                                               |
 |---:|:--------------------|:-----------------|:------|:------------------------------------------------------------------------------------------|
 |  1 | intended-purpose    | Purpose          | 1..\* | The purpose or purposes for which the dataset was created.                                |
@@ -19,6 +21,8 @@ The `use` member describes the legal use and restrictions applicable to the data
 
 Table: Type `Use` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name             | Type        | \#   | Description                                       |
 |---:|:-----------------|:------------|:-----|:--------------------------------------------------|
 |  1 | code             | PurposeCode | 1    | A short code identifying the intended purpose.    |
@@ -26,6 +30,8 @@ Table: Type `Use` (Record)
 |  3 | system           | String      | 0..1 | The code system used to interpret the code value. |
 
 Table: Type `Purpose` (Record)
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name       | Type       | \#   | Description                                                                                   |
 |---:|:-----------|:-----------|:-----|:----------------------------------------------------------------------------------------------|
@@ -35,6 +41,8 @@ Table: Type `Purpose` (Record)
 
 Table: Type `Classification` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name             | Type                | \#   | Description                                                  |
 |---:|:-----------------|:--------------------|:-----|:-------------------------------------------------------------|
 |  1 | code             | ConfidentialityCode | 1    | A short code identifying the confidentiality classification. |
@@ -42,6 +50,8 @@ Table: Type `Classification` (Record)
 |  3 | long-description | String              | 0..1 | A detailed description of the regulation or classification.  |
 
 Table: Type `Regulation` (Record)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item  | Description                                       |
 |---:|:------|:--------------------------------------------------|
@@ -54,6 +64,8 @@ Table: Type `Regulation` (Record)
 |  6 | spi   | Sensitive Personal Information (SPI).             |
 
 Table: Type `ConfidentialityCode` (Enumerated)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                      | Description                                           |
 |---:|:--------------------------|:------------------------------------------------------|
@@ -69,6 +81,8 @@ Table: Type `ConfidentialityCode` (Enumerated)
 
 Table: Type `PurposeCode` (Enumerated)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name          | Type           | \#    | Description                                                |
 |---:|:--------------|:---------------|:------|:-----------------------------------------------------------|
 |  1 | tool-used     | String         | 1     | The name of the tool used for data risk reduction.         |
@@ -79,12 +93,16 @@ Table: Type `PurposeCode` (Enumerated)
 
 Table: Type `DataRiskReducing` (Record)
 
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
 | ID | Name  | Type   | \#   | Description          |
 |---:|:------|:-------|:-----|:---------------------|
 |  1 | name  | String | 1    | The parameter name.  |
 |  2 | value | String | 0..1 | The parameter value. |
 
 Table: Type `Parameter` (Record)
+
+\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                           | Description                                                                                                                                                         |
 |---:|:-------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
