@@ -1324,7 +1324,7 @@ The following referenced documents are not required for the application of this 
 ---
 
 <!--
-Examnples: When we have real-world examples, we will share them.
+Examples: When we have real-world examples (expected soon), we will share them.
 
 History: 
 
