@@ -1,0 +1,64 @@
+{
+  "$schema": "https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json",
+  "set": {
+    "category": "training-data",
+    "schema-version": "1.0",
+    "publisher": {
+      "name": "Example Organization",
+      "namespace": "https://example.org/"
+    },
+    "label": "Example Dataset Provenance",
+    "tracking": {
+      "current-release-date": "2026-06-30T00:00:00Z",
+      "id": "example-dataset-prov-001",
+      "initial-release-date": "2026-06-30T00:00:00Z",
+      "revision-history": [
+        {
+          "date": "2026-06-30T00:00:00Z",
+          "number": "1",
+          "summary": "Initial release."
+        }
+      ],
+      "status": "final",
+      "version": "1"
+    }
+  },
+  "source": {
+    "about": {
+      "content": "A dataset of anonymized customer survey responses collected in 2025.",
+      "purpose": "Intended for training binary sentiment analysis models."
+    },
+    "id": {
+      "uuids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"]
+    },
+    "issuer": [
+      {
+        "legal-name": "Example Organization"
+      }
+    ],
+    "location": "https://example.org/datasets/survey-2025/provenance.json",
+    "name": "Customer Survey Dataset 2025",
+    "data-version": "1"
+  },
+  "provenance": {
+    "origin-geography": [
+      {
+        "country": "United States"
+      }
+    ],
+    "date": "2026-06-01",
+    "generation-method": [
+      {
+        "code": "primary-user-source"
+      }
+    ]
+  },
+  "use": {
+    "intended-purpose": [
+      {
+        "code": "pre-training",
+        "long-description": "To be used for pre-training binary sentiment classification models."
+      }
+    ]
+  }
+}

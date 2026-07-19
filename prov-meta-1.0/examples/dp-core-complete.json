@@ -1,0 +1,290 @@
+{
+  "$schema": "https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json",
+  "set": {
+    "category": "ai-training-data",
+    "schema-version": "1.0",
+    "publisher": {
+      "name": "Global AI Research Consortium",
+      "namespace": "https://provenance.ai-research.example/",
+      "contact-details": "dps-records@ai-research.example"
+    },
+    "label": "GARC Merged Biomedical Text Corpus — Provenance Record",
+    "tracking": {
+      "current-release-date": "2026-06-01T08:00:00Z",
+      "id": "garc-biomedical-corpus-prov-v3",
+      "initial-release-date": "2024-11-20T00:00:00Z",
+      "revision-history": [
+        {
+          "date": "2024-11-20T00:00:00Z",
+          "number": "1",
+          "summary": "Initial release covering the primary PubMed-derived subset."
+        },
+        {
+          "date": "2025-06-30T00:00:00Z",
+          "number": "2",
+          "summary": "Added clinical trial abstracts sub-corpus; updated classification evaluation results.",
+          "legacy-version": "garc-bmc-2025-alpha"
+        },
+        {
+          "date": "2026-06-01T00:00:00Z",
+          "number": "3",
+          "summary": "Incorporated de-identified discharge summaries; updated data-risk-reducing record."
+        }
+      ],
+      "status": "final",
+      "version": "3",
+      "aliases": ["GARC-BMC-v3", "biomedical-corpus-2026"],
+      "generator": {
+        "engine": {
+          "name": "DPS-Gen",
+          "version": "2.1.0"
+        },
+        "date": "2026-06-01T07:45:00Z"
+      }
+    },
+    "language": "en",
+    "source-language": "en",
+    "acknowledgments": [
+      {
+        "names": ["Dr. C. Rivera", "Prof. S. Yamamoto"],
+        "organization": "Institute for Biomedical Informatics",
+        "summary": "Domain expert review and annotation guidance.",
+        "urls": ["https://ibi.example/team"]
+      },
+      {
+        "organization": "National Health Data Trust",
+        "summary": "Provided de-identified clinical discharge summaries under data sharing agreement DSA-2025-0042."
+      }
+    ],
+    "notes": [
+      {
+        "category": "legal_disclaimer",
+        "text": "This dataset contains processed versions of publicly available research literature and de-identified clinical text. Users are solely responsible for compliance with applicable laws and regulations in their jurisdiction.",
+        "title": "Legal Disclaimer",
+        "audience": "all"
+      },
+      {
+        "category": "summary",
+        "text": "Version 3 incorporates de-identified hospital discharge summaries from three partner institutions. All PHI removal was validated by the National Health Data Trust using a combination of automated NER-based redaction and manual review.",
+        "title": "What is New in Version 3",
+        "audience": "executives"
+      }
+    ],
+    "references": [
+      {
+        "summary": "OASIS Data Provenance Standard v1.0 specification.",
+        "url": "https://docs.oasis-open.org/dps/prov-meta/v1.0/",
+        "category": "external"
+      },
+      {
+        "summary": "This provenance record in the GARC registry.",
+        "url": "https://provenance.ai-research.example/records/garc-biomedical-corpus-prov-v3",
+        "category": "self"
+      }
+    ]
+  },
+  "source": {
+    "about": {
+      "content": "A merged corpus of English-language biomedical text comprising three sub-corpora: (1) PubMed article abstracts from 2000–2025, (2) clinical trial result summaries from ClinicalTrials.gov, and (3) de-identified hospital discharge summaries from three partner institutions.",
+      "purpose": "Pre-training and domain-adaptive fine-tuning of large language models for biomedical and clinical NLP tasks.",
+      "scope": "English text only. Excludes full article bodies, figures, tables, and supplementary materials. Clinical notes are restricted to discharge summaries; progress notes and physician orders are excluded."
+    },
+    "id": {
+      "uuids": ["c0ffee00-dead-beef-cafe-123456789abc"],
+      "uris": [
+        "https://provenance.ai-research.example/datasets/garc-bmc-v3",
+        "https://zenodo.example/record/9876543"
+      ],
+      "hashes": [
+        {
+          "path": "garc-biomedical-corpus-v3.tar.gz",
+          "tree-hashes": [
+            {
+              "algorithm": "sha-256",
+              "value": "a3f5c2d1e8b4097634f2a1c8e5d3b2a1f4e7c6d5b3a2f1e0d9c8b7a6f5e4d3c2"
+            }
+          ]
+        }
+      ],
+      "custom-ids": [
+        {
+          "method": "datacite-doi",
+          "value": "10.5281/zenodo.9876543",
+          "tool": "datacite-mds",
+          "parameter-list": ["--profile", "full"]
+        }
+      ]
+    },
+    "issuer": [
+      {
+        "legal-name": "Global AI Research Consortium",
+        "address": ["Suite 400", "1 Innovation Plaza", "Cambridge, MA 02139", "USA"],
+        "url": "https://ai-research.example/"
+      },
+      {
+        "legal-name": "National Health Data Trust",
+        "address": ["Health House", "10 Whitechapel Road", "London E1 1JE", "United Kingdom"],
+        "url": "https://nhdt.example/"
+      }
+    ],
+    "location": "https://provenance.ai-research.example/records/garc-biomedical-corpus-prov-v3.json",
+    "name": "GARC Merged Biomedical Text Corpus",
+    "data-version": "3.0.0"
+  },
+  "provenance": {
+    "origin-geography": [
+      {"country": "United States"},
+      {"country": "United Kingdom"},
+      {"country": "Germany", "state": "Bavaria"}
+    ],
+    "date": "2026-05-15",
+    "generation-method": [
+      {
+        "code": "feeds",
+        "long-description": "PubMed abstracts obtained via the NCBI E-utilities API in bulk download mode."
+      },
+      {
+        "code": "web-scraping-crawling",
+        "long-description": "ClinicalTrials.gov result summaries retrieved using the public REST API with structured crawling."
+      },
+      {
+        "code": "primary-user-source",
+        "long-description": "De-identified discharge summaries provided directly by partner hospital institutions under signed data sharing agreements."
+      }
+    ],
+    "format": ["text/plain", "application/json", "text/csv"],
+    "generation-period": {
+      "start": "2000-01-01T00:00:00Z",
+      "end": "2025-12-31T23:59:59Z"
+    },
+    "source": "https://provenance.ai-research.example/records/garc-bmc-v2-prov.json",
+    "origin": [
+      {
+        "legal-name": "National Center for Biotechnology Information",
+        "url": "https://www.ncbi.nlm.nih.gov/"
+      },
+      {
+        "legal-name": "ClinicalTrials.gov",
+        "url": "https://clinicaltrials.gov/"
+      }
+    ],
+    "previous-date": "2025-06-30",
+    "sub-provenance": {
+      "origin-geography": [
+        {"country": "United States"}
+      ],
+      "date": "2024-10-01",
+      "generation-method": [
+        {
+          "code": "feeds",
+          "long-description": "Initial PubMed-only subset collected for the v1 release."
+        }
+      ],
+      "format": ["text/plain"],
+      "generation-period": {
+        "start": "2000-01-01T00:00:00Z",
+        "end": "2024-09-30T23:59:59Z"
+      }
+    }
+  },
+  "use": {
+    "intended-purpose": [
+      {
+        "code": "pre-training",
+        "long-description": "Pre-training of large language models for biomedical text understanding."
+      },
+      {
+        "code": "alignment",
+        "long-description": "Instruction-tuning and RLHF alignment of biomedical models."
+      },
+      {
+        "code": "evaluation",
+        "long-description": "Benchmark evaluation of clinical NLP systems."
+      }
+    ],
+    "classification": [
+      {
+        "regulation": {"code": "phi"},
+        "evaluated": true,
+        "tool": "MedRedact 4.2"
+      },
+      {
+        "regulation": {"code": "pi"},
+        "evaluated": true,
+        "tool": "PrivacyScanner 3.1"
+      },
+      {
+        "regulation": {
+          "code": "other",
+          "long-description": "EU General Data Protection Regulation (GDPR) Article 9 — special categories of personal data."
+        },
+        "evaluated": true,
+        "tool": "GDPR-Check 1.0"
+      }
+    ],
+    "consents": [
+      "https://nhdt.example/agreements/dsa-2025-0042.pdf",
+      "https://ai-research.example/policies/participant-consent-v3.pdf"
+    ],
+    "data-risk-reducing": [
+      {
+        "tool-used": "MedRedact",
+        "tool-category": {
+          "code": "ner-based-redaction",
+          "long-description": "Named-entity-recognition-based PHI identification and redaction."
+        },
+        "technology": "data-redaction",
+        "parameters": [
+          {"name": "model", "value": "medredact-clinical-v4"},
+          {"name": "confidence-threshold", "value": "0.95"},
+          {"name": "review-mode", "value": "manual-spot-check"}
+        ],
+        "results": [
+          "99.7% PHI recall on internal validation set.",
+          "Manual review confirmed zero residual direct identifiers in sampled 5% of documents."
+        ]
+      },
+      {
+        "tool-used": "AnonPipeline",
+        "technology": "data-anonymization",
+        "parameters": [
+          {"name": "k-value", "value": "5"},
+          {"name": "quasi-identifiers", "value": "age,zip,admission-date"}
+        ],
+        "results": ["k-anonymity k=5 achieved across all discharge summary records."]
+      }
+    ],
+    "processing-included": [
+      {"country": "United States"},
+      {"country": "European Union"}
+    ],
+    "processing-excluded": [
+      {"country": "China"},
+      {"country": "Russia"}
+    ],
+    "storage-allowed": [
+      {"country": "United States"},
+      {"country": "Germany"},
+      {"country": "Ireland"}
+    ],
+    "storage-forbidden": [
+      {"country": "China"},
+      {"country": "Russia"},
+      {"country": "Belarus"}
+    ],
+    "license": [
+      "CC-BY-4.0",
+      "https://nhdt.example/licenses/clinical-data-use-v2.txt"
+    ],
+    "copyright": [
+      "Copyright 2024–2026 Global AI Research Consortium. All rights reserved.",
+      "Clinical discharge summary content copyright respective contributing institutions."
+    ],
+    "patent": [
+      "No patent claims apply to this dataset."
+    ],
+    "trademark": [
+      "GARC® is a registered trademark of the Global AI Research Consortium."
+    ]
+  }
+}
