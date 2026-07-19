@@ -13,7 +13,7 @@ The `source` member characterizes the content and source of the dataset.
 |  5 | name         | String       | 1     | The official name of the dataset.                                                |
 |  6 | data-version | Version      | 1     | The version of the dataset this metadata set describes.                          |
 
-Table: Type `Source` (Record)
+Table: Type `Source` (Record){#tab:source-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -23,7 +23,7 @@ Table: Type `Source` (Record)
 |  2 | purpose | String | 1    | The recommended uses for this dataset.                                                             |
 |  3 | scope   | String | 0..1 | Any limitations of the dataset.                                                                    |
 
-Table: Type `About` (Record)
+Table: Type `About` (Record){#tab:about-record}
 
 The `Identity` type provides at least one identifier for the dataset. At least one of its fields MUST be present.
 
@@ -36,7 +36,7 @@ The `Identity` type provides at least one identifier for the dataset. At least o
 |  3 | uuids      | String /uuid | 0..\* | UUID identifiers for the dataset.                     |
 |  4 | custom-ids | CustomId     | 0..\* | Identifiers in any text format.                       |
 
-Table: Type `Identity` (Map)
+Table: Type `Identity` (Map){#tab:identity-map}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -45,7 +45,7 @@ Table: Type `Identity` (Map)
 |  1 | tree-hashes | TreeHash | 1..\* | The cryptographic hash values for this file or tree.                     |
 |  2 | path        | String   | 1     | The path (file or filesystem tree root) identified by these hash values. |
 
-Table: Type `HashEntry` (Record)
+Table: Type `HashEntry` (Record){#tab:hash-entry-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -54,7 +54,7 @@ Table: Type `HashEntry` (Record)
 |  1 | algorithm | String | 1  | The name of the hash or tree/seal algorithm used to calculate the value. |
 |  2 | value     | String | 1  | The cryptographic hash value in hexadecimal representation.              |
 
-Table: Type `TreeHash` (Record)
+Table: Type `TreeHash` (Record){#tab:tree-hash-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -65,4 +65,4 @@ Table: Type `TreeHash` (Record)
 |  3 | tool           | String | 0..1  | The name of the tool used to derive this identifier.   |
 |  4 | parameter-list | String | 0..\* | Parameters used when invoking the tool.                |
 
-Table: Type `CustomId` (Record)
+Table: Type `CustomId` (Record){#tab:custom-id-record}

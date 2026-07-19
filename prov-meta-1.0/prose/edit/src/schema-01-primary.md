@@ -12,4 +12,4 @@ The root object of a Data Provenance Metadata record contains five required memb
 |  4 | provenance | Provenance  | 1  | Describes the provenance of the dataset.                                                                                                                |
 |  5 | use        | Use         | 1  | Describes legal use and restrictions that apply to the dataset.                                                                                         |
 
-Table: Type `DataProvenance` (Record)
+Table: Type `DataProvenance` (Record){#tab:data-provenance-record}

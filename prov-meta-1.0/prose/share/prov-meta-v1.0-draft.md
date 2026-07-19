@@ -4,13 +4,13 @@
 
 ## Committee Specification Draft 02 <a id='committee-specification-draft-02'></a>
 
-## 30 June 2026 <a id='30-june-2026'></a>
+## 19 July 2026 <a id='19-july-2026'></a>
 
 ### This version <a id='this-version'></a>
 
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.md](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.md) (Authoritative)
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.html](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.html)
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.pdf](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.pdf)
+- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.md](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.md) (Authoritative)
+- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.html)
+- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.pdf](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.pdf)
 
 ### Latest version <a id='latest-version'></a>
 
@@ -47,9 +47,9 @@
 
 This prose specification is one component of a Work Product that also includes:
 
-- Data Provenance Metadata JSON schema: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/schema/data-provenance.json. \
+- Data Provenance Metadata JSON schema: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance.json. \
   Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json.
-- Data Provenance Metadata Configuration JSON schema: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/schema/data-provenance-configuration.json. \
+- Data Provenance Metadata Configuration JSON schema: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance-configuration.json. \
   Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json.
 
 ### Declared JSON namespaces <a id='declared-json-namespaces'></a>
@@ -69,7 +69,7 @@ When referencing this document, the following citation format should be used:
 
 **[prov-meta-v1.0]**
 
-_Data Provenance Metadata Version 1.0_. Edited by David Kemp and Stefan Hagen. 07 May 2026. OASIS Committee Specification Draft 02. \
+_Data Provenance Metadata Version 1.0_. Edited by David Kemp and Stefan Hagen. 19 July 2026. OASIS Committee Specification Draft 02. \
 https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html. \
 Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html.
 
@@ -319,7 +319,7 @@ The technical encoding may be found in section [6 "Provenance Information Model 
 
 The Data Provenance Standards record metadata elements in three segmented categories: Source, Provenance, and Use.
 
-![Metadata](./images/metadata.svg)
+![Metadata](images/metadata.svg)
 
 The property tables first define metadata about the specification itself,
 then describe how a record is made of the 3 primary metadata elements.
@@ -330,7 +330,6 @@ metadata element input fields. Each field is described in more detail below.
 
 The root object of a Data Provenance Metadata record contains five required members.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name       | Type        | \# | Description                                                                                                                                             |
 |---:|:-----------|:------------|:---|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -340,13 +339,13 @@ The root object of a Data Provenance Metadata record contains five required memb
 |  4 | provenance | Provenance  | 1  | Describes the provenance of the dataset.                                                                                                                |
 |  5 | use        | Use         | 1  | Describes legal use and restrictions that apply to the dataset.                                                                                         |
 
-Table: Type `DataProvenance` (Record)
+<a id="tab:data-provenance-record"></a>
+Table 1: Type `DataProvenance` (Record)
 
 ## 5.2 Set <a id='set'></a>
 
 The `set` member captures metadata about the provenance metadata record itself.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name            | Type           | \#    | Description                                                                                                                        |
 |---:|:----------------|:---------------|:------|:-----------------------------------------------------------------------------------------------------------------------------------|
@@ -361,9 +360,9 @@ The `set` member captures metadata about the provenance metadata record itself.
 |  9 | notes           | Note           | 0..\* | Notes associated with this metadata set.                                                                                           |
 | 10 | references      | Reference      | 0..\* | References associated with this metadata set.                                                                                      |
 
-Table: Type `Set` (Record)
+<a id="tab:set-record"></a>
+Table 2: Type `Set` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name            | Type        | \#   | Description                                                                                        |
 |---:|:----------------|:------------|:-----|:---------------------------------------------------------------------------------------------------|
@@ -371,9 +370,9 @@ Table: Type `Set` (Record)
 |  2 | namespace       | String /uri | 1    | A URI under the control of the issuing party, used as a globally unique identifier for that party. |
 |  3 | contact-details | String      | 0..1 | Information on how to contact the publisher.                                                       |
 
-Table: Type `Publisher` (Record)
+<a id="tab:publisher-record"></a>
+Table 3: Type `Publisher` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name                 | Type              | \#    | Description                                                                                                                                  |
 |---:|:---------------------|:------------------|:------|:---------------------------------------------------------------------------------------------------------------------------------------------|
@@ -386,9 +385,9 @@ Table: Type `Publisher` (Record)
 |  7 | aliases              | String            | 0..\* | Alternate names for this metadata set.                                                                                                       |
 |  8 | generator            | Generator         | 0..1  | Information about the engine that generated this metadata set.                                                                               |
 
-Table: Type `Tracking` (Record)
+<a id="tab:tracking-record"></a>
+Table 4: Type `Tracking` (Record)
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item    | Description                          |
 |---:|:--------|:-------------------------------------|
@@ -396,9 +395,9 @@ Table: Type `Tracking` (Record)
 |  1 | final   | The metadata set is final.           |
 |  2 | interim | The metadata set has interim status. |
 
-Table: Type `TrackingStatus` (Enumerated)
+<a id="tab:tracking-status-enum"></a>
+Table 5: Type `TrackingStatus` (Enumerated)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name           | Type              | \#   | Description                                                                                                    |
 |---:|:---------------|:------------------|:-----|:---------------------------------------------------------------------------------------------------------------|
@@ -407,27 +406,27 @@ Table: Type `TrackingStatus` (Enumerated)
 |  3 | summary        | String            | 1    | A short description of the changes in this revision.                                                           |
 |  4 | legacy-version | String            | 0..1 | A version string from an existing set with the same content, tracing from DP-Core compliant to historic items. |
 
-Table: Type `Revision` (Record)
+<a id="tab:revision-record"></a>
+Table 6: Type `Revision` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name   | Type              | \#   | Description                                                      |
 |---:|:-------|:------------------|:-----|:-----------------------------------------------------------------|
 |  1 | engine | GeneratorEngine   | 1    | Information about the engine used to generate this metadata set. |
 |  2 | date   | String /date-time | 0..1 | The date this metadata set was generated.                        |
 
-Table: Type `Generator` (Record)
+<a id="tab:generator-record"></a>
+Table 7: Type `Generator` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name    | Type    | \#   | Description                                                 |
 |---:|:--------|:--------|:-----|:------------------------------------------------------------|
 |  1 | name    | String  | 1    | The name of the engine that generated this metadata set.    |
 |  2 | version | Version | 0..1 | The version of the engine that generated this metadata set. |
 
-Table: Type `GeneratorEngine` (Record)
+<a id="tab:generator-engine-record"></a>
+Table 8: Type `GeneratorEngine` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name     | Type         | \#   | Description                                                         |
 |---:|:---------|:-------------|:-----|:--------------------------------------------------------------------|
@@ -436,9 +435,9 @@ Table: Type `GeneratorEngine` (Record)
 |  3 | audience | String       | 0..1 | The intended audience for the note.                                 |
 |  4 | title    | String       | 0..1 | A concise description of what is contained in the text of the note. |
 
-Table: Type `Note` (Record)
+<a id="tab:note-record"></a>
+Table 9: Type `Note` (Record)
 
-\columns=iiii,nnnnnnnnnnnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item             | Description                                    |
 |---:|:-----------------|:-----------------------------------------------|
@@ -450,9 +449,9 @@ Table: Type `Note` (Record)
 |  5 | other            | A note that does not fit other categories.     |
 |  6 | summary          | A summary note.                                |
 
-Table: Type `NoteCategory` (Enumerated)
+<a id="tab:note-category-enum"></a>
+Table 10: Type `NoteCategory` (Enumerated)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name     | Type              | \#   | Description                                             |
 |---:|:---------|:------------------|:-----|:--------------------------------------------------------|
@@ -460,22 +459,22 @@ Table: Type `NoteCategory` (Enumerated)
 |  2 | url      | String /uri       | 1    | The URL of the referenced resource.                     |
 |  3 | category | ReferenceCategory | 0..1 | Whether this reference is external or self-referential. |
 
-Table: Type `Reference` (Record)
+<a id="tab:reference-record"></a>
+Table 11: Type `Reference` (Record)
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item     | Description                                                      |
 |---:|:---------|:-----------------------------------------------------------------|
 |  0 | external | The reference points to an external resource.                    |
 |  1 | self     | The reference points back to the same information item in focus. |
 
-Table: Type `ReferenceCategory` (Enumerated)
+<a id="tab:reference-category-enum"></a>
+Table 12: Type `ReferenceCategory` (Enumerated)
 
 ## 5.3 Source <a id='source'></a>
 
 The `source` member characterizes the content and source of the dataset.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name         | Type         | \#    | Description                                                                      |
 |---:|:-------------|:-------------|:------|:---------------------------------------------------------------------------------|
@@ -486,9 +485,9 @@ The `source` member characterizes the content and source of the dataset.
 |  5 | name         | String       | 1     | The official name of the dataset.                                                |
 |  6 | data-version | Version      | 1     | The version of the dataset this metadata set describes.                          |
 
-Table: Type `Source` (Record)
+<a id="tab:source-record"></a>
+Table 13: Type `Source` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name    | Type   | \#   | Description                                                                                        |
 |---:|:--------|:-------|:-----|:---------------------------------------------------------------------------------------------------|
@@ -496,11 +495,11 @@ Table: Type `Source` (Record)
 |  2 | purpose | String | 1    | The recommended uses for this dataset.                                                             |
 |  3 | scope   | String | 0..1 | Any limitations of the dataset.                                                                    |
 
-Table: Type `About` (Record)
+<a id="tab:about-record"></a>
+Table 14: Type `About` (Record)
 
 The `Identity` type provides at least one identifier for the dataset. At least one of its fields MUST be present.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name       | Type         | \#    | Description                                           |
 |---:|:-----------|:-------------|:------|:------------------------------------------------------|
@@ -509,27 +508,27 @@ The `Identity` type provides at least one identifier for the dataset. At least o
 |  3 | uuids      | String /uuid | 0..\* | UUID identifiers for the dataset.                     |
 |  4 | custom-ids | CustomId     | 0..\* | Identifiers in any text format.                       |
 
-Table: Type `Identity` (Map)
+<a id="tab:identity-map"></a>
+Table 15: Type `Identity` (Map)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name        | Type     | \#    | Description                                                              |
 |---:|:------------|:---------|:------|:-------------------------------------------------------------------------|
 |  1 | tree-hashes | TreeHash | 1..\* | The cryptographic hash values for this file or tree.                     |
 |  2 | path        | String   | 1     | The path (file or filesystem tree root) identified by these hash values. |
 
-Table: Type `HashEntry` (Record)
+<a id="tab:hash-entry-record"></a>
+Table 16: Type `HashEntry` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name      | Type   | \# | Description                                                              |
 |---:|:----------|:-------|:---|:-------------------------------------------------------------------------|
 |  1 | algorithm | String | 1  | The name of the hash or tree/seal algorithm used to calculate the value. |
 |  2 | value     | String | 1  | The cryptographic hash value in hexadecimal representation.              |
 
-Table: Type `TreeHash` (Record)
+<a id="tab:tree-hash-record"></a>
+Table 17: Type `TreeHash` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name           | Type   | \#    | Description                                            |
 |---:|:---------------|:-------|:------|:-------------------------------------------------------|
@@ -538,13 +537,13 @@ Table: Type `TreeHash` (Record)
 |  3 | tool           | String | 0..1  | The name of the tool used to derive this identifier.   |
 |  4 | parameter-list | String | 0..\* | Parameters used when invoking the tool.                |
 
-Table: Type `CustomId` (Record)
+<a id="tab:custom-id-record"></a>
+Table 18: Type `CustomId` (Record)
 
 ## 5.4 Provenance <a id='provenance'></a>
 
 The `provenance` member describes the provenance of the dataset.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name              | Type             | \#    | Description                                                                                  |
 |---:|:------------------|:-----------------|:------|:---------------------------------------------------------------------------------------------|
@@ -558,18 +557,18 @@ The `provenance` member describes the provenance of the dataset.
 |  8 | format            | ModalityFormat   | 0..\* | Describes the modality or media type of the data within the dataset.                         |
 |  9 | sub-provenance    | Provenance       | 0..1  | Nested provenance information for a component of this dataset.                               |
 
-Table: Type `Provenance` (Record)
+<a id="tab:provenance-record"></a>
+Table 19: Type `Provenance` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name  | Type              | \#   | Description                                            |
 |---:|:------|:------------------|:-----|:-------------------------------------------------------|
 |  1 | start | String /date-time | 0..1 | The start of the data collection or generation period. |
 |  2 | end   | String /date-time | 0..1 | The end of the data collection or generation period.   |
 
-Table: Type `GenerationPeriod` (Record)
+<a id="tab:generation-period-record"></a>
+Table 20: Type `GenerationPeriod` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name             | Type                 | \#   | Description                                       |
 |---:|:-----------------|:---------------------|:-----|:--------------------------------------------------|
@@ -577,9 +576,9 @@ Table: Type `GenerationPeriod` (Record)
 |  2 | system           | String               | 0..1 | The code system used to interpret the code value. |
 |  3 | long-description | String               | 0..1 | A detailed description of the method.             |
 
-Table: Type `GenerationMethod` (Record)
+<a id="tab:generation-method-record"></a>
+Table 21: Type `GenerationMethod` (Record)
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                     | Description                                            |
 |---:|:-------------------------|:-------------------------------------------------------|
@@ -596,9 +595,9 @@ Table: Type `GenerationMethod` (Record)
 | 10 | user-generated-content   | Data created by end users.                             |
 | 11 | web-scraping-crawling    | Data collected by web scraping or crawling.            |
 
-Table: Type `GenerationMethodCode` (Enumerated)
+<a id="tab:generation-method-code-enum"></a>
+Table 22: Type `GenerationMethodCode` (Enumerated)
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                     | Description                           |
 |---:|:-------------------------|:--------------------------------------|
@@ -616,13 +615,13 @@ Table: Type `GenerationMethodCode` (Enumerated)
 | 11 | text/csv                 | CSV text format.                      |
 | 12 | text/plain               | Plain text format.                    |
 
-Table: Type `ModalityFormat` (Enumerated)
+<a id="tab:modality-format-enum"></a>
+Table 23: Type `ModalityFormat` (Enumerated)
 
 ## 5.5 Use <a id='use'></a>
 
 The `use` member describes the legal use and restrictions applicable to the dataset.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name                | Type             | \#    | Description                                                                               |
 |---:|:--------------------|:-----------------|:------|:------------------------------------------------------------------------------------------|
@@ -639,9 +638,9 @@ The `use` member describes the legal use and restrictions applicable to the data
 | 11 | patent              | String           | 0..\* | Patent information covering proprietary information in the dataset.                       |
 | 12 | trademark           | String           | 0..\* | Trademark information covering proprietary information in the dataset.                    |
 
-Table: Type `Use` (Record)
+<a id="tab:use-record"></a>
+Table 24: Type `Use` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name             | Type        | \#   | Description                                       |
 |---:|:-----------------|:------------|:-----|:--------------------------------------------------|
@@ -649,9 +648,9 @@ Table: Type `Use` (Record)
 |  2 | long-description | String      | 1    | A detailed description of the intended purpose.   |
 |  3 | system           | String      | 0..1 | The code system used to interpret the code value. |
 
-Table: Type `Purpose` (Record)
+<a id="tab:purpose-record"></a>
+Table 25: Type `Purpose` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name       | Type       | \#   | Description                                                                                   |
 |---:|:-----------|:-----------|:-----|:----------------------------------------------------------------------------------------------|
@@ -659,9 +658,9 @@ Table: Type `Purpose` (Record)
 |  2 | evaluated  | Boolean    | 1    | Whether the dataset has been evaluated against this classification (`true`) or not (`false`). |
 |  3 | tool       | String     | 0..1 | The tool used to perform the evaluation.                                                      |
 
-Table: Type `Classification` (Record)
+<a id="tab:classification-record"></a>
+Table 26: Type `Classification` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name             | Type                | \#   | Description                                                  |
 |---:|:-----------------|:--------------------|:-----|:-------------------------------------------------------------|
@@ -669,9 +668,9 @@ Table: Type `Classification` (Record)
 |  2 | system           | String              | 0..1 | The code system used to interpret the code value.            |
 |  3 | long-description | String              | 0..1 | A detailed description of the regulation or classification.  |
 
-Table: Type `Regulation` (Record)
+<a id="tab:regulation-record"></a>
+Table 27: Type `Regulation` (Record)
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item  | Description                                       |
 |---:|:------|:--------------------------------------------------|
@@ -683,9 +682,9 @@ Table: Type `Regulation` (Record)
 |  5 | sci   | Sensitive Compartmented Information (SCI).        |
 |  6 | spi   | Sensitive Personal Information (SPI).             |
 
-Table: Type `ConfidentialityCode` (Enumerated)
+<a id="tab:confidentiality-code-enum"></a>
+Table 28: Type `ConfidentialityCode` (Enumerated)
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                      | Description                                           |
 |---:|:--------------------------|:------------------------------------------------------|
@@ -699,9 +698,9 @@ Table: Type `ConfidentialityCode` (Enumerated)
 |  7 | staging-testing           | Dataset intended for staging or testing environments. |
 |  8 | synthetic-data-generation | Dataset intended for generating synthetic data.       |
 
-Table: Type `PurposeCode` (Enumerated)
+<a id="tab:purpose-code-enum"></a>
+Table 29: Type `PurposeCode` (Enumerated)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name          | Type           | \#    | Description                                                |
 |---:|:--------------|:---------------|:------|:-----------------------------------------------------------|
@@ -711,18 +710,18 @@ Table: Type `PurposeCode` (Enumerated)
 |  4 | parameters    | Parameter      | 0..\* | The parameters passed to the tool.                         |
 |  5 | results       | String         | 0..\* | The results of applying the tool.                          |
 
-Table: Type `DataRiskReducing` (Record)
+<a id="tab:data-risk-reducing-record"></a>
+Table 30: Type `DataRiskReducing` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name  | Type   | \#   | Description          |
 |---:|:------|:-------|:-----|:---------------------|
 |  1 | name  | String | 1    | The parameter name.  |
 |  2 | value | String | 0..1 | The parameter value. |
 
-Table: Type `Parameter` (Record)
+<a id="tab:parameter-record"></a>
+Table 31: Type `Parameter` (Record)
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                           | Description                                                                                                                                                         |
 |---:|:-------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -742,13 +741,13 @@ Table: Type `Parameter` (Record)
 | 13 | t-closeness                    | Extends l-diversity by requiring that the distribution of sensitive values within each equivalence class closely matches their overall distribution in the dataset. |
 | 14 | tokenization                   | Substitutes sensitive values with non-sensitive tokens; the originals are recoverable only through a separate, secured token vault.                                 |
 
-Table: Type `DataTechnology` (Enumerated)
+<a id="tab:data-technology-enum"></a>
+Table 32: Type `DataTechnology` (Enumerated)
 
 ## 5.6 Shared Types <a id='shared-types'></a>
 
 The following types are used in more than one of the sections above.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name       | Type        | \#   | Description                             |
 |---:|:-----------|:------------|:-----|:----------------------------------------|
@@ -756,26 +755,26 @@ The following types are used in more than one of the sections above.
 |  2 | address    | Address     | 0..1 | The postal address of the organization. |
 |  3 | url        | String /uri | 0..1 | A URL for the organization.             |
 
-Table: Type `Organization` (Record)
+<a id="tab:organization-record"></a>
+Table 33: Type `Organization` (Record)
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | Type Name | Type Definition | Description                                       |
 |:----------|:----------------|:--------------------------------------------------|
 | Address   | ArrayOf(String) | Lines of a postal address. At least one required. |
 
-Table: Type `Address` (ArrayOf(String))
+<a id="tab:address-array"></a>
+Table 34: Type `Address` (ArrayOf(String))
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name    | Type   | \#   | Description                         |
 |---:|:--------|:-------|:-----|:------------------------------------|
 |  1 | country | String | 1    | The country name or code.           |
 |  2 | state   | String | 0..1 | The state or province name or code. |
 
-Table: Type `GeographicRegion` (Record)
+<a id="tab:geographic-region-record"></a>
+Table 35: Type `GeographicRegion` (Record)
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name             | Type   | \#   | Description                                                          |
 |---:|:-----------------|:-------|:-----|:---------------------------------------------------------------------|
@@ -783,11 +782,11 @@ Table: Type `GeographicRegion` (Record)
 |  2 | system           | String | 0..1 | The code system used to interpret the code value.                    |
 |  3 | long-description | String | 0..1 | A detailed description of the method, regulation, or classification. |
 
-Table: Type `Method` (Record)
+<a id="tab:method-record"></a>
+Table 36: Type `Method` (Record)
 
 The `Acknowledgment` type describes a contributor. At least one of its fields MUST be present.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name         | Type        | \#    | Description                                             |
 |---:|:-------------|:------------|:------|:--------------------------------------------------------|
@@ -796,23 +795,24 @@ The `Acknowledgment` type describes a contributor. At least one of its fields MU
 |  3 | summary      | String      | 0..1  | Contextual details about the acknowledgment.            |
 |  4 | urls         | String /uri | 0..\* | URLs of references being acknowledged.                  |
 
-Table: Type `Acknowledgment` (Map)
+<a id="tab:acknowledgment-map"></a>
+Table 37: Type `Acknowledgment` (Map)
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | Type Name | Type Definition | Description                                                                           |
 |:----------|:----------------|:--------------------------------------------------------------------------------------|
 | Version   | String          | An integer or semantic versioning string. Examples: `"1"`, `"2.0.0"`, `"1.0.0-beta"`. |
 
-Table: Type `Version` (String)
+<a id="tab:version-string"></a>
+Table 38: Type `Version` (String)
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | Type Name | Type Definition | Description                                          |
 |:----------|:----------------|:-----------------------------------------------------|
 | Language  | String          | A language tag conforming to IETF BCP 47 / RFC 5646. |
 
-Table: Type `Language` (String)
+<a id="tab:language-string"></a>
+Table 39: Type `Language` (String)
 
 # 6. Provenance Information Model Encoding <a id='provenance-information-model-encoding'></a>
 
@@ -2508,15 +2508,13 @@ Duncan Sparrell for supporting the TC from the charter definition to the initial
 
 ## Participants <a id='participants'></a>
 
-The following individuals have participated in the creation of this document and are gratefully acknowledged:
+The following individuals have participated in the creation of this document and are gratefully acknowledged (given family, affiliation):
 
-| First Name | Last Name | Company                   |
-|:-----------|:----------|:--------------------------|
-| David      | Kemp      | NSA                       |
-| Duncan     | Sparrell  | sFractal Consulting LLC   |
-| Kristina   | Podnar    | Data &amp; Trust Alliance |
-| Lisa       | Bobbitt   | Cisco                     |
-| Stefan     | Hagen     | Individual                |
+- David Kemp, NSA
+- Duncan Sparrell, sFractal Consulting LLC
+- Kristina Podnar, Data &amp; Trust Alliance
+- Lisa Bobbitt, Cisco
+- Stefan Hagen, Individual
 
 ---
 

@@ -16,7 +16,7 @@ The `provenance` member describes the provenance of the dataset.
 |  8 | format            | ModalityFormat   | 0..\* | Describes the modality or media type of the data within the dataset.                         |
 |  9 | sub-provenance    | Provenance       | 0..1  | Nested provenance information for a component of this dataset.                               |
 
-Table: Type `Provenance` (Record)
+Table: Type `Provenance` (Record){#tab:provenance-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -25,7 +25,7 @@ Table: Type `Provenance` (Record)
 |  1 | start | String /date-time | 0..1 | The start of the data collection or generation period. |
 |  2 | end   | String /date-time | 0..1 | The end of the data collection or generation period.   |
 
-Table: Type `GenerationPeriod` (Record)
+Table: Type `GenerationPeriod` (Record){#tab:generation-period-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -35,7 +35,7 @@ Table: Type `GenerationPeriod` (Record)
 |  2 | system           | String               | 0..1 | The code system used to interpret the code value. |
 |  3 | long-description | String               | 0..1 | A detailed description of the method.             |
 
-Table: Type `GenerationMethod` (Record)
+Table: Type `GenerationMethod` (Record){#tab:generation-method-record}
 
 \columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
@@ -54,7 +54,7 @@ Table: Type `GenerationMethod` (Record)
 | 10 | user-generated-content   | Data created by end users.                             |
 | 11 | web-scraping-crawling    | Data collected by web scraping or crawling.            |
 
-Table: Type `GenerationMethodCode` (Enumerated)
+Table: Type `GenerationMethodCode` (Enumerated){#tab:generation-method-code-enum}
 
 \columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
@@ -74,4 +74,4 @@ Table: Type `GenerationMethodCode` (Enumerated)
 | 11 | text/csv                 | CSV text format.                      |
 | 12 | text/plain               | Plain text format.                    |
 
-Table: Type `ModalityFormat` (Enumerated)
+Table: Type `ModalityFormat` (Enumerated){#tab:modality-format-enum}
