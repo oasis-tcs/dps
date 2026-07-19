@@ -48,6 +48,10 @@ references:
     sources:
     - defs-and-acro-01-defs-ext-01-list.md
 
+quality:
+  rules:
+    - etc/rules/spec.rules.yaml
+
 channels:
   html:
     title: Data Provenance Metadata Version 1.0

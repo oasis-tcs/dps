@@ -17,7 +17,7 @@ The `set` member captures metadata about the provenance metadata record itself.
 |  9 | notes           | Note           | 0..\* | Notes associated with this metadata set.                                                                                           |
 | 10 | references      | Reference      | 0..\* | References associated with this metadata set.                                                                                      |
 
-Table: Type `Set` (Record)
+Table: Type `Set` (Record){#tab:set-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -27,7 +27,7 @@ Table: Type `Set` (Record)
 |  2 | namespace       | String /uri | 1    | A URI under the control of the issuing party, used as a globally unique identifier for that party. |
 |  3 | contact-details | String      | 0..1 | Information on how to contact the publisher.                                                       |
 
-Table: Type `Publisher` (Record)
+Table: Type `Publisher` (Record){#tab:publisher-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -42,7 +42,7 @@ Table: Type `Publisher` (Record)
 |  7 | aliases              | String            | 0..\* | Alternate names for this metadata set.                                                                                                       |
 |  8 | generator            | Generator         | 0..1  | Information about the engine that generated this metadata set.                                                                               |
 
-Table: Type `Tracking` (Record)
+Table: Type `Tracking` (Record){#tab:tracking-record}
 
 \columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
@@ -52,7 +52,7 @@ Table: Type `Tracking` (Record)
 |  1 | final   | The metadata set is final.           |
 |  2 | interim | The metadata set has interim status. |
 
-Table: Type `TrackingStatus` (Enumerated)
+Table: Type `TrackingStatus` (Enumerated){#tab:tracking-status-enum}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -63,7 +63,7 @@ Table: Type `TrackingStatus` (Enumerated)
 |  3 | summary        | String            | 1    | A short description of the changes in this revision.                                                           |
 |  4 | legacy-version | String            | 0..1 | A version string from an existing set with the same content, tracing from DP-Core compliant to historic items. |
 
-Table: Type `Revision` (Record)
+Table: Type `Revision` (Record){#tab:revision-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -72,7 +72,7 @@ Table: Type `Revision` (Record)
 |  1 | engine | GeneratorEngine   | 1    | Information about the engine used to generate this metadata set. |
 |  2 | date   | String /date-time | 0..1 | The date this metadata set was generated.                        |
 
-Table: Type `Generator` (Record)
+Table: Type `Generator` (Record){#tab:generator-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -81,7 +81,7 @@ Table: Type `Generator` (Record)
 |  1 | name    | String  | 1    | The name of the engine that generated this metadata set.    |
 |  2 | version | Version | 0..1 | The version of the engine that generated this metadata set. |
 
-Table: Type `GeneratorEngine` (Record)
+Table: Type `GeneratorEngine` (Record){#tab:generator-engine-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -92,7 +92,7 @@ Table: Type `GeneratorEngine` (Record)
 |  3 | audience | String       | 0..1 | The intended audience for the note.                                 |
 |  4 | title    | String       | 0..1 | A concise description of what is contained in the text of the note. |
 
-Table: Type `Note` (Record)
+Table: Type `Note` (Record){#tab:note-record}
 
 \columns=iiii,nnnnnnnnnnnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
@@ -106,7 +106,7 @@ Table: Type `Note` (Record)
 |  5 | other            | A note that does not fit other categories.     |
 |  6 | summary          | A summary note.                                |
 
-Table: Type `NoteCategory` (Enumerated)
+Table: Type `NoteCategory` (Enumerated){#tab:note-category-enum}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -116,7 +116,7 @@ Table: Type `NoteCategory` (Enumerated)
 |  2 | url      | String /uri       | 1    | The URL of the referenced resource.                     |
 |  3 | category | ReferenceCategory | 0..1 | Whether this reference is external or self-referential. |
 
-Table: Type `Reference` (Record)
+Table: Type `Reference` (Record){#tab:reference-record}
 
 \columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
@@ -125,4 +125,4 @@ Table: Type `Reference` (Record)
 |  0 | external | The reference points to an external resource.                    |
 |  1 | self     | The reference points back to the same information item in focus. |
 
-Table: Type `ReferenceCategory` (Enumerated)
+Table: Type `ReferenceCategory` (Enumerated){#tab:reference-category-enum}

@@ -19,7 +19,7 @@ The `use` member describes the legal use and restrictions applicable to the data
 | 11 | patent              | String           | 0..\* | Patent information covering proprietary information in the dataset.                       |
 | 12 | trademark           | String           | 0..\* | Trademark information covering proprietary information in the dataset.                    |
 
-Table: Type `Use` (Record)
+Table: Type `Use` (Record){#tab:use-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -29,7 +29,7 @@ Table: Type `Use` (Record)
 |  2 | long-description | String      | 1    | A detailed description of the intended purpose.   |
 |  3 | system           | String      | 0..1 | The code system used to interpret the code value. |
 
-Table: Type `Purpose` (Record)
+Table: Type `Purpose` (Record){#tab:purpose-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -39,7 +39,7 @@ Table: Type `Purpose` (Record)
 |  2 | evaluated  | Boolean    | 1    | Whether the dataset has been evaluated against this classification (`true`) or not (`false`). |
 |  3 | tool       | String     | 0..1 | The tool used to perform the evaluation.                                                      |
 
-Table: Type `Classification` (Record)
+Table: Type `Classification` (Record){#tab:classification-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -49,7 +49,7 @@ Table: Type `Classification` (Record)
 |  2 | system           | String              | 0..1 | The code system used to interpret the code value.            |
 |  3 | long-description | String              | 0..1 | A detailed description of the regulation or classification.  |
 
-Table: Type `Regulation` (Record)
+Table: Type `Regulation` (Record){#tab:regulation-record}
 
 \columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
@@ -63,7 +63,7 @@ Table: Type `Regulation` (Record)
 |  5 | sci   | Sensitive Compartmented Information (SCI).        |
 |  6 | spi   | Sensitive Personal Information (SPI).             |
 
-Table: Type `ConfidentialityCode` (Enumerated)
+Table: Type `ConfidentialityCode` (Enumerated){#tab:confidentiality-code-enum}
 
 \columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
@@ -79,7 +79,7 @@ Table: Type `ConfidentialityCode` (Enumerated)
 |  7 | staging-testing           | Dataset intended for staging or testing environments. |
 |  8 | synthetic-data-generation | Dataset intended for generating synthetic data.       |
 
-Table: Type `PurposeCode` (Enumerated)
+Table: Type `PurposeCode` (Enumerated){#tab:purpose-code-enum}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -91,7 +91,7 @@ Table: Type `PurposeCode` (Enumerated)
 |  4 | parameters    | Parameter      | 0..\* | The parameters passed to the tool.                         |
 |  5 | results       | String         | 0..\* | The results of applying the tool.                          |
 
-Table: Type `DataRiskReducing` (Record)
+Table: Type `DataRiskReducing` (Record){#tab:data-risk-reducing-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
@@ -100,7 +100,7 @@ Table: Type `DataRiskReducing` (Record)
 |  1 | name  | String | 1    | The parameter name.  |
 |  2 | value | String | 0..1 | The parameter value. |
 
-Table: Type `Parameter` (Record)
+Table: Type `Parameter` (Record){#tab:parameter-record}
 
 \columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
@@ -122,4 +122,4 @@ Table: Type `Parameter` (Record)
 | 13 | t-closeness                    | Extends l-diversity by requiring that the distribution of sensitive values within each equivalence class closely matches their overall distribution in the dataset. |
 | 14 | tokenization                   | Substitutes sensitive values with non-sensitive tokens; the originals are recoverable only through a separate, secured token vault.                                 |
 
-Table: Type `DataTechnology` (Enumerated)
+Table: Type `DataTechnology` (Enumerated){#tab:data-technology-enum}

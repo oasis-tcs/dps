@@ -30,14 +30,12 @@ Duncan Sparrell for supporting the TC from the charter definition to the initial
 
 ## Participants {#participants}
 
-The following individuals have participated in the creation of this document and are gratefully acknowledged:
+The following individuals have participated in the creation of this document and are gratefully acknowledged (given family, affiliation):
 
-| First Name | Last Name | Company                   |
-|:-----------|:----------|:--------------------------|
-| David      | Kemp      | NSA                       |
-| Duncan     | Sparrell  | sFractal Consulting LLC   |
-| Kristina   | Podnar    | Data &amp; Trust Alliance |
-| Lisa       | Bobbitt   | Cisco                     |
-| Stefan     | Hagen     | Individual                |
+- David Kemp, NSA
+- Duncan Sparrell, sFractal Consulting LLC
+- Kristina Podnar, Data &amp; Trust Alliance
+- Lisa Bobbitt, Cisco
+- Stefan Hagen, Individual
 
 ---
