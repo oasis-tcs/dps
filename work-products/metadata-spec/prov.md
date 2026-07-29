@@ -103,7 +103,7 @@ which contains the License, Document Status and Notices.
   - [3.1 Key Words](#key-words)
   - [3.2 Typographical Conventions](#typographical-conventions)
 - [4 Introduction](#introduction)
-  - [4.1 Any Additional Introduction Subsections That are Needed](#any-additional-introduction-subsections-that-are-needed)
+  - [4.1 Structure of the Specification](#structure-of-the-specification)
   - [4.2 Changes From the Previous Version](#changes-from-the-previous-version)
 - [5 Provenance Information Model](#provenance-information-model)
   - [5.1 Primary Metadata Elements](#primary-metadata-elements)
@@ -233,9 +233,15 @@ Dependence on data creates a need for validation and an understanding of the dat
 Understanding data is a requirement for organizations operating at scale.
 The OASIS Data Provenance Standard (DPS) is created to solve for this need.
 
-## 4.1 Any Additional Introduction Subsections That are Needed{#any-additional-introduction-subsections-that-are-needed}
+## 4.1 Structure of the Specification
 
-None
+<!--
+The editors should provide a rough overview how the standard is structured and how the following parts work together:
+- schema (5) 
+- Information Model Encoding (6)
+- Data Model Encoding (7)
+Empty for now, because we may want to add or remove complete parts for the next draft.
+-->
 
 ## 4.2 Changes From the Previous Version{#changes-from-the-previous-version}
 
@@ -517,11 +523,24 @@ The technical encoding of the information model is specified in both JADN and YA
 
 ## 6.1 JADN Encoding{#im-jadn-encoding}
 
-The JADN encoding of the data provenance metadata information model is specified in \_\_\_\_.
+The JADN encoding of the data provenance metadata information model is approximated by the table level representation in section "[Provenance Schema](#5-provenance-schema)".
+
+<!--
+The editors need go back to the generation process after fixing the inconsistencies and implementing suggested enhancements to create the section content.
+Note: The link to the "Provenance Schema" section in the (non-commented) statement above matches the assumed slugs in this ephemeral revision of the draft
+and will be adjusted when the real content is available and the link is still applicable.
+-->
 
 ## 6.2 YAML Encoding{#im-yaml-encoding}
 
-The YAML encoding of the data provenance metadata information model is specified in \_\_\_\_.
+The YAML encoding of the data provenance metadata information model is documented in section "[JSON Encoding](#7.1-json-encoding)" and displays only the required parts.
+
+<!--
+The editors need go back to the generation process after fixing the inconsistencies and implementing suggested enhancements to create the section content.
+Note: The link to the "JSON Encoding" section in the (non-commented) statement above matches the assumed slugs in this ephemeral revision of the draft
+and will be adjusted when the real content is available and the link is still applicable.
+-->
+
 
 # 7 Provenance Data Model Encoding{#provenance-data-model-encoding}
 
@@ -1248,11 +1267,14 @@ For Data Provenance Metadata documents based on JSON, the security consideration
 
 # 9 Conformance{#conformance}
 
-\<
+This document defines requirements for the data-provenance in the JSON file format and for certain software components that interact with it. 
 
-This section is **REQUIRED** and **MUST** be the last numbered section in the document.
-
-\>
+<!--
+The editors guided by the TC shall add conformance targets in this section.
+The above (non-commented) statement is a first attempt to start the process.
+Existing OASIS specifications like CSAF, MQTT-SN, OpenEoX-Core, and SARIF use roles to anchor such conformance targets.
+We may want to add a blanket statement that allows file formats in the wild to be valid as long as the information model matches the specification.
+-->
 
 ---
 
@@ -1312,21 +1334,29 @@ The following documents are referenced in such a way that some or all of their c
 
 **\[RFC8174\]** _Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words_, BCP 14, RFC 8174, May 2017\. \[Online\]. Available: https://www.rfc-editor.org/info/rfc8174
 
-**\[Reference 1\]** Reference Details
-
-**\[Reference 2\]** Reference Details
 
 ## B.2 Informative References{#informative-references}
 
 The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.
 
-**\[Reference 1\]** Reference Details
-
-**\[Reference 2\]** Reference Details
+N/A
 
 ---
 
-# Annex C Additional Annex as Needed{#additional-annex-as-needed}
+<!--
+Examples: When we have real-world examples (expected soon), we will share them.
+
+History: 
+
+- The initial quest for real-world examples to ensure relevance of our to be specified information and
+  data models "[Contribution of Real-World Instance Examples of DTA Schema \# 70](https://github.com/oasis-tcs/dps/issues/70)
+  was closed with the resolution of the DPS TC to provide these examples inside the contributions folder
+  (cf. https://github.com/oasis-tcs/dps/issues/70#issuecomment-4315445801).
+- The editors added two synthetic examples in [revision fdae15f3](https://github.com/oasis-tcs/dps/commit/fdae15f3f17fa9e6d6e2f1020506c1422b4b57d3)
+  because our eco system failed to provide any example metadata files since July 2025.
+-->
+
+# Annex C Additional Annex as Needed
 
 (This annex forms an integral part of this Specification.)
 
