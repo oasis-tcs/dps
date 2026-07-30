@@ -422,98 +422,98 @@ Table 17: Type `URL` (String)
 
 | ID | Item                     | Description |
 |---:|:-------------------------|:------------|
-|  0 | data-augmentation        |             |
-|  1 | data-mining              |             |
-|  2 | feeds                    |             |
-|  3 | machine-generated-ml-ops |             |
-|  4 | other                    |             |
-|  5 | primary-user-source      |             |
-|  6 | simulations              |             |
-|  7 | social-media             |             |
-|  8 | syndication              |             |
-|  9 | transfer-learning        |             |
-| 10 | user-generated-content   |             |
-| 11 | web-scraping-crawling    |             |
+|  1 | data-augmentation        |             |
+|  2 | data-mining              |             |
+|  3 | feeds                    |             |
+|  4 | machine-generated-ml-ops |             |
+|  5 | other                    |             |
+|  6 | primary-user-source      |             |
+|  7 | simulations              |             |
+|  8 | social-media             |             |
+|  9 | syndication              |             |
+| 10 | transfer-learning        |             |
+| 11 | user-generated-content   |             |
+| 12 | web-scraping-crawling    |             |
 
 Table 18: Type `Method` (Enumerated)
 
 | ID | Item                     | Description |
 |---:|:-------------------------|:------------|
-|  0 | application/json         |             |
-|  1 | application/jsonld       |             |
-|  2 | application/msword       |             |
-|  3 | application/vnd.ms-excel |             |
-|  4 | application/zip          |             |
-|  5 | image/bmp                |             |
-|  6 | image/gif                |             |
-|  7 | image/jpeg               |             |
-|  8 | image/png                |             |
-|  9 | image/x-png              |             |
-| 10 | other                    |             |
-| 11 | text/csv                 |             |
-| 12 | text/plain               |             |
+|  1 | application/json         |             |
+|  2 | application/jsonld       |             |
+|  3 | application/msword       |             |
+|  4 | application/vnd.ms-excel |             |
+|  5 | application/zip          |             |
+|  6 | image/bmp                |             |
+|  7 | image/gif                |             |
+|  8 | image/jpeg               |             |
+|  9 | image/png                |             |
+| 10 | image/x-png              |             |
+| 11 | other                    |             |
+| 12 | text/csv                 |             |
+| 13 | text/plain               |             |
 
 Table 19: Type `ModalityFormat` (Enumerated)
 
 | ID | Item  | Description                             |
 |---:|:------|:----------------------------------------|
-|  0 | other |                                         |
-|  1 | pci   | Payment Card Industry (PCI)             |
-|  2 | pfi   | Personal Financial Information (PFI)    |
-|  3 | phi   | Personal Health Information (PHI)       |
-|  4 | pi    | Personal Information (PI) / Demographic |
-|  5 | sci   | Sensitive Customer Information (SCI)    |
-|  6 | spi   | Sensitive Personal Information (SPI)    |
+|  1 | other |                                         |
+|  2 | pci   | Payment Card Industry (PCI)             |
+|  3 | pfi   | Personal Financial Information (PFI)    |
+|  4 | phi   | Personal Health Information (PHI)       |
+|  5 | pi    | Personal Information (PI) / Demographic |
+|  6 | sci   | Sensitive Customer Information (SCI)    |
+|  7 | spi   | Sensitive Personal Information (SPI)    |
 
 Table 20: Type `ConfidentialityClassification` (Enumerated)
 
 | ID | Item                           | Description |
 |---:|:-------------------------------|:------------|
-|  0 | data-anonymization             |             |
-|  1 | data-encryption                |             |
-|  2 | data-masking                   |             |
-|  3 | data-minimization              |             |
-|  4 | data-redaction                 |             |
-|  5 | differential-privacy           |             |
-|  6 | federated-learning             |             |
-|  7 | homomorphic-encryption         |             |
-|  8 | k-anonymity                    |             |
-|  9 | l-diversity                    |             |
-| 10 | other                          |             |
-| 11 | pseudonymization               |             |
-| 12 | secure-multi-party-computation | SMC         |
-| 13 | t-closeness                    |             |
-| 14 | tokenization                   |             |
+|  1 | data-anonymization             |             |
+|  2 | data-encryption                |             |
+|  3 | data-masking                   |             |
+|  4 | data-minimization              |             |
+|  5 | data-redaction                 |             |
+|  6 | differential-privacy           |             |
+|  7 | federated-learning             |             |
+|  8 | homomorphic-encryption         |             |
+|  9 | k-anonymity                    |             |
+| 10 | l-diversity                    |             |
+| 11 | other                          |             |
+| 12 | pseudonymization               |             |
+| 13 | secure-multi-party-computation | SMC         |
+| 14 | t-closeness                    |             |
+| 15 | tokenization                   |             |
 
 Table 21: Type `DataTechnology` (Enumerated)
 
 | ID | Item                           | Description                                                                       |
 |---:|:-------------------------------|:----------------------------------------------------------------------------------|
-|  0 | commercial/-negotiated-license | Provide details on how to obtain or contact.                                      |
-|  1 | non-commercial                 | Name and link, if private, provide details on how to obtain or contact for terms. |
-|  2 | none                           | No License.                                                                       |
-|  3 | public-license                 | License Name and add link.                                                        |
+|  1 | commercial/-negotiated-license | Provide details on how to obtain or contact.                                      |
+|  2 | non-commercial                 | Name and link, if private, provide details on how to obtain or contact for terms. |
+|  3 | none                           | No License.                                                                       |
+|  4 | public-license                 | License Name and add link.                                                        |
 
 Table 22: Type `License` (Enumerated)
 
 | ID | Item              | Description |
 |---:|:------------------|:------------|
-|  0 | other             |             |
-|  1 | production        |             |
-|  2 | quality-assurance |             |
-|  3 | research          |             |
-|  4 | staging-testing   |             |
+|  1 | other             |             |
+|  2 | production        |             |
+|  3 | quality-assurance |             |
+|  4 | research          |             |
+|  5 | staging-testing   |             |
 
 Table 23: Type `NonAIUse` (Enumerated)
 
 | ID | Item                      | Description |
 |---:|:--------------------------|:------------|
-|  0 | alignment                 |             |
-|  1 | evaluation                |             |
-|  2 | other                     |             |
-|  3 | pre-training              |             |
-|  4 | research                  |             |
-|  5 | synthetic-data-generation |             |
+|  1 | alignment                 |             |
+|  2 | evaluation                |             |
+|  3 | other                     |             |
+|  4 | pre-training              |             |
+|  5 | research                  |             |
+|  6 | synthetic-data-generation |             |
 
 Table 24: Type `AIUse` (Enumerated)
 
