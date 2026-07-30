@@ -506,14 +506,14 @@ Table 22: Type `License` (Enumerated)
 
 Table 23: Type `NonAIUse` (Enumerated)
 
-| ID | Item                      | Description |
-|---:|:--------------------------|:------------|
-|  0 | alignment                 |             |
-|  1 | evaluation                |             |
-|  2 | other                     |             |
-|  3 | pre-training              |             |
-|  4 | research                  |             |
-|  5 | synthetic-data-generation |             |
+| ID | Item                      | Description                                                                                                                                                                                                       |
+|---:|:--------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  0 | alignment                 | Data used in the training process used to ensure large language models act safely, predictably, and in accordance with human values, typically guided by the HHH criteria: helpfulness, honesty, and harmlessness |
+|  1 | evaluation                | Data used for the systematic process of assessing a Large Language Model's outputs and underlying data to ensure accuracy, safety, and relevance.                                                                 |
+|  2 | other                     |                                                                                                                                                                                                                   |
+|  3 | pre-training              | Data used to train the LLM on general language patterns, syntax, grammar, and world knowledge.                                                                                                                    |
+|  4 | research                  | Data that will be used by research only - not for production.                                                                                                                                                     |
+|  5 | synthetic-data-generation | Real data as a baseline (seed data) to train generative AI models, statistical algorithms, or rule-based systems resulting in synthetic data.                                                                     |
 
 Table 24: Type `AIUse` (Enumerated)
 
