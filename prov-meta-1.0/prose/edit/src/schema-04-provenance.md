@@ -21,10 +21,10 @@ Table: Type `Provenance` (Record){#tab:provenance-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
-| ID | Name      | Type   | \# | Description                                                 |
-|---:|:----------|:-------|:---|:-------------------------------------------------------------|
-|  1 | algorithm | String | 1  | Digest algorithm identifier (e.g. sha256, sha384, sha512).   |
-|  2 | value     | String | 1  | The digest value, hex-encoded.                                |
+| ID | Name      | Type   | \# | Description                                                |
+|---:|:----------|:-------|:---|:-----------------------------------------------------------|
+|  1 | algorithm | String | 1  | Digest algorithm identifier (e.g. sha256, sha384, sha512). |
+|  2 | value     | String | 1  | The digest value, hex-encoded.                             |
 
 Table: Type `SourceDigest` (Record){#tab:source-digest-record}
 
