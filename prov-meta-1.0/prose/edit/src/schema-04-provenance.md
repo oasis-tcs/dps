@@ -15,8 +15,18 @@ The `provenance` member describes the provenance of the dataset.
 |  7 | generation-period | GenerationPeriod | 0..1  | The span of time during which the data was collected or generated.                           |
 |  8 | format            | ModalityFormat   | 0..\* | Describes the modality or media type of the data within the dataset.                         |
 |  9 | sub-provenance    | Provenance       | 0..1  | Nested provenance information for a component of this dataset.                               |
+| 10 | source-digest     | SourceDigest     | 0..1  | A cryptographic digest of the record referenced by `source`, computed at issuance.           |
 
 Table: Type `Provenance` (Record){#tab:provenance-record}
+
+\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+
+| ID | Name      | Type   | \# | Description                                                 |
+|---:|:----------|:-------|:---|:-------------------------------------------------------------|
+|  1 | algorithm | String | 1  | Digest algorithm identifier (e.g. sha256, sha384, sha512).   |
+|  2 | value     | String | 1  | The digest value, hex-encoded.                                |
+
+Table: Type `SourceDigest` (Record){#tab:source-digest-record}
 
 \columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
 
