@@ -102,7 +102,9 @@ The following identification methods are available:
 #### Member `source.issuer` {#member-source-issuer}
 
 The `source.issuer` member identifies the legal entity or entities responsible for creating the dataset.
-The value is a sequence of organization objects. Each organization MUST provide a `legal-name`. The sequence MUST contain at least one organization and all entries MUST be unique. Uniqueness is determined by the complete organization record — `legal-name`, `address`, and `url` together — not by `legal-name` alone.
+The value is a sequence of organization objects. Each organization MUST provide a `legal-name`.
+The sequence MUST contain at least one organization and all entries MUST be unique.
+Uniqueness is determined by the complete organization record — `legal-name`, `address`, and `url` together — not by `legal-name` alone.
 The optional members `address` and `url` MAY also be present in each organization.
 
 ```yaml <!--json-path($['$defs']['orga-type'].items.properties)-->
