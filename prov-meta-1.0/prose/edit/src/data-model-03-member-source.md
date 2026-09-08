@@ -78,6 +78,18 @@ The following identification methods are available:
 - `uuids`: A list of identifiers in UUID format.
 - `custom-ids`: A list of identifiers in any text format, each with a required `method` and `value`, and optional `tool` and `parameter-list`.
 
+The value of `algorithm` MUST be lowercase.
+
+*Examples:*
+
+- sha256
+- sha384
+- sha512
+- blake2b512
+- sha3-512
+
+`source.id` identifies the dataset itself. It is distinct from `set.tracking.id`, which identifies this metadata record.
+
 *Example 1:*
 
 ```json
