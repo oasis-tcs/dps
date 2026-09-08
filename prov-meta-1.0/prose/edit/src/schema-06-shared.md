@@ -12,6 +12,8 @@ The following types are used in more than one of the sections above.
 
 Table: Type `Organization` (Record){#tab:organization-record}
 
+The value of `url` SHOULD use the `https` scheme.
+
 \columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | Type Name | Type Definition | Description                                       |
