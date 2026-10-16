@@ -1,3 +1,4 @@
+---
 # Contributions - Examples
 
 In this folder we store incoming examples for data provenance information items from the community and
@@ -12,7 +13,8 @@ Real, sanitized DPS records exported from a live implementation (mnēSara), per 
 
 ## Files
 
-- **`kestrel-lineage-example.json`** — one document (`kestrel-northfield-q3-2026-compliance.pdf`) across three real revisions: initial upload, an automated metadata-only enrichment (issuer/origin extracted from the document), and a full file replace. Demonstrates `source-digest`-backed lineage via `provenance.source` + `previous-date`, and a real case where `tracking.version` and `source.data-version` legitimately diverge — see `kestrel-lineage-example-note.md` for why.
+- **`kestrel-lineage-example.json`** — the raw DPS record. One document (`kestrel-northfield-q3-2026-compliance.pdf`) across three real revisions: initial upload, an automated metadata-only enrichment (issuer/origin extracted from the document), and a full file replace. Demonstrates `source-digest`-backed lineage via `provenance.source` + `previous-date`, and a real case where `tracking.version` and `source.data-version` legitimately diverge.
+- **`kestrel-lineage-example-note.md`** — short explanation of the three-revision history and why `tracking.version` and `source.data-version` diverge.
 
 ## Note
 
