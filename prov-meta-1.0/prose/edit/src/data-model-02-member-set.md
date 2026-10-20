@@ -375,6 +375,8 @@ DataProvenance:
 
 The value of `set.tracking.version` MUST conform to `$defs.version-type`, which requires either an integer or a semantic versioning string.
 
+The value of `set.tracking.version` MUST equal the value of `number` in the most recent item of `set.tracking.revision-history`, that is the item with the latest `date`.
+
 *Examples 1:*
 
 ```
