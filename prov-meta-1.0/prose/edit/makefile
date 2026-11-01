@@ -65,9 +65,12 @@ gfm-plus: sections
 .PHONY: html
 html: gfm-plus
 	command -v pandoc >/dev/null 2>&1 || { echo >&2 "make html requires pandoc but it's not installed - you can get help on installing at https://pandoc.org.  Aborting."; exit 1; }
-	# mkdir -p build/data-url/ && cd src/images && for source in image*.png; do printf "%s" "data:image/png;base64,$$(cat "$${source}" | base64 | tr -d '\r\n')" > "../../build/data-url/$${source}.txt"; done && cd -
+	mkdir -p build/data-url/ && cd src/images && for source in *.png *.svg; do \
+	  case "$${source}" in *.svg) mime=image/svg+xml ;; *) mime=image/png ;; esac; \
+	  [ -f "$${source}" ] && printf "%s" "data:$${mime};base64,$$(cat "$${source}" | base64 | tr -d '\r\n')" \
+	    > "../../build/data-url/$${source}.txt"; done && cd -
 	nide render -t html && \
-	  pandoc -f gfm+definition_lists -t html build/html.md --columns=345 \
+	  pandoc -f markdown+definition_lists -t html build/html.md --columns=345 \
 	  --css style/base.css --css style/skin.css --standalone -o build/pandoc.html && \
 	  nide inject && \
 	  cp -p build/injected.html $(out_html) && \
@@ -103,8 +106,16 @@ release: html pdf
 .PHONY: build
 build: render status
 
+.PHONY: outlines
+outlines:
+	python bin/derive_outlines.py
+
+.PHONY: check-outlines
+check-outlines:
+	python bin/derive_outlines.py --check
+
 .PHONY: quality
-quality:
+quality: check-outlines
 	nide quality
 
 .PHONY: validate

@@ -6,36 +6,34 @@ It captures meta-data about the provenance metadata record describing a particul
 The required members of `set` are `category`, `schema-version`, `publisher`, `label`, and `tracking`.
 The optional members `language`, `source-language`, `acknowledgments`, `notes`, and `references` MAY also be present.
 
-```yaml <!--json-path($..set.properties)-->
+```{.yaml json-path="$..set.properties"}
 DataProvenance:
   # ...
   set:
     category: String.Pattern
-    schema-version: String.Constant
+    schema-version: String.Const
     publisher: Mapping
     label: String
     tracking: Mapping
-    # language: String.BCP47        (optional)
-    # source-language: String.BCP47 (optional)
-    # acknowledgments: Sequence     (optional)
-    # notes: Sequence               (optional)
-    # references: Sequence          (optional)
+    acknowledgments: $defs.acknowledgments-type  # optional
+    notes: $defs.notes-type                      # optional
+    references: $defs.references-type            # optional
+    language: $defs.language-type                # optional
+    source-language: $defs.language-type         # optional
   # ...
-# ...
 ```
 
 #### Member `set.category` {#member-set-category}
 
 The `set.category` member defines a short canonical name, chosen by the set producer, which will inform the end user as to the category of the metadata set.
 
-```yaml <!--json-path($..set.properties.category.pattern)-->
+```{.yaml json-path="$..set.properties.category.pattern"}
 DataProvenance:
   # ...
   set:
     category: String.Pattern
     # ...
   # ...
-# ...
 ```
 
 *Examples 1:*
@@ -51,15 +49,14 @@ Example Data Protection Notice Exemption
 
 The `set.schema-version` member gives the version of the Data Provenance Core specification which the document was generated for.
 
-```yaml <!--json-path($..set.properties['schema-version'].const)-->
+```{.yaml json-path="$..set.properties['schema-version'].const"}
 DataProvenance:
   # ...
   set:
     # ...
-    schema-version: String.Constant
+    schema-version: String.Const
     # ...
   # ...
-# ...
 ```
 
 The value of the `set.schema-version` member for this version of the specification is always:
@@ -74,7 +71,7 @@ The `set.publisher` member provides information about the publisher of the metad
 
 The required members of `set.publisher` are `name` and `namespace`. The optional member `contact-details` MAY also be present.
 
-```yaml <!--json-path($..set.properties.publisher.properties)-->
+```{.yaml json-path="$..set.properties.publisher.properties"}
 DataProvenance:
   # ...
   set:
@@ -82,17 +79,16 @@ DataProvenance:
     publisher:
       name: String
       namespace: String.URI
-      # contact-details: String  (optional)
+      contact-details: String  # optional
     # ...
   # ...
-# ...
 ```
 
 ##### Member `set.publisher.name` {#member-set-publisher-name}
 
 The `set.publisher.name` member contains the name of the issuing party.
 
-```yaml <!--json-path($..set.properties.publisher.properties.name.type)-->
+```{.yaml json-path="$..set.properties.publisher.properties.name.type"}
 DataProvenance:
   # ...
   set:
@@ -102,7 +98,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*
@@ -115,7 +110,7 @@ Cisco
 
 The `set.publisher.namespace` member contains a URI which is under the control of the issuing party and can be used as a globally unique identifier for that issuing party.
 
-```yaml <!--json-path($..set.properties.publisher.properties.namespace.format)-->
+```{.yaml json-path="$..set.properties.publisher.properties.namespace.format"}
 DataProvenance:
   # ...
   set:
@@ -126,7 +121,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.publisher.namespace` MUST be a valid URI.
@@ -141,17 +135,16 @@ https://cisco.com
 
 The `set.publisher.contact-details` member provides information on how to contact the publisher, such as web sites, email addresses, phone numbers, or postal mail addresses.
 
-```yaml <!--json-path($..set.properties.publisher.properties['contact-details'].type)-->
+```{.yaml json-path="$..set.properties.publisher.properties['contact-details'].type"}
 DataProvenance:
   # ...
   set:
     # ...
     publisher:
       # ...
-      contact-details: String
+      contact-details: String  # optional
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*
@@ -164,7 +157,7 @@ Example Company can be reached at contact_us@example.com, or via our website at 
 
 The `set.label` member provides the per-publisher unique title of the metadata set.
 
-```yaml <!--json-path($..set.properties.label.type)-->
+```{.yaml json-path="$..set.properties.label.type"}
 DataProvenance:
   # ...
   set:
@@ -172,7 +165,6 @@ DataProvenance:
     label: String
     # ...
   # ...
-# ...
 ```
 
 The value of `set.label` SHOULD be a canonical name for the set, and sufficiently unique to distinguish it from similar sets.
@@ -191,7 +183,7 @@ The `set.tracking` member is a container designated to hold all management attri
 The required members of `set.tracking` are `current-release-date`, `id`, `initial-release-date`, `revision-history`, `status`, and `version`.
 The optional members `aliases` and `generator` MAY also be present.
 
-```yaml <!--json-path($..set.properties.tracking.properties)-->
+```{.yaml json-path="$..set.properties.tracking.properties"}
 DataProvenance:
   # ...
   set:
@@ -203,18 +195,17 @@ DataProvenance:
       revision-history: Sequence
       status: String.Enum
       version: $defs.version-type
-      # aliases: Sequence   (optional)
-      # generator: Mapping  (optional)
+      aliases: Sequence   # optional
+      generator: Mapping  # optional
     # ...
   # ...
-# ...
 ```
 
 ##### Member `set.tracking.current-release-date` {#member-set-tracking-current-release-date}
 
 The `set.tracking.current-release-date` member contains the date when the current revision of this document was released.
 
-```yaml <!--json-path($..set.properties.tracking.properties['current-release-date'].format)-->
+```{.yaml json-path="$..set.properties.tracking.properties['current-release-date'].format"}
 DataProvenance:
   # ...
   set:
@@ -224,7 +215,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.current-release-date` MUST be a valid date-time string conforming to \[RFC 3339\].
@@ -239,7 +229,7 @@ The value of `set.tracking.current-release-date` MUST be a valid date-time strin
 
 The `set.tracking.id` member provides the unique identifier for the metadata set. The ID is a simple label that provides for a wide range of numbering values, types, and schemes. Its value SHOULD be assigned and maintained by the original metadata set issuing authority.
 
-```yaml <!--json-path($..set.properties.tracking.properties.id.pattern)-->
+```{.yaml json-path="$..set.properties.tracking.properties.id.pattern"}
 DataProvenance:
   # ...
   set:
@@ -250,7 +240,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.id` MUST NOT start or end with whitespace.
@@ -267,7 +256,7 @@ cisco-sa-20190513-secureboot
 
 The `set.tracking.initial-release-date` member contains the date when this set was first published.
 
-```yaml <!--json-path($..set.properties.tracking.properties['initial-release-date'].format)-->
+```{.yaml json-path="$..set.properties.tracking.properties['initial-release-date'].format"}
 DataProvenance:
   # ...
   set:
@@ -278,7 +267,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.initial-release-date` MUST be a valid date-time string conforming to \[RFC 3339\].
@@ -293,7 +281,7 @@ The value of `set.tracking.initial-release-date` MUST be a valid date-time strin
 
 The `set.tracking.revision-history` member holds one revision item for each version of the DP-Core set, including the initial one. The sequence MUST contain at least one revision item.
 
-```yaml <!--json-path($..set.properties.tracking.properties['revision-history'].items.required)-->
+```{.yaml json-path="$..set.properties.tracking.properties['revision-history'].items.required"}
 DataProvenance:
   # ...
   set:
@@ -304,11 +292,10 @@ DataProvenance:
         - date: String.DateTime
           number: $defs.version-type
           summary: String
-          # legacy-version: String  (optional)
+          legacy-version: String  # optional
       # ...
     # ...
   # ...
-# ...
 ```
 
 Each revision item MUST contain the following members:
@@ -335,18 +322,17 @@ The optional `legacy-version` member traces entries back to historic, DP-Core-un
 
 The `set.tracking.status` member defines the draft status of the metadata set. This allows processing DP-Core sets of various maturity per version.
 
-```yaml <!--json-path($..set.properties.tracking.properties.status.enum)-->
+```{.yaml json-path="$..set.properties.tracking.properties.status.enum"}
 DataProvenance:
   # ...
   set:
     # ...
     tracking:
       # ...
-      status: String.Enum
+      status: String.Enum  # draft | final | interim
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.status` MUST be one of the following:
@@ -359,7 +345,7 @@ The value of `set.tracking.status` MUST be one of the following:
 
 The `set.tracking.version` member specifies the version of the current DP-Core set.
 
-```yaml <!--json-path($..set.properties.tracking.properties.version['$ref'])-->
+```{.yaml json-path="$..set.properties.tracking.properties.version['$ref']"}
 DataProvenance:
   # ...
   set:
@@ -370,7 +356,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.version` MUST conform to `$defs.version-type`, which requires either an integer or a semantic versioning string.
@@ -390,18 +375,18 @@ The value of `set.tracking.version` MUST equal the value of `number` in the most
 The `set.tracking.aliases` member contains a list of alternate names for the same set.
 Each alias MUST be a non-empty string and all entries MUST be unique.
 
-```yaml <!--json-path($..set.properties.tracking.properties.aliases.items.type)-->
+```{.yaml json-path="$..set.properties.tracking.properties.aliases.items.type"}
 DataProvenance:
   # ...
   set:
     # ...
     tracking:
       # ...
-      aliases:
+      aliases:  # optional
         - String
+      # ...
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*
@@ -415,21 +400,20 @@ DataProvenance:
 The `set.tracking.generator` member holds information about the engine that generated the metadata set.
 The required sub-member is `engine`. The optional sub-member `date` MAY also be present.
 
-```yaml <!--json-path($..set.properties.tracking.properties.generator)-->
+```{.yaml json-path="$..set.properties.tracking.properties.generator"}
 DataProvenance:
   # ...
   set:
     # ...
     tracking:
       # ...
-      generator:
+      generator:  # optional
         engine:
           name: String
-          # version: $defs.version-type  (optional)
-        # date: String.DateTime  (optional)
+          version: $defs.version-type  # optional
+        date: String.DateTime  # optional
     # ...
   # ...
-# ...
 ```
 
 - `engine.name`: The name of the tool or system that produced the metadata set.
@@ -449,15 +433,14 @@ DataProvenance:
 
 The `set.language` member identifies the language used in this document, corresponding to IETF BCP 47 / RFC 5646.
 
-```yaml <!--json-path($..set.properties.language['$ref'])-->
+```{.yaml json-path="$..set.properties.language['$ref']"}
 DataProvenance:
   # ...
   set:
     # ...
-    language: String.BCP47
+    language: $defs.language-type  # optional
     # ...
   # ...
-# ...
 ```
 
 *Examples 1:*
@@ -472,15 +455,13 @@ fr
 
 The `set.source-language` member identifies the language this document was translated from, when this copy is a translation.
 
-```yaml <!--json-path($..set.properties['source-language']['$ref'])-->
+```{.yaml json-path="$..set.properties['source-language']['$ref']"}
 DataProvenance:
   # ...
   set:
     # ...
-    source-language: String.BCP47
-    # ...
+    source-language: $defs.language-type  # optional
   # ...
-# ...
 ```
 
 #### Member `set.acknowledgments` {#member-set-acknowledgments}
@@ -488,18 +469,20 @@ DataProvenance:
 The `set.acknowledgments` member contains a list of acknowledgment elements associated with the whole set.
 Each acknowledgment item MUST have at least one of the following members: `names`, `organization`, `summary`, or `urls`.
 
-```yaml <!--json-path($..set.properties.acknowledgments['$ref'])-->
+```{.yaml json-path="$..set.properties.acknowledgments['$ref']"}
 DataProvenance:
   # ...
   set:
     # ...
-    acknowledgments:
-      - # names: Sequence       (optional)
-        # organization: String  (optional)
-        # summary: String       (optional)
-        # urls: Sequence        (optional)
+    acknowledgments:  # optional; at least one of these members
+      - names:
+          - String
+        organization: String
+        summary: String
+        urls:
+          - String.URI
+    # ...
   # ...
-# ...
 ```
 
 *Example 1:*
@@ -520,18 +503,18 @@ The `set.notes` member contains a list of notes associated with this metadata se
 Each note MUST have a `category` and `text`. The optional members `audience` and `title` MAY also be present.
 The `category` value MUST be one of: `general`, `other`, `privacy`, `summary`.
 
-```yaml <!--json-path($..set.properties.notes['$ref'])-->
+```{.yaml json-path="$..set.properties.notes['$ref']"}
 DataProvenance:
   # ...
   set:
     # ...
-    notes:
-      - category: String.Enum  # NoteCategory: description | details | faq | general | legal_disclaimer | other | summary
+    notes:  # optional
+      - category: String.Enum
         text: String
-        # audience: String  (optional)
-        # title: String     (optional)
+        audience: String  # optional
+        title: String     # optional
+    # ...
   # ...
-# ...
 ```
 
 - `category`: The category of the note.
@@ -545,17 +528,17 @@ The `set.references` member contains a list of references associated with this m
 Each reference MUST have a `summary` and a `url`. The optional member `category` MAY also be present.
 The `category` value MUST be one of: `external`, `self`.
 
-```yaml <!--json-path($..set.properties.references['$ref'])-->
+```{.yaml json-path="$..set.properties.references['$ref']"}
 DataProvenance:
   # ...
   set:
     # ...
-    references:
+    references:  # optional
       - summary: String
         url: String.URI
-        # category: String.Enum  # ReferenceCategory: external | self (optional)
+        category: String.Enum  # optional
+    # ...
   # ...
-# ...
 ```
 
 - `summary`: A short description of what this reference refers to.

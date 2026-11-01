@@ -55,22 +55,52 @@ rules:
     severity: WARN
     description: >-
       A link to the DPS TC community page should appear in the front matter
+      (the community page itself: a document URL under docs.oasis-open.org/dps does not count)
     check:
       type: any-match
       target: links
-      pattern: 'oasis-open\.org.*dps|groups\.oasis-open\.org.*communities'
+      pattern: 'groups\.oasis-open\.org/communities/tc-community-home2\?CommunityKey='
       flags: IGNORECASE
 
   - id: DPS-DOC-URL
     severity: WARN
     description: >-
-      At least one this-version URL under docs.oasis-open.org/dps/prov-meta
-      must appear in the front matter
+      The this-version URL of the authoritative Markdown must appear in the front matter, in the folder and
+      under the file name of the stage this document is (context `stage`): a csd01 folder in a csd02 link fails
     check:
       type: any-match
       target: links
-      pattern: 'docs\.oasis-open\.org/dps/prov-meta'
-      flags: IGNORECASE
+      literal: '${doc-url-base}/${stage}/${spec-name}-v${spec-version}-${stage}.md'
+
+  - id: DPS-PI-JSON-PATH
+    severity: BLOCKER
+    description: >-
+      Every YAML outline in the prose shows what the JSON schema has at its json-path
+      (the outline and the schema must not drift apart)
+    check:
+      type: pi
+      name: json-path
+
+  - id: DPS-PI-SYNTAX
+    severity: BLOCKER
+    description: >-
+      Processing instructions use the attribute syntax ```{.yaml json-path="..."}, not the
+      deprecated HTML comment on the fence (```yaml <!--json-path(...)-->)
+    check:
+      type: pi
+      mode: deprecated-syntax
+
+  # A candidate for the OASIS baseline (oasis.rules.yaml): it is not DPS-specific.
+  - id: DPS-LINK-TEXT-IS-TARGET
+    severity: BLOCKER
+    description: >-
+      A link whose text is a URL must point to that URL: readers trust the address they see
+      (csd02 shown, csd01 linked sends them to the wrong stage)
+    check:
+      type: all-match
+      target: prose
+      invert: true
+      pattern: '\[(https?://[^\]\s]+)\]\((?!\1\))[^)]*\)'
 
   - id: DPS-SAFETY-SECURITY
     severity: WARN

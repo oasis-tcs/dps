@@ -38,9 +38,17 @@ Do not edit it locally; update it by copying the upstream version when a new rel
 
 ### `bin/` scripts
 
-| Script     | Purpose                                                                      |
-|:-----------|:-----------------------------------------------------------------------------|
-| `patch.py` | Applies YAML-configured text patches to generated output files               |
+| Script               | Purpose                                                                                |
+|:---------------------|:---------------------------------------------------------------------------------------|
+| `derive_outlines.py` | Derives the body of every `{.yaml json-path="..."}` fence from the JSON schema          |
+| `patch.py`           | Applies YAML-configured text patches to generated output files                         |
+
+The YAML outlines in the data model sections are derived, never edited:
+the JSON schema (`pi.json-schema` in `etc/nide.yaml`) is the source, and the JSON path of each fence selects what it shows.
+A path ending in `properties` shows the members of that object; any other path shows the member it addresses, expanded
+(a facet keyword such as `pattern`, `format`, `enum` or `$ref` selects the member it constrains).
+Members are listed required first, then optional ones marked `# optional`; other members of the levels above are elided as `# ...`.
+To change an outline, change the schema or the fence's JSON path, then run `make outlines`.
 
 ## The authoring loop
 
@@ -50,17 +58,20 @@ Do not edit it locally; update it by copying the upstream version when a new rel
     # 2. Build HTML to review locally
     make html
 
-    # 3. Check document completeness against editorial rules
-    make quality       # per-rule PASS/FAIL/NA report
+    # 3. After a schema change, re-derive the YAML outlines
+    make outlines
 
-    # 4. When ready for a round-trip review, build all channels
+    # 4. Check document completeness against editorial rules
+    make quality       # outline drift check, then per-rule PASS/FAIL/NA report
+
+    # 5. When ready for a round-trip review, build all channels
     make release
 
-    # 5. Verify nothing unintended changed
+    # 6. Verify nothing unintended changed
     make diff          # prose diff of HTML against VCS HEAD
     make diff-repro    # reproducible diff of PDF against VCS HEAD
 
-    # 6. Check VCS status, then commit
+    # 7. Check VCS status, then commit
     make status
 
 ## Build targets
@@ -78,7 +89,9 @@ Do not edit it locally; update it by copying the upstream version when a new rel
 
 | Target                  | What it does                                                                      |
 |:------------------------|:----------------------------------------------------------------------------------|
-| `make quality`          | `nide quality` — per-rule PASS/FAIL/NA report against `etc/rules/spec.rules.yaml` |
+| `make quality`          | `make check-outlines`, then `nide quality` — per-rule PASS/FAIL/NA report against `etc/rules/spec.rules.yaml` |
+| `make outlines`         | Rewrites the YAML outline fences in `src/` from the JSON schema                   |
+| `make check-outlines`   | Reports outline drift from the JSON schema as a diff; fails when any fence differs |
 | `make diff`             | `nide diff --mode prose` on the HTML — readable word-level diff against VCS HEAD  |
 | `make diff-repro`       | `nide diff --mode repro` on the PDF — timestamp-normalised diff against VCS HEAD  |
 | `make status`           | Fossil status summary                                                             |

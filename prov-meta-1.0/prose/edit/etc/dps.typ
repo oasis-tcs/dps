@@ -39,7 +39,7 @@ $endfor$
     align: (left + horizon, center + horizon, right + horizon),
     text(size: 8pt)[prov-meta-v1.0-csd02],
     text(size: 8pt)[Copyright © OASIS Open 2026. All Rights Reserved.],
-    text(size: 8pt)[30 June 2026 — Page #counter(page).display()
+    text(size: 8pt)[3 November 2026 — Page #counter(page).display()
       of #counter(page).final().first()],
   ),
 )

@@ -4,24 +4,22 @@ The `use` member describes legal use and restrictions that apply to the dataset.
 
 The only required member is `intended-purpose`. All other members are optional.
 
-```yaml <!--json-path($['$defs']['use-type'].properties)-->
+```{.yaml json-path="$['$defs']['use-type'].properties"}
 DataProvenance:
   # ...
   use:
     intended-purpose: Sequence
-    # classification: Sequence      (optional)
-    # consents: Sequence            (optional)
-    # data-risk-reducing: Sequence  (optional)
-    # processing-included: Sequence (optional)
-    # processing-excluded: Sequence (optional)
-    # storage-allowed: Sequence     (optional)
-    # storage-forbidden: Sequence   (optional)
-    # license: Sequence             (optional)
-    # copyright: Sequence           (optional)
-    # patent: Sequence              (optional)
-    # trademark: Sequence           (optional)
-  # ...
-# ...
+    classification: Sequence                            # optional
+    consents: Sequence                                  # optional
+    data-risk-reducing: Sequence                        # optional
+    processing-included: $defs.geographic-regions-type  # optional
+    processing-excluded: $defs.geographic-regions-type  # optional
+    storage-allowed: $defs.geographic-regions-type      # optional
+    storage-forbidden: $defs.geographic-regions-type    # optional
+    license: Sequence                                   # optional
+    copyright: Sequence                                 # optional
+    patent: Sequence                                    # optional
+    trademark: Sequence                                 # optional
 ```
 
 #### Member `use.intended-purpose` {#member-use-intended-purpose}
@@ -30,18 +28,15 @@ The `use.intended-purpose` member describes the purpose for which the dataset wa
 
 The value is a sequence of purpose objects. Each purpose MUST contain a `code` drawn from the `PurposeCode` vocabulary and a `long-description`. The optional `system` member MAY also be present. The sequence MUST contain at least one purpose and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties['intended-purpose'].items['$ref'])-->
+```{.yaml json-path="$['$defs']['use-type'].properties['intended-purpose'].items['$ref']"}
 DataProvenance:
   # ...
   use:
-    # ...
     intended-purpose:
-      - code: String.Enum  # PurposeCode: alignment | evaluation | other | pre-training | production | quality-assurance | research | staging-testing | synthetic-data-generation
+      - code: $defs.purpose-code-type
         long-description: String
-        # system: String  (optional)
+        system: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*
@@ -60,21 +55,16 @@ DataProvenance:
 The `use.classification` member indicates whether the dataset includes data falling into various confidentiality classifications.
 The value is a sequence of classification objects. Each item MUST contain a `regulation` object whose `code` MUST be drawn from the `ConfidentialityCode` vocabulary, and an `evaluated` boolean. The optional `tool` member MAY also be present. All entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties.classification)-->
+```{.yaml json-path="$['$defs']['use-type'].properties.classification"}
 DataProvenance:
   # ...
   use:
     # ...
-    classification:
-      - regulation:
-          code: String.Enum  # ConfidentialityCode: other | pci | pfi | phi | pi | sci | spi
-          # system: String           (optional)
-          # long-description: String (optional)
+    classification:  # optional
+      - regulation: $defs.confidentiality-regulation-type
         evaluated: Boolean
-        # tool: String  (optional)
+        tool: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*
@@ -91,16 +81,14 @@ DataProvenance:
 The `use.consents` member specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties.consents)-->
+```{.yaml json-path="$['$defs']['use-type'].properties.consents"}
 DataProvenance:
   # ...
   use:
     # ...
-    consents:
+    consents:  # optional
       - String
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*
@@ -114,20 +102,21 @@ DataProvenance:
 The `use.data-risk-reducing` member indicates the techniques used to reduce known data risk.
 The value is a sequence of objects. Each item MUST contain `tool-used`. The optional members `tool-category`, `technology`, `parameters`, and `results` MAY also be present. All entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties['data-risk-reducing'])-->
+```{.yaml json-path="$['$defs']['use-type'].properties['data-risk-reducing']"}
 DataProvenance:
   # ...
   use:
     # ...
-    data-risk-reducing:
+    data-risk-reducing:  # optional
       - tool-used: String
-        # tool-category: Mapping  (optional, method object)
-        # technology: String.Enum (optional, DataTechnology value)
-        # parameters: Sequence    (optional, list of {name, value} pairs)
-        # results: Sequence       (optional, list of strings)
+        tool-category: $defs.method-type  # optional
+        technology: String.Enum           # optional
+        parameters:  # optional
+          - name: String
+            value: String  # optional
+        results:  # optional
+          - String
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*
@@ -148,17 +137,15 @@ DataProvenance:
 The `use.processing-included` member defines the geographical boundaries within which the data MAY be processed.
 The value is a sequence of geographic region objects following the same structure as `provenance.origin-geography`.
 
-```yaml <!--json-path($['$defs']['use-type'].properties['processing-included']['$ref'])-->
+```{.yaml json-path="$['$defs']['use-type'].properties['processing-included']['$ref']"}
 DataProvenance:
   # ...
   use:
     # ...
-    processing-included:
+    processing-included:  # optional
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*
@@ -172,17 +159,15 @@ DataProvenance:
 The `use.processing-excluded` member defines the geographical boundaries within which the data MUST NOT be processed.
 The value is a sequence of geographic region objects following the same structure as `provenance.origin-geography`.
 
-```yaml <!--json-path($['$defs']['use-type'].properties['processing-excluded']['$ref'])-->
+```{.yaml json-path="$['$defs']['use-type'].properties['processing-excluded']['$ref']"}
 DataProvenance:
   # ...
   use:
     # ...
-    processing-excluded:
+    processing-excluded:  # optional
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 #### Member `use.storage-allowed` {#member-use-storage-allowed}
@@ -190,17 +175,15 @@ DataProvenance:
 The `use.storage-allowed` member specifies geographical locations where the data MAY be stored.
 The value is a sequence of geographic region objects following the same structure as `provenance.origin-geography`.
 
-```yaml <!--json-path($['$defs']['use-type'].properties['storage-allowed']['$ref'])-->
+```{.yaml json-path="$['$defs']['use-type'].properties['storage-allowed']['$ref']"}
 DataProvenance:
   # ...
   use:
     # ...
-    storage-allowed:
+    storage-allowed:  # optional
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 #### Member `use.storage-forbidden` {#member-use-storage-forbidden}
@@ -208,17 +191,15 @@ DataProvenance:
 The `use.storage-forbidden` member specifies geographical locations where the data MUST NOT be stored.
 The value is a sequence of geographic region objects following the same structure as `provenance.origin-geography`.
 
-```yaml <!--json-path($['$defs']['use-type'].properties['storage-forbidden']['$ref'])-->
+```{.yaml json-path="$['$defs']['use-type'].properties['storage-forbidden']['$ref']"}
 DataProvenance:
   # ...
   use:
     # ...
-    storage-forbidden:
+    storage-forbidden:  # optional
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 #### Member `use.license` {#member-use-license}
@@ -227,16 +208,14 @@ The `use.license` member details the terms under which the dataset can be used, 
 License entries MAY include End User License Agreements (EULA) or Data Use Agreements (DUA).
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties.license)-->
+```{.yaml json-path="$['$defs']['use-type'].properties.license"}
 DataProvenance:
   # ...
   use:
     # ...
-    license:
+    license:  # optional
       - String
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*
@@ -250,16 +229,14 @@ DataProvenance:
 The `use.copyright` member indicates whether the dataset contains proprietary information covered by a copyright, and the terms of that copyright.
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties.copyright)-->
+```{.yaml json-path="$['$defs']['use-type'].properties.copyright"}
 DataProvenance:
   # ...
   use:
     # ...
-    copyright:
+    copyright:  # optional
       - String
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*
@@ -273,16 +250,14 @@ DataProvenance:
 The `use.patent` member indicates whether the dataset contains proprietary information covered by a patent, and the patent number.
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties.patent)-->
+```{.yaml json-path="$['$defs']['use-type'].properties.patent"}
 DataProvenance:
   # ...
   use:
     # ...
-    patent:
+    patent:  # optional
       - String
     # ...
-  # ...
-# ...
 ```
 
 #### Member `use.trademark` {#member-use-trademark}
@@ -290,16 +265,13 @@ DataProvenance:
 The `use.trademark` member indicates whether the dataset contains proprietary information covered by a trademark, and the terms of that trademark.
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties.trademark)-->
+```{.yaml json-path="$['$defs']['use-type'].properties.trademark"}
 DataProvenance:
   # ...
   use:
     # ...
-    trademark:
+    trademark:  # optional
       - String
-    # ...
-  # ...
-# ...
 ```
 
 ---
