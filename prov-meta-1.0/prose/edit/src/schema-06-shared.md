@@ -2,7 +2,7 @@
 
 The following types are used in more than one of the sections above.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name       | Type        | \#   | Description                             |
 |---:|:-----------|:------------|:-----|:----------------------------------------|
@@ -14,7 +14,7 @@ Table: Type `Organization` (Record){#tab:organization-record}
 
 The value of `url` SHOULD use the `https` scheme.
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+\columns=nnnnnnnnnnn,ttttttttttttttttt,dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | Type Name | Type Definition | Description                                       |
 |:----------|:----------------|:--------------------------------------------------|
@@ -22,7 +22,7 @@ The value of `url` SHOULD use the `https` scheme.
 
 Table: Type `Address` (ArrayOf(String)){#tab:address-array}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name    | Type   | \#   | Description                         |
 |---:|:--------|:-------|:-----|:------------------------------------|
@@ -31,7 +31,7 @@ Table: Type `Address` (ArrayOf(String)){#tab:address-array}
 
 Table: Type `GeographicRegion` (Record){#tab:geographic-region-record}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name             | Type   | \#   | Description                                                          |
 |---:|:-----------------|:-------|:-----|:---------------------------------------------------------------------|
@@ -43,7 +43,7 @@ Table: Type `Method` (Record){#tab:method-record}
 
 The `Acknowledgment` type describes a contributor. At least one of its fields MUST be present.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name         | Type        | \#    | Description                                             |
 |---:|:-------------|:------------|:------|:--------------------------------------------------------|
@@ -54,7 +54,7 @@ The `Acknowledgment` type describes a contributor. At least one of its fields MU
 
 Table: Type `Acknowledgment` (Map){#tab:acknowledgment-map}
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+\columns=nnnnnnnnnnn,ttttttttttttttttt,dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | Type Name | Type Definition | Description                                                                           |
 |:----------|:----------------|:--------------------------------------------------------------------------------------|
@@ -62,7 +62,7 @@ Table: Type `Acknowledgment` (Map){#tab:acknowledgment-map}
 
 Table: Type `Version` (String){#tab:version-string}
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+\columns=nnnnnnnnnnn,ttttttttttttttttt,dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | Type Name | Type Definition | Description                                          |
 |:----------|:----------------|:-----------------------------------------------------|

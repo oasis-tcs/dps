@@ -15,11 +15,11 @@ DataProvenance:
     publisher: Mapping
     label: String
     tracking: Mapping
+    language: $defs.language-type                # optional
+    source-language: $defs.language-type         # optional
     acknowledgments: $defs.acknowledgments-type  # optional
     notes: $defs.notes-type                      # optional
     references: $defs.references-type            # optional
-    language: $defs.language-type                # optional
-    source-language: $defs.language-type         # optional
   # ...
 ```
 
@@ -461,6 +461,7 @@ DataProvenance:
   set:
     # ...
     source-language: $defs.language-type  # optional
+    # ...
   # ...
 ```
 
@@ -537,7 +538,6 @@ DataProvenance:
       - summary: String
         url: String.URI
         category: String.Enum  # optional
-    # ...
   # ...
 ```
 

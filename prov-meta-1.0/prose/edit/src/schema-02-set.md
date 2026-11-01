@@ -2,7 +2,7 @@
 
 The `set` member captures metadata about the provenance metadata record itself.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name            | Type           | \#    | Description                                                                                                                        |
 |---:|:----------------|:---------------|:------|:-----------------------------------------------------------------------------------------------------------------------------------|
@@ -19,7 +19,7 @@ The `set` member captures metadata about the provenance metadata record itself.
 
 Table: Type `Set` (Record){#tab:set-record}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name            | Type        | \#   | Description                                                                                        |
 |---:|:----------------|:------------|:-----|:---------------------------------------------------------------------------------------------------|
@@ -29,7 +29,7 @@ Table: Type `Set` (Record){#tab:set-record}
 
 Table: Type `Publisher` (Record){#tab:publisher-record}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name                 | Type              | \#    | Description                                                                                                                                  |
 |---:|:---------------------|:------------------|:------|:---------------------------------------------------------------------------------------------------------------------------------------------|
@@ -44,17 +44,17 @@ Table: Type `Publisher` (Record){#tab:publisher-record}
 
 Table: Type `Tracking` (Record){#tab:tracking-record}
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn,dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item    | Description                          |
 |---:|:--------|:-------------------------------------|
-|  0 | draft   | The metadata set is a draft.         |
-|  1 | final   | The metadata set is final.           |
-|  2 | interim | The metadata set has interim status. |
+|  1 | draft   | The metadata set is a draft.         |
+|  2 | final   | The metadata set is final.           |
+|  3 | interim | The metadata set has interim status. |
 
 Table: Type `TrackingStatus` (Enumerated){#tab:tracking-status-enum}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name           | Type              | \#   | Description                                                                                                    |
 |---:|:---------------|:------------------|:-----|:---------------------------------------------------------------------------------------------------------------|
@@ -65,7 +65,7 @@ Table: Type `TrackingStatus` (Enumerated){#tab:tracking-status-enum}
 
 Table: Type `Revision` (Record){#tab:revision-record}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name   | Type              | \#   | Description                                                      |
 |---:|:-------|:------------------|:-----|:-----------------------------------------------------------------|
@@ -74,7 +74,7 @@ Table: Type `Revision` (Record){#tab:revision-record}
 
 Table: Type `Generator` (Record){#tab:generator-record}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name    | Type    | \#   | Description                                                 |
 |---:|:--------|:--------|:-----|:------------------------------------------------------------|
@@ -83,7 +83,7 @@ Table: Type `Generator` (Record){#tab:generator-record}
 
 Table: Type `GeneratorEngine` (Record){#tab:generator-engine-record}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name     | Type         | \#   | Description                                                         |
 |---:|:---------|:-------------|:-----|:--------------------------------------------------------------------|
@@ -94,21 +94,21 @@ Table: Type `GeneratorEngine` (Record){#tab:generator-engine-record}
 
 Table: Type `Note` (Record){#tab:note-record}
 
-\columns=iiii,nnnnnnnnnnnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn,dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item             | Description                                    |
 |---:|:-----------------|:-----------------------------------------------|
-|  0 | description      | A descriptive note about the subject.          |
-|  1 | details          | A note with detailed supplemental information. |
-|  2 | faq              | A note in frequently-asked-questions format.   |
-|  3 | general          | A general note.                                |
-|  4 | legal-disclaimer | A note containing a legal disclaimer.          |
-|  5 | other            | A note that does not fit other categories.     |
-|  6 | summary          | A summary note.                                |
+|  1 | description      | A descriptive note about the subject.          |
+|  2 | details          | A note with detailed supplemental information. |
+|  3 | faq              | A note in frequently-asked-questions format.   |
+|  4 | general          | A general note.                                |
+|  5 | legal_disclaimer | A note containing a legal disclaimer.          |
+|  6 | other            | A note that does not fit other categories.     |
+|  7 | summary          | A summary note.                                |
 
 Table: Type `NoteCategory` (Enumerated){#tab:note-category-enum}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name     | Type              | \#   | Description                                             |
 |---:|:---------|:------------------|:-----|:--------------------------------------------------------|
@@ -118,11 +118,11 @@ Table: Type `NoteCategory` (Enumerated){#tab:note-category-enum}
 
 Table: Type `Reference` (Record){#tab:reference-record}
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn,dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item     | Description                                                      |
 |---:|:---------|:-----------------------------------------------------------------|
-|  0 | external | The reference points to an external resource.                    |
-|  1 | self     | The reference points back to the same information item in focus. |
+|  1 | external | The reference points to an external resource.                    |
+|  2 | self     | The reference points back to the same information item in focus. |
 
 Table: Type `ReferenceCategory` (Enumerated){#tab:reference-category-enum}
