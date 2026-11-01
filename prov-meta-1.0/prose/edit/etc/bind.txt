@@ -10,13 +10,6 @@ defs-and-acro-02-abbr.md
 conventions-01-keywords.md
 conventions-02-typographic.md
 intro.md
-schema-00-intro.md
-schema-01-primary.md
-schema-02-set.md
-schema-03-source.md
-schema-04-provenance.md
-schema-05-use.md
-schema-06-shared.md
 info-model.md
 data-model-00-intro.md
 data-model-01-member-schema.md
@@ -24,6 +17,13 @@ data-model-02-member-set.md
 data-model-03-member-source.md
 data-model-04-member-provenance.md
 data-model-05-member-use.md
+schema-00-intro.md
+schema-01-primary.md
+schema-02-set.md
+schema-03-source.md
+schema-04-provenance.md
+schema-05-use.md
+schema-06-shared.md
 safety-and-security.md
 conformance.md
 license-and-notices.md

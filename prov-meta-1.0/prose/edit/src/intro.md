@@ -6,10 +6,6 @@ Dependence on data creates a need for validation and an understanding of the dat
 Understanding data is a requirement for organizations operating at scale.
 The OASIS Data Provenance Standards (DPS) are created to solve for this need.
 
-## Any Additional Introduction Subsections That are Needed {#any-additional-introduction-subsections-that-are-needed}
-
-None
-
 ## Changes From the Previous Version {#changes-from-the-previous-version}
 
 N/A

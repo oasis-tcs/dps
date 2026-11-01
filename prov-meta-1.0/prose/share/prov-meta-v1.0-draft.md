@@ -105,73 +105,72 @@ For license and copyright information, and complete status, please see [Annex A]
 	3.1 [Key Words](#key-words)  
 	3.2 [Typographical Conventions](#typographical-conventions)  
 4. [Introduction](#introduction)  
-	4.1 [Any Additional Introduction Subsections That are Needed](#any-additional-introduction-subsections-that-are-needed)  
-	4.2 [Changes From the Previous Version](#changes-from-the-previous-version)  
-5. [Provenance Schema](#provenance-schema)  
-	5.1 [Primary Metadata Elements](#primary-metadata-elements)  
-	5.2 [Set](#set)  
-	5.3 [Source](#source)  
-	5.4 [Provenance](#provenance)  
-	5.5 [Use](#use)  
-	5.6 [Shared Types](#shared-types)  
-6. [Provenance Information Model Encoding](#provenance-information-model-encoding)  
-	6.1 [JADN Encoding](#jadn-encoding)  
-	6.2 [YAML Encoding](#yaml-encoding)  
-7. [Provenance Data Model Encoding](#provenance-data-model-encoding)  
-	7.1 [JSON Encoding](#json-encoding)  
-		7.1.1 [Member `$schema`](#member-schema)  
-		7.1.2 [Member `set`](#member-set)  
-			7.1.2.1 [Member `set.category`](#member-set-category)  
-			7.1.2.2 [Member `set.schema-version`](#member-set-schema-version)  
-			7.1.2.3 [Member `set.publisher`](#member-set-publisher)  
-				7.1.2.3.1 [Member `set.publisher.name`](#member-set-publisher-name)  
-				7.1.2.3.2 [Member `set.publisher.namespace`](#member-set-publisher-namespace)  
-				7.1.2.3.3 [Member `set.publisher.contact-details`](#member-set-publisher-contact-details)  
-			7.1.2.4 [Member `set.label`](#member-set-label)  
-			7.1.2.5 [Member `set.tracking`](#member-set-tracking)  
-				7.1.2.5.1 [Member `set.tracking.current-release-date`](#member-set-tracking-current-release-date)  
-				7.1.2.5.2 [Member `set.tracking.id`](#member-set-tracking-id)  
-				7.1.2.5.3 [Member `set.tracking.initial-release-date`](#member-set-tracking-initial-release-date)  
-				7.1.2.5.4 [Member `set.tracking.revision-history`](#member-set-tracking-revision-history)  
-				7.1.2.5.5 [Member `set.tracking.status`](#member-set-tracking-status)  
-				7.1.2.5.6 [Member `set.tracking.version`](#member-set-tracking-version)  
-				7.1.2.5.7 [Member `set.tracking.aliases`](#member-set-tracking-aliases)  
-				7.1.2.5.8 [Member `set.tracking.generator`](#member-set-tracking-generator)  
-			7.1.2.6 [Member `set.language`](#member-set-language)  
-			7.1.2.7 [Member `set.source-language`](#member-set-source-language)  
-			7.1.2.8 [Member `set.acknowledgments`](#member-set-acknowledgments)  
-			7.1.2.9 [Member `set.notes`](#member-set-notes)  
-			7.1.2.10 [Member `set.references`](#member-set-references)  
-		7.1.3 [Member `source`](#member-source)  
-			7.1.3.1 [Member `source.about`](#member-source-about)  
-			7.1.3.2 [Member `source.id`](#member-source-id)  
-			7.1.3.3 [Member `source.issuer`](#member-source-issuer)  
-			7.1.3.4 [Member `source.location`](#member-source-location)  
-			7.1.3.5 [Member `source.name`](#member-source-name)  
-			7.1.3.6 [Member `source.data-version`](#member-source-data-version)  
-		7.1.4 [Member `provenance`](#member-provenance)  
-			7.1.4.1 [Member `provenance.origin-geography`](#member-provenance-origin-geography)  
-			7.1.4.2 [Member `provenance.date`](#member-provenance-date)  
-			7.1.4.3 [Member `provenance.generation-method`](#member-provenance-generation-method)  
-			7.1.4.4 [Member `provenance.source`](#member-provenance-source)  
-			7.1.4.5 [Member `provenance.origin`](#member-provenance-origin)  
-			7.1.4.6 [Member `provenance.previous-date`](#member-provenance-previous-date)  
-			7.1.4.7 [Member `provenance.generation-period`](#member-provenance-generation-period)  
-			7.1.4.8 [Member `provenance.format`](#member-provenance-format)  
-			7.1.4.9 [Member `provenance.sub-provenance`](#member-provenance-sub-provenance)  
-		7.1.5 [Member `use`](#member-use)  
-			7.1.5.1 [Member `use.intended-purpose`](#member-use-intended-purpose)  
-			7.1.5.2 [Member `use.classification`](#member-use-classification)  
-			7.1.5.3 [Member `use.consents`](#member-use-consents)  
-			7.1.5.4 [Member `use.data-risk-reducing`](#member-use-data-risk-reducing)  
-			7.1.5.5 [Member `use.processing-included`](#member-use-processing-included)  
-			7.1.5.6 [Member `use.processing-excluded`](#member-use-processing-excluded)  
-			7.1.5.7 [Member `use.storage-allowed`](#member-use-storage-allowed)  
-			7.1.5.8 [Member `use.storage-forbidden`](#member-use-storage-forbidden)  
-			7.1.5.9 [Member `use.license`](#member-use-license)  
-			7.1.5.10 [Member `use.copyright`](#member-use-copyright)  
-			7.1.5.11 [Member `use.patent`](#member-use-patent)  
-			7.1.5.12 [Member `use.trademark`](#member-use-trademark)  
+	4.1 [Changes From the Previous Version](#changes-from-the-previous-version)  
+5. [Provenance Information Model Encoding](#provenance-information-model-encoding)  
+	5.1 [JADN Encoding](#jadn-encoding)  
+	5.2 [YAML Encoding](#yaml-encoding)  
+6. [Provenance Data Model Encoding](#provenance-data-model-encoding)  
+	6.1 [JSON Encoding](#json-encoding)  
+		6.1.1 [Member `$schema`](#member-schema)  
+		6.1.2 [Member `set`](#member-set)  
+			6.1.2.1 [Member `set.category`](#member-set-category)  
+			6.1.2.2 [Member `set.schema-version`](#member-set-schema-version)  
+			6.1.2.3 [Member `set.publisher`](#member-set-publisher)  
+				6.1.2.3.1 [Member `set.publisher.name`](#member-set-publisher-name)  
+				6.1.2.3.2 [Member `set.publisher.namespace`](#member-set-publisher-namespace)  
+				6.1.2.3.3 [Member `set.publisher.contact-details`](#member-set-publisher-contact-details)  
+			6.1.2.4 [Member `set.label`](#member-set-label)  
+			6.1.2.5 [Member `set.tracking`](#member-set-tracking)  
+				6.1.2.5.1 [Member `set.tracking.current-release-date`](#member-set-tracking-current-release-date)  
+				6.1.2.5.2 [Member `set.tracking.id`](#member-set-tracking-id)  
+				6.1.2.5.3 [Member `set.tracking.initial-release-date`](#member-set-tracking-initial-release-date)  
+				6.1.2.5.4 [Member `set.tracking.revision-history`](#member-set-tracking-revision-history)  
+				6.1.2.5.5 [Member `set.tracking.status`](#member-set-tracking-status)  
+				6.1.2.5.6 [Member `set.tracking.version`](#member-set-tracking-version)  
+				6.1.2.5.7 [Member `set.tracking.aliases`](#member-set-tracking-aliases)  
+				6.1.2.5.8 [Member `set.tracking.generator`](#member-set-tracking-generator)  
+			6.1.2.6 [Member `set.language`](#member-set-language)  
+			6.1.2.7 [Member `set.source-language`](#member-set-source-language)  
+			6.1.2.8 [Member `set.acknowledgments`](#member-set-acknowledgments)  
+			6.1.2.9 [Member `set.notes`](#member-set-notes)  
+			6.1.2.10 [Member `set.references`](#member-set-references)  
+		6.1.3 [Member `source`](#member-source)  
+			6.1.3.1 [Member `source.about`](#member-source-about)  
+			6.1.3.2 [Member `source.id`](#member-source-id)  
+			6.1.3.3 [Member `source.issuer`](#member-source-issuer)  
+			6.1.3.4 [Member `source.location`](#member-source-location)  
+			6.1.3.5 [Member `source.name`](#member-source-name)  
+			6.1.3.6 [Member `source.data-version`](#member-source-data-version)  
+		6.1.4 [Member `provenance`](#member-provenance)  
+			6.1.4.1 [Member `provenance.origin-geography`](#member-provenance-origin-geography)  
+			6.1.4.2 [Member `provenance.date`](#member-provenance-date)  
+			6.1.4.3 [Member `provenance.generation-method`](#member-provenance-generation-method)  
+			6.1.4.4 [Member `provenance.source`](#member-provenance-source)  
+			6.1.4.5 [Member `provenance.origin`](#member-provenance-origin)  
+			6.1.4.6 [Member `provenance.previous-date`](#member-provenance-previous-date)  
+			6.1.4.7 [Member `provenance.generation-period`](#member-provenance-generation-period)  
+			6.1.4.8 [Member `provenance.format`](#member-provenance-format)  
+			6.1.4.9 [Member `provenance.sub-provenance`](#member-provenance-sub-provenance)  
+		6.1.5 [Member `use`](#member-use)  
+			6.1.5.1 [Member `use.intended-purpose`](#member-use-intended-purpose)  
+			6.1.5.2 [Member `use.classification`](#member-use-classification)  
+			6.1.5.3 [Member `use.consents`](#member-use-consents)  
+			6.1.5.4 [Member `use.data-risk-reducing`](#member-use-data-risk-reducing)  
+			6.1.5.5 [Member `use.processing-included`](#member-use-processing-included)  
+			6.1.5.6 [Member `use.processing-excluded`](#member-use-processing-excluded)  
+			6.1.5.7 [Member `use.storage-allowed`](#member-use-storage-allowed)  
+			6.1.5.8 [Member `use.storage-forbidden`](#member-use-storage-forbidden)  
+			6.1.5.9 [Member `use.license`](#member-use-license)  
+			6.1.5.10 [Member `use.copyright`](#member-use-copyright)  
+			6.1.5.11 [Member `use.patent`](#member-use-patent)  
+			6.1.5.12 [Member `use.trademark`](#member-use-trademark)  
+7. [Provenance Schema](#provenance-schema)  
+	7.1 [Primary Metadata Elements](#primary-metadata-elements)  
+	7.2 [Set](#set)  
+	7.3 [Source](#source)  
+	7.4 [Provenance](#provenance)  
+	7.5 [Use](#use)  
+	7.6 [Shared Types](#shared-types)  
 8. [Safety, Security, and Data Protection](#safety-security-and-data-protection)  
 	8.1 [Integrity and Authenticity of Provenance Claims](#integrity-and-authenticity)  
 	8.2 [URI Safety](#uri-safety)  
@@ -302,599 +301,54 @@ Dependence on data creates a need for validation and an understanding of the dat
 Understanding data is a requirement for organizations operating at scale.
 The OASIS Data Provenance Standards (DPS) are created to solve for this need.
 
-## 4.1 Any Additional Introduction Subsections That are Needed<a id='any-additional-introduction-subsections-that-are-needed'></a>
-
-None
-
-## 4.2 Changes From the Previous Version<a id='changes-from-the-previous-version'></a>
+## 4.1 Changes From the Previous Version<a id='changes-from-the-previous-version'></a>
 
 N/A
 
 ---
 
-# 5. Provenance Schema<a id='provenance-schema'></a>
+# 5. Provenance Information Model Encoding<a id='provenance-information-model-encoding'></a>
 
-The schema of the provenance metadata is described in human-readable property tables.
-The technical encoding may be found in section [6 "Provenance Information Model Encoding"](#provenance-information-model-encoding).
+This specification defines the Data Provenance Metadata format by one normative artifact and views derived from it:
 
-The Data Provenance Standards record metadata elements in three segmented categories: Source, Provenance, and Use.
+JSON schema
+:   The Data Provenance Metadata JSON schema (`json/data-provenance.json`) is the normative definition of the format.
+    It decides which documents are valid, and it carries the description of every member.
 
-![Metadata](images/metadata.svg)
+YAML outlines
+:   The outlines in section [6 "Provenance Data Model Encoding"](#provenance-data-model-encoding) show where each member sits in a document,
+    whether it is required, and its type, in a compact notation generated from the JSON schema.
 
-The property tables first define metadata about the specification itself,
-then describe how a record is made of the 3 primary metadata elements.
-The three segmented categories (Source, Provenance, and Use) are comprised of various
-metadata element input fields. Each field is described in more detail below.
+Property tables
+:   The tables in section [7 "Provenance Schema"](#provenance-schema) give, for each type, its members with their type, cardinality, and description.
+    They are generated from the JADN encoding of the information model (section [5.1 "JADN Encoding"](#jadn-encoding)), which in turn is generated from the JSON schema.
 
-## 5.1 Primary Metadata Elements<a id='primary-metadata-elements'></a>
+The information model is also available in the following two encodings, both generated from the JSON schema.
 
-The root object of a Data Provenance Metadata record contains five required members.
-
-
-<a id="tab:data-provenance-record"></a>
-Table 1: Type `DataProvenance` (Record)
-
-| ID | Name       | Type        | \#    | Description                                                                                                                                             |
-|---:|:-----------|:------------|:------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  1 | $schema    | String /uri | 1     | The URI identifying the schema this JSON object must be valid against. For this version the value is always the URI of the data-provenance JSON schema. |
-|  2 | set        | Set         | 1     | Set-level metadata about this provenance metadata record.                                                                                               |
-|  3 | source     | Source      | 1     | Characterizes the content and source of the dataset.                                                                                                    |
-|  4 | provenance | Provenance  | 1     | Describes the provenance of the dataset.                                                                                                                |
-|  5 | use        | Use         | 1     | Describes legal use and restrictions that apply to the dataset.                                                                                         |
-|  6 | proof      | Proof       | 0..1  | Reserved for an external integrity or signing envelope's proof material. The internal structure is opaque to this specification.                        |
-
-
-## 5.2 Set<a id='set'></a>
-
-The `set` member captures metadata about the provenance metadata record itself.
-
-
-<a id="tab:set-record"></a>
-Table 2: Type `Set` (Record)
-
-| ID | Name            | Type           | \#    | Description                                                                                                                        |
-|---:|:----------------|:---------------|:------|:-----------------------------------------------------------------------------------------------------------------------------------|
-|  1 | category        | String         | 1     | A short canonical name, chosen by the set producer, informing the end user of the category of the metadata set.                    |
-|  2 | schema-version  | String         | 1     | The version of the Data Provenance Core specification this record was generated for. The value for this version is always `"1.0"`. |
-|  3 | publisher       | Publisher      | 1     | Information about the publisher of the metadata set.                                                                               |
-|  4 | label           | String         | 1     | The per-publisher unique title of this metadata set.                                                                               |
-|  5 | tracking        | Tracking       | 1     | Management attributes used to track this metadata set as a whole.                                                                  |
-|  6 | language        | Language       | 0..1  | The language used in this document, corresponding to IETF BCP 47.                                                                  |
-|  7 | source-language | Language       | 0..1  | If this is a translation, the language this document was translated from.                                                          |
-|  8 | acknowledgments | Acknowledgment | 0..\* | Acknowledgment elements associated with the whole set.                                                                             |
-|  9 | notes           | Note           | 0..\* | Notes associated with this metadata set.                                                                                           |
-| 10 | references      | Reference      | 0..\* | References associated with this metadata set.                                                                                      |
-
-
-
-<a id="tab:publisher-record"></a>
-Table 3: Type `Publisher` (Record)
-
-| ID | Name            | Type        | \#   | Description                                                                                        |
-|---:|:----------------|:------------|:-----|:---------------------------------------------------------------------------------------------------|
-|  1 | name            | String      | 1    | The name of the issuing party.                                                                     |
-|  2 | namespace       | String /uri | 1    | A URI under the control of the issuing party, used as a globally unique identifier for that party. |
-|  3 | contact-details | String      | 0..1 | Information on how to contact the publisher.                                                       |
-
-
-
-<a id="tab:tracking-record"></a>
-Table 4: Type `Tracking` (Record)
-
-| ID | Name                 | Type              | \#    | Description                                                                                                                                  |
-|---:|:---------------------|:------------------|:------|:---------------------------------------------------------------------------------------------------------------------------------------------|
-|  1 | current-release-date | String /date-time | 1     | The date when the current revision of this document was released.                                                                            |
-|  2 | id                   | String            | 1     | A unique identifier for this metadata set, assigned and maintained by the original issuing authority. MUST NOT start or end with whitespace. |
-|  3 | initial-release-date | String /date-time | 1     | The date when this metadata set was first published.                                                                                         |
-|  4 | revision-history     | Revision          | 1..\* | One revision item for each version of the metadata set, including the initial one.                                                           |
-|  5 | status               | TrackingStatus    | 1     | The draft status of the metadata set.                                                                                                        |
-|  6 | version              | Version           | 1     | The version of the current metadata set.                                                                                                     |
-|  7 | aliases              | String            | 0..\* | Alternate names for this metadata set.                                                                                                       |
-|  8 | generator            | Generator         | 0..1  | Information about the engine that generated this metadata set.                                                                               |
-
-
-
-<a id="tab:tracking-status-enum"></a>
-Table 5: Type `TrackingStatus` (Enumerated)
-
-| ID | Item    | Description                          |
-|---:|:--------|:-------------------------------------|
-|  0 | draft   | The metadata set is a draft.         |
-|  1 | final   | The metadata set is final.           |
-|  2 | interim | The metadata set has interim status. |
-
-
-
-<a id="tab:revision-record"></a>
-Table 6: Type `Revision` (Record)
-
-| ID | Name           | Type              | \#   | Description                                                                                                    |
-|---:|:---------------|:------------------|:-----|:---------------------------------------------------------------------------------------------------------------|
-|  1 | date           | String /date-time | 1    | The date of this revision entry.                                                                               |
-|  2 | number         | Version           | 1    | The version number of this revision.                                                                           |
-|  3 | summary        | String            | 1    | A short description of the changes in this revision.                                                           |
-|  4 | legacy-version | String            | 0..1 | A version string from an existing set with the same content, tracing from DP-Core compliant to historic items. |
-
-
-
-<a id="tab:generator-record"></a>
-Table 7: Type `Generator` (Record)
-
-| ID | Name   | Type              | \#   | Description                                                      |
-|---:|:-------|:------------------|:-----|:-----------------------------------------------------------------|
-|  1 | engine | GeneratorEngine   | 1    | Information about the engine used to generate this metadata set. |
-|  2 | date   | String /date-time | 0..1 | The date this metadata set was generated.                        |
-
-
-
-<a id="tab:generator-engine-record"></a>
-Table 8: Type `GeneratorEngine` (Record)
-
-| ID | Name    | Type    | \#   | Description                                                 |
-|---:|:--------|:--------|:-----|:------------------------------------------------------------|
-|  1 | name    | String  | 1    | The name of the engine that generated this metadata set.    |
-|  2 | version | Version | 0..1 | The version of the engine that generated this metadata set. |
-
-
-
-<a id="tab:note-record"></a>
-Table 9: Type `Note` (Record)
-
-| ID | Name     | Type         | \#   | Description                                                         |
-|---:|:---------|:-------------|:-----|:--------------------------------------------------------------------|
-|  1 | category | NoteCategory | 1    | The category of the note.                                           |
-|  2 | text     | String       | 1    | The content of the note, varying depending on type.                 |
-|  3 | audience | String       | 0..1 | The intended audience for the note.                                 |
-|  4 | title    | String       | 0..1 | A concise description of what is contained in the text of the note. |
-
-
-
-<a id="tab:note-category-enum"></a>
-Table 10: Type `NoteCategory` (Enumerated)
-
-| ID | Item             | Description                                    |
-|---:|:-----------------|:-----------------------------------------------|
-|  0 | description      | A descriptive note about the subject.          |
-|  1 | details          | A note with detailed supplemental information. |
-|  2 | faq              | A note in frequently-asked-questions format.   |
-|  3 | general          | A general note.                                |
-|  4 | legal-disclaimer | A note containing a legal disclaimer.          |
-|  5 | other            | A note that does not fit other categories.     |
-|  6 | summary          | A summary note.                                |
-
-
-
-<a id="tab:reference-record"></a>
-Table 11: Type `Reference` (Record)
-
-| ID | Name     | Type              | \#   | Description                                             |
-|---:|:---------|:------------------|:-----|:--------------------------------------------------------|
-|  1 | summary  | String            | 1    | A short description of what this reference refers to.   |
-|  2 | url      | String /uri       | 1    | The URL of the referenced resource.                     |
-|  3 | category | ReferenceCategory | 0..1 | Whether this reference is external or self-referential. |
-
-
-
-<a id="tab:reference-category-enum"></a>
-Table 12: Type `ReferenceCategory` (Enumerated)
-
-| ID | Item     | Description                                                      |
-|---:|:---------|:-----------------------------------------------------------------|
-|  0 | external | The reference points to an external resource.                    |
-|  1 | self     | The reference points back to the same information item in focus. |
-
-
-## 5.3 Source<a id='source'></a>
-
-The `source` member characterizes the content and source of the dataset.
-
-
-<a id="tab:source-record"></a>
-Table 13: Type `Source` (Record)
-
-| ID | Name         | Type         | \#    | Description                                                                      |
-|---:|:-------------|:-------------|:------|:---------------------------------------------------------------------------------|
-|  1 | about        | About        | 1     | A detailed narrative explaining the contents, scope, and purpose of the dataset. |
-|  2 | id           | Identity     | 1     | A unique identifier for this dataset, using at least one identification method.  |
-|  3 | issuer       | Organization | 1..\* | The legal entity or entities responsible for creating the dataset.               |
-|  4 | location     | String /uri  | 1     | The web address where this dataset's metadata is published and can be accessed.  |
-|  5 | name         | String       | 1     | The official name of the dataset.                                                |
-|  6 | data-version | Version      | 1     | The version of the dataset this metadata set describes.                          |
-
-
-
-<a id="tab:about-record"></a>
-Table 14: Type `About` (Record)
-
-| ID | Name    | Type   | \#   | Description                                                                                        |
-|---:|:--------|:-------|:-----|:---------------------------------------------------------------------------------------------------|
-|  1 | content | String | 1    | Contextual information helping users understand what the data represents and how it was collected. |
-|  2 | purpose | String | 1    | The recommended uses for this dataset.                                                             |
-|  3 | scope   | String | 0..1 | Any limitations of the dataset.                                                                    |
-
-
-The `Identity` type provides at least one identifier for the dataset. At least one of its fields MUST be present.
-
-
-<a id="tab:identity-map"></a>
-Table 15: Type `Identity` (Map)
-
-| ID | Name       | Type         | \#    | Description                                           |
-|---:|:-----------|:-------------|:------|:------------------------------------------------------|
-|  1 | hashes     | HashEntry    | 0..\* | Cryptographic hash-based identifiers for the dataset. |
-|  2 | uris       | String /uri  | 0..\* | URI identifiers for the dataset.                      |
-|  3 | uuids      | String /uuid | 0..\* | UUID identifiers for the dataset.                     |
-|  4 | custom-ids | CustomId     | 0..\* | Identifiers in any text format.                       |
-
-
-
-<a id="tab:hash-entry-record"></a>
-Table 16: Type `HashEntry` (Record)
-
-| ID | Name        | Type     | \#    | Description                                                              |
-|---:|:------------|:---------|:------|:-------------------------------------------------------------------------|
-|  1 | tree-hashes | TreeHash | 1..\* | The cryptographic hash values for this file or tree.                     |
-|  2 | path        | String   | 1     | The path (file or filesystem tree root) identified by these hash values. |
-
-
-
-<a id="tab:tree-hash-record"></a>
-Table 17: Type `TreeHash` (Record)
-
-| ID | Name      | Type   | \# | Description                                                              |
-|---:|:----------|:-------|:---|:-------------------------------------------------------------------------|
-|  1 | algorithm | String | 1  | The name of the hash or tree/seal algorithm used to calculate the value. |
-|  2 | value     | String | 1  | The cryptographic hash value in hexadecimal representation.              |
-
-
-
-<a id="tab:custom-id-record"></a>
-Table 18: Type `CustomId` (Record)
-
-| ID | Name           | Type   | \#    | Description                                            |
-|---:|:---------------|:-------|:------|:-------------------------------------------------------|
-|  1 | method         | String | 1     | The name of the method used to derive this identifier. |
-|  2 | value          | String | 1     | The identifier value.                                  |
-|  3 | tool           | String | 0..1  | The name of the tool used to derive this identifier.   |
-|  4 | parameter-list | String | 0..\* | Parameters used when invoking the tool.                |
-
-
-## 5.4 Provenance<a id='provenance'></a>
-
-The `provenance` member describes the provenance of the dataset.
-
-
-<a id="tab:provenance-record"></a>
-Table 19: Type `Provenance` (Record)
-
-| ID | Name              | Type             | \#    | Description                                                                                  |
-|---:|:------------------|:-----------------|:------|:---------------------------------------------------------------------------------------------|
-|  1 | origin-geography  | GeographicRegion | 1..\* | The geographical locations where the data was originally collected.                          |
-|  2 | date              | String /date     | 1     | The date when the dataset was compiled or created (YYYY-MM-DD).                              |
-|  3 | generation-method | GenerationMethod | 1..\* | The methodology or procedures used to collect, generate, or compile the data.                |
-|  4 | source            | String /uri      | 0..1  | The URI of metadata for a source dataset contributing to this dataset, establishing lineage. |
-|  5 | origin            | Organization     | 0..\* | The original source organization, if different from the dataset issuer.                      |
-|  6 | previous-date     | String /date     | 0..1  | The release date of the previous version of this dataset (YYYY-MM-DD).                       |
-|  7 | generation-period | GenerationPeriod | 0..1  | The span of time during which the data was collected or generated.                           |
-|  8 | format            | ModalityFormat   | 0..\* | Describes the modality or media type of the data within the dataset.                         |
-|  9 | sub-provenance    | Provenance       | 0..1  | Nested provenance information for a component of this dataset.                               |
-| 10 | source-digest     | SourceDigest     | 0..1  | A cryptographic digest of the record referenced by `source`, computed at issuance.           |
-
-
-
-<a id="tab:source-digest-record"></a>
-Table 20: Type `SourceDigest` (Record)
-
-| ID | Name      | Type   | \# | Description                                                |
-|---:|:----------|:-------|:---|:-----------------------------------------------------------|
-|  1 | algorithm | String | 1  | Digest algorithm identifier (e.g. sha256, sha384, sha512). |
-|  2 | value     | String | 1  | The digest value, hex-encoded.                             |
-
-
-
-<a id="tab:generation-period-record"></a>
-Table 21: Type `GenerationPeriod` (Record)
-
-| ID | Name  | Type              | \#   | Description                                            |
-|---:|:------|:------------------|:-----|:-------------------------------------------------------|
-|  1 | start | String /date-time | 0..1 | The start of the data collection or generation period. |
-|  2 | end   | String /date-time | 0..1 | The end of the data collection or generation period.   |
-
-
-
-<a id="tab:generation-method-record"></a>
-Table 22: Type `GenerationMethod` (Record)
-
-| ID | Name             | Type                 | \#   | Description                                       |
-|---:|:-----------------|:---------------------|:-----|:--------------------------------------------------|
-|  1 | code             | GenerationMethodCode | 1    | A short code identifying the generation method.   |
-|  2 | system           | String               | 0..1 | The code system used to interpret the code value. |
-|  3 | long-description | String               | 0..1 | A detailed description of the method.             |
-
-
-
-<a id="tab:generation-method-code-enum"></a>
-Table 23: Type `GenerationMethodCode` (Enumerated)
-
-| ID | Item                     | Description                                            |
-|---:|:-------------------------|:-------------------------------------------------------|
-|  0 | data-augmentation        | Data generation through augmentation of existing data. |
-|  1 | data-mining              | Data collected through automated data mining.          |
-|  2 | feeds                    | Data received through data feeds.                      |
-|  3 | machine-generated-ml-ops | Data generated through machine learning operations.    |
-|  4 | other                    | A generation method not listed here.                   |
-|  5 | primary-user-source      | Data collected directly from primary users.            |
-|  6 | simulations              | Data generated through simulations.                    |
-|  7 | social-media             | Data collected from social media platforms.            |
-|  8 | syndication              | Data received through syndication.                     |
-|  9 | transfer-learning        | Data generated through transfer learning.              |
-| 10 | user-generated-content   | Data created by end users.                             |
-| 11 | web-scraping-crawling    | Data collected by web scraping or crawling.            |
-
-
-
-<a id="tab:modality-format-enum"></a>
-Table 24: Type `ModalityFormat` (Enumerated)
-
-| ID | Item                     | Description                           |
-|---:|:-------------------------|:--------------------------------------|
-|  0 | application/json         | JSON data format.                     |
-|  1 | application/jsonld       | JSON-LD linked data format.           |
-|  2 | application/msword       | Microsoft Word document format.       |
-|  3 | application/vnd.ms-excel | Microsoft Excel spreadsheet format.   |
-|  4 | application/zip          | ZIP archive format.                   |
-|  5 | image/bmp                | BMP image format.                     |
-|  6 | image/gif                | GIF image format.                     |
-|  7 | image/jpeg               | JPEG image format.                    |
-|  8 | image/png                | PNG image format.                     |
-|  9 | image/x-png              | PNG image format (legacy media type). |
-| 10 | other                    | A format not listed here.             |
-| 11 | text/csv                 | CSV text format.                      |
-| 12 | text/plain               | Plain text format.                    |
-
-
-## 5.5 Use<a id='use'></a>
-
-The `use` member describes the legal use and restrictions applicable to the dataset.
-
-
-<a id="tab:use-record"></a>
-Table 25: Type `Use` (Record)
-
-| ID | Name                | Type             | \#    | Description                                                                               |
-|---:|:--------------------|:-----------------|:------|:------------------------------------------------------------------------------------------|
-|  1 | intended-purpose    | Purpose          | 1..\* | The purpose or purposes for which the dataset was created.                                |
-|  2 | classification      | Classification   | 0..\* | Confidentiality classifications applicable to the dataset.                                |
-|  3 | consents            | String           | 0..\* | Locations of consent documentation or agreements related to the data.                     |
-|  4 | data-risk-reducing  | DataRiskReducing | 0..\* | Techniques used to reduce known data risk.                                                |
-|  5 | processing-included | GeographicRegion | 0..\* | Geographical boundaries within which the data may be processed.                           |
-|  6 | processing-excluded | GeographicRegion | 0..\* | Geographical boundaries within which the data may not be processed.                       |
-|  7 | storage-allowed     | GeographicRegion | 0..\* | Geographical locations where the data may be stored.                                      |
-|  8 | storage-forbidden   | GeographicRegion | 0..\* | Geographical locations where the data may not be stored.                                  |
-|  9 | license             | String           | 0..\* | The terms under which the dataset can be used, including any restrictions or obligations. |
-| 10 | copyright           | String           | 0..\* | Copyright information covering proprietary information in the dataset.                    |
-| 11 | patent              | String           | 0..\* | Patent information covering proprietary information in the dataset.                       |
-| 12 | trademark           | String           | 0..\* | Trademark information covering proprietary information in the dataset.                    |
-
-
-
-<a id="tab:purpose-record"></a>
-Table 26: Type `Purpose` (Record)
-
-| ID | Name             | Type        | \#   | Description                                       |
-|---:|:-----------------|:------------|:-----|:--------------------------------------------------|
-|  1 | code             | PurposeCode | 1    | A short code identifying the intended purpose.    |
-|  2 | long-description | String      | 1    | A detailed description of the intended purpose.   |
-|  3 | system           | String      | 0..1 | The code system used to interpret the code value. |
-
-
-
-<a id="tab:classification-record"></a>
-Table 27: Type `Classification` (Record)
-
-| ID | Name       | Type       | \#   | Description                                                                                   |
-|---:|:-----------|:-----------|:-----|:----------------------------------------------------------------------------------------------|
-|  1 | regulation | Regulation | 1    | The regulation or classification standard being evaluated.                                    |
-|  2 | evaluated  | Boolean    | 1    | Whether the dataset has been evaluated against this classification (`true`) or not (`false`). |
-|  3 | tool       | String     | 0..1 | The tool used to perform the evaluation.                                                      |
-
-
-
-<a id="tab:regulation-record"></a>
-Table 28: Type `Regulation` (Record)
-
-| ID | Name             | Type                | \#   | Description                                                  |
-|---:|:-----------------|:--------------------|:-----|:-------------------------------------------------------------|
-|  1 | code             | ConfidentialityCode | 1    | A short code identifying the confidentiality classification. |
-|  2 | system           | String              | 0..1 | The code system used to interpret the code value.            |
-|  3 | long-description | String              | 0..1 | A detailed description of the regulation or classification.  |
-
-
-
-<a id="tab:confidentiality-code-enum"></a>
-Table 29: Type `ConfidentialityCode` (Enumerated)
-
-| ID | Item  | Description                                       |
-|---:|:------|:--------------------------------------------------|
-|  0 | other | A confidentiality classification not listed here. |
-|  1 | pci   | Payment Card Industry (PCI) data.                 |
-|  2 | pfi   | Personal Financial Information (PFI).             |
-|  3 | phi   | Protected Health Information (PHI).               |
-|  4 | pi    | Personal Information (PI).                        |
-|  5 | sci   | Sensitive Compartmented Information (SCI).        |
-|  6 | spi   | Sensitive Personal Information (SPI).             |
-
-
-
-<a id="tab:purpose-code-enum"></a>
-Table 30: Type `PurposeCode` (Enumerated)
-
-| ID | Item                      | Description                                           |
-|---:|:--------------------------|:------------------------------------------------------|
-|  0 | alignment                 | Dataset intended for model alignment tasks.           |
-|  1 | evaluation                | Dataset intended for evaluation or benchmarking.      |
-|  2 | other                     | A purpose not listed here.                            |
-|  3 | pre-training              | Dataset intended for model pre-training.              |
-|  4 | production                | Dataset intended for production use.                  |
-|  5 | quality-assurance         | Dataset intended for quality assurance testing.       |
-|  6 | research                  | Dataset intended for research use.                    |
-|  7 | staging-testing           | Dataset intended for staging or testing environments. |
-|  8 | synthetic-data-generation | Dataset intended for generating synthetic data.       |
-
-
-
-<a id="tab:data-risk-reducing-record"></a>
-Table 31: Type `DataRiskReducing` (Record)
-
-| ID | Name          | Type           | \#    | Description                                                |
-|---:|:--------------|:---------------|:------|:-----------------------------------------------------------|
-|  1 | tool-used     | String         | 1     | The name of the tool used for data risk reduction.         |
-|  2 | tool-category | Method         | 0..1  | The category of the tool used for data risk reduction.     |
-|  3 | technology    | DataTechnology | 0..1  | The privacy-enhancing or data-reducing technology applied. |
-|  4 | parameters    | Parameter      | 0..\* | The parameters passed to the tool.                         |
-|  5 | results       | String         | 0..\* | The results of applying the tool.                          |
-
-
-
-<a id="tab:parameter-record"></a>
-Table 32: Type `Parameter` (Record)
-
-| ID | Name  | Type   | \#   | Description          |
-|---:|:------|:-------|:-----|:---------------------|
-|  1 | name  | String | 1    | The parameter name.  |
-|  2 | value | String | 0..1 | The parameter value. |
-
-
-
-<a id="tab:data-technology-enum"></a>
-Table 33: Type `DataTechnology` (Enumerated)
-
-| ID | Item                           | Description                                                                                                                                                         |
-|---:|:-------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  0 | data-anonymization             | Transforms the dataset so that individuals cannot be identified, directly or indirectly, from the resulting records.                                                |
-|  1 | data-encryption                | Encodes dataset content so that it is readable only by parties holding the decryption key; typically applied at rest or in transit.                                 |
-|  2 | data-masking                   | Replaces sensitive field values with realistic but fictitious substitutes, preserving format and statistical properties without exposing the originals.             |
-|  3 | data-minimization              | Reduces the dataset to only the fields and records necessary for the stated purpose, limiting exposure of personal or sensitive data.                               |
-|  4 | data-redaction                 | Removes or obscures specific values or text spans identified as sensitive, such as names, identifiers, or health information.                                       |
-|  5 | differential-privacy           | Adds calibrated statistical noise so that the presence or absence of any individual record cannot be reliably inferred from the released data.                      |
-|  6 | federated-learning             | Produces model artefacts by training across distributed sources without centralising raw data, so the original dataset is never directly shared.                    |
-|  7 | homomorphic-encryption         | Enables computation on ciphertext without decryption, so analytical results can be derived without exposing plaintext values.                                       |
-|  8 | k-anonymity                    | Generalises quasi-identifying attributes so that each record is indistinguishable from at least k-1 other records in the dataset.                                   |
-|  9 | l-diversity                    | Extends k-anonymity by requiring that each equivalence class contains at least l well-represented distinct sensitive attribute values.                              |
-| 10 | other                          | A data risk reduction technology not covered by the defined values; use `tool-category` or `results` to describe the specific technique applied.                    |
-| 11 | pseudonymization               | Replaces direct identifiers with artificial pseudonyms; re-identification remains possible through a separate, controlled mapping table.                            |
-| 12 | secure-multi-party-computation | Allows multiple parties to jointly compute over their respective inputs without revealing those inputs to each other (SMC).                                         |
-| 13 | t-closeness                    | Extends l-diversity by requiring that the distribution of sensitive values within each equivalence class closely matches their overall distribution in the dataset. |
-| 14 | tokenization                   | Substitutes sensitive values with non-sensitive tokens; the originals are recoverable only through a separate, secured token vault.                                 |
-
-
-## 5.6 Shared Types<a id='shared-types'></a>
-
-The following types are used in more than one of the sections above.
-
-
-<a id="tab:organization-record"></a>
-Table 34: Type `Organization` (Record)
-
-| ID | Name       | Type        | \#   | Description                             |
-|---:|:-----------|:------------|:-----|:----------------------------------------|
-|  1 | legal-name | String      | 1    | The legal name of the organization.     |
-|  2 | address    | Address     | 0..1 | The postal address of the organization. |
-|  3 | url        | String /uri | 0..1 | A URL for the organization.             |
-
-
-The value of `url` SHOULD use the `https` scheme.
-
-
-<a id="tab:address-array"></a>
-Table 35: Type `Address` (ArrayOf(String))
-
-| Type Name | Type Definition | Description                                       |
-|:----------|:----------------|:--------------------------------------------------|
-| Address   | ArrayOf(String) | Lines of a postal address. At least one required. |
-
-
-
-<a id="tab:geographic-region-record"></a>
-Table 36: Type `GeographicRegion` (Record)
-
-| ID | Name    | Type   | \#   | Description                         |
-|---:|:--------|:-------|:-----|:------------------------------------|
-|  1 | country | String | 1    | The country name or code.           |
-|  2 | state   | String | 0..1 | The state or province name or code. |
-
-
-
-<a id="tab:method-record"></a>
-Table 37: Type `Method` (Record)
-
-| ID | Name             | Type   | \#   | Description                                                          |
-|---:|:-----------------|:-------|:-----|:---------------------------------------------------------------------|
-|  1 | code             | String | 1    | A short code identifying the method, regulation, or classification.  |
-|  2 | system           | String | 0..1 | The code system used to interpret the code value.                    |
-|  3 | long-description | String | 0..1 | A detailed description of the method, regulation, or classification. |
-
-
-The `Acknowledgment` type describes a contributor. At least one of its fields MUST be present.
-
-
-<a id="tab:acknowledgment-map"></a>
-Table 38: Type `Acknowledgment` (Map)
-
-| ID | Name         | Type        | \#    | Description                                             |
-|---:|:-------------|:------------|:------|:--------------------------------------------------------|
-|  1 | names        | String      | 0..\* | Names of individual contributors being acknowledged.    |
-|  2 | organization | String      | 0..1  | Name of a contributing organization being acknowledged. |
-|  3 | summary      | String      | 0..1  | Contextual details about the acknowledgment.            |
-|  4 | urls         | String /uri | 0..\* | URLs of references being acknowledged.                  |
-
-
-
-<a id="tab:version-string"></a>
-Table 39: Type `Version` (String)
-
-| Type Name | Type Definition | Description                                                                           |
-|:----------|:----------------|:--------------------------------------------------------------------------------------|
-| Version   | String          | An integer or semantic versioning string. Examples: `"1"`, `"2.0.0"`, `"1.0.0-beta"`. |
-
-
-
-<a id="tab:language-string"></a>
-Table 40: Type `Language` (String)
-
-| Type Name | Type Definition | Description                                          |
-|:----------|:----------------|:-----------------------------------------------------|
-| Language  | String          | A language tag conforming to IETF BCP 47 / RFC 5646. |
-
-
-# 6. Provenance Information Model Encoding<a id='provenance-information-model-encoding'></a>
-
-The technical encoding of the information model is specified in both JADN and YAML in the following subsections.
-
-## 6.1 JADN Encoding<a id='jadn-encoding'></a>
+## 5.1 JADN Encoding<a id='jadn-encoding'></a>
 
 The JADN encoding of the data provenance metadata information model is specified in
 `jadn/data-provenance.jadn`.
 
-The file contains 43 named types derived directly from the property tables in Section 5.
+The file is generated from the JSON schema.
+Each schema node that defines a type carries the JADN type name in the annotation `x-jadn-type`,
+and each enumeration carries the descriptions of its values in the annotation `x-jadn-enum`;
+the descriptions of the fields are the `description` annotations of the members.
+Neither annotation affects validation.
 The exported root type is `DataProvenance`.
-Six named primitive aliases (`URI`, `UUID`, `DateTime`, `Date`, `Version`, `Language`)
-carry format constraints that apply wherever those types appear as field types,
-keeping the field-level definitions free of inline format options.
-Eight enumerated types carry the closed code vocabularies introduced in Section 5.
+The string formats of the JSON schema map to the primitive aliases `URI`, `UUID`, `DateTime`, and `Date`.
 
-## 6.2 YAML Encoding<a id='yaml-encoding'></a>
+## 5.2 YAML Encoding<a id='yaml-encoding'></a>
 
 The YAML encoding of the data provenance metadata information model is specified in
 `yaml/data-provenance.yaml`.
 
-This file is a YAML serialization of `json/data-provenance.json` and is normatively
-equivalent to it.
+This file is a YAML serialization of `json/data-provenance.json`, generated from it.
 It is provided for tooling that consumes YAML-format schemas natively.
 All field names, constraints, type references, and enumeration values are identical
 to those in the JSON schema.
 
-# 7. Provenance Data Model Encoding<a id='provenance-data-model-encoding'></a>
+# 6. Provenance Data Model Encoding<a id='provenance-data-model-encoding'></a>
 
 > The information model defines the complete set of metadata elements and associated attributes specified by the Data Provenance Standard.
 > It establishes a common conceptual framework for representing provenance information, including the structures and relationships necessary to describe the origin, history, and handling of data.
@@ -909,7 +363,7 @@ to those in the JSON schema.
 > The encodings described herein are non-exclusive and are provided to support diverse implementation environments and usage scenarios.
 > Implementations MAY support one or more of these encodings, subject to their interoperability, performance, and deployment requirements.
 
-## 7.1 JSON Encoding<a id='json-encoding'></a>
+## 6.1 JSON Encoding<a id='json-encoding'></a>
 
 The technical encoding of the data provenance metadata data model
 is specified in the following schema artifacts for JSON data:
@@ -932,9 +386,10 @@ DataProvenance:
   source: $defs.source-type
   provenance: $defs.provenance-type
   use: $defs.use-type
+  proof: Mapping  # optional
 ```
 
-### 7.1.1 Member `$schema`<a id='member-schema'></a>
+### 6.1.1 Member `$schema`<a id='member-schema'></a>
 
 The value of the `$schema` member for this version of the specification is always:
 
@@ -942,7 +397,7 @@ The value of the `$schema` member for this version of the specification is alway
 https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json
 ```
 
-### 7.1.2 Member `set`<a id='member-set'></a>
+### 6.1.2 Member `set`<a id='member-set'></a>
 
 The `set` member specifies set-level meta-data.
 It captures meta-data about the provenance metadata record describing a particular dataset.
@@ -959,15 +414,15 @@ DataProvenance:
     publisher: Mapping
     label: String
     tracking: Mapping
+    language: $defs.language-type                # optional
+    source-language: $defs.language-type         # optional
     acknowledgments: $defs.acknowledgments-type  # optional
     notes: $defs.notes-type                      # optional
     references: $defs.references-type            # optional
-    language: $defs.language-type                # optional
-    source-language: $defs.language-type         # optional
   # ...
 ```
 
-#### 7.1.2.1 Member `set.category`<a id='member-set-category'></a>
+#### 6.1.2.1 Member `set.category`<a id='member-set-category'></a>
 
 The `set.category` member defines a short canonical name, chosen by the set producer, which will inform the end user as to the category of the metadata set.
 
@@ -980,7 +435,7 @@ DataProvenance:
   # ...
 ```
 
-*Examples 1:*<a id='member-set-category-eg-1'></a><a id='sec-7-1-2-1-eg-1'></a><a id='example-1'></a>
+*Examples 1:*<a id='member-set-category-eg-1'></a><a id='sec-6-1-2-1-eg-1'></a><a id='example-1'></a>
 
 ```
 dp_base
@@ -989,7 +444,7 @@ dp_profile_xyz
 Example Data Protection Notice Exemption
 ```
 
-#### 7.1.2.2 Member `set.schema-version`<a id='member-set-schema-version'></a>
+#### 6.1.2.2 Member `set.schema-version`<a id='member-set-schema-version'></a>
 
 The `set.schema-version` member gives the version of the Data Provenance Core specification which the document was generated for.
 
@@ -1009,7 +464,7 @@ The value of the `set.schema-version` member for this version of the specificati
 1.0
 ```
 
-#### 7.1.2.3 Member `set.publisher`<a id='member-set-publisher'></a>
+#### 6.1.2.3 Member `set.publisher`<a id='member-set-publisher'></a>
 
 The `set.publisher` member provides information about the publisher of the metadata set. The publisher is the party responsible for issuing the metadata set.
 
@@ -1028,7 +483,7 @@ DataProvenance:
   # ...
 ```
 
-##### 7.1.2.3.1 Member `set.publisher.name`<a id='member-set-publisher-name'></a>
+##### 6.1.2.3.1 Member `set.publisher.name`<a id='member-set-publisher-name'></a>
 
 The `set.publisher.name` member contains the name of the issuing party.
 
@@ -1044,13 +499,13 @@ DataProvenance:
   # ...
 ```
 
-*Example 1:*<a id='member-set-publisher-name-eg-1'></a><a id='sec-7-1-2-3-1-eg-1'></a><a id='example-2'></a>
+*Example 1:*<a id='member-set-publisher-name-eg-1'></a><a id='sec-6-1-2-3-1-eg-1'></a><a id='example-2'></a>
 
 ```
 Cisco
 ```
 
-##### 7.1.2.3.2 Member `set.publisher.namespace`<a id='member-set-publisher-namespace'></a>
+##### 6.1.2.3.2 Member `set.publisher.namespace`<a id='member-set-publisher-namespace'></a>
 
 The `set.publisher.namespace` member contains a URI which is under the control of the issuing party and can be used as a globally unique identifier for that issuing party.
 
@@ -1069,13 +524,13 @@ DataProvenance:
 
 The value of `set.publisher.namespace` MUST be a valid URI.
 
-*Example 1:*<a id='member-set-publisher-namespace-eg-1'></a><a id='sec-7-1-2-3-2-eg-1'></a><a id='example-3'></a>
+*Example 1:*<a id='member-set-publisher-namespace-eg-1'></a><a id='sec-6-1-2-3-2-eg-1'></a><a id='example-3'></a>
 
 ```
 https://cisco.com
 ```
 
-##### 7.1.2.3.3 Member `set.publisher.contact-details`<a id='member-set-publisher-contact-details'></a>
+##### 6.1.2.3.3 Member `set.publisher.contact-details`<a id='member-set-publisher-contact-details'></a>
 
 The `set.publisher.contact-details` member provides information on how to contact the publisher, such as web sites, email addresses, phone numbers, or postal mail addresses.
 
@@ -1091,13 +546,13 @@ DataProvenance:
   # ...
 ```
 
-*Example 1:*<a id='member-set-publisher-contact-details-eg-1'></a><a id='sec-7-1-2-3-3-eg-1'></a><a id='example-4'></a>
+*Example 1:*<a id='member-set-publisher-contact-details-eg-1'></a><a id='sec-6-1-2-3-3-eg-1'></a><a id='example-4'></a>
 
 ```
 Example Company can be reached at contact_us@example.com, or via our website at https://www.example.com/contact.
 ```
 
-#### 7.1.2.4 Member `set.label`<a id='member-set-label'></a>
+#### 6.1.2.4 Member `set.label`<a id='member-set-label'></a>
 
 The `set.label` member provides the per-publisher unique title of the metadata set.
 
@@ -1113,14 +568,14 @@ DataProvenance:
 
 The value of `set.label` SHOULD be a canonical name for the set, and sufficiently unique to distinguish it from similar sets.
 
-*Examples 1:*<a id='member-set-label-eg-1'></a><a id='sec-7-1-2-4-eg-1'></a><a id='example-5'></a>
+*Examples 1:*<a id='member-set-label-eg-1'></a><a id='sec-6-1-2-4-eg-1'></a><a id='example-5'></a>
 
 ```
 Learning Set for Regression Modelling for Stats 101
 Example Data Protection Dataset in Example Generator
 ```
 
-#### 7.1.2.5 Member `set.tracking`<a id='member-set-tracking'></a>
+#### 6.1.2.5 Member `set.tracking`<a id='member-set-tracking'></a>
 
 The `set.tracking` member is a container designated to hold all management attributes necessary to track a DP-Core set as a whole.
 
@@ -1145,7 +600,7 @@ DataProvenance:
   # ...
 ```
 
-##### 7.1.2.5.1 Member `set.tracking.current-release-date`<a id='member-set-tracking-current-release-date'></a>
+##### 6.1.2.5.1 Member `set.tracking.current-release-date`<a id='member-set-tracking-current-release-date'></a>
 
 The `set.tracking.current-release-date` member contains the date when the current revision of this document was released.
 
@@ -1163,13 +618,13 @@ DataProvenance:
 
 The value of `set.tracking.current-release-date` MUST be a valid date-time string conforming to \[RFC 3339\].
 
-*Example 1:*<a id='member-set-tracking-current-release-date-eg-1'></a><a id='sec-7-1-2-5-1-eg-1'></a><a id='example-6'></a>
+*Example 1:*<a id='member-set-tracking-current-release-date-eg-1'></a><a id='sec-6-1-2-5-1-eg-1'></a><a id='example-6'></a>
 
 ```
 2000-01-01T01:01:01Z
 ```
 
-##### 7.1.2.5.2 Member `set.tracking.id`<a id='member-set-tracking-id'></a>
+##### 6.1.2.5.2 Member `set.tracking.id`<a id='member-set-tracking-id'></a>
 
 The `set.tracking.id` member provides the unique identifier for the metadata set. The ID is a simple label that provides for a wide range of numbering values, types, and schemes. Its value SHOULD be assigned and maintained by the original metadata set issuing authority.
 
@@ -1188,7 +643,7 @@ DataProvenance:
 
 The value of `set.tracking.id` MUST NOT start or end with whitespace.
 
-*Examples 1:*<a id='member-set-tracking-id-eg-1'></a><a id='sec-7-1-2-5-2-eg-1'></a><a id='example-7'></a>
+*Examples 1:*<a id='member-set-tracking-id-eg-1'></a><a id='sec-6-1-2-5-2-eg-1'></a><a id='example-7'></a>
 
 ```
 7aedeb0a-22dd-428a-ab76-c950b43cbbc6
@@ -1196,7 +651,7 @@ abcdef-orga-ds-0815
 cisco-sa-20190513-secureboot
 ```
 
-##### 7.1.2.5.3 Member `set.tracking.initial-release-date`<a id='member-set-tracking-initial-release-date'></a>
+##### 6.1.2.5.3 Member `set.tracking.initial-release-date`<a id='member-set-tracking-initial-release-date'></a>
 
 The `set.tracking.initial-release-date` member contains the date when this set was first published.
 
@@ -1215,13 +670,13 @@ DataProvenance:
 
 The value of `set.tracking.initial-release-date` MUST be a valid date-time string conforming to \[RFC 3339\].
 
-*Example 1:*<a id='member-set-tracking-initial-release-date-eg-1'></a><a id='sec-7-1-2-5-3-eg-1'></a><a id='example-8'></a>
+*Example 1:*<a id='member-set-tracking-initial-release-date-eg-1'></a><a id='sec-6-1-2-5-3-eg-1'></a><a id='example-8'></a>
 
 ```
 2000-01-01T01:01:01Z
 ```
 
-##### 7.1.2.5.4 Member `set.tracking.revision-history`<a id='member-set-tracking-revision-history'></a>
+##### 6.1.2.5.4 Member `set.tracking.revision-history`<a id='member-set-tracking-revision-history'></a>
 
 The `set.tracking.revision-history` member holds one revision item for each version of the DP-Core set, including the initial one. The sequence MUST contain at least one revision item.
 
@@ -1250,7 +705,7 @@ Each revision item MUST contain the following members:
 
 The optional `legacy-version` member traces entries back to historic, DP-Core-unaware version strings.
 
-*Example 1:*<a id='member-set-tracking-revision-history-eg-1'></a><a id='sec-7-1-2-5-4-eg-1'></a><a id='example-9'></a>
+*Example 1:*<a id='member-set-tracking-revision-history-eg-1'></a><a id='sec-6-1-2-5-4-eg-1'></a><a id='example-9'></a>
 
 ```json
 [
@@ -1262,7 +717,7 @@ The optional `legacy-version` member traces entries back to historic, DP-Core-un
 ]
 ```
 
-##### 7.1.2.5.5 Member `set.tracking.status`<a id='member-set-tracking-status'></a>
+##### 6.1.2.5.5 Member `set.tracking.status`<a id='member-set-tracking-status'></a>
 
 The `set.tracking.status` member defines the draft status of the metadata set. This allows processing DP-Core sets of various maturity per version.
 
@@ -1285,7 +740,7 @@ The value of `set.tracking.status` MUST be one of the following:
 - `final`
 - `interim`
 
-##### 7.1.2.5.6 Member `set.tracking.version`<a id='member-set-tracking-version'></a>
+##### 6.1.2.5.6 Member `set.tracking.version`<a id='member-set-tracking-version'></a>
 
 The `set.tracking.version` member specifies the version of the current DP-Core set.
 
@@ -1306,7 +761,7 @@ The value of `set.tracking.version` MUST conform to `$defs.version-type`, which 
 
 The value of `set.tracking.version` MUST equal the value of `number` in the most recent item of `set.tracking.revision-history`, that is the item with the latest `date`.
 
-*Examples 1:*<a id='member-set-tracking-version-eg-1'></a><a id='sec-7-1-2-5-6-eg-1'></a><a id='example-10'></a>
+*Examples 1:*<a id='member-set-tracking-version-eg-1'></a><a id='sec-6-1-2-5-6-eg-1'></a><a id='example-10'></a>
 
 ```
 1
@@ -1314,7 +769,7 @@ The value of `set.tracking.version` MUST equal the value of `number` in the most
 1.0.0-beta+exp.sha.a1c44f85
 ```
 
-##### 7.1.2.5.7 Member `set.tracking.aliases`<a id='member-set-tracking-aliases'></a>
+##### 6.1.2.5.7 Member `set.tracking.aliases`<a id='member-set-tracking-aliases'></a>
 
 The `set.tracking.aliases` member contains a list of alternate names for the same set.
 Each alias MUST be a non-empty string and all entries MUST be unique.
@@ -1333,13 +788,13 @@ DataProvenance:
   # ...
 ```
 
-*Example 1:*<a id='member-set-tracking-aliases-eg-1'></a><a id='sec-7-1-2-5-7-eg-1'></a><a id='example-11'></a>
+*Example 1:*<a id='member-set-tracking-aliases-eg-1'></a><a id='sec-6-1-2-5-7-eg-1'></a><a id='example-11'></a>
 
 ```json
 ["0bacba95-ceb9-4fae-bf07-d5683a9481c1"]
 ```
 
-##### 7.1.2.5.8 Member `set.tracking.generator`<a id='member-set-tracking-generator'></a>
+##### 6.1.2.5.8 Member `set.tracking.generator`<a id='member-set-tracking-generator'></a>
 
 The `set.tracking.generator` member holds information about the engine that generated the metadata set.
 The required sub-member is `engine`. The optional sub-member `date` MAY also be present.
@@ -1364,7 +819,7 @@ DataProvenance:
 - `engine.version`: The version of that tool. MUST conform to `$defs.version-type` when present.
 - `date`: The date-time at which the metadata set was generated. MUST conform to \[RFC 3339\] when present.
 
-*Example 1:*<a id='member-set-tracking-generator-eg-1'></a><a id='sec-7-1-2-5-8-eg-1'></a><a id='example-12'></a>
+*Example 1:*<a id='member-set-tracking-generator-eg-1'></a><a id='sec-6-1-2-5-8-eg-1'></a><a id='example-12'></a>
 
 ```json
 {
@@ -1373,7 +828,7 @@ DataProvenance:
 }
 ```
 
-#### 7.1.2.6 Member `set.language`<a id='member-set-language'></a>
+#### 6.1.2.6 Member `set.language`<a id='member-set-language'></a>
 
 The `set.language` member identifies the language used in this document, corresponding to IETF BCP 47 / RFC 5646.
 
@@ -1387,7 +842,7 @@ DataProvenance:
   # ...
 ```
 
-*Examples 1:*<a id='member-set-language-eg-1'></a><a id='sec-7-1-2-6-eg-1'></a><a id='example-13'></a>
+*Examples 1:*<a id='member-set-language-eg-1'></a><a id='sec-6-1-2-6-eg-1'></a><a id='example-13'></a>
 
 ```
 de
@@ -1395,7 +850,7 @@ en
 fr
 ```
 
-#### 7.1.2.7 Member `set.source-language`<a id='member-set-source-language'></a>
+#### 6.1.2.7 Member `set.source-language`<a id='member-set-source-language'></a>
 
 The `set.source-language` member identifies the language this document was translated from, when this copy is a translation.
 
@@ -1405,10 +860,11 @@ DataProvenance:
   set:
     # ...
     source-language: $defs.language-type  # optional
+    # ...
   # ...
 ```
 
-#### 7.1.2.8 Member `set.acknowledgments`<a id='member-set-acknowledgments'></a>
+#### 6.1.2.8 Member `set.acknowledgments`<a id='member-set-acknowledgments'></a>
 
 The `set.acknowledgments` member contains a list of acknowledgment elements associated with the whole set.
 Each acknowledgment item MUST have at least one of the following members: `names`, `organization`, `summary`, or `urls`.
@@ -1429,7 +885,7 @@ DataProvenance:
   # ...
 ```
 
-*Example 1:*<a id='member-set-acknowledgments-eg-1'></a><a id='sec-7-1-2-8-eg-1'></a><a id='example-14'></a>
+*Example 1:*<a id='member-set-acknowledgments-eg-1'></a><a id='sec-6-1-2-8-eg-1'></a><a id='example-14'></a>
 
 ```json
 [
@@ -1441,7 +897,7 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.2.9 Member `set.notes`<a id='member-set-notes'></a>
+#### 6.1.2.9 Member `set.notes`<a id='member-set-notes'></a>
 
 The `set.notes` member contains a list of notes associated with this metadata set.
 Each note MUST have a `category` and `text`. The optional members `audience` and `title` MAY also be present.
@@ -1466,7 +922,7 @@ DataProvenance:
 - `audience`: The intended audience for the note.
 - `title`: A concise description of what is contained in the text of the note.
 
-#### 7.1.2.10 Member `set.references`<a id='member-set-references'></a>
+#### 6.1.2.10 Member `set.references`<a id='member-set-references'></a>
 
 The `set.references` member contains a list of references associated with this metadata set.
 Each reference MUST have a `summary` and a `url`. The optional member `category` MAY also be present.
@@ -1481,7 +937,6 @@ DataProvenance:
       - summary: String
         url: String.URI
         category: String.Enum  # optional
-    # ...
   # ...
 ```
 
@@ -1489,7 +944,7 @@ DataProvenance:
 - `url`: The URL of the referenced resource.
 - `category`: Whether this reference is external or self-referential (default: `external`).
 
-### 7.1.3 Member `source`<a id='member-source'></a>
+### 6.1.3 Member `source`<a id='member-source'></a>
 
 The `source` member characterizes the content and source of the dataset.
 All six of its members are required.
@@ -1509,7 +964,7 @@ DataProvenance:
 
 The members of `source` are described in the following subsections.
 
-#### 7.1.3.1 Member `source.about`<a id='member-source-about'></a>
+#### 6.1.3.1 Member `source.about`<a id='member-source-about'></a>
 
 The `source.about` member contains a detailed narrative that explains the contents, scope, and purpose of the dataset.
 The required members are `content` and `purpose`. The optional member `scope` MAY also be present.
@@ -1530,7 +985,7 @@ DataProvenance:
 - `purpose`: Explains the recommended uses.
 - `scope`: Points out any limitations of the dataset.
 
-*Example 1:*<a id='member-source-about-eg-1'></a><a id='sec-7-1-3-1-eg-1'></a><a id='example-15'></a>
+*Example 1:*<a id='member-source-about-eg-1'></a><a id='sec-6-1-3-1-eg-1'></a><a id='example-15'></a>
 
 ```json
 {
@@ -1540,7 +995,7 @@ DataProvenance:
 }
 ```
 
-#### 7.1.3.2 Member `source.id`<a id='member-source-id'></a>
+#### 6.1.3.2 Member `source.id`<a id='member-source-id'></a>
 
 The `source.id` member provides a unique identifier for the dataset's metadata. At least one identification method MUST be provided.
 
@@ -1588,7 +1043,7 @@ The value of `algorithm` MUST be lowercase.
 
 `source.id` identifies the dataset itself. It is distinct from `set.tracking.id`, which identifies this metadata record.
 
-*Example 1:*<a id='member-source-id-eg-1'></a><a id='sec-7-1-3-2-eg-1'></a><a id='example-16'></a>
+*Example 1:*<a id='member-source-id-eg-1'></a><a id='sec-6-1-3-2-eg-1'></a><a id='example-16'></a>
 
 ```json
 {
@@ -1596,7 +1051,7 @@ The value of `algorithm` MUST be lowercase.
 }
 ```
 
-*Example 2:*<a id='member-source-id-eg-2'></a><a id='sec-7-1-3-2-eg-2'></a><a id='example-17'></a>
+*Example 2:*<a id='member-source-id-eg-2'></a><a id='sec-6-1-3-2-eg-2'></a><a id='example-17'></a>
 
 ```json
 {
@@ -1609,7 +1064,7 @@ The value of `algorithm` MUST be lowercase.
 }
 ```
 
-#### 7.1.3.3 Member `source.issuer`<a id='member-source-issuer'></a>
+#### 6.1.3.3 Member `source.issuer`<a id='member-source-issuer'></a>
 
 The `source.issuer` member identifies the legal entity or entities responsible for creating the dataset.
 The value is a sequence of organization objects. Each organization MUST provide a `legal-name`.
@@ -1629,7 +1084,7 @@ DataProvenance:
   # ...
 ```
 
-*Example 1:*<a id='member-source-issuer-eg-1'></a><a id='sec-7-1-3-3-eg-1'></a><a id='example-18'></a>
+*Example 1:*<a id='member-source-issuer-eg-1'></a><a id='sec-6-1-3-3-eg-1'></a><a id='example-18'></a>
 
 ```json
 [
@@ -1640,7 +1095,7 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.3.4 Member `source.location`<a id='member-source-location'></a>
+#### 6.1.3.4 Member `source.location`<a id='member-source-location'></a>
 
 The `source.location` member provides the web address where the dataset's metadata is published and can be accessed. Typically this will be a unique URI of the current dataset.
 
@@ -1654,7 +1109,7 @@ DataProvenance:
   # ...
 ```
 
-#### 7.1.3.5 Member `source.name`<a id='member-source-name'></a>
+#### 6.1.3.5 Member `source.name`<a id='member-source-name'></a>
 
 The `source.name` member provides the official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose.
 
@@ -1668,7 +1123,7 @@ DataProvenance:
   # ...
 ```
 
-#### 7.1.3.6 Member `source.data-version`<a id='member-source-data-version'></a>
+#### 6.1.3.6 Member `source.data-version`<a id='member-source-data-version'></a>
 
 The `source.data-version` member specifies the version of the dataset this DP-Core set describes, allowing the dataset to evolve over time and keeping consistent labeling.
 
@@ -1683,14 +1138,14 @@ DataProvenance:
 
 The value of `source.data-version` MUST conform to `$defs.version-type`, which requires either an integer or a semantic versioning string.
 
-*Examples 1:*<a id='member-source-data-version-eg-1'></a><a id='sec-7-1-3-6-eg-1'></a><a id='example-19'></a>
+*Examples 1:*<a id='member-source-data-version-eg-1'></a><a id='sec-6-1-3-6-eg-1'></a><a id='example-19'></a>
 
 ```
 1
 2.0.0
 ```
 
-### 7.1.4 Member `provenance`<a id='member-provenance'></a>
+### 6.1.4 Member `provenance`<a id='member-provenance'></a>
 
 The `provenance` member describes the provenance of the dataset.
 
@@ -1710,12 +1165,13 @@ DataProvenance:
     generation-period: Mapping             # optional
     format: Sequence                       # optional
     sub-provenance: $defs.provenance-type  # optional
+    source-digest: Mapping                 # optional
   # ...
 ```
 
 The required members of `provenance` are described in subsections 7.1.4.1–7.1.4.3; optional members in 7.1.4.4–7.1.4.9.
 
-#### 7.1.4.1 Member `provenance.origin-geography`<a id='member-provenance-origin-geography'></a>
+#### 6.1.4.1 Member `provenance.origin-geography`<a id='member-provenance-origin-geography'></a>
 
 The `provenance.origin-geography` member identifies the geographical locations where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.
 
@@ -1732,7 +1188,7 @@ DataProvenance:
   # ...
 ```
 
-*Example 1:*<a id='member-provenance-origin-geography-eg-1'></a><a id='sec-7-1-4-1-eg-1'></a><a id='example-20'></a>
+*Example 1:*<a id='member-provenance-origin-geography-eg-1'></a><a id='sec-6-1-4-1-eg-1'></a><a id='example-20'></a>
 
 ```json
 [
@@ -1741,7 +1197,7 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.4.2 Member `provenance.date`<a id='member-provenance-date'></a>
+#### 6.1.4.2 Member `provenance.date`<a id='member-provenance-date'></a>
 
 The `provenance.date` member provides the date when the dataset was compiled or created, providing a temporal context for the data.
 
@@ -1757,13 +1213,13 @@ DataProvenance:
 
 The value of `provenance.date` MUST be a valid date string in full-date format (YYYY-MM-DD).
 
-*Example 1:*<a id='member-provenance-date-eg-1'></a><a id='sec-7-1-4-2-eg-1'></a><a id='example-21'></a>
+*Example 1:*<a id='member-provenance-date-eg-1'></a><a id='sec-6-1-4-2-eg-1'></a><a id='example-21'></a>
 
 ```
 2000-01-01
 ```
 
-#### 7.1.4.3 Member `provenance.generation-method`<a id='member-provenance-generation-method'></a>
+#### 6.1.4.3 Member `provenance.generation-method`<a id='member-provenance-generation-method'></a>
 
 The `provenance.generation-method` member describes the methodology or procedures used to collect, generate, or compile the data, giving insight into its reliability and validity.
 
@@ -1782,7 +1238,7 @@ DataProvenance:
   # ...
 ```
 
-*Example 1:*<a id='member-provenance-generation-method-eg-1'></a><a id='sec-7-1-4-3-eg-1'></a><a id='example-22'></a>
+*Example 1:*<a id='member-provenance-generation-method-eg-1'></a><a id='sec-6-1-4-3-eg-1'></a><a id='example-22'></a>
 
 ```json
 [
@@ -1791,7 +1247,7 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.4.4 Member `provenance.source`<a id='member-provenance-source'></a>
+#### 6.1.4.4 Member `provenance.source`<a id='member-provenance-source'></a>
 
 The `provenance.source` member identifies where the metadata for the source dataset contributing to the current dataset can be found, establishing lineage.
 
@@ -1807,13 +1263,13 @@ DataProvenance:
 
 The value of `provenance.source` MUST be a valid URI.
 
-*Example 1:*<a id='member-provenance-source-eg-1'></a><a id='sec-7-1-4-4-eg-1'></a><a id='example-23'></a>
+*Example 1:*<a id='member-provenance-source-eg-1'></a><a id='sec-6-1-4-4-eg-1'></a><a id='example-23'></a>
 
 ```
 https://example.com/datasets/source-dataset-42/provenance.json
 ```
 
-#### 7.1.4.5 Member `provenance.origin`<a id='member-provenance-origin'></a>
+#### 6.1.4.5 Member `provenance.origin`<a id='member-provenance-origin'></a>
 
 The `provenance.origin` member identifies the original source organization when it differs from the issuer of the dataset.
 The value is a sequence of organization objects following the same structure as `source.issuer`.
@@ -1831,13 +1287,13 @@ DataProvenance:
   # ...
 ```
 
-*Example 1:*<a id='member-provenance-origin-eg-1'></a><a id='sec-7-1-4-5-eg-1'></a><a id='example-24'></a>
+*Example 1:*<a id='member-provenance-origin-eg-1'></a><a id='sec-6-1-4-5-eg-1'></a><a id='example-24'></a>
 
 ```json
 [{"legal-name": "Original Data Collector Inc."}]
 ```
 
-#### 7.1.4.6 Member `provenance.previous-date`<a id='member-provenance-previous-date'></a>
+#### 6.1.4.6 Member `provenance.previous-date`<a id='member-provenance-previous-date'></a>
 
 The `provenance.previous-date` member provides the release date of the previous version of the dataset, to track changes and updates over time.
 
@@ -1853,13 +1309,13 @@ DataProvenance:
 
 The value of `provenance.previous-date` MUST be a valid date string in full-date format (YYYY-MM-DD).
 
-*Example 1:*<a id='member-provenance-previous-date-eg-1'></a><a id='sec-7-1-4-6-eg-1'></a><a id='example-25'></a>
+*Example 1:*<a id='member-provenance-previous-date-eg-1'></a><a id='sec-6-1-4-6-eg-1'></a><a id='example-25'></a>
 
 ```
 1999-06-15
 ```
 
-#### 7.1.4.7 Member `provenance.generation-period`<a id='member-provenance-generation-period'></a>
+#### 6.1.4.7 Member `provenance.generation-period`<a id='member-provenance-generation-period'></a>
 
 The `provenance.generation-period` member describes the span of time during which the data within the dataset was collected or generated.
 Both `start` and `end` are optional but MUST each conform to \[RFC 3339\] when present.
@@ -1876,7 +1332,7 @@ DataProvenance:
   # ...
 ```
 
-*Example 1:*<a id='member-provenance-generation-period-eg-1'></a><a id='sec-7-1-4-7-eg-1'></a><a id='example-26'></a>
+*Example 1:*<a id='member-provenance-generation-period-eg-1'></a><a id='sec-6-1-4-7-eg-1'></a><a id='example-26'></a>
 
 ```json
 {
@@ -1885,7 +1341,7 @@ DataProvenance:
 }
 ```
 
-#### 7.1.4.8 Member `provenance.format`<a id='member-provenance-format'></a>
+#### 6.1.4.8 Member `provenance.format`<a id='member-provenance-format'></a>
 
 The `provenance.format` member describes the modality or media type of the data within the dataset.
 The value is a sequence of `ModalityFormat` values. The sequence MUST contain at least one entry and all entries MUST be unique.
@@ -1901,13 +1357,13 @@ DataProvenance:
   # ...
 ```
 
-*Example 1:*<a id='member-provenance-format-eg-1'></a><a id='sec-7-1-4-8-eg-1'></a><a id='example-27'></a>
+*Example 1:*<a id='member-provenance-format-eg-1'></a><a id='sec-6-1-4-8-eg-1'></a><a id='example-27'></a>
 
 ```json
 ["text/csv", "application/json"]
 ```
 
-#### 7.1.4.9 Member `provenance.sub-provenance`<a id='member-provenance-sub-provenance'></a>
+#### 6.1.4.9 Member `provenance.sub-provenance`<a id='member-provenance-sub-provenance'></a>
 
 The `provenance.sub-provenance` member holds provenance information for a component of the current dataset, enabling a recursive provenance tree.
 Its structure is identical to the enclosing `provenance` member.
@@ -1931,10 +1387,14 @@ DataProvenance:
       format:  # optional
         - String.Enum
       sub-provenance: $defs.provenance-type  # optional
+      source-digest:  # optional
+        algorithm: String
+        value: String.Pattern
+    # ...
   # ...
 ```
 
-### 7.1.5 Member `use`<a id='member-use'></a>
+### 6.1.5 Member `use`<a id='member-use'></a>
 
 The `use` member describes legal use and restrictions that apply to the dataset.
 
@@ -1956,9 +1416,10 @@ DataProvenance:
     copyright: Sequence                                 # optional
     patent: Sequence                                    # optional
     trademark: Sequence                                 # optional
+  # ...
 ```
 
-#### 7.1.5.1 Member `use.intended-purpose`<a id='member-use-intended-purpose'></a>
+#### 6.1.5.1 Member `use.intended-purpose`<a id='member-use-intended-purpose'></a>
 
 The `use.intended-purpose` member describes the purpose for which the dataset was created, guiding users on its intended use and potential applications.
 
@@ -1973,9 +1434,10 @@ DataProvenance:
         long-description: String
         system: String  # optional
     # ...
+  # ...
 ```
 
-*Example 1:*<a id='member-use-intended-purpose-eg-1'></a><a id='sec-7-1-5-1-eg-1'></a><a id='example-28'></a>
+*Example 1:*<a id='member-use-intended-purpose-eg-1'></a><a id='sec-6-1-5-1-eg-1'></a><a id='example-28'></a>
 
 ```json
 [
@@ -1986,7 +1448,7 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.5.2 Member `use.classification`<a id='member-use-classification'></a>
+#### 6.1.5.2 Member `use.classification`<a id='member-use-classification'></a>
 
 The `use.classification` member indicates whether the dataset includes data falling into various confidentiality classifications.
 The value is a sequence of classification objects. Each item MUST contain a `regulation` object whose `code` MUST be drawn from the `ConfidentialityCode` vocabulary, and an `evaluated` boolean. The optional `tool` member MAY also be present. All entries MUST be unique.
@@ -2001,9 +1463,10 @@ DataProvenance:
         evaluated: Boolean
         tool: String  # optional
     # ...
+  # ...
 ```
 
-*Example 1:*<a id='member-use-classification-eg-1'></a><a id='sec-7-1-5-2-eg-1'></a><a id='example-29'></a>
+*Example 1:*<a id='member-use-classification-eg-1'></a><a id='sec-6-1-5-2-eg-1'></a><a id='example-29'></a>
 
 ```json
 [
@@ -2012,7 +1475,7 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.5.3 Member `use.consents`<a id='member-use-consents'></a>
+#### 6.1.5.3 Member `use.consents`<a id='member-use-consents'></a>
 
 The `use.consents` member specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
@@ -2025,15 +1488,16 @@ DataProvenance:
     consents:  # optional
       - String
     # ...
+  # ...
 ```
 
-*Example 1:*<a id='member-use-consents-eg-1'></a><a id='sec-7-1-5-3-eg-1'></a><a id='example-30'></a>
+*Example 1:*<a id='member-use-consents-eg-1'></a><a id='sec-6-1-5-3-eg-1'></a><a id='example-30'></a>
 
 ```json
 ["https://example.com/consent-policy-2024"]
 ```
 
-#### 7.1.5.4 Member `use.data-risk-reducing`<a id='member-use-data-risk-reducing'></a>
+#### 6.1.5.4 Member `use.data-risk-reducing`<a id='member-use-data-risk-reducing'></a>
 
 The `use.data-risk-reducing` member indicates the techniques used to reduce known data risk.
 The value is a sequence of objects. Each item MUST contain `tool-used`. The optional members `tool-category`, `technology`, `parameters`, and `results` MAY also be present. All entries MUST be unique.
@@ -2053,9 +1517,10 @@ DataProvenance:
         results:  # optional
           - String
     # ...
+  # ...
 ```
 
-*Example 1:*<a id='member-use-data-risk-reducing-eg-1'></a><a id='sec-7-1-5-4-eg-1'></a><a id='example-31'></a>
+*Example 1:*<a id='member-use-data-risk-reducing-eg-1'></a><a id='sec-6-1-5-4-eg-1'></a><a id='example-31'></a>
 
 ```json
 [
@@ -2068,7 +1533,7 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.5.5 Member `use.processing-included`<a id='member-use-processing-included'></a>
+#### 6.1.5.5 Member `use.processing-included`<a id='member-use-processing-included'></a>
 
 The `use.processing-included` member defines the geographical boundaries within which the data MAY be processed.
 The value is a sequence of geographic region objects following the same structure as `provenance.origin-geography`.
@@ -2082,15 +1547,16 @@ DataProvenance:
       - country: String
         state: String  # optional
     # ...
+  # ...
 ```
 
-*Example 1:*<a id='member-use-processing-included-eg-1'></a><a id='sec-7-1-5-5-eg-1'></a><a id='example-32'></a>
+*Example 1:*<a id='member-use-processing-included-eg-1'></a><a id='sec-6-1-5-5-eg-1'></a><a id='example-32'></a>
 
 ```json
 [{"country": "DE"}, {"country": "FR"}]
 ```
 
-#### 7.1.5.6 Member `use.processing-excluded`<a id='member-use-processing-excluded'></a>
+#### 6.1.5.6 Member `use.processing-excluded`<a id='member-use-processing-excluded'></a>
 
 The `use.processing-excluded` member defines the geographical boundaries within which the data MUST NOT be processed.
 The value is a sequence of geographic region objects following the same structure as `provenance.origin-geography`.
@@ -2104,9 +1570,10 @@ DataProvenance:
       - country: String
         state: String  # optional
     # ...
+  # ...
 ```
 
-#### 7.1.5.7 Member `use.storage-allowed`<a id='member-use-storage-allowed'></a>
+#### 6.1.5.7 Member `use.storage-allowed`<a id='member-use-storage-allowed'></a>
 
 The `use.storage-allowed` member specifies geographical locations where the data MAY be stored.
 The value is a sequence of geographic region objects following the same structure as `provenance.origin-geography`.
@@ -2120,9 +1587,10 @@ DataProvenance:
       - country: String
         state: String  # optional
     # ...
+  # ...
 ```
 
-#### 7.1.5.8 Member `use.storage-forbidden`<a id='member-use-storage-forbidden'></a>
+#### 6.1.5.8 Member `use.storage-forbidden`<a id='member-use-storage-forbidden'></a>
 
 The `use.storage-forbidden` member specifies geographical locations where the data MUST NOT be stored.
 The value is a sequence of geographic region objects following the same structure as `provenance.origin-geography`.
@@ -2136,9 +1604,10 @@ DataProvenance:
       - country: String
         state: String  # optional
     # ...
+  # ...
 ```
 
-#### 7.1.5.9 Member `use.license`<a id='member-use-license'></a>
+#### 6.1.5.9 Member `use.license`<a id='member-use-license'></a>
 
 The `use.license` member details the terms under which the dataset can be used, including any restrictions or obligations.
 License entries MAY include End User License Agreements (EULA) or Data Use Agreements (DUA).
@@ -2152,15 +1621,16 @@ DataProvenance:
     license:  # optional
       - String
     # ...
+  # ...
 ```
 
-*Example 1:*<a id='member-use-license-eg-1'></a><a id='sec-7-1-5-9-eg-1'></a><a id='example-33'></a>
+*Example 1:*<a id='member-use-license-eg-1'></a><a id='sec-6-1-5-9-eg-1'></a><a id='example-33'></a>
 
 ```json
 ["https://creativecommons.org/licenses/by/4.0/"]
 ```
 
-#### 7.1.5.10 Member `use.copyright`<a id='member-use-copyright'></a>
+#### 6.1.5.10 Member `use.copyright`<a id='member-use-copyright'></a>
 
 The `use.copyright` member indicates whether the dataset contains proprietary information covered by a copyright, and the terms of that copyright.
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
@@ -2173,15 +1643,16 @@ DataProvenance:
     copyright:  # optional
       - String
     # ...
+  # ...
 ```
 
-*Example 1:*<a id='member-use-copyright-eg-1'></a><a id='sec-7-1-5-10-eg-1'></a><a id='example-34'></a>
+*Example 1:*<a id='member-use-copyright-eg-1'></a><a id='sec-6-1-5-10-eg-1'></a><a id='example-34'></a>
 
 ```json
 ["Copyright © 2024 Example Corp. All rights reserved."]
 ```
 
-#### 7.1.5.11 Member `use.patent`<a id='member-use-patent'></a>
+#### 6.1.5.11 Member `use.patent`<a id='member-use-patent'></a>
 
 The `use.patent` member indicates whether the dataset contains proprietary information covered by a patent, and the patent number.
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
@@ -2194,9 +1665,10 @@ DataProvenance:
     patent:  # optional
       - String
     # ...
+  # ...
 ```
 
-#### 7.1.5.12 Member `use.trademark`<a id='member-use-trademark'></a>
+#### 6.1.5.12 Member `use.trademark`<a id='member-use-trademark'></a>
 
 The `use.trademark` member indicates whether the dataset contains proprietary information covered by a trademark, and the terms of that trademark.
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
@@ -2208,9 +1680,577 @@ DataProvenance:
     # ...
     trademark:  # optional
       - String
+  # ...
 ```
 
 ---
+
+# 7. Provenance Schema<a id='provenance-schema'></a>
+
+The property tables of this section give, for each type, its members with their type, cardinality, and description.
+They are generated from the JADN encoding of the information model (section [5.1 "JADN Encoding"](#jadn-encoding)),
+which is generated from the JSON schema, the normative definition of the format.
+
+The Data Provenance Standards record metadata elements in three segmented categories: Source, Provenance, and Use.
+
+The figure below, generated from the JSON schema like the tables, shows the root type with the type of each of its members.
+
+![Metadata](images/metadata.svg)
+
+The property tables first define metadata about the specification itself,
+then describe how a record is made of the 3 primary metadata elements.
+The three segmented categories (Source, Provenance, and Use) are comprised of various
+metadata element input fields. Each field is described in more detail in section [6 "Provenance Data Model Encoding"](#provenance-data-model-encoding).
+
+## 7.1 Primary Metadata Elements<a id='primary-metadata-elements'></a>
+
+The root object of a Data Provenance Metadata record contains five required members.
+
+
+<a id="tab:data-provenance-record"></a>
+Table 1: Type `DataProvenance` (Record)
+
+| ID | Name       | Type        | \#   | Description                                                                                                                                             |
+|---:|:-----------|:------------|:-----|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  1 | $schema    | String /uri | 1    | The URI identifying the schema this JSON object must be valid against. For this version the value is always the URI of the data-provenance JSON schema. |
+|  2 | set        | Set         | 1    | Set-level metadata about this provenance metadata record.                                                                                               |
+|  3 | source     | Source      | 1    | Characterizes the content and source of the dataset.                                                                                                    |
+|  4 | provenance | Provenance  | 1    | Describes the provenance of the dataset.                                                                                                                |
+|  5 | use        | Use         | 1    | Describes legal use and restrictions that apply to the dataset.                                                                                         |
+|  6 | proof      | Proof       | 0..1 | Reserved for an external integrity or signing envelope's proof material. The internal structure is opaque to this specification.                        |
+
+
+
+<a id="tab:proof-map"></a>
+Table 2: Type `Proof` (Map)
+
+| Type Name | Type Definition | Description                                                                                                                      |
+|:----------|:----------------|:---------------------------------------------------------------------------------------------------------------------------------|
+| Proof     | Map             | Reserved for an external integrity or signing envelope's proof material. The internal structure is opaque to this specification. |
+
+
+## 7.2 Set<a id='set'></a>
+
+The `set` member captures metadata about the provenance metadata record itself.
+
+
+<a id="tab:set-record"></a>
+Table 3: Type `Set` (Record)
+
+| ID | Name            | Type           | \#    | Description                                                                                                                        |
+|---:|:----------------|:---------------|:------|:-----------------------------------------------------------------------------------------------------------------------------------|
+|  1 | category        | String         | 1     | A short canonical name, chosen by the set producer, informing the end user of the category of the metadata set.                    |
+|  2 | schema-version  | String         | 1     | The version of the Data Provenance Core specification this record was generated for. The value for this version is always `"1.0"`. |
+|  3 | publisher       | Publisher      | 1     | Information about the publisher of the metadata set.                                                                               |
+|  4 | label           | String         | 1     | The per-publisher unique title of this metadata set.                                                                               |
+|  5 | tracking        | Tracking       | 1     | Management attributes used to track this metadata set as a whole.                                                                  |
+|  6 | language        | Language       | 0..1  | The language used in this document, corresponding to IETF BCP 47.                                                                  |
+|  7 | source-language | Language       | 0..1  | If this is a translation, the language this document was translated from.                                                          |
+|  8 | acknowledgments | Acknowledgment | 0..\* | Acknowledgment elements associated with the whole set.                                                                             |
+|  9 | notes           | Note           | 0..\* | Notes associated with this metadata set.                                                                                           |
+| 10 | references      | Reference      | 0..\* | References associated with this metadata set.                                                                                      |
+
+
+
+<a id="tab:publisher-record"></a>
+Table 4: Type `Publisher` (Record)
+
+| ID | Name            | Type        | \#   | Description                                                                                        |
+|---:|:----------------|:------------|:-----|:---------------------------------------------------------------------------------------------------|
+|  1 | name            | String      | 1    | The name of the issuing party.                                                                     |
+|  2 | namespace       | String /uri | 1    | A URI under the control of the issuing party, used as a globally unique identifier for that party. |
+|  3 | contact-details | String      | 0..1 | Information on how to contact the publisher.                                                       |
+
+
+
+<a id="tab:tracking-record"></a>
+Table 5: Type `Tracking` (Record)
+
+| ID | Name                 | Type              | \#    | Description                                                                                                                                  |
+|---:|:---------------------|:------------------|:------|:---------------------------------------------------------------------------------------------------------------------------------------------|
+|  1 | current-release-date | String /date-time | 1     | The date when the current revision of this document was released.                                                                            |
+|  2 | id                   | String            | 1     | A unique identifier for this metadata set, assigned and maintained by the original issuing authority. MUST NOT start or end with whitespace. |
+|  3 | initial-release-date | String /date-time | 1     | The date when this metadata set was first published.                                                                                         |
+|  4 | revision-history     | Revision          | 1..\* | One revision item for each version of the metadata set, including the initial one.                                                           |
+|  5 | status               | TrackingStatus    | 1     | The draft status of the metadata set.                                                                                                        |
+|  6 | version              | Version           | 1     | The version of the current metadata set.                                                                                                     |
+|  7 | aliases              | String            | 0..\* | Alternate names for this metadata set.                                                                                                       |
+|  8 | generator            | Generator         | 0..1  | Information about the engine that generated this metadata set.                                                                               |
+
+
+
+<a id="tab:tracking-status-enum"></a>
+Table 6: Type `TrackingStatus` (Enumerated)
+
+| ID | Item    | Description                          |
+|---:|:--------|:-------------------------------------|
+|  1 | draft   | The metadata set is a draft.         |
+|  2 | final   | The metadata set is final.           |
+|  3 | interim | The metadata set has interim status. |
+
+
+
+<a id="tab:revision-record"></a>
+Table 7: Type `Revision` (Record)
+
+| ID | Name           | Type              | \#   | Description                                                                                                    |
+|---:|:---------------|:------------------|:-----|:---------------------------------------------------------------------------------------------------------------|
+|  1 | date           | String /date-time | 1    | The date of this revision entry.                                                                               |
+|  2 | number         | Version           | 1    | The version number of this revision.                                                                           |
+|  3 | summary        | String            | 1    | A short description of the changes in this revision.                                                           |
+|  4 | legacy-version | String            | 0..1 | A version string from an existing set with the same content, tracing from DP-Core compliant to historic items. |
+
+
+
+<a id="tab:generator-record"></a>
+Table 8: Type `Generator` (Record)
+
+| ID | Name   | Type              | \#   | Description                                                      |
+|---:|:-------|:------------------|:-----|:-----------------------------------------------------------------|
+|  1 | engine | GeneratorEngine   | 1    | Information about the engine used to generate this metadata set. |
+|  2 | date   | String /date-time | 0..1 | The date this metadata set was generated.                        |
+
+
+
+<a id="tab:generator-engine-record"></a>
+Table 9: Type `GeneratorEngine` (Record)
+
+| ID | Name    | Type    | \#   | Description                                                 |
+|---:|:--------|:--------|:-----|:------------------------------------------------------------|
+|  1 | name    | String  | 1    | The name of the engine that generated this metadata set.    |
+|  2 | version | Version | 0..1 | The version of the engine that generated this metadata set. |
+
+
+
+<a id="tab:note-record"></a>
+Table 10: Type `Note` (Record)
+
+| ID | Name     | Type         | \#   | Description                                                         |
+|---:|:---------|:-------------|:-----|:--------------------------------------------------------------------|
+|  1 | category | NoteCategory | 1    | The category of the note.                                           |
+|  2 | text     | String       | 1    | The content of the note, varying depending on type.                 |
+|  3 | audience | String       | 0..1 | The intended audience for the note.                                 |
+|  4 | title    | String       | 0..1 | A concise description of what is contained in the text of the note. |
+
+
+
+<a id="tab:note-category-enum"></a>
+Table 11: Type `NoteCategory` (Enumerated)
+
+| ID | Item             | Description                                    |
+|---:|:-----------------|:-----------------------------------------------|
+|  1 | description      | A descriptive note about the subject.          |
+|  2 | details          | A note with detailed supplemental information. |
+|  3 | faq              | A note in frequently-asked-questions format.   |
+|  4 | general          | A general note.                                |
+|  5 | legal_disclaimer | A note containing a legal disclaimer.          |
+|  6 | other            | A note that does not fit other categories.     |
+|  7 | summary          | A summary note.                                |
+
+
+
+<a id="tab:reference-record"></a>
+Table 12: Type `Reference` (Record)
+
+| ID | Name     | Type              | \#   | Description                                             |
+|---:|:---------|:------------------|:-----|:--------------------------------------------------------|
+|  1 | summary  | String            | 1    | A short description of what this reference refers to.   |
+|  2 | url      | String /uri       | 1    | The URL of the referenced resource.                     |
+|  3 | category | ReferenceCategory | 0..1 | Whether this reference is external or self-referential. |
+
+
+
+<a id="tab:reference-category-enum"></a>
+Table 13: Type `ReferenceCategory` (Enumerated)
+
+| ID | Item     | Description                                                      |
+|---:|:---------|:-----------------------------------------------------------------|
+|  1 | external | The reference points to an external resource.                    |
+|  2 | self     | The reference points back to the same information item in focus. |
+
+
+## 7.3 Source<a id='source'></a>
+
+The `source` member characterizes the content and source of the dataset.
+
+
+<a id="tab:source-record"></a>
+Table 14: Type `Source` (Record)
+
+| ID | Name         | Type         | \#    | Description                                                                      |
+|---:|:-------------|:-------------|:------|:---------------------------------------------------------------------------------|
+|  1 | about        | About        | 1     | A detailed narrative explaining the contents, scope, and purpose of the dataset. |
+|  2 | id           | Identity     | 1     | A unique identifier for this dataset, using at least one identification method.  |
+|  3 | issuer       | Organization | 1..\* | The legal entity or entities responsible for creating the dataset.               |
+|  4 | location     | String /uri  | 1     | The web address where this dataset's metadata is published and can be accessed.  |
+|  5 | name         | String       | 1     | The official name of the dataset.                                                |
+|  6 | data-version | Version      | 1     | The version of the dataset this metadata set describes.                          |
+
+
+
+<a id="tab:about-record"></a>
+Table 15: Type `About` (Record)
+
+| ID | Name    | Type   | \#   | Description                                                                                        |
+|---:|:--------|:-------|:-----|:---------------------------------------------------------------------------------------------------|
+|  1 | content | String | 1    | Contextual information helping users understand what the data represents and how it was collected. |
+|  2 | purpose | String | 1    | The recommended uses for this dataset.                                                             |
+|  3 | scope   | String | 0..1 | Any limitations of the dataset.                                                                    |
+
+
+The `Identity` type provides at least one identifier for the dataset. At least one of its fields MUST be present.
+
+
+<a id="tab:identity-map"></a>
+Table 16: Type `Identity` (Map)
+
+| ID | Name       | Type         | \#    | Description                                           |
+|---:|:-----------|:-------------|:------|:------------------------------------------------------|
+|  1 | hashes     | HashEntry    | 0..\* | Cryptographic hash-based identifiers for the dataset. |
+|  2 | uris       | String /uri  | 0..\* | URI identifiers for the dataset.                      |
+|  3 | uuids      | String /uuid | 0..\* | UUID identifiers for the dataset.                     |
+|  4 | custom-ids | CustomId     | 0..\* | Identifiers in any text format.                       |
+
+
+
+<a id="tab:hash-entry-record"></a>
+Table 17: Type `HashEntry` (Record)
+
+| ID | Name        | Type     | \#    | Description                                                              |
+|---:|:------------|:---------|:------|:-------------------------------------------------------------------------|
+|  1 | tree-hashes | TreeHash | 1..\* | The cryptographic hash values for this file or tree.                     |
+|  2 | path        | String   | 1     | The path (file or filesystem tree root) identified by these hash values. |
+
+
+
+<a id="tab:tree-hash-record"></a>
+Table 18: Type `TreeHash` (Record)
+
+| ID | Name      | Type   | \# | Description                                                              |
+|---:|:----------|:-------|:---|:-------------------------------------------------------------------------|
+|  1 | algorithm | String | 1  | The name of the hash or tree/seal algorithm used to calculate the value. |
+|  2 | value     | String | 1  | The cryptographic hash value in hexadecimal representation.              |
+
+
+
+<a id="tab:custom-id-record"></a>
+Table 19: Type `CustomId` (Record)
+
+| ID | Name           | Type   | \#    | Description                                            |
+|---:|:---------------|:-------|:------|:-------------------------------------------------------|
+|  1 | method         | String | 1     | The name of the method used to derive this identifier. |
+|  2 | value          | String | 1     | The identifier value.                                  |
+|  3 | tool           | String | 0..1  | The name of the tool used to derive this identifier.   |
+|  4 | parameter-list | String | 0..\* | Parameters used when invoking the tool.                |
+
+
+## 7.4 Provenance<a id='provenance'></a>
+
+The `provenance` member describes the provenance of the dataset.
+
+
+<a id="tab:provenance-record"></a>
+Table 20: Type `Provenance` (Record)
+
+| ID | Name              | Type             | \#    | Description                                                                                  |
+|---:|:------------------|:-----------------|:------|:---------------------------------------------------------------------------------------------|
+|  1 | origin-geography  | GeographicRegion | 1..\* | The geographical locations where the data was originally collected.                          |
+|  2 | date              | String /date     | 1     | The date when the dataset was compiled or created (YYYY-MM-DD).                              |
+|  3 | generation-method | GenerationMethod | 1..\* | The methodology or procedures used to collect, generate, or compile the data.                |
+|  4 | source            | String /uri      | 0..1  | The URI of metadata for a source dataset contributing to this dataset, establishing lineage. |
+|  5 | origin            | Organization     | 0..\* | The original source organization, if different from the dataset issuer.                      |
+|  6 | previous-date     | String /date     | 0..1  | The release date of the previous version of this dataset (YYYY-MM-DD).                       |
+|  7 | generation-period | GenerationPeriod | 0..1  | The span of time during which the data was collected or generated.                           |
+|  8 | format            | ModalityFormat   | 0..\* | Describes the modality or media type of the data within the dataset.                         |
+|  9 | sub-provenance    | Provenance       | 0..1  | Nested provenance information for a component of this dataset.                               |
+| 10 | source-digest     | SourceDigest     | 0..1  | A cryptographic digest of the record referenced by `source`, computed at issuance.           |
+
+
+
+<a id="tab:source-digest-record"></a>
+Table 21: Type `SourceDigest` (Record)
+
+| ID | Name      | Type   | \# | Description                                                |
+|---:|:----------|:-------|:---|:-----------------------------------------------------------|
+|  1 | algorithm | String | 1  | Digest algorithm identifier (e.g. sha256, sha384, sha512). |
+|  2 | value     | String | 1  | The digest value, hex-encoded.                             |
+
+
+
+<a id="tab:generation-period-record"></a>
+Table 22: Type `GenerationPeriod` (Record)
+
+| ID | Name  | Type              | \#   | Description                                            |
+|---:|:------|:------------------|:-----|:-------------------------------------------------------|
+|  1 | start | String /date-time | 0..1 | The start of the data collection or generation period. |
+|  2 | end   | String /date-time | 0..1 | The end of the data collection or generation period.   |
+
+
+
+<a id="tab:generation-method-record"></a>
+Table 23: Type `GenerationMethod` (Record)
+
+| ID | Name             | Type                 | \#   | Description                                       |
+|---:|:-----------------|:---------------------|:-----|:--------------------------------------------------|
+|  1 | code             | GenerationMethodCode | 1    | A short code identifying the generation method.   |
+|  2 | system           | String               | 0..1 | The code system used to interpret the code value. |
+|  3 | long-description | String               | 0..1 | A detailed description of the method.             |
+
+
+
+<a id="tab:generation-method-code-enum"></a>
+Table 24: Type `GenerationMethodCode` (Enumerated)
+
+| ID | Item                     | Description                                            |
+|---:|:-------------------------|:-------------------------------------------------------|
+|  1 | data-augmentation        | Data generation through augmentation of existing data. |
+|  2 | data-mining              | Data collected through automated data mining.          |
+|  3 | feeds                    | Data received through data feeds.                      |
+|  4 | machine-generated-ml-ops | Data generated through machine learning operations.    |
+|  5 | other                    | A generation method not listed here.                   |
+|  6 | primary-user-source      | Data collected directly from primary users.            |
+|  7 | simulations              | Data generated through simulations.                    |
+|  8 | social-media             | Data collected from social media platforms.            |
+|  9 | syndication              | Data received through syndication.                     |
+| 10 | transfer-learning        | Data generated through transfer learning.              |
+| 11 | user-generated-content   | Data created by end users.                             |
+| 12 | web-scraping-crawling    | Data collected by web scraping or crawling.            |
+
+
+
+<a id="tab:modality-format-enum"></a>
+Table 25: Type `ModalityFormat` (Enumerated)
+
+| ID | Item                     | Description                           |
+|---:|:-------------------------|:--------------------------------------|
+|  1 | application/json         | JSON data format.                     |
+|  2 | application/jsonld       | JSON-LD linked data format.           |
+|  3 | application/msword       | Microsoft Word document format.       |
+|  4 | application/vnd.ms-excel | Microsoft Excel spreadsheet format.   |
+|  5 | application/zip          | ZIP archive format.                   |
+|  6 | image/bmp                | BMP image format.                     |
+|  7 | image/gif                | GIF image format.                     |
+|  8 | image/jpeg               | JPEG image format.                    |
+|  9 | image/png                | PNG image format.                     |
+| 10 | image/x-png              | PNG image format (legacy media type). |
+| 11 | other                    | A format not listed here.             |
+| 12 | text/csv                 | CSV text format.                      |
+| 13 | text/plain               | Plain text format.                    |
+
+
+## 7.5 Use<a id='use'></a>
+
+The `use` member describes the legal use and restrictions applicable to the dataset.
+
+
+<a id="tab:use-record"></a>
+Table 26: Type `Use` (Record)
+
+| ID | Name                | Type             | \#    | Description                                                                               |
+|---:|:--------------------|:-----------------|:------|:------------------------------------------------------------------------------------------|
+|  1 | intended-purpose    | Purpose          | 1..\* | The purpose or purposes for which the dataset was created.                                |
+|  2 | classification      | Classification   | 0..\* | Confidentiality classifications applicable to the dataset.                                |
+|  3 | consents            | String           | 0..\* | Locations of consent documentation or agreements related to the data.                     |
+|  4 | data-risk-reducing  | DataRiskReducing | 0..\* | Techniques used to reduce known data risk.                                                |
+|  5 | processing-included | GeographicRegion | 0..\* | Geographical boundaries within which the data may be processed.                           |
+|  6 | processing-excluded | GeographicRegion | 0..\* | Geographical boundaries within which the data may not be processed.                       |
+|  7 | storage-allowed     | GeographicRegion | 0..\* | Geographical locations where the data may be stored.                                      |
+|  8 | storage-forbidden   | GeographicRegion | 0..\* | Geographical locations where the data may not be stored.                                  |
+|  9 | license             | String           | 0..\* | The terms under which the dataset can be used, including any restrictions or obligations. |
+| 10 | copyright           | String           | 0..\* | Copyright information covering proprietary information in the dataset.                    |
+| 11 | patent              | String           | 0..\* | Patent information covering proprietary information in the dataset.                       |
+| 12 | trademark           | String           | 0..\* | Trademark information covering proprietary information in the dataset.                    |
+
+
+
+<a id="tab:purpose-record"></a>
+Table 27: Type `Purpose` (Record)
+
+| ID | Name             | Type        | \#   | Description                                       |
+|---:|:-----------------|:------------|:-----|:--------------------------------------------------|
+|  1 | code             | PurposeCode | 1    | A short code identifying the intended purpose.    |
+|  2 | long-description | String      | 1    | A detailed description of the intended purpose.   |
+|  3 | system           | String      | 0..1 | The code system used to interpret the code value. |
+
+
+
+<a id="tab:classification-record"></a>
+Table 28: Type `Classification` (Record)
+
+| ID | Name       | Type       | \#   | Description                                                                                   |
+|---:|:-----------|:-----------|:-----|:----------------------------------------------------------------------------------------------|
+|  1 | regulation | Regulation | 1    | The regulation or classification standard being evaluated.                                    |
+|  2 | evaluated  | Boolean    | 1    | Whether the dataset has been evaluated against this classification (`true`) or not (`false`). |
+|  3 | tool       | String     | 0..1 | The tool used to perform the evaluation.                                                      |
+
+
+
+<a id="tab:regulation-record"></a>
+Table 29: Type `Regulation` (Record)
+
+| ID | Name             | Type                | \#   | Description                                                  |
+|---:|:-----------------|:--------------------|:-----|:-------------------------------------------------------------|
+|  1 | code             | ConfidentialityCode | 1    | A short code identifying the confidentiality classification. |
+|  2 | system           | String              | 0..1 | The code system used to interpret the code value.            |
+|  3 | long-description | String              | 0..1 | A detailed description of the regulation or classification.  |
+
+
+
+<a id="tab:confidentiality-code-enum"></a>
+Table 30: Type `ConfidentialityCode` (Enumerated)
+
+| ID | Item  | Description                                       |
+|---:|:------|:--------------------------------------------------|
+|  1 | other | A confidentiality classification not listed here. |
+|  2 | pci   | Payment Card Industry (PCI) data.                 |
+|  3 | pfi   | Personal Financial Information (PFI).             |
+|  4 | phi   | Protected Health Information (PHI).               |
+|  5 | pi    | Personal Information (PI).                        |
+|  6 | sci   | Sensitive Compartmented Information (SCI).        |
+|  7 | spi   | Sensitive Personal Information (SPI).             |
+
+
+
+<a id="tab:purpose-code-enum"></a>
+Table 31: Type `PurposeCode` (Enumerated)
+
+| ID | Item                      | Description                                           |
+|---:|:--------------------------|:------------------------------------------------------|
+|  1 | alignment                 | Dataset intended for model alignment tasks.           |
+|  2 | evaluation                | Dataset intended for evaluation or benchmarking.      |
+|  3 | other                     | A purpose not listed here.                            |
+|  4 | pre-training              | Dataset intended for model pre-training.              |
+|  5 | production                | Dataset intended for production use.                  |
+|  6 | quality-assurance         | Dataset intended for quality assurance testing.       |
+|  7 | research                  | Dataset intended for research use.                    |
+|  8 | staging-testing           | Dataset intended for staging or testing environments. |
+|  9 | synthetic-data-generation | Dataset intended for generating synthetic data.       |
+
+
+
+<a id="tab:data-risk-reducing-record"></a>
+Table 32: Type `DataRiskReducing` (Record)
+
+| ID | Name          | Type           | \#    | Description                                                |
+|---:|:--------------|:---------------|:------|:-----------------------------------------------------------|
+|  1 | tool-used     | String         | 1     | The name of the tool used for data risk reduction.         |
+|  2 | tool-category | Method         | 0..1  | The category of the tool used for data risk reduction.     |
+|  3 | technology    | DataTechnology | 0..1  | The privacy-enhancing or data-reducing technology applied. |
+|  4 | parameters    | Parameter      | 0..\* | The parameters passed to the tool.                         |
+|  5 | results       | String         | 0..\* | The results of applying the tool.                          |
+
+
+
+<a id="tab:parameter-record"></a>
+Table 33: Type `Parameter` (Record)
+
+| ID | Name  | Type   | \#   | Description          |
+|---:|:------|:-------|:-----|:---------------------|
+|  1 | name  | String | 1    | The parameter name.  |
+|  2 | value | String | 0..1 | The parameter value. |
+
+
+
+<a id="tab:data-technology-enum"></a>
+Table 34: Type `DataTechnology` (Enumerated)
+
+| ID | Item                           | Description                                                                                                                                                         |
+|---:|:-------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  1 | data-anonymization             | Transforms the dataset so that individuals cannot be identified, directly or indirectly, from the resulting records.                                                |
+|  2 | data-encryption                | Encodes dataset content so that it is readable only by parties holding the decryption key; typically applied at rest or in transit.                                 |
+|  3 | data-masking                   | Replaces sensitive field values with realistic but fictitious substitutes, preserving format and statistical properties without exposing the originals.             |
+|  4 | data-minimization              | Reduces the dataset to only the fields and records necessary for the stated purpose, limiting exposure of personal or sensitive data.                               |
+|  5 | data-redaction                 | Removes or obscures specific values or text spans identified as sensitive, such as names, identifiers, or health information.                                       |
+|  6 | differential-privacy           | Adds calibrated statistical noise so that the presence or absence of any individual record cannot be reliably inferred from the released data.                      |
+|  7 | federated-learning             | Produces model artefacts by training across distributed sources without centralising raw data, so the original dataset is never directly shared.                    |
+|  8 | homomorphic-encryption         | Enables computation on ciphertext without decryption, so analytical results can be derived without exposing plaintext values.                                       |
+|  9 | k-anonymity                    | Generalises quasi-identifying attributes so that each record is indistinguishable from at least k-1 other records in the dataset.                                   |
+| 10 | l-diversity                    | Extends k-anonymity by requiring that each equivalence class contains at least l well-represented distinct sensitive attribute values.                              |
+| 11 | other                          | A data risk reduction technology not covered by the defined values; use `tool-category` or `results` to describe the specific technique applied.                    |
+| 12 | pseudonymization               | Replaces direct identifiers with artificial pseudonyms; re-identification remains possible through a separate, controlled mapping table.                            |
+| 13 | secure-multi-party-computation | Allows multiple parties to jointly compute over their respective inputs without revealing those inputs to each other (SMC).                                         |
+| 14 | t-closeness                    | Extends l-diversity by requiring that the distribution of sensitive values within each equivalence class closely matches their overall distribution in the dataset. |
+| 15 | tokenization                   | Substitutes sensitive values with non-sensitive tokens; the originals are recoverable only through a separate, secured token vault.                                 |
+
+
+## 7.6 Shared Types<a id='shared-types'></a>
+
+The following types are used in more than one of the sections above.
+
+
+<a id="tab:organization-record"></a>
+Table 35: Type `Organization` (Record)
+
+| ID | Name       | Type        | \#   | Description                             |
+|---:|:-----------|:------------|:-----|:----------------------------------------|
+|  1 | legal-name | String      | 1    | The legal name of the organization.     |
+|  2 | address    | Address     | 0..1 | The postal address of the organization. |
+|  3 | url        | String /uri | 0..1 | A URL for the organization.             |
+
+
+The value of `url` SHOULD use the `https` scheme.
+
+
+<a id="tab:address-array"></a>
+Table 36: Type `Address` (ArrayOf(String))
+
+| Type Name | Type Definition | Description                                       |
+|:----------|:----------------|:--------------------------------------------------|
+| Address   | ArrayOf(String) | Lines of a postal address. At least one required. |
+
+
+
+<a id="tab:geographic-region-record"></a>
+Table 37: Type `GeographicRegion` (Record)
+
+| ID | Name    | Type   | \#   | Description                         |
+|---:|:--------|:-------|:-----|:------------------------------------|
+|  1 | country | String | 1    | The country name or code.           |
+|  2 | state   | String | 0..1 | The state or province name or code. |
+
+
+
+<a id="tab:method-record"></a>
+Table 38: Type `Method` (Record)
+
+| ID | Name             | Type   | \#   | Description                                                          |
+|---:|:-----------------|:-------|:-----|:---------------------------------------------------------------------|
+|  1 | code             | String | 1    | A short code identifying the method, regulation, or classification.  |
+|  2 | system           | String | 0..1 | The code system used to interpret the code value.                    |
+|  3 | long-description | String | 0..1 | A detailed description of the method, regulation, or classification. |
+
+
+The `Acknowledgment` type describes a contributor. At least one of its fields MUST be present.
+
+
+<a id="tab:acknowledgment-map"></a>
+Table 39: Type `Acknowledgment` (Map)
+
+| ID | Name         | Type        | \#    | Description                                             |
+|---:|:-------------|:------------|:------|:--------------------------------------------------------|
+|  1 | names        | String      | 0..\* | Names of individual contributors being acknowledged.    |
+|  2 | organization | String      | 0..1  | Name of a contributing organization being acknowledged. |
+|  3 | summary      | String      | 0..1  | Contextual details about the acknowledgment.            |
+|  4 | urls         | String /uri | 0..\* | URLs of references being acknowledged.                  |
+
+
+
+<a id="tab:version-string"></a>
+Table 40: Type `Version` (String)
+
+| Type Name | Type Definition | Description                                                                           |
+|:----------|:----------------|:--------------------------------------------------------------------------------------|
+| Version   | String          | An integer or semantic versioning string. Examples: `"1"`, `"2.0.0"`, `"1.0.0-beta"`. |
+
+
+
+<a id="tab:language-string"></a>
+Table 41: Type `Language` (String)
+
+| Type Name | Type Definition | Description                                          |
+|:----------|:----------------|:-----------------------------------------------------|
+| Language  | String          | A language tag conforming to IETF BCP 47 / RFC 5646. |
+
 
 # 8. Safety, Security, and Data Protection<a id='safety-security-and-data-protection'></a>
 

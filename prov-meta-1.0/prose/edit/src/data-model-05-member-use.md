@@ -20,6 +20,7 @@ DataProvenance:
     copyright: Sequence                                 # optional
     patent: Sequence                                    # optional
     trademark: Sequence                                 # optional
+  # ...
 ```
 
 #### Member `use.intended-purpose` {#member-use-intended-purpose}
@@ -37,6 +38,7 @@ DataProvenance:
         long-description: String
         system: String  # optional
     # ...
+  # ...
 ```
 
 *Example 1:*
@@ -65,6 +67,7 @@ DataProvenance:
         evaluated: Boolean
         tool: String  # optional
     # ...
+  # ...
 ```
 
 *Example 1:*
@@ -89,6 +92,7 @@ DataProvenance:
     consents:  # optional
       - String
     # ...
+  # ...
 ```
 
 *Example 1:*
@@ -117,6 +121,7 @@ DataProvenance:
         results:  # optional
           - String
     # ...
+  # ...
 ```
 
 *Example 1:*
@@ -146,6 +151,7 @@ DataProvenance:
       - country: String
         state: String  # optional
     # ...
+  # ...
 ```
 
 *Example 1:*
@@ -168,6 +174,7 @@ DataProvenance:
       - country: String
         state: String  # optional
     # ...
+  # ...
 ```
 
 #### Member `use.storage-allowed` {#member-use-storage-allowed}
@@ -184,6 +191,7 @@ DataProvenance:
       - country: String
         state: String  # optional
     # ...
+  # ...
 ```
 
 #### Member `use.storage-forbidden` {#member-use-storage-forbidden}
@@ -200,6 +208,7 @@ DataProvenance:
       - country: String
         state: String  # optional
     # ...
+  # ...
 ```
 
 #### Member `use.license` {#member-use-license}
@@ -216,6 +225,7 @@ DataProvenance:
     license:  # optional
       - String
     # ...
+  # ...
 ```
 
 *Example 1:*
@@ -237,6 +247,7 @@ DataProvenance:
     copyright:  # optional
       - String
     # ...
+  # ...
 ```
 
 *Example 1:*
@@ -258,6 +269,7 @@ DataProvenance:
     patent:  # optional
       - String
     # ...
+  # ...
 ```
 
 #### Member `use.trademark` {#member-use-trademark}
@@ -272,6 +284,7 @@ DataProvenance:
     # ...
     trademark:  # optional
       - String
+  # ...
 ```
 
 ---

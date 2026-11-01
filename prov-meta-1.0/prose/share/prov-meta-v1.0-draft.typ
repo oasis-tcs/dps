@@ -273,933 +273,57 @@ origin, quality, and intended use. Understanding data is a requirement
 for organizations operating at scale. The OASIS Data Provenance
 Standards (DPS) are created to solve for this need.
 
-== Any Additional Introduction Subsections That are Needed
-<any-additional-introduction-subsections-that-are-needed>
-None
-
 == Changes From the Previous Version
 <changes-from-the-previous-version>
 N/A
 
 #pagebreak(weak: true)
-= Provenance Schema
-<provenance-schema>
-The schema of the provenance metadata is described in human-readable
-property tables. The technical encoding may be found in section
-#link(<provenance-information-model-encoding>)[6 "Provenance Information Model Encoding"].
-
-The Data Provenance Standards record metadata elements in three
-segmented categories: Source, Provenance, and Use.
-
-#figure(image("images/metadata.svg", alt: "Metadata"),
-  caption: [
-    Metadata
-  ]
-)
-
-The property tables first define metadata about the specification
-itself, then describe how a record is made of the 3 primary metadata
-elements. The three segmented categories (Source, Provenance, and Use)
-are comprised of various metadata element input fields. Each field is
-described in more detail below.
-
-== Primary Metadata Elements
-<primary-metadata-elements>
-The root object of a Data Provenance Metadata record contains five
-required members.
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [\$schema], [String /uri], [1], [The URI identifying the schema
-    this JSON object must be valid against. For this version the value
-    is always the URI of the data-provenance JSON schema.],
-    [2], [set], [Set], [1], [Set-level metadata about this provenance
-    metadata record.],
-    [3], [source], [Source], [1], [Characterizes the content and source
-    of the dataset.],
-    [4], [provenance], [Provenance], [1], [Describes the provenance of
-    the dataset.],
-    [5], [use], [Use], [1], [Describes legal use and restrictions that
-    apply to the dataset.],
-    [6], [proof], [Proof], [0..1], [Reserved for an external integrity
-    or signing envelope's proof material. The internal structure is
-    opaque to this specification.],
-  )]
-  , caption: [Type `DataProvenance` (Record)]
-  , kind: table
-  )
-<tab:data-provenance-record>
-
-== Set
-<set>
-The `set` member captures metadata about the provenance metadata record
-itself.
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [category], [String], [1], [A short canonical name, chosen by
-    the set producer, informing the end user of the category of the
-    metadata set.],
-    [2], [schema-version], [String], [1], [The version of the Data
-    Provenance Core specification this record was generated for. The
-    value for this version is always `"1.0"`.],
-    [3], [publisher], [Publisher], [1], [Information about the publisher
-    of the metadata set.],
-    [4], [label], [String], [1], [The per-publisher unique title of this
-    metadata set.],
-    [5], [tracking], [Tracking], [1], [Management attributes used to
-    track this metadata set as a whole.],
-    [6], [language], [Language], [0..1], [The language used in this
-    document, corresponding to IETF BCP 47.],
-    [7], [source-language], [Language], [0..1], [If this is a
-    translation, the language this document was translated from.],
-    [8], [acknowledgments], [Acknowledgment], [0..\*], [Acknowledgment
-    elements associated with the whole set.],
-    [9], [notes], [Note], [0..\*], [Notes associated with this metadata
-    set.],
-    [10], [references], [Reference], [0..\*], [References associated
-    with this metadata set.],
-  )]
-  , caption: [Type `Set` (Record)]
-  , kind: table
-  )
-<tab:set-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [name], [String], [1], [The name of the issuing party.],
-    [2], [namespace], [String /uri], [1], [A URI under the control of
-    the issuing party, used as a globally unique identifier for that
-    party.],
-    [3], [contact-details], [String], [0..1], [Information on how to
-    contact the publisher.],
-  )]
-  , caption: [Type `Publisher` (Record)]
-  , kind: table
-  )
-<tab:publisher-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [current-release-date], [String /date-time], [1], [The date
-    when the current revision of this document was released.],
-    [2], [id], [String], [1], [A unique identifier for this metadata
-    set, assigned and maintained by the original issuing authority. MUST
-    NOT start or end with whitespace.],
-    [3], [initial-release-date], [String /date-time], [1], [The date
-    when this metadata set was first published.],
-    [4], [revision-history], [Revision], [1..\*], [One revision item for
-    each version of the metadata set, including the initial one.],
-    [5], [status], [TrackingStatus], [1], [The draft status of the
-    metadata set.],
-    [6], [version], [Version], [1], [The version of the current metadata
-    set.],
-    [7], [aliases], [String], [0..\*], [Alternate names for this
-    metadata set.],
-    [8], [generator], [Generator], [0..1], [Information about the engine
-    that generated this metadata set.],
-  )]
-  , caption: [Type `Tracking` (Record)]
-  , kind: table
-  )
-<tab:tracking-record>
-
-#figure(
-  align(center)[#table(
-    columns: (5%, 12%, 83%),
-    align: (right,left,left,),
-    table.header([ID], [Item], [Description],),
-    table.hline(),
-    [0], [draft], [The metadata set is a draft.],
-    [1], [final], [The metadata set is final.],
-    [2], [interim], [The metadata set has interim status.],
-  )]
-  , caption: [Type `TrackingStatus` (Enumerated)]
-  , kind: table
-  )
-<tab:tracking-status-enum>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [date], [String /date-time], [1], [The date of this revision
-    entry.],
-    [2], [number], [Version], [1], [The version number of this
-    revision.],
-    [3], [summary], [String], [1], [A short description of the changes
-    in this revision.],
-    [4], [legacy-version], [String], [0..1], [A version string from an
-    existing set with the same content, tracing from DP-Core compliant
-    to historic items.],
-  )]
-  , caption: [Type `Revision` (Record)]
-  , kind: table
-  )
-<tab:revision-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [engine], [GeneratorEngine], [1], [Information about the engine
-    used to generate this metadata set.],
-    [2], [date], [String /date-time], [0..1], [The date this metadata
-    set was generated.],
-  )]
-  , caption: [Type `Generator` (Record)]
-  , kind: table
-  )
-<tab:generator-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [name], [String], [1], [The name of the engine that generated
-    this metadata set.],
-    [2], [version], [Version], [0..1], [The version of the engine that
-    generated this metadata set.],
-  )]
-  , caption: [Type `GeneratorEngine` (Record)]
-  , kind: table
-  )
-<tab:generator-engine-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [category], [NoteCategory], [1], [The category of the note.],
-    [2], [text], [String], [1], [The content of the note, varying
-    depending on type.],
-    [3], [audience], [String], [0..1], [The intended audience for the
-    note.],
-    [4], [title], [String], [0..1], [A concise description of what is
-    contained in the text of the note.],
-  )]
-  , caption: [Type `Note` (Record)]
-  , kind: table
-  )
-<tab:note-record>
-
-#figure(
-  align(center)[#table(
-    columns: (4%, 20%, 76%),
-    align: (right,left,left,),
-    table.header([ID], [Item], [Description],),
-    table.hline(),
-    [0], [description], [A descriptive note about the subject.],
-    [1], [details], [A note with detailed supplemental information.],
-    [2], [faq], [A note in frequently-asked-questions format.],
-    [3], [general], [A general note.],
-    [4], [legal-disclaimer], [A note containing a legal disclaimer.],
-    [5], [other], [A note that does not fit other categories.],
-    [6], [summary], [A summary note.],
-  )]
-  , caption: [Type `NoteCategory` (Enumerated)]
-  , kind: table
-  )
-<tab:note-category-enum>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [summary], [String], [1], [A short description of what this
-    reference refers to.],
-    [2], [url], [String /uri], [1], [The URL of the referenced
-    resource.],
-    [3], [category], [ReferenceCategory], [0..1], [Whether this
-    reference is external or self-referential.],
-  )]
-  , caption: [Type `Reference` (Record)]
-  , kind: table
-  )
-<tab:reference-record>
-
-#figure(
-  align(center)[#table(
-    columns: (5%, 12%, 83%),
-    align: (right,left,left,),
-    table.header([ID], [Item], [Description],),
-    table.hline(),
-    [0], [external], [The reference points to an external resource.],
-    [1], [self], [The reference points back to the same information item
-    in focus.],
-  )]
-  , caption: [Type `ReferenceCategory` (Enumerated)]
-  , kind: table
-  )
-<tab:reference-category-enum>
-
-== Source
-<source>
-The `source` member characterizes the content and source of the dataset.
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [about], [About], [1], [A detailed narrative explaining the
-    contents, scope, and purpose of the dataset.],
-    [2], [id], [Identity], [1], [A unique identifier for this dataset,
-    using at least one identification method.],
-    [3], [issuer], [Organization], [1..\*], [The legal entity or
-    entities responsible for creating the dataset.],
-    [4], [location], [String /uri], [1], [The web address where this
-    dataset's metadata is published and can be accessed.],
-    [5], [name], [String], [1], [The official name of the dataset.],
-    [6], [data-version], [Version], [1], [The version of the dataset
-    this metadata set describes.],
-  )]
-  , caption: [Type `Source` (Record)]
-  , kind: table
-  )
-<tab:source-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [content], [String], [1], [Contextual information helping users
-    understand what the data represents and how it was collected.],
-    [2], [purpose], [String], [1], [The recommended uses for this
-    dataset.],
-    [3], [scope], [String], [0..1], [Any limitations of the dataset.],
-  )]
-  , caption: [Type `About` (Record)]
-  , kind: table
-  )
-<tab:about-record>
-
-The `Identity` type provides at least one identifier for the dataset. At
-least one of its fields MUST be present.
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [hashes], [HashEntry], [0..\*], [Cryptographic hash-based
-    identifiers for the dataset.],
-    [2], [uris], [String /uri], [0..\*], [URI identifiers for the
-    dataset.],
-    [3], [uuids], [String /uuid], [0..\*], [UUID identifiers for the
-    dataset.],
-    [4], [custom-ids], [CustomId], [0..\*], [Identifiers in any text
-    format.],
-  )]
-  , caption: [Type `Identity` (Map)]
-  , kind: table
-  )
-<tab:identity-map>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [tree-hashes], [TreeHash], [1..\*], [The cryptographic hash
-    values for this file or tree.],
-    [2], [path], [String], [1], [The path (file or filesystem tree root)
-    identified by these hash values.],
-  )]
-  , caption: [Type `HashEntry` (Record)]
-  , kind: table
-  )
-<tab:hash-entry-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [algorithm], [String], [1], [The name of the hash or tree/seal
-    algorithm used to calculate the value.],
-    [2], [value], [String], [1], [The cryptographic hash value in
-    hexadecimal representation.],
-  )]
-  , caption: [Type `TreeHash` (Record)]
-  , kind: table
-  )
-<tab:tree-hash-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [method], [String], [1], [The name of the method used to derive
-    this identifier.],
-    [2], [value], [String], [1], [The identifier value.],
-    [3], [tool], [String], [0..1], [The name of the tool used to derive
-    this identifier.],
-    [4], [parameter-list], [String], [0..\*], [Parameters used when
-    invoking the tool.],
-  )]
-  , caption: [Type `CustomId` (Record)]
-  , kind: table
-  )
-<tab:custom-id-record>
-
-== Provenance
-<provenance>
-The `provenance` member describes the provenance of the dataset.
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [origin-geography], [GeographicRegion], [1..\*], [The
-    geographical locations where the data was originally collected.],
-    [2], [date], [String /date], [1], [The date when the dataset was
-    compiled or created (YYYY-MM-DD).],
-    [3], [generation-method], [GenerationMethod], [1..\*], [The
-    methodology or procedures used to collect, generate, or compile the
-    data.],
-    [4], [source], [String /uri], [0..1], [The URI of metadata for a
-    source dataset contributing to this dataset, establishing lineage.],
-    [5], [origin], [Organization], [0..\*], [The original source
-    organization, if different from the dataset issuer.],
-    [6], [previous-date], [String /date], [0..1], [The release date of
-    the previous version of this dataset (YYYY-MM-DD).],
-    [7], [generation-period], [GenerationPeriod], [0..1], [The span of
-    time during which the data was collected or generated.],
-    [8], [format], [ModalityFormat], [0..\*], [Describes the modality or
-    media type of the data within the dataset.],
-    [9], [sub-provenance], [Provenance], [0..1], [Nested provenance
-    information for a component of this dataset.],
-    [10], [source-digest], [SourceDigest], [0..1], [A cryptographic
-    digest of the record referenced by `source`, computed at issuance.],
-  )]
-  , caption: [Type `Provenance` (Record)]
-  , kind: table
-  )
-<tab:provenance-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [algorithm], [String], [1], [Digest algorithm identifier
-    (e.g.~sha256, sha384, sha512).],
-    [2], [value], [String], [1], [The digest value, hex-encoded.],
-  )]
-  , caption: [Type `SourceDigest` (Record)]
-  , kind: table
-  )
-<tab:source-digest-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [start], [String /date-time], [0..1], [The start of the data
-    collection or generation period.],
-    [2], [end], [String /date-time], [0..1], [The end of the data
-    collection or generation period.],
-  )]
-  , caption: [Type `GenerationPeriod` (Record)]
-  , kind: table
-  )
-<tab:generation-period-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [code], [GenerationMethodCode], [1], [A short code identifying
-    the generation method.],
-    [2], [system], [String], [0..1], [The code system used to interpret
-    the code value.],
-    [3], [long-description], [String], [0..1], [A detailed description
-    of the method.],
-  )]
-  , caption: [Type `GenerationMethod` (Record)]
-  , kind: table
-  )
-<tab:generation-method-record>
-
-#figure(
-  align(center)[#table(
-    columns: (5%, 12%, 83%),
-    align: (right,left,left,),
-    table.header([ID], [Item], [Description],),
-    table.hline(),
-    [0], [data-augmentation], [Data generation through augmentation of
-    existing data.],
-    [1], [data-mining], [Data collected through automated data mining.],
-    [2], [feeds], [Data received through data feeds.],
-    [3], [machine-generated-ml-ops], [Data generated through machine
-    learning operations.],
-    [4], [other], [A generation method not listed here.],
-    [5], [primary-user-source], [Data collected directly from primary
-    users.],
-    [6], [simulations], [Data generated through simulations.],
-    [7], [social-media], [Data collected from social media platforms.],
-    [8], [syndication], [Data received through syndication.],
-    [9], [transfer-learning], [Data generated through transfer
-    learning.],
-    [10], [user-generated-content], [Data created by end users.],
-    [11], [web-scraping-crawling], [Data collected by web scraping or
-    crawling.],
-  )]
-  , caption: [Type `GenerationMethodCode` (Enumerated)]
-  , kind: table
-  )
-<tab:generation-method-code-enum>
-
-#figure(
-  align(center)[#table(
-    columns: (5%, 12%, 83%),
-    align: (right,left,left,),
-    table.header([ID], [Item], [Description],),
-    table.hline(),
-    [0], [application/json], [JSON data format.],
-    [1], [application/jsonld], [JSON-LD linked data format.],
-    [2], [application/msword], [Microsoft Word document format.],
-    [3], [application/vnd.ms-excel], [Microsoft Excel spreadsheet
-    format.],
-    [4], [application/zip], [ZIP archive format.],
-    [5], [image/bmp], [BMP image format.],
-    [6], [image/gif], [GIF image format.],
-    [7], [image/jpeg], [JPEG image format.],
-    [8], [image/png], [PNG image format.],
-    [9], [image/x-png], [PNG image format (legacy media type).],
-    [10], [other], [A format not listed here.],
-    [11], [text/csv], [CSV text format.],
-    [12], [text/plain], [Plain text format.],
-  )]
-  , caption: [Type `ModalityFormat` (Enumerated)]
-  , kind: table
-  )
-<tab:modality-format-enum>
-
-== Use
-<use>
-The `use` member describes the legal use and restrictions applicable to
-the dataset.
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [intended-purpose], [Purpose], [1..\*], [The purpose or
-    purposes for which the dataset was created.],
-    [2], [classification], [Classification], [0..\*], [Confidentiality
-    classifications applicable to the dataset.],
-    [3], [consents], [String], [0..\*], [Locations of consent
-    documentation or agreements related to the data.],
-    [4], [data-risk-reducing], [DataRiskReducing], [0..\*], [Techniques
-    used to reduce known data risk.],
-    [5], [processing-included], [GeographicRegion], [0..\*], [Geographical
-    boundaries within which the data may be processed.],
-    [6], [processing-excluded], [GeographicRegion], [0..\*], [Geographical
-    boundaries within which the data may not be processed.],
-    [7], [storage-allowed], [GeographicRegion], [0..\*], [Geographical
-    locations where the data may be stored.],
-    [8], [storage-forbidden], [GeographicRegion], [0..\*], [Geographical
-    locations where the data may not be stored.],
-    [9], [license], [String], [0..\*], [The terms under which the
-    dataset can be used, including any restrictions or obligations.],
-    [10], [copyright], [String], [0..\*], [Copyright information
-    covering proprietary information in the dataset.],
-    [11], [patent], [String], [0..\*], [Patent information covering
-    proprietary information in the dataset.],
-    [12], [trademark], [String], [0..\*], [Trademark information
-    covering proprietary information in the dataset.],
-  )]
-  , caption: [Type `Use` (Record)]
-  , kind: table
-  )
-<tab:use-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [code], [PurposeCode], [1], [A short code identifying the
-    intended purpose.],
-    [2], [long-description], [String], [1], [A detailed description of
-    the intended purpose.],
-    [3], [system], [String], [0..1], [The code system used to interpret
-    the code value.],
-  )]
-  , caption: [Type `Purpose` (Record)]
-  , kind: table
-  )
-<tab:purpose-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [regulation], [Regulation], [1], [The regulation or
-    classification standard being evaluated.],
-    [2], [evaluated], [Boolean], [1], [Whether the dataset has been
-    evaluated against this classification (`true`) or not (`false`).],
-    [3], [tool], [String], [0..1], [The tool used to perform the
-    evaluation.],
-  )]
-  , caption: [Type `Classification` (Record)]
-  , kind: table
-  )
-<tab:classification-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [code], [ConfidentialityCode], [1], [A short code identifying
-    the confidentiality classification.],
-    [2], [system], [String], [0..1], [The code system used to interpret
-    the code value.],
-    [3], [long-description], [String], [0..1], [A detailed description
-    of the regulation or classification.],
-  )]
-  , caption: [Type `Regulation` (Record)]
-  , kind: table
-  )
-<tab:regulation-record>
-
-#figure(
-  align(center)[#table(
-    columns: (5%, 12%, 83%),
-    align: (right,left,left,),
-    table.header([ID], [Item], [Description],),
-    table.hline(),
-    [0], [other], [A confidentiality classification not listed here.],
-    [1], [pci], [Payment Card Industry (PCI) data.],
-    [2], [pfi], [Personal Financial Information (PFI).],
-    [3], [phi], [Protected Health Information (PHI).],
-    [4], [pi], [Personal Information (PI).],
-    [5], [sci], [Sensitive Compartmented Information (SCI).],
-    [6], [spi], [Sensitive Personal Information (SPI).],
-  )]
-  , caption: [Type `ConfidentialityCode` (Enumerated)]
-  , kind: table
-  )
-<tab:confidentiality-code-enum>
-
-#figure(
-  align(center)[#table(
-    columns: (5%, 12%, 83%),
-    align: (right,left,left,),
-    table.header([ID], [Item], [Description],),
-    table.hline(),
-    [0], [alignment], [Dataset intended for model alignment tasks.],
-    [1], [evaluation], [Dataset intended for evaluation or
-    benchmarking.],
-    [2], [other], [A purpose not listed here.],
-    [3], [pre-training], [Dataset intended for model pre-training.],
-    [4], [production], [Dataset intended for production use.],
-    [5], [quality-assurance], [Dataset intended for quality assurance
-    testing.],
-    [6], [research], [Dataset intended for research use.],
-    [7], [staging-testing], [Dataset intended for staging or testing
-    environments.],
-    [8], [synthetic-data-generation], [Dataset intended for generating
-    synthetic data.],
-  )]
-  , caption: [Type `PurposeCode` (Enumerated)]
-  , kind: table
-  )
-<tab:purpose-code-enum>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [tool-used], [String], [1], [The name of the tool used for data
-    risk reduction.],
-    [2], [tool-category], [Method], [0..1], [The category of the tool
-    used for data risk reduction.],
-    [3], [technology], [DataTechnology], [0..1], [The privacy-enhancing
-    or data-reducing technology applied.],
-    [4], [parameters], [Parameter], [0..\*], [The parameters passed to
-    the tool.],
-    [5], [results], [String], [0..\*], [The results of applying the
-    tool.],
-  )]
-  , caption: [Type `DataRiskReducing` (Record)]
-  , kind: table
-  )
-<tab:data-risk-reducing-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [name], [String], [1], [The parameter name.],
-    [2], [value], [String], [0..1], [The parameter value.],
-  )]
-  , caption: [Type `Parameter` (Record)]
-  , kind: table
-  )
-<tab:parameter-record>
-
-#figure(
-  align(center)[#table(
-    columns: (5%, 12%, 83%),
-    align: (right,left,left,),
-    table.header([ID], [Item], [Description],),
-    table.hline(),
-    [0], [data-anonymization], [Transforms the dataset so that
-    individuals cannot be identified, directly or indirectly, from the
-    resulting records.],
-    [1], [data-encryption], [Encodes dataset content so that it is
-    readable only by parties holding the decryption key; typically
-    applied at rest or in transit.],
-    [2], [data-masking], [Replaces sensitive field values with realistic
-    but fictitious substitutes, preserving format and statistical
-    properties without exposing the originals.],
-    [3], [data-minimization], [Reduces the dataset to only the fields
-    and records necessary for the stated purpose, limiting exposure of
-    personal or sensitive data.],
-    [4], [data-redaction], [Removes or obscures specific values or text
-    spans identified as sensitive, such as names, identifiers, or health
-    information.],
-    [5], [differential-privacy], [Adds calibrated statistical noise so
-    that the presence or absence of any individual record cannot be
-    reliably inferred from the released data.],
-    [6], [federated-learning], [Produces model artefacts by training
-    across distributed sources without centralising raw data, so the
-    original dataset is never directly shared.],
-    [7], [homomorphic-encryption], [Enables computation on ciphertext
-    without decryption, so analytical results can be derived without
-    exposing plaintext values.],
-    [8], [k-anonymity], [Generalises quasi-identifying attributes so
-    that each record is indistinguishable from at least k-1 other
-    records in the dataset.],
-    [9], [l-diversity], [Extends k-anonymity by requiring that each
-    equivalence class contains at least l well-represented distinct
-    sensitive attribute values.],
-    [10], [other], [A data risk reduction technology not covered by the
-    defined values; use `tool-category` or `results` to describe the
-    specific technique applied.],
-    [11], [pseudonymization], [Replaces direct identifiers with
-    artificial pseudonyms; re-identification remains possible through a
-    separate, controlled mapping table.],
-    [12], [secure-multi-party-computation], [Allows multiple parties to
-    jointly compute over their respective inputs without revealing those
-    inputs to each other (SMC).],
-    [13], [t-closeness], [Extends l-diversity by requiring that the
-    distribution of sensitive values within each equivalence class
-    closely matches their overall distribution in the dataset.],
-    [14], [tokenization], [Substitutes sensitive values with
-    non-sensitive tokens; the originals are recoverable only through a
-    separate, secured token vault.],
-  )]
-  , caption: [Type `DataTechnology` (Enumerated)]
-  , kind: table
-  )
-<tab:data-technology-enum>
-
-== Shared Types
-<shared-types>
-The following types are used in more than one of the sections above.
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [legal-name], [String], [1], [The legal name of the
-    organization.],
-    [2], [address], [Address], [0..1], [The postal address of the
-    organization.],
-    [3], [url], [String /uri], [0..1], [A URL for the organization.],
-  )]
-  , caption: [Type `Organization` (Record)]
-  , kind: table
-  )
-<tab:organization-record>
-
-The value of `url` SHOULD use the `https` scheme.
-
-#figure(
-  align(center)[#table(
-    columns: (5%, 12%, 83%),
-    align: (left,left,left,),
-    table.header([Type Name], [Type Definition], [Description],),
-    table.hline(),
-    [Address], [ArrayOf(String)], [Lines of a postal address. At least
-    one required.],
-  )]
-  , caption: [Type `Address` (ArrayOf(String))]
-  , kind: table
-  )
-<tab:address-array>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [country], [String], [1], [The country name or code.],
-    [2], [state], [String], [0..1], [The state or province name or
-    code.],
-  )]
-  , caption: [Type `GeographicRegion` (Record)]
-  , kind: table
-  )
-<tab:geographic-region-record>
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [code], [String], [1], [A short code identifying the method,
-    regulation, or classification.],
-    [2], [system], [String], [0..1], [The code system used to interpret
-    the code value.],
-    [3], [long-description], [String], [0..1], [A detailed description
-    of the method, regulation, or classification.],
-  )]
-  , caption: [Type `Method` (Record)]
-  , kind: table
-  )
-<tab:method-record>
-
-The `Acknowledgment` type describes a contributor. At least one of its
-fields MUST be present.
-
-#figure(
-  align(center)[#table(
-    columns: (6%, 15%, 15%, 6%, 58%),
-    align: (right,left,left,left,left,),
-    table.header([ID], [Name], [Type], [\#], [Description],),
-    table.hline(),
-    [1], [names], [String], [0..\*], [Names of individual contributors
-    being acknowledged.],
-    [2], [organization], [String], [0..1], [Name of a contributing
-    organization being acknowledged.],
-    [3], [summary], [String], [0..1], [Contextual details about the
-    acknowledgment.],
-    [4], [urls], [String /uri], [0..\*], [URLs of references being
-    acknowledged.],
-  )]
-  , caption: [Type `Acknowledgment` (Map)]
-  , kind: table
-  )
-<tab:acknowledgment-map>
-
-#figure(
-  align(center)[#table(
-    columns: (5%, 12%, 83%),
-    align: (left,left,left,),
-    table.header([Type Name], [Type Definition], [Description],),
-    table.hline(),
-    [Version], [String], [An integer or semantic versioning string.
-    Examples: `"1"`, `"2.0.0"`, `"1.0.0-beta"`.],
-  )]
-  , caption: [Type `Version` (String)]
-  , kind: table
-  )
-<tab:version-string>
-
-#figure(
-  align(center)[#table(
-    columns: (5%, 12%, 83%),
-    align: (left,left,left,),
-    table.header([Type Name], [Type Definition], [Description],),
-    table.hline(),
-    [Language], [String], [A language tag conforming to IETF BCP 47 /
-    RFC 5646.],
-  )]
-  , caption: [Type `Language` (String)]
-  , kind: table
-  )
-<tab:language-string>
-
-#pagebreak(weak: true)
 = Provenance Information Model Encoding
 <provenance-information-model-encoding>
-The technical encoding of the information model is specified in both
-JADN and YAML in the following subsections.
+This specification defines the Data Provenance Metadata format by one
+normative artifact and views derived from it:
+
+/ JSON schema: The Data Provenance Metadata JSON schema
+    (`json/data-provenance.json`) is the normative definition of the
+    format. It decides which documents are valid, and it carries the
+    description of every member.
+/ YAML outlines: The outlines in section
+    #link(<provenance-data-model-encoding>)[6 "Provenance Data Model Encoding"]
+    show where each member sits in a document, whether it is required,
+    and its type, in a compact notation generated from the JSON schema.
+/ Property tables: The tables in section
+    #link(<provenance-schema>)[7 "Provenance Schema"] give, for each
+    type, its members with their type, cardinality, and description.
+    They are generated from the JADN encoding of the information model
+    (section #link(<jadn-encoding>)[5.1 "JADN Encoding"]), which in turn
+    is generated from the JSON schema.
+
+The information model is also available in the following two encodings,
+both generated from the JSON schema.
 
 == JADN Encoding
 <jadn-encoding>
 The JADN encoding of the data provenance metadata information model is
 specified in `jadn/data-provenance.jadn`.
 
-The file contains 43 named types derived directly from the property
-tables in Section 5. The exported root type is `DataProvenance`. Six
-named primitive aliases (`URI`, `UUID`, `DateTime`, `Date`, `Version`,
-`Language`) carry format constraints that apply wherever those types
-appear as field types, keeping the field-level definitions free of
-inline format options. Eight enumerated types carry the closed code
-vocabularies introduced in Section 5.
+The file is generated from the JSON schema. Each schema node that
+defines a type carries the JADN type name in the annotation
+`x-jadn-type`, and each enumeration carries the descriptions of its
+values in the annotation `x-jadn-enum`\; the descriptions of the fields
+are the `description` annotations of the members. Neither annotation
+affects validation. The exported root type is `DataProvenance`. The
+string formats of the JSON schema map to the primitive aliases `URI`,
+`UUID`, `DateTime`, and `Date`.
 
 == YAML Encoding
 <yaml-encoding>
 The YAML encoding of the data provenance metadata information model is
 specified in `yaml/data-provenance.yaml`.
 
-This file is a YAML serialization of `json/data-provenance.json` and is
-normatively equivalent to it. It is provided for tooling that consumes
-YAML-format schemas natively. All field names, constraints, type
-references, and enumeration values are identical to those in the JSON
-schema.
+This file is a YAML serialization of `json/data-provenance.json`,
+generated from it. It is provided for tooling that consumes YAML-format
+schemas natively. All field names, constraints, type references, and
+enumeration values are identical to those in the JSON schema.
 
 #pagebreak(weak: true)
 = Provenance Data Model Encoding
@@ -1256,6 +380,7 @@ DataProvenance:
   source: $defs.source-type
   provenance: $defs.provenance-type
   use: $defs.use-type
+  proof: Mapping  # optional
 ```
 
 === Member `$schema`
@@ -1286,11 +411,11 @@ DataProvenance:
     publisher: Mapping
     label: String
     tracking: Mapping
+    language: $defs.language-type                # optional
+    source-language: $defs.language-type         # optional
     acknowledgments: $defs.acknowledgments-type  # optional
     notes: $defs.notes-type                      # optional
     references: $defs.references-type            # optional
-    language: $defs.language-type                # optional
-    source-language: $defs.language-type         # optional
   # ...
 ```
 
@@ -1773,6 +898,7 @@ DataProvenance:
   set:
     # ...
     source-language: $defs.language-type  # optional
+    # ...
   # ...
 ```
 
@@ -1854,7 +980,6 @@ DataProvenance:
       - summary: String
         url: String.URI
         category: String.Enum  # optional
-    # ...
   # ...
 ```
 
@@ -2104,6 +1229,7 @@ DataProvenance:
     generation-period: Mapping             # optional
     format: Sequence                       # optional
     sub-provenance: $defs.provenance-type  # optional
+    source-digest: Mapping                 # optional
   # ...
 ```
 
@@ -2351,6 +1477,10 @@ DataProvenance:
       format:  # optional
         - String.Enum
       sub-provenance: $defs.provenance-type  # optional
+      source-digest:  # optional
+        algorithm: String
+        value: String.Pattern
+    # ...
   # ...
 ```
 
@@ -2378,6 +1508,7 @@ DataProvenance:
     copyright: Sequence                                 # optional
     patent: Sequence                                    # optional
     trademark: Sequence                                 # optional
+  # ...
 ```
 
 ==== Member `use.intended-purpose`
@@ -2400,6 +1531,7 @@ DataProvenance:
         long-description: String
         system: String  # optional
     # ...
+  # ...
 ```
 
 #emph[Example 1:]#box()<member-use-intended-purpose-eg-1>
@@ -2432,6 +1564,7 @@ DataProvenance:
         evaluated: Boolean
         tool: String  # optional
     # ...
+  # ...
 ```
 
 #emph[Example 1:]#box()<member-use-classification-eg-1>
@@ -2458,6 +1591,7 @@ DataProvenance:
     consents:  # optional
       - String
     # ...
+  # ...
 ```
 
 #emph[Example 1:]#box()<member-use-consents-eg-1>
@@ -2489,6 +1623,7 @@ DataProvenance:
         results:  # optional
           - String
     # ...
+  # ...
 ```
 
 #emph[Example 1:]#box()<member-use-data-risk-reducing-eg-1>
@@ -2520,6 +1655,7 @@ DataProvenance:
       - country: String
         state: String  # optional
     # ...
+  # ...
 ```
 
 #emph[Example 1:]#box()<member-use-processing-included-eg-1>
@@ -2544,6 +1680,7 @@ DataProvenance:
       - country: String
         state: String  # optional
     # ...
+  # ...
 ```
 
 ==== Member `use.storage-allowed`
@@ -2561,6 +1698,7 @@ DataProvenance:
       - country: String
         state: String  # optional
     # ...
+  # ...
 ```
 
 ==== Member `use.storage-forbidden`
@@ -2579,6 +1717,7 @@ DataProvenance:
       - country: String
         state: String  # optional
     # ...
+  # ...
 ```
 
 ==== Member `use.license`
@@ -2597,6 +1736,7 @@ DataProvenance:
     license:  # optional
       - String
     # ...
+  # ...
 ```
 
 #emph[Example 1:]#box()<member-use-license-eg-1>
@@ -2620,6 +1760,7 @@ DataProvenance:
     copyright:  # optional
       - String
     # ...
+  # ...
 ```
 
 #emph[Example 1:]#box()<member-use-copyright-eg-1>
@@ -2643,6 +1784,7 @@ DataProvenance:
     patent:  # optional
       - String
     # ...
+  # ...
 ```
 
 ==== Member `use.trademark`
@@ -2659,7 +1801,919 @@ DataProvenance:
     # ...
     trademark:  # optional
       - String
+  # ...
 ```
+
+#pagebreak(weak: true)
+= Provenance Schema
+<provenance-schema>
+The property tables of this section give, for each type, its members
+with their type, cardinality, and description. They are generated from
+the JADN encoding of the information model (section
+#link(<jadn-encoding>)[5.1 "JADN Encoding"]), which is generated from
+the JSON schema, the normative definition of the format.
+
+The Data Provenance Standards record metadata elements in three
+segmented categories: Source, Provenance, and Use.
+
+The figure below, generated from the JSON schema like the tables, shows
+the root type with the type of each of its members.
+
+#figure(image("images/metadata.svg", alt: "Metadata"),
+  caption: [
+    Metadata
+  ]
+)
+
+The property tables first define metadata about the specification
+itself, then describe how a record is made of the 3 primary metadata
+elements. The three segmented categories (Source, Provenance, and Use)
+are comprised of various metadata element input fields. Each field is
+described in more detail in section
+#link(<provenance-data-model-encoding>)[6 "Provenance Data Model Encoding"].
+
+== Primary Metadata Elements
+<primary-metadata-elements>
+The root object of a Data Provenance Metadata record contains five
+required members.
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [\$schema], [String /uri], [1], [The URI identifying the schema
+    this JSON object must be valid against. For this version the value
+    is always the URI of the data-provenance JSON schema.],
+    [2], [set], [Set], [1], [Set-level metadata about this provenance
+    metadata record.],
+    [3], [source], [Source], [1], [Characterizes the content and source
+    of the dataset.],
+    [4], [provenance], [Provenance], [1], [Describes the provenance of
+    the dataset.],
+    [5], [use], [Use], [1], [Describes legal use and restrictions that
+    apply to the dataset.],
+    [6], [proof], [Proof], [0..1], [Reserved for an external integrity
+    or signing envelope's proof material. The internal structure is
+    opaque to this specification.],
+  )]
+  , caption: [Type `DataProvenance` (Record)]
+  , kind: table
+  )
+<tab:data-provenance-record>
+
+#figure(
+  align(center)[#table(
+    columns: (11%, 17%, 72%),
+    align: (left,left,left,),
+    table.header([Type Name], [Type Definition], [Description],),
+    table.hline(),
+    [Proof], [Map], [Reserved for an external integrity or signing
+    envelope's proof material. The internal structure is opaque to this
+    specification.],
+  )]
+  , caption: [Type `Proof` (Map)]
+  , kind: table
+  )
+<tab:proof-map>
+
+== Set
+<set>
+The `set` member captures metadata about the provenance metadata record
+itself.
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [category], [String], [1], [A short canonical name, chosen by
+    the set producer, informing the end user of the category of the
+    metadata set.],
+    [2], [schema-version], [String], [1], [The version of the Data
+    Provenance Core specification this record was generated for. The
+    value for this version is always `"1.0"`.],
+    [3], [publisher], [Publisher], [1], [Information about the publisher
+    of the metadata set.],
+    [4], [label], [String], [1], [The per-publisher unique title of this
+    metadata set.],
+    [5], [tracking], [Tracking], [1], [Management attributes used to
+    track this metadata set as a whole.],
+    [6], [language], [Language], [0..1], [The language used in this
+    document, corresponding to IETF BCP 47.],
+    [7], [source-language], [Language], [0..1], [If this is a
+    translation, the language this document was translated from.],
+    [8], [acknowledgments], [Acknowledgment], [0..\*], [Acknowledgment
+    elements associated with the whole set.],
+    [9], [notes], [Note], [0..\*], [Notes associated with this metadata
+    set.],
+    [10], [references], [Reference], [0..\*], [References associated
+    with this metadata set.],
+  )]
+  , caption: [Type `Set` (Record)]
+  , kind: table
+  )
+<tab:set-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [name], [String], [1], [The name of the issuing party.],
+    [2], [namespace], [String /uri], [1], [A URI under the control of
+    the issuing party, used as a globally unique identifier for that
+    party.],
+    [3], [contact-details], [String], [0..1], [Information on how to
+    contact the publisher.],
+  )]
+  , caption: [Type `Publisher` (Record)]
+  , kind: table
+  )
+<tab:publisher-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [current-release-date], [String /date-time], [1], [The date
+    when the current revision of this document was released.],
+    [2], [id], [String], [1], [A unique identifier for this metadata
+    set, assigned and maintained by the original issuing authority. MUST
+    NOT start or end with whitespace.],
+    [3], [initial-release-date], [String /date-time], [1], [The date
+    when this metadata set was first published.],
+    [4], [revision-history], [Revision], [1..\*], [One revision item for
+    each version of the metadata set, including the initial one.],
+    [5], [status], [TrackingStatus], [1], [The draft status of the
+    metadata set.],
+    [6], [version], [Version], [1], [The version of the current metadata
+    set.],
+    [7], [aliases], [String], [0..\*], [Alternate names for this
+    metadata set.],
+    [8], [generator], [Generator], [0..1], [Information about the engine
+    that generated this metadata set.],
+  )]
+  , caption: [Type `Tracking` (Record)]
+  , kind: table
+  )
+<tab:tracking-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 32%, 64%),
+    align: (right,left,left,),
+    table.header([ID], [Item], [Description],),
+    table.hline(),
+    [1], [draft], [The metadata set is a draft.],
+    [2], [final], [The metadata set is final.],
+    [3], [interim], [The metadata set has interim status.],
+  )]
+  , caption: [Type `TrackingStatus` (Enumerated)]
+  , kind: table
+  )
+<tab:tracking-status-enum>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [date], [String /date-time], [1], [The date of this revision
+    entry.],
+    [2], [number], [Version], [1], [The version number of this
+    revision.],
+    [3], [summary], [String], [1], [A short description of the changes
+    in this revision.],
+    [4], [legacy-version], [String], [0..1], [A version string from an
+    existing set with the same content, tracing from DP-Core compliant
+    to historic items.],
+  )]
+  , caption: [Type `Revision` (Record)]
+  , kind: table
+  )
+<tab:revision-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [engine], [GeneratorEngine], [1], [Information about the engine
+    used to generate this metadata set.],
+    [2], [date], [String /date-time], [0..1], [The date this metadata
+    set was generated.],
+  )]
+  , caption: [Type `Generator` (Record)]
+  , kind: table
+  )
+<tab:generator-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [name], [String], [1], [The name of the engine that generated
+    this metadata set.],
+    [2], [version], [Version], [0..1], [The version of the engine that
+    generated this metadata set.],
+  )]
+  , caption: [Type `GeneratorEngine` (Record)]
+  , kind: table
+  )
+<tab:generator-engine-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [category], [NoteCategory], [1], [The category of the note.],
+    [2], [text], [String], [1], [The content of the note, varying
+    depending on type.],
+    [3], [audience], [String], [0..1], [The intended audience for the
+    note.],
+    [4], [title], [String], [0..1], [A concise description of what is
+    contained in the text of the note.],
+  )]
+  , caption: [Type `Note` (Record)]
+  , kind: table
+  )
+<tab:note-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 32%, 64%),
+    align: (right,left,left,),
+    table.header([ID], [Item], [Description],),
+    table.hline(),
+    [1], [description], [A descriptive note about the subject.],
+    [2], [details], [A note with detailed supplemental information.],
+    [3], [faq], [A note in frequently-asked-questions format.],
+    [4], [general], [A general note.],
+    [5], [legal\_disclaimer], [A note containing a legal disclaimer.],
+    [6], [other], [A note that does not fit other categories.],
+    [7], [summary], [A summary note.],
+  )]
+  , caption: [Type `NoteCategory` (Enumerated)]
+  , kind: table
+  )
+<tab:note-category-enum>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [summary], [String], [1], [A short description of what this
+    reference refers to.],
+    [2], [url], [String /uri], [1], [The URL of the referenced
+    resource.],
+    [3], [category], [ReferenceCategory], [0..1], [Whether this
+    reference is external or self-referential.],
+  )]
+  , caption: [Type `Reference` (Record)]
+  , kind: table
+  )
+<tab:reference-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 32%, 64%),
+    align: (right,left,left,),
+    table.header([ID], [Item], [Description],),
+    table.hline(),
+    [1], [external], [The reference points to an external resource.],
+    [2], [self], [The reference points back to the same information item
+    in focus.],
+  )]
+  , caption: [Type `ReferenceCategory` (Enumerated)]
+  , kind: table
+  )
+<tab:reference-category-enum>
+
+== Source
+<source>
+The `source` member characterizes the content and source of the dataset.
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [about], [About], [1], [A detailed narrative explaining the
+    contents, scope, and purpose of the dataset.],
+    [2], [id], [Identity], [1], [A unique identifier for this dataset,
+    using at least one identification method.],
+    [3], [issuer], [Organization], [1..\*], [The legal entity or
+    entities responsible for creating the dataset.],
+    [4], [location], [String /uri], [1], [The web address where this
+    dataset's metadata is published and can be accessed.],
+    [5], [name], [String], [1], [The official name of the dataset.],
+    [6], [data-version], [Version], [1], [The version of the dataset
+    this metadata set describes.],
+  )]
+  , caption: [Type `Source` (Record)]
+  , kind: table
+  )
+<tab:source-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [content], [String], [1], [Contextual information helping users
+    understand what the data represents and how it was collected.],
+    [2], [purpose], [String], [1], [The recommended uses for this
+    dataset.],
+    [3], [scope], [String], [0..1], [Any limitations of the dataset.],
+  )]
+  , caption: [Type `About` (Record)]
+  , kind: table
+  )
+<tab:about-record>
+
+The `Identity` type provides at least one identifier for the dataset. At
+least one of its fields MUST be present.
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [hashes], [HashEntry], [0..\*], [Cryptographic hash-based
+    identifiers for the dataset.],
+    [2], [uris], [String /uri], [0..\*], [URI identifiers for the
+    dataset.],
+    [3], [uuids], [String /uuid], [0..\*], [UUID identifiers for the
+    dataset.],
+    [4], [custom-ids], [CustomId], [0..\*], [Identifiers in any text
+    format.],
+  )]
+  , caption: [Type `Identity` (Map)]
+  , kind: table
+  )
+<tab:identity-map>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [tree-hashes], [TreeHash], [1..\*], [The cryptographic hash
+    values for this file or tree.],
+    [2], [path], [String], [1], [The path (file or filesystem tree root)
+    identified by these hash values.],
+  )]
+  , caption: [Type `HashEntry` (Record)]
+  , kind: table
+  )
+<tab:hash-entry-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [algorithm], [String], [1], [The name of the hash or tree/seal
+    algorithm used to calculate the value.],
+    [2], [value], [String], [1], [The cryptographic hash value in
+    hexadecimal representation.],
+  )]
+  , caption: [Type `TreeHash` (Record)]
+  , kind: table
+  )
+<tab:tree-hash-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [method], [String], [1], [The name of the method used to derive
+    this identifier.],
+    [2], [value], [String], [1], [The identifier value.],
+    [3], [tool], [String], [0..1], [The name of the tool used to derive
+    this identifier.],
+    [4], [parameter-list], [String], [0..\*], [Parameters used when
+    invoking the tool.],
+  )]
+  , caption: [Type `CustomId` (Record)]
+  , kind: table
+  )
+<tab:custom-id-record>
+
+== Provenance
+<provenance>
+The `provenance` member describes the provenance of the dataset.
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [origin-geography], [GeographicRegion], [1..\*], [The
+    geographical locations where the data was originally collected.],
+    [2], [date], [String /date], [1], [The date when the dataset was
+    compiled or created (YYYY-MM-DD).],
+    [3], [generation-method], [GenerationMethod], [1..\*], [The
+    methodology or procedures used to collect, generate, or compile the
+    data.],
+    [4], [source], [String /uri], [0..1], [The URI of metadata for a
+    source dataset contributing to this dataset, establishing lineage.],
+    [5], [origin], [Organization], [0..\*], [The original source
+    organization, if different from the dataset issuer.],
+    [6], [previous-date], [String /date], [0..1], [The release date of
+    the previous version of this dataset (YYYY-MM-DD).],
+    [7], [generation-period], [GenerationPeriod], [0..1], [The span of
+    time during which the data was collected or generated.],
+    [8], [format], [ModalityFormat], [0..\*], [Describes the modality or
+    media type of the data within the dataset.],
+    [9], [sub-provenance], [Provenance], [0..1], [Nested provenance
+    information for a component of this dataset.],
+    [10], [source-digest], [SourceDigest], [0..1], [A cryptographic
+    digest of the record referenced by `source`, computed at issuance.],
+  )]
+  , caption: [Type `Provenance` (Record)]
+  , kind: table
+  )
+<tab:provenance-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [algorithm], [String], [1], [Digest algorithm identifier
+    (e.g.~sha256, sha384, sha512).],
+    [2], [value], [String], [1], [The digest value, hex-encoded.],
+  )]
+  , caption: [Type `SourceDigest` (Record)]
+  , kind: table
+  )
+<tab:source-digest-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [start], [String /date-time], [0..1], [The start of the data
+    collection or generation period.],
+    [2], [end], [String /date-time], [0..1], [The end of the data
+    collection or generation period.],
+  )]
+  , caption: [Type `GenerationPeriod` (Record)]
+  , kind: table
+  )
+<tab:generation-period-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [code], [GenerationMethodCode], [1], [A short code identifying
+    the generation method.],
+    [2], [system], [String], [0..1], [The code system used to interpret
+    the code value.],
+    [3], [long-description], [String], [0..1], [A detailed description
+    of the method.],
+  )]
+  , caption: [Type `GenerationMethod` (Record)]
+  , kind: table
+  )
+<tab:generation-method-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 32%, 64%),
+    align: (right,left,left,),
+    table.header([ID], [Item], [Description],),
+    table.hline(),
+    [1], [data-augmentation], [Data generation through augmentation of
+    existing data.],
+    [2], [data-mining], [Data collected through automated data mining.],
+    [3], [feeds], [Data received through data feeds.],
+    [4], [machine-generated-ml-ops], [Data generated through machine
+    learning operations.],
+    [5], [other], [A generation method not listed here.],
+    [6], [primary-user-source], [Data collected directly from primary
+    users.],
+    [7], [simulations], [Data generated through simulations.],
+    [8], [social-media], [Data collected from social media platforms.],
+    [9], [syndication], [Data received through syndication.],
+    [10], [transfer-learning], [Data generated through transfer
+    learning.],
+    [11], [user-generated-content], [Data created by end users.],
+    [12], [web-scraping-crawling], [Data collected by web scraping or
+    crawling.],
+  )]
+  , caption: [Type `GenerationMethodCode` (Enumerated)]
+  , kind: table
+  )
+<tab:generation-method-code-enum>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 32%, 64%),
+    align: (right,left,left,),
+    table.header([ID], [Item], [Description],),
+    table.hline(),
+    [1], [application/json], [JSON data format.],
+    [2], [application/jsonld], [JSON-LD linked data format.],
+    [3], [application/msword], [Microsoft Word document format.],
+    [4], [application/vnd.ms-excel], [Microsoft Excel spreadsheet
+    format.],
+    [5], [application/zip], [ZIP archive format.],
+    [6], [image/bmp], [BMP image format.],
+    [7], [image/gif], [GIF image format.],
+    [8], [image/jpeg], [JPEG image format.],
+    [9], [image/png], [PNG image format.],
+    [10], [image/x-png], [PNG image format (legacy media type).],
+    [11], [other], [A format not listed here.],
+    [12], [text/csv], [CSV text format.],
+    [13], [text/plain], [Plain text format.],
+  )]
+  , caption: [Type `ModalityFormat` (Enumerated)]
+  , kind: table
+  )
+<tab:modality-format-enum>
+
+== Use
+<use>
+The `use` member describes the legal use and restrictions applicable to
+the dataset.
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [intended-purpose], [Purpose], [1..\*], [The purpose or
+    purposes for which the dataset was created.],
+    [2], [classification], [Classification], [0..\*], [Confidentiality
+    classifications applicable to the dataset.],
+    [3], [consents], [String], [0..\*], [Locations of consent
+    documentation or agreements related to the data.],
+    [4], [data-risk-reducing], [DataRiskReducing], [0..\*], [Techniques
+    used to reduce known data risk.],
+    [5], [processing-included], [GeographicRegion], [0..\*], [Geographical
+    boundaries within which the data may be processed.],
+    [6], [processing-excluded], [GeographicRegion], [0..\*], [Geographical
+    boundaries within which the data may not be processed.],
+    [7], [storage-allowed], [GeographicRegion], [0..\*], [Geographical
+    locations where the data may be stored.],
+    [8], [storage-forbidden], [GeographicRegion], [0..\*], [Geographical
+    locations where the data may not be stored.],
+    [9], [license], [String], [0..\*], [The terms under which the
+    dataset can be used, including any restrictions or obligations.],
+    [10], [copyright], [String], [0..\*], [Copyright information
+    covering proprietary information in the dataset.],
+    [11], [patent], [String], [0..\*], [Patent information covering
+    proprietary information in the dataset.],
+    [12], [trademark], [String], [0..\*], [Trademark information
+    covering proprietary information in the dataset.],
+  )]
+  , caption: [Type `Use` (Record)]
+  , kind: table
+  )
+<tab:use-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [code], [PurposeCode], [1], [A short code identifying the
+    intended purpose.],
+    [2], [long-description], [String], [1], [A detailed description of
+    the intended purpose.],
+    [3], [system], [String], [0..1], [The code system used to interpret
+    the code value.],
+  )]
+  , caption: [Type `Purpose` (Record)]
+  , kind: table
+  )
+<tab:purpose-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [regulation], [Regulation], [1], [The regulation or
+    classification standard being evaluated.],
+    [2], [evaluated], [Boolean], [1], [Whether the dataset has been
+    evaluated against this classification (`true`) or not (`false`).],
+    [3], [tool], [String], [0..1], [The tool used to perform the
+    evaluation.],
+  )]
+  , caption: [Type `Classification` (Record)]
+  , kind: table
+  )
+<tab:classification-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [code], [ConfidentialityCode], [1], [A short code identifying
+    the confidentiality classification.],
+    [2], [system], [String], [0..1], [The code system used to interpret
+    the code value.],
+    [3], [long-description], [String], [0..1], [A detailed description
+    of the regulation or classification.],
+  )]
+  , caption: [Type `Regulation` (Record)]
+  , kind: table
+  )
+<tab:regulation-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 32%, 64%),
+    align: (right,left,left,),
+    table.header([ID], [Item], [Description],),
+    table.hline(),
+    [1], [other], [A confidentiality classification not listed here.],
+    [2], [pci], [Payment Card Industry (PCI) data.],
+    [3], [pfi], [Personal Financial Information (PFI).],
+    [4], [phi], [Protected Health Information (PHI).],
+    [5], [pi], [Personal Information (PI).],
+    [6], [sci], [Sensitive Compartmented Information (SCI).],
+    [7], [spi], [Sensitive Personal Information (SPI).],
+  )]
+  , caption: [Type `ConfidentialityCode` (Enumerated)]
+  , kind: table
+  )
+<tab:confidentiality-code-enum>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 32%, 64%),
+    align: (right,left,left,),
+    table.header([ID], [Item], [Description],),
+    table.hline(),
+    [1], [alignment], [Dataset intended for model alignment tasks.],
+    [2], [evaluation], [Dataset intended for evaluation or
+    benchmarking.],
+    [3], [other], [A purpose not listed here.],
+    [4], [pre-training], [Dataset intended for model pre-training.],
+    [5], [production], [Dataset intended for production use.],
+    [6], [quality-assurance], [Dataset intended for quality assurance
+    testing.],
+    [7], [research], [Dataset intended for research use.],
+    [8], [staging-testing], [Dataset intended for staging or testing
+    environments.],
+    [9], [synthetic-data-generation], [Dataset intended for generating
+    synthetic data.],
+  )]
+  , caption: [Type `PurposeCode` (Enumerated)]
+  , kind: table
+  )
+<tab:purpose-code-enum>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [tool-used], [String], [1], [The name of the tool used for data
+    risk reduction.],
+    [2], [tool-category], [Method], [0..1], [The category of the tool
+    used for data risk reduction.],
+    [3], [technology], [DataTechnology], [0..1], [The privacy-enhancing
+    or data-reducing technology applied.],
+    [4], [parameters], [Parameter], [0..\*], [The parameters passed to
+    the tool.],
+    [5], [results], [String], [0..\*], [The results of applying the
+    tool.],
+  )]
+  , caption: [Type `DataRiskReducing` (Record)]
+  , kind: table
+  )
+<tab:data-risk-reducing-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [name], [String], [1], [The parameter name.],
+    [2], [value], [String], [0..1], [The parameter value.],
+  )]
+  , caption: [Type `Parameter` (Record)]
+  , kind: table
+  )
+<tab:parameter-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 32%, 64%),
+    align: (right,left,left,),
+    table.header([ID], [Item], [Description],),
+    table.hline(),
+    [1], [data-anonymization], [Transforms the dataset so that
+    individuals cannot be identified, directly or indirectly, from the
+    resulting records.],
+    [2], [data-encryption], [Encodes dataset content so that it is
+    readable only by parties holding the decryption key; typically
+    applied at rest or in transit.],
+    [3], [data-masking], [Replaces sensitive field values with realistic
+    but fictitious substitutes, preserving format and statistical
+    properties without exposing the originals.],
+    [4], [data-minimization], [Reduces the dataset to only the fields
+    and records necessary for the stated purpose, limiting exposure of
+    personal or sensitive data.],
+    [5], [data-redaction], [Removes or obscures specific values or text
+    spans identified as sensitive, such as names, identifiers, or health
+    information.],
+    [6], [differential-privacy], [Adds calibrated statistical noise so
+    that the presence or absence of any individual record cannot be
+    reliably inferred from the released data.],
+    [7], [federated-learning], [Produces model artefacts by training
+    across distributed sources without centralising raw data, so the
+    original dataset is never directly shared.],
+    [8], [homomorphic-encryption], [Enables computation on ciphertext
+    without decryption, so analytical results can be derived without
+    exposing plaintext values.],
+    [9], [k-anonymity], [Generalises quasi-identifying attributes so
+    that each record is indistinguishable from at least k-1 other
+    records in the dataset.],
+    [10], [l-diversity], [Extends k-anonymity by requiring that each
+    equivalence class contains at least l well-represented distinct
+    sensitive attribute values.],
+    [11], [other], [A data risk reduction technology not covered by the
+    defined values; use `tool-category` or `results` to describe the
+    specific technique applied.],
+    [12], [pseudonymization], [Replaces direct identifiers with
+    artificial pseudonyms; re-identification remains possible through a
+    separate, controlled mapping table.],
+    [13], [secure-multi-party-computation], [Allows multiple parties to
+    jointly compute over their respective inputs without revealing those
+    inputs to each other (SMC).],
+    [14], [t-closeness], [Extends l-diversity by requiring that the
+    distribution of sensitive values within each equivalence class
+    closely matches their overall distribution in the dataset.],
+    [15], [tokenization], [Substitutes sensitive values with
+    non-sensitive tokens; the originals are recoverable only through a
+    separate, secured token vault.],
+  )]
+  , caption: [Type `DataTechnology` (Enumerated)]
+  , kind: table
+  )
+<tab:data-technology-enum>
+
+== Shared Types
+<shared-types>
+The following types are used in more than one of the sections above.
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [legal-name], [String], [1], [The legal name of the
+    organization.],
+    [2], [address], [Address], [0..1], [The postal address of the
+    organization.],
+    [3], [url], [String /uri], [0..1], [A URL for the organization.],
+  )]
+  , caption: [Type `Organization` (Record)]
+  , kind: table
+  )
+<tab:organization-record>
+
+The value of `url` SHOULD use the `https` scheme.
+
+#figure(
+  align(center)[#table(
+    columns: (11%, 17%, 72%),
+    align: (left,left,left,),
+    table.header([Type Name], [Type Definition], [Description],),
+    table.hline(),
+    [Address], [ArrayOf(String)], [Lines of a postal address. At least
+    one required.],
+  )]
+  , caption: [Type `Address` (ArrayOf(String))]
+  , kind: table
+  )
+<tab:address-array>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [country], [String], [1], [The country name or code.],
+    [2], [state], [String], [0..1], [The state or province name or
+    code.],
+  )]
+  , caption: [Type `GeographicRegion` (Record)]
+  , kind: table
+  )
+<tab:geographic-region-record>
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [code], [String], [1], [A short code identifying the method,
+    regulation, or classification.],
+    [2], [system], [String], [0..1], [The code system used to interpret
+    the code value.],
+    [3], [long-description], [String], [0..1], [A detailed description
+    of the method, regulation, or classification.],
+  )]
+  , caption: [Type `Method` (Record)]
+  , kind: table
+  )
+<tab:method-record>
+
+The `Acknowledgment` type describes a contributor. At least one of its
+fields MUST be present.
+
+#figure(
+  align(center)[#table(
+    columns: (4%, 22%, 22%, 6%, 46%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [names], [String], [0..\*], [Names of individual contributors
+    being acknowledged.],
+    [2], [organization], [String], [0..1], [Name of a contributing
+    organization being acknowledged.],
+    [3], [summary], [String], [0..1], [Contextual details about the
+    acknowledgment.],
+    [4], [urls], [String /uri], [0..\*], [URLs of references being
+    acknowledged.],
+  )]
+  , caption: [Type `Acknowledgment` (Map)]
+  , kind: table
+  )
+<tab:acknowledgment-map>
+
+#figure(
+  align(center)[#table(
+    columns: (11%, 17%, 72%),
+    align: (left,left,left,),
+    table.header([Type Name], [Type Definition], [Description],),
+    table.hline(),
+    [Version], [String], [An integer or semantic versioning string.
+    Examples: `"1"`, `"2.0.0"`, `"1.0.0-beta"`.],
+  )]
+  , caption: [Type `Version` (String)]
+  , kind: table
+  )
+<tab:version-string>
+
+#figure(
+  align(center)[#table(
+    columns: (11%, 17%, 72%),
+    align: (left,left,left,),
+    table.header([Type Name], [Type Definition], [Description],),
+    table.hline(),
+    [Language], [String], [A language tag conforming to IETF BCP 47 /
+    RFC 5646.],
+  )]
+  , caption: [Type `Language` (String)]
+  , kind: table
+  )
+<tab:language-string>
 
 #pagebreak(weak: true)
 = Safety, Security, and Data Protection

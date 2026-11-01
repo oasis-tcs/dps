@@ -36,4 +36,5 @@ DataProvenance:
   source: $defs.source-type
   provenance: $defs.provenance-type
   use: $defs.use-type
+  proof: Mapping  # optional
 ```

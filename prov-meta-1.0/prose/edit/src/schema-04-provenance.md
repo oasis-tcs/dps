@@ -2,7 +2,7 @@
 
 The `provenance` member describes the provenance of the dataset.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name              | Type             | \#    | Description                                                                                  |
 |---:|:------------------|:-----------------|:------|:---------------------------------------------------------------------------------------------|
@@ -19,7 +19,7 @@ The `provenance` member describes the provenance of the dataset.
 
 Table: Type `Provenance` (Record){#tab:provenance-record}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name      | Type   | \# | Description                                                |
 |---:|:----------|:-------|:---|:-----------------------------------------------------------|
@@ -28,7 +28,7 @@ Table: Type `Provenance` (Record){#tab:provenance-record}
 
 Table: Type `SourceDigest` (Record){#tab:source-digest-record}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name  | Type              | \#   | Description                                            |
 |---:|:------|:------------------|:-----|:-------------------------------------------------------|
@@ -37,7 +37,7 @@ Table: Type `SourceDigest` (Record){#tab:source-digest-record}
 
 Table: Type `GenerationPeriod` (Record){#tab:generation-period-record}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name             | Type                 | \#   | Description                                       |
 |---:|:-----------------|:---------------------|:-----|:--------------------------------------------------|
@@ -47,41 +47,41 @@ Table: Type `GenerationPeriod` (Record){#tab:generation-period-record}
 
 Table: Type `GenerationMethod` (Record){#tab:generation-method-record}
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn,dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                     | Description                                            |
 |---:|:-------------------------|:-------------------------------------------------------|
-|  0 | data-augmentation        | Data generation through augmentation of existing data. |
-|  1 | data-mining              | Data collected through automated data mining.          |
-|  2 | feeds                    | Data received through data feeds.                      |
-|  3 | machine-generated-ml-ops | Data generated through machine learning operations.    |
-|  4 | other                    | A generation method not listed here.                   |
-|  5 | primary-user-source      | Data collected directly from primary users.            |
-|  6 | simulations              | Data generated through simulations.                    |
-|  7 | social-media             | Data collected from social media platforms.            |
-|  8 | syndication              | Data received through syndication.                     |
-|  9 | transfer-learning        | Data generated through transfer learning.              |
-| 10 | user-generated-content   | Data created by end users.                             |
-| 11 | web-scraping-crawling    | Data collected by web scraping or crawling.            |
+|  1 | data-augmentation        | Data generation through augmentation of existing data. |
+|  2 | data-mining              | Data collected through automated data mining.          |
+|  3 | feeds                    | Data received through data feeds.                      |
+|  4 | machine-generated-ml-ops | Data generated through machine learning operations.    |
+|  5 | other                    | A generation method not listed here.                   |
+|  6 | primary-user-source      | Data collected directly from primary users.            |
+|  7 | simulations              | Data generated through simulations.                    |
+|  8 | social-media             | Data collected from social media platforms.            |
+|  9 | syndication              | Data received through syndication.                     |
+| 10 | transfer-learning        | Data generated through transfer learning.              |
+| 11 | user-generated-content   | Data created by end users.                             |
+| 12 | web-scraping-crawling    | Data collected by web scraping or crawling.            |
 
 Table: Type `GenerationMethodCode` (Enumerated){#tab:generation-method-code-enum}
 
-\columns=iiii,nnnnnnnnnn,ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn,dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Item                     | Description                           |
 |---:|:-------------------------|:--------------------------------------|
-|  0 | application/json         | JSON data format.                     |
-|  1 | application/jsonld       | JSON-LD linked data format.           |
-|  2 | application/msword       | Microsoft Word document format.       |
-|  3 | application/vnd.ms-excel | Microsoft Excel spreadsheet format.   |
-|  4 | application/zip          | ZIP archive format.                   |
-|  5 | image/bmp                | BMP image format.                     |
-|  6 | image/gif                | GIF image format.                     |
-|  7 | image/jpeg               | JPEG image format.                    |
-|  8 | image/png                | PNG image format.                     |
-|  9 | image/x-png              | PNG image format (legacy media type). |
-| 10 | other                    | A format not listed here.             |
-| 11 | text/csv                 | CSV text format.                      |
-| 12 | text/plain               | Plain text format.                    |
+|  1 | application/json         | JSON data format.                     |
+|  2 | application/jsonld       | JSON-LD linked data format.           |
+|  3 | application/msword       | Microsoft Word document format.       |
+|  4 | application/vnd.ms-excel | Microsoft Excel spreadsheet format.   |
+|  5 | application/zip          | ZIP archive format.                   |
+|  6 | image/bmp                | BMP image format.                     |
+|  7 | image/gif                | GIF image format.                     |
+|  8 | image/jpeg               | JPEG image format.                    |
+|  9 | image/png                | PNG image format.                     |
+| 10 | image/x-png              | PNG image format (legacy media type). |
+| 11 | other                    | A format not listed here.             |
+| 12 | text/csv                 | CSV text format.                      |
+| 13 | text/plain               | Plain text format.                    |
 
 Table: Type `ModalityFormat` (Enumerated){#tab:modality-format-enum}

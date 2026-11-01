@@ -1,9 +1,10 @@
 # YAML serialization of data-provenance.json
-# This file is generated from json/data-provenance.json and is normatively equivalent.
+# This file is generated from json/data-provenance.json; its content is identical, the JSON schema is normative.
 # OASIS Data Provenance Standard (DPS) prov-meta v1.0
 $schema: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json
 $id: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json
 title: Data Provenance Metadata Schema v1.0
+x-jadn-type: DataProvenance
 description: 'The Data Provenance metadata schema is made up of four groups of metadata
   elements: Set, Source, Provenance, and Use.'
 $comment: Note, that we use a configuration schema to enforce validation of format
@@ -18,12 +19,14 @@ required:
 properties:
   $schema:
     title: Data Provenance Metadata Schema
-    description: Specifies the schema the JSON object must be valid against.
+    x-jadn-type: URI
+    description: The URI identifying the schema this JSON object must be valid against.
+      For this version the value is always the URI of the data-provenance JSON schema.
     const: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json
   set:
     title: Set level meta-data
-    description: Captures the meta-data about this meta-data set describing a particular
-      data-set.
+    x-jadn-type: Set
+    description: Set-level metadata about this provenance metadata record.
     type: object
     required:
     - category
@@ -32,23 +35,10 @@ properties:
     - label
     - tracking
     properties:
-      acknowledgments:
-        title: Set acknowledgments
-        description: Contains a list of acknowledgment elements associated with the
-          whole set.
-        $ref: '#/$defs/acknowledgments-type'
-      notes:
-        title: Set notes
-        description: Notes associated with this metadata set.
-        $ref: '#/$defs/notes-type'
-      references:
-        title: Set references
-        description: References associated with this metadata set.
-        $ref: '#/$defs/references-type'
       category:
         title: Set category
-        description: Defines a short canonical name, chosen by the set producer, which
-          will inform the end user as to the category of the meta-data set.
+        description: A short canonical name, chosen by the set producer, informing
+          the end user of the category of the metadata set.
         type: string
         pattern: ^[^\s\-_\.](.*[^\s\-_\.])?$
         minLength: 1
@@ -57,37 +47,23 @@ properties:
         - dp_event_source
         - dp_profile_xyz
         - Example Data Protection Notice Exemption
-      language:
-        title: Document language
-        description: Identifies the language used by this document, corresponding
-          to IETF BCP 47 / RFC 5646.
-        $ref: '#/$defs/language-type'
       schema-version:
         title: Data Provenance Core version
-        description: Gives the version of the Data Provenance Core specification which
-          the document was generated for.
+        description: The version of the Data Provenance Core specification this record
+          was generated for. The value for this version is always `"1.0"`.
         const: '1.0'
       publisher:
         title: Publisher
-        description: Provides information about the publisher of the metadata set.
+        x-jadn-type: Publisher
+        description: Information about the publisher of the metadata set.
         type: object
         required:
         - name
         - namespace
         properties:
-          contact-details:
-            title: Contact details
-            description: Information on how to contact the publisher, possibly including
-              details such as web sites, email addresses, phone numbers, and postal
-              mail addresses.
-            type: string
-            minLength: 1
-            examples:
-            - Example Company can be reached at contact_us@example.com, or via our
-              website at https://www.example.com/contact.
           name:
             title: Name of publisher
-            description: Contains the name of the issuing party.
+            description: The name of the issuing party.
             type: string
             minLength: 1
             examples:
@@ -96,32 +72,34 @@ properties:
             - IBM
           namespace:
             title: Namespace of publisher
-            description: Contains a URL which is under control of the issuing party
-              and can be used as a globally unique identifier for that issuing party.
+            description: A URI under the control of the issuing party, used as a globally
+              unique identifier for that party.
             type: string
             format: uri
             examples:
             - https://cisco.com
             - https://www.example.com
+          contact-details:
+            title: Contact details
+            description: Information on how to contact the publisher.
+            type: string
+            minLength: 1
+            examples:
+            - Example Company can be reached at contact_us@example.com, or via our
+              website at https://www.example.com/contact.
         additionalProperties: false
       label:
         title: Label (per publisher unique title) of this metadata set
-        description: This SHOULD be a canonical name for the set, and sufficiently
-          unique to distinguish it from similar sets.
+        description: The per-publisher unique title of this metadata set.
         type: string
         minLength: 1
         examples:
         - Learning Set for Regression Modelling for Stats 101
         - Example Data Protection Dataset in Example Generator
-      source-language:
-        title: Source language
-        description: If this copy of the document is a translation then the value
-          of this property describes from which language this document was translated.
-        $ref: '#/$defs/language-type'
       tracking:
         title: Tracking
-        description: Is a container designated to hold all management attributes necessary
-          to track a CSAF document as a whole.
+        x-jadn-type: Tracking
+        description: Management attributes used to track this metadata set as a whole.
         type: object
         required:
         - current-release-date
@@ -131,9 +109,85 @@ properties:
         - status
         - version
         properties:
+          current-release-date:
+            title: Current release date
+            description: The date when the current revision of this document was released.
+            type: string
+            format: date-time
+          id:
+            title: Unique identifier for the metadata set
+            description: A unique identifier for this metadata set, assigned and maintained
+              by the original issuing authority. MUST NOT start or end with whitespace.
+            type: string
+            pattern: ^[\S](.*[\S])?$
+            minLength: 1
+            examples:
+            - 7aedeb0a-22dd-428a-ab76-c950b43cbbc6
+            - abcdef-orga-ds-0815
+            - cisco-sa-20190513-secureboot
+          initial-release-date:
+            title: Initial release date
+            description: The date when this metadata set was first published.
+            type: string
+            format: date-time
+          revision-history:
+            title: Revision history
+            description: One revision item for each version of the metadata set, including
+              the initial one.
+            type: array
+            minItems: 1
+            items:
+              title: Revision
+              x-jadn-type: Revision
+              description: Contains all the information elements required to track
+                the evolution of a DP-Core set.
+              type: object
+              required:
+              - date
+              - number
+              - summary
+              properties:
+                date:
+                  title: Date of the revision
+                  description: The date of this revision entry.
+                  type: string
+                  format: date-time
+                number:
+                  description: The version number of this revision.
+                  $ref: '#/$defs/version-type'
+                summary:
+                  title: Summary of the revision
+                  description: A short description of the changes in this revision.
+                  type: string
+                  minLength: 1
+                  examples:
+                  - Initial version.
+                legacy-version:
+                  title: Legacy version of the revision
+                  description: A version string from an existing set with the same
+                    content, tracing from DP-Core compliant to historic items.
+                  type: string
+                  minLength: 1
+          status:
+            title: Set status
+            x-jadn-type: TrackingStatus
+            description: The draft status of the metadata set.
+            type: string
+            enum:
+            - draft
+            - final
+            - interim
+            x-jadn-enum:
+              draft: The metadata set is a draft.
+              final: The metadata set is final.
+              interim: The metadata set has interim status.
+          version:
+            title: Set version
+            description: The version of the current metadata set.
+            $ref: '#/$defs/version-type'
           aliases:
             title: Aliases
-            description: Contains a list of alternate names for the same set.
+            description: Alternate names for this metadata set.
             type: array
             minItems: 1
             uniqueItems: true
@@ -145,42 +199,28 @@ properties:
               minLength: 1
               examples:
               - 0bacba95-ceb9-4fae-bf07-d5683a9481c1
-          current-release-date:
-            title: Current release date
-            description: The date when the current revision of this document was released
-            type: string
-            format: date-time
           generator:
             title: Set generator
-            description: Is a container to hold all elements related to the generation
-              of the metadata set. These items will reference when the document was
-              actually created, including the date it was generated and the entity
-              that generated it.
+            x-jadn-type: Generator
+            description: Information about the engine that generated this metadata
+              set.
             type: object
             required:
             - engine
             properties:
-              date:
-                title: Date of set generation
-                description: This SHOULD be the current date that the set was generated.
-                  Because documents are often generated internally by a set producer
-                  and exist for a nonzero amount of time before being released, this
-                  field MAY be different from the Initial Release Date and Current
-                  Release Date.
-                type: string
-                format: date-time
               engine:
                 title: Engine of document generation
-                description: Contains information about the engine that generated
-                  the DP-Core set.
+                x-jadn-type: GeneratorEngine
+                description: Information about the engine used to generate this metadata
+                  set.
                 type: object
                 required:
                 - name
                 properties:
                   name:
                     title: Engine name
-                    description: Represents the name of the engine that generated
-                      the DP-Core set.
+                    description: The name of the engine that generated this metadata
+                      set.
                     type: string
                     minLength: 1
                     examples:
@@ -189,93 +229,61 @@ properties:
                     - ExtractorDP
                   version:
                     title: Engine version
-                    description: Contains the version of the engine that generated
-                      the DP-Core set.
+                    description: The version of the engine that generated this metadata
+                      set.
                     $ref: '#/$defs/version-type'
                     examples:
                     - 0.42.0
                     - 1.0.0-beta+exp.sha.a1c44f85
                     - '2'
-          id:
-            title: Unique identifier for the metadata set
-            description: The ID is a simple label that provides for a wide range of
-              numbering values, types, and schemes. Its value SHOULD be assigned and
-              maintained by the original metadata set issuing authority.
-            type: string
-            pattern: ^[\S](.*[\S])?$
-            minLength: 1
-            examples:
-            - 7aedeb0a-22dd-428a-ab76-c950b43cbbc6
-            - abcdef-orga-ds-0815
-            - cisco-sa-20190513-secureboot
-          initial-release-date:
-            title: Initial release date
-            description: The date when this set was first published.
-            type: string
-            format: date-time
-          revision-history:
-            title: Revision history
-            description: Holds one revision item for each version of the DP-Core set,
-              including the initial one.
-            type: array
-            minItems: 1
-            items:
-              title: Revision
-              description: Contains all the information elements required to track
-                the evolution of a DP-Core set.
-              type: object
-              required:
-              - date
-              - number
-              - summary
-              properties:
-                date:
-                  title: Date of the revision
-                  description: The date of the revision entry
-                  type: string
-                  format: date-time
-                legacy-version:
-                  title: Legacy version of the revision
-                  description: Contains the version string used in an existing set
-                    with the same content. This optional field is intended to trace
-                    between DP-Core compliant to historic, DP-Core unaware data provenance
-                    information items.
-                  type: string
-                  minLength: 1
-                number:
-                  $ref: '#/$defs/version-type'
-                summary:
-                  title: Summary of the revision
-                  description: Holds a single non-empty string representing a short
-                    description of the changes.
-                  type: string
-                  minLength: 1
-                  examples:
-                  - Initial version.
-          status:
-            title: Set status
-            description: Defines the draft status of the set. This allows processing
-              DP-Core sets of various maturity per version.
-            type: string
-            enum:
-            - draft
-            - final
-            - interim
-          version:
-            title: Set version
-            description: The version of the current DP-Core set
-            $ref: '#/$defs/version-type'
+              date:
+                title: Date of set generation
+                description: The date this metadata set was generated.
+                type: string
+                format: date-time
+      language:
+        title: Document language
+        description: The language used in this document, corresponding to IETF BCP
+          47.
+        $ref: '#/$defs/language-type'
+      source-language:
+        title: Source language
+        description: If this is a translation, the language this document was translated
+          from.
+        $ref: '#/$defs/language-type'
+      acknowledgments:
+        title: Set acknowledgments
+        description: Acknowledgment elements associated with the whole set.
+        $ref: '#/$defs/acknowledgments-type'
+      notes:
+        title: Set notes
+        description: Notes associated with this metadata set.
+        $ref: '#/$defs/notes-type'
+      references:
+        title: Set references
+        description: References associated with this metadata set.
+        $ref: '#/$defs/references-type'
   source:
+    description: Characterizes the content and source of the dataset.
     $ref: '#/$defs/source-type'
   provenance:
+    description: Describes the provenance of the dataset.
     $ref: '#/$defs/provenance-type'
   use:
+    description: Describes legal use and restrictions that apply to the dataset.
     $ref: '#/$defs/use-type'
+  proof:
+    title: Proof
+    x-jadn-type: Proof
+    description: Reserved for an external integrity or signing envelope's proof material.
+      The internal structure is opaque to this specification.
+    type: object
 $defs:
   about-type:
     $comment: WIP, because producers may only provide opaue text for all three dimensions
       as per legal reasons.
     title: The About type
+    x-jadn-type: About
     description: Contains a detailed narrative that explains the contents, scope,
       and purpose of the dataset. It provides essential contextual information that
       helps users understand what the data represents, how it was collected, and any
@@ -283,22 +291,22 @@ $defs:
     properties:
       content:
         title: Content of the information
-        description: Provides essential contextual information that helps users understand
-          what the data represents and how it was collected.
+        description: Contextual information helping users understand what the data
+          represents and how it was collected.
         type: string
         minLength: 1
         examples:
         - We found these numbers on the parking lot.
       purpose:
         title: Purpose of the information
-        description: Explains the recommended uses.
+        description: The recommended uses for this dataset.
         type: string
         minLength: 1
         examples:
         - Use only for learning regression modeling. Not for production use.
       scope:
         title: Scope of the information
-        description: Points out any limitations.
+        description: Any limitations of the dataset.
         type: string
         minLength: 1
         examples:
@@ -315,13 +323,14 @@ $defs:
     minItems: 1
     items:
       title: Acknowledgment
+      x-jadn-type: Acknowledgment
       description: Acknowledges contributions by describing those that contributed.
       type: object
       minProperties: 1
       properties:
         names:
           title: List of acknowledged names
-          description: Contains the names of contributors being recognized.
+          description: Names of individual contributors being acknowledged.
           type: array
           minItems: 1
           items:
@@ -334,7 +343,7 @@ $defs:
             - Manolo Servicio
         organization:
           title: Contributing organization
-          description: Contains the name of a contributing organization being recognized.
+          description: Name of a contributing organization being acknowledged.
           type: string
           minLength: 1
           examples:
@@ -344,16 +353,14 @@ $defs:
           - Microsoft
         summary:
           title: Summary of the acknowledgment
-          description: SHOULD represent any contextual details the set producers wish
-            to make known about the acknowledgment or acknowledged parties.
+          description: Contextual details about the acknowledgment.
           type: string
           minLength: 1
           examples:
           - First analysis of the merged data-set
         urls:
           title: List of URLs
-          description: Specifies a list of URLs or location of the reference to be
-            acknowledged.
+          description: URLs of references being acknowledged.
           type: array
           minItems: 1
           items:
@@ -363,7 +370,8 @@ $defs:
             format: uri
   address-type:
     title: Address type
-    description: Single physical address as lines of text.
+    x-jadn-type: Address
+    description: Lines of a postal address. At least one required.
     type: array
     minItems: 1
     uniqueItems: true
@@ -378,11 +386,15 @@ $defs:
       by the key is specified by the semantics of the key as name.
     type: array
     items:
+      x-jadn-type: GeographicRegion
+      description: A geographical region identified by country and optionally state.
       type: object
       properties:
         country:
+          description: The country name or code.
           type: string
         state:
+          description: The state or province name or code.
           type: string
       required:
       - country
@@ -390,6 +402,7 @@ $defs:
     uniqueItems: true
   identity-type:
     title: Identity type
+    x-jadn-type: Identity
     description: Provides at least one method which aids in identifying some entity
       to allow dentification as precisely as possible offering various methods.
     type: object
@@ -397,12 +410,12 @@ $defs:
     properties:
       hashes:
         title: List of hashes
-        description: Contains a list of cryptographic hashes usable to identify files
-          or filesets.
+        description: Cryptographic hash-based identifiers for the dataset.
         type: array
         minItems: 1
         items:
           title: Cryptographic hashes
+          x-jadn-type: HashEntry
           description: Contains all information to identify a file or fileset based
             on its cryptographic hash values.
           type: object
@@ -412,12 +425,12 @@ $defs:
           properties:
             tree-hashes:
               title: List of file or tree hashes
-              description: Contains a list of cryptographic hashes for this file or
-                tree.
+              description: The cryptographic hash values for this file or tree.
               type: array
               minItems: 1
               items:
                 title: Path hash
+                x-jadn-type: TreeHash
                 description: Contains one hash value and algorithm of the file to
                   be identified.
                 type: object
@@ -427,8 +440,8 @@ $defs:
                 properties:
                   algorithm:
                     title: Algorithm of the cryptographic hash
-                    description: Contains the name of the hash or tree/seal algorithm
-                      used to calculate the value.
+                    description: The name of the hash or tree/seal algorithm used
+                      to calculate the value.
                     type: string
                     default: sha256
                     minLength: 1
@@ -441,8 +454,7 @@ $defs:
                     - tree-blake3-seal-sha512
                   value:
                     title: Value of the cryptographic hash
-                    description: Contains the cryptographic hash value in hexadecimal
-                      representation.
+                    description: The cryptographic hash value in hexadecimal representation.
                     type: string
                     pattern: ^[0-9a-fA-F]{32,}$
                     minLength: 32
@@ -452,8 +464,8 @@ $defs:
                     - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
             path:
               title: Path
-              description: Contains the path (can be a single file or the root of
-                a filesystem tree) which is identified by the hash values.
+              description: The path (file or filesystem tree root) identified by these
+                hash values.
               type: string
               minLength: 1
               examples:
@@ -462,7 +474,7 @@ $defs:
               - household-data.dmg
       uris:
         title: List of generic URIs
-        description: Contains a list of identifiers in URI format.
+        description: URI identifiers for the dataset.
         type: array
         minItems: 1
         items:
@@ -472,7 +484,7 @@ $defs:
           format: uri
       uuids:
         title: List of UUIDs
-        description: Contains a list of identifiers in UUID format.
+        description: UUID identifiers for the dataset.
         type: array
         minItems: 1
         items:
@@ -482,11 +494,12 @@ $defs:
           format: uuid
       custom-ids:
         title: List of text form identifiers
-        description: Contains a list of identifiers in any text format.
+        description: Identifiers in any text format.
         type: array
         minItems: 1
         items:
           title: custom-id
+          x-jadn-type: CustomId
           description: Provides a unique ID in any text format.
           type: object
           required:
@@ -495,15 +508,24 @@ $defs:
           properties:
             method:
               title: Method for construction of the ID
-              description: Contains the name of the method used to derive the value.
+              description: The name of the method used to derive this identifier.
               type: string
               minLength: 1
               examples:
               - part-number
               - sampling-sequencer
+            value:
+              title: Value of the custom identifier
+              description: The identifier value.
+              type: string
+              minLength: 1
+              examples:
+              - '42'
+              - 942-1234
+              - afacade
             tool:
               title: Tool used for construction of the ID
-              description: Contains the name of the tool used to derive the value.
+              description: The name of the tool used to derive this identifier.
               type: string
               minLength: 1
               examples:
@@ -511,7 +533,7 @@ $defs:
               - treehash
             parameter-list:
               title: List of parameters used for the tool
-              description: Contains a list of parameters to use when calling the tool.
+              description: Parameters used when invoking the tool.
               type: array
               minItems: 1
               items:
@@ -531,19 +553,10 @@ $defs:
                 - sha512
               - - --strict
                 - 'true'
-            value:
-              title: Value of the custom identifier
-              description: Contains the custom identifier value.
-              type: string
-              minLength: 1
-              examples:
-              - '42'
-              - 942-1234
-              - afacade
   language-type:
     title: Language type
-    description: 'Identifies a language, corresponding to IETF BCP 47 / RFC 5646.
-      See IETF language registry: https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry'
+    x-jadn-type: Language
+    description: A language tag conforming to IETF BCP 47 / RFC 5646.
     type: string
     pattern: ^(([A-Za-z]{2,3}(-[A-Za-z]{3}(-[A-Za-z]{3}){0,2})?|[A-Za-z]{4,8})(-[A-Za-z]{4})?(-([A-Za-z]{2}|[0-9]{3}))?(-([A-Za-z0-9]{5,8}|[0-9][A-Za-z0-9]{3}))*(-[A-WY-Za-wy-z0-9](-[A-Za-z0-9]{2,8})+)*(-[Xx](-[A-Za-z0-9]{1,8})+)?|[Xx](-[A-Za-z0-9]{1,8})+|[Ii]-[Dd][Ee][Ff][Aa][Uu][Ll][Tt]|[Ii]-[Mm][Ii][Nn][Gg][Oo])$
     examples:
@@ -553,18 +566,24 @@ $defs:
     - frc
     - jp
   method-type:
+    x-jadn-type: Method
+    description: An open coding object for a method, regulation, or classification.
     type: object
     properties:
       code:
+        description: A short code identifying the method, regulation, or classification.
         type: string
       system:
+        description: The code system used to interpret the code value.
         type: string
       long-description:
+        description: A detailed description of the method, regulation, or classification.
         type: string
     required:
     - code
   generation-method-code-type:
     title: Generation method code
+    x-jadn-type: GenerationMethodCode
     description: The code identifying the data generation or collection method.
     type: string
     enum:
@@ -580,12 +599,27 @@ $defs:
     - transfer-learning
     - user-generated-content
     - web-scraping-crawling
+    x-jadn-enum:
+      data-augmentation: Data generation through augmentation of existing data.
+      data-mining: Data collected through automated data mining.
+      feeds: Data received through data feeds.
+      machine-generated-ml-ops: Data generated through machine learning operations.
+      other: A generation method not listed here.
+      primary-user-source: Data collected directly from primary users.
+      simulations: Data generated through simulations.
+      social-media: Data collected from social media platforms.
+      syndication: Data received through syndication.
+      transfer-learning: Data generated through transfer learning.
+      user-generated-content: Data created by end users.
+      web-scraping-crawling: Data collected by web scraping or crawling.
   generation-method-item-type:
     title: Generation method
+    x-jadn-type: GenerationMethod
     description: A method or procedure used to collect, generate, or compile the data.
     type: object
     properties:
       code:
+        description: A short code identifying the generation method.
         $ref: '#/$defs/generation-method-code-type'
       system:
         title: System
@@ -599,6 +633,7 @@ $defs:
     - code
   confidentiality-code-type:
     title: Confidentiality code
+    x-jadn-type: ConfidentialityCode
     description: The code identifying the confidentiality classification.
     type: string
     enum:
@@ -609,12 +644,22 @@ $defs:
     - pi
     - sci
     - spi
+    x-jadn-enum:
+      other: A confidentiality classification not listed here.
+      pci: Payment Card Industry (PCI) data.
+      pfi: Personal Financial Information (PFI).
+      phi: Protected Health Information (PHI).
+      pi: Personal Information (PI).
+      sci: Sensitive Compartmented Information (SCI).
+      spi: Sensitive Personal Information (SPI).
   confidentiality-regulation-type:
     title: Confidentiality regulation
+    x-jadn-type: Regulation
     description: A confidentiality classification standard or regulation being evaluated.
     type: object
     properties:
       code:
+        description: A short code identifying the confidentiality classification.
         $ref: '#/$defs/confidentiality-code-type'
       system:
         title: System
@@ -628,6 +673,7 @@ $defs:
     - code
   purpose-code-type:
     title: Purpose code
+    x-jadn-type: PurposeCode
     description: The code identifying the intended purpose of the dataset.
     type: string
     enum:
@@ -640,6 +686,16 @@ $defs:
     - research
     - staging-testing
     - synthetic-data-generation
+    x-jadn-enum:
+      alignment: Dataset intended for model alignment tasks.
+      evaluation: Dataset intended for evaluation or benchmarking.
+      other: A purpose not listed here.
+      pre-training: Dataset intended for model pre-training.
+      production: Dataset intended for production use.
+      quality-assurance: Dataset intended for quality assurance testing.
+      research: Dataset intended for research use.
+      staging-testing: Dataset intended for staging or testing environments.
+      synthetic-data-generation: Dataset intended for generating synthetic data.
   notes-type:
     title: List of notes
     description: Contains notes which are specific to the current context.
@@ -647,6 +703,7 @@ $defs:
     minItems: 1
     items:
       title: Note
+      x-jadn-type: Note
       description: Is a place to put all manner of text blobs related to the current
         context.
       type: object
@@ -654,19 +711,10 @@ $defs:
       - category
       - text
       properties:
-        audience:
-          title: Audience of note
-          description: Indicates who is intended to read it.
-          type: string
-          minLength: 1
-          examples:
-          - all
-          - executives
-          - students
-          - customers
         category:
           title: Note category
-          description: Contains the information of what kind of note this is.
+          x-jadn-type: NoteCategory
+          description: The category of the note.
           type: string
           enum:
           - description
@@ -676,16 +724,33 @@ $defs:
           - legal_disclaimer
           - other
           - summary
+          x-jadn-enum:
+            description: A descriptive note about the subject.
+            details: A note with detailed supplemental information.
+            faq: A note in frequently-asked-questions format.
+            general: A general note.
+            legal_disclaimer: A note containing a legal disclaimer.
+            other: A note that does not fit other categories.
+            summary: A summary note.
         text:
           title: Note content
-          description: Holds the content of the note. Content varies depending on
-            type.
+          description: The content of the note, varying depending on type.
           type: string
           minLength: 1
+        audience:
+          title: Audience of note
+          description: The intended audience for the note.
+          type: string
+          minLength: 1
+          examples:
+          - all
+          - executives
+          - students
+          - customers
         title:
           title: Title of note
-          description: Provides a concise description of what is contained in the
-            text of the note.
+          description: A concise description of what is contained in the text of the
+            note.
           type: string
           minLength: 1
           examples:
@@ -701,13 +766,18 @@ $defs:
     minItems: 1
     type: array
     items:
+      x-jadn-type: Organization
+      description: A legal entity or organization.
       properties:
-        address:
-          $ref: '#/$defs/address-type'
         legal-name:
+          description: The legal name of the organization.
           type: string
           minLength: 1
+        address:
+          description: The postal address of the organization.
+          $ref: '#/$defs/address-type'
         url:
+          description: A URL for the organization.
           type: string
           format: uri
       required:
@@ -716,75 +786,69 @@ $defs:
     uniqueItems: true
   provenance-type:
     title: Provenance type
+    x-jadn-type: Provenance
     description: This describes the provenance of the dataset.
     type: object
     properties:
-      source:
-        title: The source
-        description: Identifies where the metadata for any source datasets that contribute
-          to the current dataset can be found, establishing lineage and dependencies.
-          This field establishes lineage.
-        type: string
-        format: uri
-      origin:
-        title: The origin
-        description: If the data originates from a different organization than the
-          one who issued the dataset, this field identifies the original source's
-          legal name.
-        $ref: '#/$defs/orga-type'
       origin-geography:
         title: The origin geography
-        description: The geographical location where the data was originally collected,
-          which can be important for compliance with regional laws and understanding
-          the data's context.
+        description: The geographical locations where the data was originally collected.
         $ref: '#/$defs/geographic-regions-type'
       date:
         title: The date
-        description: The date when the dataset was compiled or created, providing
-          a temporal context for the data.
+        description: The date when the dataset was compiled or created (YYYY-MM-DD).
         type: string
         format: date
-      previous-date:
-        title: The previous date
-        description: The release date of the last version of the dataset, if it has
-          been updated or revised, to track changes and updates over time.
-        type: string
-        format: date
-      generation-period:
-        title: The generation period
-        description: The span of time during which the data within the dataset was
-          collected or generated, offering insight into the dataset's timeliness and
-          relevance.
-        type: object
-        properties:
-          start:
-            title: The start
-            description: Start date/time
-            type: string
-            format: date-time
-          end:
-            title: The end
-            description: End date/time
-            type: string
-            format: date-time
       generation-method:
         title: The generation method
         description: The methodology or procedures used to collect, generate, or compile
-          the data, giving insight into its reliability and validity.
+          the data.
         type: array
         items:
           $ref: '#/$defs/generation-method-item-type'
         minItems: 1
         uniqueItems: true
+      source:
+        title: The source
+        description: The URI of metadata for a source dataset contributing to this
+          dataset, establishing lineage.
+        type: string
+        format: uri
+      origin:
+        title: The origin
+        description: The original source organization, if different from the dataset
+          issuer.
+        $ref: '#/$defs/orga-type'
+      previous-date:
+        title: The previous date
+        description: The release date of the previous version of this dataset (YYYY-MM-DD).
+        type: string
+        format: date
+      generation-period:
+        title: The generation period
+        x-jadn-type: GenerationPeriod
+        description: The span of time during which the data was collected or generated.
+        type: object
+        properties:
+          start:
+            title: The start
+            description: The start of the data collection or generation period.
+            type: string
+            format: date-time
+          end:
+            title: The end
+            description: The end of the data collection or generation period.
+            type: string
+            format: date-time
       format:
         title: The format
-        description: Describes the nature of the data within the dataset, such as
-          numerical, textual, or multimedia, helping users understand what kind of
-          information is contained within the file or dataset.
+        description: Describes the modality or media type of the data within the dataset.
         type: array
         minItems: 1
         uniqueItems: true
         items:
+          x-jadn-type: ModalityFormat
+          description: The modality or media type of the data within the dataset.
           type: string
           enum:
           - application/json
@@ -800,40 +864,88 @@ $defs:
           - other
           - text/csv
           - text/plain
+          x-jadn-enum:
+            application/json: JSON data format.
+            application/jsonld: JSON-LD linked data format.
+            application/msword: Microsoft Word document format.
+            application/vnd.ms-excel: Microsoft Excel spreadsheet format.
+            application/zip: ZIP archive format.
+            image/bmp: BMP image format.
+            image/gif: GIF image format.
+            image/jpeg: JPEG image format.
+            image/png: PNG image format.
+            image/x-png: PNG image format (legacy media type).
+            other: A format not listed here.
+            text/csv: CSV text format.
+            text/plain: Plain text format.
       sub-provenance:
         title: The sub-provenance
-        description: Any next level provenance information towards the leaves ot the
-          tree goes here.
+        description: Nested provenance information for a component of this dataset.
         $ref: '#/$defs/provenance-type'
+      source-digest:
+        title: Source digest
+        x-jadn-type: SourceDigest
+        description: A cryptographic digest of the record referenced by `source`,
+          computed at issuance.
+        type: object
+        required:
+        - algorithm
+        - value
+        properties:
+          algorithm:
+            title: Algorithm of the cryptographic hash
+            description: Digest algorithm identifier (e.g. sha256, sha384, sha512).
+            type: string
+            minLength: 1
+            examples:
+            - blake2b512
+            - sha256
+            - sha3-512
+            - sha384
+            - sha512
+            - tree-blake3-seal-sha512
+          value:
+            title: Value of the cryptographic hash
+            description: The digest value, hex-encoded.
+            type: string
+            pattern: ^[0-9a-fA-F]{32,}$
+            minLength: 32
+            examples:
+            - af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262
+            - cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e
+            - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
     required:
     - origin-geography
     - date
     - generation-method
   purpose-type:
     title: The purpose type
+    x-jadn-type: Purpose
     description: This is a method type with the added requirement ot provide a long
       description too.
     type: object
     properties:
       code:
+        description: A short code identifying the intended purpose.
         $ref: '#/$defs/purpose-code-type'
-      system:
-        type: string
       long-description:
+        description: A detailed description of the intended purpose.
+        type: string
+      system:
+        description: The code system used to interpret the code value.
         type: string
     required:
     - code
     - long-description
   source-type:
     title: The source type
+    x-jadn-type: Source
     description: Characterizes the content and source of the dataset.
     properties:
       about:
         title: About
-        description: Contains a detailed narrative that explains the contents, scope,
-          and purpose of the dataset. It provides essential contextual information
-          that helps users understand what the data represents, how it was collected,
-          and any limitations or recommended uses.
+        description: A detailed narrative explaining the contents, scope, and purpose
+          of the dataset.
         $ref: '#/$defs/about-type'
         examples:
         - content: Estimates of table length from randomly selected participants
@@ -841,9 +953,8 @@ $defs:
             modeling.
       id:
         title: Id
-        description: Unique identifier (such as a UUID) assigned to the dataset's
-          metadata to uniquely distinguish it from others, ensuring no confusion or
-          overlap.
+        description: A unique identifier for this dataset, using at least one identification
+          method.
         $ref: '#/$defs/identity-type'
         examples:
         - custome-ids:
@@ -855,28 +966,24 @@ $defs:
           - https://example.com/public/ds/42
       issuer:
         title: The issuer
-        description: The legal entity responsible for creating the dataset, providing
-          accountability and a point of contact for inquiries.
+        description: The legal entity or entities responsible for creating the dataset.
         $ref: '#/$defs/orga-type'
         examples:
         - legal-name: Sampling Ltd.
           url: https://example.com/smplng/about
       location:
         title: The location
-        description: The web address where the dataset's metadata is published and
-          can be accessed, providing a direct link to detailed information about the
-          dataset. Typically will be a unique URL of the current dataset.
+        description: The web address where this dataset's metadata is published and
+          can be accessed.
         type: string
         format: uri
       name:
         title: The name
-        description: The official name of the dataset, which should be descriptive
-          and help easily identify the dataset's content and purpose.
+        description: The official name of the dataset.
         type: string
       data-version:
         title: The data version
-        description: Specifies the version of the dataset this DP-Core set describes,
-          allowing the dataset to evolve over time and keeping consistent labeling.
+        description: The version of the dataset this metadata set describes.
         $ref: '#/$defs/version-type'
     required:
     - about
@@ -893,6 +1000,7 @@ $defs:
     minItems: 1
     items:
       title: Reference
+      x-jadn-type: Reference
       description: Holds any reference to conferences, papers, advisories, rulings,
         directives, and other resources that are related and considered related to
         either a surrounding part of or the entire information item and to be of value
@@ -902,43 +1010,60 @@ $defs:
       - summary
       - url
       properties:
+        summary:
+          title: Summary of the reference
+          description: A short description of what this reference refers to.
+          type: string
+          minLength: 1
+        url:
+          title: URL of reference
+          description: The URL of the referenced resource.
+          type: string
+          format: uri
         category:
           title: Category of reference
-          description: Indicates whether the reference points to the same information
-            item in focus (depending on scope) or to an external resource.
+          x-jadn-type: ReferenceCategory
+          description: Whether this reference is external or self-referential.
           type: string
           default: external
           enum:
           - external
           - self
-        summary:
-          title: Summary of the reference
-          description: Indicates what this reference refers to.
-          type: string
-          minLength: 1
-        url:
-          title: URL of reference
-          description: Provides the URL for the reference.
-          type: string
-          format: uri
+          x-jadn-enum:
+            external: The reference points to an external resource.
+            self: The reference points back to the same information item in focus.
   use-type:
     title: The use type
+    x-jadn-type: Use
     description: This group describes legal use and restrictions.
     type: object
     properties:
-      classification:
-        title: Classification
-        description: Indicate if the dataset includes data falling into the confidentiality
-          classification. Each classifier must be evaluated as true/false/unknown.
+      intended-purpose:
+        title: Intended purpose
+        description: The purpose or purposes for which the dataset was created.
         type: array
         items:
+          $ref: '#/$defs/purpose-type'
+        minItems: 1
+        uniqueItems: true
+      classification:
+        title: Classification
+        description: Confidentiality classifications applicable to the dataset.
+        type: array
+        items:
+          x-jadn-type: Classification
+          description: A confidentiality classification applicable to the dataset.
           type: object
           properties:
             regulation:
+              description: The regulation or classification standard being evaluated.
               $ref: '#/$defs/confidentiality-regulation-type'
             evaluated:
+              description: Whether the dataset has been evaluated against this classification
+                (`true`) or not (`false`).
               type: boolean
             tool:
+              description: The tool used to perform the evaluation.
               type: string
           required:
           - regulation
@@ -947,12 +1072,8 @@ $defs:
         uniqueItems: true
       consents:
         title: Consents
-        description: Specifies where consent documentation or agreements related to
-          the data can be found, ensuring legal compliance and regulatory use. This
-          element must be populated when Privacy Consent is appropriate. When populated
-          it points to either one Privacy Consent Policy that all individuals in the
-          dataset agreed to, or one Privacy Policy for each individual in the dataset
-          with that individual's signature.
+        description: Locations of consent documentation or agreements related to the
+          data.
         type: array
         items:
           type: string
@@ -960,21 +1081,24 @@ $defs:
         uniqueItems: true
       data-risk-reducing:
         title: Data risk reducing
-        description: Indicates whether techniques were used to reduce any known data
-          risk.
+        description: Techniques used to reduce known data risk.
         type: array
         items:
+          x-jadn-type: DataRiskReducing
+          description: A technique used to reduce known data risk.
           type: object
           properties:
-            tool-category:
-              $ref: '#/$defs/method-type'
             tool-used:
               title: Tool used
               description: The name of the tool used for data risk reduction.
               type: string
+            tool-category:
+              description: The category of the tool used for data risk reduction.
+              $ref: '#/$defs/method-type'
             technology:
               title: Data technology
-              description: The name of the data technology used for data risk reduction.
+              x-jadn-type: DataTechnology
+              description: The privacy-enhancing or data-reducing technology applied.
               type: string
               enum:
               - data-anonymization
@@ -992,24 +1116,68 @@ $defs:
               - secure-multi-party-computation
               - t-closeness
               - tokenization
+              x-jadn-enum:
+                data-anonymization: Transforms the dataset so that individuals cannot
+                  be identified, directly or indirectly, from the resulting records.
+                data-encryption: Encodes dataset content so that it is readable only
+                  by parties holding the decryption key; typically applied at rest
+                  or in transit.
+                data-masking: Replaces sensitive field values with realistic but fictitious
+                  substitutes, preserving format and statistical properties without
+                  exposing the originals.
+                data-minimization: Reduces the dataset to only the fields and records
+                  necessary for the stated purpose, limiting exposure of personal
+                  or sensitive data.
+                data-redaction: Removes or obscures specific values or text spans
+                  identified as sensitive, such as names, identifiers, or health information.
+                differential-privacy: Adds calibrated statistical noise so that the
+                  presence or absence of any individual record cannot be reliably
+                  inferred from the released data.
+                federated-learning: Produces model artefacts by training across distributed
+                  sources without centralising raw data, so the original dataset is
+                  never directly shared.
+                homomorphic-encryption: Enables computation on ciphertext without
+                  decryption, so analytical results can be derived without exposing
+                  plaintext values.
+                k-anonymity: Generalises quasi-identifying attributes so that each
+                  record is indistinguishable from at least k-1 other records in the
+                  dataset.
+                l-diversity: Extends k-anonymity by requiring that each equivalence
+                  class contains at least l well-represented distinct sensitive attribute
+                  values.
+                other: A data risk reduction technology not covered by the defined
+                  values; use `tool-category` or `results` to describe the specific
+                  technique applied.
+                pseudonymization: Replaces direct identifiers with artificial pseudonyms;
+                  re-identification remains possible through a separate, controlled
+                  mapping table.
+                secure-multi-party-computation: Allows multiple parties to jointly
+                  compute over their respective inputs without revealing those inputs
+                  to each other (SMC).
+                t-closeness: Extends l-diversity by requiring that the distribution
+                  of sensitive values within each equivalence class closely matches
+                  their overall distribution in the dataset.
+                tokenization: Substitutes sensitive values with non-sensitive tokens;
+                  the originals are recoverable only through a separate, secured token
+                  vault.
             parameters:
               title: Parameters
-              description: The parameters used when invoking the tool.
+              description: The parameters passed to the tool.
               type: array
               items:
                 title: Parameter value pair
+                x-jadn-type: Parameter
                 description: A parameter and its value used when invoking the tool.
                 type: object
                 properties:
                   name:
                     title: Parameter name
-                    description: A parameter name used when invoking the tool.
+                    description: The parameter name.
                     type: string
                     minLength: 1
                   value:
                     title: Parameter value
-                    description: A parameter value as string used when invoking the
-                      tool (empty value indicated as a pair of single apostrophs).
+                    description: The parameter value.
                     type: string
                     minLength: 1
                 required:
@@ -1017,7 +1185,7 @@ $defs:
               minItems: 1
             results:
               title: Result
-              description: The results of the tool application.
+              description: The results of applying the tool.
               type: array
               items:
                 title: Result
@@ -1030,50 +1198,33 @@ $defs:
         uniqueItems: true
       processing-included:
         title: Processing included
-        description: Defines the geographical boundaries within which the data can
-          be processed, often for legal or regulatory reasons.
+        description: Geographical boundaries within which the data may be processed.
         $ref: '#/$defs/geographic-regions-type'
       processing-excluded:
         title: Processing excluded
-        description: Defines the geographical boundaries within which the data cannot
-          be processed, often for legal or regulatory reasons.
+        description: Geographical boundaries within which the data may not be processed.
         $ref: '#/$defs/geographic-regions-type'
       storage-allowed:
         title: Storage allowed
-        description: Specifies where the data may be stored, crucial for compliance
-          with data sovereignty laws.
+        description: Geographical locations where the data may be stored.
         $ref: '#/$defs/geographic-regions-type'
       storage-forbidden:
         title: Storage forbidden
-        description: Specifies where the data may not be stored, crucial for compliance
-          with data sovereignty laws.
+        description: Geographical locations where the data may not be stored.
         $ref: '#/$defs/geographic-regions-type'
       license:
         title: License
-        description: Details the location or point of contact for identifying the
-          terms under which the dataset can be used, including any restrictions or
-          obligations, clarifying legal use and distribution rights. License may be
-          an End User License Agreement (EULA), subject to Data Use Agreement (DUA).
+        description: The terms under which the dataset can be used, including any
+          restrictions or obligations.
         type: array
         items:
           type: string
         minItems: 1
         uniqueItems: true
-      intended-purpose:
-        title: Intended purpose
-        description: Describes the purpose for which the dataset was created, guiding
-          users on its intended use and potential applications against identified
-          use cases. List all that apply from the Data Use codes that apply. Additional
-          codes can be included with descriptions.
-        type: array
-        items:
-          $ref: '#/$defs/purpose-type'
-        minItems: 1
-        uniqueItems: true
       copyright:
         title: Copyright
-        description: Indicates whether the dataset contains proprietary information
-          that is covered with a Copyright and the terms of said Copyright.
+        description: Copyright information covering proprietary information in the
+          dataset.
         type: array
         items:
           type: string
@@ -1081,8 +1232,7 @@ $defs:
         uniqueItems: true
       patent:
         title: Patent
-        description: Indicates whether the dataset contains proprietary information
-          that is covered with a Patent and said Patent number.
+        description: Patent information covering proprietary information in the dataset.
         type: array
         items:
           type: string
@@ -1090,8 +1240,8 @@ $defs:
         uniqueItems: true
       trademark:
         title: Trademark
-        description: Indicates whether the dataset contains proprietary information
-          that is covered with a Trademark, and the terms of said Trademark.
+        description: Trademark information covering proprietary information in the
+          dataset.
         type: array
         items:
           type: string
@@ -1101,8 +1251,9 @@ $defs:
     - intended-purpose
   version-type:
     title: Version
-    description: Specifies a version string to denote clearly the evolution of the
-      content of the document. Format must be either integer or semantic versioning.
+    x-jadn-type: Version
+    description: 'An integer or semantic versioning string. Examples: `"1"`, `"2.0.0"`,
+      `"1.0.0-beta"`.'
     type: string
     pattern: ^(0|[1-9][0-9]*)$|^((0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)$
     examples:

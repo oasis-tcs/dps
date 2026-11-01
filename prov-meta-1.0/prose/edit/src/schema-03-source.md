@@ -2,7 +2,7 @@
 
 The `source` member characterizes the content and source of the dataset.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name         | Type         | \#    | Description                                                                      |
 |---:|:-------------|:-------------|:------|:---------------------------------------------------------------------------------|
@@ -15,7 +15,7 @@ The `source` member characterizes the content and source of the dataset.
 
 Table: Type `Source` (Record){#tab:source-record}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name    | Type   | \#   | Description                                                                                        |
 |---:|:--------|:-------|:-----|:---------------------------------------------------------------------------------------------------|
@@ -27,7 +27,7 @@ Table: Type `About` (Record){#tab:about-record}
 
 The `Identity` type provides at least one identifier for the dataset. At least one of its fields MUST be present.
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name       | Type         | \#    | Description                                           |
 |---:|:-----------|:-------------|:------|:------------------------------------------------------|
@@ -38,7 +38,7 @@ The `Identity` type provides at least one identifier for the dataset. At least o
 
 Table: Type `Identity` (Map){#tab:identity-map}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name        | Type     | \#    | Description                                                              |
 |---:|:------------|:---------|:------|:-------------------------------------------------------------------------|
@@ -47,7 +47,7 @@ Table: Type `Identity` (Map){#tab:identity-map}
 
 Table: Type `HashEntry` (Record){#tab:hash-entry-record}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name      | Type   | \# | Description                                                              |
 |---:|:----------|:-------|:---|:-------------------------------------------------------------------------|
@@ -56,7 +56,7 @@ Table: Type `HashEntry` (Record){#tab:hash-entry-record}
 
 Table: Type `TreeHash` (Record){#tab:tree-hash-record}
 
-\columns=iiii,nnnnnnnnnn,tttttttttt,hhhh,ddddddddddddddddddddddddddddddddddddddd
+\columns=iiii,nnnnnnnnnnnnnnnnnnnnnn,tttttttttttttttttttttt,hhhhhh,dddddddddddddddddddddddddddddddddddddddddddddd
 
 | ID | Name           | Type   | \#    | Description                                            |
 |---:|:---------------|:-------|:------|:-------------------------------------------------------|

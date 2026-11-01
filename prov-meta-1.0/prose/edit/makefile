@@ -106,6 +106,17 @@ release: html pdf
 .PHONY: build
 build: render status
 
+# The JSON schema is the source: everything below is derived from it, the tables via the JADN model.
+derived = derive_jadn derive_tables derive_outlines derive_figure derive_yaml
+
+.PHONY: derive
+derive:
+	for step in $(derived); do python bin/$${step}.py || exit 1; done
+
+.PHONY: check-derived
+check-derived:
+	status=0; for step in $(derived); do python bin/$${step}.py --check || status=1; done; exit $${status}
+
 .PHONY: outlines
 outlines:
 	python bin/derive_outlines.py
@@ -115,7 +126,7 @@ check-outlines:
 	python bin/derive_outlines.py --check
 
 .PHONY: quality
-quality: check-outlines
+quality: check-derived
 	nide quality
 
 .PHONY: validate

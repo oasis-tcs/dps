@@ -18,6 +18,7 @@ DataProvenance:
     generation-period: Mapping             # optional
     format: Sequence                       # optional
     sub-provenance: $defs.provenance-type  # optional
+    source-digest: Mapping                 # optional
   # ...
 ```
 
@@ -239,5 +240,9 @@ DataProvenance:
       format:  # optional
         - String.Enum
       sub-provenance: $defs.provenance-type  # optional
+      source-digest:  # optional
+        algorithm: String
+        value: String.Pattern
+    # ...
   # ...
 ```
