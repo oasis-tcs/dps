@@ -45,7 +45,7 @@ All build targets are run from inside `edit/`:
 ## Comparing versions
 
 `make diff` and `make diff-repro` use `nide diff`, which extracts the
-previous committed version from the Fossil repository automatically — no temporary files, no manual VCS spelunking.
+previous committed version from the git repository automatically — no temporary files, no manual VCS spelunking.
 
     make diff        # prose diff of the HTML against VCS HEAD
     make diff-repro  # reproducible diff of the PDF against VCS HEAD
