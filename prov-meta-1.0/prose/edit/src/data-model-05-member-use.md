@@ -286,5 +286,3 @@ DataProvenance:
       - String
   # ...
 ```
-
----

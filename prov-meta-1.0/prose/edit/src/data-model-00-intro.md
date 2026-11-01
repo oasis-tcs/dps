@@ -1,17 +1,11 @@
 # Provenance Data Model Encoding {#provenance-data-model-encoding}
 
-> The information model defines the complete set of metadata elements and associated attributes specified by the Data Provenance Standard.
-> It establishes a common conceptual framework for representing provenance information, including the structures and relationships necessary to describe the origin, history, and handling of data.
-> The information model is intended to provide a consistent semantic basis for provenance across implementations, independent of any particular serialization or storage mechanism.
->
-> In order to support interoperability and exchange of provenance information between systems, the information model requires one or more concrete encodings.
-> An encoding provides a standardized, machine-readable representation of the information model suitable for electronic transmission, persistence, and processing.
-> While the information model defines what information is conveyed, the encoding defines how that information is represented for exchange between conforming implementations.
->
-> This section describes a set of possible encodings for the Data Provenance Standard.
-> Each encoding maps the constructs defined in the information model to a specific representation format intended for storage or system-to-system exchange.
-> The encodings described herein are non-exclusive and are provided to support diverse implementation environments and usage scenarios.
-> Implementations MAY support one or more of these encodings, subject to their interoperability, performance, and deployment requirements.
+The information model defines which metadata elements a Data Provenance Metadata record contains and how they relate,
+independent of any particular serialization.
+JSON is the single normative encoding of the information model:
+a Data Provenance Metadata record is a JSON document that is valid against the Data Provenance Metadata JSON schema.
+The JADN and YAML encodings of section [sec](#provenance-information-model-encoding) are generated from that schema
+and are informative.
 
 ## JSON Encoding {#json-encoding}
 

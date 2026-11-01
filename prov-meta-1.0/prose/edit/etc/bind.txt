@@ -17,6 +17,7 @@ data-model-02-member-set.md
 data-model-03-member-source.md
 data-model-04-member-provenance.md
 data-model-05-member-use.md
+data-model-06-member-proof.md
 schema-00-intro.md
 schema-01-primary.md
 schema-02-set.md

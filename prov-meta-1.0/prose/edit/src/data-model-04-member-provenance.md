@@ -246,3 +246,33 @@ DataProvenance:
     # ...
   # ...
 ```
+
+#### Member `provenance.source-digest` {#member-provenance-source-digest}
+
+The `provenance.source-digest` member records a cryptographic digest of the metadata record that `provenance.source` references,
+computed when the current record is issued.
+It lets a consumer who retrieves the referenced record check that it is the record the current one was issued against.
+
+```{.yaml json-path="$['$defs']['provenance-type'].properties['source-digest']"}
+DataProvenance:
+  # ...
+  provenance:
+    # ...
+    source-digest:  # optional
+      algorithm: String
+      value: String.Pattern
+  # ...
+```
+
+The value MUST contain the members `algorithm` and `value`.
+The `algorithm` member names the digest algorithm, for example `sha256`, and MUST be a non-empty string.
+The `value` member MUST be the hex-encoded digest value with at least 32 hexadecimal digits.
+
+*Example 1:*
+
+```
+{
+  "algorithm": "sha256",
+  "value": "bb121f5f3ae0ee44d8e21d50b92ed8bcdd1f3a20887615b2f81083a6edf190e5"
+}
+```

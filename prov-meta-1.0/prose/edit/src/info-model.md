@@ -14,11 +14,12 @@ Property tables
 :   The tables in section [sec](#provenance-schema) give, for each type, its members with their type, cardinality, and description.
     They are generated from the JADN encoding of the information model (section [sec](#jadn-encoding)), which in turn is generated from the JSON schema.
 
-The information model is also available in the following two encodings, both generated from the JSON schema.
+The information model is also available in the following two informative encodings, both generated from the JSON schema.
+The JSON encoding (section [sec](#json-encoding)) is the only normative one.
 
 ## JADN Encoding {#jadn-encoding}
 
-The JADN encoding of the data provenance metadata information model is specified in
+The JADN encoding of the data provenance metadata information model is provided in
 `jadn/data-provenance.jadn`.
 
 The file is generated from the JSON schema.
@@ -31,7 +32,7 @@ The string formats of the JSON schema map to the primitive aliases `URI`, `UUID`
 
 ## YAML Encoding {#yaml-encoding}
 
-The YAML encoding of the data provenance metadata information model is specified in
+The YAML encoding of the data provenance metadata information model is provided in
 `yaml/data-provenance.yaml`.
 
 This file is a YAML serialization of `json/data-provenance.json`, generated from it.

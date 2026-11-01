@@ -28,11 +28,12 @@
   "member-provenance-previous-date-eg-1": "25",
   "member-provenance-generation-period-eg-1": "26",
   "member-provenance-format-eg-1": "27",
-  "member-use-intended-purpose-eg-1": "28",
-  "member-use-classification-eg-1": "29",
-  "member-use-consents-eg-1": "30",
-  "member-use-data-risk-reducing-eg-1": "31",
-  "member-use-processing-included-eg-1": "32",
-  "member-use-license-eg-1": "33",
-  "member-use-copyright-eg-1": "34"
+  "member-provenance-source-digest-eg-1": "28",
+  "member-use-intended-purpose-eg-1": "29",
+  "member-use-classification-eg-1": "30",
+  "member-use-consents-eg-1": "31",
+  "member-use-data-risk-reducing-eg-1": "32",
+  "member-use-processing-included-eg-1": "33",
+  "member-use-license-eg-1": "34",
+  "member-use-copyright-eg-1": "35"
 }

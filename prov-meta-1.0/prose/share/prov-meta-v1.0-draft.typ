@@ -298,13 +298,15 @@ normative artifact and views derived from it:
     (section #link(<jadn-encoding>)[5.1 "JADN Encoding"]), which in turn
     is generated from the JSON schema.
 
-The information model is also available in the following two encodings,
-both generated from the JSON schema.
+The information model is also available in the following two informative
+encodings, both generated from the JSON schema. The JSON encoding
+(section #link(<json-encoding>)[6.1 "JSON Encoding"]) is the only
+normative one.
 
 == JADN Encoding
 <jadn-encoding>
 The JADN encoding of the data provenance metadata information model is
-specified in `jadn/data-provenance.jadn`.
+provided in `jadn/data-provenance.jadn`.
 
 The file is generated from the JSON schema. Each schema node that
 defines a type carries the JADN type name in the annotation
@@ -318,7 +320,7 @@ string formats of the JSON schema map to the primitive aliases `URI`,
 == YAML Encoding
 <yaml-encoding>
 The YAML encoding of the data provenance metadata information model is
-specified in `yaml/data-provenance.yaml`.
+provided in `yaml/data-provenance.yaml`.
 
 This file is a YAML serialization of `json/data-provenance.json`,
 generated from it. It is provided for tooling that consumes YAML-format
@@ -328,34 +330,14 @@ enumeration values are identical to those in the JSON schema.
 #pagebreak(weak: true)
 = Provenance Data Model Encoding
 <provenance-data-model-encoding>
-#quote(block: true)[
-The information model defines the complete set of metadata elements and
-associated attributes specified by the Data Provenance Standard. It
-establishes a common conceptual framework for representing provenance
-information, including the structures and relationships necessary to
-describe the origin, history, and handling of data. The information
-model is intended to provide a consistent semantic basis for provenance
-across implementations, independent of any particular serialization or
-storage mechanism.
-
-In order to support interoperability and exchange of provenance
-information between systems, the information model requires one or more
-concrete encodings. An encoding provides a standardized,
-machine-readable representation of the information model suitable for
-electronic transmission, persistence, and processing. While the
-information model defines what information is conveyed, the encoding
-defines how that information is represented for exchange between
-conforming implementations.
-
-This section describes a set of possible encodings for the Data
-Provenance Standard. Each encoding maps the constructs defined in the
-information model to a specific representation format intended for
-storage or system-to-system exchange. The encodings described herein are
-non-exclusive and are provided to support diverse implementation
-environments and usage scenarios. Implementations MAY support one or
-more of these encodings, subject to their interoperability, performance,
-and deployment requirements.
-]
+The information model defines which metadata elements a Data Provenance
+Metadata record contains and how they relate, independent of any
+particular serialization. JSON is the single normative encoding of the
+information model: a Data Provenance Metadata record is a JSON document
+that is valid against the Data Provenance Metadata JSON schema. The JADN
+and YAML encodings of section
+#link(<provenance-information-model-encoding>)[5 "Provenance Information Model Encoding"]
+are generated from that schema and are informative.
 
 == JSON Encoding
 <json-encoding>
@@ -792,6 +774,14 @@ The value of `set.tracking.version` MUST equal the value of `number` in
 the most recent item of `set.tracking.revision-history`, that is the
 item with the latest `date`.
 
+The `set.tracking.version` member versions the metadata set, not the
+dataset it describes, whose version is `source.data-version`
+(#link(<member-source-data-version>)[6.1.3.6 "Member `source.data-version`"]).
+A revision that changes only the metadata advances
+`set.tracking.version` without changing `source.data-version`, so the
+two values differ under normal operation (see the lineage example in
+#link(<lineage-example>)[C.4 "Lineage Example"]).
+
 #emph[Examples 1:]#box()<member-set-tracking-version-eg-1>
 
 ```
@@ -1200,6 +1190,13 @@ DataProvenance:
 The value of `source.data-version` MUST conform to `$defs.version-type`,
 which requires either an integer or a semantic versioning string.
 
+The `source.data-version` member versions the dataset, independently of
+the version of the metadata set in `set.tracking.version`
+(#link(<member-set-tracking-version>)[6.1.2.5.6 "Member `set.tracking.version`"]).
+It advances only when a revision changes the dataset itself, so the two
+values differ under normal operation (see the lineage example in
+#link(<lineage-example>)[C.4 "Lineage Example"]).
+
 #emph[Examples 1:]#box()<member-source-data-version-eg-1>
 
 ```
@@ -1482,6 +1479,39 @@ DataProvenance:
         value: String.Pattern
     # ...
   # ...
+```
+
+==== Member `provenance.source-digest`
+<member-provenance-source-digest>
+The `provenance.source-digest` member records a cryptographic digest of
+the metadata record that `provenance.source` references, computed when
+the current record is issued. It lets a consumer who retrieves the
+referenced record check that it is the record the current one was issued
+against.
+
+```yaml
+DataProvenance:
+  # ...
+  provenance:
+    # ...
+    source-digest:  # optional
+      algorithm: String
+      value: String.Pattern
+  # ...
+```
+
+The value MUST contain the members `algorithm` and `value`. The
+`algorithm` member names the digest algorithm, for example `sha256`, and
+MUST be a non-empty string. The `value` member MUST be the hex-encoded
+digest value with at least 32 hexadecimal digits.
+
+#emph[Example 1:]#box()<member-provenance-source-digest-eg-1>
+
+```
+{
+  "algorithm": "sha256",
+  "value": "bb121f5f3ae0ee44d8e21d50b92ed8bcdd1f3a20887615b2f81083a6edf190e5"
+}
 ```
 
 === Member `use`
@@ -1804,6 +1834,23 @@ DataProvenance:
   # ...
 ```
 
+=== Member `proof`
+<member-proof>
+The `proof` member is reserved for the proof material of an external
+integrity or signing envelope, such as a signature over the record. Its
+internal structure is opaque to this specification: a record defines
+only where such material is carried, not how it is produced or verified
+(see section
+#link(<integrity-and-authenticity>)[8.1 "Integrity and Authenticity of Provenance Claims"]).
+
+```yaml
+DataProvenance:
+  # ...
+  proof: Mapping  # optional
+```
+
+The value of `proof`, when present, MUST be a JSON object.
+
 #pagebreak(weak: true)
 = Provenance Schema
 <provenance-schema>
@@ -1816,14 +1863,15 @@ the JSON schema, the normative definition of the format.
 The Data Provenance Standards record metadata elements in three
 segmented categories: Source, Provenance, and Use.
 
-The figure below, generated from the JSON schema like the tables, shows
-the root type with the type of each of its members.
+#link(<fig:metadata>)[Figure 1], generated from the JSON schema like the
+tables, shows the root type with the type of each of its members.
 
-#figure(image("images/metadata.svg", alt: "Metadata"),
+#figure(image("images/metadata.svg", alt: "Overview of the record: the root type and the type of each member"),
   caption: [
-    Metadata
+    Overview of the record: the root type and the type of each member
   ]
 )
+<fig:metadata>
 
 The property tables first define metadata about the specification
 itself, then describe how a record is made of the 3 primary metadata
@@ -2981,7 +3029,7 @@ https:/\/nsarchive.gwu.edu/document/22385-document-08-committee-national-securit
 <annex-c>
 \(This annex forms an integral part of this Specification.)
 
-This annex provides three example instances of the Data Provenance
+This annex provides four example instances of the Data Provenance
 Metadata schema, each serving a distinct purpose in learning and
 applying the standard.
 
@@ -3007,7 +3055,13 @@ to serve as a normative reference for tool developers verifying parser
 completeness and for authors checking field semantics under realistic
 conditions.
 
-All three instances are available as JSON files in the `examples/`
+The #strong[lineage example]
+(#link(<lineage-example>)[C.4 "Lineage Example"]) is a real record
+exported from a live implementation. It shows how one record evolves
+over several revisions, and why the version of the metadata set and the
+version of the dataset it describes are independent counters.
+
+All four instances are available as JSON files in the `examples/`
 directory of the specification distribution.
 
 #heading(level: 2, numbering: none)[C.1 Minimal Example]
@@ -3152,6 +3206,146 @@ moderate example:
   `copyright`, `patent`, and `trademark` are present.
 
 The file `examples/dp-core-complete.json` contains this instance.
+
+#heading(level: 2, numbering: none)[C.4 Lineage Example]
+<lineage-example>
+The lineage example is a real record exported from a live implementation
+(mnēSara); two internal identifiers in `source.about.content` are
+redacted, nothing else is changed. It describes one document, a
+compliance report, across three revisions of the record:
+
++ #strong[Initial upload]: the record is created. `set.tracking.version`
+  is `1`, and `source.data-version` is `1`.
++ #strong[Metadata enrichment]: the issuer is populated automatically
+  from entities extracted from the document; the document itself is
+  unchanged. `set.tracking.version` advances to `2`, and
+  `source.data-version` stays `1`.
++ #strong[Document replacement]: the document itself is replaced by a
+  new file. `set.tracking.version` advances to `3`, and
+  `source.data-version` advances to `2`.
+
+The two counters version different things: `set.tracking.version`
+versions the metadata set, `source.data-version` versions the dataset
+the metadata set describes. They move together only when a revision
+changes the dataset; a revision that changes only the metadata advances
+`set.tracking.version` alone, as revision 2 does. Their values
+differing, as in this record (`3` and `2`), is the normal case, not an
+error.
+
+Key features illustrated by this instance:
+
+- #strong[Set level]: three `revision-history` entries, the latest of
+  which carries the `number` that `set.tracking.version` repeats, and a
+  publisher `namespace` under the implementer's own domain.
+- #strong[Source level]: the document is identified both by a `uuids`
+  entry and by a SHA-256 tree hash in `hashes`, and `location` uses the
+  implementation's own URI scheme.
+- #strong[Provenance level]: the lineage to the previous record is
+  expressed by `source`, the URI of that record, `source-digest`, the
+  digest of that record computed at issuance, and `previous-date`.
+  `generation-method` and `intended-purpose` use `code` together with an
+  implementation-specific `system`.
+
+```json
+{
+  "set": {
+    "label": "Project Document: kestrel-northfield-q3-2026-compliance.pdf",
+    "category": "general",
+    "tracking": {
+      "id": "399d80b1-df78-41d9-a7e3-bf303f5be0cf",
+      "status": "final",
+      "version": "3",
+      "revision-history": [
+        {
+          "date": "2026-10-16T15:12:50.009Z",
+          "number": "1",
+          "summary": "Initial version."
+        },
+        {
+          "date": "2026-10-16T15:13:10.568Z",
+          "number": "2",
+          "summary": "Issuer and origin populated from extracted document entities."
+        },
+        {
+          "date": "2026-10-16T15:16:57.452Z",
+          "number": "3",
+          "summary": "updated compliance report"
+        }
+      ],
+      "current-release-date": "2026-10-16T15:16:57.452Z",
+      "initial-release-date": "2026-10-16T15:12:50.009Z"
+    },
+    "publisher": {
+      "name": "mnēSara",
+      "namespace": "https://mnesara.com"
+    },
+    "schema-version": "1.0"
+  },
+  "use": {
+    "intended-purpose": [
+      {
+        "code": "production",
+        "system": "https://mnesara.com/dps/vocab/purpose",
+        "long-description": "operational-context"
+      }
+    ]
+  },
+  "source": {
+    "id": {
+      "uuids": [
+        "33b4b06b-62bc-4ab3-ae4f-f0a3ce690f15"
+      ],
+      "hashes": [
+        {
+          "path": "kestrel-northfield-q3-2026-compliance.pdf",
+          "tree-hashes": [
+            {
+              "value": "e1e59d27889c2058f98c79f76000c3b531741731cd9889f7df819dc8e71e68c4",
+              "algorithm": "sha256"
+            }
+          ]
+        }
+      ]
+    },
+    "name": "kestrel-northfield-q3-2026-compliance.pdf",
+    "about": {
+      "content": "Document \"kestrel-northfield-q3-2026-compliance.pdf\" (application/pdf) ingested via project wizard into project <redacted> / matter <redacted>",
+      "purpose": "Matter evidence for AI analysis and knowledge graph construction."
+    },
+    "issuer": [
+      {
+        "legal-name": "Kestrel Basin Water Authority"
+      }
+    ],
+    "location": "mnesara://project-sources/33b4b06b-62bc-4ab3-ae4f-f0a3ce690f15",
+    "data-version": "2"
+  },
+  "$schema": "https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json",
+  "provenance": {
+    "date": "2026-10-16",
+    "source": "https://mnesara.com/dps/records/37268278-bb5f-4791-919d-e1f12ba11d33",
+    "previous-date": "2026-10-16",
+    "source-digest": {
+      "value": "bb121f5f3ae0ee44d8e21d50b92ed8bcdd1f3a20887615b2f81083a6edf190e5",
+      "algorithm": "sha256"
+    },
+    "origin-geography": [
+      {
+        "country": "Kestrel Basin Territory (ZZ)"
+      }
+    ],
+    "generation-method": [
+      {
+        "code": "other",
+        "system": "https://mnesara.com/dps/vocab/generation-method",
+        "long-description": "project-document-ingestion"
+      }
+    ]
+  }
+}
+```
+
+The file `examples/dp-core-lineage.json` contains this instance.
 
 #pagebreak(weak: true)
 #heading(level: 1, numbering: none)[Appendix A. Acknowledgments]
