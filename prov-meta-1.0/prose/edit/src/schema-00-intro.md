@@ -6,9 +6,9 @@ which is generated from the JSON schema, the normative definition of the format.
 
 The Data Provenance Standards record metadata elements in three segmented categories: Source, Provenance, and Use.
 
-The figure below, generated from the JSON schema like the tables, shows the root type with the type of each of its members.
+[fig](#fig:metadata), generated from the JSON schema like the tables, shows the root type with the type of each of its members.
 
-![Metadata](./images/metadata.svg)
+![Overview of the record: the root type and the type of each member](images/metadata.svg){#fig:metadata}
 
 The property tables first define metadata about the specification itself,
 then describe how a record is made of the 3 primary metadata elements.

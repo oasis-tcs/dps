@@ -85,7 +85,7 @@ pdf:
 	nide render -t typst
 	mkdir -p build/images
 	cp -p ../media/OASISLogo-v3.0.png build/images/
-	cp -p src/images/*.png src/images/*.svg build/images/
+	for image in src/images/*.png src/images/*.svg; do [ -f "$${image}" ] && cp -p "$${image}" build/images/; done; true
 	pandoc -f markdown+definition_lists -t typst --standalone --template etc/dps.typ --lua-filter build/nide-columns.lua build/typst.md -o build/typst.typ
 	typst compile --root . build/typst.typ build/prov-meta-typst.pdf
 	cp -p build/prov-meta-typst.pdf $(out_pdf)

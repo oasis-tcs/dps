@@ -2,7 +2,7 @@
 
 (This annex forms an integral part of this Specification.)
 
-This annex provides three example instances of the Data Provenance Metadata schema,
+This annex provides four example instances of the Data Provenance Metadata schema,
 each serving a distinct purpose in learning and applying the standard.
 
 The **minimal example** ([sec](#minimal-example)) contains only the fields that are required by the schema,
@@ -22,7 +22,11 @@ It is not intended to represent a typical implementation; its purpose is to serv
 normative reference for tool developers verifying parser completeness and for authors
 checking field semantics under realistic conditions.
 
-All three instances are available as JSON files in the `examples/` directory of the
+The **lineage example** ([sec](#lineage-example)) is a real record exported from a live implementation.
+It shows how one record evolves over several revisions, and why the version of the metadata set
+and the version of the dataset it describes are independent counters.
+
+All four instances are available as JSON files in the `examples/` directory of the
 specification distribution.
 
 ## C.1 Minimal Example {#minimal-example}
@@ -152,5 +156,136 @@ Key features illustrated by this instance that are not present in the moderate e
   `storage-allowed`, `storage-forbidden`). `copyright`, `patent`, and `trademark` are present.
 
 The file `examples/dp-core-complete.json` contains this instance.
+
+## C.4 Lineage Example {#lineage-example}
+
+The lineage example is a real record exported from a live implementation (mnēSara);
+two internal identifiers in `source.about.content` are redacted, nothing else is changed.
+It describes one document, a compliance report, across three revisions of the record:
+
+1. **Initial upload**: the record is created.
+   `set.tracking.version` is `1`, and `source.data-version` is `1`.
+2. **Metadata enrichment**: the issuer is populated automatically from entities extracted from the document;
+   the document itself is unchanged.
+   `set.tracking.version` advances to `2`, and `source.data-version` stays `1`.
+3. **Document replacement**: the document itself is replaced by a new file.
+   `set.tracking.version` advances to `3`, and `source.data-version` advances to `2`.
+
+The two counters version different things: `set.tracking.version` versions the metadata set,
+`source.data-version` versions the dataset the metadata set describes.
+They move together only when a revision changes the dataset;
+a revision that changes only the metadata advances `set.tracking.version` alone, as revision 2 does.
+Their values differing, as in this record (`3` and `2`), is the normal case, not an error.
+
+Key features illustrated by this instance:
+
+- **Set level**: three `revision-history` entries, the latest of which carries the `number` that
+  `set.tracking.version` repeats, and a publisher `namespace` under the implementer's own domain.
+- **Source level**: the document is identified both by a `uuids` entry and by a SHA-256 tree hash in `hashes`,
+  and `location` uses the implementation's own URI scheme.
+- **Provenance level**: the lineage to the previous record is expressed by `source`, the URI of that record,
+  `source-digest`, the digest of that record computed at issuance, and `previous-date`.
+  `generation-method` and `intended-purpose` use `code` together with an implementation-specific `system`.
+
+```json
+{
+  "set": {
+    "label": "Project Document: kestrel-northfield-q3-2026-compliance.pdf",
+    "category": "general",
+    "tracking": {
+      "id": "399d80b1-df78-41d9-a7e3-bf303f5be0cf",
+      "status": "final",
+      "version": "3",
+      "revision-history": [
+        {
+          "date": "2026-10-16T15:12:50.009Z",
+          "number": "1",
+          "summary": "Initial version."
+        },
+        {
+          "date": "2026-10-16T15:13:10.568Z",
+          "number": "2",
+          "summary": "Issuer and origin populated from extracted document entities."
+        },
+        {
+          "date": "2026-10-16T15:16:57.452Z",
+          "number": "3",
+          "summary": "updated compliance report"
+        }
+      ],
+      "current-release-date": "2026-10-16T15:16:57.452Z",
+      "initial-release-date": "2026-10-16T15:12:50.009Z"
+    },
+    "publisher": {
+      "name": "mnēSara",
+      "namespace": "https://mnesara.com"
+    },
+    "schema-version": "1.0"
+  },
+  "use": {
+    "intended-purpose": [
+      {
+        "code": "production",
+        "system": "https://mnesara.com/dps/vocab/purpose",
+        "long-description": "operational-context"
+      }
+    ]
+  },
+  "source": {
+    "id": {
+      "uuids": [
+        "33b4b06b-62bc-4ab3-ae4f-f0a3ce690f15"
+      ],
+      "hashes": [
+        {
+          "path": "kestrel-northfield-q3-2026-compliance.pdf",
+          "tree-hashes": [
+            {
+              "value": "e1e59d27889c2058f98c79f76000c3b531741731cd9889f7df819dc8e71e68c4",
+              "algorithm": "sha256"
+            }
+          ]
+        }
+      ]
+    },
+    "name": "kestrel-northfield-q3-2026-compliance.pdf",
+    "about": {
+      "content": "Document \"kestrel-northfield-q3-2026-compliance.pdf\" (application/pdf) ingested via project wizard into project <redacted> / matter <redacted>",
+      "purpose": "Matter evidence for AI analysis and knowledge graph construction."
+    },
+    "issuer": [
+      {
+        "legal-name": "Kestrel Basin Water Authority"
+      }
+    ],
+    "location": "mnesara://project-sources/33b4b06b-62bc-4ab3-ae4f-f0a3ce690f15",
+    "data-version": "2"
+  },
+  "$schema": "https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json",
+  "provenance": {
+    "date": "2026-10-16",
+    "source": "https://mnesara.com/dps/records/37268278-bb5f-4791-919d-e1f12ba11d33",
+    "previous-date": "2026-10-16",
+    "source-digest": {
+      "value": "bb121f5f3ae0ee44d8e21d50b92ed8bcdd1f3a20887615b2f81083a6edf190e5",
+      "algorithm": "sha256"
+    },
+    "origin-geography": [
+      {
+        "country": "Kestrel Basin Territory (ZZ)"
+      }
+    ],
+    "generation-method": [
+      {
+        "code": "other",
+        "system": "https://mnesara.com/dps/vocab/generation-method",
+        "long-description": "project-document-ingestion"
+      }
+    ]
+  }
+}
+```
+
+The file `examples/dp-core-lineage.json` contains this instance.
 
 ---
