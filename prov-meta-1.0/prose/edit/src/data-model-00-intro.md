@@ -29,11 +29,11 @@ for any data provenance metadata JSON instance.
 
 The required top-level members are:
 
-```yaml <!--json-path($.*[:])-->
+```{.yaml json-path="$.properties"}
 DataProvenance:
-  $schema: String.Constant
+  $schema: String.Const
   set: Mapping
-  source: Mapping
-  provenance: Mapping
-  use: Mapping
+  source: $defs.source-type
+  provenance: $defs.provenance-type
+  use: $defs.use-type
 ```

@@ -21,7 +21,7 @@
     align: (left + horizon, center + horizon, right + horizon),
     text(size: 8pt)[prov-meta-v1.0-csd02],
     text(size: 8pt)[Copyright © OASIS Open 2026. All Rights Reserved.],
-    text(size: 8pt)[30 June 2026 — Page #counter(page).display()
+    text(size: 8pt)[3 November 2026 — Page #counter(page).display()
       of #counter(page).final().first()],
   ),
 )
@@ -53,14 +53,14 @@ Metadata Version 1.0]
 #heading(level: 2, outlined: false, numbering: none)[Committee
 Specification Draft 02]
 <committee-specification-draft-02>
-#heading(level: 2, outlined: false, numbering: none)[19 July 2026]
-<19-july-2026>
+#heading(level: 2, outlined: false, numbering: none)[3 November 2026]
+<3-november-2026>
 #heading(level: 3, outlined: false, numbering: none)[This version]
 <this-version>
-- #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.md")[https:/\/docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.md]
+- #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.md")
   (Authoritative)
-- #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.html")[https:/\/docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html]
-- #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.pdf")[https:/\/docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.pdf]
+- #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html")
+- #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.pdf")
 
 #heading(level: 3, outlined: false, numbering: none)[Latest version]
 <latest-version>
@@ -103,13 +103,13 @@ This prose specification is one component of a Work Product that also
 includes:
 
 - Data Provenance Metadata JSON schema:
-  https:/\/docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance.json.
+  #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance.json").
   \ Latest stage:
-  https:/\/docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json.
+  #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json").
 - Data Provenance Metadata Configuration JSON schema:
-  https:/\/docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance-configuration.json.
+  #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance-configuration.json").
   \ Latest stage:
-  https:/\/docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json.
+  #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json").
 
 #heading(level: 3, outlined: false, numbering: none)[Declared JSON
 namespaces]
@@ -134,10 +134,10 @@ used:
 #strong[\[prov-meta-v1.0\]]
 
 #emph[Data Provenance Metadata Version 1.0]. Edited by David Kemp and
-Stefan Hagen. 19 July 2026. OASIS Committee Specification Draft 02. \
-https:/\/docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html.
+Stefan Hagen. 3 November 2026. OASIS Committee Specification Draft 02.
+#link("https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html").
 \ Latest stage:
-https:/\/docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html.
+#link("https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html").
 
 #heading(level: 3, outlined: false, numbering: none)[Related Work]
 <related-work>
@@ -186,30 +186,26 @@ and compliance - especially in regulated and high-risk environments.
 <terms-defined-elsewhere>
 This document uses the following terms defined elsewhere:
 
-/ ​Data Provenance<def:data-provenance>: #block[
-In the context of computers and law enforcement use, it is synonymous to
-chain of custody. It involves the method of generation, transmission and
-storage of information that may be used to trace the origin of a piece
-of information processed by community resources. Cf.
-\[#link(<CNSSI-4009>)[CNSSI-4009]\] for more details.
-]
-
-/ ​Data Lineage<def:data-lineage>: #block[
-Data lineage is the process of tracking the (use and) flow of data over
-time, providing a clear understanding of where the data originated, how
-it has changed, and its ultimate destination within the data pipeline.
-Cf. "Data Lineage at IBM" https:/\/www.ibm.com/think/topics/data-lineage
-for more details.
-]
-
-/ ​Data Transparency<def:data-transparency>: #block[
-Data transparency refers to the clear, open, and honest handling of data
-within an organization. It means that businesses, governments, and
-institutions disclose how they collect, store, use, and share data,
-ensuring users, customers, and stakeholders understand their practices.
-Cf. "What is data transparency at BigID"
-https:/\/bigid.com/blog/what-is-data-transparency for more details.
-]
+/ ​Data Provenance<def:data-provenance>: In the context of computers and
+    law enforcement use, it is synonymous to chain of custody. It
+    involves the method of generation, transmission and storage of
+    information that may be used to trace the origin of a piece of
+    information processed by community resources. Cf.
+    \[#link(<CNSSI-4009>)[CNSSI-4009]\] for more details.
+/ ​Data Lineage<def:data-lineage>: Data lineage is the process of
+    tracking the (use and) flow of data over time, providing a clear
+    understanding of where the data originated, how it has changed, and
+    its ultimate destination within the data pipeline. Cf. "Data Lineage
+    at IBM" #link("https://www.ibm.com/think/topics/data-lineage") for
+    more details.
+/ ​Data Transparency<def:data-transparency>: Data transparency refers to
+    the clear, open, and honest handling of data within an organization.
+    It means that businesses, governments, and institutions disclose how
+    they collect, store, use, and share data, ensuring users, customers,
+    and stakeholders understand their practices. Cf. "What is data
+    transparency at BigID"
+    #link("https://bigid.com/blog/what-is-data-transparency") for more
+    details.
 
 === Terms Defined in this Document
 <terms-defined-in-this-document>
@@ -217,21 +213,10 @@ None
 
 == Abbreviations and Acronyms
 <abbreviations-and-acronyms>
-/ AI: #block[
-Artificial Intelligence
-]
-
-/ DET: #block[
-Data Enhancing Technologies
-]
-
-/ DPS: #block[
-Data Provenance Standard
-]
-
-/ PET: #block[
-Privacy Enhancing Technologies
-]
+/ AI: Artificial Intelligence
+/ DET: Data Enhancing Technologies
+/ DPS: Data Provenance Standard
+/ PET: Privacy Enhancing Technologies
 
 #pagebreak(weak: true)
 = Document Conventions
@@ -340,6 +325,9 @@ required members.
     the dataset.],
     [5], [use], [Use], [1], [Describes legal use and restrictions that
     apply to the dataset.],
+    [6], [proof], [Proof], [0..1], [Reserved for an external integrity
+    or signing envelope's proof material. The internal structure is
+    opaque to this specification.],
   )]
   , caption: [Type `DataProvenance` (Record)]
   , kind: table
@@ -718,11 +706,28 @@ The `provenance` member describes the provenance of the dataset.
     media type of the data within the dataset.],
     [9], [sub-provenance], [Provenance], [0..1], [Nested provenance
     information for a component of this dataset.],
+    [10], [source-digest], [SourceDigest], [0..1], [A cryptographic
+    digest of the record referenced by `source`, computed at issuance.],
   )]
   , caption: [Type `Provenance` (Record)]
   , kind: table
   )
 <tab:provenance-record>
+
+#figure(
+  align(center)[#table(
+    columns: (6%, 15%, 15%, 6%, 58%),
+    align: (right,left,left,left,left,),
+    table.header([ID], [Name], [Type], [\#], [Description],),
+    table.hline(),
+    [1], [algorithm], [String], [1], [Digest algorithm identifier
+    (e.g.~sha256, sha384, sha512).],
+    [2], [value], [String], [1], [The digest value, hex-encoded.],
+  )]
+  , caption: [Type `SourceDigest` (Record)]
+  , kind: table
+  )
+<tab:source-digest-record>
 
 #figure(
   align(center)[#table(
@@ -1066,6 +1071,8 @@ The following types are used in more than one of the sections above.
   )
 <tab:organization-record>
 
+The value of `url` SHOULD use the `https` scheme.
+
 #figure(
   align(center)[#table(
     columns: (5%, 12%, 83%),
@@ -1244,11 +1251,11 @@ The required top-level members are:
 
 ```yaml
 DataProvenance:
-  $schema: String.Constant
+  $schema: String.Const
   set: Mapping
-  source: Mapping
-  provenance: Mapping
-  use: Mapping
+  source: $defs.source-type
+  provenance: $defs.provenance-type
+  use: $defs.use-type
 ```
 
 === Member `$schema`
@@ -1275,17 +1282,16 @@ DataProvenance:
   # ...
   set:
     category: String.Pattern
-    schema-version: String.Constant
+    schema-version: String.Const
     publisher: Mapping
     label: String
     tracking: Mapping
-    # language: String.BCP47        (optional)
-    # source-language: String.BCP47 (optional)
-    # acknowledgments: Sequence     (optional)
-    # notes: Sequence               (optional)
-    # references: Sequence          (optional)
+    acknowledgments: $defs.acknowledgments-type  # optional
+    notes: $defs.notes-type                      # optional
+    references: $defs.references-type            # optional
+    language: $defs.language-type                # optional
+    source-language: $defs.language-type         # optional
   # ...
-# ...
 ```
 
 ==== Member `set.category`
@@ -1301,7 +1307,6 @@ DataProvenance:
     category: String.Pattern
     # ...
   # ...
-# ...
 ```
 
 #emph[Examples 1:]#box()<member-set-category-eg-1>
@@ -1323,10 +1328,9 @@ DataProvenance:
   # ...
   set:
     # ...
-    schema-version: String.Constant
+    schema-version: String.Const
     # ...
   # ...
-# ...
 ```
 
 The value of the `set.schema-version` member for this version of the
@@ -1353,10 +1357,9 @@ DataProvenance:
     publisher:
       name: String
       namespace: String.URI
-      # contact-details: String  (optional)
+      contact-details: String  # optional
     # ...
   # ...
-# ...
 ```
 
 ===== Member `set.publisher.name`
@@ -1373,7 +1376,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-set-publisher-name-eg-1>
@@ -1399,7 +1401,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.publisher.namespace` MUST be a valid URI.
@@ -1423,10 +1424,9 @@ DataProvenance:
     # ...
     publisher:
       # ...
-      contact-details: String
+      contact-details: String  # optional
     # ...
   # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-set-publisher-contact-details-eg-1>
@@ -1448,7 +1448,6 @@ DataProvenance:
     label: String
     # ...
   # ...
-# ...
 ```
 
 The value of `set.label` SHOULD be a canonical name for the set, and
@@ -1482,11 +1481,10 @@ DataProvenance:
       revision-history: Sequence
       status: String.Enum
       version: $defs.version-type
-      # aliases: Sequence   (optional)
-      # generator: Mapping  (optional)
+      aliases: Sequence   # optional
+      generator: Mapping  # optional
     # ...
   # ...
-# ...
 ```
 
 ===== Member `set.tracking.current-release-date`
@@ -1504,7 +1502,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.current-release-date` MUST be a valid
@@ -1534,7 +1531,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.id` MUST NOT start or end with whitespace.
@@ -1563,7 +1559,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.initial-release-date` MUST be a valid
@@ -1592,11 +1587,10 @@ DataProvenance:
         - date: String.DateTime
           number: $defs.version-type
           summary: String
-          # legacy-version: String  (optional)
+          legacy-version: String  # optional
       # ...
     # ...
   # ...
-# ...
 ```
 
 Each revision item MUST contain the following members:
@@ -1635,11 +1629,10 @@ DataProvenance:
     # ...
     tracking:
       # ...
-      status: String.Enum
+      status: String.Enum  # draft | final | interim
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.status` MUST be one of the following:
@@ -1664,12 +1657,15 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.version` MUST conform to
 `$defs.version-type`, which requires either an integer or a semantic
 versioning string.
+
+The value of `set.tracking.version` MUST equal the value of `number` in
+the most recent item of `set.tracking.revision-history`, that is the
+item with the latest `date`.
 
 #emph[Examples 1:]#box()<member-set-tracking-version-eg-1>
 
@@ -1692,11 +1688,11 @@ DataProvenance:
     # ...
     tracking:
       # ...
-      aliases:
+      aliases:  # optional
         - String
+      # ...
     # ...
   # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-set-tracking-aliases-eg-1>
@@ -1718,14 +1714,13 @@ DataProvenance:
     # ...
     tracking:
       # ...
-      generator:
+      generator:  # optional
         engine:
           name: String
-          # version: $defs.version-type  (optional)
-        # date: String.DateTime  (optional)
+          version: $defs.version-type  # optional
+        date: String.DateTime  # optional
     # ...
   # ...
-# ...
 ```
 
 - `engine.name`: The name of the tool or system that produced the
@@ -1754,10 +1749,9 @@ DataProvenance:
   # ...
   set:
     # ...
-    language: String.BCP47
+    language: $defs.language-type  # optional
     # ...
   # ...
-# ...
 ```
 
 #emph[Examples 1:]#box()<member-set-language-eg-1>
@@ -1778,10 +1772,8 @@ DataProvenance:
   # ...
   set:
     # ...
-    source-language: String.BCP47
-    # ...
+    source-language: $defs.language-type  # optional
   # ...
-# ...
 ```
 
 ==== Member `set.acknowledgments`
@@ -1796,13 +1788,15 @@ DataProvenance:
   # ...
   set:
     # ...
-    acknowledgments:
-      - # names: Sequence       (optional)
-        # organization: String  (optional)
-        # summary: String       (optional)
-        # urls: Sequence        (optional)
+    acknowledgments:  # optional; at least one of these members
+      - names:
+          - String
+        organization: String
+        summary: String
+        urls:
+          - String.URI
+    # ...
   # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-set-acknowledgments-eg-1>
@@ -1829,13 +1823,13 @@ DataProvenance:
   # ...
   set:
     # ...
-    notes:
-      - category: String.Enum  # NoteCategory: description | details | faq | general | legal_disclaimer | other | summary
+    notes:  # optional
+      - category: String.Enum
         text: String
-        # audience: String  (optional)
-        # title: String     (optional)
+        audience: String  # optional
+        title: String     # optional
+    # ...
   # ...
-# ...
 ```
 
 - `category`: The category of the note.
@@ -1856,12 +1850,12 @@ DataProvenance:
   # ...
   set:
     # ...
-    references:
+    references:  # optional
       - summary: String
         url: String.URI
-        # category: String.Enum  # ReferenceCategory: external | self (optional)
+        category: String.Enum  # optional
+    # ...
   # ...
-# ...
 ```
 
 - `summary`: A short description of what this reference refers to.
@@ -1878,14 +1872,13 @@ All six of its members are required.
 DataProvenance:
   # ...
   source:
-    about: Mapping
-    id: Mapping
-    issuer: Sequence
+    about: $defs.about-type
+    id: $defs.identity-type
+    issuer: $defs.orga-type
     location: String.URI
     name: String
     data-version: $defs.version-type
   # ...
-# ...
 ```
 
 The members of `source` are described in the following subsections.
@@ -1901,14 +1894,12 @@ present.
 DataProvenance:
   # ...
   source:
-    # ...
     about:
       content: String
       purpose: String
-      # scope: String  (optional)
+      scope: String  # optional
     # ...
   # ...
-# ...
 ```
 
 - `content`: Provides essential contextual information that helps users
@@ -1936,14 +1927,24 @@ DataProvenance:
   # ...
   source:
     # ...
-    id:  # at least one of the following
-      hashes: Sequence
-      uris: Sequence
-      uuids: Sequence
-      custom-ids: Sequence
+    id:  # at least one of these members
+      hashes:
+        - tree-hashes:
+            - algorithm: String
+              value: String.Pattern
+          path: String
+      uris:
+        - String.URI
+      uuids:
+        - String
+      custom-ids:
+        - method: String
+          value: String
+          tool: String  # optional
+          parameter-list:  # optional
+            - String
     # ...
   # ...
-# ...
 ```
 
 The following identification methods are available:
@@ -1955,6 +1956,19 @@ The following identification methods are available:
 - `custom-ids`: A list of identifiers in any text format, each with a
   required `method` and `value`, and optional `tool` and
   `parameter-list`.
+
+The value of `algorithm` MUST be lowercase.
+
+#emph[Examples:]
+
+- sha256
+- sha384
+- sha512
+- blake2b512
+- sha3-512
+
+`source.id` identifies the dataset itself. It is distinct from
+`set.tracking.id`, which identifies this metadata record.
 
 #emph[Example 1:]#box()<member-source-id-eg-1>
 
@@ -1983,8 +1997,9 @@ The `source.issuer` member identifies the legal entity or entities
 responsible for creating the dataset. The value is a sequence of
 organization objects. Each organization MUST provide a `legal-name`. The
 sequence MUST contain at least one organization and all entries MUST be
-unique. The optional members `address` and `url` MAY also be present in
-each organization.
+unique for the organization record members --- `legal-name`, `address`,
+and `url` together --- not by `legal-name` alone. The optional members
+`address` and `url` MAY also be present in each organization.
 
 ```yaml
 DataProvenance:
@@ -1993,11 +2008,10 @@ DataProvenance:
     # ...
     issuer:
       - legal-name: String
-        # address: Sequence  (optional)
-        # url: String.URI    (optional)
+        address: $defs.address-type  # optional
+        url: String.URI              # optional
     # ...
   # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-source-issuer-eg-1>
@@ -2025,7 +2039,6 @@ DataProvenance:
     location: String.URI
     # ...
   # ...
-# ...
 ```
 
 ==== Member `source.name`
@@ -2042,7 +2055,6 @@ DataProvenance:
     name: String
     # ...
   # ...
-# ...
 ```
 
 ==== Member `source.data-version`
@@ -2057,9 +2069,7 @@ DataProvenance:
   source:
     # ...
     data-version: $defs.version-type
-    # ...
   # ...
-# ...
 ```
 
 The value of `source.data-version` MUST conform to `$defs.version-type`,
@@ -2085,17 +2095,16 @@ also be present.
 DataProvenance:
   # ...
   provenance:
-    origin-geography: Sequence
+    origin-geography: $defs.geographic-regions-type
     date: String.Date
     generation-method: Sequence
-    # source: String.URI            (optional)
-    # origin: Sequence              (optional)
-    # previous-date: String.Date    (optional)
-    # generation-period: Mapping    (optional)
-    # format: Sequence              (optional)
-    # sub-provenance: Mapping       (optional, recursive)
+    source: String.URI                     # optional
+    origin: $defs.orga-type                # optional
+    previous-date: String.Date             # optional
+    generation-period: Mapping             # optional
+    format: Sequence                       # optional
+    sub-provenance: $defs.provenance-type  # optional
   # ...
-# ...
 ```
 
 The required members of `provenance` are described in subsections
@@ -2117,13 +2126,11 @@ unique.
 DataProvenance:
   # ...
   provenance:
-    # ...
     origin-geography:
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
   # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-provenance-origin-geography-eg-1>
@@ -2148,7 +2155,6 @@ DataProvenance:
     date: String.Date
     # ...
   # ...
-# ...
 ```
 
 The value of `provenance.date` MUST be a valid date string in full-date
@@ -2178,12 +2184,11 @@ DataProvenance:
   provenance:
     # ...
     generation-method:
-      - code: String.Enum  # GenerationMethodCode: data-augmentation | data-mining | feeds | machine-generated-ml-ops | other | primary-user-source | simulations | social-media | syndication | transfer-learning | user-generated-content | web-scraping-crawling
-        # system: String           (optional)
-        # long-description: String (optional)
+      - code: $defs.generation-method-code-type
+        system: String            # optional
+        long-description: String  # optional
     # ...
   # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-provenance-generation-method-eg-1>
@@ -2206,10 +2211,9 @@ DataProvenance:
   # ...
   provenance:
     # ...
-    source: String.URI
+    source: String.URI  # optional
     # ...
   # ...
-# ...
 ```
 
 The value of `provenance.source` MUST be a valid URI.
@@ -2232,13 +2236,12 @@ DataProvenance:
   # ...
   provenance:
     # ...
-    origin:
+    origin:  # optional
       - legal-name: String
-        # address: Sequence  (optional)
-        # url: String.URI    (optional)
+        address: $defs.address-type  # optional
+        url: String.URI              # optional
     # ...
   # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-provenance-origin-eg-1>
@@ -2257,10 +2260,9 @@ DataProvenance:
   # ...
   provenance:
     # ...
-    previous-date: String.Date
+    previous-date: String.Date  # optional
     # ...
   # ...
-# ...
 ```
 
 The value of `provenance.previous-date` MUST be a valid date string in
@@ -2284,12 +2286,11 @@ DataProvenance:
   # ...
   provenance:
     # ...
-    generation-period:
-      # start: String.DateTime  (optional)
-      # end: String.DateTime    (optional)
+    generation-period:  # optional
+      start: String.DateTime  # optional
+      end: String.DateTime    # optional
     # ...
   # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-provenance-generation-period-eg-1>
@@ -2313,11 +2314,10 @@ DataProvenance:
   # ...
   provenance:
     # ...
-    format:
-      - String.Enum  # ModalityFormat: application/json | application/jsonld | application/msword | application/vnd.ms-excel | application/zip | image/bmp | image/gif | image/jpeg | image/png | image/x-png | other | text/csv | text/plain
+    format:  # optional
+      - String.Enum  # application/json | application/jsonld | application/msword | application/vnd.ms-excel | application/zip | image/bmp | image/gif | image/jpeg | image/png | image/x-png | other | text/csv | text/plain
     # ...
   # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-provenance-format-eg-1>
@@ -2337,14 +2337,21 @@ DataProvenance:
   # ...
   provenance:
     # ...
-    sub-provenance:
-      origin-geography: Sequence
+    sub-provenance:  # optional
+      origin-geography: $defs.geographic-regions-type
       date: String.Date
-      generation-method: Sequence
-      # ... (same optional members as provenance)
-    # ...
+      generation-method:
+        - $defs.generation-method-item-type
+      source: String.URI          # optional
+      origin: $defs.orga-type     # optional
+      previous-date: String.Date  # optional
+      generation-period:  # optional
+        start: String.DateTime  # optional
+        end: String.DateTime    # optional
+      format:  # optional
+        - String.Enum
+      sub-provenance: $defs.provenance-type  # optional
   # ...
-# ...
 ```
 
 === Member `use`
@@ -2360,19 +2367,17 @@ DataProvenance:
   # ...
   use:
     intended-purpose: Sequence
-    # classification: Sequence      (optional)
-    # consents: Sequence            (optional)
-    # data-risk-reducing: Sequence  (optional)
-    # processing-included: Sequence (optional)
-    # processing-excluded: Sequence (optional)
-    # storage-allowed: Sequence     (optional)
-    # storage-forbidden: Sequence   (optional)
-    # license: Sequence             (optional)
-    # copyright: Sequence           (optional)
-    # patent: Sequence              (optional)
-    # trademark: Sequence           (optional)
-  # ...
-# ...
+    classification: Sequence                            # optional
+    consents: Sequence                                  # optional
+    data-risk-reducing: Sequence                        # optional
+    processing-included: $defs.geographic-regions-type  # optional
+    processing-excluded: $defs.geographic-regions-type  # optional
+    storage-allowed: $defs.geographic-regions-type      # optional
+    storage-forbidden: $defs.geographic-regions-type    # optional
+    license: Sequence                                   # optional
+    copyright: Sequence                                 # optional
+    patent: Sequence                                    # optional
+    trademark: Sequence                                 # optional
 ```
 
 ==== Member `use.intended-purpose`
@@ -2390,14 +2395,11 @@ contain at least one purpose and all entries MUST be unique.
 DataProvenance:
   # ...
   use:
-    # ...
     intended-purpose:
-      - code: String.Enum  # PurposeCode: alignment | evaluation | other | pre-training | production | quality-assurance | research | staging-testing | synthetic-data-generation
+      - code: $defs.purpose-code-type
         long-description: String
-        # system: String  (optional)
+        system: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-use-intended-purpose-eg-1>
@@ -2425,16 +2427,11 @@ DataProvenance:
   # ...
   use:
     # ...
-    classification:
-      - regulation:
-          code: String.Enum  # ConfidentialityCode: other | pci | pfi | phi | pi | sci | spi
-          # system: String           (optional)
-          # long-description: String (optional)
+    classification:  # optional
+      - regulation: $defs.confidentiality-regulation-type
         evaluated: Boolean
-        # tool: String  (optional)
+        tool: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-use-classification-eg-1>
@@ -2458,11 +2455,9 @@ DataProvenance:
   # ...
   use:
     # ...
-    consents:
+    consents:  # optional
       - String
     # ...
-  # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-use-consents-eg-1>
@@ -2484,15 +2479,16 @@ DataProvenance:
   # ...
   use:
     # ...
-    data-risk-reducing:
+    data-risk-reducing:  # optional
       - tool-used: String
-        # tool-category: Mapping  (optional, method object)
-        # technology: String.Enum (optional, DataTechnology value)
-        # parameters: Sequence    (optional, list of {name, value} pairs)
-        # results: Sequence       (optional, list of strings)
+        tool-category: $defs.method-type  # optional
+        technology: String.Enum           # optional
+        parameters:  # optional
+          - name: String
+            value: String  # optional
+        results:  # optional
+          - String
     # ...
-  # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-use-data-risk-reducing-eg-1>
@@ -2520,12 +2516,10 @@ DataProvenance:
   # ...
   use:
     # ...
-    processing-included:
+    processing-included:  # optional
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-use-processing-included-eg-1>
@@ -2546,12 +2540,10 @@ DataProvenance:
   # ...
   use:
     # ...
-    processing-excluded:
+    processing-excluded:  # optional
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 ==== Member `use.storage-allowed`
@@ -2565,12 +2557,10 @@ DataProvenance:
   # ...
   use:
     # ...
-    storage-allowed:
+    storage-allowed:  # optional
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 ==== Member `use.storage-forbidden`
@@ -2585,12 +2575,10 @@ DataProvenance:
   # ...
   use:
     # ...
-    storage-forbidden:
+    storage-forbidden:  # optional
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 ==== Member `use.license`
@@ -2606,11 +2594,9 @@ DataProvenance:
   # ...
   use:
     # ...
-    license:
+    license:  # optional
       - String
     # ...
-  # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-use-license-eg-1>
@@ -2631,11 +2617,9 @@ DataProvenance:
   # ...
   use:
     # ...
-    copyright:
+    copyright:  # optional
       - String
     # ...
-  # ...
-# ...
 ```
 
 #emph[Example 1:]#box()<member-use-copyright-eg-1>
@@ -2656,11 +2640,9 @@ DataProvenance:
   # ...
   use:
     # ...
-    patent:
+    patent:  # optional
       - String
     # ...
-  # ...
-# ...
 ```
 
 ==== Member `use.trademark`
@@ -2675,11 +2657,8 @@ DataProvenance:
   # ...
   use:
     # ...
-    trademark:
+    trademark:  # optional
       - String
-    # ...
-  # ...
-# ...
 ```
 
 #pagebreak(weak: true)
@@ -2835,7 +2814,7 @@ The limited permissions granted above are perpetual and will not be
 revoked by OASIS or its successors or assigns, as provided in the OASIS
 IPR Policy.
 
-This document is provided under the "Non-Assertion" IPR mode that was
+This document is provided under the “Non-Assertion” IPR mode that was
 chosen when the project was established, as defined in the IPR Policy.
 For information on whether any patents have been disclosed that may be
 essential to implementing this document, and any offers of patent
@@ -3163,6 +3142,7 @@ definition to the initial structuring of this document.
 The following individuals have participated in the creation of this
 document and are gratefully acknowledged (given family, affiliation):
 
+- Charles Assaf, Individual
 - David Kemp, NSA
 - Duncan Sparrell, sFractal Consulting LLC
 - Kristina Podnar, Data & Trust Alliance

@@ -5,21 +5,20 @@ The `provenance` member describes the provenance of the dataset.
 The required members are `origin-geography`, `date`, and `generation-method`.
 The optional members `source`, `origin`, `previous-date`, `generation-period`, `format`, and `sub-provenance` MAY also be present.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties)-->
+```{.yaml json-path="$['$defs']['provenance-type'].properties"}
 DataProvenance:
   # ...
   provenance:
-    origin-geography: Sequence
+    origin-geography: $defs.geographic-regions-type
     date: String.Date
     generation-method: Sequence
-    # source: String.URI            (optional)
-    # origin: Sequence              (optional)
-    # previous-date: String.Date    (optional)
-    # generation-period: Mapping    (optional)
-    # format: Sequence              (optional)
-    # sub-provenance: Mapping       (optional, recursive)
+    source: String.URI                     # optional
+    origin: $defs.orga-type                # optional
+    previous-date: String.Date             # optional
+    generation-period: Mapping             # optional
+    format: Sequence                       # optional
+    sub-provenance: $defs.provenance-type  # optional
   # ...
-# ...
 ```
 
 The required members of `provenance` are described in subsections 7.1.4.1–7.1.4.3; optional members in 7.1.4.4–7.1.4.9.
@@ -30,17 +29,15 @@ The `provenance.origin-geography` member identifies the geographical locations w
 
 The value is a sequence of geographic region objects. Each entry MUST contain a `country`. The optional `state` member MAY also be present. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['geographic-regions-type'].items.properties)-->
+```{.yaml json-path="$['$defs']['geographic-regions-type'].items.properties"}
 DataProvenance:
   # ...
   provenance:
-    # ...
     origin-geography:
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*
@@ -56,7 +53,7 @@ DataProvenance:
 
 The `provenance.date` member provides the date when the dataset was compiled or created, providing a temporal context for the data.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties.date.format)-->
+```{.yaml json-path="$['$defs']['provenance-type'].properties.date.format"}
 DataProvenance:
   # ...
   provenance:
@@ -64,7 +61,6 @@ DataProvenance:
     date: String.Date
     # ...
   # ...
-# ...
 ```
 
 The value of `provenance.date` MUST be a valid date string in full-date format (YYYY-MM-DD).
@@ -81,18 +77,17 @@ The `provenance.generation-method` member describes the methodology or procedure
 
 The value is a sequence of method objects. Each method MUST contain a `code` drawn from the `GenerationMethodCode` vocabulary. The optional members `system` and `long-description` MAY also be present. The sequence MUST contain at least one method and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties['generation-method'].items['$ref'])-->
+```{.yaml json-path="$['$defs']['provenance-type'].properties['generation-method'].items['$ref']"}
 DataProvenance:
   # ...
   provenance:
     # ...
     generation-method:
-      - code: String.Enum  # GenerationMethodCode: data-augmentation | data-mining | feeds | machine-generated-ml-ops | other | primary-user-source | simulations | social-media | syndication | transfer-learning | user-generated-content | web-scraping-crawling
-        # system: String           (optional)
-        # long-description: String (optional)
+      - code: $defs.generation-method-code-type
+        system: String            # optional
+        long-description: String  # optional
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*
@@ -108,15 +103,14 @@ DataProvenance:
 
 The `provenance.source` member identifies where the metadata for the source dataset contributing to the current dataset can be found, establishing lineage.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties.source.format)-->
+```{.yaml json-path="$['$defs']['provenance-type'].properties.source.format"}
 DataProvenance:
   # ...
   provenance:
     # ...
-    source: String.URI
+    source: String.URI  # optional
     # ...
   # ...
-# ...
 ```
 
 The value of `provenance.source` MUST be a valid URI.
@@ -132,18 +126,17 @@ https://example.com/datasets/source-dataset-42/provenance.json
 The `provenance.origin` member identifies the original source organization when it differs from the issuer of the dataset.
 The value is a sequence of organization objects following the same structure as `source.issuer`.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties.origin['$ref'])-->
+```{.yaml json-path="$['$defs']['provenance-type'].properties.origin['$ref']"}
 DataProvenance:
   # ...
   provenance:
     # ...
-    origin:
+    origin:  # optional
       - legal-name: String
-        # address: Sequence  (optional)
-        # url: String.URI    (optional)
+        address: $defs.address-type  # optional
+        url: String.URI              # optional
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*
@@ -156,15 +149,14 @@ DataProvenance:
 
 The `provenance.previous-date` member provides the release date of the previous version of the dataset, to track changes and updates over time.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties['previous-date'].format)-->
+```{.yaml json-path="$['$defs']['provenance-type'].properties['previous-date'].format"}
 DataProvenance:
   # ...
   provenance:
     # ...
-    previous-date: String.Date
+    previous-date: String.Date  # optional
     # ...
   # ...
-# ...
 ```
 
 The value of `provenance.previous-date` MUST be a valid date string in full-date format (YYYY-MM-DD).
@@ -180,17 +172,16 @@ The value of `provenance.previous-date` MUST be a valid date string in full-date
 The `provenance.generation-period` member describes the span of time during which the data within the dataset was collected or generated.
 Both `start` and `end` are optional but MUST each conform to \[RFC 3339\] when present.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties['generation-period'])-->
+```{.yaml json-path="$['$defs']['provenance-type'].properties['generation-period']"}
 DataProvenance:
   # ...
   provenance:
     # ...
-    generation-period:
-      # start: String.DateTime  (optional)
-      # end: String.DateTime    (optional)
+    generation-period:  # optional
+      start: String.DateTime  # optional
+      end: String.DateTime    # optional
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*
@@ -207,16 +198,15 @@ DataProvenance:
 The `provenance.format` member describes the modality or media type of the data within the dataset.
 The value is a sequence of `ModalityFormat` values. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties.format)-->
+```{.yaml json-path="$['$defs']['provenance-type'].properties.format"}
 DataProvenance:
   # ...
   provenance:
     # ...
-    format:
-      - String.Enum  # ModalityFormat: application/json | application/jsonld | application/msword | application/vnd.ms-excel | application/zip | image/bmp | image/gif | image/jpeg | image/png | image/x-png | other | text/csv | text/plain
+    format:  # optional
+      - String.Enum  # application/json | application/jsonld | application/msword | application/vnd.ms-excel | application/zip | image/bmp | image/gif | image/jpeg | image/png | image/x-png | other | text/csv | text/plain
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*
@@ -230,17 +220,24 @@ DataProvenance:
 The `provenance.sub-provenance` member holds provenance information for a component of the current dataset, enabling a recursive provenance tree.
 Its structure is identical to the enclosing `provenance` member.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties['sub-provenance']['$ref'])-->
+```{.yaml json-path="$['$defs']['provenance-type'].properties['sub-provenance']['$ref']"}
 DataProvenance:
   # ...
   provenance:
     # ...
-    sub-provenance:
-      origin-geography: Sequence
+    sub-provenance:  # optional
+      origin-geography: $defs.geographic-regions-type
       date: String.Date
-      generation-method: Sequence
-      # ... (same optional members as provenance)
-    # ...
+      generation-method:
+        - $defs.generation-method-item-type
+      source: String.URI          # optional
+      origin: $defs.orga-type     # optional
+      previous-date: String.Date  # optional
+      generation-period:  # optional
+        start: String.DateTime  # optional
+        end: String.DateTime    # optional
+      format:  # optional
+        - String.Enum
+      sub-provenance: $defs.provenance-type  # optional
   # ...
-# ...
 ```

@@ -3,18 +3,17 @@
 The `source` member characterizes the content and source of the dataset.
 All six of its members are required.
 
-```yaml <!--json-path($['$defs']['source-type'].properties)-->
+```{.yaml json-path="$['$defs']['source-type'].properties"}
 DataProvenance:
   # ...
   source:
-    about: Mapping
-    id: Mapping
-    issuer: Sequence
+    about: $defs.about-type
+    id: $defs.identity-type
+    issuer: $defs.orga-type
     location: String.URI
     name: String
     data-version: $defs.version-type
   # ...
-# ...
 ```
 
 The members of `source` are described in the following subsections.
@@ -24,18 +23,16 @@ The members of `source` are described in the following subsections.
 The `source.about` member contains a detailed narrative that explains the contents, scope, and purpose of the dataset.
 The required members are `content` and `purpose`. The optional member `scope` MAY also be present.
 
-```yaml <!--json-path($['$defs']['about-type'].properties)-->
+```{.yaml json-path="$['$defs']['about-type'].properties"}
 DataProvenance:
   # ...
   source:
-    # ...
     about:
       content: String
       purpose: String
-      # scope: String  (optional)
+      scope: String  # optional
     # ...
   # ...
-# ...
 ```
 
 - `content`: Provides essential contextual information that helps users understand what the data represents and how it was collected.
@@ -56,19 +53,29 @@ DataProvenance:
 
 The `source.id` member provides a unique identifier for the dataset's metadata. At least one identification method MUST be provided.
 
-```yaml <!--json-path($['$defs']['identity-type'].minProperties)-->
+```{.yaml json-path="$['$defs']['identity-type'].minProperties"}
 DataProvenance:
   # ...
   source:
     # ...
-    id:  # at least one of the following
-      hashes: Sequence
-      uris: Sequence
-      uuids: Sequence
-      custom-ids: Sequence
+    id:  # at least one of these members
+      hashes:
+        - tree-hashes:
+            - algorithm: String
+              value: String.Pattern
+          path: String
+      uris:
+        - String.URI
+      uuids:
+        - String
+      custom-ids:
+        - method: String
+          value: String
+          tool: String  # optional
+          parameter-list:  # optional
+            - String
     # ...
   # ...
-# ...
 ```
 
 The following identification methods are available:
@@ -118,18 +125,17 @@ The value is a sequence of organization objects. Each organization MUST provide 
 The sequence MUST contain at least one organization and all entries MUST be unique for the organization record members — `legal-name`, `address`, and `url` together — not by `legal-name` alone.
 The optional members `address` and `url` MAY also be present in each organization.
 
-```yaml <!--json-path($['$defs']['orga-type'].items.properties)-->
+```{.yaml json-path="$['$defs']['orga-type'].items.properties"}
 DataProvenance:
   # ...
   source:
     # ...
     issuer:
       - legal-name: String
-        # address: Sequence  (optional)
-        # url: String.URI    (optional)
+        address: $defs.address-type  # optional
+        url: String.URI              # optional
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*
@@ -147,7 +153,7 @@ DataProvenance:
 
 The `source.location` member provides the web address where the dataset's metadata is published and can be accessed. Typically this will be a unique URI of the current dataset.
 
-```yaml <!--json-path($['$defs']['source-type'].properties.location.type)-->
+```{.yaml json-path="$['$defs']['source-type'].properties.location.type"}
 DataProvenance:
   # ...
   source:
@@ -155,14 +161,13 @@ DataProvenance:
     location: String.URI
     # ...
   # ...
-# ...
 ```
 
 #### Member `source.name` {#member-source-name}
 
 The `source.name` member provides the official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose.
 
-```yaml <!--json-path($['$defs']['source-type'].properties.name.type)-->
+```{.yaml json-path="$['$defs']['source-type'].properties.name.type"}
 DataProvenance:
   # ...
   source:
@@ -170,22 +175,19 @@ DataProvenance:
     name: String
     # ...
   # ...
-# ...
 ```
 
 #### Member `source.data-version` {#member-source-data-version}
 
 The `source.data-version` member specifies the version of the dataset this DP-Core set describes, allowing the dataset to evolve over time and keeping consistent labeling.
 
-```yaml <!--json-path($['$defs']['source-type'].properties['data-version']['$ref'])-->
+```{.yaml json-path="$['$defs']['source-type'].properties['data-version']['$ref']"}
 DataProvenance:
   # ...
   source:
     # ...
     data-version: $defs.version-type
-    # ...
   # ...
-# ...
 ```
 
 The value of `source.data-version` MUST conform to `$defs.version-type`, which requires either an integer or a semantic versioning string.

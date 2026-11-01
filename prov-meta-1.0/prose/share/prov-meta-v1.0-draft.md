@@ -1,79 +1,79 @@
 ![](https://docs.oasis-open.org/templates/OASISLogo-v3.0.png)
 
-# Data Provenance Metadata Version 1.0 <a id='data-provenance-metadata-version-1-0'></a>
+# Data Provenance Metadata Version 1.0<a id='data-provenance-metadata-version-1-0'></a>
 
-## Committee Specification Draft 02 <a id='committee-specification-draft-02'></a>
+## Committee Specification Draft 02<a id='committee-specification-draft-02'></a>
 
-## 19 July 2026 <a id='19-july-2026'></a>
+## 3 November 2026<a id='3-november-2026'></a>
 
-### This version <a id='this-version'></a>
+### This version<a id='this-version'></a>
 
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.md](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.md) (Authoritative)
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.html)
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.pdf](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd02.pdf)
+- <https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.md> (Authoritative)
+- <https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html>
+- <https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.pdf>
 
-### Latest version <a id='latest-version'></a>
+### Latest version<a id='latest-version'></a>
 
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.md](https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.md) (Authoritative)
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html](https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html)
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.pdf](https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.pdf)
+- <https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.md> (Authoritative)
+- <https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html>
+- <https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.pdf>
 
-### Previous version <a id='previous-version'></a>
+### Previous version<a id='previous-version'></a>
 
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.md](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.md) (Authoritative)
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.html](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.html)
-- [https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.pdf](https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.pdf)
+- <https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.md> (Authoritative)
+- <https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.html>
+- <https://docs.oasis-open.org/dps/prov-meta/v1.0/csd01/prov-meta-v1.0-csd01.pdf>
 
-### Technical Committee <a id='technical-committee'></a>
+### Technical Committee<a id='technical-committee'></a>
 
 [Data Provenance Standard Technical Committee](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=2c60b2cf-45d3-48cd-8594-0194f182b33d)
 
-### Chairs <a id='chairs'></a>
+### Chairs<a id='chairs'></a>
 
 - Lisa Bobbitt, Cisco, lbobbitt@cisco.com
 - Bryan Bortnick, IBM, bortnick@us.ibm.com
 - Fotis Psallidas, Microsoft, Fotis.Psallidas@microsoft.com
 
-### Secretaries <a id='secretaries'></a>
+### Secretaries<a id='secretaries'></a>
 
 - Jamie Yu, Cisco, jamyu2@cisco.com
 
-### Editors <a id='editors'></a>
+### Editors<a id='editors'></a>
 
 - David Kemp, NSA, d.kemp@cyber.nsa.gov
 - Stefan Hagen, individual, stefan@hagen.link
 
-### Additional Artifacts <a id='additional-artifacts'></a>
+### Additional Artifacts<a id='additional-artifacts'></a>
 
 This prose specification is one component of a Work Product that also includes:
 
-- Data Provenance Metadata JSON schema: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance.json. \
-  Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json.
-- Data Provenance Metadata Configuration JSON schema: https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance-configuration.json. \
-  Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json.
+- Data Provenance Metadata JSON schema: <https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance.json>. \
+  Latest stage: <https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json>.
+- Data Provenance Metadata Configuration JSON schema: <https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/schema/data-provenance-configuration.json>. \
+  Latest stage: <https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json>.
 
-### Declared JSON namespaces <a id='declared-json-namespaces'></a>
+### Declared JSON namespaces<a id='declared-json-namespaces'></a>
 
 - <https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json>
 - <https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance-configuration.json>
 
-### Abstract <a id='abstract'></a>
+### Abstract<a id='abstract'></a>
 
 This OASIS Data Provenance Metadata specification provides an information model and several specialized data schemata for describing and managing data provenance and data lineage.
 The resulting common language provides transparency for data provenance and enables assessing where data comes from,
 how it has been created, and in what scenarios it can be used, legally.
 
-### Citation Format <a id='citation-format'></a>
+### Citation Format<a id='citation-format'></a>
 
 When referencing this document, the following citation format should be used:
 
 **[prov-meta-v1.0]**
 
-_Data Provenance Metadata Version 1.0_. Edited by David Kemp and Stefan Hagen. 19 July 2026. OASIS Committee Specification Draft 02. \
-https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html. \
-Latest stage: https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html.
+_Data Provenance Metadata Version 1.0_. Edited by David Kemp and Stefan Hagen. 3 November 2026. OASIS Committee Specification Draft 02.
+<https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html>. \
+Latest stage: <https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html>.
 
-### Related Work <a id='related-work'></a>
+### Related Work<a id='related-work'></a>
 
 This document replaces or supersedes:
 
@@ -83,7 +83,7 @@ This document is related to:
 
 N/A
 
-## License, Document Status, and Notices <a id='license-document-status-and-notices'></a>
+## License, Document Status, and Notices<a id='license-document-status-and-notices'></a>
 
 Copyright © OASIS Open 2026.
 All Rights Reserved.  
@@ -199,7 +199,7 @@ Appendix B. [Changes From Previous Version](#appendix-changes-from-previous-vers
 
 -------
 
-# 1. Scope <a id='scope'></a>
+# 1. Scope<a id='scope'></a>
 
 Data is a core enterprise asset that underpins strategic decision-making, drives operational priorities, and supports risk governance.
 Dependence on data creates a need for validation by understanding data’s origin, quality, and intended use.
@@ -211,11 +211,11 @@ and areas where data quality and accountability are foundational to performance 
 
 ---
 
-# 2. Definitions and Acronyms <a id='definitions-and-acronyms'></a>
+# 2. Definitions and Acronyms<a id='definitions-and-acronyms'></a>
 
-## 2.1 Definitions <a id='definitions'></a>
+## 2.1 Definitions<a id='definitions'></a>
 
-### 2.1.1 Terms Defined Elsewhere <a id='terms-defined-elsewhere'></a>
+### 2.1.1 Terms Defined Elsewhere<a id='terms-defined-elsewhere'></a>
 
 This document uses the following terms defined elsewhere:
 
@@ -229,20 +229,20 @@ Data Provenance
 Data Lineage
 :    Data lineage is the process of tracking the (use and) flow of data over time, providing a clear understanding of where the data originated,
      how it has changed, and its ultimate destination within the data pipeline.
-     Cf. "Data Lineage at IBM" https://www.ibm.com/think/topics/data-lineage for more details.
+     Cf. "Data Lineage at IBM" <https://www.ibm.com/think/topics/data-lineage> for more details.
 
 Data Transparency
 :   Data transparency refers to the clear, open, and honest handling of data within an organization.
     It means that businesses, governments, and institutions disclose how they collect, store, use, and share data, ensuring users, customers,
     and stakeholders understand their practices.
-    Cf. "What is data transparency at BigID" https://bigid.com/blog/what-is-data-transparency for more details.
+    Cf. "What is data transparency at BigID" <https://bigid.com/blog/what-is-data-transparency> for more details.
 
 
-### 2.1.2 Terms Defined in this Document <a id='terms-defined-in-this-document'></a>
+### 2.1.2 Terms Defined in this Document<a id='terms-defined-in-this-document'></a>
 
 None
 
-## 2.2 Abbreviations and Acronyms <a id='abbreviations-and-acronyms'></a>
+## 2.2 Abbreviations and Acronyms<a id='abbreviations-and-acronyms'></a>
 
 AI
 :    Artificial Intelligence
@@ -260,14 +260,14 @@ PET
 
 ---
 
-# 3. Document Conventions <a id='document-conventions'></a>
+# 3. Document Conventions<a id='document-conventions'></a>
 
-## 3.1 Key Words <a id='key-words'></a>
+## 3.1 Key Words<a id='key-words'></a>
 
 The key words "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**NOT RECOMMENDED**", "**MAY**",
 and "**OPTIONAL**" in this document are to be interpreted as described in BCP 14 \[[RFC2119](#RFC2119)\] and \[[RFC8174](#RFC8174)\] when, and only when, they appear in all capitals, as shown here.
 
-## 3.2 Typographical Conventions <a id='typographical-conventions'></a>
+## 3.2 Typographical Conventions<a id='typographical-conventions'></a>
 
 Keywords defined by this specification use this `monospaced` font.
 
@@ -294,7 +294,7 @@ All other text is normative unless otherwise labeled e.g. like the following inf
 
 This document adheres to the Modern Language Association (MLA) style guidelines for formatting titles and terms.
 
-# 4. Introduction <a id='introduction'></a>
+# 4. Introduction<a id='introduction'></a>
 
 Data is a core enterprise asset.
 It underpins strategic decision-making, drives operational priorities, and supports risk governance.
@@ -302,17 +302,17 @@ Dependence on data creates a need for validation and an understanding of the dat
 Understanding data is a requirement for organizations operating at scale.
 The OASIS Data Provenance Standards (DPS) are created to solve for this need.
 
-## 4.1 Any Additional Introduction Subsections That are Needed <a id='any-additional-introduction-subsections-that-are-needed'></a>
+## 4.1 Any Additional Introduction Subsections That are Needed<a id='any-additional-introduction-subsections-that-are-needed'></a>
 
 None
 
-## 4.2 Changes From the Previous Version <a id='changes-from-the-previous-version'></a>
+## 4.2 Changes From the Previous Version<a id='changes-from-the-previous-version'></a>
 
 N/A
 
 ---
 
-# 5. Provenance Schema <a id='provenance-schema'></a>
+# 5. Provenance Schema<a id='provenance-schema'></a>
 
 The schema of the provenance metadata is described in human-readable property tables.
 The technical encoding may be found in section [6 "Provenance Information Model Encoding"](#provenance-information-model-encoding).
@@ -326,26 +326,31 @@ then describe how a record is made of the 3 primary metadata elements.
 The three segmented categories (Source, Provenance, and Use) are comprised of various
 metadata element input fields. Each field is described in more detail below.
 
-## 5.1 Primary Metadata Elements <a id='primary-metadata-elements'></a>
+## 5.1 Primary Metadata Elements<a id='primary-metadata-elements'></a>
 
 The root object of a Data Provenance Metadata record contains five required members.
 
 
-| ID | Name       | Type        | \# | Description                                                                                                                                             |
-|---:|:-----------|:------------|:---|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  1 | $schema    | String /uri | 1  | The URI identifying the schema this JSON object must be valid against. For this version the value is always the URI of the data-provenance JSON schema. |
-|  2 | set        | Set         | 1  | Set-level metadata about this provenance metadata record.                                                                                               |
-|  3 | source     | Source      | 1  | Characterizes the content and source of the dataset.                                                                                                    |
-|  4 | provenance | Provenance  | 1  | Describes the provenance of the dataset.                                                                                                                |
-|  5 | use        | Use         | 1  | Describes legal use and restrictions that apply to the dataset.                                                                                         |
-
 <a id="tab:data-provenance-record"></a>
 Table 1: Type `DataProvenance` (Record)
 
-## 5.2 Set <a id='set'></a>
+| ID | Name       | Type        | \#    | Description                                                                                                                                             |
+|---:|:-----------|:------------|:------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  1 | $schema    | String /uri | 1     | The URI identifying the schema this JSON object must be valid against. For this version the value is always the URI of the data-provenance JSON schema. |
+|  2 | set        | Set         | 1     | Set-level metadata about this provenance metadata record.                                                                                               |
+|  3 | source     | Source      | 1     | Characterizes the content and source of the dataset.                                                                                                    |
+|  4 | provenance | Provenance  | 1     | Describes the provenance of the dataset.                                                                                                                |
+|  5 | use        | Use         | 1     | Describes legal use and restrictions that apply to the dataset.                                                                                         |
+|  6 | proof      | Proof       | 0..1  | Reserved for an external integrity or signing envelope's proof material. The internal structure is opaque to this specification.                        |
+
+
+## 5.2 Set<a id='set'></a>
 
 The `set` member captures metadata about the provenance metadata record itself.
 
+
+<a id="tab:set-record"></a>
+Table 2: Type `Set` (Record)
 
 | ID | Name            | Type           | \#    | Description                                                                                                                        |
 |---:|:----------------|:---------------|:------|:-----------------------------------------------------------------------------------------------------------------------------------|
@@ -360,9 +365,10 @@ The `set` member captures metadata about the provenance metadata record itself.
 |  9 | notes           | Note           | 0..\* | Notes associated with this metadata set.                                                                                           |
 | 10 | references      | Reference      | 0..\* | References associated with this metadata set.                                                                                      |
 
-<a id="tab:set-record"></a>
-Table 2: Type `Set` (Record)
 
+
+<a id="tab:publisher-record"></a>
+Table 3: Type `Publisher` (Record)
 
 | ID | Name            | Type        | \#   | Description                                                                                        |
 |---:|:----------------|:------------|:-----|:---------------------------------------------------------------------------------------------------|
@@ -370,9 +376,10 @@ Table 2: Type `Set` (Record)
 |  2 | namespace       | String /uri | 1    | A URI under the control of the issuing party, used as a globally unique identifier for that party. |
 |  3 | contact-details | String      | 0..1 | Information on how to contact the publisher.                                                       |
 
-<a id="tab:publisher-record"></a>
-Table 3: Type `Publisher` (Record)
 
+
+<a id="tab:tracking-record"></a>
+Table 4: Type `Tracking` (Record)
 
 | ID | Name                 | Type              | \#    | Description                                                                                                                                  |
 |---:|:---------------------|:------------------|:------|:---------------------------------------------------------------------------------------------------------------------------------------------|
@@ -385,9 +392,10 @@ Table 3: Type `Publisher` (Record)
 |  7 | aliases              | String            | 0..\* | Alternate names for this metadata set.                                                                                                       |
 |  8 | generator            | Generator         | 0..1  | Information about the engine that generated this metadata set.                                                                               |
 
-<a id="tab:tracking-record"></a>
-Table 4: Type `Tracking` (Record)
 
+
+<a id="tab:tracking-status-enum"></a>
+Table 5: Type `TrackingStatus` (Enumerated)
 
 | ID | Item    | Description                          |
 |---:|:--------|:-------------------------------------|
@@ -395,9 +403,10 @@ Table 4: Type `Tracking` (Record)
 |  1 | final   | The metadata set is final.           |
 |  2 | interim | The metadata set has interim status. |
 
-<a id="tab:tracking-status-enum"></a>
-Table 5: Type `TrackingStatus` (Enumerated)
 
+
+<a id="tab:revision-record"></a>
+Table 6: Type `Revision` (Record)
 
 | ID | Name           | Type              | \#   | Description                                                                                                    |
 |---:|:---------------|:------------------|:-----|:---------------------------------------------------------------------------------------------------------------|
@@ -406,27 +415,30 @@ Table 5: Type `TrackingStatus` (Enumerated)
 |  3 | summary        | String            | 1    | A short description of the changes in this revision.                                                           |
 |  4 | legacy-version | String            | 0..1 | A version string from an existing set with the same content, tracing from DP-Core compliant to historic items. |
 
-<a id="tab:revision-record"></a>
-Table 6: Type `Revision` (Record)
 
+
+<a id="tab:generator-record"></a>
+Table 7: Type `Generator` (Record)
 
 | ID | Name   | Type              | \#   | Description                                                      |
 |---:|:-------|:------------------|:-----|:-----------------------------------------------------------------|
 |  1 | engine | GeneratorEngine   | 1    | Information about the engine used to generate this metadata set. |
 |  2 | date   | String /date-time | 0..1 | The date this metadata set was generated.                        |
 
-<a id="tab:generator-record"></a>
-Table 7: Type `Generator` (Record)
 
+
+<a id="tab:generator-engine-record"></a>
+Table 8: Type `GeneratorEngine` (Record)
 
 | ID | Name    | Type    | \#   | Description                                                 |
 |---:|:--------|:--------|:-----|:------------------------------------------------------------|
 |  1 | name    | String  | 1    | The name of the engine that generated this metadata set.    |
 |  2 | version | Version | 0..1 | The version of the engine that generated this metadata set. |
 
-<a id="tab:generator-engine-record"></a>
-Table 8: Type `GeneratorEngine` (Record)
 
+
+<a id="tab:note-record"></a>
+Table 9: Type `Note` (Record)
 
 | ID | Name     | Type         | \#   | Description                                                         |
 |---:|:---------|:-------------|:-----|:--------------------------------------------------------------------|
@@ -435,9 +447,10 @@ Table 8: Type `GeneratorEngine` (Record)
 |  3 | audience | String       | 0..1 | The intended audience for the note.                                 |
 |  4 | title    | String       | 0..1 | A concise description of what is contained in the text of the note. |
 
-<a id="tab:note-record"></a>
-Table 9: Type `Note` (Record)
 
+
+<a id="tab:note-category-enum"></a>
+Table 10: Type `NoteCategory` (Enumerated)
 
 | ID | Item             | Description                                    |
 |---:|:-----------------|:-----------------------------------------------|
@@ -449,9 +462,10 @@ Table 9: Type `Note` (Record)
 |  5 | other            | A note that does not fit other categories.     |
 |  6 | summary          | A summary note.                                |
 
-<a id="tab:note-category-enum"></a>
-Table 10: Type `NoteCategory` (Enumerated)
 
+
+<a id="tab:reference-record"></a>
+Table 11: Type `Reference` (Record)
 
 | ID | Name     | Type              | \#   | Description                                             |
 |---:|:---------|:------------------|:-----|:--------------------------------------------------------|
@@ -459,22 +473,24 @@ Table 10: Type `NoteCategory` (Enumerated)
 |  2 | url      | String /uri       | 1    | The URL of the referenced resource.                     |
 |  3 | category | ReferenceCategory | 0..1 | Whether this reference is external or self-referential. |
 
-<a id="tab:reference-record"></a>
-Table 11: Type `Reference` (Record)
 
+
+<a id="tab:reference-category-enum"></a>
+Table 12: Type `ReferenceCategory` (Enumerated)
 
 | ID | Item     | Description                                                      |
 |---:|:---------|:-----------------------------------------------------------------|
 |  0 | external | The reference points to an external resource.                    |
 |  1 | self     | The reference points back to the same information item in focus. |
 
-<a id="tab:reference-category-enum"></a>
-Table 12: Type `ReferenceCategory` (Enumerated)
 
-## 5.3 Source <a id='source'></a>
+## 5.3 Source<a id='source'></a>
 
 The `source` member characterizes the content and source of the dataset.
 
+
+<a id="tab:source-record"></a>
+Table 13: Type `Source` (Record)
 
 | ID | Name         | Type         | \#    | Description                                                                      |
 |---:|:-------------|:-------------|:------|:---------------------------------------------------------------------------------|
@@ -485,9 +501,10 @@ The `source` member characterizes the content and source of the dataset.
 |  5 | name         | String       | 1     | The official name of the dataset.                                                |
 |  6 | data-version | Version      | 1     | The version of the dataset this metadata set describes.                          |
 
-<a id="tab:source-record"></a>
-Table 13: Type `Source` (Record)
 
+
+<a id="tab:about-record"></a>
+Table 14: Type `About` (Record)
 
 | ID | Name    | Type   | \#   | Description                                                                                        |
 |---:|:--------|:-------|:-----|:---------------------------------------------------------------------------------------------------|
@@ -495,11 +512,12 @@ Table 13: Type `Source` (Record)
 |  2 | purpose | String | 1    | The recommended uses for this dataset.                                                             |
 |  3 | scope   | String | 0..1 | Any limitations of the dataset.                                                                    |
 
-<a id="tab:about-record"></a>
-Table 14: Type `About` (Record)
 
 The `Identity` type provides at least one identifier for the dataset. At least one of its fields MUST be present.
 
+
+<a id="tab:identity-map"></a>
+Table 15: Type `Identity` (Map)
 
 | ID | Name       | Type         | \#    | Description                                           |
 |---:|:-----------|:-------------|:------|:------------------------------------------------------|
@@ -508,27 +526,30 @@ The `Identity` type provides at least one identifier for the dataset. At least o
 |  3 | uuids      | String /uuid | 0..\* | UUID identifiers for the dataset.                     |
 |  4 | custom-ids | CustomId     | 0..\* | Identifiers in any text format.                       |
 
-<a id="tab:identity-map"></a>
-Table 15: Type `Identity` (Map)
 
+
+<a id="tab:hash-entry-record"></a>
+Table 16: Type `HashEntry` (Record)
 
 | ID | Name        | Type     | \#    | Description                                                              |
 |---:|:------------|:---------|:------|:-------------------------------------------------------------------------|
 |  1 | tree-hashes | TreeHash | 1..\* | The cryptographic hash values for this file or tree.                     |
 |  2 | path        | String   | 1     | The path (file or filesystem tree root) identified by these hash values. |
 
-<a id="tab:hash-entry-record"></a>
-Table 16: Type `HashEntry` (Record)
 
+
+<a id="tab:tree-hash-record"></a>
+Table 17: Type `TreeHash` (Record)
 
 | ID | Name      | Type   | \# | Description                                                              |
 |---:|:----------|:-------|:---|:-------------------------------------------------------------------------|
 |  1 | algorithm | String | 1  | The name of the hash or tree/seal algorithm used to calculate the value. |
 |  2 | value     | String | 1  | The cryptographic hash value in hexadecimal representation.              |
 
-<a id="tab:tree-hash-record"></a>
-Table 17: Type `TreeHash` (Record)
 
+
+<a id="tab:custom-id-record"></a>
+Table 18: Type `CustomId` (Record)
 
 | ID | Name           | Type   | \#    | Description                                            |
 |---:|:---------------|:-------|:------|:-------------------------------------------------------|
@@ -537,13 +558,14 @@ Table 17: Type `TreeHash` (Record)
 |  3 | tool           | String | 0..1  | The name of the tool used to derive this identifier.   |
 |  4 | parameter-list | String | 0..\* | Parameters used when invoking the tool.                |
 
-<a id="tab:custom-id-record"></a>
-Table 18: Type `CustomId` (Record)
 
-## 5.4 Provenance <a id='provenance'></a>
+## 5.4 Provenance<a id='provenance'></a>
 
 The `provenance` member describes the provenance of the dataset.
 
+
+<a id="tab:provenance-record"></a>
+Table 19: Type `Provenance` (Record)
 
 | ID | Name              | Type             | \#    | Description                                                                                  |
 |---:|:------------------|:-----------------|:------|:---------------------------------------------------------------------------------------------|
@@ -556,19 +578,32 @@ The `provenance` member describes the provenance of the dataset.
 |  7 | generation-period | GenerationPeriod | 0..1  | The span of time during which the data was collected or generated.                           |
 |  8 | format            | ModalityFormat   | 0..\* | Describes the modality or media type of the data within the dataset.                         |
 |  9 | sub-provenance    | Provenance       | 0..1  | Nested provenance information for a component of this dataset.                               |
+| 10 | source-digest     | SourceDigest     | 0..1  | A cryptographic digest of the record referenced by `source`, computed at issuance.           |
 
-<a id="tab:provenance-record"></a>
-Table 19: Type `Provenance` (Record)
 
+
+<a id="tab:source-digest-record"></a>
+Table 20: Type `SourceDigest` (Record)
+
+| ID | Name      | Type   | \# | Description                                                |
+|---:|:----------|:-------|:---|:-----------------------------------------------------------|
+|  1 | algorithm | String | 1  | Digest algorithm identifier (e.g. sha256, sha384, sha512). |
+|  2 | value     | String | 1  | The digest value, hex-encoded.                             |
+
+
+
+<a id="tab:generation-period-record"></a>
+Table 21: Type `GenerationPeriod` (Record)
 
 | ID | Name  | Type              | \#   | Description                                            |
 |---:|:------|:------------------|:-----|:-------------------------------------------------------|
 |  1 | start | String /date-time | 0..1 | The start of the data collection or generation period. |
 |  2 | end   | String /date-time | 0..1 | The end of the data collection or generation period.   |
 
-<a id="tab:generation-period-record"></a>
-Table 20: Type `GenerationPeriod` (Record)
 
+
+<a id="tab:generation-method-record"></a>
+Table 22: Type `GenerationMethod` (Record)
 
 | ID | Name             | Type                 | \#   | Description                                       |
 |---:|:-----------------|:---------------------|:-----|:--------------------------------------------------|
@@ -576,9 +611,10 @@ Table 20: Type `GenerationPeriod` (Record)
 |  2 | system           | String               | 0..1 | The code system used to interpret the code value. |
 |  3 | long-description | String               | 0..1 | A detailed description of the method.             |
 
-<a id="tab:generation-method-record"></a>
-Table 21: Type `GenerationMethod` (Record)
 
+
+<a id="tab:generation-method-code-enum"></a>
+Table 23: Type `GenerationMethodCode` (Enumerated)
 
 | ID | Item                     | Description                                            |
 |---:|:-------------------------|:-------------------------------------------------------|
@@ -595,9 +631,10 @@ Table 21: Type `GenerationMethod` (Record)
 | 10 | user-generated-content   | Data created by end users.                             |
 | 11 | web-scraping-crawling    | Data collected by web scraping or crawling.            |
 
-<a id="tab:generation-method-code-enum"></a>
-Table 22: Type `GenerationMethodCode` (Enumerated)
 
+
+<a id="tab:modality-format-enum"></a>
+Table 24: Type `ModalityFormat` (Enumerated)
 
 | ID | Item                     | Description                           |
 |---:|:-------------------------|:--------------------------------------|
@@ -615,13 +652,14 @@ Table 22: Type `GenerationMethodCode` (Enumerated)
 | 11 | text/csv                 | CSV text format.                      |
 | 12 | text/plain               | Plain text format.                    |
 
-<a id="tab:modality-format-enum"></a>
-Table 23: Type `ModalityFormat` (Enumerated)
 
-## 5.5 Use <a id='use'></a>
+## 5.5 Use<a id='use'></a>
 
 The `use` member describes the legal use and restrictions applicable to the dataset.
 
+
+<a id="tab:use-record"></a>
+Table 25: Type `Use` (Record)
 
 | ID | Name                | Type             | \#    | Description                                                                               |
 |---:|:--------------------|:-----------------|:------|:------------------------------------------------------------------------------------------|
@@ -638,9 +676,10 @@ The `use` member describes the legal use and restrictions applicable to the data
 | 11 | patent              | String           | 0..\* | Patent information covering proprietary information in the dataset.                       |
 | 12 | trademark           | String           | 0..\* | Trademark information covering proprietary information in the dataset.                    |
 
-<a id="tab:use-record"></a>
-Table 24: Type `Use` (Record)
 
+
+<a id="tab:purpose-record"></a>
+Table 26: Type `Purpose` (Record)
 
 | ID | Name             | Type        | \#   | Description                                       |
 |---:|:-----------------|:------------|:-----|:--------------------------------------------------|
@@ -648,9 +687,10 @@ Table 24: Type `Use` (Record)
 |  2 | long-description | String      | 1    | A detailed description of the intended purpose.   |
 |  3 | system           | String      | 0..1 | The code system used to interpret the code value. |
 
-<a id="tab:purpose-record"></a>
-Table 25: Type `Purpose` (Record)
 
+
+<a id="tab:classification-record"></a>
+Table 27: Type `Classification` (Record)
 
 | ID | Name       | Type       | \#   | Description                                                                                   |
 |---:|:-----------|:-----------|:-----|:----------------------------------------------------------------------------------------------|
@@ -658,9 +698,10 @@ Table 25: Type `Purpose` (Record)
 |  2 | evaluated  | Boolean    | 1    | Whether the dataset has been evaluated against this classification (`true`) or not (`false`). |
 |  3 | tool       | String     | 0..1 | The tool used to perform the evaluation.                                                      |
 
-<a id="tab:classification-record"></a>
-Table 26: Type `Classification` (Record)
 
+
+<a id="tab:regulation-record"></a>
+Table 28: Type `Regulation` (Record)
 
 | ID | Name             | Type                | \#   | Description                                                  |
 |---:|:-----------------|:--------------------|:-----|:-------------------------------------------------------------|
@@ -668,9 +709,10 @@ Table 26: Type `Classification` (Record)
 |  2 | system           | String              | 0..1 | The code system used to interpret the code value.            |
 |  3 | long-description | String              | 0..1 | A detailed description of the regulation or classification.  |
 
-<a id="tab:regulation-record"></a>
-Table 27: Type `Regulation` (Record)
 
+
+<a id="tab:confidentiality-code-enum"></a>
+Table 29: Type `ConfidentialityCode` (Enumerated)
 
 | ID | Item  | Description                                       |
 |---:|:------|:--------------------------------------------------|
@@ -682,9 +724,10 @@ Table 27: Type `Regulation` (Record)
 |  5 | sci   | Sensitive Compartmented Information (SCI).        |
 |  6 | spi   | Sensitive Personal Information (SPI).             |
 
-<a id="tab:confidentiality-code-enum"></a>
-Table 28: Type `ConfidentialityCode` (Enumerated)
 
+
+<a id="tab:purpose-code-enum"></a>
+Table 30: Type `PurposeCode` (Enumerated)
 
 | ID | Item                      | Description                                           |
 |---:|:--------------------------|:------------------------------------------------------|
@@ -698,9 +741,10 @@ Table 28: Type `ConfidentialityCode` (Enumerated)
 |  7 | staging-testing           | Dataset intended for staging or testing environments. |
 |  8 | synthetic-data-generation | Dataset intended for generating synthetic data.       |
 
-<a id="tab:purpose-code-enum"></a>
-Table 29: Type `PurposeCode` (Enumerated)
 
+
+<a id="tab:data-risk-reducing-record"></a>
+Table 31: Type `DataRiskReducing` (Record)
 
 | ID | Name          | Type           | \#    | Description                                                |
 |---:|:--------------|:---------------|:------|:-----------------------------------------------------------|
@@ -710,18 +754,20 @@ Table 29: Type `PurposeCode` (Enumerated)
 |  4 | parameters    | Parameter      | 0..\* | The parameters passed to the tool.                         |
 |  5 | results       | String         | 0..\* | The results of applying the tool.                          |
 
-<a id="tab:data-risk-reducing-record"></a>
-Table 30: Type `DataRiskReducing` (Record)
 
+
+<a id="tab:parameter-record"></a>
+Table 32: Type `Parameter` (Record)
 
 | ID | Name  | Type   | \#   | Description          |
 |---:|:------|:-------|:-----|:---------------------|
 |  1 | name  | String | 1    | The parameter name.  |
 |  2 | value | String | 0..1 | The parameter value. |
 
-<a id="tab:parameter-record"></a>
-Table 31: Type `Parameter` (Record)
 
+
+<a id="tab:data-technology-enum"></a>
+Table 33: Type `DataTechnology` (Enumerated)
 
 | ID | Item                           | Description                                                                                                                                                         |
 |---:|:-------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -741,13 +787,14 @@ Table 31: Type `Parameter` (Record)
 | 13 | t-closeness                    | Extends l-diversity by requiring that the distribution of sensitive values within each equivalence class closely matches their overall distribution in the dataset. |
 | 14 | tokenization                   | Substitutes sensitive values with non-sensitive tokens; the originals are recoverable only through a separate, secured token vault.                                 |
 
-<a id="tab:data-technology-enum"></a>
-Table 32: Type `DataTechnology` (Enumerated)
 
-## 5.6 Shared Types <a id='shared-types'></a>
+## 5.6 Shared Types<a id='shared-types'></a>
 
 The following types are used in more than one of the sections above.
 
+
+<a id="tab:organization-record"></a>
+Table 34: Type `Organization` (Record)
 
 | ID | Name       | Type        | \#   | Description                             |
 |---:|:-----------|:------------|:-----|:----------------------------------------|
@@ -755,26 +802,31 @@ The following types are used in more than one of the sections above.
 |  2 | address    | Address     | 0..1 | The postal address of the organization. |
 |  3 | url        | String /uri | 0..1 | A URL for the organization.             |
 
-<a id="tab:organization-record"></a>
-Table 33: Type `Organization` (Record)
 
+The value of `url` SHOULD use the `https` scheme.
+
+
+<a id="tab:address-array"></a>
+Table 35: Type `Address` (ArrayOf(String))
 
 | Type Name | Type Definition | Description                                       |
 |:----------|:----------------|:--------------------------------------------------|
 | Address   | ArrayOf(String) | Lines of a postal address. At least one required. |
 
-<a id="tab:address-array"></a>
-Table 34: Type `Address` (ArrayOf(String))
 
+
+<a id="tab:geographic-region-record"></a>
+Table 36: Type `GeographicRegion` (Record)
 
 | ID | Name    | Type   | \#   | Description                         |
 |---:|:--------|:-------|:-----|:------------------------------------|
 |  1 | country | String | 1    | The country name or code.           |
 |  2 | state   | String | 0..1 | The state or province name or code. |
 
-<a id="tab:geographic-region-record"></a>
-Table 35: Type `GeographicRegion` (Record)
 
+
+<a id="tab:method-record"></a>
+Table 37: Type `Method` (Record)
 
 | ID | Name             | Type   | \#   | Description                                                          |
 |---:|:-----------------|:-------|:-----|:---------------------------------------------------------------------|
@@ -782,11 +834,12 @@ Table 35: Type `GeographicRegion` (Record)
 |  2 | system           | String | 0..1 | The code system used to interpret the code value.                    |
 |  3 | long-description | String | 0..1 | A detailed description of the method, regulation, or classification. |
 
-<a id="tab:method-record"></a>
-Table 36: Type `Method` (Record)
 
 The `Acknowledgment` type describes a contributor. At least one of its fields MUST be present.
 
+
+<a id="tab:acknowledgment-map"></a>
+Table 38: Type `Acknowledgment` (Map)
 
 | ID | Name         | Type        | \#    | Description                                             |
 |---:|:-------------|:------------|:------|:--------------------------------------------------------|
@@ -795,30 +848,30 @@ The `Acknowledgment` type describes a contributor. At least one of its fields MU
 |  3 | summary      | String      | 0..1  | Contextual details about the acknowledgment.            |
 |  4 | urls         | String /uri | 0..\* | URLs of references being acknowledged.                  |
 
-<a id="tab:acknowledgment-map"></a>
-Table 37: Type `Acknowledgment` (Map)
 
+
+<a id="tab:version-string"></a>
+Table 39: Type `Version` (String)
 
 | Type Name | Type Definition | Description                                                                           |
 |:----------|:----------------|:--------------------------------------------------------------------------------------|
 | Version   | String          | An integer or semantic versioning string. Examples: `"1"`, `"2.0.0"`, `"1.0.0-beta"`. |
 
-<a id="tab:version-string"></a>
-Table 38: Type `Version` (String)
 
+
+<a id="tab:language-string"></a>
+Table 40: Type `Language` (String)
 
 | Type Name | Type Definition | Description                                          |
 |:----------|:----------------|:-----------------------------------------------------|
 | Language  | String          | A language tag conforming to IETF BCP 47 / RFC 5646. |
 
-<a id="tab:language-string"></a>
-Table 39: Type `Language` (String)
 
-# 6. Provenance Information Model Encoding <a id='provenance-information-model-encoding'></a>
+# 6. Provenance Information Model Encoding<a id='provenance-information-model-encoding'></a>
 
 The technical encoding of the information model is specified in both JADN and YAML in the following subsections.
 
-## 6.1 JADN Encoding <a id='jadn-encoding'></a>
+## 6.1 JADN Encoding<a id='jadn-encoding'></a>
 
 The JADN encoding of the data provenance metadata information model is specified in
 `jadn/data-provenance.jadn`.
@@ -830,7 +883,7 @@ carry format constraints that apply wherever those types appear as field types,
 keeping the field-level definitions free of inline format options.
 Eight enumerated types carry the closed code vocabularies introduced in Section 5.
 
-## 6.2 YAML Encoding <a id='yaml-encoding'></a>
+## 6.2 YAML Encoding<a id='yaml-encoding'></a>
 
 The YAML encoding of the data provenance metadata information model is specified in
 `yaml/data-provenance.yaml`.
@@ -841,7 +894,7 @@ It is provided for tooling that consumes YAML-format schemas natively.
 All field names, constraints, type references, and enumeration values are identical
 to those in the JSON schema.
 
-# 7. Provenance Data Model Encoding <a id='provenance-data-model-encoding'></a>
+# 7. Provenance Data Model Encoding<a id='provenance-data-model-encoding'></a>
 
 > The information model defines the complete set of metadata elements and associated attributes specified by the Data Provenance Standard.
 > It establishes a common conceptual framework for representing provenance information, including the structures and relationships necessary to describe the origin, history, and handling of data.
@@ -856,7 +909,7 @@ to those in the JSON schema.
 > The encodings described herein are non-exclusive and are provided to support diverse implementation environments and usage scenarios.
 > Implementations MAY support one or more of these encodings, subject to their interoperability, performance, and deployment requirements.
 
-## 7.1 JSON Encoding <a id='json-encoding'></a>
+## 7.1 JSON Encoding<a id='json-encoding'></a>
 
 The technical encoding of the data provenance metadata data model
 is specified in the following schema artifacts for JSON data:
@@ -872,16 +925,16 @@ for any data provenance metadata JSON instance.
 
 The required top-level members are:
 
-```yaml <!--json-path($.*[:])-->
+```yaml
 DataProvenance:
-  $schema: String.Constant
+  $schema: String.Const
   set: Mapping
-  source: Mapping
-  provenance: Mapping
-  use: Mapping
+  source: $defs.source-type
+  provenance: $defs.provenance-type
+  use: $defs.use-type
 ```
 
-### 7.1.1 Member `$schema` <a id='member-schema'></a>
+### 7.1.1 Member `$schema`<a id='member-schema'></a>
 
 The value of the `$schema` member for this version of the specification is always:
 
@@ -889,7 +942,7 @@ The value of the `$schema` member for this version of the specification is alway
 https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json
 ```
 
-### 7.1.2 Member `set` <a id='member-set'></a>
+### 7.1.2 Member `set`<a id='member-set'></a>
 
 The `set` member specifies set-level meta-data.
 It captures meta-data about the provenance metadata record describing a particular dataset.
@@ -897,36 +950,34 @@ It captures meta-data about the provenance metadata record describing a particul
 The required members of `set` are `category`, `schema-version`, `publisher`, `label`, and `tracking`.
 The optional members `language`, `source-language`, `acknowledgments`, `notes`, and `references` MAY also be present.
 
-```yaml <!--json-path($..set.properties)-->
+```yaml
 DataProvenance:
   # ...
   set:
     category: String.Pattern
-    schema-version: String.Constant
+    schema-version: String.Const
     publisher: Mapping
     label: String
     tracking: Mapping
-    # language: String.BCP47        (optional)
-    # source-language: String.BCP47 (optional)
-    # acknowledgments: Sequence     (optional)
-    # notes: Sequence               (optional)
-    # references: Sequence          (optional)
+    acknowledgments: $defs.acknowledgments-type  # optional
+    notes: $defs.notes-type                      # optional
+    references: $defs.references-type            # optional
+    language: $defs.language-type                # optional
+    source-language: $defs.language-type         # optional
   # ...
-# ...
 ```
 
-#### 7.1.2.1 Member `set.category` <a id='member-set-category'></a>
+#### 7.1.2.1 Member `set.category`<a id='member-set-category'></a>
 
 The `set.category` member defines a short canonical name, chosen by the set producer, which will inform the end user as to the category of the metadata set.
 
-```yaml <!--json-path($..set.properties.category.pattern)-->
+```yaml
 DataProvenance:
   # ...
   set:
     category: String.Pattern
     # ...
   # ...
-# ...
 ```
 
 *Examples 1:*<a id='member-set-category-eg-1'></a><a id='sec-7-1-2-1-eg-1'></a><a id='example-1'></a>
@@ -938,19 +989,18 @@ dp_profile_xyz
 Example Data Protection Notice Exemption
 ```
 
-#### 7.1.2.2 Member `set.schema-version` <a id='member-set-schema-version'></a>
+#### 7.1.2.2 Member `set.schema-version`<a id='member-set-schema-version'></a>
 
 The `set.schema-version` member gives the version of the Data Provenance Core specification which the document was generated for.
 
-```yaml <!--json-path($..set.properties['schema-version'].const)-->
+```yaml
 DataProvenance:
   # ...
   set:
     # ...
-    schema-version: String.Constant
+    schema-version: String.Const
     # ...
   # ...
-# ...
 ```
 
 The value of the `set.schema-version` member for this version of the specification is always:
@@ -959,13 +1009,13 @@ The value of the `set.schema-version` member for this version of the specificati
 1.0
 ```
 
-#### 7.1.2.3 Member `set.publisher` <a id='member-set-publisher'></a>
+#### 7.1.2.3 Member `set.publisher`<a id='member-set-publisher'></a>
 
 The `set.publisher` member provides information about the publisher of the metadata set. The publisher is the party responsible for issuing the metadata set.
 
 The required members of `set.publisher` are `name` and `namespace`. The optional member `contact-details` MAY also be present.
 
-```yaml <!--json-path($..set.properties.publisher.properties)-->
+```yaml
 DataProvenance:
   # ...
   set:
@@ -973,17 +1023,16 @@ DataProvenance:
     publisher:
       name: String
       namespace: String.URI
-      # contact-details: String  (optional)
+      contact-details: String  # optional
     # ...
   # ...
-# ...
 ```
 
-##### 7.1.2.3.1 Member `set.publisher.name` <a id='member-set-publisher-name'></a>
+##### 7.1.2.3.1 Member `set.publisher.name`<a id='member-set-publisher-name'></a>
 
 The `set.publisher.name` member contains the name of the issuing party.
 
-```yaml <!--json-path($..set.properties.publisher.properties.name.type)-->
+```yaml
 DataProvenance:
   # ...
   set:
@@ -993,7 +1042,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*<a id='member-set-publisher-name-eg-1'></a><a id='sec-7-1-2-3-1-eg-1'></a><a id='example-2'></a>
@@ -1002,11 +1050,11 @@ DataProvenance:
 Cisco
 ```
 
-##### 7.1.2.3.2 Member `set.publisher.namespace` <a id='member-set-publisher-namespace'></a>
+##### 7.1.2.3.2 Member `set.publisher.namespace`<a id='member-set-publisher-namespace'></a>
 
 The `set.publisher.namespace` member contains a URI which is under the control of the issuing party and can be used as a globally unique identifier for that issuing party.
 
-```yaml <!--json-path($..set.properties.publisher.properties.namespace.format)-->
+```yaml
 DataProvenance:
   # ...
   set:
@@ -1017,7 +1065,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.publisher.namespace` MUST be a valid URI.
@@ -1028,21 +1075,20 @@ The value of `set.publisher.namespace` MUST be a valid URI.
 https://cisco.com
 ```
 
-##### 7.1.2.3.3 Member `set.publisher.contact-details` <a id='member-set-publisher-contact-details'></a>
+##### 7.1.2.3.3 Member `set.publisher.contact-details`<a id='member-set-publisher-contact-details'></a>
 
 The `set.publisher.contact-details` member provides information on how to contact the publisher, such as web sites, email addresses, phone numbers, or postal mail addresses.
 
-```yaml <!--json-path($..set.properties.publisher.properties['contact-details'].type)-->
+```yaml
 DataProvenance:
   # ...
   set:
     # ...
     publisher:
       # ...
-      contact-details: String
+      contact-details: String  # optional
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*<a id='member-set-publisher-contact-details-eg-1'></a><a id='sec-7-1-2-3-3-eg-1'></a><a id='example-4'></a>
@@ -1051,11 +1097,11 @@ DataProvenance:
 Example Company can be reached at contact_us@example.com, or via our website at https://www.example.com/contact.
 ```
 
-#### 7.1.2.4 Member `set.label` <a id='member-set-label'></a>
+#### 7.1.2.4 Member `set.label`<a id='member-set-label'></a>
 
 The `set.label` member provides the per-publisher unique title of the metadata set.
 
-```yaml <!--json-path($..set.properties.label.type)-->
+```yaml
 DataProvenance:
   # ...
   set:
@@ -1063,7 +1109,6 @@ DataProvenance:
     label: String
     # ...
   # ...
-# ...
 ```
 
 The value of `set.label` SHOULD be a canonical name for the set, and sufficiently unique to distinguish it from similar sets.
@@ -1075,14 +1120,14 @@ Learning Set for Regression Modelling for Stats 101
 Example Data Protection Dataset in Example Generator
 ```
 
-#### 7.1.2.5 Member `set.tracking` <a id='member-set-tracking'></a>
+#### 7.1.2.5 Member `set.tracking`<a id='member-set-tracking'></a>
 
 The `set.tracking` member is a container designated to hold all management attributes necessary to track a DP-Core set as a whole.
 
 The required members of `set.tracking` are `current-release-date`, `id`, `initial-release-date`, `revision-history`, `status`, and `version`.
 The optional members `aliases` and `generator` MAY also be present.
 
-```yaml <!--json-path($..set.properties.tracking.properties)-->
+```yaml
 DataProvenance:
   # ...
   set:
@@ -1094,18 +1139,17 @@ DataProvenance:
       revision-history: Sequence
       status: String.Enum
       version: $defs.version-type
-      # aliases: Sequence   (optional)
-      # generator: Mapping  (optional)
+      aliases: Sequence   # optional
+      generator: Mapping  # optional
     # ...
   # ...
-# ...
 ```
 
-##### 7.1.2.5.1 Member `set.tracking.current-release-date` <a id='member-set-tracking-current-release-date'></a>
+##### 7.1.2.5.1 Member `set.tracking.current-release-date`<a id='member-set-tracking-current-release-date'></a>
 
 The `set.tracking.current-release-date` member contains the date when the current revision of this document was released.
 
-```yaml <!--json-path($..set.properties.tracking.properties['current-release-date'].format)-->
+```yaml
 DataProvenance:
   # ...
   set:
@@ -1115,7 +1159,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.current-release-date` MUST be a valid date-time string conforming to \[RFC 3339\].
@@ -1126,11 +1169,11 @@ The value of `set.tracking.current-release-date` MUST be a valid date-time strin
 2000-01-01T01:01:01Z
 ```
 
-##### 7.1.2.5.2 Member `set.tracking.id` <a id='member-set-tracking-id'></a>
+##### 7.1.2.5.2 Member `set.tracking.id`<a id='member-set-tracking-id'></a>
 
 The `set.tracking.id` member provides the unique identifier for the metadata set. The ID is a simple label that provides for a wide range of numbering values, types, and schemes. Its value SHOULD be assigned and maintained by the original metadata set issuing authority.
 
-```yaml <!--json-path($..set.properties.tracking.properties.id.pattern)-->
+```yaml
 DataProvenance:
   # ...
   set:
@@ -1141,7 +1184,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.id` MUST NOT start or end with whitespace.
@@ -1154,11 +1196,11 @@ abcdef-orga-ds-0815
 cisco-sa-20190513-secureboot
 ```
 
-##### 7.1.2.5.3 Member `set.tracking.initial-release-date` <a id='member-set-tracking-initial-release-date'></a>
+##### 7.1.2.5.3 Member `set.tracking.initial-release-date`<a id='member-set-tracking-initial-release-date'></a>
 
 The `set.tracking.initial-release-date` member contains the date when this set was first published.
 
-```yaml <!--json-path($..set.properties.tracking.properties['initial-release-date'].format)-->
+```yaml
 DataProvenance:
   # ...
   set:
@@ -1169,7 +1211,6 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.initial-release-date` MUST be a valid date-time string conforming to \[RFC 3339\].
@@ -1180,11 +1221,11 @@ The value of `set.tracking.initial-release-date` MUST be a valid date-time strin
 2000-01-01T01:01:01Z
 ```
 
-##### 7.1.2.5.4 Member `set.tracking.revision-history` <a id='member-set-tracking-revision-history'></a>
+##### 7.1.2.5.4 Member `set.tracking.revision-history`<a id='member-set-tracking-revision-history'></a>
 
 The `set.tracking.revision-history` member holds one revision item for each version of the DP-Core set, including the initial one. The sequence MUST contain at least one revision item.
 
-```yaml <!--json-path($..set.properties.tracking.properties['revision-history'].items.required)-->
+```yaml
 DataProvenance:
   # ...
   set:
@@ -1195,11 +1236,10 @@ DataProvenance:
         - date: String.DateTime
           number: $defs.version-type
           summary: String
-          # legacy-version: String  (optional)
+          legacy-version: String  # optional
       # ...
     # ...
   # ...
-# ...
 ```
 
 Each revision item MUST contain the following members:
@@ -1222,22 +1262,21 @@ The optional `legacy-version` member traces entries back to historic, DP-Core-un
 ]
 ```
 
-##### 7.1.2.5.5 Member `set.tracking.status` <a id='member-set-tracking-status'></a>
+##### 7.1.2.5.5 Member `set.tracking.status`<a id='member-set-tracking-status'></a>
 
 The `set.tracking.status` member defines the draft status of the metadata set. This allows processing DP-Core sets of various maturity per version.
 
-```yaml <!--json-path($..set.properties.tracking.properties.status.enum)-->
+```yaml
 DataProvenance:
   # ...
   set:
     # ...
     tracking:
       # ...
-      status: String.Enum
+      status: String.Enum  # draft | final | interim
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.status` MUST be one of the following:
@@ -1246,11 +1285,11 @@ The value of `set.tracking.status` MUST be one of the following:
 - `final`
 - `interim`
 
-##### 7.1.2.5.6 Member `set.tracking.version` <a id='member-set-tracking-version'></a>
+##### 7.1.2.5.6 Member `set.tracking.version`<a id='member-set-tracking-version'></a>
 
 The `set.tracking.version` member specifies the version of the current DP-Core set.
 
-```yaml <!--json-path($..set.properties.tracking.properties.version['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   set:
@@ -1261,10 +1300,11 @@ DataProvenance:
       # ...
     # ...
   # ...
-# ...
 ```
 
 The value of `set.tracking.version` MUST conform to `$defs.version-type`, which requires either an integer or a semantic versioning string.
+
+The value of `set.tracking.version` MUST equal the value of `number` in the most recent item of `set.tracking.revision-history`, that is the item with the latest `date`.
 
 *Examples 1:*<a id='member-set-tracking-version-eg-1'></a><a id='sec-7-1-2-5-6-eg-1'></a><a id='example-10'></a>
 
@@ -1274,23 +1314,23 @@ The value of `set.tracking.version` MUST conform to `$defs.version-type`, which 
 1.0.0-beta+exp.sha.a1c44f85
 ```
 
-##### 7.1.2.5.7 Member `set.tracking.aliases` <a id='member-set-tracking-aliases'></a>
+##### 7.1.2.5.7 Member `set.tracking.aliases`<a id='member-set-tracking-aliases'></a>
 
 The `set.tracking.aliases` member contains a list of alternate names for the same set.
 Each alias MUST be a non-empty string and all entries MUST be unique.
 
-```yaml <!--json-path($..set.properties.tracking.properties.aliases.items.type)-->
+```yaml
 DataProvenance:
   # ...
   set:
     # ...
     tracking:
       # ...
-      aliases:
+      aliases:  # optional
         - String
+      # ...
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*<a id='member-set-tracking-aliases-eg-1'></a><a id='sec-7-1-2-5-7-eg-1'></a><a id='example-11'></a>
@@ -1299,26 +1339,25 @@ DataProvenance:
 ["0bacba95-ceb9-4fae-bf07-d5683a9481c1"]
 ```
 
-##### 7.1.2.5.8 Member `set.tracking.generator` <a id='member-set-tracking-generator'></a>
+##### 7.1.2.5.8 Member `set.tracking.generator`<a id='member-set-tracking-generator'></a>
 
 The `set.tracking.generator` member holds information about the engine that generated the metadata set.
 The required sub-member is `engine`. The optional sub-member `date` MAY also be present.
 
-```yaml <!--json-path($..set.properties.tracking.properties.generator)-->
+```yaml
 DataProvenance:
   # ...
   set:
     # ...
     tracking:
       # ...
-      generator:
+      generator:  # optional
         engine:
           name: String
-          # version: $defs.version-type  (optional)
-        # date: String.DateTime  (optional)
+          version: $defs.version-type  # optional
+        date: String.DateTime  # optional
     # ...
   # ...
-# ...
 ```
 
 - `engine.name`: The name of the tool or system that produced the metadata set.
@@ -1334,19 +1373,18 @@ DataProvenance:
 }
 ```
 
-#### 7.1.2.6 Member `set.language` <a id='member-set-language'></a>
+#### 7.1.2.6 Member `set.language`<a id='member-set-language'></a>
 
 The `set.language` member identifies the language used in this document, corresponding to IETF BCP 47 / RFC 5646.
 
-```yaml <!--json-path($..set.properties.language['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   set:
     # ...
-    language: String.BCP47
+    language: $defs.language-type  # optional
     # ...
   # ...
-# ...
 ```
 
 *Examples 1:*<a id='member-set-language-eg-1'></a><a id='sec-7-1-2-6-eg-1'></a><a id='example-13'></a>
@@ -1357,38 +1395,38 @@ en
 fr
 ```
 
-#### 7.1.2.7 Member `set.source-language` <a id='member-set-source-language'></a>
+#### 7.1.2.7 Member `set.source-language`<a id='member-set-source-language'></a>
 
 The `set.source-language` member identifies the language this document was translated from, when this copy is a translation.
 
-```yaml <!--json-path($..set.properties['source-language']['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   set:
     # ...
-    source-language: String.BCP47
-    # ...
+    source-language: $defs.language-type  # optional
   # ...
-# ...
 ```
 
-#### 7.1.2.8 Member `set.acknowledgments` <a id='member-set-acknowledgments'></a>
+#### 7.1.2.8 Member `set.acknowledgments`<a id='member-set-acknowledgments'></a>
 
 The `set.acknowledgments` member contains a list of acknowledgment elements associated with the whole set.
 Each acknowledgment item MUST have at least one of the following members: `names`, `organization`, `summary`, or `urls`.
 
-```yaml <!--json-path($..set.properties.acknowledgments['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   set:
     # ...
-    acknowledgments:
-      - # names: Sequence       (optional)
-        # organization: String  (optional)
-        # summary: String       (optional)
-        # urls: Sequence        (optional)
+    acknowledgments:  # optional; at least one of these members
+      - names:
+          - String
+        organization: String
+        summary: String
+        urls:
+          - String.URI
+    # ...
   # ...
-# ...
 ```
 
 *Example 1:*<a id='member-set-acknowledgments-eg-1'></a><a id='sec-7-1-2-8-eg-1'></a><a id='example-14'></a>
@@ -1403,24 +1441,24 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.2.9 Member `set.notes` <a id='member-set-notes'></a>
+#### 7.1.2.9 Member `set.notes`<a id='member-set-notes'></a>
 
 The `set.notes` member contains a list of notes associated with this metadata set.
 Each note MUST have a `category` and `text`. The optional members `audience` and `title` MAY also be present.
 The `category` value MUST be one of: `general`, `other`, `privacy`, `summary`.
 
-```yaml <!--json-path($..set.properties.notes['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   set:
     # ...
-    notes:
-      - category: String.Enum  # NoteCategory: description | details | faq | general | legal_disclaimer | other | summary
+    notes:  # optional
+      - category: String.Enum
         text: String
-        # audience: String  (optional)
-        # title: String     (optional)
+        audience: String  # optional
+        title: String     # optional
+    # ...
   # ...
-# ...
 ```
 
 - `category`: The category of the note.
@@ -1428,67 +1466,64 @@ DataProvenance:
 - `audience`: The intended audience for the note.
 - `title`: A concise description of what is contained in the text of the note.
 
-#### 7.1.2.10 Member `set.references` <a id='member-set-references'></a>
+#### 7.1.2.10 Member `set.references`<a id='member-set-references'></a>
 
 The `set.references` member contains a list of references associated with this metadata set.
 Each reference MUST have a `summary` and a `url`. The optional member `category` MAY also be present.
 The `category` value MUST be one of: `external`, `self`.
 
-```yaml <!--json-path($..set.properties.references['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   set:
     # ...
-    references:
+    references:  # optional
       - summary: String
         url: String.URI
-        # category: String.Enum  # ReferenceCategory: external | self (optional)
+        category: String.Enum  # optional
+    # ...
   # ...
-# ...
 ```
 
 - `summary`: A short description of what this reference refers to.
 - `url`: The URL of the referenced resource.
 - `category`: Whether this reference is external or self-referential (default: `external`).
 
-### 7.1.3 Member `source` <a id='member-source'></a>
+### 7.1.3 Member `source`<a id='member-source'></a>
 
 The `source` member characterizes the content and source of the dataset.
 All six of its members are required.
 
-```yaml <!--json-path($['$defs']['source-type'].properties)-->
+```yaml
 DataProvenance:
   # ...
   source:
-    about: Mapping
-    id: Mapping
-    issuer: Sequence
+    about: $defs.about-type
+    id: $defs.identity-type
+    issuer: $defs.orga-type
     location: String.URI
     name: String
     data-version: $defs.version-type
   # ...
-# ...
 ```
 
 The members of `source` are described in the following subsections.
 
-#### 7.1.3.1 Member `source.about` <a id='member-source-about'></a>
+#### 7.1.3.1 Member `source.about`<a id='member-source-about'></a>
 
 The `source.about` member contains a detailed narrative that explains the contents, scope, and purpose of the dataset.
 The required members are `content` and `purpose`. The optional member `scope` MAY also be present.
 
-```yaml <!--json-path($['$defs']['about-type'].properties)-->
+```yaml
 DataProvenance:
   # ...
   source:
-    # ...
     about:
       content: String
       purpose: String
-      # scope: String  (optional)
+      scope: String  # optional
     # ...
   # ...
-# ...
 ```
 
 - `content`: Provides essential contextual information that helps users understand what the data represents and how it was collected.
@@ -1505,23 +1540,33 @@ DataProvenance:
 }
 ```
 
-#### 7.1.3.2 Member `source.id` <a id='member-source-id'></a>
+#### 7.1.3.2 Member `source.id`<a id='member-source-id'></a>
 
 The `source.id` member provides a unique identifier for the dataset's metadata. At least one identification method MUST be provided.
 
-```yaml <!--json-path($['$defs']['identity-type'].minProperties)-->
+```yaml
 DataProvenance:
   # ...
   source:
     # ...
-    id:  # at least one of the following
-      hashes: Sequence
-      uris: Sequence
-      uuids: Sequence
-      custom-ids: Sequence
+    id:  # at least one of these members
+      hashes:
+        - tree-hashes:
+            - algorithm: String
+              value: String.Pattern
+          path: String
+      uris:
+        - String.URI
+      uuids:
+        - String
+      custom-ids:
+        - method: String
+          value: String
+          tool: String  # optional
+          parameter-list:  # optional
+            - String
     # ...
   # ...
-# ...
 ```
 
 The following identification methods are available:
@@ -1530,6 +1575,18 @@ The following identification methods are available:
 - `uris`: A list of identifiers in URI format.
 - `uuids`: A list of identifiers in UUID format.
 - `custom-ids`: A list of identifiers in any text format, each with a required `method` and `value`, and optional `tool` and `parameter-list`.
+
+The value of `algorithm` MUST be lowercase.
+
+*Examples:*
+
+- sha256
+- sha384
+- sha512
+- blake2b512
+- sha3-512
+
+`source.id` identifies the dataset itself. It is distinct from `set.tracking.id`, which identifies this metadata record.
 
 *Example 1:*<a id='member-source-id-eg-1'></a><a id='sec-7-1-3-2-eg-1'></a><a id='example-16'></a>
 
@@ -1552,24 +1609,24 @@ The following identification methods are available:
 }
 ```
 
-#### 7.1.3.3 Member `source.issuer` <a id='member-source-issuer'></a>
+#### 7.1.3.3 Member `source.issuer`<a id='member-source-issuer'></a>
 
 The `source.issuer` member identifies the legal entity or entities responsible for creating the dataset.
-The value is a sequence of organization objects. Each organization MUST provide a `legal-name`. The sequence MUST contain at least one organization and all entries MUST be unique.
+The value is a sequence of organization objects. Each organization MUST provide a `legal-name`.
+The sequence MUST contain at least one organization and all entries MUST be unique for the organization record members — `legal-name`, `address`, and `url` together — not by `legal-name` alone.
 The optional members `address` and `url` MAY also be present in each organization.
 
-```yaml <!--json-path($['$defs']['orga-type'].items.properties)-->
+```yaml
 DataProvenance:
   # ...
   source:
     # ...
     issuer:
       - legal-name: String
-        # address: Sequence  (optional)
-        # url: String.URI    (optional)
+        address: $defs.address-type  # optional
+        url: String.URI              # optional
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*<a id='member-source-issuer-eg-1'></a><a id='sec-7-1-3-3-eg-1'></a><a id='example-18'></a>
@@ -1583,11 +1640,11 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.3.4 Member `source.location` <a id='member-source-location'></a>
+#### 7.1.3.4 Member `source.location`<a id='member-source-location'></a>
 
 The `source.location` member provides the web address where the dataset's metadata is published and can be accessed. Typically this will be a unique URI of the current dataset.
 
-```yaml <!--json-path($['$defs']['source-type'].properties.location.type)-->
+```yaml
 DataProvenance:
   # ...
   source:
@@ -1595,14 +1652,13 @@ DataProvenance:
     location: String.URI
     # ...
   # ...
-# ...
 ```
 
-#### 7.1.3.5 Member `source.name` <a id='member-source-name'></a>
+#### 7.1.3.5 Member `source.name`<a id='member-source-name'></a>
 
 The `source.name` member provides the official name of the dataset, which should be descriptive and help easily identify the dataset's content and purpose.
 
-```yaml <!--json-path($['$defs']['source-type'].properties.name.type)-->
+```yaml
 DataProvenance:
   # ...
   source:
@@ -1610,22 +1666,19 @@ DataProvenance:
     name: String
     # ...
   # ...
-# ...
 ```
 
-#### 7.1.3.6 Member `source.data-version` <a id='member-source-data-version'></a>
+#### 7.1.3.6 Member `source.data-version`<a id='member-source-data-version'></a>
 
 The `source.data-version` member specifies the version of the dataset this DP-Core set describes, allowing the dataset to evolve over time and keeping consistent labeling.
 
-```yaml <!--json-path($['$defs']['source-type'].properties['data-version']['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   source:
     # ...
     data-version: $defs.version-type
-    # ...
   # ...
-# ...
 ```
 
 The value of `source.data-version` MUST conform to `$defs.version-type`, which requires either an integer or a semantic versioning string.
@@ -1637,49 +1690,46 @@ The value of `source.data-version` MUST conform to `$defs.version-type`, which r
 2.0.0
 ```
 
-### 7.1.4 Member `provenance` <a id='member-provenance'></a>
+### 7.1.4 Member `provenance`<a id='member-provenance'></a>
 
 The `provenance` member describes the provenance of the dataset.
 
 The required members are `origin-geography`, `date`, and `generation-method`.
 The optional members `source`, `origin`, `previous-date`, `generation-period`, `format`, and `sub-provenance` MAY also be present.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties)-->
+```yaml
 DataProvenance:
   # ...
   provenance:
-    origin-geography: Sequence
+    origin-geography: $defs.geographic-regions-type
     date: String.Date
     generation-method: Sequence
-    # source: String.URI            (optional)
-    # origin: Sequence              (optional)
-    # previous-date: String.Date    (optional)
-    # generation-period: Mapping    (optional)
-    # format: Sequence              (optional)
-    # sub-provenance: Mapping       (optional, recursive)
+    source: String.URI                     # optional
+    origin: $defs.orga-type                # optional
+    previous-date: String.Date             # optional
+    generation-period: Mapping             # optional
+    format: Sequence                       # optional
+    sub-provenance: $defs.provenance-type  # optional
   # ...
-# ...
 ```
 
 The required members of `provenance` are described in subsections 7.1.4.1–7.1.4.3; optional members in 7.1.4.4–7.1.4.9.
 
-#### 7.1.4.1 Member `provenance.origin-geography` <a id='member-provenance-origin-geography'></a>
+#### 7.1.4.1 Member `provenance.origin-geography`<a id='member-provenance-origin-geography'></a>
 
 The `provenance.origin-geography` member identifies the geographical locations where the data was originally collected, which can be important for compliance with regional laws and understanding the data's context.
 
 The value is a sequence of geographic region objects. Each entry MUST contain a `country`. The optional `state` member MAY also be present. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['geographic-regions-type'].items.properties)-->
+```yaml
 DataProvenance:
   # ...
   provenance:
-    # ...
     origin-geography:
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*<a id='member-provenance-origin-geography-eg-1'></a><a id='sec-7-1-4-1-eg-1'></a><a id='example-20'></a>
@@ -1691,11 +1741,11 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.4.2 Member `provenance.date` <a id='member-provenance-date'></a>
+#### 7.1.4.2 Member `provenance.date`<a id='member-provenance-date'></a>
 
 The `provenance.date` member provides the date when the dataset was compiled or created, providing a temporal context for the data.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties.date.format)-->
+```yaml
 DataProvenance:
   # ...
   provenance:
@@ -1703,7 +1753,6 @@ DataProvenance:
     date: String.Date
     # ...
   # ...
-# ...
 ```
 
 The value of `provenance.date` MUST be a valid date string in full-date format (YYYY-MM-DD).
@@ -1714,24 +1763,23 @@ The value of `provenance.date` MUST be a valid date string in full-date format (
 2000-01-01
 ```
 
-#### 7.1.4.3 Member `provenance.generation-method` <a id='member-provenance-generation-method'></a>
+#### 7.1.4.3 Member `provenance.generation-method`<a id='member-provenance-generation-method'></a>
 
 The `provenance.generation-method` member describes the methodology or procedures used to collect, generate, or compile the data, giving insight into its reliability and validity.
 
 The value is a sequence of method objects. Each method MUST contain a `code` drawn from the `GenerationMethodCode` vocabulary. The optional members `system` and `long-description` MAY also be present. The sequence MUST contain at least one method and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties['generation-method'].items['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   provenance:
     # ...
     generation-method:
-      - code: String.Enum  # GenerationMethodCode: data-augmentation | data-mining | feeds | machine-generated-ml-ops | other | primary-user-source | simulations | social-media | syndication | transfer-learning | user-generated-content | web-scraping-crawling
-        # system: String           (optional)
-        # long-description: String (optional)
+      - code: $defs.generation-method-code-type
+        system: String            # optional
+        long-description: String  # optional
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*<a id='member-provenance-generation-method-eg-1'></a><a id='sec-7-1-4-3-eg-1'></a><a id='example-22'></a>
@@ -1743,19 +1791,18 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.4.4 Member `provenance.source` <a id='member-provenance-source'></a>
+#### 7.1.4.4 Member `provenance.source`<a id='member-provenance-source'></a>
 
 The `provenance.source` member identifies where the metadata for the source dataset contributing to the current dataset can be found, establishing lineage.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties.source.format)-->
+```yaml
 DataProvenance:
   # ...
   provenance:
     # ...
-    source: String.URI
+    source: String.URI  # optional
     # ...
   # ...
-# ...
 ```
 
 The value of `provenance.source` MUST be a valid URI.
@@ -1766,23 +1813,22 @@ The value of `provenance.source` MUST be a valid URI.
 https://example.com/datasets/source-dataset-42/provenance.json
 ```
 
-#### 7.1.4.5 Member `provenance.origin` <a id='member-provenance-origin'></a>
+#### 7.1.4.5 Member `provenance.origin`<a id='member-provenance-origin'></a>
 
 The `provenance.origin` member identifies the original source organization when it differs from the issuer of the dataset.
 The value is a sequence of organization objects following the same structure as `source.issuer`.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties.origin['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   provenance:
     # ...
-    origin:
+    origin:  # optional
       - legal-name: String
-        # address: Sequence  (optional)
-        # url: String.URI    (optional)
+        address: $defs.address-type  # optional
+        url: String.URI              # optional
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*<a id='member-provenance-origin-eg-1'></a><a id='sec-7-1-4-5-eg-1'></a><a id='example-24'></a>
@@ -1791,19 +1837,18 @@ DataProvenance:
 [{"legal-name": "Original Data Collector Inc."}]
 ```
 
-#### 7.1.4.6 Member `provenance.previous-date` <a id='member-provenance-previous-date'></a>
+#### 7.1.4.6 Member `provenance.previous-date`<a id='member-provenance-previous-date'></a>
 
 The `provenance.previous-date` member provides the release date of the previous version of the dataset, to track changes and updates over time.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties['previous-date'].format)-->
+```yaml
 DataProvenance:
   # ...
   provenance:
     # ...
-    previous-date: String.Date
+    previous-date: String.Date  # optional
     # ...
   # ...
-# ...
 ```
 
 The value of `provenance.previous-date` MUST be a valid date string in full-date format (YYYY-MM-DD).
@@ -1814,22 +1859,21 @@ The value of `provenance.previous-date` MUST be a valid date string in full-date
 1999-06-15
 ```
 
-#### 7.1.4.7 Member `provenance.generation-period` <a id='member-provenance-generation-period'></a>
+#### 7.1.4.7 Member `provenance.generation-period`<a id='member-provenance-generation-period'></a>
 
 The `provenance.generation-period` member describes the span of time during which the data within the dataset was collected or generated.
 Both `start` and `end` are optional but MUST each conform to \[RFC 3339\] when present.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties['generation-period'])-->
+```yaml
 DataProvenance:
   # ...
   provenance:
     # ...
-    generation-period:
-      # start: String.DateTime  (optional)
-      # end: String.DateTime    (optional)
+    generation-period:  # optional
+      start: String.DateTime  # optional
+      end: String.DateTime    # optional
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*<a id='member-provenance-generation-period-eg-1'></a><a id='sec-7-1-4-7-eg-1'></a><a id='example-26'></a>
@@ -1841,21 +1885,20 @@ DataProvenance:
 }
 ```
 
-#### 7.1.4.8 Member `provenance.format` <a id='member-provenance-format'></a>
+#### 7.1.4.8 Member `provenance.format`<a id='member-provenance-format'></a>
 
 The `provenance.format` member describes the modality or media type of the data within the dataset.
 The value is a sequence of `ModalityFormat` values. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties.format)-->
+```yaml
 DataProvenance:
   # ...
   provenance:
     # ...
-    format:
-      - String.Enum  # ModalityFormat: application/json | application/jsonld | application/msword | application/vnd.ms-excel | application/zip | image/bmp | image/gif | image/jpeg | image/png | image/x-png | other | text/csv | text/plain
+    format:  # optional
+      - String.Enum  # application/json | application/jsonld | application/msword | application/vnd.ms-excel | application/zip | image/bmp | image/gif | image/jpeg | image/png | image/x-png | other | text/csv | text/plain
     # ...
   # ...
-# ...
 ```
 
 *Example 1:*<a id='member-provenance-format-eg-1'></a><a id='sec-7-1-4-8-eg-1'></a><a id='example-27'></a>
@@ -1864,70 +1907,72 @@ DataProvenance:
 ["text/csv", "application/json"]
 ```
 
-#### 7.1.4.9 Member `provenance.sub-provenance` <a id='member-provenance-sub-provenance'></a>
+#### 7.1.4.9 Member `provenance.sub-provenance`<a id='member-provenance-sub-provenance'></a>
 
 The `provenance.sub-provenance` member holds provenance information for a component of the current dataset, enabling a recursive provenance tree.
 Its structure is identical to the enclosing `provenance` member.
 
-```yaml <!--json-path($['$defs']['provenance-type'].properties['sub-provenance']['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   provenance:
     # ...
-    sub-provenance:
-      origin-geography: Sequence
+    sub-provenance:  # optional
+      origin-geography: $defs.geographic-regions-type
       date: String.Date
-      generation-method: Sequence
-      # ... (same optional members as provenance)
-    # ...
+      generation-method:
+        - $defs.generation-method-item-type
+      source: String.URI          # optional
+      origin: $defs.orga-type     # optional
+      previous-date: String.Date  # optional
+      generation-period:  # optional
+        start: String.DateTime  # optional
+        end: String.DateTime    # optional
+      format:  # optional
+        - String.Enum
+      sub-provenance: $defs.provenance-type  # optional
   # ...
-# ...
 ```
 
-### 7.1.5 Member `use` <a id='member-use'></a>
+### 7.1.5 Member `use`<a id='member-use'></a>
 
 The `use` member describes legal use and restrictions that apply to the dataset.
 
 The only required member is `intended-purpose`. All other members are optional.
 
-```yaml <!--json-path($['$defs']['use-type'].properties)-->
+```yaml
 DataProvenance:
   # ...
   use:
     intended-purpose: Sequence
-    # classification: Sequence      (optional)
-    # consents: Sequence            (optional)
-    # data-risk-reducing: Sequence  (optional)
-    # processing-included: Sequence (optional)
-    # processing-excluded: Sequence (optional)
-    # storage-allowed: Sequence     (optional)
-    # storage-forbidden: Sequence   (optional)
-    # license: Sequence             (optional)
-    # copyright: Sequence           (optional)
-    # patent: Sequence              (optional)
-    # trademark: Sequence           (optional)
-  # ...
-# ...
+    classification: Sequence                            # optional
+    consents: Sequence                                  # optional
+    data-risk-reducing: Sequence                        # optional
+    processing-included: $defs.geographic-regions-type  # optional
+    processing-excluded: $defs.geographic-regions-type  # optional
+    storage-allowed: $defs.geographic-regions-type      # optional
+    storage-forbidden: $defs.geographic-regions-type    # optional
+    license: Sequence                                   # optional
+    copyright: Sequence                                 # optional
+    patent: Sequence                                    # optional
+    trademark: Sequence                                 # optional
 ```
 
-#### 7.1.5.1 Member `use.intended-purpose` <a id='member-use-intended-purpose'></a>
+#### 7.1.5.1 Member `use.intended-purpose`<a id='member-use-intended-purpose'></a>
 
 The `use.intended-purpose` member describes the purpose for which the dataset was created, guiding users on its intended use and potential applications.
 
 The value is a sequence of purpose objects. Each purpose MUST contain a `code` drawn from the `PurposeCode` vocabulary and a `long-description`. The optional `system` member MAY also be present. The sequence MUST contain at least one purpose and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties['intended-purpose'].items['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   use:
-    # ...
     intended-purpose:
-      - code: String.Enum  # PurposeCode: alignment | evaluation | other | pre-training | production | quality-assurance | research | staging-testing | synthetic-data-generation
+      - code: $defs.purpose-code-type
         long-description: String
-        # system: String  (optional)
+        system: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*<a id='member-use-intended-purpose-eg-1'></a><a id='sec-7-1-5-1-eg-1'></a><a id='example-28'></a>
@@ -1941,26 +1986,21 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.5.2 Member `use.classification` <a id='member-use-classification'></a>
+#### 7.1.5.2 Member `use.classification`<a id='member-use-classification'></a>
 
 The `use.classification` member indicates whether the dataset includes data falling into various confidentiality classifications.
 The value is a sequence of classification objects. Each item MUST contain a `regulation` object whose `code` MUST be drawn from the `ConfidentialityCode` vocabulary, and an `evaluated` boolean. The optional `tool` member MAY also be present. All entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties.classification)-->
+```yaml
 DataProvenance:
   # ...
   use:
     # ...
-    classification:
-      - regulation:
-          code: String.Enum  # ConfidentialityCode: other | pci | pfi | phi | pi | sci | spi
-          # system: String           (optional)
-          # long-description: String (optional)
+    classification:  # optional
+      - regulation: $defs.confidentiality-regulation-type
         evaluated: Boolean
-        # tool: String  (optional)
+        tool: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*<a id='member-use-classification-eg-1'></a><a id='sec-7-1-5-2-eg-1'></a><a id='example-29'></a>
@@ -1972,21 +2012,19 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.5.3 Member `use.consents` <a id='member-use-consents'></a>
+#### 7.1.5.3 Member `use.consents`<a id='member-use-consents'></a>
 
 The `use.consents` member specifies where consent documentation or agreements related to the data can be found, ensuring legal compliance and regulatory use.
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties.consents)-->
+```yaml
 DataProvenance:
   # ...
   use:
     # ...
-    consents:
+    consents:  # optional
       - String
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*<a id='member-use-consents-eg-1'></a><a id='sec-7-1-5-3-eg-1'></a><a id='example-30'></a>
@@ -1995,25 +2033,26 @@ DataProvenance:
 ["https://example.com/consent-policy-2024"]
 ```
 
-#### 7.1.5.4 Member `use.data-risk-reducing` <a id='member-use-data-risk-reducing'></a>
+#### 7.1.5.4 Member `use.data-risk-reducing`<a id='member-use-data-risk-reducing'></a>
 
 The `use.data-risk-reducing` member indicates the techniques used to reduce known data risk.
 The value is a sequence of objects. Each item MUST contain `tool-used`. The optional members `tool-category`, `technology`, `parameters`, and `results` MAY also be present. All entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties['data-risk-reducing'])-->
+```yaml
 DataProvenance:
   # ...
   use:
     # ...
-    data-risk-reducing:
+    data-risk-reducing:  # optional
       - tool-used: String
-        # tool-category: Mapping  (optional, method object)
-        # technology: String.Enum (optional, DataTechnology value)
-        # parameters: Sequence    (optional, list of {name, value} pairs)
-        # results: Sequence       (optional, list of strings)
+        tool-category: $defs.method-type  # optional
+        technology: String.Enum           # optional
+        parameters:  # optional
+          - name: String
+            value: String  # optional
+        results:  # optional
+          - String
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*<a id='member-use-data-risk-reducing-eg-1'></a><a id='sec-7-1-5-4-eg-1'></a><a id='example-31'></a>
@@ -2029,22 +2068,20 @@ DataProvenance:
 ]
 ```
 
-#### 7.1.5.5 Member `use.processing-included` <a id='member-use-processing-included'></a>
+#### 7.1.5.5 Member `use.processing-included`<a id='member-use-processing-included'></a>
 
 The `use.processing-included` member defines the geographical boundaries within which the data MAY be processed.
 The value is a sequence of geographic region objects following the same structure as `provenance.origin-geography`.
 
-```yaml <!--json-path($['$defs']['use-type'].properties['processing-included']['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   use:
     # ...
-    processing-included:
+    processing-included:  # optional
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*<a id='member-use-processing-included-eg-1'></a><a id='sec-7-1-5-5-eg-1'></a><a id='example-32'></a>
@@ -2053,76 +2090,68 @@ DataProvenance:
 [{"country": "DE"}, {"country": "FR"}]
 ```
 
-#### 7.1.5.6 Member `use.processing-excluded` <a id='member-use-processing-excluded'></a>
+#### 7.1.5.6 Member `use.processing-excluded`<a id='member-use-processing-excluded'></a>
 
 The `use.processing-excluded` member defines the geographical boundaries within which the data MUST NOT be processed.
 The value is a sequence of geographic region objects following the same structure as `provenance.origin-geography`.
 
-```yaml <!--json-path($['$defs']['use-type'].properties['processing-excluded']['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   use:
     # ...
-    processing-excluded:
+    processing-excluded:  # optional
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
-  # ...
-# ...
 ```
 
-#### 7.1.5.7 Member `use.storage-allowed` <a id='member-use-storage-allowed'></a>
+#### 7.1.5.7 Member `use.storage-allowed`<a id='member-use-storage-allowed'></a>
 
 The `use.storage-allowed` member specifies geographical locations where the data MAY be stored.
 The value is a sequence of geographic region objects following the same structure as `provenance.origin-geography`.
 
-```yaml <!--json-path($['$defs']['use-type'].properties['storage-allowed']['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   use:
     # ...
-    storage-allowed:
+    storage-allowed:  # optional
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
-  # ...
-# ...
 ```
 
-#### 7.1.5.8 Member `use.storage-forbidden` <a id='member-use-storage-forbidden'></a>
+#### 7.1.5.8 Member `use.storage-forbidden`<a id='member-use-storage-forbidden'></a>
 
 The `use.storage-forbidden` member specifies geographical locations where the data MUST NOT be stored.
 The value is a sequence of geographic region objects following the same structure as `provenance.origin-geography`.
 
-```yaml <!--json-path($['$defs']['use-type'].properties['storage-forbidden']['$ref'])-->
+```yaml
 DataProvenance:
   # ...
   use:
     # ...
-    storage-forbidden:
+    storage-forbidden:  # optional
       - country: String
-        # state: String  (optional)
+        state: String  # optional
     # ...
-  # ...
-# ...
 ```
 
-#### 7.1.5.9 Member `use.license` <a id='member-use-license'></a>
+#### 7.1.5.9 Member `use.license`<a id='member-use-license'></a>
 
 The `use.license` member details the terms under which the dataset can be used, including any restrictions or obligations.
 License entries MAY include End User License Agreements (EULA) or Data Use Agreements (DUA).
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties.license)-->
+```yaml
 DataProvenance:
   # ...
   use:
     # ...
-    license:
+    license:  # optional
       - String
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*<a id='member-use-license-eg-1'></a><a id='sec-7-1-5-9-eg-1'></a><a id='example-33'></a>
@@ -2131,21 +2160,19 @@ DataProvenance:
 ["https://creativecommons.org/licenses/by/4.0/"]
 ```
 
-#### 7.1.5.10 Member `use.copyright` <a id='member-use-copyright'></a>
+#### 7.1.5.10 Member `use.copyright`<a id='member-use-copyright'></a>
 
 The `use.copyright` member indicates whether the dataset contains proprietary information covered by a copyright, and the terms of that copyright.
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties.copyright)-->
+```yaml
 DataProvenance:
   # ...
   use:
     # ...
-    copyright:
+    copyright:  # optional
       - String
     # ...
-  # ...
-# ...
 ```
 
 *Example 1:*<a id='member-use-copyright-eg-1'></a><a id='sec-7-1-5-10-eg-1'></a><a id='example-34'></a>
@@ -2154,43 +2181,38 @@ DataProvenance:
 ["Copyright © 2024 Example Corp. All rights reserved."]
 ```
 
-#### 7.1.5.11 Member `use.patent` <a id='member-use-patent'></a>
+#### 7.1.5.11 Member `use.patent`<a id='member-use-patent'></a>
 
 The `use.patent` member indicates whether the dataset contains proprietary information covered by a patent, and the patent number.
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties.patent)-->
+```yaml
 DataProvenance:
   # ...
   use:
     # ...
-    patent:
+    patent:  # optional
       - String
     # ...
-  # ...
-# ...
 ```
 
-#### 7.1.5.12 Member `use.trademark` <a id='member-use-trademark'></a>
+#### 7.1.5.12 Member `use.trademark`<a id='member-use-trademark'></a>
 
 The `use.trademark` member indicates whether the dataset contains proprietary information covered by a trademark, and the terms of that trademark.
 The value is a sequence of strings. The sequence MUST contain at least one entry and all entries MUST be unique.
 
-```yaml <!--json-path($['$defs']['use-type'].properties.trademark)-->
+```yaml
 DataProvenance:
   # ...
   use:
     # ...
-    trademark:
+    trademark:  # optional
       - String
-    # ...
-  # ...
-# ...
 ```
 
 ---
 
-# 8. Safety, Security, and Data Protection <a id='safety-security-and-data-protection'></a>
+# 8. Safety, Security, and Data Protection<a id='safety-security-and-data-protection'></a>
 
 All safety, security, and data protection requirements relevant to the context in which Data Provenance Metadata documents are used MUST be translated into, and consistently enforced through, Data Provenance Metadata implementations and processes.
 
@@ -2207,7 +2229,7 @@ For Data Provenance Metadata documents based on JSON, the security consideration
 Implementations SHOULD validate Data Provenance Metadata documents against the normative JSON Schema prior to processing.
 Documents that do not validate MUST NOT be treated as authoritative provenance records.
 
-## 8.1 Integrity and Authenticity of Provenance Claims <a id='integrity-and-authenticity'></a>
+## 8.1 Integrity and Authenticity of Provenance Claims<a id='integrity-and-authenticity'></a>
 
 This specification defines the structure and vocabulary of provenance metadata but does not define mechanisms for verifying that the claims made within a record are accurate or have not been tampered with.
 A Data Provenance Metadata document is only as trustworthy as the process and party that produced it.
@@ -2216,21 +2238,21 @@ Implementations that rely on provenance metadata for access control, compliance,
 
 The `set.tracking.id` and `source.id` fields provide identifiers for the record and the described dataset respectively, but do not themselves provide integrity protection.
 
-## 8.2 URI Safety <a id='uri-safety'></a>
+## 8.2 URI Safety<a id='uri-safety'></a>
 
 Several fields in this specification accept URI values, including `source.location`, `set.publisher.namespace`, `source.id.uris`, `set.acknowledgments[].urls`, and `set.references[].url`.
 Implementations that automatically dereference these URIs MUST apply the same defences required for any externally supplied URL, including protection against server-side request forgery (SSRF) and open redirect attacks.
 URIs MUST be validated as well-formed before dereferencing.
 Implementations SHOULD restrict dereferenceable schemes to `https` and, where appropriate, `http`.
 
-## 8.3 Sensitive Information in Provenance Records <a id='sensitive-information'></a>
+## 8.3 Sensitive Information in Provenance Records<a id='sensitive-information'></a>
 
 Provenance records may incidentally contain information that publishers consider sensitive, including internal tool names in `use.data-risk-reducing`, personnel names in `set.acknowledgments`, internal geographic constraints in `use.processing-included` and related fields, and organizational contact details in `set.publisher.contact-details`.
 
 Publishers MUST consider whether information included in a provenance record is appropriate for the audience that will consume it.
 Provenance records intended for public distribution SHOULD be reviewed to ensure they do not expose internal operational details beyond what is required to describe the dataset's provenance.
 
-## 8.4 Data Protection Compliance <a id='data-protection-compliance'></a>
+## 8.4 Data Protection Compliance<a id='data-protection-compliance'></a>
 
 The `use.classification` field records whether a dataset has been evaluated against confidentiality classifications such as PHI, PI, PCI, SCI, or SPI.
 The presence of a classification entry, including the value of the `evaluated` field, does not itself constitute compliance with any applicable law or regulation.
@@ -2241,7 +2263,7 @@ Implementers are responsible for establishing technical and organizational contr
 
 ---
 
-# 9. Conformance <a id='conformance'></a>
+# 9. Conformance<a id='conformance'></a>
 
 This document defines requirements for the data-provenance in the JSON file format and for certain software components that interact with it. 
 
@@ -2254,11 +2276,11 @@ We may want to add a blanket statement that allows file formats in the wild to b
 
 ---
 
-# Annex A. License, Document Status and Notices <a id='annex-a'></a>
+# Annex A. License, Document Status and Notices<a id='annex-a'></a>
 
 (This annex forms an integral part of this Specification.)
 
-## A.1 Document Status <a id='document-status'></a>
+## A.1 Document Status<a id='document-status'></a>
 
 This document was last revised or approved by the OASIS DPS TC on the above date. The level of approval is also listed above. Check the "Latest version" location noted above for possible later revisions of this document. Any other numbered Versions and other technical work produced by the Technical Committee (TC) are listed at <https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=2c60b2cf-45d3-48cd-8594-0194f182b33d>.
 
@@ -2266,7 +2288,7 @@ TC members should send comments on this document to the TC's email list. Others 
 
 NOTE: any machine-readable content (Computer Language Definitions) declared Normative for this Work Product is provided in separate plain text files. In the event of a discrepancy between any such plain text file and display content in the Work Product's prose narrative document(s), the content in the separate plain text file prevails.
 
-## A.2 License and Notices <a id='license-and-notices'></a>
+## A.2 License and Notices<a id='license-and-notices'></a>
 
 <!-- Required section. Do not modify. -->
 
@@ -2294,7 +2316,7 @@ The name "OASIS" is a trademark of OASIS, the owner and developer of this docume
 
 ---
 
-# Annex B. References <a id='annex-b'></a>
+# Annex B. References<a id='annex-b'></a>
 
 (This annex forms an integral part of this Specification.)
 
@@ -2302,7 +2324,7 @@ This section contains the normative and informative references that are used in 
 
 Normative references are specific (identified by date of publication and/or edition number or version number) and Informative references are either specific or non-specific. For specific references, only the cited version applies. For non-specific references, the latest version of the reference document (including any amendments) applies. While any hyperlinks included in this section were valid at the time of publication, OASIS cannot guarantee their long term validity.
 
-## B.1 Normative References <a id='normative-references'></a>
+## B.1 Normative References<a id='normative-references'></a>
 
 The following documents are referenced in such a way that some or all of their content constitutes requirements of this document.
 
@@ -2312,14 +2334,14 @@ The following documents are referenced in such a way that some or all of their c
 
 **\[**<span id="RFC8259" class="anchor"></span>**RFC8259\]** Bray, T., "The JavaScript Object Notation (JSON) Data Interchange Format", RFC 8259, DOI 10.17487/RFC8259, December 2017, <http://www.rfc-editor.org/info/rfc8259>.
 
-## B.2 Informative References <a id='informative-references'></a>
+## B.2 Informative References<a id='informative-references'></a>
 
 The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.
 
 
 **\[**<span id="CNSSI-4009" class="anchor"></span>**CNSSI-4009\]** _Committee on National Security Systems (CNSS) Glossary_, Committee on National Security Systems, CNSSI No. 4009, April 6, 2015, Available: https://nsarchive.gwu.edu/document/22385-document-08-committee-national-security
 
-# Annex C. Example Instances <a id='annex-c'></a>
+# Annex C. Example Instances<a id='annex-c'></a>
 
 (This annex forms an integral part of this Specification.)
 
@@ -2346,7 +2368,7 @@ checking field semantics under realistic conditions.
 All three instances are available as JSON files in the `examples/` directory of the
 specification distribution.
 
-## C.1 Minimal Example <a id='minimal-example'></a>
+## C.1 Minimal Example<a id='minimal-example'></a>
 
 The following instance contains only the fields required by the schema.
 The scenario is a single-issuer survey dataset with one generation method and one intended purpose.
@@ -2420,7 +2442,7 @@ The scenario is a single-issuer survey dataset with one generation method and on
 
 The file `examples/dp-core-minimal.json` contains this instance.
 
-## C.2 Moderate Example <a id='moderate-example'></a>
+## C.2 Moderate Example<a id='moderate-example'></a>
 
 The moderate example extends the minimal case with a representative but non-exhaustive
 selection of optional fields.
@@ -2443,7 +2465,7 @@ Key features illustrated by this instance:
 
 The file `examples/dp-core-moderate.json` contains this instance.
 
-## C.3 Complete Example <a id='complete-example'></a>
+## C.3 Complete Example<a id='complete-example'></a>
 
 The complete example is a comprehensive instance designed to exercise every field in the schema.
 The scenario is a large merged biomedical text corpus assembled by a research consortium from
@@ -2476,13 +2498,13 @@ The file `examples/dp-core-complete.json` contains this instance.
 
 ---
 
-# Appendix A. Acknowledgments <a id='appendix-acknowledgments'></a>
+# Appendix A. Acknowledgments<a id='appendix-acknowledgments'></a>
 
 (This appendix does not form an integral part of this Specification and is informational.)
 
 The following individuals were members of the OASIS DPS Technical Committee during the creation of this specification and their contributions are gratefully acknowledged:
 
-## Leadership <a id='leadership'></a>
+## Leadership<a id='leadership'></a>
 
 The following individuals have had significant leadership positions during the development of this document, not just this version of the document, and they are gratefully acknowledged:
 
@@ -2498,7 +2520,7 @@ The following individuals have had significant leadership positions during the d
   - David Kemp, NSA, d.kemp@cyber.nsa.gov
   - Stefan Hagen, Individual, stefan@hagen.link
 
-## Special Thanks <a id='special-thanks'></a>
+## Special Thanks<a id='special-thanks'></a>
 
 The following individuals have made substantial contributions to this document, not just this version of the document, and their contributions are gratefully acknowledged:
 
@@ -2506,10 +2528,11 @@ The DPS TC thanks the following individuals for their assistance in the developm
 Kristina Podnar and the Data &amp; Trust Alliance for their contributions of the initial schema and example applications.
 Duncan Sparrell for supporting the TC from the charter definition to the initial structuring of this document.
 
-## Participants <a id='participants'></a>
+## Participants<a id='participants'></a>
 
 The following individuals have participated in the creation of this document and are gratefully acknowledged (given family, affiliation):
 
+- Charles Assaf, Individual
 - David Kemp, NSA
 - Duncan Sparrell, sFractal Consulting LLC
 - Kristina Podnar, Data &amp; Trust Alliance
@@ -2518,13 +2541,13 @@ The following individuals have participated in the creation of this document and
 
 ---
 
-# Appendix B. Changes From Previous Version <a id='appendix-changes-from-previous-version'></a>
+# Appendix B. Changes From Previous Version<a id='appendix-changes-from-previous-version'></a>
 
 (This appendix does not form an integral part of this Specification and is informational.)
 
 This is the initial draft Committee Specification.
 
-## Revision History <a id='revision-history'></a>
+## Revision History<a id='revision-history'></a>
 
 Revision tracking is publicly available in the version control system at
 <https://github.com/oasis-tcs/dps/commits/main>.
