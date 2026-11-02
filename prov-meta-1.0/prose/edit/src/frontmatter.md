@@ -4,7 +4,7 @@
 
 ## Committee Specification Draft 02
 
-## 3 November 2026
+## 9 November 2026
 
 ### This version {#this-version}
 
@@ -69,7 +69,7 @@ When referencing this document, the following citation format should be used:
 
 **[prov-meta-v1.0]**
 
-_Data Provenance Metadata Version 1.0_. Edited by David Kemp and Stefan Hagen. 3 November 2026. OASIS Committee Specification Draft 02.
+_Data Provenance Metadata Version 1.0_. Edited by David Kemp and Stefan Hagen. 9 November 2026. OASIS Committee Specification Draft 02.
 <https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html>. \
 Latest stage: <https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html>.
 
