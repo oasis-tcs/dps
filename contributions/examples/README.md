@@ -45,6 +45,8 @@ What this record does not demonstrate:
 
 Treat the divergence of the two counters as one implementation's behaviour, and not as a requirement. If your implementation increments both together, that is consistent with the current text.
 
-## Note
+## Relationship to `prov-meta-1.0/examples/`
 
-`prov-meta-1.0/examples/` is a separate folder in this repo and holds `dp-core-minimal.json`, `dp-core-moderate.json` and `dp-core-complete.json`. Those predate this contribution and may be stale against the current schema. They are listed here only so readers know both sets exist. Reconciling them is for the TC.
+The same record is included in the specification's own examples folder as `prov-meta-1.0/examples/dp-core-lineage.json`, alongside `dp-core-minimal.json`, `dp-core-moderate.json` and `dp-core-complete.json`. The JSON is identical. That copy is the one that ships with the specification. This folder keeps the annotated version: the revision table above and `kestrel-lineage-example-note.md`.
+
+If the two ever differ, `prov-meta-1.0/examples/` is authoritative.
