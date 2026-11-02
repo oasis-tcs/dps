@@ -125,8 +125,12 @@ outlines:
 check-outlines:
 	python bin/derive_outlines.py --check
 
+.PHONY: check-restatements
+check-restatements:
+	python bin/check_restatements.py
+
 .PHONY: quality
-quality: check-derived
+quality: check-derived check-restatements
 	nide quality
 
 .PHONY: validate

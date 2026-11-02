@@ -1,0 +1,4 @@
+# Known differences between a prose restatement and the JSON schema, each waiting for a decision.
+# Read by bin/check_restatements.py: listed differences are reported but do not fail the check; an entry whose
+# difference no longer exists fails it (remove the entry then). Format: member-path claim reason
+source.id.hashes.tree-hashes.algorithm lowercase  TC decision 2026-11: the prose requires lowercase, the schema accepts any non-empty string (and provenance.source-digest.algorithm has no lowercase rule in prose or schema) - add a pattern to the schema, or relax the prose

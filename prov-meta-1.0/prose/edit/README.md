@@ -70,6 +70,7 @@ Do not edit it locally; update it by copying the upstream version when a new rel
 | `derive_outlines.py` | Derives the body of every `{.yaml json-path="..."}` fence from the JSON schema          |
 | `derive_figure.py`   | Derives the overview figure (Graphviz source and SVG) from the JSON schema              |
 | `derive_yaml.py`     | Derives the YAML serialization of the JSON schema                                      |
+| `check_restatements.py` | Checks the prose MUST sentences that restate schema constraints against the schema       |
 | `patch.py`           | Applies YAML-configured text patches to generated output files                         |
 
 Every `derive_*.py` rewrites its artifact when run plain, and with `--check` reports drift as a diff and exits 1.
@@ -84,6 +85,12 @@ Every JADN type except the four format aliases needs exactly one table: for a ne
 the table belongs (after a table row, as the existing ones), then run `make derive`.
 Column widths are one set per table shape (members, enumeration items, simple types): identifier columns are as
 wide as the longest identifier of that shape, so code values never wrap in the PDF; the description takes the rest.
+
+**Restatements** (`check_restatements.py`): derive or check, never neither. A MUST sentence that repeats a schema fact
+in words (a value list, required members, uniqueness, at least one, a format, a reference to `$defs`) is a hand copy,
+so each one is compared with the schema; `--list` shows the MUST lines no check covers (rules the schema cannot express).
+A known difference waiting for a TC decision is listed with its reason in `etc/restatements-known.txt`: it is reported
+but does not fail the build, and an entry whose difference is gone fails it until removed.
 
 **Figure** (`derive_figure.py`): the root type and the type of each top-level member with all members, in the
 vocabulary of the tables. The drift check compares `metadata.dot`; Graphviz `dot` renders `metadata.svg` from it.
@@ -135,7 +142,8 @@ To change an outline, change the schema or the fence's JSON path, then run `make
 
 | Target                | What it does                                                                                                    |
 |:----------------------|:----------------------------------------------------------------------------------------------------------------|
-| `make quality`        | `make check-derived`, then `nide quality` — per-rule PASS/FAIL/NA report against `etc/rules/spec.rules.yaml`     |
+| `make quality`        | `make check-derived` and `make check-restatements`, then `nide quality` — per-rule PASS/FAIL/NA report against `etc/rules/spec.rules.yaml` |
+| `make check-restatements` | Checks every prose MUST sentence that restates a schema constraint (values, required members, uniqueness, cardinality, formats) against the JSON schema |
 | `make validate`       | `nide validate` — checks the outputs in `../share/` against the manifest                                        |
 | `make diff`           | `nide diff --mode prose` on the HTML — readable word-level diff against VCS HEAD                                |
 | `make diff-repro`     | `nide diff --mode repro` on the PDF — timestamp-normalised diff against VCS HEAD                                |
