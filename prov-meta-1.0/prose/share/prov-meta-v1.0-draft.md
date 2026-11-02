@@ -903,7 +903,7 @@ DataProvenance:
 
 The `set.notes` member contains a list of notes associated with this metadata set.
 Each note MUST have a `category` and `text`. The optional members `audience` and `title` MAY also be present.
-The `category` value MUST be one of: `general`, `other`, `privacy`, `summary`.
+The `category` value MUST be one of: `description`, `details`, `faq`, `general`, `legal_disclaimer`, `other`, `summary`.
 
 ```yaml
 DataProvenance:
