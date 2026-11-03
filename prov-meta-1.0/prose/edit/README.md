@@ -91,6 +91,8 @@ in words (a value list, required members, uniqueness, at least one, a format, a 
 so each one is compared with the schema; `--list` shows the MUST lines no check covers (rules the schema cannot express).
 A known difference waiting for a TC decision is listed with its reason in `etc/restatements-known.txt`: it is reported
 but does not fail the build, and an entry whose difference is gone fails it until removed.
+The `nide quality` rule `DPS-SCHEMA-ENUMS` adds a schema-wide net for enum values in any prose, not only MUST
+sentences: a near miss (a typo, `-` for `_`, a plural), a listed value the enum lacks, and an incomplete `MUST be one of` list.
 
 **Figure** (`derive_figure.py`): the root type and the type of each top-level member with all members, in the
 vocabulary of the tables. The drift check compares `metadata.dot`; Graphviz `dot` renders `metadata.svg` from it.
@@ -114,11 +116,11 @@ To change an outline, change the schema or the fence's JSON path, then run `make
     # 3. Build HTML to review locally
     make html
 
-    # 4. Check document completeness against editorial rules
+    # 4. Check document completeness against editorial rules (after step 3: two rules read the rendered HTML)
     make quality       # drift check of all derived artifacts, then per-rule PASS/FAIL/NA report
 
-    # 5. When ready for a round-trip review, build all channels
-    make release
+    # 5. Before a PR or a release: build everything from scratch, with every gate
+    make release       # distclean, derive checks, html, quality, pdf, manifest, validate; lists changed deliverables
 
     # 6. Verify nothing unintended changed
     make diff          # prose diff of HTML against VCS HEAD
@@ -133,7 +135,8 @@ To change an outline, change the schema or the fence's JSON path, then run `make
 
 | Target          | What it does                                                                               |
 |:----------------|:-------------------------------------------------------------------------------------------|
-| `make release`  | Full build: html + pdf + `nide manifest` + `nide validate`                                 |
+| `make release`  | What you hand over (PR, release), from scratch: `distclean`, `check-derived` and `check-restatements`, `html`, `nide quality`, `pdf` (no viewer), `nide manifest`, `nide validate`; then lists the deliverables in `../share/` that changed. Never commits, pushes, or uploads |
+| `make render`   | The quick loop: html + pdf, no cleaning, no gates (the default `make` runs it, then `make status`) |
 | `make html`     | GFM+ and HTML (implies `make gfm-plus`)                                                    |
 | `make gfm-plus` | Assembles sources, renders GFM+ markdown and IR                                            |
 | `make pdf`      | Assembles sources, renders PDF via typst; copies typst source and checksums to `../share/` |
@@ -142,7 +145,7 @@ To change an outline, change the schema or the fence's JSON path, then run `make
 
 | Target                | What it does                                                                                                    |
 |:----------------------|:----------------------------------------------------------------------------------------------------------------|
-| `make quality`        | `make check-derived` and `make check-restatements`, then `nide quality` — per-rule PASS/FAIL/NA report against `etc/rules/spec.rules.yaml` |
+| `make quality`        | `make check-derived` and `make check-restatements`, then `nide quality` — per-rule PASS/FAIL/NA report against `etc/rules/spec.rules.yaml`; run `make html` first (the HTML rules read `build/injected.html`) |
 | `make check-restatements` | Checks every prose MUST sentence that restates a schema constraint (values, required members, uniqueness, cardinality, formats) against the JSON schema |
 | `make validate`       | `nide validate` — checks the outputs in `../share/` against the manifest                                        |
 | `make diff`           | `nide diff --mode prose` on the HTML — readable word-level diff against VCS HEAD                                |
@@ -166,7 +169,7 @@ To change an outline, change the schema or the fence's JSON path, then run `make
 | `make lint`   | ruff + black check + unmake   |
 | `make format` | ruff --fix + black (in-place) |
 | `make types`  | mypy                          |
-| `make all`    | lint + types + build          |
+| `make all`    | lint + types + render + status |
 
 ### Maintenance targets
 
@@ -179,7 +182,8 @@ To change an outline, change the schema or the fence's JSON path, then run `make
 ## Using `nide quality` directly
 
 The make target runs `nide quality` with the rules file configured in `etc/nide.yaml`.
-For finer control, run it directly after `make gfm-plus` (which writes `build/ir.json`):
+For finer control, run it directly after `make html`, which writes both inputs: `build/ir.json` (read by most rules)
+and `build/injected.html` (read by `DPS-HTML-WELLFORMED` and `DPS-HTML-ANCHORS`; after `make gfm-plus` alone they fail):
 
     # default: reads quality.rules from etc/nide.yaml
     nide quality
@@ -219,6 +223,48 @@ For finer control, run `nide diff` directly (VCS version is extracted automatica
     nide diff --mode full ../share/prov-meta-v1.0-draft.html
 
 All mode names and modifier names accept unambiguous prefixes (`nide diff --mode pr` is equivalent to `--mode prose`).
+
+## Troubleshooting
+
+Symptoms an editor may meet in `make quality`, what causes them, and the fix.
+
+**`DPS-HTML-WELLFORMED` or `DPS-HTML-ANCHORS` fails with "build/injected.html not found -- render the HTML".**
+No rendered HTML yet: a fresh clone, or `make clean` / `make distclean` since the last render.
+Run `make html`, then `make quality`. The rules fail rather than skip on purpose, so a check that never ran cannot pass.
+
+**The HTML rules report a problem you have already fixed in `src/`.**
+They read the HTML of the last render, not the sources. Run `make html` again before `make quality`.
+
+**`DPS-HTML-ANCHORS` reports a duplicate id.**
+Usually a heading label written without a space: `#### Title{#label}`. nide reads the label, but pandoc ignores it and
+derives the id from the title, which can collide with another heading of the same title -- and a link then jumps to
+whichever comes first. Write `#### Title {#label}`.
+
+**`DPS-HTML-ANCHORS` reports "#x resolves to no id or name".**
+An in-page link to a label that no heading or citation defines: a typo in `[sec](#x)`, or a label renamed in one place only.
+
+**`DPS-HTML-WELLFORMED` reports "escaped markup shown as text".**
+Raw HTML in the source that pandoc did not take as HTML, often because of typographic quotes (`<a href=“#x”>`):
+readers see the tag as text. Use Markdown instead, e.g. `[cite](#x)`.
+
+**`DPS-SCHEMA-ENUMS` reports a near miss, a value not in the enum, or a missing value.**
+The prose has drifted from the schema enum; the schema is the source, so correct the prose (or, if the schema is wrong,
+the schema, then `make derive`). If the TC has to decide first, add the difference to the rule in
+`etc/rules/spec.rules.yaml` as `known:` (`- {kind: not-in-enum, value: x, reason: "..."}`, with `kind` as reported:
+`near-miss`, `not-in-enum` or `missing`): it is then reported but does not fail, and the entry fails once the
+difference is gone, so remove it then.
+
+**`DPS-SCHEMA-ENUMS` asks for values that a sentence deliberately leaves out.**
+Only the normative wording `MUST be one of` claims a complete list. A sentence that names a subset on purpose should
+not use it: write, for example, "is `a` or `b`".
+
+**A rule fails with "rule evaluation error: Unknown check type".**
+The installed nide is older than the rules: `schema-enums`, `html-wellformed` and `html-anchors` need a nide newer
+than 2026.11.1. Upgrade nide (`pip install -U nide`).
+
+**`DPS-DOC-URL` warns although the this-version URL is in the front matter.**
+A known nide limitation: its link extraction does not see bare `<https://...>` autolinks. The warning is expected
+until nide is fixed; it does not fail the build.
 
 ## Tool prerequisites
 

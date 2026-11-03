@@ -39,7 +39,7 @@ We build four delivery channels from the same source:
 
 `make release` also writes the manifest (`prov-meta-v1.0-draft.manifest.json`) over all of them and verifies it.
 
-To build all channels and verify the manifest, run from `edit/`:
+To build what you hand over (a PR or a release) from scratch, with every gate, run from `edit/`:
 
     make release
 
@@ -48,6 +48,7 @@ To build incrementally:
     make gfm-plus   # GFM+ and IR
     make html       # HTML (implies gfm-plus)
     make pdf        # PDF + typst source + checksums
+    make render     # HTML and PDF together, no cleaning, no gates
 
 After a change of the JSON schema, regenerate the views first:
 

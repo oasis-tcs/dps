@@ -90,6 +90,32 @@ rules:
       type: pi
       mode: deprecated-syntax
 
+  - id: DPS-SCHEMA-ENUMS
+    severity: BLOCKER
+    description: >-
+      Prose that lists or names enum values agrees with the JSON schema: no value outside the enum,
+      no near miss (a typo or - for _), and a "MUST be one of" list names every value
+      (a drifted set.notes category list once reached a PR review this way)
+    check:
+      type: schema-enums
+      schemas:
+        - ../../json/data-provenance.json
+
+  # The two HTML checks read build/injected.html: run them after rendering (make html quality).
+  - id: DPS-HTML-WELLFORMED
+    severity: BLOCKER
+    description: >-
+      The rendered HTML is well-formed: balanced tags, every element closed,
+      no markup escaped into text
+    check:
+      type: html-wellformed
+
+  - id: DPS-HTML-ANCHORS
+    severity: BLOCKER
+    description: The rendered HTML has unique ids, and every in-page link resolves to one
+    check:
+      type: html-anchors
+
   # A candidate for the OASIS baseline (oasis.rules.yaml): it is not DPS-specific.
   - id: DPS-LINK-TEXT-IS-TARGET
     severity: BLOCKER
