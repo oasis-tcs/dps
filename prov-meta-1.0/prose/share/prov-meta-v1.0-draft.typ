@@ -21,7 +21,7 @@
     align: (left + horizon, center + horizon, right + horizon),
     text(size: 8pt)[prov-meta-v1.0-csd02],
     text(size: 8pt)[Copyright © OASIS Open 2026. All Rights Reserved.],
-    text(size: 8pt)[9 November 2026 — Page #counter(page).display()
+    text(size: 8pt)[11 November 2026 — Page #counter(page).display()
       of #counter(page).final().first()],
   ),
 )
@@ -53,8 +53,8 @@ Metadata Version 1.0]
 #heading(level: 2, outlined: false, numbering: none)[Committee
 Specification Draft 02]
 <committee-specification-draft-02>
-#heading(level: 2, outlined: false, numbering: none)[9 November 2026]
-<9-november-2026>
+#heading(level: 2, outlined: false, numbering: none)[11 November 2026]
+<11-november-2026>
 #heading(level: 3, outlined: false, numbering: none)[This version]
 <this-version>
 - #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.md")
@@ -134,7 +134,7 @@ used:
 #strong[\[prov-meta-v1.0\]]
 
 #emph[Data Provenance Metadata Version 1.0]. Edited by David Kemp and
-Stefan Hagen. 9 November 2026. OASIS Committee Specification Draft 02.
+Stefan Hagen. 11 November 2026. OASIS Committee Specification Draft 02.
 #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/csd02/prov-meta-v1.0-csd02.html").
 \ Latest stage:
 #link("https://docs.oasis-open.org/dps/prov-meta/v1.0/prov-meta-v1.0.html").
@@ -152,7 +152,7 @@ N/A
 #heading(level: 2, outlined: false, numbering: none)[License, Document
 Status, and Notices]
 <license-document-status-and-notices>
-Copyright © OASIS Open 2026. All Rights Reserved. \ For license and
+Copyright © OASIS Open 2026. All Rights Reserved. For license and
 copyright information, and complete status, please see
 #link(<annex-a>)[Annex A] which contains the License, Document Status
 and Notices.

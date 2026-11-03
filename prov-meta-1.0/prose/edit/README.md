@@ -236,9 +236,12 @@ Run `make html`, then `make quality`. The rules fail rather than skip on purpose
 They read the HTML of the last render, not the sources. Run `make html` again before `make quality`.
 
 **`DPS-HTML-ANCHORS` reports a duplicate id.**
-Usually a heading label written without a space: `#### Title{#label}`. nide reads the label, but pandoc ignores it and
-derives the id from the title, which can collide with another heading of the same title -- and a link then jumps to
-whichever comes first. Write `#### Title {#label}`.
+Two places define the same id, so a link to it jumps to whichever comes first. The message names both lines in
+the HTML; search the sources for the id. Either two labels are the same (two headings with one `{#label}`, or a label
+repeated as a raw `<span id>` / `<a id>`), or a heading's text happens to equal another heading's label: besides
+nide's label, pandoc gives every heading an id made from its text (a heading "Revision History" gets
+`revision-history`), and that id can clash with a label elsewhere. In that case rename the label, or reword one of
+the headings. Spacing does not matter: `Title{#label}` and `Title {#label}` both work.
 
 **`DPS-HTML-ANCHORS` reports "#x resolves to no id or name".**
 An in-page link to a label that no heading or citation defines: a typo in `[sec](#x)`, or a label renamed in one place only.
