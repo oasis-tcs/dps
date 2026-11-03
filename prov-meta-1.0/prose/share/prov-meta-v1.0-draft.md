@@ -208,6 +208,7 @@ Dependence on data creates a need for validation by understanding data’s origi
 Understanding data is a requirement for organizations operating at scale.
 The OASIS Data Provenance Standards (DPS) are created to solve for this need.
 Developed through cross-industry collaboration, the DPS provide a consistent framework to track the origin, movement, integrity, and quality of data.
+They define how such provenance is recorded; how the claims in a record are verified is outside their scope (see [8.1 "Integrity and Authenticity of Provenance Claims"](#integrity-and-authenticity)).
 The DPS address the growing demand for transparency in artificial intelligence (AI), cybersecurity, supply chains,
 and areas where data quality and accountability are foundational to performance and compliance - especially in regulated and high-risk environments.
 
@@ -257,8 +258,6 @@ DPS
 
 PET
 :    Privacy Enhancing Technologies
-
-<!-- We will surely find more acronyms or abbreviations we do use in the document. -->
 
 ---
 
@@ -2328,6 +2327,9 @@ A Data Provenance Metadata document is only as trustworthy as the process and pa
 
 Implementations that rely on provenance metadata for access control, compliance, or risk decisions SHOULD obtain records through channels that provide integrity guarantees, such as transport-layer security (TLS) when fetching from the URI identified in `source.location`, or cryptographic signatures applied to the document by the `set.publisher`.
 
+A Data Provenance Metadata document can also be carried inside an external signing envelope, for example a JSON Web Signature \[[RFC7515](#RFC7515)\], a COSE structure \[[RFC9052](#RFC9052)\], or a W3C Verifiable Credential \[[VC-DATA-MODEL-2.0](#VC-DATA-MODEL-2.0)\].
+This specification does not prescribe an envelope; the `proof` member ([6.1.6 "Member `proof`"](#member-proof)) remains available for proof material carried within the record itself.
+
 The `set.tracking.id` and `source.id` fields provide identifiers for the record and the described dataset respectively, but do not themselves provide integrity protection.
 
 ## 8.2 URI Safety<a id='uri-safety'></a>
@@ -2432,6 +2434,12 @@ The following referenced documents are not required for the application of this 
 
 
 **\[**<span id="CNSSI-4009" class="anchor"></span>**CNSSI-4009\]** _Committee on National Security Systems (CNSS) Glossary_, Committee on National Security Systems, CNSSI No. 4009, April 6, 2015, Available: https://nsarchive.gwu.edu/document/22385-document-08-committee-national-security
+
+**\[**<span id="RFC7515" class="anchor"></span>**RFC7515\]** Jones, M., Bradley, J., and N. Sakimura, "JSON Web Signature (JWS)", RFC 7515, DOI 10.17487/RFC7515, May 2015, <https://www.rfc-editor.org/info/rfc7515>.
+
+**\[**<span id="RFC9052" class="anchor"></span>**RFC9052\]** Schaad, J., "CBOR Object Signing and Encryption (COSE): Structures and Process", STD 96, RFC 9052, DOI 10.17487/RFC9052, August 2022, <https://www.rfc-editor.org/info/rfc9052>.
+
+**\[**<span id="VC-DATA-MODEL-2.0" class="anchor"></span>**VC-DATA-MODEL-2.0\]** Sporny, M., Thibodeau Jr, T., Herman, I., Cohen, G., and M. B. Jones, "Verifiable Credentials Data Model v2.0", W3C Recommendation, 15 May 2025, <https://www.w3.org/TR/vc-data-model-2.0/>.
 
 # Annex C. Example Instances<a id='annex-c'></a>
 

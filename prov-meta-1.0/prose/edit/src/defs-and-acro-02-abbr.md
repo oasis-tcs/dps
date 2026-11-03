@@ -12,6 +12,4 @@ DPS
 PET
 :    Privacy Enhancing Technologies
 
-<!-- We will surely find more acronyms or abbreviations we do use in the document. -->
-
 ---
