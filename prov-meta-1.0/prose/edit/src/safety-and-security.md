@@ -22,6 +22,9 @@ A Data Provenance Metadata document is only as trustworthy as the process and pa
 
 Implementations that rely on provenance metadata for access control, compliance, or risk decisions SHOULD obtain records through channels that provide integrity guarantees, such as transport-layer security (TLS) when fetching from the URI identified in `source.location`, or cryptographic signatures applied to the document by the `set.publisher`.
 
+A Data Provenance Metadata document can also be carried inside an external signing envelope, for example a JSON Web Signature [cite](#RFC7515), a COSE structure [cite](#RFC9052), or a W3C Verifiable Credential [cite](#VC-DATA-MODEL-2.0).
+This specification does not prescribe an envelope; the `proof` member ([sec](#member-proof)) remains available for proof material carried within the record itself.
+
 The `set.tracking.id` and `source.id` fields provide identifiers for the record and the described dataset respectively, but do not themselves provide integrity protection.
 
 ## URI Safety {#uri-safety}

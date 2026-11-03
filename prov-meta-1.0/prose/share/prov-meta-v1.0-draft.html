@@ -597,8 +597,9 @@ For license and copyright information, and complete status, please see <a href="
 </div>
 <h1 id="scope">1. Scope <a id='scope'></a></h1>
 <p>Data is a core enterprise asset that underpins strategic decision-making, drives operational priorities, and supports risk governance. Dependence on data creates a need for validation by understanding data’s origin, quality, and intended use. Understanding data is a requirement for organizations operating at scale. The OASIS Data Provenance
-Standards (DPS) are created to solve for this need. Developed through cross-industry collaboration, the DPS provide a consistent framework to track the origin, movement, integrity, and quality of data. The DPS address the growing demand for transparency in artificial intelligence (AI), cybersecurity, supply chains, and areas where data quality
-and accountability are foundational to performance and compliance - especially in regulated and high-risk environments.</p>
+Standards (DPS) are created to solve for this need. Developed through cross-industry collaboration, the DPS provide a consistent framework to track the origin, movement, integrity, and quality of data. They define how such provenance is recorded; how the claims in a record are verified is outside their scope (see <a
+href="#integrity-and-authenticity">8.1 “Integrity and Authenticity of Provenance Claims”</a>). The DPS address the growing demand for transparency in artificial intelligence (AI), cybersecurity, supply chains, and areas where data quality and accountability are foundational to performance and compliance - especially in regulated and high-risk
+environments.</p>
 <hr />
 <h1 id="definitions-and-acronyms">2. Definitions and Acronyms <a id='definitions-and-acronyms'></a></h1>
 <h2 id="definitions">2.1 Definitions <a id='definitions'></a></h2>
@@ -647,7 +648,6 @@ Data Provenance Standard
 Privacy Enhancing Technologies
 </dd>
 </dl>
-<!-- We will surely find more acronyms or abbreviations we do use in the document. -->
 <hr />
 <h1 id="document-conventions">3. Document Conventions <a id='document-conventions'></a></h1>
 <h2 id="key-words">3.1 Key Words <a id='key-words'></a></h2>
@@ -3374,6 +3374,8 @@ security risk, since the text could contain executable code along with data decl
 <p>This specification defines the structure and vocabulary of provenance metadata but does not define mechanisms for verifying that the claims made within a record are accurate or have not been tampered with. A Data Provenance Metadata document is only as trustworthy as the process and party that produced it.</p>
 <p>Implementations that rely on provenance metadata for access control, compliance, or risk decisions SHOULD obtain records through channels that provide integrity guarantees, such as transport-layer security (TLS) when fetching from the URI identified in <code>source.location</code>, or cryptographic signatures applied to the document by the
 <code>set.publisher</code>.</p>
+<p>A Data Provenance Metadata document can also be carried inside an external signing envelope, for example a JSON Web Signature [<a href="#RFC7515">RFC7515</a>], a COSE structure [<a href="#RFC9052">RFC9052</a>], or a W3C Verifiable Credential [<a href="#VC-DATA-MODEL-2.0">VC-DATA-MODEL-2.0</a>]. This specification does not prescribe an
+envelope; the <code>proof</code> member (<a href="#member-proof">6.1.6 “Member <code>proof</code>”</a>) remains available for proof material carried within the record itself.</p>
 <p>The <code>set.tracking.id</code> and <code>source.id</code> fields provide identifiers for the record and the described dataset respectively, but do not themselves provide integrity protection.</p>
 <h2 id="uri-safety">8.2 URI Safety <a id='uri-safety'></a></h2>
 <p>Several fields in this specification accept URI values, including <code>source.location</code>, <code>set.publisher.namespace</code>, <code>source.id.uris</code>, <code>set.acknowledgments[].urls</code>, and <code>set.references[].url</code>. Implementations that automatically dereference these URIs MUST apply the same defences required for
@@ -3443,6 +3445,10 @@ While any hyperlinks included in this section were valid at the time of publicat
 <h2 id="b.2-informative-references">B.2 Informative References <a id='informative-references'></a></h2>
 <p>The following referenced documents are not required for the application of this document but may assist the reader with regard to a particular subject area.</p>
 <p><strong>[</strong><span id="CNSSI-4009" class="anchor"></span><strong>CNSSI-4009]</strong> <em>Committee on National Security Systems (CNSS) Glossary</em>, Committee on National Security Systems, CNSSI No. 4009, April 6, 2015, Available: https://nsarchive.gwu.edu/document/22385-document-08-committee-national-security</p>
+<p><strong>[</strong><span id="RFC7515" class="anchor"></span><strong>RFC7515]</strong> Jones, M., Bradley, J., and N. Sakimura, “JSON Web Signature (JWS)”, RFC 7515, DOI 10.17487/RFC7515, May 2015, <a href="https://www.rfc-editor.org/info/rfc7515" class="uri">https://www.rfc-editor.org/info/rfc7515</a>.</p>
+<p><strong>[</strong><span id="RFC9052" class="anchor"></span><strong>RFC9052]</strong> Schaad, J., “CBOR Object Signing and Encryption (COSE): Structures and Process”, STD 96, RFC 9052, DOI 10.17487/RFC9052, August 2022, <a href="https://www.rfc-editor.org/info/rfc9052" class="uri">https://www.rfc-editor.org/info/rfc9052</a>.</p>
+<p><strong>[</strong><span id="VC-DATA-MODEL-2.0" class="anchor"></span><strong>VC-DATA-MODEL-2.0]</strong> Sporny, M., Thibodeau Jr, T., Herman, I., Cohen, G., and M. B. Jones, “Verifiable Credentials Data Model v2.0”, W3C Recommendation, 15 May 2025, <a href="https://www.w3.org/TR/vc-data-model-2.0/"
+class="uri">https://www.w3.org/TR/vc-data-model-2.0/</a>.</p>
 <h1 id="annex-c.-example-instances">Annex C. Example Instances <a id='annex-c'></a></h1>
 <p>(This annex forms an integral part of this Specification.)</p>
 <p>This annex provides four example instances of the Data Provenance Metadata schema, each serving a distinct purpose in learning and applying the standard.</p>

@@ -5,6 +5,7 @@ Dependence on data creates a need for validation by understanding data’s origi
 Understanding data is a requirement for organizations operating at scale.
 The OASIS Data Provenance Standards (DPS) are created to solve for this need.
 Developed through cross-industry collaboration, the DPS provide a consistent framework to track the origin, movement, integrity, and quality of data.
+They define how such provenance is recorded; how the claims in a record are verified is outside their scope (see [sec](#integrity-and-authenticity)).
 The DPS address the growing demand for transparency in artificial intelligence (AI), cybersecurity, supply chains,
 and areas where data quality and accountability are foundational to performance and compliance - especially in regulated and high-risk environments.
 

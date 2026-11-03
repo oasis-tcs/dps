@@ -172,10 +172,13 @@ data is a requirement for organizations operating at scale. The OASIS
 Data Provenance Standards (DPS) are created to solve for this need.
 Developed through cross-industry collaboration, the DPS provide a
 consistent framework to track the origin, movement, integrity, and
-quality of data. The DPS address the growing demand for transparency in
-artificial intelligence (AI), cybersecurity, supply chains, and areas
-where data quality and accountability are foundational to performance
-and compliance - especially in regulated and high-risk environments.
+quality of data. They define how such provenance is recorded; how the
+claims in a record are verified is outside their scope (see
+#link(<integrity-and-authenticity>)[8.1 "Integrity and Authenticity of Provenance Claims"]).
+The DPS address the growing demand for transparency in artificial
+intelligence (AI), cybersecurity, supply chains, and areas where data
+quality and accountability are foundational to performance and
+compliance - especially in regulated and high-risk environments.
 
 #pagebreak(weak: true)
 = Definitions and Acronyms
@@ -2809,6 +2812,15 @@ that provide integrity guarantees, such as transport-layer security
 (TLS) when fetching from the URI identified in `source.location`, or
 cryptographic signatures applied to the document by the `set.publisher`.
 
+A Data Provenance Metadata document can also be carried inside an
+external signing envelope, for example a JSON Web Signature
+\[#link(<RFC7515>)[RFC7515]\], a COSE structure
+\[#link(<RFC9052>)[RFC9052]\], or a W3C Verifiable Credential
+\[#link(<VC-DATA-MODEL-2.0>)[VC-DATA-MODEL-2.0]\]. This specification
+does not prescribe an envelope; the `proof` member
+(#link(<member-proof>)[6.1.6 "Member `proof`"]) remains available for
+proof material carried within the record itself.
+
 The `set.tracking.id` and `source.id` fields provide identifiers for the
 record and the described dataset respectively, but do not themselves
 provide integrity protection.
@@ -3024,6 +3036,20 @@ subject area.
 Security Systems (CNSS) Glossary], Committee on National Security
 Systems, CNSSI No.~4009, April 6, 2015, Available:
 https:/\/nsarchive.gwu.edu/document/22385-document-08-committee-national-security
+
+#strong[\[]<RFC7515>#strong[RFC7515\]] Jones, M., Bradley, J., and N.
+Sakimura, "JSON Web Signature (JWS)", RFC 7515, DOI 10.17487/RFC7515,
+May 2015, #link("https://www.rfc-editor.org/info/rfc7515").
+
+#strong[\[]<RFC9052>#strong[RFC9052\]] Schaad, J., "CBOR Object Signing
+and Encryption (COSE): Structures and Process", STD 96, RFC 9052, DOI
+10.17487/RFC9052, August 2022,
+#link("https://www.rfc-editor.org/info/rfc9052").
+
+#strong[\[]<VC-DATA-MODEL-2.0>#strong[VC-DATA-MODEL-2.0\]] Sporny, M.,
+Thibodeau Jr, T., Herman, I., Cohen, G., and M. B. Jones, "Verifiable
+Credentials Data Model v2.0", W3C Recommendation, 15 May 2025,
+#link("https://www.w3.org/TR/vc-data-model-2.0/").
 
 #pagebreak(weak: true)
 #heading(level: 1, numbering: none)[Annex C. Example Instances]
