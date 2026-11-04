@@ -759,8 +759,8 @@ The value of `set.tracking.version` MUST conform to `$defs.version-type`, which 
 The value of `set.tracking.version` MUST equal the value of `number` in the most recent item of `set.tracking.revision-history`, that is the item with the latest `date`.
 
 The `set.tracking.version` member versions the metadata set, not the dataset it describes, whose version is `source.data-version` ([6.1.3.6 "Member `source.data-version`"](#member-source-data-version)).
-A revision that changes only the metadata advances `set.tracking.version` without changing `source.data-version`,
-so the two values differ under normal operation (see the lineage example in [C.4 "Lineage Example"](#lineage-example)).
+A revision that changes only the metadata advances `set.tracking.version` and need not change `source.data-version`,
+so the two values can differ (see the lineage example in [C.4 "Lineage Example"](#lineage-example)).
 
 *Examples 1:*<a id='member-set-tracking-version-eg-1'></a><a id='sec-6-1-2-5-6-eg-1'></a><a id='example-10'></a>
 
@@ -1140,7 +1140,7 @@ DataProvenance:
 The value of `source.data-version` MUST conform to `$defs.version-type`, which requires either an integer or a semantic versioning string.
 
 The `source.data-version` member versions the dataset, independently of the version of the metadata set in `set.tracking.version` ([6.1.2.5.6 "Member `set.tracking.version`"](#member-set-tracking-version)).
-It advances only when a revision changes the dataset itself, so the two values differ under normal operation (see the lineage example in [C.4 "Lineage Example"](#lineage-example)).
+A revision that changes only the metadata need not advance it, so the two values can differ (see the lineage example in [C.4 "Lineage Example"](#lineage-example)).
 
 *Examples 1:*<a id='member-source-data-version-eg-1'></a><a id='sec-6-1-3-6-eg-1'></a><a id='example-19'></a>
 
@@ -2616,9 +2616,9 @@ It describes one document, a compliance report, across three revisions of the re
 
 The two counters version different things: `set.tracking.version` versions the metadata set,
 `source.data-version` versions the dataset the metadata set describes.
-They move together only when a revision changes the dataset;
-a revision that changes only the metadata advances `set.tracking.version` alone, as revision 2 does.
-Their values differing, as in this record (`3` and `2`), is the normal case, not an error.
+In this record they move together only when a revision changes the dataset;
+revision 2 changes only the metadata and advances `set.tracking.version` alone.
+Values that differ, as here (`3` and `2`), are permitted, not an error.
 
 Key features illustrated by this instance:
 

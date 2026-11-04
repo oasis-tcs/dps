@@ -953,8 +953,8 @@ cisco-sa-20190513-secureboot</code></pre>
 <span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co">  # ...</span></span></code></pre></div>
 <p>The value of <code>set.tracking.version</code> MUST conform to <code>$defs.version-type</code>, which requires either an integer or a semantic versioning string.</p>
 <p>The value of <code>set.tracking.version</code> MUST equal the value of <code>number</code> in the most recent item of <code>set.tracking.revision-history</code>, that is the item with the latest <code>date</code>.</p>
-<p>The <code>set.tracking.version</code> member versions the metadata set, not the dataset it describes, whose version is <code>source.data-version</code> (<a href="#member-source-data-version">6.1.3.6 “Member <code>source.data-version</code>”</a>). A revision that changes only the metadata advances <code>set.tracking.version</code> without
-changing <code>source.data-version</code>, so the two values differ under normal operation (see the lineage example in <a href="#lineage-example">C.4 “Lineage Example”</a>).</p>
+<p>The <code>set.tracking.version</code> member versions the metadata set, not the dataset it describes, whose version is <code>source.data-version</code> (<a href="#member-source-data-version">6.1.3.6 “Member <code>source.data-version</code>”</a>). A revision that changes only the metadata advances <code>set.tracking.version</code> and need
+not change <code>source.data-version</code>, so the two values can differ (see the lineage example in <a href="#lineage-example">C.4 “Lineage Example”</a>).</p>
 <p><em>Examples 1:</em><a id='member-set-tracking-version-eg-1'></a><a id='sec-6-1-2-5-6-eg-1'></a><a id='example-10'></a></p>
 <pre><code>1
 2.0.0
@@ -1216,8 +1216,8 @@ fr</code></pre>
 <span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">data-version</span><span class="kw">:</span><span class="at"> $defs.version-type</span></span>
 <span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="co">  # ...</span></span></code></pre></div>
 <p>The value of <code>source.data-version</code> MUST conform to <code>$defs.version-type</code>, which requires either an integer or a semantic versioning string.</p>
-<p>The <code>source.data-version</code> member versions the dataset, independently of the version of the metadata set in <code>set.tracking.version</code> (<a href="#member-set-tracking-version">6.1.2.5.6 “Member <code>set.tracking.version</code>”</a>). It advances only when a revision changes the dataset itself, so the two values differ under
-normal operation (see the lineage example in <a href="#lineage-example">C.4 “Lineage Example”</a>).</p>
+<p>The <code>source.data-version</code> member versions the dataset, independently of the version of the metadata set in <code>set.tracking.version</code> (<a href="#member-set-tracking-version">6.1.2.5.6 “Member <code>set.tracking.version</code>”</a>). A revision that changes only the metadata need not advance it, so the two values can differ
+(see the lineage example in <a href="#lineage-example">C.4 “Lineage Example”</a>).</p>
 <p><em>Examples 1:</em><a id='member-source-data-version-eg-1'></a><a id='sec-6-1-3-6-eg-1'></a><a id='example-19'></a></p>
 <pre><code>1
 2.0.0</code></pre>
@@ -3557,8 +3557,8 @@ records the provenance of the initial PubMed-only sub-corpus from the v1 release
 <li><strong>Metadata enrichment</strong>: the issuer is populated automatically from entities extracted from the document; the document itself is unchanged. <code>set.tracking.version</code> advances to <code>2</code>, and <code>source.data-version</code> stays <code>1</code>.</li>
 <li><strong>Document replacement</strong>: the document itself is replaced by a new file. <code>set.tracking.version</code> advances to <code>3</code>, and <code>source.data-version</code> advances to <code>2</code>.</li>
 </ol>
-<p>The two counters version different things: <code>set.tracking.version</code> versions the metadata set, <code>source.data-version</code> versions the dataset the metadata set describes. They move together only when a revision changes the dataset; a revision that changes only the metadata advances <code>set.tracking.version</code> alone, as
-revision 2 does. Their values differing, as in this record (<code>3</code> and <code>2</code>), is the normal case, not an error.</p>
+<p>The two counters version different things: <code>set.tracking.version</code> versions the metadata set, <code>source.data-version</code> versions the dataset the metadata set describes. In this record they move together only when a revision changes the dataset; revision 2 changes only the metadata and advances
+<code>set.tracking.version</code> alone. Values that differ, as here (<code>3</code> and <code>2</code>), are permitted, not an error.</p>
 <p>Key features illustrated by this instance:</p>
 <ul>
 <li><strong>Set level</strong>: three <code>revision-history</code> entries, the latest of which carries the <code>number</code> that <code>set.tracking.version</code> repeats, and a publisher <code>namespace</code> under the implementer’s own domain.</li>

@@ -781,8 +781,8 @@ The `set.tracking.version` member versions the metadata set, not the
 dataset it describes, whose version is `source.data-version`
 (#link(<member-source-data-version>)[6.1.3.6 "Member `source.data-version`"]).
 A revision that changes only the metadata advances
-`set.tracking.version` without changing `source.data-version`, so the
-two values differ under normal operation (see the lineage example in
+`set.tracking.version` and need not change `source.data-version`, so the
+two values can differ (see the lineage example in
 #link(<lineage-example>)[C.4 "Lineage Example"]).
 
 #emph[Examples 1:]#box()<member-set-tracking-version-eg-1>
@@ -1197,8 +1197,8 @@ which requires either an integer or a semantic versioning string.
 The `source.data-version` member versions the dataset, independently of
 the version of the metadata set in `set.tracking.version`
 (#link(<member-set-tracking-version>)[6.1.2.5.6 "Member `set.tracking.version`"]).
-It advances only when a revision changes the dataset itself, so the two
-values differ under normal operation (see the lineage example in
+A revision that changes only the metadata need not advance it, so the
+two values can differ (see the lineage example in
 #link(<lineage-example>)[C.4 "Lineage Example"]).
 
 #emph[Examples 1:]#box()<member-source-data-version-eg-1>
@@ -3253,11 +3253,10 @@ compliance report, across three revisions of the record:
 
 The two counters version different things: `set.tracking.version`
 versions the metadata set, `source.data-version` versions the dataset
-the metadata set describes. They move together only when a revision
-changes the dataset; a revision that changes only the metadata advances
-`set.tracking.version` alone, as revision 2 does. Their values
-differing, as in this record (`3` and `2`), is the normal case, not an
-error.
+the metadata set describes. In this record they move together only when
+a revision changes the dataset; revision 2 changes only the metadata and
+advances `set.tracking.version` alone. Values that differ, as here (`3`
+and `2`), are permitted, not an error.
 
 Key features illustrated by this instance:
 
