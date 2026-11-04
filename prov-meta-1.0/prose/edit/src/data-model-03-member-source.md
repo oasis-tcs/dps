@@ -193,7 +193,7 @@ DataProvenance:
 The value of `source.data-version` MUST conform to `$defs.version-type`, which requires either an integer or a semantic versioning string.
 
 The `source.data-version` member versions the dataset, independently of the version of the metadata set in `set.tracking.version` ([sec](#member-set-tracking-version)).
-It advances only when a revision changes the dataset itself, so the two values differ under normal operation (see the lineage example in [sec](#lineage-example)).
+A revision that changes only the metadata need not advance it, so the two values can differ (see the lineage example in [sec](#lineage-example)).
 
 *Examples 1:*
 

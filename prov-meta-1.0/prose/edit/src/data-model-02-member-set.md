@@ -363,8 +363,8 @@ The value of `set.tracking.version` MUST conform to `$defs.version-type`, which 
 The value of `set.tracking.version` MUST equal the value of `number` in the most recent item of `set.tracking.revision-history`, that is the item with the latest `date`.
 
 The `set.tracking.version` member versions the metadata set, not the dataset it describes, whose version is `source.data-version` ([sec](#member-source-data-version)).
-A revision that changes only the metadata advances `set.tracking.version` without changing `source.data-version`,
-so the two values differ under normal operation (see the lineage example in [sec](#lineage-example)).
+A revision that changes only the metadata advances `set.tracking.version` and need not change `source.data-version`,
+so the two values can differ (see the lineage example in [sec](#lineage-example)).
 
 *Examples 1:*
 

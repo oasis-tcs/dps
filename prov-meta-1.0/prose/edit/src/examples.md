@@ -173,9 +173,9 @@ It describes one document, a compliance report, across three revisions of the re
 
 The two counters version different things: `set.tracking.version` versions the metadata set,
 `source.data-version` versions the dataset the metadata set describes.
-They move together only when a revision changes the dataset;
-a revision that changes only the metadata advances `set.tracking.version` alone, as revision 2 does.
-Their values differing, as in this record (`3` and `2`), is the normal case, not an error.
+In this record they move together only when a revision changes the dataset;
+revision 2 changes only the metadata and advances `set.tracking.version` alone.
+Values that differ, as here (`3` and `2`), are permitted, not an error.
 
 Key features illustrated by this instance:
 
