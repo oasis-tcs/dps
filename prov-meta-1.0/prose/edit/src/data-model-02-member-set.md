@@ -308,7 +308,7 @@ The optional `legacy-version` member traces entries back to historic, DP-Core-un
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-02-member-set_member-set-tracking-revision-history_example-1.json"}
 [
   {
     "date": "2000-01-01T01:01:01Z",
@@ -395,7 +395,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-02-member-set_member-set-tracking-aliases_example-1.json"}
 ["0bacba95-ceb9-4fae-bf07-d5683a9481c1"]
 ```
 
@@ -426,7 +426,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-02-member-set_member-set-tracking-generator_example-1.json"}
 {
   "engine": {"name": "DPCoreX", "version": "1.0.0"},
   "date": "2025-01-15T10:00:00Z"
@@ -492,7 +492,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-02-member-set_member-set-acknowledgments_example-1.json"}
 [
   {
     "names": ["A. Big Data"],

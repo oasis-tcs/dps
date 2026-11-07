@@ -77,3 +77,13 @@ pi:
   definitions:
     - name: json-path
       check: jsonpath-schema
+
+# Example twins: the JSON code blocks keyed {.json twin="..."} are derived from the complete examples in
+# src/json-examples (nide derive), laid out by the display records in etc/twins.yaml.  Adopted from the
+# hand-written blocks by nide examples adopt; the host of a twin is the member its Member heading names.
+twins:
+  path: src/json-examples
+  records: etc/twins.yaml
+  schema: ../../json/data-provenance.json
+  root: data-provenance
+  host-heading: '^Member `(?P<path>\$?[\w.-]+)`$'

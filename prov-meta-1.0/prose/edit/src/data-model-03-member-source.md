@@ -41,7 +41,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-03-member-source_member-source-about_example-1.json"}
 {
   "content": "We found these numbers on the parking lot.",
   "purpose": "Use only for learning regression modeling. Not for production use.",
@@ -99,7 +99,7 @@ The value of `algorithm` MUST be lowercase.
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-03-member-source_member-source-id_example-1.json"}
 {
   "uuids": ["e5471657-9ede-4335-843b-c1376ef29bfa"]
 }
@@ -107,7 +107,7 @@ The value of `algorithm` MUST be lowercase.
 
 *Example 2:*
 
-```json
+```{.json twin="data-model-03-member-source_member-source-id_example-2.json"}
 {
   "hashes": [
     {
@@ -140,7 +140,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-03-member-source_member-source-issuer_example-1.json"}
 [
   {
     "legal-name": "Sampling Ltd.",

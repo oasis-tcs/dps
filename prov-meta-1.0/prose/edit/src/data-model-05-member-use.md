@@ -43,7 +43,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-05-member-use_member-use-intended-purpose_example-1.json"}
 [
   {
     "code": "research",
@@ -72,7 +72,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-05-member-use_member-use-classification_example-1.json"}
 [
   {"regulation": {"code": "phi"}, "evaluated": true},
   {"regulation": {"code": "pii"}, "evaluated": false}
@@ -97,7 +97,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-05-member-use_member-use-consents_example-1.json"}
 ["https://example.com/consent-policy-2024"]
 ```
 
@@ -126,7 +126,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-05-member-use_member-use-data-risk-reducing_example-1.json"}
 [
   {
     "tool-used": "DataMaskPro",
@@ -156,7 +156,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-05-member-use_member-use-processing-included_example-1.json"}
 [{"country": "DE"}, {"country": "FR"}]
 ```
 
@@ -230,7 +230,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-05-member-use_member-use-license_example-1.json"}
 ["https://creativecommons.org/licenses/by/4.0/"]
 ```
 
@@ -252,7 +252,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-05-member-use_member-use-copyright_example-1.json"}
 ["Copyright © 2024 Example Corp. All rights reserved."]
 ```
 

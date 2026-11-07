@@ -117,15 +117,17 @@ release:
 build: render status
 
 # The JSON schema is the source: everything below is derived from it, the tables via the JADN model.
+# The JSON examples are derived from their twins (src/json-examples, etc/twins.yaml) by nide derive.
 derived = derive_jadn derive_tables derive_outlines derive_figure derive_yaml
 
 .PHONY: derive
 derive:
 	for step in $(derived); do python bin/$${step}.py || exit 1; done
+	nide derive
 
 .PHONY: check-derived
 check-derived:
-	status=0; for step in $(derived); do python bin/$${step}.py --check || status=1; done; exit $${status}
+	status=0; for step in $(derived); do python bin/$${step}.py --check || status=1; done; nide derive --check || status=1; exit $${status}
 
 .PHONY: outlines
 outlines:

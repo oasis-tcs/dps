@@ -1,0 +1,149 @@
+# One record per example twin (src/json-examples/): its host in the schema (a JSON Pointer from the Member
+# heading above its block, or data-provenance for a complete document) and its display in the prose.
+# Written by nide examples adopt; nide derive renders each keyed block from its twin and display.
+
+examples:
+- twin: 
+    data-model-02-member-set_member-set-tracking-revision-history_example-1.json
+  host: '#/properties/set/properties/tracking/properties/revision-history'
+  display: {}
+- twin: data-model-02-member-set_member-set-tracking-aliases_example-1.json
+  host: '#/properties/set/properties/tracking/properties/aliases'
+  display:
+    inline:
+    - ''
+    spacing:
+      '': '["0bacba95-ceb9-4fae-bf07-d5683a9481c1"]'
+- twin: data-model-02-member-set_member-set-tracking-generator_example-1.json
+  host: '#/properties/set/properties/tracking/properties/generator'
+  display:
+    inline:
+    - /engine
+    spacing:
+      /engine: '  "engine": {"name": "DPCoreX", "version": "1.0.0"},'
+- twin: data-model-02-member-set_member-set-acknowledgments_example-1.json
+  host: '#/properties/set/properties/acknowledgments'
+  display:
+    inline:
+    - /0/names
+    spacing:
+      /0/names: '    "names": ["A. Big Data"],'
+- twin: data-model-03-member-source_member-source-about_example-1.json
+  host: '#/$defs/source-type/properties/about'
+  display: {}
+- twin: data-model-03-member-source_member-source-id_example-1.json
+  host: '#/$defs/source-type/properties/id'
+  display:
+    inline:
+    - /uuids
+    spacing:
+      /uuids: '  "uuids": ["e5471657-9ede-4335-843b-c1376ef29bfa"]'
+- twin: data-model-03-member-source_member-source-id_example-2.json
+  host: '#/$defs/source-type/properties/id'
+  display:
+    inline:
+    - /hashes/0/tree-hashes
+    spacing:
+      /hashes/0/tree-hashes: '      "tree-hashes": [{"algorithm": "sha256", "value":
+        "af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262"}],'
+- twin: data-model-03-member-source_member-source-issuer_example-1.json
+  host: '#/$defs/source-type/properties/issuer'
+  display: {}
+- twin: 
+    data-model-04-member-provenance_member-provenance-origin-geography_example-1.json
+  host: '#/$defs/provenance-type/properties/origin-geography'
+  display:
+    inline:
+    - /0
+    - /1
+    spacing:
+      /0: '  {"country": "US"},'
+      /1: '  {"country": "DE", "state": "Bavaria"}'
+- twin: 
+    data-model-04-member-provenance_member-provenance-generation-method_example-1.json
+  host: '#/$defs/provenance-type/properties/generation-method'
+  display:
+    inline:
+    - /0
+    - /1
+    spacing:
+      /0: '  {"code": "web-scraping-crawling"},'
+      /1: '  {"code": "primary-user-source", "long-description": "Direct survey responses
+        from participants."}'
+- twin: data-model-04-member-provenance_member-provenance-origin_example-1.json
+  host: '#/$defs/provenance-type/properties/origin'
+  display:
+    inline:
+    - ''
+    spacing:
+      '': '[{"legal-name": "Original Data Collector Inc."}]'
+- twin: 
+    data-model-04-member-provenance_member-provenance-generation-period_example-1.json
+  host: '#/$defs/provenance-type/properties/generation-period'
+  display: {}
+- twin: data-model-04-member-provenance_member-provenance-format_example-1.json
+  host: '#/$defs/provenance-type/properties/format'
+  display:
+    inline:
+    - ''
+    spacing:
+      '': '["text/csv", "application/json"]'
+- twin: data-model-05-member-use_member-use-intended-purpose_example-1.json
+  host: '#/$defs/use-type/properties/intended-purpose'
+  display: {}
+- twin: data-model-05-member-use_member-use-classification_example-1.json
+  host: '#/$defs/use-type/properties/classification'
+  display:
+    inline:
+    - /0
+    - /1
+    spacing:
+      /0: '  {"regulation": {"code": "phi"}, "evaluated": true},'
+      /1: '  {"regulation": {"code": "pii"}, "evaluated": false}'
+- twin: data-model-05-member-use_member-use-consents_example-1.json
+  host: '#/$defs/use-type/properties/consents'
+  display:
+    inline:
+    - ''
+    spacing:
+      '': '["https://example.com/consent-policy-2024"]'
+- twin: data-model-05-member-use_member-use-data-risk-reducing_example-1.json
+  host: '#/$defs/use-type/properties/data-risk-reducing'
+  display:
+    inline:
+    - /0/parameters
+    - /0/results
+    spacing:
+      /0/parameters: '    "parameters": [{"name": "--level", "value": "high"}],'
+      /0/results: '    "results": ["All PII fields masked."]'
+- twin: data-model-05-member-use_member-use-processing-included_example-1.json
+  host: '#/$defs/use-type/properties/processing-included'
+  display:
+    inline:
+    - ''
+    spacing:
+      '': '[{"country": "DE"}, {"country": "FR"}]'
+- twin: data-model-05-member-use_member-use-license_example-1.json
+  host: '#/$defs/use-type/properties/license'
+  display:
+    inline:
+    - ''
+    spacing:
+      '': '["https://creativecommons.org/licenses/by/4.0/"]'
+- twin: data-model-05-member-use_member-use-copyright_example-1.json
+  host: '#/$defs/use-type/properties/copyright'
+  display:
+    inline:
+    - ''
+    spacing:
+      '': '["Copyright © 2024 Example Corp. All rights reserved."]'
+- twin: examples_minimal-example_example-1.json
+  host: data-provenance
+  display:
+    inline:
+    - /source/id/uuids
+    spacing:
+      /source/id/uuids: '      "uuids": ["f47ac10b-58cc-4372-a567-0e02b2c3d479"]'
+- twin: examples_lineage-example_example-1.json
+  host: data-provenance
+  display: {}

@@ -1,0 +1,14 @@
+[
+  {
+    "regulation": {
+      "code": "phi"
+    },
+    "evaluated": true
+  },
+  {
+    "regulation": {
+      "code": "pii"
+    },
+    "evaluated": false
+  }
+]

@@ -34,7 +34,7 @@ specification distribution.
 The following instance contains only the fields required by the schema.
 The scenario is a single-issuer survey dataset with one generation method and one intended purpose.
 
-```json
+```{.json twin="examples_minimal-example_example-1.json"}
 {
   "$schema": "https://docs.oasis-open.org/dps/prov-meta/v1.0/schema/data-provenance.json",
   "set": {
@@ -187,7 +187,7 @@ Key features illustrated by this instance:
   `source-digest`, the digest of that record computed at issuance, and `previous-date`.
   `generation-method` and `intended-purpose` use `code` together with an implementation-specific `system`.
 
-```json
+```{.json twin="examples_lineage-example_example-1.json"}
 {
   "set": {
     "label": "Project Document: kestrel-northfield-q3-2026-compliance.pdf",

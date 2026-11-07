@@ -1,0 +1,15 @@
+[
+  {
+    "tool-used": "DataMaskPro",
+    "technology": "data-masking",
+    "parameters": [
+      {
+        "name": "--level",
+        "value": "high"
+      }
+    ],
+    "results": [
+      "All PII fields masked."
+    ]
+  }
+]

@@ -101,6 +101,20 @@ rules:
       schemas:
         - ../../json/data-provenance.json
 
+  - id: DPS-TWINS
+    severity: BLOCKER
+    description: >-
+      Every JSON example is a twin (src/json-examples) its code block is derived from (nide derive), valid
+      as the schema member its Member heading names, or as a complete document
+    check:
+      type: twins
+      known:
+        - kind: content
+          key: data-model-05-member-use_member-use-classification_example-1.json
+          reason: >-
+            the example classifies a regulation as "pii", which the regulation code enum lacks (it has "pi"):
+            fix the example, or add the value to the schema
+
   - id: DPS-SCHEMA-HEADINGS
     severity: BLOCKER
     description: >-

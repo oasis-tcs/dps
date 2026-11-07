@@ -43,7 +43,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-04-member-provenance_member-provenance-origin-geography_example-1.json"}
 [
   {"country": "US"},
   {"country": "DE", "state": "Bavaria"}
@@ -93,7 +93,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-04-member-provenance_member-provenance-generation-method_example-1.json"}
 [
   {"code": "web-scraping-crawling"},
   {"code": "primary-user-source", "long-description": "Direct survey responses from participants."}
@@ -142,7 +142,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-04-member-provenance_member-provenance-origin_example-1.json"}
 [{"legal-name": "Original Data Collector Inc."}]
 ```
 
@@ -187,7 +187,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-04-member-provenance_member-provenance-generation-period_example-1.json"}
 {
   "start": "1998-01-01T00:00:00Z",
   "end": "1999-12-31T23:59:59Z"
@@ -212,7 +212,7 @@ DataProvenance:
 
 *Example 1:*
 
-```json
+```{.json twin="data-model-04-member-provenance_member-provenance-format_example-1.json"}
 ["text/csv", "application/json"]
 ```
 
