@@ -101,6 +101,17 @@ rules:
       schemas:
         - ../../json/data-provenance.json
 
+  - id: DPS-SCHEMA-HEADINGS
+    severity: BLOCKER
+    description: >-
+      Every Member heading names a member of the JSON schema by its dotted path, and a heading that seems
+      to name a member gives it as Member `a.b.c` (a renamed member must not leave its section behind)
+    check:
+      type: schema-headings
+      schema: ../../json/data-provenance.json
+      property-heading: '^Member `(?P<path>\$?[\w.-]+)`$'
+      looks-like: '^Member\b|^`[\w.-]+`$'
+
   # The two HTML checks read build/injected.html: run them after rendering (make html quality).
   - id: DPS-HTML-WELLFORMED
     severity: BLOCKER
