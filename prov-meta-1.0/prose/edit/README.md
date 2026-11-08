@@ -263,7 +263,8 @@ not use it: write, for example, "is `a` or `b`".
 
 **A rule fails with "rule evaluation error: Unknown check type".**
 The installed nide is older than the rules: `schema-enums`, `html-wellformed` and `html-anchors` need a nide newer
-than 2026.11.1. Upgrade nide (`pip install -U nide`).
+than 2026.11.1, `schema-headings` and `twins` (and `nide derive`, which `make derive` runs) nide 2026.11.8 or later.
+Upgrade nide (`pip install -U nide`).
 
 **`DPS-DOC-URL` warns although the this-version URL is in the front matter.**
 A known nide limitation: its link extraction does not see bare `<https://...>` autolinks. The warning is expected
